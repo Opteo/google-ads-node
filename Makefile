@@ -12,11 +12,16 @@ PROTO_SRC_DEPENDENCIES=google/**/*.proto
 # Directory to write generated code to (.js and .d.ts files)
 OUT_DIR=protos
 
-.SILENT protos: clean
+.SILENT: protos
+
+protos: clean compile-protos
+	echo "finished all"
+
+compile-protos:
 	# Compile depedency protos
 	# Temporary workaround for https://github.com/protocolbuffers/protobuf/issues/5318
 	for file in $(PROTO_ROOT_DIR)$(PROTO_SRC_DIR_2); do \
-		@echo "converting proto $$(basename $$file)"; \
+		echo "converting proto $$(basename $$file)"; \
 		protoc \
 			-I=$(PROTO_ROOT_DIR) \
 			--plugin="protoc-gen-ts=${PROTOC_GEN_TS_PATH}" \
@@ -29,7 +34,7 @@ OUT_DIR=protos
 
 	# Compile Google Ads protos
 	for file in $(PROTO_ROOT_DIR)$(PROTO_SRC_DIR); do \
-		@echo "converting dependency proto $$(basename $$file)"; \
+		echo "converting dependency proto $$(basename $$file)"; \
 		protoc \
 			-I=$(PROTO_ROOT_DIR) \
 			--plugin="protoc-gen-ts=${PROTOC_GEN_TS_PATH}" \
