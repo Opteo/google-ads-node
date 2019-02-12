@@ -5,6 +5,10 @@
     // TODO: allow devDependencies only in **/*.spec.ts files:
     // waiting on https://github.com/palantir/tslint/pull/3708
     "no-implicit-dependencies": [true, "dev"],
-    "no-console": false
+    "no-console": false,
+    "object-literal-sort-keys": false
+  },
+  "linterOptions": {
+    "exclude": ["src/protos/**/*.ts", "src/protos/**/*.d.ts", "src/protos/**/*.js"]
   }
 }
