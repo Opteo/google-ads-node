@@ -37,23 +37,23 @@ compile-protos:
 	for file in $(PROTO_ROOT_DIR)$(PROTO_SRC_DIR); do \
 		echo "converting proto $$(basename $$file)"; \
 		protoc \
-			-I=$(PROTO_ROOT_DIR) \
-			--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
-			--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
-			--grpc_out=${OUT_DIR} \
-			--js_out="import_style=commonjs,binary:${OUT_DIR}" \
-			--ts_out="${OUT_DIR}" \
-			$$file; \
+ 			-I=$(PROTO_ROOT_DIR) \
+ 			--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
+ 			--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
+ 			--grpc_out=${OUT_DIR} \
+ 			--js_out="import_style=commonjs,binary:${OUT_DIR}" \
+ 			--ts_out="${OUT_DIR}" \
+ 			$$file; \
 	done; \
 
 	# Compile missing depdencies
-		protoc -I=$(PROTO_ROOT_DIR) \
-			--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
-			--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
-			--grpc_out=${OUT_DIR} \
-			--js_out="import_style=commonjs,binary:${OUT_DIR}" \
-			--ts_out="${OUT_DIR}" \
-			$(PROTO_ROOT_DIR)google/api/experimental/*.proto \
+	protoc -I=$(PROTO_ROOT_DIR) \
+		--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
+		--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
+		--grpc_out=${OUT_DIR} \
+		--js_out="import_style=commonjs,binary:${OUT_DIR}" \
+		--ts_out="${OUT_DIR}" \
+		$(PROTO_ROOT_DIR)google/api/experimental/*.proto \
 
 clean:
 	rm -rf $(OUT_DIR)/*
