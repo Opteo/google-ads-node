@@ -3,6 +3,8 @@ import grpc from "grpc";
 import { SearchGoogleAdsRequest } from "../protos/google/ads/googleads/v0/services/google_ads_service_pb";
 import * as services from "./services";
 
+import { MetadataInterceptor } from "./interceptor";
+
 const DEFAULT_VERSION = "v0";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 
@@ -37,42 +39,19 @@ export default class GoogleAdsClient {
       );
     }
 
-    // const interceptor = function(options: any, nextCall: any) {
-    //   console.log(options);
-
-    //   return new grpc.InterceptingCall(nextCall(options), {
-    //     start(metadata: any, _listener: any, next: any) {
-    //       next(metadata, {
-    //         onReceiveMetadata: function(metadata: any, next: any) {
-    //           console.log("metadata", metadata);
-    //           next(metadata);
-    //         },
-    //         onReceiveMessage: function(message: any, next: any) {
-    //           console.log("message", message);
-    //           next(message);
-    //         },
-    //         onReceiveStatus: function(status: any, next: any) {
-    //           console.log("status", status);
-    //           next(status);
-    //         },
-    //       });
-    //     },
-    //     sendMessage: function(message, next) {
-    //       next(message);
-    //     },
-    //     halfClose: function(next) {
-    //       next();
-    //     },
-    //   });
-    // };
+    const metadataInterceptor = new MetadataInterceptor(
+      this.options.access_token,
+      this.options.developer_token,
+      this.options.login_customer_id
+    );
 
     const serviceClientConstructor = (services as any)[serviceClientName];
     const service = new serviceClientConstructor(
       GOOGLE_ADS_ENDPOINT,
-      grpc.credentials.createSsl()
-      // {
-      //   interceptors: [interceptor],
-      // }
+      grpc.credentials.createSsl(),
+      {
+        interceptors: [metadataInterceptor.intercept],
+      }
     );
 
     // const c = new grpc.Channel(GOOGLE_ADS_ENDPOINT, grpc.credentials.createSsl(), {});
@@ -80,19 +59,19 @@ export default class GoogleAdsClient {
     const req = new SearchGoogleAdsRequest();
     req.setCustomerId("");
 
-    // return new Promise((resolve, reject) => {
-    //   service.search(req, this.headers, (err: any, res: any) => {
-    //     if (err) {
-    //       console.log(err);
-    //       reject(err);
-    //     } else {
-    //       console.log(res);
-    //       resolve(service);
-    //     }
-    //   });
-    // });
+    return new Promise((resolve, reject) => {
+      service.search(req, null, (err: any, res: any) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log(res);
+          resolve(service);
+        }
+      });
+    });
 
-    return service;
+    // return service;
   }
 
   public getRequestMetadata(): object {
