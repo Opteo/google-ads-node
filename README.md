@@ -20,7 +20,7 @@ $ yarn add google-ads-node
 
 ## Contributing
 
-## Protocol Buffers
+### Protocol Buffers
 To update the Google Ads API version, the latest proto files (in the `googleapis` submodule) must be compiled.
 
 #### Requirements:
