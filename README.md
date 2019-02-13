@@ -19,3 +19,16 @@ $ yarn add google-ads-node
 ## Example
 
 ## Contributing
+
+## Protocol Buffers
+To update the Google Ads API version, the latest proto files (in the `googleapis` submodule) must be compiled.
+
+#### Requirements:
+  - [Protoc compiler](https://github.com/protocolbuffers/protobuf) installed on your machine and added to your `$PATH`
+  - Latest dependencies installed. Make sure to use `yarn install` since some dependencies require a C++ compilation step
+  
+1. Navigate into the `googleapis/` submodule and updated with `git pull`.
+
+2. Run `make protos` to compile the `*.proto` files
+
+3. The new compiled proto files should now be in `src/protos/`, under the `google/ads/googleads/v0/` path.
