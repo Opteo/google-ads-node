@@ -27,6 +27,8 @@ To update the Google Ads API version, the latest proto files (in the `googleapis
   - [Protoc compiler](https://github.com/protocolbuffers/protobuf) installed on your machine and added to your `$PATH`
   - Latest dependencies installed. Make sure to use `yarn install` since some dependencies require a C++ compilation step
   
+#### Steps:
+  
 1. Navigate into the `googleapis/` submodule and updated with `git pull`.
 
 2. Run `make protos` to compile the `*.proto` files
