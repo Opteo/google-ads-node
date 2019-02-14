@@ -1,5 +1,11 @@
 import grpc from "grpc";
 
+import { GoogleAdsFailure } from "../protos/google/ads/googleads/v0/errors/errors_pb";
+
+const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
+const REQUEST_ID_KEY = "request-id";
+const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
+
 export class MetadataInterceptor {
   private access_token: string;
   private developer_token: string;
@@ -15,7 +21,7 @@ export class MetadataInterceptor {
     this.login_customer_id = login_customer_id;
   }
 
-  public intercept(options: any, nextCall: any) {
+  public intercept(options: grpc.CallOptions, nextCall: Function) {
     return new grpc.InterceptingCall(nextCall(options), {
       start: (metadata: grpc.Metadata, _listener: grpc.Listener, next: any) => {
         metadata.add(`authorization`, `Bearer ${this.access_token}`);
@@ -51,32 +57,75 @@ export class MetadataInterceptor {
   }
 }
 
-export class ExceptionInterceptor {
-  public intercept(options: grpc.CallOptions, nextCall: any) {
-    return new grpc.InterceptingCall(nextCall(options), {
-      start: (metadata: grpc.Metadata, _listener: grpc.Listener, next: any) => {
-        next(metadata, {
-          onReceiveMetadata(metadata: grpc.Metadata, next: any) {
-            next(metadata);
-          },
+function getGoogleAdsFailure(metadata: grpc.Metadata): GoogleAdsFailure | null {
+  if (!metadata) {
+    return null;
+  }
+  for (const key in metadata.getMap()) {
+    if (key === FAILURE_KEY) {
+      const message = metadata.get(key);
+      try {
+        const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(
+          message[0] as Uint8Array
+        );
+        return failure;
+      } catch (err) {
+        return null;
+      }
+    }
+  }
+  return null;
+}
 
-          onReceiveMessage(message: any, next: any) {
-            next(message);
-          },
+function getRequestId(metadata: grpc.Metadata): string | null {
+  if (metadata.get(REQUEST_ID_KEY)) {
+    return metadata.get(REQUEST_ID_KEY)[0] as string;
+  }
+  return null;
+}
 
-          onReceiveStatus(status: any, next: any) {
-            next(status);
-          },
-        });
-      },
+function handleGrpcFailure(status: grpc.StatusObject, next: any) {
+  const { code, metadata } = status;
 
-      sendMessage(message, next) {
-        next(message);
-      },
+  if (RETRY_STATUS_CODES.includes(code)) {
+    throw new Error(status.details);
+  }
 
-      halfClose(next) {
-        next();
+  const google_ads_failure = getGoogleAdsFailure(metadata);
+
+  if (!google_ads_failure) {
+    throw new Error(status.details);
+  }
+
+  const request_id = getRequestId(metadata);
+  const error = new GoogleAdsError("ga error", request_id, google_ads_failure);
+
+  throw error;
+}
+
+export const ExceptionInterceptor: grpc.Requester = {
+  start(metadata: grpc.Metadata, _listener: grpc.Listener, next: any) {
+    next(metadata, {
+      onReceiveStatus(status: grpc.StatusObject, next: any) {
+        if (status.code !== grpc.status.OK) {
+          handleGrpcFailure(status, next);
+        }
+        next(status);
       },
     });
+  },
+};
+
+class GoogleAdsError extends Error {
+  public request_id: string | null;
+  public failure: GoogleAdsFailure;
+
+  constructor(public message: string, request_id: string | null, failure: GoogleAdsFailure) {
+    super(message);
+    // this.stack = (new Error() as any).stack;
+
+    this.request_id = request_id;
+    this.failure = failure;
+    console.log(this.failure);
   }
 }

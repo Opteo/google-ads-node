@@ -5,9 +5,6 @@ import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
 
 const DEFAULT_VERSION = "v0";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
-// const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
-// const REQUEST_ID_KEY = "request-id";
-// const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 
 interface GoogleAdsClientOptions {
   access_token: string;
@@ -36,7 +33,7 @@ export default class GoogleAdsClient {
       this.options.developer_token,
       this.options.login_customer_id
     );
-    const exceptionInterceptor = new ExceptionInterceptor();
+    // const exceptionInterceptor = new ExceptionInterceptor();
 
     const serviceClientConstructor = (services as any)[serviceClientName];
 
@@ -45,9 +42,11 @@ export default class GoogleAdsClient {
       grpc.credentials.createSsl(),
       {
         interceptors: [
-          (options: any, nextCall: any) => metadataInterceptor.intercept(options, nextCall),
-          (options: grpc.CallOptions, nextCall: grpc.Call) =>
-            exceptionInterceptor.intercept(options, nextCall),
+          (options: grpc.CallOptions, nextCall: Function) =>
+            metadataInterceptor.intercept(options, nextCall),
+
+          (options: grpc.CallOptions, nextCall: Function) =>
+            new grpc.InterceptingCall(nextCall(options), ExceptionInterceptor),
         ],
       }
     );
