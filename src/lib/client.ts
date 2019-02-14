@@ -1,12 +1,13 @@
-// import service from "../protos/google/ads/googleads/v0/services/google_ads_service_grpc_pb";
 import grpc from "grpc";
-import { SearchGoogleAdsRequest } from "../protos/google/ads/googleads/v0/services/google_ads_service_pb";
-import * as services from "./services";
 
-import { MetadataInterceptor } from "./interceptor";
+import * as services from "./services";
+import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
 
 const DEFAULT_VERSION = "v0";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
+// const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
+// const REQUEST_ID_KEY = "request-id";
+// const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 
 interface GoogleAdsClientOptions {
   access_token: string;
@@ -16,21 +17,12 @@ interface GoogleAdsClientOptions {
 
 export default class GoogleAdsClient {
   private options: GoogleAdsClientOptions;
-  private headers: grpc.Metadata;
 
   constructor(options: GoogleAdsClientOptions) {
     this.options = options;
-
-    console.log(this.options);
-    // console.log(service);
-
-    this.headers = this.buildRequestHeaders();
-
-    console.log(this.headers);
-    // console.log(service);
   }
 
-  public getService(serviceName: string): Promise<grpc.Client> {
+  public getService(serviceName: string): any {
     const serviceClientName = `${serviceName}Client`;
 
     if (!services.hasOwnProperty(serviceClientName)) {
@@ -44,50 +36,22 @@ export default class GoogleAdsClient {
       this.options.developer_token,
       this.options.login_customer_id
     );
+    const exceptionInterceptor = new ExceptionInterceptor();
 
     const serviceClientConstructor = (services as any)[serviceClientName];
+
     const service = new serviceClientConstructor(
       GOOGLE_ADS_ENDPOINT,
       grpc.credentials.createSsl(),
       {
-        interceptors: [metadataInterceptor.intercept],
+        interceptors: [
+          (options: any, nextCall: any) => metadataInterceptor.intercept(options, nextCall),
+          (options: grpc.CallOptions, nextCall: grpc.Call) =>
+            exceptionInterceptor.intercept(options, nextCall),
+        ],
       }
     );
 
-    // const c = new grpc.Channel(GOOGLE_ADS_ENDPOINT, grpc.credentials.createSsl(), {});
-
-    const req = new SearchGoogleAdsRequest();
-    req.setCustomerId("");
-
-    return new Promise((resolve, reject) => {
-      service.search(req, null, (err: any, res: any) => {
-        if (err) {
-          console.log(err);
-          reject(err);
-        } else {
-          console.log(res);
-          resolve(service);
-        }
-      });
-    });
-
-    // return service;
-  }
-
-  public getRequestMetadata(): object {
-    return this.headers.getMap();
-  }
-
-  private buildRequestHeaders(): grpc.Metadata {
-    const headers = new grpc.Metadata();
-
-    headers.add(`Authorization`, `Bearer ${this.options.access_token}`);
-    headers.add(`developer-token`, this.options.developer_token);
-
-    if (this.options.login_customer_id) {
-      headers.add(`login-customer-id`, this.options.login_customer_id);
-    }
-
-    return headers;
+    return service;
   }
 }
