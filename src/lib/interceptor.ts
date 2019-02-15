@@ -1,6 +1,6 @@
 import grpc from "grpc";
 
-import { GoogleAdsFailure } from "../protos/google/ads/googleads/v0/errors/errors_pb";
+import { GoogleAdsFailure } from "./types";
 
 const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
@@ -84,7 +84,7 @@ function getRequestId(metadata: grpc.Metadata): string | null {
   return null;
 }
 
-function handleGrpcFailure(status: grpc.StatusObject) {
+function handleGrpcFailure(status: grpc.StatusObject): Error {
   const { code, metadata } = status;
 
   if (RETRY_STATUS_CODES.includes(code)) {
@@ -96,7 +96,8 @@ function handleGrpcFailure(status: grpc.StatusObject) {
 
   if (!ga_failure) {
     /* Throw error with status details if not a Google Ads API error */
-    throw new Error(status.details);
+    // throw new Error(status.details);
+    return new Error(status.details);
   }
 
   const request_id = getRequestId(metadata);
@@ -111,16 +112,27 @@ function handleGrpcFailure(status: grpc.StatusObject) {
     error = new ClientError(status.details, request_id, ga_failure);
   }
 
-  throw error;
+  return error;
+  // Promise.reject(error);
 }
 
 export const ExceptionInterceptor: grpc.Requester = {
   start(metadata: grpc.Metadata, _listener: grpc.Listener, next: any) {
     next(metadata, {
       onReceiveStatus(status: grpc.StatusObject, next: any) {
+        console.log("--> onRecieveStatus", status.code);
+
         if (status.code !== grpc.status.OK) {
-          handleGrpcFailure(status);
+          const error = handleGrpcFailure(status);
+          console.log(error);
+
+          // try {
+          //   next(status);
+          // } catch (err) {
+          //   console.log("ERROR HERE", err);
+          // }
         } else {
+          console.log("around here");
           next(status);
         }
       },
