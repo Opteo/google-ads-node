@@ -84,21 +84,32 @@ function getRequestId(metadata: grpc.Metadata): string | null {
   return null;
 }
 
-function handleGrpcFailure(status: grpc.StatusObject, next: any) {
+function handleGrpcFailure(status: grpc.StatusObject) {
   const { code, metadata } = status;
 
   if (RETRY_STATUS_CODES.includes(code)) {
+    /* Throw error if code one of INTERNAL or RESOURCE_EXHAUSTED */
     throw new Error(status.details);
   }
 
-  const google_ads_failure = getGoogleAdsFailure(metadata);
+  const ga_failure = getGoogleAdsFailure(metadata);
 
-  if (!google_ads_failure) {
+  if (!ga_failure) {
+    /* Throw error with status details if not a Google Ads API error */
     throw new Error(status.details);
   }
 
   const request_id = getRequestId(metadata);
-  const error = new GoogleAdsError("ga error", request_id, google_ads_failure);
+  let error: ClientError;
+
+  try {
+    /* Try to parse the error */
+    const error_message = ga_failure.toString().split(",")[1];
+    error = new ClientError(error_message, request_id, ga_failure);
+  } catch (err) {
+    /* Use the original error message if parsing fails */
+    error = new ClientError(status.details, request_id, ga_failure);
+  }
 
   throw error;
 }
@@ -108,24 +119,23 @@ export const ExceptionInterceptor: grpc.Requester = {
     next(metadata, {
       onReceiveStatus(status: grpc.StatusObject, next: any) {
         if (status.code !== grpc.status.OK) {
-          handleGrpcFailure(status, next);
+          handleGrpcFailure(status);
+        } else {
+          next(status);
         }
-        next(status);
       },
     });
   },
 };
 
-class GoogleAdsError extends Error {
+class ClientError extends Error {
   public request_id: string | null;
   public failure: GoogleAdsFailure;
 
   constructor(public message: string, request_id: string | null, failure: GoogleAdsFailure) {
     super(message);
     // this.stack = (new Error() as any).stack;
-
     this.request_id = request_id;
     this.failure = failure;
-    console.log(this.failure);
   }
 }
