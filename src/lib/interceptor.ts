@@ -66,6 +66,7 @@ export class ExceptionInterceptor {
     return new grpc.ListenerBuilder()
       .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
         if (status.code !== grpc.status.OK) {
+          // TODO: Throw this error
           const error = this.handleGrpcFailure(status);
           const errorStatus = new grpc.StatusBuilder()
             .withCode(status.code)
@@ -128,7 +129,8 @@ export class ExceptionInterceptor {
 
     try {
       /* Try to parse the error */
-      const error_message = ga_failure.toString().split(",")[1];
+      const error_pieces = ga_failure.toString().split(",");
+      const error_message = error_pieces[error_pieces.length - 1];
       error = new ClientError(error_message, request_id, ga_failure);
     } catch (err) {
       /* Use the original error message if parsing fails */
