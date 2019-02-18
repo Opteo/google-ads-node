@@ -16,6 +16,60 @@ $ yarn add google-ads-node
 ```
 
 ## Example
+```javascript
+import GoogleAdsClient from "./client";
+import { SearchGoogleAdsRequest, SearchGoogleAdsResponse, Campaign, Metrics } from "./types";
+
+const client = new GoogleAdsClient({
+  access_token: "<ACCESS_TOKEN>",
+  developer_token: "<DEVELOPER_TOKEN>",
+  login_customer_id: "<LOGIN_CUSTOMER_ID>",
+});
+const customerId = "1234567890";
+
+async function example() {
+  const service = client.getService("GoogleAdsService");
+
+  const request = new SearchGoogleAdsRequest();
+  request.setQuery(`
+    SELECT 
+      campaign.id,
+      campaign.name, 
+      campaign.status, 
+      segments.device, 
+      metrics.impressions, 
+      metrics.clicks,
+      metrics.ctr, 
+      metrics.average_cpc, 
+      metrics.cost_micros
+    FROM campaign
+  `);
+  request.setCustomerId(customerId);
+  request.setPageSize(12);
+
+  service.search(request, null, (err: Error, res: SearchGoogleAdsResponse) => {
+    if (err) {
+      console.log("--- Error in search ---");
+      console.log(err);
+    } else {
+      console.log("Results:");
+      for (const row of res.getResultsList()) {
+        const campaign: Campaign = row.getCampaign() as Campaign;
+        const metrics: Metrics = row.getMetrics() as Metrics;
+
+        if ((metrics.getClicks() as any) > 0) {
+          console.log(`Campaign "${campaign.getName()}" has ${metrics.getClicks()} clicks.`);
+        } else {
+          console.log(`Campaign "${campaign.getName()}" has no clicks.`);
+        }
+      }
+    }
+  });
+}
+
+example();
+
+```
 
 ## Contributing
 
