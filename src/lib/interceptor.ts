@@ -56,12 +56,8 @@ export class ExceptionInterceptor {
   private buildRequester(): grpc.Requester {
     return new grpc.RequesterBuilder()
       .withStart((metadata: grpc.Metadata, _listener: grpc.Listener, next: Function) => {
-        try {
-          const newListener = this.buildListener();
-          next(metadata, newListener);
-        } catch (err) {
-          console.log("error in listener");
-        }
+        const newListener = this.buildListener();
+        next(metadata, newListener);
       })
       .build();
   }
@@ -71,9 +67,12 @@ export class ExceptionInterceptor {
       .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
         if (status.code !== grpc.status.OK) {
           const error = this.handleGrpcFailure(status);
-          console.log(error.message);
-          // throw error;
-          next(status);
+          const errorStatus = new grpc.StatusBuilder()
+            .withCode(status.code)
+            .withDetails(error.message)
+            .withMetadata(status.metadata)
+            .build();
+          next(errorStatus);
         } else {
           next(status);
         }

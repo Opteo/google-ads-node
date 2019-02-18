@@ -1,4 +1,4 @@
-import grpc, { ListenerBuilder } from "grpc";
+import grpc from "grpc";
 
 import * as services from "./services";
 import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
