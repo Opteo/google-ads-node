@@ -33,53 +33,19 @@ export default class GoogleAdsClient {
       this.options.developer_token,
       this.options.login_customer_id
     );
-    // const exceptionInterceptor = new ExceptionInterceptor();
+    const exceptionInterceptor = new ExceptionInterceptor();
 
     const serviceClientConstructor = (services as any)[serviceClientName];
-
-    const requester = new grpc.RequesterBuilder()
-      .withStart((metadata: grpc.Metadata, listener: grpc.Listener, next: Function) => {
-        // listener.onReceiveStatus(status: grpc.StatusObject, next: Function)
-
-        const newListener = new grpc.ListenerBuilder()
-          .withOnReceiveStatus((status: any, next: Function) => {
-            console.log(status);
-
-            next(status);
-          })
-          .build();
-
-        //   var newListener = {
-        //     onReceiveMetadata: function(metadata, next) {
-        //         next(metadata);
-        //     },
-        //     onReceiveMessage: function(message, next) {
-        //         next(message);
-        //     },
-        //     onReceiveStatus: function(status, next) {
-        //         next(status);
-        //     }
-        // };
-        // next(metadata, newListener);
-
-        next(metadata, newListener);
-      })
-      .withSendMessage((message, next) => next(message))
-      .withHalfClose((next: any) => next())
-      .withCancel((next: any) => next())
-      .build();
 
     const service = new serviceClientConstructor(
       GOOGLE_ADS_ENDPOINT,
       grpc.credentials.createSsl(),
       {
         interceptors: [
-          // (options: grpc.CallOptions, nextCall: Function) =>
-          //   metadataInterceptor.intercept(options, nextCall),
-
-          // (options: grpc.CallOptions, nextCall: Function) =>
-          //   new grpc.InterceptingCall(nextCall(options), ExceptionInterceptor),
-          requester,
+          (options: grpc.CallOptions, nextCall: Function) =>
+            metadataInterceptor.intercept(options, nextCall),
+          (options: grpc.CallOptions, nextCall: Function) =>
+            exceptionInterceptor.intercept(options, nextCall),
         ],
       }
     );
