@@ -1,4 +1,4 @@
-> ⚠️ **Caution: This project is still under heavy development.**
+> ⚠️ **Caution: This project is under heavy development, API still subject to change.**
 
 # google-ads-node
 
