@@ -30,9 +30,8 @@ export class MetadataInterceptor {
   private buildRequester(): grpc.Requester {
     return new grpc.RequesterBuilder()
       .withStart((metadata: grpc.Metadata, listener: grpc.Listener, next: Function) => {
-        metadata.add(`authorization`, `Bearer ${this.access_token}`);
-        metadata.add(`developer-token`, `${this.developer_token}`);
-
+        metadata.add(`Authorization`, `Bearer ${this.access_token}`);
+        metadata.add(`developer-token`, this.developer_token);
         if (this.login_customer_id) {
           metadata.add(`login-customer-id`, this.login_customer_id);
         }
