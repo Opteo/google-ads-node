@@ -1,7 +1,7 @@
 import grpc from "grpc";
 
-import * as services from "./services";
 import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
+import * as services from "./services";
 
 const DEFAULT_VERSION = "v0";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
@@ -42,10 +42,14 @@ export default class GoogleAdsClient {
       grpc.credentials.createSsl(),
       {
         interceptors: [
-          (options: grpc.CallOptions, nextCall: Function) =>
-            metadataInterceptor.intercept(options, nextCall),
-          (options: grpc.CallOptions, nextCall: Function) =>
-            exceptionInterceptor.intercept(options, nextCall),
+          (
+            options: grpc.CallOptions,
+            nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+          ) => metadataInterceptor.intercept(options, nextCall),
+          (
+            options: grpc.CallOptions,
+            nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+          ) => exceptionInterceptor.intercept(options, nextCall),
         ],
       }
     );

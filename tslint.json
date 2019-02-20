@@ -6,7 +6,22 @@
     // waiting on https://github.com/palantir/tslint/pull/3708
     "no-implicit-dependencies": [true, "dev"],
     "no-console": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-snake-case"
+    ],
+    "max-classes-per-file": [true, 3],
+    "ordered-imports": [
+      true,
+      {
+        "named-imports-order": "any"
+      }
+    ],
+    "ban-types": false
   },
   "linterOptions": {
     "exclude": ["src/protos/**/*.ts", "src/protos/**/*.d.ts", "src/protos/**/*.js"]

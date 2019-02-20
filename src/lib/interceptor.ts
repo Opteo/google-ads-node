@@ -6,6 +6,8 @@ const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 
+type NextCall = (options: grpc.CallOptions) => grpc.InterceptingCall | null;
+
 export class MetadataInterceptor {
   private access_token: string;
   private developer_token: string;
@@ -23,7 +25,7 @@ export class MetadataInterceptor {
     this.requestInterceptor = this.buildRequester();
   }
 
-  public intercept(options: grpc.CallOptions, nextCall: Function) {
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
     return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
   }
 
@@ -48,7 +50,7 @@ export class ExceptionInterceptor {
     this.requestInterceptor = this.buildRequester();
   }
 
-  public intercept(options: grpc.CallOptions, nextCall: Function) {
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
     return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
   }
 
@@ -65,7 +67,7 @@ export class ExceptionInterceptor {
     return new grpc.ListenerBuilder()
       .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
         if (status.code !== grpc.status.OK) {
-          // TODO: Throw this error
+          // TODO: Throw this error instead of returning a new status?
           const error = this.handleGrpcFailure(status);
           const errorStatus = new grpc.StatusBuilder()
             .withCode(status.code)
