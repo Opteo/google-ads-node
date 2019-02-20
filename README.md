@@ -52,7 +52,7 @@ async function example() {
   request.setCustomerId(customerId);
   request.setPageSize(12);
 
-  service.search(request, null, (err: Error, res: SearchGoogleAdsResponse) => {
+  service.search(request, (err: Error, res: SearchGoogleAdsResponse) => {
     if (err) {
       console.log("--- Error in search ---");
       console.log(err);
