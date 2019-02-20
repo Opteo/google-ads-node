@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_KeywordPlanAdGroup(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_keyword_plan_ad_group_pb.KeywordPlanAdGroup)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.KeywordPlanAdGroup');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_KeywordPlanAdGroup(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetKeywordPlanAdGroupRequest
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_ad_group_service_pb.GetKeywordPlanAdGroupRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetKeywordPlanAdGroupRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetKeywordPlanAdGroupRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlanAdGroupsReq
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_ad_group_service_pb.MutateKeywordPlanAdGroupsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlanAdGroupsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlanAdGroupsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlanAdGroupsRes
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_ad_group_service_pb.MutateKeywordPlanAdGroupsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlanAdGroupsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlanAdGroupsResponse(buffer_arg) {

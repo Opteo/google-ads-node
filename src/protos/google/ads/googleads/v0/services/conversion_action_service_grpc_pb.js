@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_ConversionAction(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_conversion_action_pb.ConversionAction)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.ConversionAction');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_ConversionAction(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetConversionActionRequest(a
   if (!(arg instanceof google_ads_googleads_v0_services_conversion_action_service_pb.GetConversionActionRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetConversionActionRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetConversionActionRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateConversionActionsReque
   if (!(arg instanceof google_ads_googleads_v0_services_conversion_action_service_pb.MutateConversionActionsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateConversionActionsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateConversionActionsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateConversionActionsRespo
   if (!(arg instanceof google_ads_googleads_v0_services_conversion_action_service_pb.MutateConversionActionsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateConversionActionsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateConversionActionsResponse(buffer_arg) {

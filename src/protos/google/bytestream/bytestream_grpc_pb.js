@@ -25,7 +25,7 @@ function serialize_google_bytestream_QueryWriteStatusRequest(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.QueryWriteStatusRequest)) {
     throw new Error('Expected argument of type google.bytestream.QueryWriteStatusRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_QueryWriteStatusRequest(buffer_arg) {
@@ -36,7 +36,7 @@ function serialize_google_bytestream_QueryWriteStatusResponse(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.QueryWriteStatusResponse)) {
     throw new Error('Expected argument of type google.bytestream.QueryWriteStatusResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_QueryWriteStatusResponse(buffer_arg) {
@@ -47,7 +47,7 @@ function serialize_google_bytestream_ReadRequest(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.ReadRequest)) {
     throw new Error('Expected argument of type google.bytestream.ReadRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_ReadRequest(buffer_arg) {
@@ -58,7 +58,7 @@ function serialize_google_bytestream_ReadResponse(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.ReadResponse)) {
     throw new Error('Expected argument of type google.bytestream.ReadResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_ReadResponse(buffer_arg) {
@@ -69,7 +69,7 @@ function serialize_google_bytestream_WriteRequest(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.WriteRequest)) {
     throw new Error('Expected argument of type google.bytestream.WriteRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_WriteRequest(buffer_arg) {
@@ -80,7 +80,7 @@ function serialize_google_bytestream_WriteResponse(arg) {
   if (!(arg instanceof google_bytestream_bytestream_pb.WriteResponse)) {
     throw new Error('Expected argument of type google.bytestream.WriteResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_bytestream_WriteResponse(buffer_arg) {

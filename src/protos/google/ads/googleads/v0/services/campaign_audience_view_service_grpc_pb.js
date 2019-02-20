@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_CampaignAudienceView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_campaign_audience_view_pb.CampaignAudienceView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CampaignAudienceView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CampaignAudienceView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetCampaignAudienceViewReque
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_audience_view_service_pb.GetCampaignAudienceViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCampaignAudienceViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCampaignAudienceViewRequest(buffer_arg) {

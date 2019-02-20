@@ -27,7 +27,7 @@ function serialize_google_longrunning_CancelOperationRequest(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.CancelOperationRequest)) {
     throw new Error('Expected argument of type google.longrunning.CancelOperationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_CancelOperationRequest(buffer_arg) {
@@ -38,7 +38,7 @@ function serialize_google_longrunning_DeleteOperationRequest(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.DeleteOperationRequest)) {
     throw new Error('Expected argument of type google.longrunning.DeleteOperationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_DeleteOperationRequest(buffer_arg) {
@@ -49,7 +49,7 @@ function serialize_google_longrunning_GetOperationRequest(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.GetOperationRequest)) {
     throw new Error('Expected argument of type google.longrunning.GetOperationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_GetOperationRequest(buffer_arg) {
@@ -60,7 +60,7 @@ function serialize_google_longrunning_ListOperationsRequest(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.ListOperationsRequest)) {
     throw new Error('Expected argument of type google.longrunning.ListOperationsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_ListOperationsRequest(buffer_arg) {
@@ -71,7 +71,7 @@ function serialize_google_longrunning_ListOperationsResponse(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.ListOperationsResponse)) {
     throw new Error('Expected argument of type google.longrunning.ListOperationsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_ListOperationsResponse(buffer_arg) {
@@ -82,7 +82,7 @@ function serialize_google_longrunning_Operation(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.Operation)) {
     throw new Error('Expected argument of type google.longrunning.Operation');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_longrunning_Operation(buffer_arg) {
@@ -93,7 +93,7 @@ function serialize_google_protobuf_Empty(arg) {
   if (!(arg instanceof google_protobuf_empty_pb.Empty)) {
     throw new Error('Expected argument of type google.protobuf.Empty');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_protobuf_Empty(buffer_arg) {

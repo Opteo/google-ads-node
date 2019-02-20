@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_LanguageConstant(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_language_constant_pb.LanguageConstant)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.LanguageConstant');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_LanguageConstant(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetLanguageConstantRequest(a
   if (!(arg instanceof google_ads_googleads_v0_services_language_constant_service_pb.GetLanguageConstantRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetLanguageConstantRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetLanguageConstantRequest(buffer_arg) {

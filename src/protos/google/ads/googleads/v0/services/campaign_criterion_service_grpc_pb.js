@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_CampaignCriterion(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_campaign_criterion_pb.CampaignCriterion)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CampaignCriterion');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CampaignCriterion(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetCampaignCriterionRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_criterion_service_pb.GetCampaignCriterionRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCampaignCriterionRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCampaignCriterionRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignCriteriaReques
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_criterion_service_pb.MutateCampaignCriteriaRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignCriteriaRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignCriteriaRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignCriteriaRespon
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_criterion_service_pb.MutateCampaignCriteriaResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignCriteriaResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignCriteriaResponse(buffer_arg) {

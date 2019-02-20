@@ -30,7 +30,7 @@ function serialize_google_ads_googleads_v0_resources_Recommendation(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_recommendation_pb.Recommendation)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.Recommendation');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_Recommendation(buffer_arg) {
@@ -41,7 +41,7 @@ function serialize_google_ads_googleads_v0_services_ApplyRecommendationRequest(a
   if (!(arg instanceof google_ads_googleads_v0_services_recommendation_service_pb.ApplyRecommendationRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ApplyRecommendationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ApplyRecommendationRequest(buffer_arg) {
@@ -52,7 +52,7 @@ function serialize_google_ads_googleads_v0_services_ApplyRecommendationResponse(
   if (!(arg instanceof google_ads_googleads_v0_services_recommendation_service_pb.ApplyRecommendationResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ApplyRecommendationResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ApplyRecommendationResponse(buffer_arg) {
@@ -63,7 +63,7 @@ function serialize_google_ads_googleads_v0_services_DismissRecommendationRequest
   if (!(arg instanceof google_ads_googleads_v0_services_recommendation_service_pb.DismissRecommendationRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.DismissRecommendationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_DismissRecommendationRequest(buffer_arg) {
@@ -74,7 +74,7 @@ function serialize_google_ads_googleads_v0_services_DismissRecommendationRespons
   if (!(arg instanceof google_ads_googleads_v0_services_recommendation_service_pb.DismissRecommendationResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.DismissRecommendationResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_DismissRecommendationResponse(buffer_arg) {
@@ -85,7 +85,7 @@ function serialize_google_ads_googleads_v0_services_GetRecommendationRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_recommendation_service_pb.GetRecommendationRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetRecommendationRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetRecommendationRequest(buffer_arg) {

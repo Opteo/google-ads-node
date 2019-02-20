@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_AdGroupBidModifier(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_ad_group_bid_modifier_pb.AdGroupBidModifier)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AdGroupBidModifier');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AdGroupBidModifier(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetAdGroupBidModifierRequest
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_bid_modifier_service_pb.GetAdGroupBidModifierRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAdGroupBidModifierRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAdGroupBidModifierRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupBidModifiersReq
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_bid_modifier_service_pb.MutateAdGroupBidModifiersRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupBidModifiersRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupBidModifiersRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupBidModifiersRes
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_bid_modifier_service_pb.MutateAdGroupBidModifiersResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupBidModifiersResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupBidModifiersResponse(buffer_arg) {

@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_OperatingSystemVersionConst
   if (!(arg instanceof google_ads_googleads_v0_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.OperatingSystemVersionConstant');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_OperatingSystemVersionConstant(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetOperatingSystemVersionCon
   if (!(arg instanceof google_ads_googleads_v0_services_operating_system_version_constant_service_pb.GetOperatingSystemVersionConstantRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetOperatingSystemVersionConstantRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetOperatingSystemVersionConstantRequest(buffer_arg) {

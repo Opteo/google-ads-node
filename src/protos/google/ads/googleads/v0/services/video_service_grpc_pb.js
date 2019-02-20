@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_Video(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_video_pb.Video)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.Video');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_Video(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetVideoRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_video_service_pb.GetVideoRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetVideoRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetVideoRequest(buffer_arg) {

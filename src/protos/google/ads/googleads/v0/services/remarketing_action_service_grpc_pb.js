@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_RemarketingAction(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_remarketing_action_pb.RemarketingAction)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.RemarketingAction');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_RemarketingAction(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetRemarketingActionRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_remarketing_action_service_pb.GetRemarketingActionRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetRemarketingActionRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetRemarketingActionRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateRemarketingActionsRequ
   if (!(arg instanceof google_ads_googleads_v0_services_remarketing_action_service_pb.MutateRemarketingActionsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateRemarketingActionsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateRemarketingActionsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateRemarketingActionsResp
   if (!(arg instanceof google_ads_googleads_v0_services_remarketing_action_service_pb.MutateRemarketingActionsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateRemarketingActionsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateRemarketingActionsResponse(buffer_arg) {

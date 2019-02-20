@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_SearchTermView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_search_term_view_pb.SearchTermView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.SearchTermView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_SearchTermView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetSearchTermViewRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_search_term_view_service_pb.GetSearchTermViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetSearchTermViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetSearchTermViewRequest(buffer_arg) {

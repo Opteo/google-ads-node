@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_GenderView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_gender_view_pb.GenderView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.GenderView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_GenderView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetGenderViewRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_gender_view_service_pb.GetGenderViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetGenderViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetGenderViewRequest(buffer_arg) {

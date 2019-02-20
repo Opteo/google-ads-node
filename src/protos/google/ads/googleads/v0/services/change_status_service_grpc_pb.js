@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_ChangeStatus(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_change_status_pb.ChangeStatus)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.ChangeStatus');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_ChangeStatus(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetChangeStatusRequest(arg) 
   if (!(arg instanceof google_ads_googleads_v0_services_change_status_service_pb.GetChangeStatusRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetChangeStatusRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetChangeStatusRequest(buffer_arg) {

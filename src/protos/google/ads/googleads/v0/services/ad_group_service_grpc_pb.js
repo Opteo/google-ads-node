@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_AdGroup(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_ad_group_pb.AdGroup)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AdGroup');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AdGroup(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetAdGroupRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_service_pb.GetAdGroupRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAdGroupRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAdGroupRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupsRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_service_pb.MutateAdGroupsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupsResponse(arg) 
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_service_pb.MutateAdGroupsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupsResponse(buffer_arg) {

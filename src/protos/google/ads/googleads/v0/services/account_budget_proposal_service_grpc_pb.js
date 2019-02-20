@@ -27,7 +27,7 @@ function serialize_google_ads_googleads_v0_resources_AccountBudgetProposal(arg) 
   if (!(arg instanceof google_ads_googleads_v0_resources_account_budget_proposal_pb.AccountBudgetProposal)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AccountBudgetProposal');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AccountBudgetProposal(buffer_arg) {
@@ -38,7 +38,7 @@ function serialize_google_ads_googleads_v0_services_GetAccountBudgetProposalRequ
   if (!(arg instanceof google_ads_googleads_v0_services_account_budget_proposal_service_pb.GetAccountBudgetProposalRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAccountBudgetProposalRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAccountBudgetProposalRequest(buffer_arg) {
@@ -49,7 +49,7 @@ function serialize_google_ads_googleads_v0_services_MutateAccountBudgetProposalR
   if (!(arg instanceof google_ads_googleads_v0_services_account_budget_proposal_service_pb.MutateAccountBudgetProposalRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAccountBudgetProposalRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAccountBudgetProposalRequest(buffer_arg) {
@@ -60,7 +60,7 @@ function serialize_google_ads_googleads_v0_services_MutateAccountBudgetProposalR
   if (!(arg instanceof google_ads_googleads_v0_services_account_budget_proposal_service_pb.MutateAccountBudgetProposalResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAccountBudgetProposalResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAccountBudgetProposalResponse(buffer_arg) {

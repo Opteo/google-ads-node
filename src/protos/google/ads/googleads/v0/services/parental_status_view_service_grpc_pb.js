@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_ParentalStatusView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_parental_status_view_pb.ParentalStatusView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.ParentalStatusView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_ParentalStatusView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetParentalStatusViewRequest
   if (!(arg instanceof google_ads_googleads_v0_services_parental_status_view_service_pb.GetParentalStatusViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetParentalStatusViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetParentalStatusViewRequest(buffer_arg) {

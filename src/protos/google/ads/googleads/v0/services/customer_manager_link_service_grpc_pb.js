@@ -27,7 +27,7 @@ function serialize_google_ads_googleads_v0_resources_CustomerManagerLink(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_customer_manager_link_pb.CustomerManagerLink)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CustomerManagerLink');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CustomerManagerLink(buffer_arg) {
@@ -38,7 +38,7 @@ function serialize_google_ads_googleads_v0_services_GetCustomerManagerLinkReques
   if (!(arg instanceof google_ads_googleads_v0_services_customer_manager_link_service_pb.GetCustomerManagerLinkRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCustomerManagerLinkRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCustomerManagerLinkRequest(buffer_arg) {
@@ -49,7 +49,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerManagerLinkReq
   if (!(arg instanceof google_ads_googleads_v0_services_customer_manager_link_service_pb.MutateCustomerManagerLinkRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerManagerLinkRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerManagerLinkRequest(buffer_arg) {
@@ -60,7 +60,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerManagerLinkRes
   if (!(arg instanceof google_ads_googleads_v0_services_customer_manager_link_service_pb.MutateCustomerManagerLinkResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerManagerLinkResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerManagerLinkResponse(buffer_arg) {

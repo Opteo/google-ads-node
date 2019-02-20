@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_AdGroupCriterion(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_ad_group_criterion_pb.AdGroupCriterion)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AdGroupCriterion');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AdGroupCriterion(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetAdGroupCriterionRequest(a
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_criterion_service_pb.GetAdGroupCriterionRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAdGroupCriterionRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAdGroupCriterionRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupCriteriaRequest
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_criterion_service_pb.MutateAdGroupCriteriaRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupCriteriaRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupCriteriaRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateAdGroupCriteriaRespons
   if (!(arg instanceof google_ads_googleads_v0_services_ad_group_criterion_service_pb.MutateAdGroupCriteriaResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateAdGroupCriteriaResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateAdGroupCriteriaResponse(buffer_arg) {

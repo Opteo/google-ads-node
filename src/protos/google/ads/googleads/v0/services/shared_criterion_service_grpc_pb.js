@@ -28,7 +28,7 @@ function serialize_google_ads_googleads_v0_resources_SharedCriterion(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_shared_criterion_pb.SharedCriterion)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.SharedCriterion');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_SharedCriterion(buffer_arg) {
@@ -39,7 +39,7 @@ function serialize_google_ads_googleads_v0_services_GetSharedCriterionRequest(ar
   if (!(arg instanceof google_ads_googleads_v0_services_shared_criterion_service_pb.GetSharedCriterionRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetSharedCriterionRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetSharedCriterionRequest(buffer_arg) {
@@ -50,7 +50,7 @@ function serialize_google_ads_googleads_v0_services_MutateSharedCriteriaRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_shared_criterion_service_pb.MutateSharedCriteriaRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateSharedCriteriaRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateSharedCriteriaRequest(buffer_arg) {
@@ -61,7 +61,7 @@ function serialize_google_ads_googleads_v0_services_MutateSharedCriteriaResponse
   if (!(arg instanceof google_ads_googleads_v0_services_shared_criterion_service_pb.MutateSharedCriteriaResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateSharedCriteriaResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateSharedCriteriaResponse(buffer_arg) {

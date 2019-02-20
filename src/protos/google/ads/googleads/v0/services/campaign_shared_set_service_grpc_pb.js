@@ -28,7 +28,7 @@ function serialize_google_ads_googleads_v0_resources_CampaignSharedSet(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_campaign_shared_set_pb.CampaignSharedSet)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CampaignSharedSet');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CampaignSharedSet(buffer_arg) {
@@ -39,7 +39,7 @@ function serialize_google_ads_googleads_v0_services_GetCampaignSharedSetRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_shared_set_service_pb.GetCampaignSharedSetRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCampaignSharedSetRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCampaignSharedSetRequest(buffer_arg) {
@@ -50,7 +50,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignSharedSetsRequ
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_shared_set_service_pb.MutateCampaignSharedSetsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignSharedSetsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignSharedSetsRequest(buffer_arg) {
@@ -61,7 +61,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignSharedSetsResp
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_shared_set_service_pb.MutateCampaignSharedSetsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignSharedSetsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignSharedSetsResponse(buffer_arg) {

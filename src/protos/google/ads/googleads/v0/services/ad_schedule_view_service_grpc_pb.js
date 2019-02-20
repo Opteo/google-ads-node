@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_AdScheduleView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_ad_schedule_view_pb.AdScheduleView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AdScheduleView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AdScheduleView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetAdScheduleViewRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_ad_schedule_view_service_pb.GetAdScheduleViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAdScheduleViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAdScheduleViewRequest(buffer_arg) {

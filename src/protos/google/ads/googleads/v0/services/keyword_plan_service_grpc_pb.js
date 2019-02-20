@@ -30,7 +30,7 @@ function serialize_google_ads_googleads_v0_resources_KeywordPlan(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_keyword_plan_pb.KeywordPlan)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.KeywordPlan');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_KeywordPlan(buffer_arg) {
@@ -41,7 +41,7 @@ function serialize_google_ads_googleads_v0_services_GenerateForecastMetricsReque
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.GenerateForecastMetricsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateForecastMetricsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateForecastMetricsRequest(buffer_arg) {
@@ -52,7 +52,7 @@ function serialize_google_ads_googleads_v0_services_GenerateForecastMetricsRespo
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.GenerateForecastMetricsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateForecastMetricsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateForecastMetricsResponse(buffer_arg) {
@@ -63,7 +63,7 @@ function serialize_google_ads_googleads_v0_services_GenerateHistoricalMetricsReq
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.GenerateHistoricalMetricsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateHistoricalMetricsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateHistoricalMetricsRequest(buffer_arg) {
@@ -74,7 +74,7 @@ function serialize_google_ads_googleads_v0_services_GenerateHistoricalMetricsRes
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.GenerateHistoricalMetricsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateHistoricalMetricsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateHistoricalMetricsResponse(buffer_arg) {
@@ -85,7 +85,7 @@ function serialize_google_ads_googleads_v0_services_GetKeywordPlanRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.GetKeywordPlanRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetKeywordPlanRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetKeywordPlanRequest(buffer_arg) {
@@ -96,7 +96,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlansRequest(ar
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.MutateKeywordPlansRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlansRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlansRequest(buffer_arg) {
@@ -107,7 +107,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlansResponse(a
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_service_pb.MutateKeywordPlansResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlansResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlansResponse(buffer_arg) {

@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_AccountBudget(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_account_budget_pb.AccountBudget)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.AccountBudget');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_AccountBudget(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetAccountBudgetRequest(arg)
   if (!(arg instanceof google_ads_googleads_v0_services_account_budget_service_pb.GetAccountBudgetRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetAccountBudgetRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetAccountBudgetRequest(buffer_arg) {

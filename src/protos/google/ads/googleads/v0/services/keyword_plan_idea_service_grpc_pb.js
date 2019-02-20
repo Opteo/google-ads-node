@@ -28,7 +28,7 @@ function serialize_google_ads_googleads_v0_services_GenerateKeywordIdeaResponse(
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_idea_service_pb.GenerateKeywordIdeaResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateKeywordIdeaResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateKeywordIdeaResponse(buffer_arg) {
@@ -39,7 +39,7 @@ function serialize_google_ads_googleads_v0_services_GenerateKeywordIdeasRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_idea_service_pb.GenerateKeywordIdeasRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GenerateKeywordIdeasRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GenerateKeywordIdeasRequest(buffer_arg) {

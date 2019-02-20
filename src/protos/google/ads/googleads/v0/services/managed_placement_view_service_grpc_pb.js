@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_ManagedPlacementView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_managed_placement_view_pb.ManagedPlacementView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.ManagedPlacementView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_ManagedPlacementView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetManagedPlacementViewReque
   if (!(arg instanceof google_ads_googleads_v0_services_managed_placement_view_service_pb.GetManagedPlacementViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetManagedPlacementViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetManagedPlacementViewRequest(buffer_arg) {

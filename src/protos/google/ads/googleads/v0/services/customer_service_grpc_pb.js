@@ -28,7 +28,7 @@ function serialize_google_ads_googleads_v0_resources_Customer(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_customer_pb.Customer)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.Customer');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_Customer(buffer_arg) {
@@ -39,7 +39,7 @@ function serialize_google_ads_googleads_v0_services_CreateCustomerClientRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.CreateCustomerClientRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.CreateCustomerClientRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_CreateCustomerClientRequest(buffer_arg) {
@@ -50,7 +50,7 @@ function serialize_google_ads_googleads_v0_services_CreateCustomerClientResponse
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.CreateCustomerClientResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.CreateCustomerClientResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_CreateCustomerClientResponse(buffer_arg) {
@@ -61,7 +61,7 @@ function serialize_google_ads_googleads_v0_services_GetCustomerRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.GetCustomerRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCustomerRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCustomerRequest(buffer_arg) {
@@ -72,7 +72,7 @@ function serialize_google_ads_googleads_v0_services_ListAccessibleCustomersReque
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.ListAccessibleCustomersRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ListAccessibleCustomersRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ListAccessibleCustomersRequest(buffer_arg) {
@@ -83,7 +83,7 @@ function serialize_google_ads_googleads_v0_services_ListAccessibleCustomersRespo
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.ListAccessibleCustomersResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ListAccessibleCustomersResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ListAccessibleCustomersResponse(buffer_arg) {
@@ -94,7 +94,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.MutateCustomerRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerRequest(buffer_arg) {
@@ -105,7 +105,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerResponse(arg) 
   if (!(arg instanceof google_ads_googleads_v0_services_customer_service_pb.MutateCustomerResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerResponse(buffer_arg) {

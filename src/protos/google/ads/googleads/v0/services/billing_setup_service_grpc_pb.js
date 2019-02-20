@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_BillingSetup(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_billing_setup_pb.BillingSetup)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.BillingSetup');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_BillingSetup(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetBillingSetupRequest(arg) 
   if (!(arg instanceof google_ads_googleads_v0_services_billing_setup_service_pb.GetBillingSetupRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetBillingSetupRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetBillingSetupRequest(buffer_arg) {
@@ -48,7 +48,7 @@ function serialize_google_ads_googleads_v0_services_MutateBillingSetupRequest(ar
   if (!(arg instanceof google_ads_googleads_v0_services_billing_setup_service_pb.MutateBillingSetupRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateBillingSetupRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateBillingSetupRequest(buffer_arg) {
@@ -59,7 +59,7 @@ function serialize_google_ads_googleads_v0_services_MutateBillingSetupResponse(a
   if (!(arg instanceof google_ads_googleads_v0_services_billing_setup_service_pb.MutateBillingSetupResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateBillingSetupResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateBillingSetupResponse(buffer_arg) {

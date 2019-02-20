@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_CarrierConstant(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_carrier_constant_pb.CarrierConstant)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CarrierConstant');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CarrierConstant(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetCarrierConstantRequest(ar
   if (!(arg instanceof google_ads_googleads_v0_services_carrier_constant_service_pb.GetCarrierConstantRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCarrierConstantRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCarrierConstantRequest(buffer_arg) {

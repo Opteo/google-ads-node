@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_UserList(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_user_list_pb.UserList)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.UserList');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_UserList(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetUserListRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_user_list_service_pb.GetUserListRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetUserListRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetUserListRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateUserListsRequest(arg) 
   if (!(arg instanceof google_ads_googleads_v0_services_user_list_service_pb.MutateUserListsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateUserListsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateUserListsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateUserListsResponse(arg)
   if (!(arg instanceof google_ads_googleads_v0_services_user_list_service_pb.MutateUserListsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateUserListsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateUserListsResponse(buffer_arg) {

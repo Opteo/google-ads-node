@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_CampaignBudget(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_campaign_budget_pb.CampaignBudget)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CampaignBudget');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CampaignBudget(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetCampaignBudgetRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_budget_service_pb.GetCampaignBudgetRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCampaignBudgetRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCampaignBudgetRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignBudgetsRequest
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_budget_service_pb.MutateCampaignBudgetsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignBudgetsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignBudgetsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignBudgetsRespons
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_budget_service_pb.MutateCampaignBudgetsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignBudgetsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignBudgetsResponse(buffer_arg) {

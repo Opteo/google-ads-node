@@ -28,7 +28,7 @@ function serialize_google_ads_googleads_v0_resources_CustomerClientLink(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_customer_client_link_pb.CustomerClientLink)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CustomerClientLink');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CustomerClientLink(buffer_arg) {
@@ -39,7 +39,7 @@ function serialize_google_ads_googleads_v0_services_GetCustomerClientLinkRequest
   if (!(arg instanceof google_ads_googleads_v0_services_customer_client_link_service_pb.GetCustomerClientLinkRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCustomerClientLinkRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCustomerClientLinkRequest(buffer_arg) {
@@ -50,7 +50,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerClientLinkRequ
   if (!(arg instanceof google_ads_googleads_v0_services_customer_client_link_service_pb.MutateCustomerClientLinkRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerClientLinkRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerClientLinkRequest(buffer_arg) {
@@ -61,7 +61,7 @@ function serialize_google_ads_googleads_v0_services_MutateCustomerClientLinkResp
   if (!(arg instanceof google_ads_googleads_v0_services_customer_client_link_service_pb.MutateCustomerClientLinkResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCustomerClientLinkResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCustomerClientLinkResponse(buffer_arg) {

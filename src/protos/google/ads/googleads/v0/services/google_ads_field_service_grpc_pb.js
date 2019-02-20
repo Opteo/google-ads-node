@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_GoogleAdsField(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_google_ads_field_pb.GoogleAdsField)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.GoogleAdsField');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_GoogleAdsField(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetGoogleAdsFieldRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_google_ads_field_service_pb.GetGoogleAdsFieldRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetGoogleAdsFieldRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetGoogleAdsFieldRequest(buffer_arg) {
@@ -48,7 +48,7 @@ function serialize_google_ads_googleads_v0_services_SearchGoogleAdsFieldsRequest
   if (!(arg instanceof google_ads_googleads_v0_services_google_ads_field_service_pb.SearchGoogleAdsFieldsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.SearchGoogleAdsFieldsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_SearchGoogleAdsFieldsRequest(buffer_arg) {
@@ -59,7 +59,7 @@ function serialize_google_ads_googleads_v0_services_SearchGoogleAdsFieldsRespons
   if (!(arg instanceof google_ads_googleads_v0_services_google_ads_field_service_pb.SearchGoogleAdsFieldsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.SearchGoogleAdsFieldsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_SearchGoogleAdsFieldsResponse(buffer_arg) {

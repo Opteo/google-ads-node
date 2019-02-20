@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_ProductGroupView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_product_group_view_pb.ProductGroupView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.ProductGroupView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_ProductGroupView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetProductGroupViewRequest(a
   if (!(arg instanceof google_ads_googleads_v0_services_product_group_view_service_pb.GetProductGroupViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetProductGroupViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetProductGroupViewRequest(buffer_arg) {

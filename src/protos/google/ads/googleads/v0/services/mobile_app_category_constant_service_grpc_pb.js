@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_MobileAppCategoryConstant(a
   if (!(arg instanceof google_ads_googleads_v0_resources_mobile_app_category_constant_pb.MobileAppCategoryConstant)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.MobileAppCategoryConstant');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_MobileAppCategoryConstant(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetMobileAppCategoryConstant
   if (!(arg instanceof google_ads_googleads_v0_services_mobile_app_category_constant_service_pb.GetMobileAppCategoryConstantRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetMobileAppCategoryConstantRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetMobileAppCategoryConstantRequest(buffer_arg) {

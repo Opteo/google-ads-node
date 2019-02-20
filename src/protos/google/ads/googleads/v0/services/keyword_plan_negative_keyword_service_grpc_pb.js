@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_KeywordPlanNegativeKeyword(
   if (!(arg instanceof google_ads_googleads_v0_resources_keyword_plan_negative_keyword_pb.KeywordPlanNegativeKeyword)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.KeywordPlanNegativeKeyword');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_KeywordPlanNegativeKeyword(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetKeywordPlanNegativeKeywor
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_negative_keyword_service_pb.GetKeywordPlanNegativeKeywordRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetKeywordPlanNegativeKeywordRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetKeywordPlanNegativeKeywordRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlanNegativeKey
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_negative_keyword_service_pb.MutateKeywordPlanNegativeKeywordsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlanNegativeKeywordsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlanNegativeKeywordsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateKeywordPlanNegativeKey
   if (!(arg instanceof google_ads_googleads_v0_services_keyword_plan_negative_keyword_service_pb.MutateKeywordPlanNegativeKeywordsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateKeywordPlanNegativeKeywordsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateKeywordPlanNegativeKeywordsResponse(buffer_arg) {

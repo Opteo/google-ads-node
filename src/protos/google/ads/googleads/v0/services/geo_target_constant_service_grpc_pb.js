@@ -27,7 +27,7 @@ function serialize_google_ads_googleads_v0_resources_GeoTargetConstant(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_geo_target_constant_pb.GeoTargetConstant)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.GeoTargetConstant');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_GeoTargetConstant(buffer_arg) {
@@ -38,7 +38,7 @@ function serialize_google_ads_googleads_v0_services_GetGeoTargetConstantRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_geo_target_constant_service_pb.GetGeoTargetConstantRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetGeoTargetConstantRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetGeoTargetConstantRequest(buffer_arg) {
@@ -49,7 +49,7 @@ function serialize_google_ads_googleads_v0_services_SuggestGeoTargetConstantsReq
   if (!(arg instanceof google_ads_googleads_v0_services_geo_target_constant_service_pb.SuggestGeoTargetConstantsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.SuggestGeoTargetConstantsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_SuggestGeoTargetConstantsRequest(buffer_arg) {
@@ -60,7 +60,7 @@ function serialize_google_ads_googleads_v0_services_SuggestGeoTargetConstantsRes
   if (!(arg instanceof google_ads_googleads_v0_services_geo_target_constant_service_pb.SuggestGeoTargetConstantsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.SuggestGeoTargetConstantsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_SuggestGeoTargetConstantsResponse(buffer_arg) {

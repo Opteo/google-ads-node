@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_CampaignBidModifier(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_campaign_bid_modifier_pb.CampaignBidModifier)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.CampaignBidModifier');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_CampaignBidModifier(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetCampaignBidModifierReques
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_bid_modifier_service_pb.GetCampaignBidModifierRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetCampaignBidModifierRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetCampaignBidModifierRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignBidModifiersRe
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifiersRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignBidModifiersRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignBidModifiersRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateCampaignBidModifiersRe
   if (!(arg instanceof google_ads_googleads_v0_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifiersResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateCampaignBidModifiersResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateCampaignBidModifiersResponse(buffer_arg) {

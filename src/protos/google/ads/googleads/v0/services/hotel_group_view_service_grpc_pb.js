@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_resources_HotelGroupView(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_hotel_group_view_pb.HotelGroupView)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.HotelGroupView');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_HotelGroupView(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_GetHotelGroupViewRequest(arg
   if (!(arg instanceof google_ads_googleads_v0_services_hotel_group_view_service_pb.GetHotelGroupViewRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetHotelGroupViewRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetHotelGroupViewRequest(buffer_arg) {

@@ -29,7 +29,7 @@ function serialize_google_ads_googleads_v0_resources_SharedSet(arg) {
   if (!(arg instanceof google_ads_googleads_v0_resources_shared_set_pb.SharedSet)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.resources.SharedSet');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_resources_SharedSet(buffer_arg) {
@@ -40,7 +40,7 @@ function serialize_google_ads_googleads_v0_services_GetSharedSetRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v0_services_shared_set_service_pb.GetSharedSetRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.GetSharedSetRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_GetSharedSetRequest(buffer_arg) {
@@ -51,7 +51,7 @@ function serialize_google_ads_googleads_v0_services_MutateSharedSetsRequest(arg)
   if (!(arg instanceof google_ads_googleads_v0_services_shared_set_service_pb.MutateSharedSetsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateSharedSetsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateSharedSetsRequest(buffer_arg) {
@@ -62,7 +62,7 @@ function serialize_google_ads_googleads_v0_services_MutateSharedSetsResponse(arg
   if (!(arg instanceof google_ads_googleads_v0_services_shared_set_service_pb.MutateSharedSetsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.MutateSharedSetsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_MutateSharedSetsResponse(buffer_arg) {

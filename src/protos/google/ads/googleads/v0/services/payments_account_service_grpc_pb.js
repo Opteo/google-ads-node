@@ -26,7 +26,7 @@ function serialize_google_ads_googleads_v0_services_ListPaymentsAccountsRequest(
   if (!(arg instanceof google_ads_googleads_v0_services_payments_account_service_pb.ListPaymentsAccountsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ListPaymentsAccountsRequest');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ListPaymentsAccountsRequest(buffer_arg) {
@@ -37,7 +37,7 @@ function serialize_google_ads_googleads_v0_services_ListPaymentsAccountsResponse
   if (!(arg instanceof google_ads_googleads_v0_services_payments_account_service_pb.ListPaymentsAccountsResponse)) {
     throw new Error('Expected argument of type google.ads.googleads.v0.services.ListPaymentsAccountsResponse');
   }
-  return new Buffer(arg.serializeBinary());
+  return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_google_ads_googleads_v0_services_ListPaymentsAccountsResponse(buffer_arg) {
