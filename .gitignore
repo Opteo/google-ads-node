@@ -9,5 +9,4 @@ coverage
 *.log
 
 package-lock.json
-src/protos/*
 src/lib/debug.ts
