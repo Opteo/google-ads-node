@@ -1,5 +1,6 @@
 import grpc from "grpc";
 
+import Auth from "./auth";
 import { GoogleAdsFailure } from "./types";
 
 const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
@@ -9,19 +10,22 @@ const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED
 type NextCall = (options: grpc.CallOptions) => grpc.InterceptingCall | null;
 
 export class MetadataInterceptor {
-  private access_token: string;
   private developer_token: string;
   private login_customer_id: string | undefined;
+  private access_token: string | undefined;
+  private auth: Auth | undefined;
   private requestInterceptor: grpc.Requester;
 
   constructor(
-    access_token: string,
     developer_token: string,
-    login_customer_id: string | undefined
+    login_customer_id: string | undefined,
+    access_token: string | undefined,
+    auth: Auth | undefined
   ) {
-    this.access_token = access_token;
     this.developer_token = developer_token;
     this.login_customer_id = login_customer_id;
+    this.access_token = access_token;
+    this.auth = auth;
     this.requestInterceptor = this.buildRequester();
   }
 
@@ -31,9 +35,12 @@ export class MetadataInterceptor {
 
   private buildRequester(): grpc.Requester {
     return new grpc.RequesterBuilder()
-      .withStart((metadata: grpc.Metadata, listener: grpc.Listener, next: Function) => {
-        metadata.add(`Authorization`, `Bearer ${this.access_token}`);
+      .withStart(async (metadata: grpc.Metadata, listener: grpc.Listener, next: Function) => {
+        const access_token = this.auth ? await this.auth.getAccessToken() : this.access_token;
+
+        metadata.add(`Authorization`, `Bearer ${access_token}`);
         metadata.add(`developer-token`, this.developer_token);
+
         if (this.login_customer_id) {
           metadata.add(`login-customer-id`, this.login_customer_id);
         }
