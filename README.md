@@ -1,5 +1,3 @@
-> ⚠️ **Caution: This project is under heavy development, API still subject to change.**
-
 # google-ads-node
 
 | Google Ads API version |                  [`v0_7_0`](https://developers.google.com/google-ads/api/docs/release-notes#070_2019-01-30)                   |
