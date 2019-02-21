@@ -4,6 +4,7 @@
 | ---------------------- | :---------------------------------------------------------------------------------------------------------------------------: |
 | Build                  | [![CircleCI](https://circleci.com/gh/Opteo/google-ads-node.svg?style=shield&circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7)](https://circleci.com/gh/Opteo/google-ads-node) |
 | Release                |                          ![Release](https://img.shields.io/github/release/opteo/google-ads-node.svg)                          |
+| Dependencies | ![Dependencies](https://img.shields.io/david/Opteo/google-ads-node.svg)
 
 **Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
 
