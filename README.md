@@ -104,6 +104,9 @@ const client = new GoogleAdsClient({
 });
 ```
 
+## Changelog
+- [Release Notes](https://github.com/Opteo/google-ads-node/blob/master/CHANGELOG.md)
+- [Google Ads API Release Notes](https://developers.google.com/google-ads/api/docs/release-notes)
 
 ## Contributing
 
