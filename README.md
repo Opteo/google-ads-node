@@ -20,8 +20,13 @@ $ yarn add google-ads-node
 
 ## Example
 ```javascript
-import GoogleAdsClient from "./client";
-import { SearchGoogleAdsRequest, SearchGoogleAdsResponse, Campaign, Metrics } from "./types";
+import { 
+  GoogleAdsClient, 
+  SearchGoogleAdsRequest, 
+  SearchGoogleAdsResponse, 
+  Campaign, 
+  Metrics 
+} from "google-ads-node"
 
 const client = new GoogleAdsClient({
   access_token: "<ACCESS_TOKEN>",
