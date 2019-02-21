@@ -37,7 +37,7 @@
     "@types/jest": "^24.0.1",
     "@types/node": "^11.9.0",
     "cz-conventional-changelog": "^2.1.0",
-    "grpc-tools": "^1.7.0",
+    "grpc-tools": "^1.7.1",
     "grpc-ts-protoc-gen": "^0.1.1",
     "jest": "23.x",
     "node-pre-gyp": "^0.12.0",
