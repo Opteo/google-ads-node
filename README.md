@@ -5,7 +5,7 @@
 | Build                  | [![CircleCI](https://circleci.com/gh/Opteo/google-ads-node.svg?style=shield&circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7)](https://circleci.com/gh/Opteo/google-ads-node) |
 | Release                |                          ![Release](https://img.shields.io/github/release/opteo/google-ads-node.svg)                          |
 
-This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
+**Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
 
 ## Features
 - Fully matches the lastest [Google Ads API documentation](https://developers.google.com/google-ads/api/reference/rpc/)
@@ -78,6 +78,31 @@ async function example() {
 example();
 
 ```
+
+## Usage
+
+### Authentication
+
+#### 1. No internal authentication
+A valid Google Ads `access_token` must be provided. This usage depends on the `access_token` being refreshed and generated outside of the client. If the token isn't valid, an `UNAUTHENTICATED` error will be thrown. It's recommended to follow the [instructions here for generating tokens](https://developers.google.com/google-ads/api/docs/oauth/overview).
+```javascript
+const client = new GoogleAdsClient({
+  developer_token: "<DEVELOPER_TOKEN>",
+  access_token: "<ACCESS_TOKEN>",
+});
+```
+
+#### 2. Token generation and refresh handling
+This approach, which is recommended, internally handles access token generation and refreshing. A valid `client_id`, `client_secret` and `refresh_token` must be provided.
+```javascript
+const client = new GoogleAdsClient({
+  client_id: "<CLIENT_ID>",
+  client_secret: "<CLIENT_SECRET>",
+  refresh_token: "<REFRESH_TOKEN>",
+  developer_token: "<DEVELOPER_TOKEN>",
+});
+```
+
 
 ## Contributing
 
