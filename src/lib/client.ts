@@ -22,7 +22,7 @@ interface ClientOptionsNoToken extends CommonClientOptions {
   refresh_token: string;
 }
 
-export default class GoogleAdsClient {
+export class GoogleAdsClient {
   private options: ClientOptionsNoToken | ClientOptionsWithToken;
   private auth: Auth | undefined;
 

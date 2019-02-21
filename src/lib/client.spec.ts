@@ -1,6 +1,6 @@
 import grpc from "grpc";
 
-import GoogleAdsClient from "./client";
+import { GoogleAdsClient } from "./client";
 import { SearchGoogleAdsRequest } from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
