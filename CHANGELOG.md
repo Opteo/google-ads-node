@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/opteo/google-ads-node/compare/v0.1.2...v0.1.3) (2019-02-25)
+
+
+### Bug Fixes
+
+* **configs:** generate ts declaration files ([879e814](https://github.com/opteo/google-ads-node/commit/879e814))
+* **services:** ignore type errors for proto services ([ef5fd76](https://github.com/opteo/google-ads-node/commit/ef5fd76))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/opteo/google-ads-node/compare/v0.1.1...v0.1.2) (2019-02-21)
 
