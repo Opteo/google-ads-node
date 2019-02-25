@@ -1,7 +1,7 @@
 import grpc from "grpc";
 
 import { GoogleAdsClient } from "./client";
-import { SearchGoogleAdsRequest } from "./types";
+import { SearchGoogleAdsRequest, SearchGoogleAdsResponse } from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
@@ -62,7 +62,7 @@ test("loading api services", () => {
   expect(service).toBeInstanceOf(grpc.Client);
 });
 
-test("throws an unauthenticated error when access token is invalid", done => {
+test("throws an unauthenticated error when access token is invalid", async done => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
@@ -72,7 +72,25 @@ test("throws an unauthenticated error when access token is invalid", done => {
   const service = client.getService("GoogleAdsService");
   const request = new SearchGoogleAdsRequest();
 
-  service.search(request, (err: Error) => {
+  await service.search(request).catch((err: Error, res: SearchGoogleAdsResponse) => {
+    expect(res).toBe(undefined);
+    expect(err.message).toContain("16 UNAUTHENTICATED");
+    done();
+  });
+});
+
+test("supports using callbacks instead of async service calls", done => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  const service = client.getService("GoogleAdsService");
+  const request = new SearchGoogleAdsRequest();
+
+  service.search(request, (err: Error, res: SearchGoogleAdsResponse) => {
+    expect(res).toBe(undefined);
     expect(err.message).toContain("16 UNAUTHENTICATED");
     done();
   });

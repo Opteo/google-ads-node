@@ -3,6 +3,7 @@ import grpc from "grpc";
 import Auth from "./auth";
 import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
 import * as services from "./services";
+import { promisifyServiceClient } from "./utils";
 
 const DEFAULT_VERSION = "v0";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
@@ -77,6 +78,9 @@ export class GoogleAdsClient {
         ],
       }
     );
+
+    /* Promisify gRPC service methods (callbacks are kept as well) */
+    promisifyServiceClient(service);
 
     return service;
   }
