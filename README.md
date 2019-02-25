@@ -56,24 +56,22 @@ async function example() {
   request.setCustomerId(customerId);
   request.setPageSize(12);
 
-  service.search(request, (err: Error, res: SearchGoogleAdsResponse) => {
-    if (err) {
+  const result: SearchGoogleAdsResponse = await service.search(request)
+    .catch((err: Error) => {
       console.log("--- Error in search ---");
       console.log(err);
-    } else {
-      console.log("Results:");
-      for (const row of res.getResultsList()) {
-        const campaign: Campaign = row.getCampaign() as Campaign;
-        const metrics: Metrics = row.getMetrics() as Metrics;
+    });
 
-        if ((metrics.getClicks() as any) > 0) {
-          console.log(`Campaign "${campaign.getName()}" has ${metrics.getClicks()} clicks.`);
-        } else {
-          console.log(`Campaign "${campaign.getName()}" has no clicks.`);
-        }
-      }
+  for (const row of res.getResultsList()) {
+    const campaign: Campaign = row.getCampaign() as Campaign;
+    const metrics: Metrics = row.getMetrics() as Metrics;
+
+    if ((metrics.getClicks() as any) > 0) {
+      console.log(`Campaign "${campaign.getName()}" has ${metrics.getClicks()} clicks.`);
+    } else {
+      console.log(`Campaign "${campaign.getName()}" has no clicks.`);
     }
-  });
+  }
 }
 
 example();
