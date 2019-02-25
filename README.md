@@ -29,6 +29,7 @@ import {
   Metrics 
 } from "google-ads-node"
 
+// 1. Create a new client with valid authentication
 const client = new GoogleAdsClient({
   access_token: "<ACCESS_TOKEN>",
   developer_token: "<DEVELOPER_TOKEN>",
@@ -37,8 +38,10 @@ const client = new GoogleAdsClient({
 const customerId = "1234567890";
 
 async function example() {
+  // 2. Load a Google Ads service
   const service = client.getService("GoogleAdsService");
-
+  
+  // 3. Create a request
   const request = new SearchGoogleAdsRequest();
   request.setQuery(`
     SELECT 
@@ -55,13 +58,15 @@ async function example() {
   `);
   request.setCustomerId(customerId);
   request.setPageSize(12);
-
+  
+  // 4. Get the results
   const result: SearchGoogleAdsResponse = await service.search(request)
     .catch((err: Error) => {
       console.log("--- Error in search ---");
       console.log(err);
     });
-
+  
+  // 5. Inspect the data!
   for (const row of res.getResultsList()) {
     const campaign: Campaign = row.getCampaign() as Campaign;
     const metrics: Metrics = row.getMetrics() as Metrics;
