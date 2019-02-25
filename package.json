@@ -7,7 +7,7 @@
   "repository": "https://github.com/opteo/google-ads-node",
   "license": "MIT",
   "scripts": {
-    "build": "run-s clean && run-p build:*",
+    "build": "run-s clean build:* copy-protos",
     "build:main": "tsc -p tsconfig.json",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
@@ -21,7 +21,8 @@
     "clean": "trash build test",
     "all": "run-s reset protos test",
     "prepare-release": "run-s all version",
-    "protos": "make protos"
+    "protos": "make protos",
+    "copy-protos": "cp -rf src/protos build/main/"
   },
   "engines": {
     "node": ">=8.9"
