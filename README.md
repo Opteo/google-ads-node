@@ -1,14 +1,44 @@
-# google-ads-node
+<p align="center">
+  <a href="https://github.com/opteo/google-ads-node">
+    Google Ads Node
+  </a>
+</p>
 
-| Google Ads API version |                  [`v0_7_0`](https://developers.google.com/google-ads/api/docs/release-notes#070_2019-01-30)                   |
-| ---------------------- | :---------------------------------------------------------------------------------------------------------------------------: |
-| Build                  | [![CircleCI](https://circleci.com/gh/Opteo/google-ads-node.svg?style=shield&circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7)](https://circleci.com/gh/Opteo/google-ads-node) |
-| Release                |                          ![Release](https://img.shields.io/github/release/opteo/google-ads-node.svg)                          |
-| Dependencies | ![Dependencies](https://img.shields.io/david/Opteo/google-ads-node.svg)
+<p align="center">
+  Unofficial Google Ads API gRPC client library for Node
+</p>
+<!-- &circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7 -->
+
+<p align="center">
+  <a href="https://developers.google.com/google-ads/api/docs/release-notes">
+    <img src="https://img.shields.io/badge/google%20ads-v0.7.0-009688.svg?style=flat-square">
+  </a>
+  <a href="https://www.npmjs.com/package/google-ads-node">
+    <img src="https://img.shields.io/npm/v/google-ads-node.svg?style=flat-square">
+  </a>
+  <a>
+    <img src="https://circleci.com/gh/Opteo/google-ads-node.svg?style=shield&circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7">
+  </a>
+  <a>
+    <img src="https://img.shields.io/npm/dm/google-ads-node.svg?style=flat-square">
+    </a>
+  <a>
+    <img src="https://img.shields.io/david/opteo/google-ads-node.svg?style=flat-square">
+  </a>
+</p>
+
+<p align="center">Built by <a href="https://opteo.com">Opteo</a></p>
+
+<p align="center">
+  <a href="https://opteo.com">
+    <img src="https://app.opteo.com/icons/logo.svg">
+  </a>
+</p>
+
+## Features
 
 **Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
 
-## Features
 - Fully matches the lastest [Google Ads API documentation](https://developers.google.com/google-ads/api/reference/rpc/)
 - Faster than using JSON (uses [gRPC](https://grpc.io/) and [Protocol Buffers](https://developers.google.com/protocol-buffers/))
 - Typescript definitions
@@ -20,13 +50,14 @@ $ yarn add google-ads-node
 ```
 
 ## Example
+
 ```javascript
-import { 
-  GoogleAdsClient, 
-  SearchGoogleAdsRequest, 
-  SearchGoogleAdsResponse, 
-  Campaign, 
-  Metrics 
+import {
+  GoogleAdsClient,
+  SearchGoogleAdsRequest,
+  SearchGoogleAdsResponse,
+  Campaign,
+  Metrics
 } from "google-ads-node"
 
 const client = new GoogleAdsClient({
@@ -41,15 +72,15 @@ async function example() {
 
   const request = new SearchGoogleAdsRequest();
   request.setQuery(`
-    SELECT 
+    SELECT
       campaign.id,
-      campaign.name, 
-      campaign.status, 
-      segments.device, 
-      metrics.impressions, 
+      campaign.name,
+      campaign.status,
+      segments.device,
+      metrics.impressions,
       metrics.clicks,
-      metrics.ctr, 
-      metrics.average_cpc, 
+      metrics.ctr,
+      metrics.average_cpc,
       metrics.cost_micros
     FROM campaign
   `);
@@ -85,7 +116,9 @@ example();
 ### Authentication
 
 #### 1. No internal authentication
+
 A valid Google Ads `access_token` must be provided. This usage depends on the `access_token` being refreshed and generated outside of the client. If the token isn't valid, an `UNAUTHENTICATED` error will be thrown. It's recommended to follow the [instructions here for generating tokens](https://developers.google.com/google-ads/api/docs/oauth/overview).
+
 ```javascript
 const client = new GoogleAdsClient({
   developer_token: "<DEVELOPER_TOKEN>",
@@ -94,7 +127,9 @@ const client = new GoogleAdsClient({
 ```
 
 #### 2. Token generation and refresh handling
+
 This approach, which is recommended, internally handles access token generation and refreshing. A valid `client_id`, `client_secret` and `refresh_token` must be provided.
+
 ```javascript
 const client = new GoogleAdsClient({
   client_id: "<CLIENT_ID>",
@@ -105,6 +140,7 @@ const client = new GoogleAdsClient({
 ```
 
 ## Changelog
+
 - [Release Notes](https://github.com/Opteo/google-ads-node/blob/master/CHANGELOG.md)
 - [Google Ads API Release Notes](https://developers.google.com/google-ads/api/docs/release-notes)
 
