@@ -35,4 +35,4 @@ test("proto object result is generated from field mask", () => {
   ]);
 });
 
-test("proto object result can be parsed for deeply nested entities", () => {});
+// test("proto object result can be parsed for deeply nested entities", () => {});
