@@ -27,3 +27,48 @@ export function promisifyServiceClient(client: Client) {
     };
   });
 }
+
+interface FieldMask {
+  pathsList: string[];
+}
+
+export function formatCallResults(resultsList: any[], fieldMask: FieldMask) {
+  const parsedResults: any[] = [];
+  const { pathsList } = fieldMask;
+
+  for (const result of resultsList) {
+    const parsedEntity: any = {};
+
+    for (const path of pathsList) {
+      const nodes = path.split(".");
+      const firstPath = nodes[0];
+
+      nodes.shift();
+
+      if (!parsedEntity[firstPath]) {
+        parsedEntity[firstPath] = {};
+        if (result[firstPath].hasOwnProperty("resourceName")) {
+          parsedEntity[firstPath].resourceName = result[firstPath].resourceName;
+        }
+      }
+
+      for (const node of nodes) {
+        parsedEntity[firstPath][node] = result[firstPath][node].value;
+      }
+    }
+
+    parsedResults.push(parsedEntity);
+  }
+
+  return parsedResults;
+}
+
+// function getNestedObject(obj: any, path: string[]) {
+//   let index = 0;
+//   const length = path.length;
+
+//   while (obj != null && index < length) {
+//     obj = obj[path[index++]];
+//   }
+//   return index && index === length ? obj : undefined;
+// }

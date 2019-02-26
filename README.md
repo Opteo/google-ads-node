@@ -71,7 +71,7 @@ const customerId = "1234567890";
 async function example() {
   // 2. Load a Google Ads service
   const service = client.getService("GoogleAdsService");
-  
+
   // 3. Create a request
   const request = new SearchGoogleAdsRequest();
   request.setQuery(`
@@ -89,14 +89,14 @@ async function example() {
   `);
   request.setCustomerId(customerId);
   request.setPageSize(12);
-  
+
   // 4. Get the results
   const result: SearchGoogleAdsResponse = await service.search(request)
     .catch((err: Error) => {
       console.log("--- Error in search ---");
       console.log(err);
     });
-  
+
   // 5. Inspect the data!
   for (const row of res.getResultsList()) {
     const campaign: Campaign = row.getCampaign() as Campaign;
@@ -143,18 +143,22 @@ const client = new GoogleAdsClient({
 ```
 
 ### Services
+
 To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of avaiable services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
+
 ```javascript
 const service = client.getService("AdGroupAdService");
 ```
+
 From here, you can then use all the available methods for the service e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
 
 ```javascript
-import { GetAdGroupRequest } from "google-ads-node"
+import { GetAdGroupRequest } from "google-ads-node";
 
-const request = new GetAdGroupAdRequest()
-const ad = await service.getAdGroupAd(request)
+const request = new GetAdGroupAdRequest();
+const ad = await service.getAdGroupAd(request);
 ```
+
 **Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
 
 ## Changelog
