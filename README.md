@@ -37,11 +37,11 @@
 
 ## Features
 
-**Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
+**Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature-complete and easier-to-use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
 
 - Fully matches the lastest [Google Ads API documentation](https://developers.google.com/google-ads/api/reference/rpc/)
 - Faster than using JSON (uses [gRPC](https://grpc.io/) and [Protocol Buffers](https://developers.google.com/protocol-buffers/))
-- Typescript definitions
+- Includes Typescript definitions
 
 ## Installation
 
@@ -143,11 +143,11 @@ const client = new GoogleAdsClient({
 ```
 
 ### Services
-To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of avaiable services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
+To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of available services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
 ```javascript
 const service = client.getService("AdGroupAdService");
 ```
-From here, you can then use all the available methods for the service e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
+From here, you can then use all the available methods for the service, e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
 
 ```javascript
 import { GetAdGroupRequest } from "google-ads-node"
@@ -155,7 +155,7 @@ import { GetAdGroupRequest } from "google-ads-node"
 const request = new GetAdGroupAdRequest()
 const ad = await service.getAdGroupAd(request)
 ```
-**Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
+**Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`. If a service method was called `GetCampaign()`, in this library it would be `getCampaign()`.
 
 ## Changelog
 
@@ -171,7 +171,7 @@ To update the Google Ads API version, the latest proto files (in the `googleapis
 #### Requirements:
 
 - [Protoc compiler](https://github.com/protocolbuffers/protobuf) installed on your machine and added to your `$PATH`
-- Latest dependencies installed. Make sure to use `yarn install` since some dependencies require a C++ compilation step
+- Latest dependencies installed – make sure to use `yarn install` since some dependencies require a C++ compilation step
 
 #### Steps:
 
