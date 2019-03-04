@@ -1,7 +1,12 @@
 import grpc from "grpc";
 
 import Auth from "./auth";
-import { MetadataInterceptor, ExceptionInterceptor } from "./interceptor";
+import {
+  MetadataInterceptor,
+  ExceptionInterceptor,
+  ResponseParsingInterceptor,
+  InterceptorMethod,
+} from "./interceptor";
 import * as services from "./services";
 import { promisifyServiceClient } from "./utils";
 
@@ -11,6 +16,7 @@ const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 interface CommonClientOptions {
   developer_token: string;
   login_customer_id?: string;
+  parseResults?: boolean;
 }
 
 interface ClientOptionsWithToken extends CommonClientOptions {
@@ -52,30 +58,14 @@ export class GoogleAdsClient {
       );
     }
 
-    const metadataInterceptor = new MetadataInterceptor(
-      this.options.developer_token,
-      this.options.login_customer_id,
-      (this.options as ClientOptionsWithToken).access_token,
-      this.auth
-    );
-    const exceptionInterceptor = new ExceptionInterceptor();
-
+    const interceptors = this.buildInterceptors();
     const serviceClientConstructor = (services as any)[serviceClientName];
 
     const service = new serviceClientConstructor(
       GOOGLE_ADS_ENDPOINT,
       grpc.credentials.createSsl(),
       {
-        interceptors: [
-          (
-            options: grpc.CallOptions,
-            nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
-          ) => metadataInterceptor.intercept(options, nextCall),
-          (
-            options: grpc.CallOptions,
-            nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
-          ) => exceptionInterceptor.intercept(options, nextCall),
-        ],
+        interceptors,
       }
     );
 
@@ -83,6 +73,39 @@ export class GoogleAdsClient {
     promisifyServiceClient(service);
 
     return service;
+  }
+
+  private buildInterceptors(): InterceptorMethod[] {
+    const metadataInterceptor = new MetadataInterceptor(
+      this.options.developer_token,
+      this.options.login_customer_id,
+      (this.options as ClientOptionsWithToken).access_token,
+      this.auth
+    );
+    const exceptionInterceptor = new ExceptionInterceptor();
+    const responseParsingInterceptor = new ResponseParsingInterceptor();
+
+    const interceptors: InterceptorMethod[] = [
+      (
+        options: grpc.CallOptions,
+        nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+      ) => metadataInterceptor.intercept(options, nextCall),
+      (
+        options: grpc.CallOptions,
+        nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+      ) => exceptionInterceptor.intercept(options, nextCall),
+    ];
+
+    if (this.options.parseResults) {
+      interceptors.push(
+        (
+          options: grpc.CallOptions,
+          nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+        ) => responseParsingInterceptor.intercept(options, nextCall)
+      );
+    }
+
+    return interceptors;
   }
 
   private validateOptions(options: ClientOptionsNoToken | ClientOptionsWithToken): void {

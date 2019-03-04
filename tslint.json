@@ -14,7 +14,7 @@
       "allow-leading-underscore",
       "allow-snake-case"
     ],
-    "max-classes-per-file": [true, 3],
+    "max-classes-per-file": [true, 4],
     "ordered-imports": [
       true,
       {
