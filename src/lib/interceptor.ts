@@ -2,12 +2,14 @@ import grpc from "grpc";
 
 import Auth from "./auth";
 import { GoogleAdsFailure } from "./types";
+import { formatCallResults } from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 
 type NextCall = (options: grpc.CallOptions) => grpc.InterceptingCall | null;
+export type InterceptorMethod = (options: grpc.CallOptions, nextCall: NextCall) => any;
 
 export class MetadataInterceptor {
   private developer_token: string;
@@ -147,6 +149,47 @@ export class ExceptionInterceptor {
 
     return error;
     // Promise.reject(error);
+  }
+}
+
+export class ResponseParsingInterceptor {
+  private requestInterceptor: grpc.Requester;
+
+  constructor() {
+    this.requestInterceptor = this.buildRequester();
+  }
+
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
+    return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
+  }
+
+  private buildRequester(): grpc.Requester {
+    return new grpc.RequesterBuilder()
+      .withStart((metadata: grpc.Metadata, _listener: grpc.Listener, next: Function) => {
+        const newListener = this.buildListener();
+        next(metadata, newListener);
+      })
+      .build();
+  }
+
+  private buildListener(): grpc.Listener {
+    return new grpc.ListenerBuilder()
+      .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
+        next(status);
+      })
+      .withOnReceiveMessage((message: any, next: Function) => {
+        if (message && message.toObject) {
+          const results = message.toObject();
+          const parsedResults = formatCallResults(results.resultsList, results.fieldMask);
+          if (parsedResults) {
+            results.resultsList = parsedResults;
+          }
+          next(results);
+        } else {
+          next(message);
+        }
+      })
+      .build();
   }
 }
 
