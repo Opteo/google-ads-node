@@ -37,11 +37,11 @@
 
 ## Features
 
-**Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature complete and easier to use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
+**Note:** This library is a minimal, low-level implementation for calling the Google Ads API with gRPC Protocol Buffers. For a more feature-complete and easier-to-use library, try our [Javascript client library](https://github.com/opteo/google-ads-api).
 
 - Fully matches the lastest [Google Ads API documentation](https://developers.google.com/google-ads/api/reference/rpc/)
 - Faster than using JSON (uses [gRPC](https://grpc.io/) and [Protocol Buffers](https://developers.google.com/protocol-buffers/))
-- Typescript definitions
+- Includes Typescript definitions
 
 ## Installation
 
@@ -161,6 +161,42 @@ const ad = await service.getAdGroupAd(request);
 
 **Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
 
+### Results
+
+By default, since this library is implemented with gRPC, any calls via a service return an object in the protocol buffer format. This is a binary format object, which is difficult to understand, especially if you're not using the Typescript definitions.
+
+Because of this, retrieving the results you want can be quite verbose. An example of this is below, where we show two methods for acquiring the id of a campaign.
+
+```javascript
+const results = await service.search(request);
+
+// Method 1
+const { resultsList } = results.toObject();
+const id = resultsList[0].campaign.id.value;
+
+// Method 2
+const row = results.getResultsList();
+const campaign = row.getCampaign();
+const id = campaign.getId().value;
+```
+
+If you don't wish to work directly with protocol buffers, are unfamiliar with gRPC, or just want an easier way to retrieve the data, we recommend using the `parseResults` client option. Setting this option to `true` will internally handle parsing the results in a more _javascript friendly_ way, and return the desired entities/metrics/segments as objects (with all types correctly handled, e.g. `name` as a string, `id` as a number, etc.).
+
+```javascript
+const client = new GoogleAdsClient({
+  client_id: "<CLIENT_ID>",
+  client_secret: "<CLIENT_SECRET>",
+  refresh_token: "<REFRESH_TOKEN>",
+  developer_token: "<DEVELOPER_TOKEN>",
+  parseResults: true,
+});
+
+// ...
+
+const { resultsList } = await service.search(request);
+console.log(resultsList[0].campaign.id); // 123
+```
+
 ## Changelog
 
 - [Release Notes](https://github.com/Opteo/google-ads-node/blob/master/CHANGELOG.md)
@@ -175,7 +211,7 @@ To update the Google Ads API version, the latest proto files (in the `googleapis
 #### Requirements:
 
 - [Protoc compiler](https://github.com/protocolbuffers/protobuf) installed on your machine and added to your `$PATH`
-- Latest dependencies installed. Make sure to use `yarn install` since some dependencies require a C++ compilation step
+- Latest dependencies installed – make sure to use `yarn install` since some dependencies require a C++ compilation step
 
 #### Steps:
 
