@@ -37,38 +37,49 @@ export function formatCallResults(resultsList: any[], fieldMask: FieldMask) {
   const { pathsList } = fieldMask;
 
   for (const result of resultsList) {
-    const parsedEntity: any = {};
-
-    for (const path of pathsList) {
-      const nodes = path.split(".");
-      const firstPath = nodes[0];
-
-      nodes.shift();
-
-      if (!parsedEntity[firstPath]) {
-        parsedEntity[firstPath] = {};
-        if (result[firstPath].hasOwnProperty("resourceName")) {
-          parsedEntity[firstPath].resourceName = result[firstPath].resourceName;
-        }
-      }
-
-      for (const node of nodes) {
-        parsedEntity[firstPath][node] = result[firstPath][node].value;
-      }
-    }
-
-    parsedResults.push(parsedEntity);
+    const parsedRow = parseNestedEntities(result, pathsList);
+    parsedResults.push(parsedRow);
   }
-
   return parsedResults;
 }
 
-// function getNestedObject(obj: any, path: string[]) {
-//   let index = 0;
-//   const length = path.length;
+function toCamelCase(str: string) {
+  return str.replace(/([-_][a-z])/gi, $1 => {
+    return $1
+      .toUpperCase()
+      .replace("-", "")
+      .replace("_", "");
+  });
+}
 
-//   while (obj != null && index < length) {
-//     obj = obj[path[index++]];
-//   }
-//   return index && index === length ? obj : undefined;
-// }
+function parseNestedEntities(data: any, props: string[], parent: any = {}) {
+  for (let path of props) {
+    path = toCamelCase(path);
+
+    if (path.includes(".")) {
+      const splitPath = path.split(".");
+      const firstProp = splitPath[0];
+      const firstPropExists = parent.hasOwnProperty(firstProp);
+
+      if (!firstPropExists) {
+        parent[firstProp] = {};
+      }
+
+      const remainingProps = splitPath.slice(1).join(".");
+      const child = data[firstProp];
+
+      if (!parent[firstProp].resourceName && child.hasOwnProperty("resourceName")) {
+        parent[firstProp].resourceName = child.resourceName;
+      }
+
+      parseNestedEntities(child, [remainingProps], parent[firstProp]);
+    } else {
+      const value = data[path];
+      const isObject = typeof value === "object";
+
+      parent[path] = isObject ? value.value : value;
+    }
+  }
+
+  return parent;
+}
