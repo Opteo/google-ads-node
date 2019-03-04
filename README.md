@@ -71,7 +71,7 @@ const customerId = "1234567890";
 async function example() {
   // 2. Load a Google Ads service
   const service = client.getService("GoogleAdsService");
-  
+
   // 3. Create a request
   const request = new SearchGoogleAdsRequest();
   request.setQuery(`
@@ -89,14 +89,14 @@ async function example() {
   `);
   request.setCustomerId(customerId);
   request.setPageSize(12);
-  
+
   // 4. Get the results
   const result: SearchGoogleAdsResponse = await service.search(request)
     .catch((err: Error) => {
       console.log("--- Error in search ---");
       console.log(err);
     });
-  
+
   // 5. Inspect the data!
   for (const row of res.getResultsList()) {
     const campaign: Campaign = row.getCampaign() as Campaign;
@@ -143,19 +143,59 @@ const client = new GoogleAdsClient({
 ```
 
 ### Services
-To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of available services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
+
+To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of avaiable services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
+
 ```javascript
 const service = client.getService("AdGroupAdService");
 ```
-From here, you can then use all the available methods for the service, e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
+
+From here, you can then use all the available methods for the service e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
 
 ```javascript
-import { GetAdGroupRequest } from "google-ads-node"
+import { GetAdGroupRequest } from "google-ads-node";
 
-const request = new GetAdGroupAdRequest()
-const ad = await service.getAdGroupAd(request)
+const request = new GetAdGroupAdRequest();
+const ad = await service.getAdGroupAd(request);
 ```
-**Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`. If a service method was called `GetCampaign()`, in this library it would be `getCampaign()`.
+
+**Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
+
+### Results
+
+By default, since this library is implemented with gRPC, any calls via a service return an object in the protocol buffer format. This is a binary format object, which is difficult to understand, especially if you're not using the Typescript definitions.
+
+Because of this, retrieving the results you want can be quite verbose. An example of this is below, where we show two methods for acquiring the id of a campaign.
+
+```javascript
+const results = await service.search(request);
+
+// Method 1
+const { resultsList } = results.toObject();
+const id = resultsList[0].campaign.id.value;
+
+// Method 2
+const row = results.getResultsList();
+const campaign = row.getCampaign();
+const id = campaign.getId().value;
+```
+
+If you don't wish to work directly with protocol buffers, are unfamiliar with gRPC, or just want an easier way to retrieve the data, we recommend using the `parseResults` client option. Setting this option to `true` will internally handle parsing the results in a more _javascript friendly_ way, and return the desired entities/metrics/segments as objects (with all types correctly handled, e.g. `name` as a string, `id` as a number, etc.).
+
+```javascript
+const client = new GoogleAdsClient({
+  client_id: "<CLIENT_ID>",
+  client_secret: "<CLIENT_SECRET>",
+  refresh_token: "<REFRESH_TOKEN>",
+  developer_token: "<DEVELOPER_TOKEN>",
+  parseResults: true,
+});
+
+// ...
+
+const { resultsList } = await service.search(request);
+console.log(resultsList[0].campaign.id); // 123
+```
 
 ## Changelog
 
