@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/opteo/google-ads-node/compare/v0.1.3...v1.0.0) (2019-03-05)
+
+
+### Bug Fixes
+
+* **npm:** ignore googleapis submodule in published builds ([9863662](https://github.com/opteo/google-ads-node/commit/9863662))
+* **utils.spec:** removed empty test for now ([f8f008d](https://github.com/opteo/google-ads-node/commit/f8f008d))
+
+
+### Features
+
+* **all:** updated constants and imports to use ads v1 ([afb611d](https://github.com/opteo/google-ads-node/commit/afb611d))
+* **client:** added parseResults setting to client options ([54c8d67](https://github.com/opteo/google-ads-node/commit/54c8d67))
+* **client:** gprc service methods now support promises ([69ec558](https://github.com/opteo/google-ads-node/commit/69ec558))
+* **docs:** added documentation on loading services ([5b37e8b](https://github.com/opteo/google-ads-node/commit/5b37e8b))
+* **docs:** added information about result parsing ([5d4a8f0](https://github.com/opteo/google-ads-node/commit/5d4a8f0))
+* **docs:** added minor comments to example ([2b604ab](https://github.com/opteo/google-ads-node/commit/2b604ab))
+* **docs:** bump gads label ([4cf165a](https://github.com/opteo/google-ads-node/commit/4cf165a))
+* **docs:** cleanup + badge crazy ([bb29c6e](https://github.com/opteo/google-ads-node/commit/bb29c6e))
+* **docs:** minor documentation updates ([eca2b7f](https://github.com/opteo/google-ads-node/commit/eca2b7f))
+* **docs:** updated example to use promises ([d586d51](https://github.com/opteo/google-ads-node/commit/d586d51))
+* **googleapis:** updated googleapis to include ads/v1 ([b88957f](https://github.com/opteo/google-ads-node/commit/b88957f))
+* **interceptor:** added ResponseParsingInterceptor to format gRPC results when specified ([a43bf17](https://github.com/opteo/google-ads-node/commit/a43bf17))
+* **protos:** added new v1 compiled protos ([91cb05f](https://github.com/opteo/google-ads-node/commit/91cb05f))
+* **protos:** generate warning readme on proto compilation ([a325f41](https://github.com/opteo/google-ads-node/commit/a325f41))
+* **services:** added new v1 services ([91f7604](https://github.com/opteo/google-ads-node/commit/91f7604))
+* **types:** added new v1 types ([d3b0633](https://github.com/opteo/google-ads-node/commit/d3b0633))
+* **utils:** added formatCallResults to optionally parse gRPC results ([013c037](https://github.com/opteo/google-ads-node/commit/013c037))
+* **utils:** added grpc response parsing ([391a8cb](https://github.com/opteo/google-ads-node/commit/391a8cb))
+
+
+### BREAKING CHANGES
+
+* **protos:** removed support for v0
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/opteo/google-ads-node/compare/v0.1.2...v0.1.3) (2019-02-25)
 
