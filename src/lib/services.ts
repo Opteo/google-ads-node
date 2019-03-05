@@ -3,15 +3,23 @@ import { AccountBudgetProposalServiceClient } from "../protos/google/ads/googlea
 // @ts-ignore Avoid no module definition defined warnings
 import { AccountBudgetServiceClient } from "../protos/google/ads/googleads/v1/services/account_budget_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { AdGroupAdLabelServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_ad_label_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { AdGroupAdServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_ad_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupAudienceViewServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_audience_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupBidModifierServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_bid_modifier_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { AdGroupCriterionLabelServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_criterion_label_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { AdGroupCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_criterion_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { AdGroupExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_extension_setting_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { AdGroupFeedServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_feed_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { AdGroupLabelServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_label_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -33,7 +41,11 @@ import { CampaignBudgetServiceClient } from "../protos/google/ads/googleads/v1/s
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_criterion_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { CampaignExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_extension_setting_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { CampaignFeedServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_feed_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { CampaignLabelServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_label_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -43,23 +55,47 @@ import { CarrierConstantServiceClient } from "../protos/google/ads/googleads/v1/
 // @ts-ignore Avoid no module definition defined warnings
 import { ChangeStatusServiceClient } from "../protos/google/ads/googleads/v1/services/change_status_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { ClickViewServiceClient } from "../protos/google/ads/googleads/v1/services/click_view_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { ConversionActionServiceClient } from "../protos/google/ads/googleads/v1/services/conversion_action_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { ConversionUploadServiceClient } from "../protos/google/ads/googleads/v1/services/conversion_upload_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { CustomInterestServiceClient } from "../protos/google/ads/googleads/v1/services/custom_interest_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CustomerClientLinkServiceClient } from "../protos/google/ads/googleads/v1/services/customer_client_link_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CustomerClientServiceClient } from "../protos/google/ads/googleads/v1/services/customer_client_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { CustomerExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/customer_extension_setting_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { CustomerFeedServiceClient } from "../protos/google/ads/googleads/v1/services/customer_feed_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { CustomerLabelServiceClient } from "../protos/google/ads/googleads/v1/services/customer_label_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CustomerManagerLinkServiceClient } from "../protos/google/ads/googleads/v1/services/customer_manager_link_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { CustomerNegativeCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/customer_negative_criterion_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { CustomerServiceClient } from "../protos/google/ads/googleads/v1/services/customer_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { DetailPlacementViewServiceClient } from "../protos/google/ads/googleads/v1/services/detail_placement_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { DisplayKeywordViewServiceClient } from "../protos/google/ads/googleads/v1/services/display_keyword_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { DomainCategoryServiceClient } from "../protos/google/ads/googleads/v1/services/domain_category_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { DynamicSearchAdsSearchTermViewServiceClient } from "../protos/google/ads/googleads/v1/services/dynamic_search_ads_search_term_view_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { ExtensionFeedItemServiceClient } from "../protos/google/ads/googleads/v1/services/extension_feed_item_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { FeedItemServiceClient } from "../protos/google/ads/googleads/v1/services/feed_item_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { FeedItemTargetServiceClient } from "../protos/google/ads/googleads/v1/services/feed_item_target_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { FeedMappingServiceClient } from "../protos/google/ads/googleads/v1/services/feed_mapping_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { FeedPlaceholderViewServiceClient } from "../protos/google/ads/googleads/v1/services/feed_placeholder_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { FeedServiceClient } from "../protos/google/ads/googleads/v1/services/feed_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -67,9 +103,13 @@ import { GenderViewServiceClient } from "../protos/google/ads/googleads/v1/servi
 // @ts-ignore Avoid no module definition defined warnings
 import { GeoTargetConstantServiceClient } from "../protos/google/ads/googleads/v1/services/geo_target_constant_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { GeographicViewServiceClient } from "../protos/google/ads/googleads/v1/services/geographic_view_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { GoogleAdsFieldServiceClient } from "../protos/google/ads/googleads/v1/services/google_ads_field_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { GoogleAdsServiceClient } from "../protos/google/ads/googleads/v1/services/google_ads_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { GroupPlacementViewServiceClient } from "../protos/google/ads/googleads/v1/services/group_placement_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { HotelGroupViewServiceClient } from "../protos/google/ads/googleads/v1/services/hotel_group_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -89,21 +129,31 @@ import { KeywordPlanServiceClient } from "../protos/google/ads/googleads/v1/serv
 // @ts-ignore Avoid no module definition defined warnings
 import { KeywordViewServiceClient } from "../protos/google/ads/googleads/v1/services/keyword_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { LabelServiceClient } from "../protos/google/ads/googleads/v1/services/label_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { LanguageConstantServiceClient } from "../protos/google/ads/googleads/v1/services/language_constant_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { LocationViewServiceClient } from "../protos/google/ads/googleads/v1/services/location_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { ManagedPlacementViewServiceClient } from "../protos/google/ads/googleads/v1/services/managed_placement_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { MediaFileServiceClient } from "../protos/google/ads/googleads/v1/services/media_file_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { MerchantCenterLinkServiceClient } from "../protos/google/ads/googleads/v1/services/merchant_center_link_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { MobileAppCategoryConstantServiceClient } from "../protos/google/ads/googleads/v1/services/mobile_app_category_constant_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { MobileDeviceConstantServiceClient } from "../protos/google/ads/googleads/v1/services/mobile_device_constant_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { MutateJobServiceClient } from "../protos/google/ads/googleads/v1/services/mutate_job_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { OperatingSystemVersionConstantServiceClient } from "../protos/google/ads/googleads/v1/services/operating_system_version_constant_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { ParentalStatusViewServiceClient } from "../protos/google/ads/googleads/v1/services/parental_status_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { PaymentsAccountServiceClient } from "../protos/google/ads/googleads/v1/services/payments_account_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { ProductBiddingCategoryConstantServiceClient } from "../protos/google/ads/googleads/v1/services/product_bidding_category_constant_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { ProductGroupViewServiceClient } from "../protos/google/ads/googleads/v1/services/product_group_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -116,6 +166,8 @@ import { SearchTermViewServiceClient } from "../protos/google/ads/googleads/v1/s
 import { SharedCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/shared_criterion_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { SharedSetServiceClient } from "../protos/google/ads/googleads/v1/services/shared_set_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { ShoppingPerformanceViewServiceClient } from "../protos/google/ads/googleads/v1/services/shopping_performance_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { TopicConstantServiceClient } from "../protos/google/ads/googleads/v1/services/topic_constant_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -130,11 +182,15 @@ import { VideoServiceClient } from "../protos/google/ads/googleads/v1/services/v
 export {
   AccountBudgetProposalServiceClient,
   AccountBudgetServiceClient,
+  AdGroupAdLabelServiceClient,
   AdGroupAdServiceClient,
   AdGroupAudienceViewServiceClient,
   AdGroupBidModifierServiceClient,
+  AdGroupCriterionLabelServiceClient,
   AdGroupCriterionServiceClient,
+  AdGroupExtensionSettingServiceClient,
   AdGroupFeedServiceClient,
+  AdGroupLabelServiceClient,
   AdGroupServiceClient,
   AdParameterServiceClient,
   AdScheduleViewServiceClient,
@@ -145,25 +201,40 @@ export {
   CampaignBidModifierServiceClient,
   CampaignBudgetServiceClient,
   CampaignCriterionServiceClient,
+  CampaignExtensionSettingServiceClient,
   CampaignFeedServiceClient,
+  CampaignLabelServiceClient,
   CampaignServiceClient,
   CampaignSharedSetServiceClient,
   CarrierConstantServiceClient,
   ChangeStatusServiceClient,
+  ClickViewServiceClient,
   ConversionActionServiceClient,
+  ConversionUploadServiceClient,
+  CustomInterestServiceClient,
   CustomerClientLinkServiceClient,
   CustomerClientServiceClient,
+  CustomerExtensionSettingServiceClient,
   CustomerFeedServiceClient,
+  CustomerLabelServiceClient,
   CustomerManagerLinkServiceClient,
+  CustomerNegativeCriterionServiceClient,
   CustomerServiceClient,
   DisplayKeywordViewServiceClient,
+  DomainCategoryServiceClient,
+  DynamicSearchAdsSearchTermViewServiceClient,
+  ExtensionFeedItemServiceClient,
   FeedItemServiceClient,
+  FeedItemTargetServiceClient,
   FeedMappingServiceClient,
+  FeedPlaceholderViewServiceClient,
   FeedServiceClient,
   GenderViewServiceClient,
   GeoTargetConstantServiceClient,
+  GeographicViewServiceClient,
   GoogleAdsFieldServiceClient,
   GoogleAdsServiceClient,
+  GroupPlacementViewServiceClient,
   HotelGroupViewServiceClient,
   HotelPerformanceViewServiceClient,
   KeywordPlanAdGroupServiceClient,
@@ -173,19 +244,25 @@ export {
   KeywordPlanNegativeKeywordServiceClient,
   KeywordPlanServiceClient,
   KeywordViewServiceClient,
+  LabelServiceClient,
   LanguageConstantServiceClient,
+  LocationViewServiceClient,
   ManagedPlacementViewServiceClient,
   MediaFileServiceClient,
+  MerchantCenterLinkServiceClient,
   MobileAppCategoryConstantServiceClient,
   MobileDeviceConstantServiceClient,
+  MutateJobServiceClient,
   OperatingSystemVersionConstantServiceClient,
   ParentalStatusViewServiceClient,
   PaymentsAccountServiceClient,
+  ProductBiddingCategoryConstantServiceClient,
   ProductGroupViewServiceClient,
   RecommendationServiceClient,
   RemarketingActionServiceClient,
   SearchTermViewServiceClient,
   SharedCriterionServiceClient,
+  ShoppingPerformanceViewServiceClient,
   SharedSetServiceClient,
   TopicConstantServiceClient,
   TopicViewServiceClient,
