@@ -1,5 +1,5 @@
 # Google Ads API version
-ADS_VERSION=v0
+ADS_VERSION=v1
 
 # Proto plugin paths
 PROTOC_GEN_TS_PATH=./node_modules/.bin/protoc-gen-ts

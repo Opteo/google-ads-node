@@ -10,7 +10,7 @@ import {
 import * as services from "./services";
 import { promisifyServiceClient } from "./utils";
 
-const DEFAULT_VERSION = "v0";
+const DEFAULT_VERSION = "v1";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 
 interface CommonClientOptions {

@@ -4,7 +4,7 @@ import Auth from "./auth";
 import { GoogleAdsFailure } from "./types";
 import { formatCallResults } from "./utils";
 
-const FAILURE_KEY = "google.ads.googleads.v0.errors.googleadsfailure-bin";
+const FAILURE_KEY = "google.ads.googleads.v1.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 
