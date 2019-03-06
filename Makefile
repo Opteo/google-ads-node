@@ -9,15 +9,27 @@ PROTOC_GEN_GRPC_PATH=./node_modules/grpc-tools/bin/grpc_node_plugin
 PROTO_ROOT_DIR=googleapis/
 PROTO_SRC_DIR=google/ads/googleads/$(ADS_VERSION)/**/*.proto
 PROTO_SRC_DEPENDENCIES=google/**/*.proto
+PROTO_ENUMS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/enums/*.proto
 
 # Directory to write generated code to (.js and .d.ts files)
 OUT_DIR=src/protos
+# Proto compiled enum filepath
+OUT_COMPILED_ENUMS=compiled-enums.json
+# Static enum filepath (ts)
+OUT_STATIC_TS_ENUMS=src/lib/enums.ts
 
 .SILENT: protos
 
 protos: clean compile-protos
+	$(MAKE) enums
 	echo "finished all"
 
+enums:
+	pbjs -t json $(PROTO_ENUMS_ONLY) > ./scripts/$(OUT_COMPILED_ENUMS)
+	node ./scripts/generate-enums.js $(OUT_COMPILED_ENUMS) $(ADS_VERSION) $(OUT_STATIC_TS_ENUMS)
+	rm ./scripts/$(OUT_COMPILED_ENUMS)
+
+# TODO: These proto compilation steps could be cleaned up and moved to a bash script
 compile-protos:
 	# Compile depedency protos
 	# Temporary workaround for https://github.com/protocolbuffers/protobuf/issues/5318
@@ -61,4 +73,4 @@ clean:
 	rm -rf $(OUT_DIR)/*
 	mkdir -p $(OUT_DIR)
 
-.PHONY: protos
+.PHONY: protos enums
