@@ -3,7 +3,7 @@
 /**
  * @name AccessReasonEnum.AccessReason
  */
-enum AccessReason {
+export enum AccessReason {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "OWNED" = 2,
@@ -16,7 +16,7 @@ enum AccessReason {
 /**
  * @name AccountBudgetProposalStatusEnum.AccountBudgetProposalStatus
  */
-enum AccountBudgetProposalStatus {
+export enum AccountBudgetProposalStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -29,7 +29,7 @@ enum AccountBudgetProposalStatus {
 /**
  * @name AccountBudgetProposalTypeEnum.AccountBudgetProposalType
  */
-enum AccountBudgetProposalType {
+export enum AccountBudgetProposalType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CREATE" = 2,
@@ -41,7 +41,7 @@ enum AccountBudgetProposalType {
 /**
  * @name AccountBudgetStatusEnum.AccountBudgetStatus
  */
-enum AccountBudgetStatus {
+export enum AccountBudgetStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -52,7 +52,7 @@ enum AccountBudgetStatus {
 /**
  * @name AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField
  */
-enum AdCustomizerPlaceholderField {
+export enum AdCustomizerPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INTEGER" = 2,
@@ -64,7 +64,7 @@ enum AdCustomizerPlaceholderField {
 /**
  * @name AdGroupAdRotationModeEnum.AdGroupAdRotationMode
  */
-enum AdGroupAdRotationMode {
+export enum AdGroupAdRotationMode {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "OPTIMIZE" = 2,
@@ -74,7 +74,7 @@ enum AdGroupAdRotationMode {
 /**
  * @name AdGroupAdStatusEnum.AdGroupAdStatus
  */
-enum AdGroupAdStatus {
+export enum AdGroupAdStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -85,7 +85,7 @@ enum AdGroupAdStatus {
 /**
  * @name AdGroupCriterionStatusEnum.AdGroupCriterionStatus
  */
-enum AdGroupCriterionStatus {
+export enum AdGroupCriterionStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -96,7 +96,7 @@ enum AdGroupCriterionStatus {
 /**
  * @name AdGroupStatusEnum.AdGroupStatus
  */
-enum AdGroupStatus {
+export enum AdGroupStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -107,7 +107,7 @@ enum AdGroupStatus {
 /**
  * @name AdGroupTypeEnum.AdGroupType
  */
-enum AdGroupType {
+export enum AdGroupType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEARCH_STANDARD" = 2,
@@ -125,7 +125,7 @@ enum AdGroupType {
 /**
  * @name AdNetworkTypeEnum.AdNetworkType
  */
-enum AdNetworkType {
+export enum AdNetworkType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEARCH" = 2,
@@ -139,7 +139,7 @@ enum AdNetworkType {
 /**
  * @name AdServingOptimizationStatusEnum.AdServingOptimizationStatus
  */
-enum AdServingOptimizationStatus {
+export enum AdServingOptimizationStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "OPTIMIZE" = 2,
@@ -152,7 +152,7 @@ enum AdServingOptimizationStatus {
 /**
  * @name AdStrengthEnum.AdStrength
  */
-enum AdStrength {
+export enum AdStrength {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -166,7 +166,7 @@ enum AdStrength {
 /**
  * @name AdTypeEnum.AdType
  */
-enum AdType {
+export enum AdType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "TEXT_AD" = 2,
@@ -186,7 +186,7 @@ enum AdType {
 /**
  * @name AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType
  */
-enum AdvertisingChannelSubType {
+export enum AdvertisingChannelSubType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEARCH_MOBILE_APP" = 2,
@@ -204,7 +204,7 @@ enum AdvertisingChannelSubType {
 /**
  * @name AdvertisingChannelTypeEnum.AdvertisingChannelType
  */
-enum AdvertisingChannelType {
+export enum AdvertisingChannelType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEARCH" = 2,
@@ -217,7 +217,7 @@ enum AdvertisingChannelType {
 /**
  * @name AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType
  */
-enum AffiliateLocationFeedRelationshipType {
+export enum AffiliateLocationFeedRelationshipType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "GENERAL_RETAILER" = 2,
@@ -226,7 +226,7 @@ enum AffiliateLocationFeedRelationshipType {
 /**
  * @name AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField
  */
-enum AffiliateLocationPlaceholderField {
+export enum AffiliateLocationPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BUSINESS_NAME" = 2,
@@ -245,7 +245,7 @@ enum AffiliateLocationPlaceholderField {
 /**
  * @name AgeRangeTypeEnum.AgeRangeType
  */
-enum AgeRangeType {
+export enum AgeRangeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AGE_RANGE_18_24" = 503001,
@@ -260,7 +260,7 @@ enum AgeRangeType {
 /**
  * @name AppPaymentModelTypeEnum.AppPaymentModelType
  */
-enum AppPaymentModelType {
+export enum AppPaymentModelType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PAID" = 30,
@@ -269,7 +269,7 @@ enum AppPaymentModelType {
 /**
  * @name AppPlaceholderFieldEnum.AppPlaceholderField
  */
-enum AppPlaceholderField {
+export enum AppPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "STORE" = 2,
@@ -285,7 +285,7 @@ enum AppPlaceholderField {
 /**
  * @name AppStoreEnum.AppStore
  */
-enum AppStore {
+export enum AppStore {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "APPLE_ITUNES" = 2,
@@ -295,7 +295,7 @@ enum AppStore {
 /**
  * @name AttributionModelEnum.AttributionModel
  */
-enum AttributionModel {
+export enum AttributionModel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EXTERNAL" = 100,
@@ -310,7 +310,7 @@ enum AttributionModel {
 /**
  * @name BidModifierSourceEnum.BidModifierSource
  */
-enum BidModifierSource {
+export enum BidModifierSource {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CAMPAIGN" = 2,
@@ -320,7 +320,7 @@ enum BidModifierSource {
 /**
  * @name BiddingSourceEnum.BiddingSource
  */
-enum BiddingSource {
+export enum BiddingSource {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CAMPAIGN_BIDDING_STRATEGY" = 5,
@@ -331,7 +331,7 @@ enum BiddingSource {
 /**
  * @name BiddingStrategyStatusEnum.BiddingStrategyStatus
  */
-enum BiddingStrategyStatus {
+export enum BiddingStrategyStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -341,7 +341,7 @@ enum BiddingStrategyStatus {
 /**
  * @name BiddingStrategyTypeEnum.BiddingStrategyType
  */
-enum BiddingStrategyType {
+export enum BiddingStrategyType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENHANCED_CPC" = 2,
@@ -363,7 +363,7 @@ enum BiddingStrategyType {
 /**
  * @name BillingSetupStatusEnum.BillingSetupStatus
  */
-enum BillingSetupStatus {
+export enum BillingSetupStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -375,7 +375,7 @@ enum BillingSetupStatus {
 /**
  * @name BrandSafetySuitabilityEnum.BrandSafetySuitability
  */
-enum BrandSafetySuitability {
+export enum BrandSafetySuitability {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EXPANDED_INVENTORY" = 2,
@@ -386,7 +386,7 @@ enum BrandSafetySuitability {
 /**
  * @name BudgetDeliveryMethodEnum.BudgetDeliveryMethod
  */
-enum BudgetDeliveryMethod {
+export enum BudgetDeliveryMethod {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "STANDARD" = 2,
@@ -396,7 +396,7 @@ enum BudgetDeliveryMethod {
 /**
  * @name BudgetPeriodEnum.BudgetPeriod
  */
-enum BudgetPeriod {
+export enum BudgetPeriod {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DAILY" = 2,
@@ -407,7 +407,7 @@ enum BudgetPeriod {
 /**
  * @name BudgetStatusEnum.BudgetStatus
  */
-enum BudgetStatus {
+export enum BudgetStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -417,7 +417,7 @@ enum BudgetStatus {
 /**
  * @name CallConversionReportingStateEnum.CallConversionReportingState
  */
-enum CallConversionReportingState {
+export enum CallConversionReportingState {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DISABLED" = 2,
@@ -428,7 +428,7 @@ enum CallConversionReportingState {
 /**
  * @name CallPlaceholderFieldEnum.CallPlaceholderField
  */
-enum CallPlaceholderField {
+export enum CallPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PHONE_NUMBER" = 2,
@@ -441,7 +441,7 @@ enum CallPlaceholderField {
 /**
  * @name CalloutPlaceholderFieldEnum.CalloutPlaceholderField
  */
-enum CalloutPlaceholderField {
+export enum CalloutPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CALLOUT_TEXT" = 2,
@@ -450,7 +450,7 @@ enum CalloutPlaceholderField {
 /**
  * @name CampaignServingStatusEnum.CampaignServingStatus
  */
-enum CampaignServingStatus {
+export enum CampaignServingStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SERVING" = 2,
@@ -463,7 +463,7 @@ enum CampaignServingStatus {
 /**
  * @name CampaignSharedSetStatusEnum.CampaignSharedSetStatus
  */
-enum CampaignSharedSetStatus {
+export enum CampaignSharedSetStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -473,7 +473,7 @@ enum CampaignSharedSetStatus {
 /**
  * @name CampaignStatusEnum.CampaignStatus
  */
-enum CampaignStatus {
+export enum CampaignStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -484,7 +484,7 @@ enum CampaignStatus {
 /**
  * @name ChangeStatusOperationEnum.ChangeStatusOperation
  */
-enum ChangeStatusOperation {
+export enum ChangeStatusOperation {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ADDED" = 2,
@@ -495,7 +495,7 @@ enum ChangeStatusOperation {
 /**
  * @name ChangeStatusResourceTypeEnum.ChangeStatusResourceType
  */
-enum ChangeStatusResourceType {
+export enum ChangeStatusResourceType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AD_GROUP" = 3,
@@ -513,7 +513,7 @@ enum ChangeStatusResourceType {
 /**
  * @name ClickTypeEnum.ClickType
  */
-enum ClickType {
+export enum ClickType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "APP_DEEPLINK" = 2,
@@ -573,7 +573,7 @@ enum ClickType {
 /**
  * @name ContentLabelTypeEnum.ContentLabelType
  */
-enum ContentLabelType {
+export enum ContentLabelType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEXUALLY_SUGGESTIVE" = 2,
@@ -596,7 +596,7 @@ enum ContentLabelType {
 /**
  * @name ConversionActionCategoryEnum.ConversionActionCategory
  */
-enum ConversionActionCategory {
+export enum ConversionActionCategory {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DEFAULT" = 2,
@@ -610,7 +610,7 @@ enum ConversionActionCategory {
 /**
  * @name ConversionActionCountingTypeEnum.ConversionActionCountingType
  */
-enum ConversionActionCountingType {
+export enum ConversionActionCountingType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ONE_PER_CLICK" = 2,
@@ -620,7 +620,7 @@ enum ConversionActionCountingType {
 /**
  * @name ConversionActionStatusEnum.ConversionActionStatus
  */
-enum ConversionActionStatus {
+export enum ConversionActionStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -631,7 +631,7 @@ enum ConversionActionStatus {
 /**
  * @name ConversionActionTypeEnum.ConversionActionType
  */
-enum ConversionActionType {
+export enum ConversionActionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AD_CALL" = 2,
@@ -647,7 +647,7 @@ enum ConversionActionType {
 /**
  * @name ConversionAttributionEventTypeEnum.ConversionAttributionEventType
  */
-enum ConversionAttributionEventType {
+export enum ConversionAttributionEventType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "IMPRESSION" = 2,
@@ -657,7 +657,7 @@ enum ConversionAttributionEventType {
 /**
  * @name ConversionLagBucketEnum.ConversionLagBucket
  */
-enum ConversionLagBucket {
+export enum ConversionLagBucket {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LESS_THAN_ONE_DAY" = 2,
@@ -684,7 +684,7 @@ enum ConversionLagBucket {
 /**
  * @name ConversionOrAdjustmentLagBucketEnum.ConversionOrAdjustmentLagBucket
  */
-enum ConversionOrAdjustmentLagBucket {
+export enum ConversionOrAdjustmentLagBucket {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CONVERSION_LESS_THAN_ONE_DAY" = 2,
@@ -733,7 +733,7 @@ enum ConversionOrAdjustmentLagBucket {
 /**
  * @name CriterionCategoryChannelAvailabilityModeEnum.CriterionCategoryChannelAvailabilityMode
  */
-enum CriterionCategoryChannelAvailabilityMode {
+export enum CriterionCategoryChannelAvailabilityMode {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ALL_CHANNELS" = 2,
@@ -744,7 +744,7 @@ enum CriterionCategoryChannelAvailabilityMode {
 /**
  * @name CriterionCategoryLocaleAvailabilityModeEnum.CriterionCategoryLocaleAvailabilityMode
  */
-enum CriterionCategoryLocaleAvailabilityMode {
+export enum CriterionCategoryLocaleAvailabilityMode {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ALL_LOCALES" = 2,
@@ -756,7 +756,7 @@ enum CriterionCategoryLocaleAvailabilityMode {
 /**
  * @name CriterionSystemServingStatusEnum.CriterionSystemServingStatus
  */
-enum CriterionSystemServingStatus {
+export enum CriterionSystemServingStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ELIGIBLE" = 2,
@@ -766,7 +766,7 @@ enum CriterionSystemServingStatus {
 /**
  * @name CriterionTypeEnum.CriterionType
  */
-enum CriterionType {
+export enum CriterionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "KEYWORD" = 2,
@@ -803,7 +803,7 @@ enum CriterionType {
 /**
  * @name CustomInterestMemberTypeEnum.CustomInterestMemberType
  */
-enum CustomInterestMemberType {
+export enum CustomInterestMemberType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "KEYWORD" = 2,
@@ -813,7 +813,7 @@ enum CustomInterestMemberType {
 /**
  * @name CustomInterestStatusEnum.CustomInterestStatus
  */
-enum CustomInterestStatus {
+export enum CustomInterestStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -823,7 +823,7 @@ enum CustomInterestStatus {
 /**
  * @name CustomInterestTypeEnum.CustomInterestType
  */
-enum CustomInterestType {
+export enum CustomInterestType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CUSTOM_AFFINITY" = 2,
@@ -833,7 +833,7 @@ enum CustomInterestType {
 /**
  * @name CustomPlaceholderFieldEnum.CustomPlaceholderField
  */
-enum CustomPlaceholderField {
+export enum CustomPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ID" = 2,
@@ -861,7 +861,7 @@ enum CustomPlaceholderField {
 /**
  * @name CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType
  */
-enum CustomerMatchUploadKeyType {
+export enum CustomerMatchUploadKeyType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CONTACT_INFO" = 2,
@@ -872,7 +872,7 @@ enum CustomerMatchUploadKeyType {
 /**
  * @name DataDrivenModelStatusEnum.DataDrivenModelStatus
  */
-enum DataDrivenModelStatus {
+export enum DataDrivenModelStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AVAILABLE" = 2,
@@ -884,7 +884,7 @@ enum DataDrivenModelStatus {
 /**
  * @name DayOfWeekEnum.DayOfWeek
  */
-enum DayOfWeek {
+export enum DayOfWeek {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MONDAY" = 2,
@@ -899,7 +899,7 @@ enum DayOfWeek {
 /**
  * @name DeviceEnum.Device
  */
-enum Device {
+export enum Device {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MOBILE" = 2,
@@ -911,7 +911,7 @@ enum Device {
 /**
  * @name DisplayAdFormatSettingEnum.DisplayAdFormatSetting
  */
-enum DisplayAdFormatSetting {
+export enum DisplayAdFormatSetting {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ALL_FORMATS" = 2,
@@ -922,7 +922,7 @@ enum DisplayAdFormatSetting {
 /**
  * @name DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField
  */
-enum DsaPageFeedCriterionField {
+export enum DsaPageFeedCriterionField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PAGE_URL" = 2,
@@ -932,7 +932,7 @@ enum DsaPageFeedCriterionField {
 /**
  * @name EducationPlaceholderFieldEnum.EducationPlaceholderField
  */
-enum EducationPlaceholderField {
+export enum EducationPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PROGRAM_ID" = 2,
@@ -957,7 +957,7 @@ enum EducationPlaceholderField {
 /**
  * @name ExtensionSettingDeviceEnum.ExtensionSettingDevice
  */
-enum ExtensionSettingDevice {
+export enum ExtensionSettingDevice {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MOBILE" = 2,
@@ -967,7 +967,7 @@ enum ExtensionSettingDevice {
 /**
  * @name ExtensionTypeEnum.ExtensionType
  */
-enum ExtensionType {
+export enum ExtensionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NONE" = 2,
@@ -985,7 +985,7 @@ enum ExtensionType {
 /**
  * @name ExternalConversionSourceEnum.ExternalConversionSource
  */
-enum ExternalConversionSource {
+export enum ExternalConversionSource {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "WEBPAGE" = 2,
@@ -1014,7 +1014,7 @@ enum ExternalConversionSource {
 /**
  * @name FeedAttributeTypeEnum.FeedAttributeType
  */
-enum FeedAttributeType {
+export enum FeedAttributeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INT64" = 2,
@@ -1035,7 +1035,7 @@ enum FeedAttributeType {
 /**
  * @name FeedItemQualityApprovalStatusEnum.FeedItemQualityApprovalStatus
  */
-enum FeedItemQualityApprovalStatus {
+export enum FeedItemQualityApprovalStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "APPROVED" = 2,
@@ -1045,7 +1045,7 @@ enum FeedItemQualityApprovalStatus {
 /**
  * @name FeedItemQualityDisapprovalReasonEnum.FeedItemQualityDisapprovalReason
  */
-enum FeedItemQualityDisapprovalReason {
+export enum FeedItemQualityDisapprovalReason {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PRICE_TABLE_REPETITIVE_HEADERS" = 2,
@@ -1071,7 +1071,7 @@ enum FeedItemQualityDisapprovalReason {
 /**
  * @name FeedItemStatusEnum.FeedItemStatus
  */
-enum FeedItemStatus {
+export enum FeedItemStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1081,7 +1081,7 @@ enum FeedItemStatus {
 /**
  * @name FeedItemTargetDeviceEnum.FeedItemTargetDevice
  */
-enum FeedItemTargetDevice {
+export enum FeedItemTargetDevice {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MOBILE" = 2,
@@ -1090,7 +1090,7 @@ enum FeedItemTargetDevice {
 /**
  * @name FeedItemTargetTypeEnum.FeedItemTargetType
  */
-enum FeedItemTargetType {
+export enum FeedItemTargetType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CAMPAIGN" = 2,
@@ -1101,7 +1101,7 @@ enum FeedItemTargetType {
 /**
  * @name FeedItemValidationStatusEnum.FeedItemValidationStatus
  */
-enum FeedItemValidationStatus {
+export enum FeedItemValidationStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -1112,7 +1112,7 @@ enum FeedItemValidationStatus {
 /**
  * @name FeedLinkStatusEnum.FeedLinkStatus
  */
-enum FeedLinkStatus {
+export enum FeedLinkStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1122,7 +1122,7 @@ enum FeedLinkStatus {
 /**
  * @name FeedMappingCriterionTypeEnum.FeedMappingCriterionType
  */
-enum FeedMappingCriterionType {
+export enum FeedMappingCriterionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LOCATION_EXTENSION_TARGETING" = 4,
@@ -1132,7 +1132,7 @@ enum FeedMappingCriterionType {
 /**
  * @name FeedMappingStatusEnum.FeedMappingStatus
  */
-enum FeedMappingStatus {
+export enum FeedMappingStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1142,7 +1142,7 @@ enum FeedMappingStatus {
 /**
  * @name FeedOriginEnum.FeedOrigin
  */
-enum FeedOrigin {
+export enum FeedOrigin {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "USER" = 2,
@@ -1152,7 +1152,7 @@ enum FeedOrigin {
 /**
  * @name FeedStatusEnum.FeedStatus
  */
-enum FeedStatus {
+export enum FeedStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1162,7 +1162,7 @@ enum FeedStatus {
 /**
  * @name FlightPlaceholderFieldEnum.FlightPlaceholderField
  */
-enum FlightPlaceholderField {
+export enum FlightPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DESTINATION_ID" = 2,
@@ -1187,7 +1187,7 @@ enum FlightPlaceholderField {
 /**
  * @name FrequencyCapEventTypeEnum.FrequencyCapEventType
  */
-enum FrequencyCapEventType {
+export enum FrequencyCapEventType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "IMPRESSION" = 2,
@@ -1197,7 +1197,7 @@ enum FrequencyCapEventType {
 /**
  * @name FrequencyCapLevelEnum.FrequencyCapLevel
  */
-enum FrequencyCapLevel {
+export enum FrequencyCapLevel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AD_GROUP_AD" = 2,
@@ -1208,7 +1208,7 @@ enum FrequencyCapLevel {
 /**
  * @name FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit
  */
-enum FrequencyCapTimeUnit {
+export enum FrequencyCapTimeUnit {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DAY" = 2,
@@ -1219,7 +1219,7 @@ enum FrequencyCapTimeUnit {
 /**
  * @name GenderTypeEnum.GenderType
  */
-enum GenderType {
+export enum GenderType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MALE" = 10,
@@ -1230,7 +1230,7 @@ enum GenderType {
 /**
  * @name GeoTargetConstantStatusEnum.GeoTargetConstantStatus
  */
-enum GeoTargetConstantStatus {
+export enum GeoTargetConstantStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1240,7 +1240,7 @@ enum GeoTargetConstantStatus {
 /**
  * @name GeoTargetingRestrictionEnum.GeoTargetingRestriction
  */
-enum GeoTargetingRestriction {
+export enum GeoTargetingRestriction {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LOCATION_OF_PRESENCE" = 2,
@@ -1249,7 +1249,7 @@ enum GeoTargetingRestriction {
 /**
  * @name GeoTargetingTypeEnum.GeoTargetingType
  */
-enum GeoTargetingType {
+export enum GeoTargetingType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AREA_OF_INTEREST" = 2,
@@ -1259,7 +1259,7 @@ enum GeoTargetingType {
 /**
  * @name GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory
  */
-enum GoogleAdsFieldCategory {
+export enum GoogleAdsFieldCategory {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "RESOURCE" = 2,
@@ -1271,7 +1271,7 @@ enum GoogleAdsFieldCategory {
 /**
  * @name GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType
  */
-enum GoogleAdsFieldDataType {
+export enum GoogleAdsFieldDataType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BOOLEAN" = 2,
@@ -1289,7 +1289,7 @@ enum GoogleAdsFieldDataType {
 /**
  * @name HotelDateSelectionTypeEnum.HotelDateSelectionType
  */
-enum HotelDateSelectionType {
+export enum HotelDateSelectionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DEFAULT_SELECTION" = 50,
@@ -1299,7 +1299,7 @@ enum HotelDateSelectionType {
 /**
  * @name HotelPlaceholderFieldEnum.HotelPlaceholderField
  */
-enum HotelPlaceholderField {
+export enum HotelPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PROPERTY_ID" = 2,
@@ -1327,7 +1327,7 @@ enum HotelPlaceholderField {
 /**
  * @name IncomeRangeTypeEnum.IncomeRangeType
  */
-enum IncomeRangeType {
+export enum IncomeRangeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INCOME_RANGE_0_50" = 510001,
@@ -1342,7 +1342,7 @@ enum IncomeRangeType {
 /**
  * @name InteractionEventTypeEnum.InteractionEventType
  */
-enum InteractionEventType {
+export enum InteractionEventType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CLICK" = 2,
@@ -1354,7 +1354,7 @@ enum InteractionEventType {
 /**
  * @name InteractionTypeEnum.InteractionType
  */
-enum InteractionType {
+export enum InteractionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CALLS" = 8000,
@@ -1363,7 +1363,7 @@ enum InteractionType {
 /**
  * @name JobPlaceholderFieldEnum.JobPlaceholderField
  */
-enum JobPlaceholderField {
+export enum JobPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "JOB_ID" = 2,
@@ -1388,7 +1388,7 @@ enum JobPlaceholderField {
 /**
  * @name KeywordMatchTypeEnum.KeywordMatchType
  */
-enum KeywordMatchType {
+export enum KeywordMatchType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EXACT" = 2,
@@ -1399,7 +1399,7 @@ enum KeywordMatchType {
 /**
  * @name KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel
  */
-enum KeywordPlanCompetitionLevel {
+export enum KeywordPlanCompetitionLevel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LOW" = 2,
@@ -1410,7 +1410,7 @@ enum KeywordPlanCompetitionLevel {
 /**
  * @name KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval
  */
-enum KeywordPlanForecastInterval {
+export enum KeywordPlanForecastInterval {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NEXT_WEEK" = 3,
@@ -1421,7 +1421,7 @@ enum KeywordPlanForecastInterval {
 /**
  * @name KeywordPlanNetworkEnum.KeywordPlanNetwork
  */
-enum KeywordPlanNetwork {
+export enum KeywordPlanNetwork {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "GOOGLE_SEARCH" = 2,
@@ -1431,7 +1431,7 @@ enum KeywordPlanNetwork {
 /**
  * @name LabelStatusEnum.LabelStatus
  */
-enum LabelStatus {
+export enum LabelStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1441,7 +1441,7 @@ enum LabelStatus {
 /**
  * @name ListingCustomAttributeIndexEnum.ListingCustomAttributeIndex
  */
-enum ListingCustomAttributeIndex {
+export enum ListingCustomAttributeIndex {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INDEX0" = 7,
@@ -1454,7 +1454,7 @@ enum ListingCustomAttributeIndex {
 /**
  * @name ListingGroupTypeEnum.ListingGroupType
  */
-enum ListingGroupType {
+export enum ListingGroupType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SUBDIVISION" = 2,
@@ -1464,7 +1464,7 @@ enum ListingGroupType {
 /**
  * @name LocalPlaceholderFieldEnum.LocalPlaceholderField
  */
-enum LocalPlaceholderField {
+export enum LocalPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DEAL_ID" = 2,
@@ -1491,7 +1491,7 @@ enum LocalPlaceholderField {
 /**
  * @name LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField
  */
-enum LocationExtensionTargetingCriterionField {
+export enum LocationExtensionTargetingCriterionField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ADDRESS_LINE_1" = 2,
@@ -1505,7 +1505,7 @@ enum LocationExtensionTargetingCriterionField {
 /**
  * @name LocationPlaceholderFieldEnum.LocationPlaceholderField
  */
-enum LocationPlaceholderField {
+export enum LocationPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BUSINESS_NAME" = 2,
@@ -1521,7 +1521,7 @@ enum LocationPlaceholderField {
 /**
  * @name ManagerLinkStatusEnum.ManagerLinkStatus
  */
-enum ManagerLinkStatus {
+export enum ManagerLinkStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ACTIVE" = 2,
@@ -1534,7 +1534,7 @@ enum ManagerLinkStatus {
 /**
  * @name MatchingFunctionContextTypeEnum.MatchingFunctionContextType
  */
-enum MatchingFunctionContextType {
+export enum MatchingFunctionContextType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "FEED_ITEM_ID" = 2,
@@ -1544,7 +1544,7 @@ enum MatchingFunctionContextType {
 /**
  * @name MatchingFunctionOperatorEnum.MatchingFunctionOperator
  */
-enum MatchingFunctionOperator {
+export enum MatchingFunctionOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "IN" = 2,
@@ -1557,7 +1557,7 @@ enum MatchingFunctionOperator {
 /**
  * @name MediaTypeEnum.MediaType
  */
-enum MediaType {
+export enum MediaType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "IMAGE" = 2,
@@ -1571,7 +1571,7 @@ enum MediaType {
 /**
  * @name MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus
  */
-enum MerchantCenterLinkStatus {
+export enum MerchantCenterLinkStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -1581,7 +1581,7 @@ enum MerchantCenterLinkStatus {
 /**
  * @name MessagePlaceholderFieldEnum.MessagePlaceholderField
  */
-enum MessagePlaceholderField {
+export enum MessagePlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BUSINESS_NAME" = 2,
@@ -1594,7 +1594,7 @@ enum MessagePlaceholderField {
 /**
  * @name MimeTypeEnum.MimeType
  */
-enum MimeType {
+export enum MimeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "IMAGE_JPEG" = 2,
@@ -1614,7 +1614,7 @@ enum MimeType {
 /**
  * @name MinuteOfHourEnum.MinuteOfHour
  */
-enum MinuteOfHour {
+export enum MinuteOfHour {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ZERO" = 2,
@@ -1626,7 +1626,7 @@ enum MinuteOfHour {
 /**
  * @name MobileDeviceTypeEnum.MobileDeviceType
  */
-enum MobileDeviceType {
+export enum MobileDeviceType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MOBILE" = 2,
@@ -1636,7 +1636,7 @@ enum MobileDeviceType {
 /**
  * @name MonthOfYearEnum.MonthOfYear
  */
-enum MonthOfYear {
+export enum MonthOfYear {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "JANUARY" = 2,
@@ -1656,7 +1656,7 @@ enum MonthOfYear {
 /**
  * @name MutateJobStatusEnum.MutateJobStatus
  */
-enum MutateJobStatus {
+export enum MutateJobStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PENDING" = 2,
@@ -1667,7 +1667,7 @@ enum MutateJobStatus {
 /**
  * @name NegativeGeoTargetTypeEnum.NegativeGeoTargetType
  */
-enum NegativeGeoTargetType {
+export enum NegativeGeoTargetType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DONT_CARE" = 2,
@@ -1677,7 +1677,7 @@ enum NegativeGeoTargetType {
 /**
  * @name OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType
  */
-enum OperatingSystemVersionOperatorType {
+export enum OperatingSystemVersionOperatorType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EQUALS_TO" = 2,
@@ -1687,7 +1687,7 @@ enum OperatingSystemVersionOperatorType {
 /**
  * @name PageOnePromotedStrategyGoalEnum.PageOnePromotedStrategyGoal
  */
-enum PageOnePromotedStrategyGoal {
+export enum PageOnePromotedStrategyGoal {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "FIRST_PAGE" = 2,
@@ -1697,7 +1697,7 @@ enum PageOnePromotedStrategyGoal {
 /**
  * @name ParentalStatusTypeEnum.ParentalStatusType
  */
-enum ParentalStatusType {
+export enum ParentalStatusType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PARENT" = 300,
@@ -1708,7 +1708,7 @@ enum ParentalStatusType {
 /**
  * @name PlaceholderTypeEnum.PlaceholderType
  */
-enum PlaceholderType {
+export enum PlaceholderType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SITELINK" = 2,
@@ -1735,7 +1735,7 @@ enum PlaceholderType {
 /**
  * @name PlacementTypeEnum.PlacementType
  */
-enum PlacementType {
+export enum PlacementType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "WEBSITE" = 2,
@@ -1748,7 +1748,7 @@ enum PlacementType {
 /**
  * @name PolicyApprovalStatusEnum.PolicyApprovalStatus
  */
-enum PolicyApprovalStatus {
+export enum PolicyApprovalStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DISAPPROVED" = 2,
@@ -1760,7 +1760,7 @@ enum PolicyApprovalStatus {
 /**
  * @name PolicyReviewStatusEnum.PolicyReviewStatus
  */
-enum PolicyReviewStatus {
+export enum PolicyReviewStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "REVIEW_IN_PROGRESS" = 2,
@@ -1771,7 +1771,7 @@ enum PolicyReviewStatus {
 /**
  * @name PolicyTopicEntryTypeEnum.PolicyTopicEntryType
  */
-enum PolicyTopicEntryType {
+export enum PolicyTopicEntryType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PROHIBITED" = 2,
@@ -1784,7 +1784,7 @@ enum PolicyTopicEntryType {
 /**
  * @name PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType
  */
-enum PolicyTopicEvidenceDestinationMismatchUrlType {
+export enum PolicyTopicEvidenceDestinationMismatchUrlType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DISPLAY_URL" = 2,
@@ -1797,7 +1797,7 @@ enum PolicyTopicEvidenceDestinationMismatchUrlType {
 /**
  * @name PositiveGeoTargetTypeEnum.PositiveGeoTargetType
  */
-enum PositiveGeoTargetType {
+export enum PositiveGeoTargetType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DONT_CARE" = 2,
@@ -1808,7 +1808,7 @@ enum PositiveGeoTargetType {
 /**
  * @name PreferredContentTypeEnum.PreferredContentType
  */
-enum PreferredContentType {
+export enum PreferredContentType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "YOUTUBE_TOP_CONTENT" = 400,
@@ -1817,7 +1817,7 @@ enum PreferredContentType {
 /**
  * @name PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier
  */
-enum PriceExtensionPriceQualifier {
+export enum PriceExtensionPriceQualifier {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "FROM" = 2,
@@ -1828,7 +1828,7 @@ enum PriceExtensionPriceQualifier {
 /**
  * @name PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit
  */
-enum PriceExtensionPriceUnit {
+export enum PriceExtensionPriceUnit {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PER_HOUR" = 2,
@@ -1842,7 +1842,7 @@ enum PriceExtensionPriceUnit {
 /**
  * @name PriceExtensionTypeEnum.PriceExtensionType
  */
-enum PriceExtensionType {
+export enum PriceExtensionType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BRANDS" = 2,
@@ -1859,7 +1859,7 @@ enum PriceExtensionType {
 /**
  * @name PricePlaceholderFieldEnum.PricePlaceholderField
  */
-enum PricePlaceholderField {
+export enum PricePlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "TYPE" = 2,
@@ -1920,7 +1920,7 @@ enum PricePlaceholderField {
 /**
  * @name ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel
  */
-enum ProductBiddingCategoryLevel {
+export enum ProductBiddingCategoryLevel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LEVEL1" = 2,
@@ -1933,7 +1933,7 @@ enum ProductBiddingCategoryLevel {
 /**
  * @name ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus
  */
-enum ProductBiddingCategoryStatus {
+export enum ProductBiddingCategoryStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ACTIVE" = 2,
@@ -1943,7 +1943,7 @@ enum ProductBiddingCategoryStatus {
 /**
  * @name ProductChannelEnum.ProductChannel
  */
-enum ProductChannel {
+export enum ProductChannel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ONLINE" = 2,
@@ -1953,7 +1953,7 @@ enum ProductChannel {
 /**
  * @name ProductChannelExclusivityEnum.ProductChannelExclusivity
  */
-enum ProductChannelExclusivity {
+export enum ProductChannelExclusivity {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SINGLE_CHANNEL" = 2,
@@ -1963,7 +1963,7 @@ enum ProductChannelExclusivity {
 /**
  * @name ProductConditionEnum.ProductCondition
  */
-enum ProductCondition {
+export enum ProductCondition {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NEW" = 3,
@@ -1974,7 +1974,7 @@ enum ProductCondition {
 /**
  * @name ProductTypeLevelEnum.ProductTypeLevel
  */
-enum ProductTypeLevel {
+export enum ProductTypeLevel {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LEVEL1" = 7,
@@ -1987,7 +1987,7 @@ enum ProductTypeLevel {
 /**
  * @name PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier
  */
-enum PromotionExtensionDiscountModifier {
+export enum PromotionExtensionDiscountModifier {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "UP_TO" = 2,
@@ -1996,7 +1996,7 @@ enum PromotionExtensionDiscountModifier {
 /**
  * @name PromotionExtensionOccasionEnum.PromotionExtensionOccasion
  */
-enum PromotionExtensionOccasion {
+export enum PromotionExtensionOccasion {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NEW_YEARS" = 2,
@@ -2041,7 +2041,7 @@ enum PromotionExtensionOccasion {
 /**
  * @name PromotionPlaceholderFieldEnum.PromotionPlaceholderField
  */
-enum PromotionPlaceholderField {
+export enum PromotionPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PROMOTION_TARGET" = 2,
@@ -2063,7 +2063,7 @@ enum PromotionPlaceholderField {
 /**
  * @name ProximityRadiusUnitsEnum.ProximityRadiusUnits
  */
-enum ProximityRadiusUnits {
+export enum ProximityRadiusUnits {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MILES" = 2,
@@ -2073,7 +2073,7 @@ enum ProximityRadiusUnits {
 /**
  * @name QualityScoreBucketEnum.QualityScoreBucket
  */
-enum QualityScoreBucket {
+export enum QualityScoreBucket {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BELOW_AVERAGE" = 2,
@@ -2084,7 +2084,7 @@ enum QualityScoreBucket {
 /**
  * @name RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField
  */
-enum RealEstatePlaceholderField {
+export enum RealEstatePlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LISTING_ID" = 2,
@@ -2110,7 +2110,7 @@ enum RealEstatePlaceholderField {
 /**
  * @name RecommendationTypeEnum.RecommendationType
  */
-enum RecommendationType {
+export enum RecommendationType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CAMPAIGN_BUDGET" = 2,
@@ -2127,7 +2127,7 @@ enum RecommendationType {
 /**
  * @name SearchTermMatchTypeEnum.SearchTermMatchType
  */
-enum SearchTermMatchType {
+export enum SearchTermMatchType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "BROAD" = 2,
@@ -2140,7 +2140,7 @@ enum SearchTermMatchType {
 /**
  * @name SearchTermTargetingStatusEnum.SearchTermTargetingStatus
  */
-enum SearchTermTargetingStatus {
+export enum SearchTermTargetingStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ADDED" = 2,
@@ -2152,7 +2152,7 @@ enum SearchTermTargetingStatus {
 /**
  * @name ServedAssetFieldTypeEnum.ServedAssetFieldType
  */
-enum ServedAssetFieldType {
+export enum ServedAssetFieldType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "HEADLINE_1" = 2,
@@ -2165,7 +2165,7 @@ enum ServedAssetFieldType {
 /**
  * @name SharedSetStatusEnum.SharedSetStatus
  */
-enum SharedSetStatus {
+export enum SharedSetStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -2175,7 +2175,7 @@ enum SharedSetStatus {
 /**
  * @name SharedSetTypeEnum.SharedSetType
  */
-enum SharedSetType {
+export enum SharedSetType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NEGATIVE_KEYWORDS" = 2,
@@ -2185,7 +2185,7 @@ enum SharedSetType {
 /**
  * @name SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField
  */
-enum SitelinkPlaceholderField {
+export enum SitelinkPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "TEXT" = 2,
@@ -2200,7 +2200,7 @@ enum SitelinkPlaceholderField {
 /**
  * @name SlotEnum.Slot
  */
-enum Slot {
+export enum Slot {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SEARCH_SIDE" = 2,
@@ -2215,7 +2215,7 @@ enum Slot {
 /**
  * @name SpendingLimitTypeEnum.SpendingLimitType
  */
-enum SpendingLimitType {
+export enum SpendingLimitType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INFINITE" = 2,
@@ -2224,7 +2224,7 @@ enum SpendingLimitType {
 /**
  * @name StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField
  */
-enum StructuredSnippetPlaceholderField {
+export enum StructuredSnippetPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "HEADER" = 2,
@@ -2234,7 +2234,7 @@ enum StructuredSnippetPlaceholderField {
 /**
  * @name SystemManagedResourceSourceEnum.SystemManagedResourceSource
  */
-enum SystemManagedResourceSource {
+export enum SystemManagedResourceSource {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AD_VARIATIONS" = 2,
@@ -2243,7 +2243,7 @@ enum SystemManagedResourceSource {
 /**
  * @name TargetCpaOptInRecommendationGoalEnum.TargetCpaOptInRecommendationGoal
  */
-enum TargetCpaOptInRecommendationGoal {
+export enum TargetCpaOptInRecommendationGoal {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "SAME_COST" = 2,
@@ -2255,7 +2255,7 @@ enum TargetCpaOptInRecommendationGoal {
 /**
  * @name TargetImpressionShareLocationEnum.TargetImpressionShareLocation
  */
-enum TargetImpressionShareLocation {
+export enum TargetImpressionShareLocation {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ANYWHERE_ON_PAGE" = 2,
@@ -2266,7 +2266,7 @@ enum TargetImpressionShareLocation {
 /**
  * @name TargetingDimensionEnum.TargetingDimension
  */
-enum TargetingDimension {
+export enum TargetingDimension {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "KEYWORD" = 2,
@@ -2282,7 +2282,7 @@ enum TargetingDimension {
 /**
  * @name TimeTypeEnum.TimeType
  */
-enum TimeType {
+export enum TimeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NOW" = 2,
@@ -2292,7 +2292,7 @@ enum TimeType {
 /**
  * @name TrackingCodePageFormatEnum.TrackingCodePageFormat
  */
-enum TrackingCodePageFormat {
+export enum TrackingCodePageFormat {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "HTML" = 2,
@@ -2302,7 +2302,7 @@ enum TrackingCodePageFormat {
 /**
  * @name TrackingCodeTypeEnum.TrackingCodeType
  */
-enum TrackingCodeType {
+export enum TrackingCodeType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "WEBPAGE" = 2,
@@ -2313,7 +2313,7 @@ enum TrackingCodeType {
 /**
  * @name TravelPlaceholderFieldEnum.TravelPlaceholderField
  */
-enum TravelPlaceholderField {
+export enum TravelPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "DESTINATION_ID" = 2,
@@ -2341,7 +2341,7 @@ enum TravelPlaceholderField {
 /**
  * @name UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType
  */
-enum UserInterestTaxonomyType {
+export enum UserInterestTaxonomyType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AFFINITY" = 2,
@@ -2354,7 +2354,7 @@ enum UserInterestTaxonomyType {
 /**
  * @name UserListAccessStatusEnum.UserListAccessStatus
  */
-enum UserListAccessStatus {
+export enum UserListAccessStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ENABLED" = 2,
@@ -2364,7 +2364,7 @@ enum UserListAccessStatus {
 /**
  * @name UserListClosingReasonEnum.UserListClosingReason
  */
-enum UserListClosingReason {
+export enum UserListClosingReason {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "UNUSED" = 2,
@@ -2373,7 +2373,7 @@ enum UserListClosingReason {
 /**
  * @name UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator
  */
-enum UserListCombinedRuleOperator {
+export enum UserListCombinedRuleOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AND" = 2,
@@ -2383,7 +2383,7 @@ enum UserListCombinedRuleOperator {
 /**
  * @name UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType
  */
-enum UserListCrmDataSourceType {
+export enum UserListCrmDataSourceType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "FIRST_PARTY" = 2,
@@ -2394,7 +2394,7 @@ enum UserListCrmDataSourceType {
 /**
  * @name UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator
  */
-enum UserListDateRuleItemOperator {
+export enum UserListDateRuleItemOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EQUALS" = 2,
@@ -2406,7 +2406,7 @@ enum UserListDateRuleItemOperator {
 /**
  * @name UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator
  */
-enum UserListLogicalRuleOperator {
+export enum UserListLogicalRuleOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "ALL" = 2,
@@ -2417,7 +2417,7 @@ enum UserListLogicalRuleOperator {
 /**
  * @name UserListMembershipStatusEnum.UserListMembershipStatus
  */
-enum UserListMembershipStatus {
+export enum UserListMembershipStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "OPEN" = 2,
@@ -2427,7 +2427,7 @@ enum UserListMembershipStatus {
 /**
  * @name UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator
  */
-enum UserListNumberRuleItemOperator {
+export enum UserListNumberRuleItemOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "GREATER_THAN" = 2,
@@ -2441,7 +2441,7 @@ enum UserListNumberRuleItemOperator {
 /**
  * @name UserListPrepopulationStatusEnum.UserListPrepopulationStatus
  */
-enum UserListPrepopulationStatus {
+export enum UserListPrepopulationStatus {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "REQUESTED" = 2,
@@ -2452,7 +2452,7 @@ enum UserListPrepopulationStatus {
 /**
  * @name UserListRuleTypeEnum.UserListRuleType
  */
-enum UserListRuleType {
+export enum UserListRuleType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "AND_OF_ORS" = 2,
@@ -2462,7 +2462,7 @@ enum UserListRuleType {
 /**
  * @name UserListSizeRangeEnum.UserListSizeRange
  */
-enum UserListSizeRange {
+export enum UserListSizeRange {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "LESS_THAN_FIVE_HUNDRED" = 2,
@@ -2486,7 +2486,7 @@ enum UserListSizeRange {
 /**
  * @name UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator
  */
-enum UserListStringRuleItemOperator {
+export enum UserListStringRuleItemOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CONTAINS" = 2,
@@ -2502,7 +2502,7 @@ enum UserListStringRuleItemOperator {
 /**
  * @name UserListTypeEnum.UserListType
  */
-enum UserListType {
+export enum UserListType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "REMARKETING" = 2,
@@ -2516,7 +2516,7 @@ enum UserListType {
 /**
  * @name VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode
  */
-enum VanityPharmaDisplayUrlMode {
+export enum VanityPharmaDisplayUrlMode {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "MANUFACTURER_WEBSITE_URL" = 2,
@@ -2526,7 +2526,7 @@ enum VanityPharmaDisplayUrlMode {
 /**
  * @name VanityPharmaTextEnum.VanityPharmaText
  */
-enum VanityPharmaText {
+export enum VanityPharmaText {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "PRESCRIPTION_TREATMENT_WEBSITE_EN" = 2,
@@ -2546,7 +2546,7 @@ enum VanityPharmaText {
 /**
  * @name WebpageConditionOperandEnum.WebpageConditionOperand
  */
-enum WebpageConditionOperand {
+export enum WebpageConditionOperand {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "URL" = 2,
@@ -2559,193 +2559,9 @@ enum WebpageConditionOperand {
 /**
  * @name WebpageConditionOperatorEnum.WebpageConditionOperator
  */
-enum WebpageConditionOperator {
+export enum WebpageConditionOperator {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "EQUALS" = 2,
   "CONTAINS" = 3,
 }
-
-/* Additionally, all enums are exported in a single object called "enums" */
-export const staticEnums = {
-  AccessReason,
-  AccountBudgetProposalStatus,
-  AccountBudgetProposalType,
-  AccountBudgetStatus,
-  AdCustomizerPlaceholderField,
-  AdGroupAdRotationMode,
-  AdGroupAdStatus,
-  AdGroupCriterionStatus,
-  AdGroupStatus,
-  AdGroupType,
-  AdNetworkType,
-  AdServingOptimizationStatus,
-  AdStrength,
-  AdType,
-  AdvertisingChannelSubType,
-  AdvertisingChannelType,
-  AffiliateLocationFeedRelationshipType,
-  AffiliateLocationPlaceholderField,
-  AgeRangeType,
-  AppPaymentModelType,
-  AppPlaceholderField,
-  AppStore,
-  AttributionModel,
-  BidModifierSource,
-  BiddingSource,
-  BiddingStrategyStatus,
-  BiddingStrategyType,
-  BillingSetupStatus,
-  BrandSafetySuitability,
-  BudgetDeliveryMethod,
-  BudgetPeriod,
-  BudgetStatus,
-  CallConversionReportingState,
-  CallPlaceholderField,
-  CalloutPlaceholderField,
-  CampaignServingStatus,
-  CampaignSharedSetStatus,
-  CampaignStatus,
-  ChangeStatusOperation,
-  ChangeStatusResourceType,
-  ClickType,
-  ContentLabelType,
-  ConversionActionCategory,
-  ConversionActionCountingType,
-  ConversionActionStatus,
-  ConversionActionType,
-  ConversionAttributionEventType,
-  ConversionLagBucket,
-  ConversionOrAdjustmentLagBucket,
-  CriterionCategoryChannelAvailabilityMode,
-  CriterionCategoryLocaleAvailabilityMode,
-  CriterionSystemServingStatus,
-  CriterionType,
-  CustomInterestMemberType,
-  CustomInterestStatus,
-  CustomInterestType,
-  CustomPlaceholderField,
-  CustomerMatchUploadKeyType,
-  DataDrivenModelStatus,
-  DayOfWeek,
-  Device,
-  DisplayAdFormatSetting,
-  DsaPageFeedCriterionField,
-  EducationPlaceholderField,
-  ExtensionSettingDevice,
-  ExtensionType,
-  ExternalConversionSource,
-  FeedAttributeType,
-  FeedItemQualityApprovalStatus,
-  FeedItemQualityDisapprovalReason,
-  FeedItemStatus,
-  FeedItemTargetDevice,
-  FeedItemTargetType,
-  FeedItemValidationStatus,
-  FeedLinkStatus,
-  FeedMappingCriterionType,
-  FeedMappingStatus,
-  FeedOrigin,
-  FeedStatus,
-  FlightPlaceholderField,
-  FrequencyCapEventType,
-  FrequencyCapLevel,
-  FrequencyCapTimeUnit,
-  GenderType,
-  GeoTargetConstantStatus,
-  GeoTargetingRestriction,
-  GeoTargetingType,
-  GoogleAdsFieldCategory,
-  GoogleAdsFieldDataType,
-  HotelDateSelectionType,
-  HotelPlaceholderField,
-  IncomeRangeType,
-  InteractionEventType,
-  InteractionType,
-  JobPlaceholderField,
-  KeywordMatchType,
-  KeywordPlanCompetitionLevel,
-  KeywordPlanForecastInterval,
-  KeywordPlanNetwork,
-  LabelStatus,
-  ListingCustomAttributeIndex,
-  ListingGroupType,
-  LocalPlaceholderField,
-  LocationExtensionTargetingCriterionField,
-  LocationPlaceholderField,
-  ManagerLinkStatus,
-  MatchingFunctionContextType,
-  MatchingFunctionOperator,
-  MediaType,
-  MerchantCenterLinkStatus,
-  MessagePlaceholderField,
-  MimeType,
-  MinuteOfHour,
-  MobileDeviceType,
-  MonthOfYear,
-  MutateJobStatus,
-  NegativeGeoTargetType,
-  OperatingSystemVersionOperatorType,
-  PageOnePromotedStrategyGoal,
-  ParentalStatusType,
-  PlaceholderType,
-  PlacementType,
-  PolicyApprovalStatus,
-  PolicyReviewStatus,
-  PolicyTopicEntryType,
-  PolicyTopicEvidenceDestinationMismatchUrlType,
-  PositiveGeoTargetType,
-  PreferredContentType,
-  PriceExtensionPriceQualifier,
-  PriceExtensionPriceUnit,
-  PriceExtensionType,
-  PricePlaceholderField,
-  ProductBiddingCategoryLevel,
-  ProductBiddingCategoryStatus,
-  ProductChannel,
-  ProductChannelExclusivity,
-  ProductCondition,
-  ProductTypeLevel,
-  PromotionExtensionDiscountModifier,
-  PromotionExtensionOccasion,
-  PromotionPlaceholderField,
-  ProximityRadiusUnits,
-  QualityScoreBucket,
-  RealEstatePlaceholderField,
-  RecommendationType,
-  SearchTermMatchType,
-  SearchTermTargetingStatus,
-  ServedAssetFieldType,
-  SharedSetStatus,
-  SharedSetType,
-  SitelinkPlaceholderField,
-  Slot,
-  SpendingLimitType,
-  StructuredSnippetPlaceholderField,
-  SystemManagedResourceSource,
-  TargetCpaOptInRecommendationGoal,
-  TargetImpressionShareLocation,
-  TargetingDimension,
-  TimeType,
-  TrackingCodePageFormat,
-  TrackingCodeType,
-  TravelPlaceholderField,
-  UserInterestTaxonomyType,
-  UserListAccessStatus,
-  UserListClosingReason,
-  UserListCombinedRuleOperator,
-  UserListCrmDataSourceType,
-  UserListDateRuleItemOperator,
-  UserListLogicalRuleOperator,
-  UserListMembershipStatus,
-  UserListNumberRuleItemOperator,
-  UserListPrepopulationStatus,
-  UserListRuleType,
-  UserListSizeRange,
-  UserListStringRuleItemOperator,
-  UserListType,
-  VanityPharmaDisplayUrlMode,
-  VanityPharmaText,
-  WebpageConditionOperand,
-  WebpageConditionOperator,
-};
