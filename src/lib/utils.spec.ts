@@ -149,6 +149,31 @@ test("proto object result can be parsed when field mask is not present", () => {
   ]);
 });
 
+test("parsing results with no field mask correctly removes undefined properties", () => {
+  const result = [
+    {
+      resourceName: "customers/9262111890/campaigns/1485014801",
+      id: {
+        value: 1485014801,
+      },
+      name: {
+        value: "Test Campaign - DO NOT REMOVE",
+      },
+      trackingUrlTemplate: undefined,
+      status: 2,
+    },
+  ];
+
+  const parsedResult = formatCallResults(result, undefined);
+
+  expect(parsedResult[0]).toEqual({
+    resourceName: "customers/9262111890/campaigns/1485014801",
+    id: 1485014801,
+    name: "Test Campaign - DO NOT REMOVE",
+    status: 2,
+  });
+});
+
 const fakeCampaignResponse = `
   {
    "resourceName": "customers/9262111890/campaigns/1485014801",

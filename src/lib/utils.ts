@@ -65,8 +65,8 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
     const entity = data[key];
     const isObject = typeof entity === "object";
     const entityExists = parent.hasOwnProperty(key);
-    const isValue = entity.hasOwnProperty("value");
-    const keys = Object.keys(entity);
+    const isValue = isObject ? entity.hasOwnProperty("value") : false;
+    const keys = isObject ? Object.keys(entity) : [];
 
     if (!entityExists && isObject) {
       parent[key] = {};
@@ -78,7 +78,10 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
     if (isObject && !isValue && keys.length > 0) {
       parseNestedEntitiesNoPath(entity, parent[key]);
     } else {
-      parent[key] = isValue ? entity.value : entity;
+      const value = isValue ? entity.value : entity;
+      if (typeof value !== "undefined") {
+        parent[key] = value;
+      }
     }
   }
 

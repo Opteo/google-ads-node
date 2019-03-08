@@ -179,10 +179,21 @@ export class ResponseParsingInterceptor {
       })
       .withOnReceiveMessage((message: any, next: Function) => {
         if (message && message.toObject) {
-          const results = message.toObject();
-          const parsedResults = formatCallResults(results.resultsList, results.fieldMask);
-          if (parsedResults) {
+          let results = message.toObject();
+          const parsedResults = formatCallResults(
+            /* 
+              When retrieving a single entity via a service (e.g. CampaignService), the API
+              returns a single object, instead of an array
+            */
+            results.resultsList ? results.resultsList : [results],
+            results.fieldMask
+          );
+          if (parsedResults && results.resultsList) {
             results.resultsList = parsedResults;
+          }
+          /* Return an object if it's a single entity via a service */
+          if (parsedResults && !results.resultsList) {
+            results = parsedResults[0];
           }
           next(results);
         } else {
