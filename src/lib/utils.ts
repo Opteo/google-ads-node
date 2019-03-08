@@ -32,14 +32,22 @@ interface FieldMask {
   pathsList: string[];
 }
 
-export function formatCallResults(resultsList: any[], fieldMask: FieldMask) {
+export function formatCallResults(resultsList: any[], fieldMask: FieldMask | undefined) {
   const parsedResults: any[] = [];
-  const { pathsList } = fieldMask;
 
-  for (const result of resultsList) {
-    const parsedRow = parseNestedEntities(result, pathsList);
-    parsedResults.push(parsedRow);
+  if (fieldMask) {
+    const { pathsList } = fieldMask;
+    for (const result of resultsList) {
+      const parsedRow = parseNestedEntities(result, pathsList);
+      parsedResults.push(parsedRow);
+    }
+  } else {
+    for (const result of resultsList) {
+      const parsedRow = parseNestedEntitiesNoPath(result);
+      parsedResults.push(parsedRow);
+    }
   }
+
   return parsedResults;
 }
 
@@ -50,6 +58,31 @@ function toCamelCase(str: string) {
       .replace("-", "")
       .replace("_", "");
   });
+}
+
+function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
+  for (const key of Object.keys(data)) {
+    const entity = data[key];
+    const isObject = typeof entity === "object";
+    const entityExists = parent.hasOwnProperty(key);
+    const isValue = entity.hasOwnProperty("value");
+    const keys = Object.keys(entity);
+
+    if (!entityExists && isObject) {
+      parent[key] = {};
+      if (entity.hasOwnProperty("resourceName")) {
+        parent[key].resourceName = entity.resourceName;
+      }
+    }
+
+    if (isObject && !isValue && keys.length > 0) {
+      parseNestedEntitiesNoPath(entity, parent[key]);
+    } else {
+      parent[key] = isValue ? entity.value : entity;
+    }
+  }
+
+  return parent;
 }
 
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {

@@ -109,6 +109,102 @@ test("proto object result can be parsed for deeply nested entities", () => {
   ]);
 });
 
+test("proto object result can be parsed when field mask is not present", () => {
+  const parsedResults = formatCallResults([JSON.parse(fakeCampaignResponse)], undefined);
+
+  expect(parsedResults).toEqual([
+    {
+      resourceName: "customers/9262111890/campaigns/1485014801",
+      id: 1485014801,
+      name: "Test Campaign - DO NOT REMOVE",
+      status: 2,
+      servingStatus: 2,
+      adServingOptimizationStatus: 2,
+      advertisingChannelType: 2,
+      advertisingChannelSubType: 0,
+      urlCustomParametersList: [],
+      networkSettings: {
+        targetGoogleSearch: true,
+        targetSearchNetwork: true,
+        targetContentNetwork: true,
+        targetPartnerSearchNetwork: false,
+      },
+      geoTargetTypeSetting: {
+        positiveGeoTargetType: 2,
+        negativeGeoTargetType: 2,
+      },
+      campaignBudget: "customers/9262111890/campaignBudgets/1548344372",
+      biddingStrategyType: 9,
+      startDate: "2018-07-24",
+      endDate: "2037-12-30",
+      frequencyCapsList: [],
+      videoBrandSafetySuitability: 0,
+      selectiveOptimization: {
+        conversionActionsList: [],
+      },
+      targetSpend: {
+        cpcBidCeilingMicros: 1000000,
+      },
+    },
+  ]);
+});
+
+const fakeCampaignResponse = `
+  {
+   "resourceName": "customers/9262111890/campaigns/1485014801",
+   "id": {
+     "value": 1485014801
+   },
+   "name": {
+     "value": "Test Campaign - DO NOT REMOVE"
+   },
+   "status": 2,
+   "servingStatus": 2,
+   "adServingOptimizationStatus": 2,
+   "advertisingChannelType": 2,
+   "advertisingChannelSubType": 0,
+   "urlCustomParametersList": [],
+   "networkSettings": {
+     "targetGoogleSearch": {
+       "value": true
+     },
+     "targetSearchNetwork": {
+       "value": true
+     },
+     "targetContentNetwork": {
+       "value": true
+     },
+     "targetPartnerSearchNetwork": {
+       "value": false
+     }
+   },
+   "geoTargetTypeSetting": {
+     "positiveGeoTargetType": 2,
+     "negativeGeoTargetType": 2
+   },
+   "campaignBudget": {
+     "value": "customers/9262111890/campaignBudgets/1548344372"
+   },
+   "biddingStrategyType": 9,
+   "startDate": {
+     "value": "2018-07-24"
+   },
+   "endDate": {
+     "value": "2037-12-30"
+   },
+   "frequencyCapsList": [],
+   "videoBrandSafetySuitability": 0,
+   "selectiveOptimization": {
+     "conversionActionsList": []
+   },
+   "targetSpend": {
+     "cpcBidCeilingMicros": {
+       "value": 1000000
+     }
+   }
+  }
+`;
+
 const fakeKeywordResponse = `
   [
     {
