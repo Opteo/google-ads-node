@@ -9,25 +9,42 @@ PROTOC_GEN_GRPC_PATH=./node_modules/grpc-tools/bin/grpc_node_plugin
 PROTO_ROOT_DIR=googleapis/
 PROTO_SRC_DIR=google/ads/googleads/$(ADS_VERSION)/**/*.proto
 PROTO_SRC_DEPENDENCIES=google/**/*.proto
+
+PROTO_COMMON_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/common/*.proto
+PROTO_ERRORS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/errors/*.proto
 PROTO_ENUMS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/enums/*.proto
+PROTO_RESOURCES_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/resources/*.proto
 
 # Directory to write generated code to (.js and .d.ts files)
 OUT_DIR=src/protos
+
 # Proto compiled enum filepath
 OUT_COMPILED_ENUMS=compiled-enums.json
+OUT_COMPILED_RESOURCES=compiled-resources.js
+OUT_COMPILED_RESOURCES_JSON=compiled-resources.json
+
 # Static enum filepath (ts)
 OUT_STATIC_TS_ENUMS=src/lib/enums.ts
+OUT_STATIC_TS_RESOURCES=src/lib/resources.ts
 
-.SILENT: protos
+.SILENT: protos enums resources
 
 protos: clean compile-protos
 	$(MAKE) enums
-	echo "finished all"
+	$(MAKE) resources
+	@echo "finished all"
 
 enums:
 	pbjs -t json $(PROTO_ENUMS_ONLY) > ./scripts/$(OUT_COMPILED_ENUMS)
 	node ./scripts/generate-enums.js $(OUT_COMPILED_ENUMS) $(ADS_VERSION) $(OUT_STATIC_TS_ENUMS)
 	rm ./scripts/$(OUT_COMPILED_ENUMS)
+
+resources:
+	pbjs -t json $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
+	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY)
+	# pbts -o ./scripts/compiled.d.ts ./scripts/$(OUT_COMPILED_RESOURCES)
+	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES)
+	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
 
 # TODO: These proto compilation steps could be cleaned up and moved to a bash script
 compile-protos:

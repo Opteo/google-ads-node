@@ -21,7 +21,8 @@
         "named-imports-order": "any"
       }
     ],
-    "ban-types": false
+    "ban-types": false,
+    "no-empty-interface": false
   },
   "linterOptions": {
     "exclude": ["src/protos/**/*.ts", "src/protos/**/*.d.ts", "src/protos/**/*.js"]
