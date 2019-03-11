@@ -62,6 +62,11 @@ function toCamelCase(str: string) {
 
 function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
   for (const key of Object.keys(data)) {
+    let displayKey = key;
+    if (key.endsWith("List")) {
+      displayKey = key.split("List")[0];
+    }
+
     const entity = data[key];
     const isObject = typeof entity === "object";
     const entityExists = parent.hasOwnProperty(key);
@@ -69,18 +74,18 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
     const keys = isObject ? Object.keys(entity) : [];
 
     if (!entityExists && isObject) {
-      parent[key] = {};
+      parent[displayKey] = {};
       if (entity.hasOwnProperty("resourceName")) {
-        parent[key].resourceName = entity.resourceName;
+        parent[displayKey].resourceName = entity.resourceName;
       }
     }
 
     if (isObject && !isValue && keys.length > 0) {
-      parseNestedEntitiesNoPath(entity, parent[key]);
+      parseNestedEntitiesNoPath(entity, parent[displayKey]);
     } else {
       const value = isValue ? entity.value : entity;
       if (typeof value !== "undefined") {
-        parent[key] = value;
+        parent[displayKey] = value;
       }
     }
   }
@@ -91,6 +96,11 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {
   for (let path of props) {
     path = toCamelCase(path);
+
+    let displayKey = path;
+    if (path.endsWith("List")) {
+      displayKey = path.split("List")[0];
+    }
 
     if (path.includes(".")) {
       const splitPath = path.split(".");
@@ -110,10 +120,15 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
 
       parseNestedEntities(child, [remainingProps], parent[firstProp]);
     } else {
-      const value = data[path];
-      const isObject = typeof value === "object";
+      let value = data[path];
+      const isObject = typeof value === "object" && !Array.isArray(value);
 
-      parent[path] = isObject ? value.value : value;
+      /* Case for array types where gRPC types append "List" (for some reason) */
+      if (!value || typeof value === "undefined") {
+        value = data[`${path}List`];
+      }
+
+      parent[displayKey] = isObject ? value.value : value;
     }
   }
 

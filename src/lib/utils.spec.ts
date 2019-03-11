@@ -9,6 +9,7 @@ test("proto object result is parsed from field mask", () => {
         targetCpa: undefined,
         name: { value: "2019" },
         status: 0,
+        urlCustomParametersList: [],
         manualCpc: undefined,
         manualCpv: undefined,
       },
@@ -19,7 +20,7 @@ test("proto object result is parsed from field mask", () => {
     },
   ];
   const fieldMask = {
-    pathsList: ["campaign.id", "campaign.name", "metrics.cost"],
+    pathsList: ["campaign.id", "campaign.name", "campaign.url_custom_parameters", "metrics.cost"],
   };
   const parsedResults = formatCallResults(fakeResponse, fieldMask);
 
@@ -29,6 +30,7 @@ test("proto object result is parsed from field mask", () => {
         resourceName: "customers/123/campaigns/123",
         id: 123,
         name: "2019",
+        urlCustomParameters: [],
       },
       metrics: {
         cost: 100,
@@ -122,7 +124,7 @@ test("proto object result can be parsed when field mask is not present", () => {
       adServingOptimizationStatus: 2,
       advertisingChannelType: 2,
       advertisingChannelSubType: 0,
-      urlCustomParametersList: [],
+      urlCustomParameters: [],
       networkSettings: {
         targetGoogleSearch: true,
         targetSearchNetwork: true,
@@ -137,10 +139,10 @@ test("proto object result can be parsed when field mask is not present", () => {
       biddingStrategyType: 9,
       startDate: "2018-07-24",
       endDate: "2037-12-30",
-      frequencyCapsList: [],
+      frequencyCaps: [],
       videoBrandSafetySuitability: 0,
       selectiveOptimization: {
-        conversionActionsList: [],
+        conversionActions: [],
       },
       targetSpend: {
         cpcBidCeilingMicros: 1000000,
@@ -171,6 +173,24 @@ test("parsing results with no field mask correctly removes undefined properties"
     id: 1485014801,
     name: "Test Campaign - DO NOT REMOVE",
     status: 2,
+  });
+});
+
+test("parsing removes the append list postfix to array types", () => {
+  const result = [
+    {
+      resourceName: "customers/9262111890/campaigns/1485014801",
+      urlCustomParametersList: [],
+      frequencyCapsList: [],
+    },
+  ];
+
+  const parsedResult = formatCallResults(result, undefined);
+
+  expect(parsedResult[0]).toEqual({
+    resourceName: "customers/9262111890/campaigns/1485014801",
+    urlCustomParameters: [],
+    frequencyCaps: [],
   });
 });
 
