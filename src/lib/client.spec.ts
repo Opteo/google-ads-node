@@ -1,7 +1,8 @@
 import grpc from "grpc";
 
 import { GoogleAdsClient } from "./client";
-import { SearchGoogleAdsRequest, SearchGoogleAdsResponse } from "./types";
+import { SearchGoogleAdsRequest, SearchGoogleAdsResponse, Campaign } from "./types";
+import { AdvertisingChannelType, CampaignStatus, BiddingStrategyType } from "./enums";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
@@ -60,6 +61,46 @@ test("loading api services", () => {
 
   const service = client.getService("GoogleAdsService");
   expect(service).toBeInstanceOf(grpc.Client);
+});
+
+test.only("correctly builds a grpc resource from an object", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  const campaign = {
+    name: "Interplanetary Flights",
+    advertising_channel_type: AdvertisingChannelType.SEARCH,
+    status: CampaignStatus.PAUSED,
+    bidding_strategy_type: BiddingStrategyType.MANUAL_CPC,
+    campaign_budget: "resources/123/campaignBudgets/321",
+    manual_cpc: {
+      enhanced_cpc_enabled: true,
+    },
+  };
+
+  const protobuf = client.buildResource("Campaign", campaign) as Campaign;
+
+  expect(protobuf instanceof Campaign);
+
+  expect((protobuf.getName() as any).toObject().value).toEqual("Interplanetary Flights");
+  expect(protobuf.getStatus()).toEqual(3);
+
+  expect((protobuf.getManualCpc() as any).toObject()).toEqual({
+    enhancedCpcEnabled: { value: true },
+  });
+});
+
+test("throws an error when attempting to build a non-existent resource", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  expect(client.buildResource("GoogleAd", {})).rejects.toThrow("does not exist");
 });
 
 test("throws an unauthenticated error when access token is invalid", async done => {

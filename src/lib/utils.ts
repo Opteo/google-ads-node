@@ -51,6 +51,31 @@ export function formatCallResults(resultsList: any[], fieldMask: FieldMask | und
   return parsedResults;
 }
 
+export function convertToProtoFormat(data: any): any {
+  const pb: any = {};
+
+  for (const key of Object.keys(data)) {
+    const displayKey = toCamelCase(key);
+    const value = data[key];
+    pb[displayKey] = isObject(value) ? convertToProtoFormat(value) : toProtoValueFormat(value);
+  }
+
+  return pb;
+}
+
+function toProtoValueFormat(value: any): number | any {
+  if (typeof value === "number") {
+    return value;
+  }
+  return {
+    value,
+  };
+}
+
+function isObject(value: any): boolean {
+  return typeof value === "object";
+}
+
 function toCamelCase(str: string) {
   return str.replace(/([-_][a-z])/gi, $1 => {
     return $1

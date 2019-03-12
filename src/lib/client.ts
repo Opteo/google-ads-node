@@ -1,4 +1,5 @@
 import grpc from "grpc";
+import get from "lodash.get";
 
 import Auth from "./auth";
 import {
@@ -8,10 +9,17 @@ import {
   InterceptorMethod,
 } from "./interceptor";
 import * as services from "./services";
-import { promisifyServiceClient } from "./utils";
+import * as GrpcTypes from "./types";
+import { promisifyServiceClient, convertToProtoFormat } from "./utils";
+
+// @ts-ignore
+import compiledResources from "../protos/compiled-resources.js";
 
 const DEFAULT_VERSION = "v1";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
+
+const PROTO_ROOT = `google.ads.googleads.${DEFAULT_VERSION}`;
+const allProtos = get(compiledResources, PROTO_ROOT);
 
 interface CommonClientOptions {
   developer_token: string;
@@ -73,6 +81,48 @@ export class GoogleAdsClient {
     promisifyServiceClient(service);
 
     return service;
+  }
+
+  public buildResource(resource: string, data: any): unknown {
+    if (!allProtos.resources.hasOwnProperty(resource)) {
+      throw new Error(
+        `Specified type "${resource}" does not exist in Google Ads API ${DEFAULT_VERSION}`
+      );
+    }
+
+    /* Load the relevant types */
+    const type = allProtos.resources[resource];
+    const grpcType = (GrpcTypes as any)[resource];
+
+    /* 
+      This translates ts values, such as string, to the protobuf format
+      e.g. {some_name: "campaign"} -> {someName: { value: "campaign" }}
+    */
+    const protoFormatData = convertToProtoFormat(data);
+
+    /* Create a new protobuf Message of the specified type */
+    const message = type.fromObject(protoFormatData);
+
+    // TODO: Include debug option that also returns the readable version of the protobuf
+    /* Create a readable js object from the protobuf (useful for debugging) */
+    // const readable = type.toObject(message, {
+    //   enums: String, // enums as string names
+    //   longs: String, // longs as strings (requires long.js)
+    //   bytes: String, // bytes as base64 encoded strings
+    //   defaults: true, // includes default values
+    //   arrays: true, // populates empty arrays (repeated fields) even if defaults=false
+    //   objects: true, // populates empty objects (map fields) even if defaults=false
+    //   oneofs: true, // includes virtual oneof fields set to the present field's name
+    // });
+
+    /* Encode the protobuf so it can be translated to the specific gRPC type */
+    const encoded: Buffer = type.encode(message).finish();
+
+    /* Translate the encoded protobuf type to the grpc type */
+    const protobuf = grpcType.deserializeBinary(encoded);
+
+    // return { protobuf, readable };
+    return protobuf;
   }
 
   private buildInterceptors(): InterceptorMethod[] {
