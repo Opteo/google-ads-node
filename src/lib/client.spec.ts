@@ -1,8 +1,8 @@
 import grpc from "grpc";
 
 import { GoogleAdsClient } from "./client";
+import { AdvertisingChannelType, BiddingStrategyType, CampaignStatus } from "./enums";
 import { SearchGoogleAdsRequest, SearchGoogleAdsResponse, Campaign } from "./types";
-import { AdvertisingChannelType, CampaignStatus, BiddingStrategyType } from "./enums";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
@@ -63,7 +63,7 @@ test("loading api services", () => {
   expect(service).toBeInstanceOf(grpc.Client);
 });
 
-test.only("correctly builds a grpc resource from an object", () => {
+test("correctly builds a grpc resource from an object", () => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
@@ -93,14 +93,19 @@ test.only("correctly builds a grpc resource from an object", () => {
   });
 });
 
-test("throws an error when attempting to build a non-existent resource", () => {
+test("throws an error when attempting to build a non-existent resource", done => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
     login_customer_id: LOGIN_CUSTOMER_ID,
   });
 
-  expect(client.buildResource("GoogleAd", {})).rejects.toThrow("does not exist");
+  try {
+    client.buildResource("GoogleAds", {});
+  } catch (err) {
+    expect(err.message).toContain("does not exist");
+    done();
+  }
 });
 
 test("throws an unauthenticated error when access token is invalid", async done => {

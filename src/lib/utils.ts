@@ -57,7 +57,8 @@ export function convertToProtoFormat(data: any): any {
   for (const key of Object.keys(data)) {
     const displayKey = toCamelCase(key);
     const value = data[key];
-    pb[displayKey] = isObject(value) ? convertToProtoFormat(value) : toProtoValueFormat(value);
+    pb[displayKey] =
+      typeof value === "object" ? convertToProtoFormat(value) : toProtoValueFormat(value);
   }
 
   return pb;
@@ -70,10 +71,6 @@ function toProtoValueFormat(value: any): number | any {
   return {
     value,
   };
-}
-
-function isObject(value: any): boolean {
-  return typeof value === "object";
 }
 
 function toCamelCase(str: string) {
