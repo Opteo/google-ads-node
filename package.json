@@ -29,10 +29,13 @@
   },
   "dependencies": {
     "@types/google-protobuf": "^3.2.7",
+    "@types/lodash.get": "^4.4.6",
     "@types/protobufjs": "^6.0.0",
     "google-auth-library": "^3.1.0",
     "google-protobuf": "^3.7.0-rc.2",
-    "grpc": "^1.18.0"
+    "grpc": "^1.18.0",
+    "lodash.get": "^4.4.2",
+    "protobufjs": "^6.8.8"
   },
   "devDependencies": {
     "@types/jest": "^24.0.1",
@@ -41,12 +44,10 @@
     "grpc-tools": "^1.7.1",
     "grpc-ts-protoc-gen": "^0.1.1",
     "jest": "23.x",
-    "lodash.get": "^4.4.2",
     "lodash.snakecase": "^4.1.1",
     "npm-run-all": "^4.1.5",
     "nyc": "^13.1.0",
     "prettier": "^1.15.2",
-    "protobufjs": "^6.8.8",
     "standard-version": "^4.4.0",
     "trash-cli": "^1.4.0",
     "ts-jest": "^23.10.5",
