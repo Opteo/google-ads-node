@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/opteo/google-ads-node/compare/v1.2.0...v1.3.0) (2019-03-14)
+
+
+### Bug Fixes
+
+* **utils:** minor linting changes ([b1b69a6](https://github.com/opteo/google-ads-node/commit/b1b69a6))
+
+
+### Features
+
+* **client:** added new buildResource method for translating objects to protobufs ([aededa6](https://github.com/opteo/google-ads-node/commit/aededa6))
+* **fields:** added script for generating google ads field types ([f56719f](https://github.com/opteo/google-ads-node/commit/f56719f))
+* **makefile:** copy pbjs generated resources to protos when compiling ([e964833](https://github.com/opteo/google-ads-node/commit/e964833))
+* **package:** new dependencies ([c10223b](https://github.com/opteo/google-ads-node/commit/c10223b))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/opteo/google-ads-node/compare/v1.1.1...v1.2.0) (2019-03-11)
 
