@@ -27,11 +27,11 @@ OUT_COMPILED_RESOURCES_JSON=compiled-resources.json
 OUT_STATIC_TS_ENUMS=src/lib/enums.ts
 OUT_STATIC_TS_RESOURCES=src/lib/resources.ts
 
-.SILENT: protos enums resources
+.SILENT: protos enums
 
 protos: clean compile-protos
 	$(MAKE) enums
-	$(MAKE) resources
+	$(MAKE) types
 	@echo "finished all"
 
 enums:
@@ -39,12 +39,16 @@ enums:
 	node ./scripts/generate-enums.js $(OUT_COMPILED_ENUMS) $(ADS_VERSION) $(OUT_STATIC_TS_ENUMS)
 	rm ./scripts/$(OUT_COMPILED_ENUMS)
 
-resources:
+types:
 	pbjs -t json $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
 	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY)
 	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES)
 	cp ./scripts/$(OUT_COMPILED_RESOURCES) ./src/protos/$(OUT_COMPILED_RESOURCES)
 	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
+
+fields:
+	yarn build
+	node ./scripts/generate-fields.js
 
 # TODO: These proto compilation steps could be cleaned up and moved to a bash script
 compile-protos:
