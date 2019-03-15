@@ -7,13 +7,7 @@
     "no-implicit-dependencies": [true, "dev"],
     "no-console": false,
     "object-literal-sort-keys": false,
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format",
-      "allow-leading-underscore",
-      "allow-snake-case"
-    ],
+    "variable-name": false,
     "max-classes-per-file": [true, 4],
     "ordered-imports": [
       true,
