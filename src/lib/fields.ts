@@ -3,7 +3,97 @@
 /*
   -- RESOURCES --
 */
-export const account_budget = [
+
+export type ResourceName =
+  | "account_budget"
+  | "account_budget_proposal"
+  | "ad_group"
+  | "ad_group_ad"
+  | "ad_group_ad_label"
+  | "ad_group_audience_view"
+  | "ad_group_bid_modifier"
+  | "ad_group_criterion"
+  | "ad_group_criterion_label"
+  | "ad_group_extension_setting"
+  | "ad_group_feed"
+  | "ad_group_label"
+  | "ad_schedule_view"
+  | "age_range_view"
+  | "bidding_strategy"
+  | "billing_setup"
+  | "campaign"
+  | "campaign_audience_view"
+  | "campaign_bid_modifier"
+  | "campaign_budget"
+  | "campaign_criterion"
+  | "campaign_extension_setting"
+  | "campaign_feed"
+  | "campaign_label"
+  | "campaign_shared_set"
+  | "carrier_constant"
+  | "change_status"
+  | "click_view"
+  | "conversion_action"
+  | "custom_interest"
+  | "customer"
+  | "customer_client"
+  | "customer_client_link"
+  | "customer_extension_setting"
+  | "customer_feed"
+  | "customer_label"
+  | "customer_manager_link"
+  | "customer_negative_criterion"
+  | "detail_placement_view"
+  | "display_keyword_view"
+  | "domain_category"
+  | "dynamic_search_ads_search_term_view"
+  | "extension_feed_item"
+  | "feed"
+  | "feed_item"
+  | "feed_item_target"
+  | "feed_mapping"
+  | "feed_placeholder_view"
+  | "gender_view"
+  | "geo_target_constant"
+  | "geographic_view"
+  | "group_placement_view"
+  | "hotel_group_view"
+  | "hotel_performance_view"
+  | "keyword_plan"
+  | "keyword_plan_ad_group"
+  | "keyword_plan_campaign"
+  | "keyword_plan_keyword"
+  | "keyword_plan_negative_keyword"
+  | "keyword_view"
+  | "label"
+  | "language_constant"
+  | "location_view"
+  | "managed_placement_view"
+  | "media_file"
+  | "mobile_app_category_constant"
+  | "mobile_device_constant"
+  | "operating_system_version_constant"
+  | "parental_status_view"
+  | "product_bidding_category_constant"
+  | "product_group_view"
+  | "recommendation"
+  | "remarketing_action"
+  | "search_term_view"
+  | "shared_criterion"
+  | "shared_set"
+  | "shopping_performance_view"
+  | "topic_constant"
+  | "topic_view"
+  | "user_interest"
+  | "user_list"
+  | "video";
+
+export type ResourceNames = Array<ResourceName>;
+
+/*
+ --- Start of AccountBudget ---
+*/
+export const AccountBudget = [
   "account_budget.adjusted_spending_limit_micros",
   "account_budget.adjusted_spending_limit_type",
   "account_budget.amount_served_micros",
@@ -38,43 +128,50 @@ export const account_budget = [
   "account_budget.total_adjustments_micros",
 ];
 
-export type account_budget_field =
-  | "adjusted_spending_limit_micros"
-  | "adjusted_spending_limit_type"
-  | "amount_served_micros"
-  | "approved_end_date_time"
-  | "approved_end_time_type"
-  | "approved_spending_limit_micros"
-  | "approved_spending_limit_type"
-  | "approved_start_date_time"
-  | "billing_setup"
-  | "id"
-  | "name"
-  | "notes"
-  | "pending_proposal.account_budget_proposal"
-  | "pending_proposal.creation_date_time"
-  | "pending_proposal.end_date_time"
-  | "pending_proposal.end_time_type"
-  | "pending_proposal.name"
-  | "pending_proposal.notes"
-  | "pending_proposal.proposal_type"
-  | "pending_proposal.purchase_order_number"
-  | "pending_proposal.spending_limit_micros"
-  | "pending_proposal.spending_limit_type"
-  | "pending_proposal.start_date_time"
-  | "proposed_end_date_time"
-  | "proposed_end_time_type"
-  | "proposed_spending_limit_micros"
-  | "proposed_spending_limit_type"
-  | "proposed_start_date_time"
-  | "purchase_order_number"
-  | "resource_name"
-  | "status"
-  | "total_adjustments_micros";
+export type AccountBudgetField =
+  | "account_budget.adjusted_spending_limit_micros"
+  | "account_budget.adjusted_spending_limit_type"
+  | "account_budget.amount_served_micros"
+  | "account_budget.approved_end_date_time"
+  | "account_budget.approved_end_time_type"
+  | "account_budget.approved_spending_limit_micros"
+  | "account_budget.approved_spending_limit_type"
+  | "account_budget.approved_start_date_time"
+  | "account_budget.billing_setup"
+  | "account_budget.id"
+  | "account_budget.name"
+  | "account_budget.notes"
+  | "account_budget.pending_proposal.account_budget_proposal"
+  | "account_budget.pending_proposal.creation_date_time"
+  | "account_budget.pending_proposal.end_date_time"
+  | "account_budget.pending_proposal.end_time_type"
+  | "account_budget.pending_proposal.name"
+  | "account_budget.pending_proposal.notes"
+  | "account_budget.pending_proposal.proposal_type"
+  | "account_budget.pending_proposal.purchase_order_number"
+  | "account_budget.pending_proposal.spending_limit_micros"
+  | "account_budget.pending_proposal.spending_limit_type"
+  | "account_budget.pending_proposal.start_date_time"
+  | "account_budget.proposed_end_date_time"
+  | "account_budget.proposed_end_time_type"
+  | "account_budget.proposed_spending_limit_micros"
+  | "account_budget.proposed_spending_limit_type"
+  | "account_budget.proposed_start_date_time"
+  | "account_budget.purchase_order_number"
+  | "account_budget.resource_name"
+  | "account_budget.status"
+  | "account_budget.total_adjustments_micros";
 
-export type account_budget_fields = Array<account_budget_field>;
+export type AccountBudgetFields = Array<AccountBudgetField>;
 
-export const account_budget_proposal = [
+/*
+ --- End of AccountBudget ---
+*/
+
+/*
+ --- Start of AccountBudgetProposal ---
+*/
+export const AccountBudgetProposal = [
   "account_budget_proposal.account_budget",
   "account_budget_proposal.approval_date_time",
   "account_budget_proposal.approved_end_date_time",
@@ -98,32 +195,39 @@ export const account_budget_proposal = [
   "account_budget_proposal.status",
 ];
 
-export type account_budget_proposal_field =
-  | "account_budget"
-  | "approval_date_time"
-  | "approved_end_date_time"
-  | "approved_end_time_type"
-  | "approved_spending_limit_micros"
-  | "approved_spending_limit_type"
-  | "approved_start_date_time"
-  | "billing_setup"
-  | "creation_date_time"
-  | "id"
-  | "proposal_type"
-  | "proposed_end_date_time"
-  | "proposed_end_time_type"
-  | "proposed_name"
-  | "proposed_notes"
-  | "proposed_purchase_order_number"
-  | "proposed_spending_limit_micros"
-  | "proposed_spending_limit_type"
-  | "proposed_start_date_time"
-  | "resource_name"
-  | "status";
+export type AccountBudgetProposalField =
+  | "account_budget_proposal.account_budget"
+  | "account_budget_proposal.approval_date_time"
+  | "account_budget_proposal.approved_end_date_time"
+  | "account_budget_proposal.approved_end_time_type"
+  | "account_budget_proposal.approved_spending_limit_micros"
+  | "account_budget_proposal.approved_spending_limit_type"
+  | "account_budget_proposal.approved_start_date_time"
+  | "account_budget_proposal.billing_setup"
+  | "account_budget_proposal.creation_date_time"
+  | "account_budget_proposal.id"
+  | "account_budget_proposal.proposal_type"
+  | "account_budget_proposal.proposed_end_date_time"
+  | "account_budget_proposal.proposed_end_time_type"
+  | "account_budget_proposal.proposed_name"
+  | "account_budget_proposal.proposed_notes"
+  | "account_budget_proposal.proposed_purchase_order_number"
+  | "account_budget_proposal.proposed_spending_limit_micros"
+  | "account_budget_proposal.proposed_spending_limit_type"
+  | "account_budget_proposal.proposed_start_date_time"
+  | "account_budget_proposal.resource_name"
+  | "account_budget_proposal.status";
 
-export type account_budget_proposal_fields = Array<account_budget_proposal_field>;
+export type AccountBudgetProposalFields = Array<AccountBudgetProposalField>;
 
-export const ad_group = [
+/*
+ --- End of AccountBudgetProposal ---
+*/
+
+/*
+ --- Start of AdGroup ---
+*/
+export const AdGroup = [
   "ad_group.ad_rotation_mode",
   "ad_group.campaign",
   "ad_group.cpc_bid_micros",
@@ -150,35 +254,137 @@ export const ad_group = [
   "ad_group.url_custom_parameters",
 ];
 
-export type ad_group_field =
-  | "ad_rotation_mode"
-  | "campaign"
-  | "cpc_bid_micros"
-  | "cpm_bid_micros"
-  | "cpv_bid_micros"
-  | "display_custom_bid_dimension"
-  | "effective_target_cpa_micros"
-  | "effective_target_cpa_source"
-  | "effective_target_roas"
-  | "effective_target_roas_source"
-  | "explorer_auto_optimizer_setting.opt_in"
-  | "final_url_suffix"
-  | "id"
-  | "name"
-  | "percent_cpc_bid_micros"
-  | "resource_name"
-  | "status"
-  | "target_cpa_micros"
-  | "target_cpm_micros"
-  | "target_roas"
-  | "targeting_setting.target_restrictions"
-  | "tracking_url_template"
-  | "type"
-  | "url_custom_parameters";
+export type AdGroupField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters";
 
-export type ad_group_fields = Array<ad_group_field>;
+export type AdGroupFields = Array<AdGroupField>;
 
-export const ad_group_ad = [
+export type AdGroupMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_page_views"
+  | "metrics.average_position"
+  | "metrics.average_time_on_site"
+  | "metrics.bounce_rate"
+  | "metrics.clicks"
+  | "metrics.content_impression_share"
+  | "metrics.content_rank_lost_impression_share"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.current_model_attributed_conversions"
+  | "metrics.current_model_attributed_conversions_value"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.percent_new_visitors"
+  | "metrics.phone_calls"
+  | "metrics.phone_impressions"
+  | "metrics.phone_through_rate"
+  | "metrics.relative_ctr"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_exact_match_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.value_per_current_model_attributed_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type AdGroupMetrics = Array<AdGroupMetric>;
+
+export type AdGroupSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type AdGroupSegments = Array<AdGroupSegment>;
+
+/*
+ --- End of AdGroup ---
+*/
+
+/*
+ --- Start of AdGroupAd ---
+*/
+export const AdGroupAd = [
   "ad_group_ad.ad.added_by_google_ads",
   "ad_group_ad.ad.call_only_ad.business_name",
   "ad_group_ad.ad.call_only_ad.call_tracked",
@@ -272,118 +478,282 @@ export const ad_group_ad = [
   "ad_group_ad.status",
 ];
 
-export type ad_group_ad_field =
-  | "ad.added_by_google_ads"
-  | "ad.call_only_ad.business_name"
-  | "ad.call_only_ad.call_tracked"
-  | "ad.call_only_ad.conversion_action"
-  | "ad.call_only_ad.conversion_reporting_state"
-  | "ad.call_only_ad.country_code"
-  | "ad.call_only_ad.description1"
-  | "ad.call_only_ad.description2"
-  | "ad.call_only_ad.disable_call_conversion"
-  | "ad.call_only_ad.phone_number"
-  | "ad.call_only_ad.phone_number_verification_url"
-  | "ad.device_preference"
-  | "ad.display_url"
-  | "ad.expanded_dynamic_search_ad.description"
-  | "ad.expanded_text_ad.description"
-  | "ad.expanded_text_ad.description2"
-  | "ad.expanded_text_ad.headline_part1"
-  | "ad.expanded_text_ad.headline_part2"
-  | "ad.expanded_text_ad.headline_part3"
-  | "ad.expanded_text_ad.path1"
-  | "ad.expanded_text_ad.path2"
-  | "ad.final_mobile_urls"
-  | "ad.final_urls"
-  | "ad.gmail_ad.header_image"
-  | "ad.gmail_ad.marketing_image"
-  | "ad.gmail_ad.marketing_image_description"
-  | "ad.gmail_ad.marketing_image_display_call_to_action.text"
-  | "ad.gmail_ad.marketing_image_display_call_to_action.text_color"
-  | "ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
-  | "ad.gmail_ad.marketing_image_headline"
-  | "ad.gmail_ad.product_images"
-  | "ad.gmail_ad.product_images.product_image"
-  | "ad.gmail_ad.product_videos"
-  | "ad.gmail_ad.product_videos.product_video"
-  | "ad.gmail_ad.teaser.business_name"
-  | "ad.gmail_ad.teaser.description"
-  | "ad.gmail_ad.teaser.headline"
-  | "ad.gmail_ad.teaser.logo_image"
-  | "ad.hotel_ad"
-  | "ad.id"
-  | "ad.image_ad.image_url"
-  | "ad.image_ad.media_file"
-  | "ad.image_ad.mime_type"
-  | "ad.image_ad.name"
-  | "ad.image_ad.pixel_height"
-  | "ad.image_ad.pixel_width"
-  | "ad.image_ad.preview_image_url"
-  | "ad.image_ad.preview_pixel_height"
-  | "ad.image_ad.preview_pixel_width"
-  | "ad.legacy_responsive_display_ad.accent_color"
-  | "ad.legacy_responsive_display_ad.allow_flexible_color"
-  | "ad.legacy_responsive_display_ad.business_name"
-  | "ad.legacy_responsive_display_ad.call_to_action_text"
-  | "ad.legacy_responsive_display_ad.description"
-  | "ad.legacy_responsive_display_ad.format_setting"
-  | "ad.legacy_responsive_display_ad.logo_image"
-  | "ad.legacy_responsive_display_ad.long_headline"
-  | "ad.legacy_responsive_display_ad.main_color"
-  | "ad.legacy_responsive_display_ad.marketing_image"
-  | "ad.legacy_responsive_display_ad.price_prefix"
-  | "ad.legacy_responsive_display_ad.promo_text"
-  | "ad.legacy_responsive_display_ad.short_headline"
-  | "ad.legacy_responsive_display_ad.square_logo_image"
-  | "ad.legacy_responsive_display_ad.square_marketing_image"
-  | "ad.name"
-  | "ad.responsive_search_ad.descriptions"
-  | "ad.responsive_search_ad.headlines"
-  | "ad.responsive_search_ad.path1"
-  | "ad.responsive_search_ad.path2"
-  | "ad.shopping_product_ad"
-  | "ad.shopping_smart_ad"
-  | "ad.system_managed_resource_source"
-  | "ad.text_ad.description1"
-  | "ad.text_ad.description2"
-  | "ad.text_ad.headline"
-  | "ad.tracking_url_template"
-  | "ad.type"
-  | "ad.url_collections"
-  | "ad.url_custom_parameters"
-  | "ad.video_ad.bumper"
-  | "ad.video_ad.in_stream.action_button_label"
-  | "ad.video_ad.in_stream.action_headline"
-  | "ad.video_ad.media_file"
-  | "ad.video_ad.non_skippable"
-  | "ad.video_ad.out_stream.description"
-  | "ad.video_ad.out_stream.headline"
-  | "ad_group"
-  | "ad_strength"
-  | "policy_summary"
-  | "resource_name"
-  | "status";
+export type AdGroupAdField =
+  | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.call_only_ad.business_name"
+  | "ad_group_ad.ad.call_only_ad.call_tracked"
+  | "ad_group_ad.ad.call_only_ad.conversion_action"
+  | "ad_group_ad.ad.call_only_ad.conversion_reporting_state"
+  | "ad_group_ad.ad.call_only_ad.country_code"
+  | "ad_group_ad.ad.call_only_ad.description1"
+  | "ad_group_ad.ad.call_only_ad.description2"
+  | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.phone_number"
+  | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
+  | "ad_group_ad.ad.device_preference"
+  | "ad_group_ad.ad.display_url"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part1"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part3"
+  | "ad_group_ad.ad.expanded_text_ad.path1"
+  | "ad_group_ad.ad.expanded_text_ad.path2"
+  | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_urls"
+  | "ad_group_ad.ad.gmail_ad.header_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_description"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_headline"
+  | "ad_group_ad.ad.gmail_ad.product_images"
+  | "ad_group_ad.ad.gmail_ad.product_images.product_image"
+  | "ad_group_ad.ad.gmail_ad.product_videos"
+  | "ad_group_ad.ad.gmail_ad.product_videos.product_video"
+  | "ad_group_ad.ad.gmail_ad.teaser.business_name"
+  | "ad_group_ad.ad.gmail_ad.teaser.description"
+  | "ad_group_ad.ad.gmail_ad.teaser.headline"
+  | "ad_group_ad.ad.gmail_ad.teaser.logo_image"
+  | "ad_group_ad.ad.hotel_ad"
+  | "ad_group_ad.ad.id"
+  | "ad_group_ad.ad.image_ad.image_url"
+  | "ad_group_ad.ad.image_ad.media_file"
+  | "ad_group_ad.ad.image_ad.mime_type"
+  | "ad_group_ad.ad.image_ad.name"
+  | "ad_group_ad.ad.image_ad.pixel_height"
+  | "ad_group_ad.ad.image_ad.pixel_width"
+  | "ad_group_ad.ad.image_ad.preview_image_url"
+  | "ad_group_ad.ad.image_ad.preview_pixel_height"
+  | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.description"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.main_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_search_ad.descriptions"
+  | "ad_group_ad.ad.responsive_search_ad.headlines"
+  | "ad_group_ad.ad.responsive_search_ad.path1"
+  | "ad_group_ad.ad.responsive_search_ad.path2"
+  | "ad_group_ad.ad.shopping_product_ad"
+  | "ad_group_ad.ad.shopping_smart_ad"
+  | "ad_group_ad.ad.system_managed_resource_source"
+  | "ad_group_ad.ad.text_ad.description1"
+  | "ad_group_ad.ad.text_ad.description2"
+  | "ad_group_ad.ad.text_ad.headline"
+  | "ad_group_ad.ad.tracking_url_template"
+  | "ad_group_ad.ad.type"
+  | "ad_group_ad.ad.url_collections"
+  | "ad_group_ad.ad.url_custom_parameters"
+  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
+  | "ad_group_ad.ad.video_ad.in_stream.action_headline"
+  | "ad_group_ad.ad.video_ad.media_file"
+  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.out_stream.description"
+  | "ad_group_ad.ad.video_ad.out_stream.headline"
+  | "ad_group_ad.ad_group"
+  | "ad_group_ad.ad_strength"
+  | "ad_group_ad.policy_summary"
+  | "ad_group_ad.resource_name"
+  | "ad_group_ad.status";
 
-export type ad_group_ad_fields = Array<ad_group_ad_field>;
+export type AdGroupAdFields = Array<AdGroupAdField>;
 
-export const ad_group_ad_label = [
+export type AdGroupAdMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_page_views"
+  | "metrics.average_position"
+  | "metrics.average_time_on_site"
+  | "metrics.bounce_rate"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.current_model_attributed_conversions"
+  | "metrics.current_model_attributed_conversions_value"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.percent_new_visitors"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.value_per_current_model_attributed_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type AdGroupAdMetrics = Array<AdGroupAdMetric>;
+
+export type AdGroupAdSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.keyword.ad_group_criterion"
+  | "segments.keyword.info.match_type"
+  | "segments.keyword.info.text"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type AdGroupAdSegments = Array<AdGroupAdSegment>;
+
+/*
+ --- End of AdGroupAd ---
+*/
+
+/*
+ --- Start of AdGroupAdLabel ---
+*/
+export const AdGroupAdLabel = [
   "ad_group_ad_label.ad_group_ad",
   "ad_group_ad_label.label",
   "ad_group_ad_label.resource_name",
 ];
 
-export type ad_group_ad_label_field = "ad_group_ad" | "label" | "resource_name";
+export type AdGroupAdLabelField =
+  | "ad_group_ad_label.ad_group_ad"
+  | "ad_group_ad_label.label"
+  | "ad_group_ad_label.resource_name";
 
-export type ad_group_ad_label_fields = Array<ad_group_ad_label_field>;
+export type AdGroupAdLabelFields = Array<AdGroupAdLabelField>;
 
-export const ad_group_audience_view = ["ad_group_audience_view.resource_name"];
+/*
+ --- End of AdGroupAdLabel ---
+*/
 
-export type ad_group_audience_view_field = "resource_name";
+/*
+ --- Start of AdGroupAudienceView ---
+*/
+export const AdGroupAudienceView = ["ad_group_audience_view.resource_name"];
 
-export type ad_group_audience_view_fields = Array<ad_group_audience_view_field>;
+export type AdGroupAudienceViewField = "ad_group_audience_view.resource_name";
 
-export const ad_group_bid_modifier = [
+export type AdGroupAudienceViewFields = Array<AdGroupAudienceViewField>;
+
+export type AdGroupAudienceViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type AdGroupAudienceViewMetrics = Array<AdGroupAudienceViewMetric>;
+
+export type AdGroupAudienceViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type AdGroupAudienceViewSegments = Array<AdGroupAudienceViewSegment>;
+
+/*
+ --- End of AdGroupAudienceView ---
+*/
+
+/*
+ --- Start of AdGroupBidModifier ---
+*/
+export const AdGroupBidModifier = [
   "ad_group_bid_modifier.ad_group",
   "ad_group_bid_modifier.base_ad_group",
   "ad_group_bid_modifier.bid_modifier",
@@ -400,25 +770,32 @@ export const ad_group_bid_modifier = [
   "ad_group_bid_modifier.resource_name",
 ];
 
-export type ad_group_bid_modifier_field =
-  | "ad_group"
-  | "base_ad_group"
-  | "bid_modifier"
-  | "bid_modifier_source"
-  | "criterion_id"
-  | "device.type"
-  | "hotel_advance_booking_window.max_days"
-  | "hotel_advance_booking_window.min_days"
-  | "hotel_check_in_day.day_of_week"
-  | "hotel_date_selection_type.type"
-  | "hotel_length_of_stay.max_nights"
-  | "hotel_length_of_stay.min_nights"
-  | "preferred_content.type"
-  | "resource_name";
+export type AdGroupBidModifierField =
+  | "ad_group_bid_modifier.ad_group"
+  | "ad_group_bid_modifier.base_ad_group"
+  | "ad_group_bid_modifier.bid_modifier"
+  | "ad_group_bid_modifier.bid_modifier_source"
+  | "ad_group_bid_modifier.criterion_id"
+  | "ad_group_bid_modifier.device.type"
+  | "ad_group_bid_modifier.hotel_advance_booking_window.max_days"
+  | "ad_group_bid_modifier.hotel_advance_booking_window.min_days"
+  | "ad_group_bid_modifier.hotel_check_in_day.day_of_week"
+  | "ad_group_bid_modifier.hotel_date_selection_type.type"
+  | "ad_group_bid_modifier.hotel_length_of_stay.max_nights"
+  | "ad_group_bid_modifier.hotel_length_of_stay.min_nights"
+  | "ad_group_bid_modifier.preferred_content.type"
+  | "ad_group_bid_modifier.resource_name";
 
-export type ad_group_bid_modifier_fields = Array<ad_group_bid_modifier_field>;
+export type AdGroupBidModifierFields = Array<AdGroupBidModifierField>;
 
-export const ad_group_criterion = [
+/*
+ --- End of AdGroupBidModifier ---
+*/
+
+/*
+ --- Start of AdGroupCriterion ---
+*/
+export const AdGroupCriterion = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
@@ -493,93 +870,110 @@ export const ad_group_criterion = [
   "ad_group_criterion.youtube_video.video_id",
 ];
 
-export type ad_group_criterion_field =
-  | "ad_group"
-  | "age_range.type"
-  | "app_payment_model.type"
-  | "bid_modifier"
-  | "cpc_bid_micros"
-  | "cpm_bid_micros"
-  | "cpv_bid_micros"
-  | "criterion_id"
-  | "custom_affinity.custom_affinity"
-  | "custom_intent.custom_intent"
-  | "effective_cpc_bid_micros"
-  | "effective_cpc_bid_source"
-  | "effective_cpm_bid_micros"
-  | "effective_cpm_bid_source"
-  | "effective_cpv_bid_micros"
-  | "effective_cpv_bid_source"
-  | "effective_percent_cpc_bid_micros"
-  | "effective_percent_cpc_bid_source"
-  | "final_mobile_urls"
-  | "final_url_suffix"
-  | "final_urls"
-  | "gender.type"
-  | "income_range.type"
-  | "keyword.match_type"
-  | "keyword.text"
-  | "listing_group.case_value.hotel_city.city_criterion"
-  | "listing_group.case_value.hotel_class.value"
-  | "listing_group.case_value.hotel_country_region.country_region_criterion"
-  | "listing_group.case_value.hotel_id.value"
-  | "listing_group.case_value.hotel_state.state_criterion"
-  | "listing_group.case_value.listing_brand.value"
-  | "listing_group.case_value.listing_custom_attribute.index"
-  | "listing_group.case_value.listing_custom_attribute.value"
-  | "listing_group.case_value.product_bidding_category.country_code"
-  | "listing_group.case_value.product_bidding_category.id"
-  | "listing_group.case_value.product_bidding_category.level"
-  | "listing_group.case_value.product_channel.channel"
-  | "listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
-  | "listing_group.case_value.product_condition.condition"
-  | "listing_group.case_value.product_item_id.value"
-  | "listing_group.case_value.product_type.level"
-  | "listing_group.case_value.product_type.value"
-  | "listing_group.parent_ad_group_criterion"
-  | "listing_group.type"
-  | "mobile_app_category.mobile_app_category_constant"
-  | "negative"
-  | "parental_status.type"
-  | "percent_cpc_bid_micros"
-  | "placement.url"
-  | "position_estimates.estimated_add_clicks_at_first_position_cpc"
-  | "position_estimates.estimated_add_cost_at_first_position_cpc"
-  | "position_estimates.first_page_cpc_micros"
-  | "position_estimates.first_position_cpc_micros"
-  | "position_estimates.top_of_page_cpc_micros"
-  | "quality_info.creative_quality_score"
-  | "quality_info.post_click_quality_score"
-  | "quality_info.quality_score"
-  | "quality_info.search_predicted_ctr"
-  | "resource_name"
-  | "status"
-  | "system_serving_status"
-  | "topic.path"
-  | "topic.topic_constant"
-  | "tracking_url_template"
-  | "type"
-  | "url_custom_parameters"
-  | "user_interest.user_interest_category"
-  | "user_list.user_list"
-  | "webpage.conditions"
-  | "webpage.criterion_name"
-  | "youtube_channel.channel_id"
-  | "youtube_video.video_id";
+export type AdGroupCriterionField =
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id";
 
-export type ad_group_criterion_fields = Array<ad_group_criterion_field>;
+export type AdGroupCriterionFields = Array<AdGroupCriterionField>;
 
-export const ad_group_criterion_label = [
+/*
+ --- End of AdGroupCriterion ---
+*/
+
+/*
+ --- Start of AdGroupCriterionLabel ---
+*/
+export const AdGroupCriterionLabel = [
   "ad_group_criterion_label.ad_group_criterion",
   "ad_group_criterion_label.label",
   "ad_group_criterion_label.resource_name",
 ];
 
-export type ad_group_criterion_label_field = "ad_group_criterion" | "label" | "resource_name";
+export type AdGroupCriterionLabelField =
+  | "ad_group_criterion_label.ad_group_criterion"
+  | "ad_group_criterion_label.label"
+  | "ad_group_criterion_label.resource_name";
 
-export type ad_group_criterion_label_fields = Array<ad_group_criterion_label_field>;
+export type AdGroupCriterionLabelFields = Array<AdGroupCriterionLabelField>;
 
-export const ad_group_extension_setting = [
+/*
+ --- End of AdGroupCriterionLabel ---
+*/
+
+/*
+ --- Start of AdGroupExtensionSetting ---
+*/
+export const AdGroupExtensionSetting = [
   "ad_group_extension_setting.ad_group",
   "ad_group_extension_setting.device",
   "ad_group_extension_setting.extension_feed_items",
@@ -587,16 +981,23 @@ export const ad_group_extension_setting = [
   "ad_group_extension_setting.resource_name",
 ];
 
-export type ad_group_extension_setting_field =
-  | "ad_group"
-  | "device"
-  | "extension_feed_items"
-  | "extension_type"
-  | "resource_name";
+export type AdGroupExtensionSettingField =
+  | "ad_group_extension_setting.ad_group"
+  | "ad_group_extension_setting.device"
+  | "ad_group_extension_setting.extension_feed_items"
+  | "ad_group_extension_setting.extension_type"
+  | "ad_group_extension_setting.resource_name";
 
-export type ad_group_extension_setting_fields = Array<ad_group_extension_setting_field>;
+export type AdGroupExtensionSettingFields = Array<AdGroupExtensionSettingField>;
 
-export const ad_group_feed = [
+/*
+ --- End of AdGroupExtensionSetting ---
+*/
+
+/*
+ --- Start of AdGroupFeed ---
+*/
+export const AdGroupFeed = [
   "ad_group_feed.ad_group",
   "ad_group_feed.feed",
   "ad_group_feed.matching_function.function_string",
@@ -608,42 +1009,188 @@ export const ad_group_feed = [
   "ad_group_feed.status",
 ];
 
-export type ad_group_feed_field =
-  | "ad_group"
-  | "feed"
-  | "matching_function.function_string"
-  | "matching_function.left_operands"
-  | "matching_function.operator"
-  | "matching_function.right_operands"
-  | "placeholder_types"
-  | "resource_name"
-  | "status";
+export type AdGroupFeedField =
+  | "ad_group_feed.ad_group"
+  | "ad_group_feed.feed"
+  | "ad_group_feed.matching_function.function_string"
+  | "ad_group_feed.matching_function.left_operands"
+  | "ad_group_feed.matching_function.operator"
+  | "ad_group_feed.matching_function.right_operands"
+  | "ad_group_feed.placeholder_types"
+  | "ad_group_feed.resource_name"
+  | "ad_group_feed.status";
 
-export type ad_group_feed_fields = Array<ad_group_feed_field>;
+export type AdGroupFeedFields = Array<AdGroupFeedField>;
 
-export const ad_group_label = [
+/*
+ --- End of AdGroupFeed ---
+*/
+
+/*
+ --- Start of AdGroupLabel ---
+*/
+export const AdGroupLabel = [
   "ad_group_label.ad_group",
   "ad_group_label.label",
   "ad_group_label.resource_name",
 ];
 
-export type ad_group_label_field = "ad_group" | "label" | "resource_name";
+export type AdGroupLabelField =
+  | "ad_group_label.ad_group"
+  | "ad_group_label.label"
+  | "ad_group_label.resource_name";
 
-export type ad_group_label_fields = Array<ad_group_label_field>;
+export type AdGroupLabelFields = Array<AdGroupLabelField>;
 
-export const ad_schedule_view = ["ad_schedule_view.resource_name"];
+/*
+ --- End of AdGroupLabel ---
+*/
 
-export type ad_schedule_view_field = "resource_name";
+/*
+ --- Start of AdScheduleView ---
+*/
+export const AdScheduleView = ["ad_schedule_view.resource_name"];
 
-export type ad_schedule_view_fields = Array<ad_schedule_view_field>;
+export type AdScheduleViewField = "ad_schedule_view.resource_name";
 
-export const age_range_view = ["age_range_view.resource_name"];
+export type AdScheduleViewFields = Array<AdScheduleViewField>;
 
-export type age_range_view_field = "resource_name";
+export type AdScheduleViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
-export type age_range_view_fields = Array<age_range_view_field>;
+export type AdScheduleViewMetrics = Array<AdScheduleViewMetric>;
 
-export const bidding_strategy = [
+export type AdScheduleViewSegment =
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type AdScheduleViewSegments = Array<AdScheduleViewSegment>;
+
+/*
+ --- End of AdScheduleView ---
+*/
+
+/*
+ --- Start of AgeRangeView ---
+*/
+export const AgeRangeView = ["age_range_view.resource_name"];
+
+export type AgeRangeViewField = "age_range_view.resource_name";
+
+export type AgeRangeViewFields = Array<AgeRangeViewField>;
+
+export type AgeRangeViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type AgeRangeViewMetrics = Array<AgeRangeViewMetric>;
+
+export type AgeRangeViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type AgeRangeViewSegments = Array<AgeRangeViewSegment>;
+
+/*
+ --- End of AgeRangeView ---
+*/
+
+/*
+ --- Start of BiddingStrategy ---
+*/
+export const BiddingStrategy = [
   "bidding_strategy.campaign_count",
   "bidding_strategy.enhanced_cpc",
   "bidding_strategy.id",
@@ -676,41 +1223,88 @@ export const bidding_strategy = [
   "bidding_strategy.type",
 ];
 
-export type bidding_strategy_field =
-  | "campaign_count"
-  | "enhanced_cpc"
-  | "id"
-  | "name"
-  | "non_removed_campaign_count"
-  | "page_one_promoted.bid_modifier"
-  | "page_one_promoted.cpc_bid_ceiling_micros"
-  | "page_one_promoted.only_raise_cpc_bids"
-  | "page_one_promoted.raise_cpc_bid_when_budget_constrained"
-  | "page_one_promoted.raise_cpc_bid_when_quality_score_is_low"
-  | "page_one_promoted.strategy_goal"
-  | "resource_name"
-  | "status"
-  | "target_cpa.cpc_bid_ceiling_micros"
-  | "target_cpa.cpc_bid_floor_micros"
-  | "target_cpa.target_cpa_micros"
-  | "target_impression_share.cpc_bid_ceiling_micros"
-  | "target_impression_share.location"
-  | "target_impression_share.location_fraction_micros"
-  | "target_outrank_share.competitor_domain"
-  | "target_outrank_share.cpc_bid_ceiling_micros"
-  | "target_outrank_share.only_raise_cpc_bids"
-  | "target_outrank_share.raise_cpc_bid_when_quality_score_is_low"
-  | "target_outrank_share.target_outrank_share_micros"
-  | "target_roas.cpc_bid_ceiling_micros"
-  | "target_roas.cpc_bid_floor_micros"
-  | "target_roas.target_roas"
-  | "target_spend.cpc_bid_ceiling_micros"
-  | "target_spend.target_spend_micros"
-  | "type";
+export type BiddingStrategyField =
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.page_one_promoted.bid_modifier"
+  | "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros"
+  | "bidding_strategy.page_one_promoted.only_raise_cpc_bids"
+  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained"
+  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low"
+  | "bidding_strategy.page_one_promoted.strategy_goal"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_outrank_share.competitor_domain"
+  | "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_outrank_share.only_raise_cpc_bids"
+  | "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low"
+  | "bidding_strategy.target_outrank_share.target_outrank_share_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type";
 
-export type bidding_strategy_fields = Array<bidding_strategy_field>;
+export type BiddingStrategyFields = Array<BiddingStrategyField>;
 
-export const billing_setup = [
+export type BiddingStrategyMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.view_through_conversions";
+
+export type BiddingStrategyMetrics = Array<BiddingStrategyMetric>;
+
+export type BiddingStrategySegment =
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type BiddingStrategySegments = Array<BiddingStrategySegment>;
+
+/*
+ --- End of BiddingStrategy ---
+*/
+
+/*
+ --- Start of BillingSetup ---
+*/
+export const BillingSetup = [
   "billing_setup.end_date_time",
   "billing_setup.end_time_type",
   "billing_setup.id",
@@ -725,23 +1319,30 @@ export const billing_setup = [
   "billing_setup.status",
 ];
 
-export type billing_setup_field =
-  | "end_date_time"
-  | "end_time_type"
-  | "id"
-  | "payments_account"
-  | "payments_account_info.payments_account_id"
-  | "payments_account_info.payments_account_name"
-  | "payments_account_info.payments_profile_id"
-  | "payments_account_info.payments_profile_name"
-  | "payments_account_info.secondary_payments_profile_id"
-  | "resource_name"
-  | "start_date_time"
-  | "status";
+export type BillingSetupField =
+  | "billing_setup.end_date_time"
+  | "billing_setup.end_time_type"
+  | "billing_setup.id"
+  | "billing_setup.payments_account"
+  | "billing_setup.payments_account_info.payments_account_id"
+  | "billing_setup.payments_account_info.payments_account_name"
+  | "billing_setup.payments_account_info.payments_profile_id"
+  | "billing_setup.payments_account_info.payments_profile_name"
+  | "billing_setup.payments_account_info.secondary_payments_profile_id"
+  | "billing_setup.resource_name"
+  | "billing_setup.start_date_time"
+  | "billing_setup.status";
 
-export type billing_setup_fields = Array<billing_setup_field>;
+export type BillingSetupFields = Array<BillingSetupField>;
 
-export const campaign = [
+/*
+ --- End of BillingSetup ---
+*/
+
+/*
+ --- Start of Campaign ---
+*/
+export const Campaign = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -802,75 +1403,251 @@ export const campaign = [
   "campaign.video_brand_safety_suitability",
 ];
 
-export type campaign_field =
-  | "ad_serving_optimization_status"
-  | "advertising_channel_sub_type"
-  | "advertising_channel_type"
-  | "bidding_strategy"
-  | "bidding_strategy_type"
-  | "campaign_budget"
-  | "dynamic_search_ads_setting.domain_name"
-  | "dynamic_search_ads_setting.feeds"
-  | "dynamic_search_ads_setting.language_code"
-  | "dynamic_search_ads_setting.use_supplied_urls_only"
-  | "end_date"
-  | "final_url_suffix"
-  | "frequency_caps"
-  | "geo_target_type_setting.negative_geo_target_type"
-  | "geo_target_type_setting.positive_geo_target_type"
-  | "hotel_setting.hotel_center_id"
-  | "id"
-  | "manual_cpc.enhanced_cpc_enabled"
-  | "manual_cpm"
-  | "manual_cpv"
-  | "maximize_conversion_value.target_roas"
-  | "maximize_conversions"
-  | "name"
-  | "network_settings.target_content_network"
-  | "network_settings.target_google_search"
-  | "network_settings.target_partner_search_network"
-  | "network_settings.target_search_network"
-  | "percent_cpc.cpc_bid_ceiling_micros"
-  | "percent_cpc.enhanced_cpc_enabled"
-  | "real_time_bidding_setting.opt_in"
-  | "resource_name"
-  | "selective_optimization.conversion_actions"
-  | "serving_status"
-  | "shopping_setting.campaign_priority"
-  | "shopping_setting.enable_local"
-  | "shopping_setting.merchant_id"
-  | "shopping_setting.sales_country"
-  | "start_date"
-  | "status"
-  | "target_cpa.cpc_bid_ceiling_micros"
-  | "target_cpa.cpc_bid_floor_micros"
-  | "target_cpa.target_cpa_micros"
-  | "target_cpm"
-  | "target_impression_share.cpc_bid_ceiling_micros"
-  | "target_impression_share.location"
-  | "target_impression_share.location_fraction_micros"
-  | "target_roas.cpc_bid_ceiling_micros"
-  | "target_roas.cpc_bid_floor_micros"
-  | "target_roas.target_roas"
-  | "target_spend.cpc_bid_ceiling_micros"
-  | "target_spend.target_spend_micros"
-  | "targeting_setting.target_restrictions"
-  | "tracking_setting.tracking_url"
-  | "tracking_url_template"
-  | "url_custom_parameters"
-  | "vanity_pharma.vanity_pharma_display_url_mode"
-  | "vanity_pharma.vanity_pharma_text"
-  | "video_brand_safety_suitability";
+export type CampaignField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability";
 
-export type campaign_fields = Array<campaign_field>;
+export type CampaignFields = Array<CampaignField>;
 
-export const campaign_audience_view = ["campaign_audience_view.resource_name"];
+export type CampaignMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_frequency"
+  | "metrics.average_page_views"
+  | "metrics.average_position"
+  | "metrics.average_time_on_site"
+  | "metrics.bounce_rate"
+  | "metrics.clicks"
+  | "metrics.content_budget_lost_impression_share"
+  | "metrics.content_impression_share"
+  | "metrics.content_rank_lost_impression_share"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.current_model_attributed_conversions"
+  | "metrics.current_model_attributed_conversions_from_interactions_rate"
+  | "metrics.current_model_attributed_conversions_from_interactions_value_per_interaction"
+  | "metrics.current_model_attributed_conversions_value"
+  | "metrics.current_model_attributed_conversions_value_per_cost"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impression_reach"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.invalid_click_rate"
+  | "metrics.invalid_clicks"
+  | "metrics.percent_new_visitors"
+  | "metrics.phone_calls"
+  | "metrics.phone_impressions"
+  | "metrics.phone_through_rate"
+  | "metrics.relative_ctr"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_click_share"
+  | "metrics.search_exact_match_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.value_per_current_model_attributed_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
-export type campaign_audience_view_field = "resource_name";
+export type CampaignMetrics = Array<CampaignMetric>;
 
-export type campaign_audience_view_fields = Array<campaign_audience_view_field>;
+export type CampaignSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_attribution_event_type"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
 
-export const campaign_bid_modifier = [
+export type CampaignSegments = Array<CampaignSegment>;
+
+/*
+ --- End of Campaign ---
+*/
+
+/*
+ --- Start of CampaignAudienceView ---
+*/
+export const CampaignAudienceView = ["campaign_audience_view.resource_name"];
+
+export type CampaignAudienceViewField = "campaign_audience_view.resource_name";
+
+export type CampaignAudienceViewFields = Array<CampaignAudienceViewField>;
+
+export type CampaignAudienceViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type CampaignAudienceViewMetrics = Array<CampaignAudienceViewMetric>;
+
+export type CampaignAudienceViewSegment =
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type CampaignAudienceViewSegments = Array<CampaignAudienceViewSegment>;
+
+/*
+ --- End of CampaignAudienceView ---
+*/
+
+/*
+ --- Start of CampaignBidModifier ---
+*/
+export const CampaignBidModifier = [
   "campaign_bid_modifier.bid_modifier",
   "campaign_bid_modifier.campaign",
   "campaign_bid_modifier.criterion_id",
@@ -878,16 +1655,27 @@ export const campaign_bid_modifier = [
   "campaign_bid_modifier.resource_name",
 ];
 
-export type campaign_bid_modifier_field =
-  | "bid_modifier"
-  | "campaign"
-  | "criterion_id"
-  | "interaction_type.type"
-  | "resource_name";
+export type CampaignBidModifierField =
+  | "campaign_bid_modifier.bid_modifier"
+  | "campaign_bid_modifier.campaign"
+  | "campaign_bid_modifier.criterion_id"
+  | "campaign_bid_modifier.interaction_type.type"
+  | "campaign_bid_modifier.resource_name";
 
-export type campaign_bid_modifier_fields = Array<campaign_bid_modifier_field>;
+export type CampaignBidModifierFields = Array<CampaignBidModifierField>;
 
-export const campaign_budget = [
+export type CampaignBidModifierMetric = "metrics.interaction_event_types";
+
+export type CampaignBidModifierMetrics = Array<CampaignBidModifierMetric>;
+
+/*
+ --- End of CampaignBidModifier ---
+*/
+
+/*
+ --- Start of CampaignBudget ---
+*/
+export const CampaignBudget = [
   "campaign_budget.amount_micros",
   "campaign_budget.delivery_method",
   "campaign_budget.explicitly_shared",
@@ -906,27 +1694,71 @@ export const campaign_budget = [
   "campaign_budget.total_amount_micros",
 ];
 
-export type campaign_budget_field =
-  | "amount_micros"
-  | "delivery_method"
-  | "explicitly_shared"
-  | "has_recommended_budget"
-  | "id"
-  | "name"
-  | "period"
-  | "recommended_budget_amount_micros"
-  | "recommended_budget_estimated_change_weekly_clicks"
-  | "recommended_budget_estimated_change_weekly_cost_micros"
-  | "recommended_budget_estimated_change_weekly_interactions"
-  | "recommended_budget_estimated_change_weekly_views"
-  | "reference_count"
-  | "resource_name"
-  | "status"
-  | "total_amount_micros";
+export type CampaignBudgetField =
+  | "campaign_budget.amount_micros"
+  | "campaign_budget.delivery_method"
+  | "campaign_budget.explicitly_shared"
+  | "campaign_budget.has_recommended_budget"
+  | "campaign_budget.id"
+  | "campaign_budget.name"
+  | "campaign_budget.period"
+  | "campaign_budget.recommended_budget_amount_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_clicks"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_cost_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_interactions"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_views"
+  | "campaign_budget.reference_count"
+  | "campaign_budget.resource_name"
+  | "campaign_budget.status"
+  | "campaign_budget.total_amount_micros";
 
-export type campaign_budget_fields = Array<campaign_budget_field>;
+export type CampaignBudgetFields = Array<CampaignBudgetField>;
 
-export const campaign_criterion = [
+export type CampaignBudgetMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type CampaignBudgetMetrics = Array<CampaignBudgetMetric>;
+
+export type CampaignBudgetSegment = "campaign";
+
+export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
+
+/*
+ --- End of CampaignBudget ---
+*/
+
+/*
+ --- Start of CampaignCriterion ---
+*/
+export const CampaignCriterion = [
   "campaign_criterion.ad_schedule.day_of_week",
   "campaign_criterion.ad_schedule.end_hour",
   "campaign_criterion.ad_schedule.end_minute",
@@ -978,60 +1810,67 @@ export const campaign_criterion = [
   "campaign_criterion.youtube_video.video_id",
 ];
 
-export type campaign_criterion_field =
-  | "ad_schedule.day_of_week"
-  | "ad_schedule.end_hour"
-  | "ad_schedule.end_minute"
-  | "ad_schedule.start_hour"
-  | "ad_schedule.start_minute"
-  | "age_range.type"
-  | "bid_modifier"
-  | "campaign"
-  | "carrier.carrier_constant"
-  | "content_label.type"
-  | "criterion_id"
-  | "device.type"
-  | "gender.type"
-  | "income_range.type"
-  | "ip_block.ip_address"
-  | "keyword.match_type"
-  | "keyword.text"
-  | "language.language_constant"
-  | "listing_scope.dimensions"
-  | "listing_scope.dimensions.hotel_city.city_criterion"
-  | "listing_scope.dimensions.hotel_country_region.country_region_criterion"
-  | "listing_scope.dimensions.hotel_state.state_criterion"
-  | "location.geo_target_constant"
-  | "mobile_app_category.mobile_app_category_constant"
-  | "mobile_device.mobile_device_constant"
-  | "negative"
-  | "operating_system_version.operating_system_version_constant"
-  | "parental_status.type"
-  | "placement.url"
-  | "proximity.address.city_name"
-  | "proximity.address.country_code"
-  | "proximity.address.postal_code"
-  | "proximity.address.province_code"
-  | "proximity.address.province_name"
-  | "proximity.address.street_address"
-  | "proximity.geo_point.latitude_in_micro_degrees"
-  | "proximity.geo_point.longitude_in_micro_degrees"
-  | "proximity.radius"
-  | "proximity.radius_units"
-  | "resource_name"
-  | "topic.path"
-  | "topic.topic_constant"
-  | "type"
-  | "user_interest.user_interest_category"
-  | "user_list.user_list"
-  | "webpage.conditions"
-  | "webpage.criterion_name"
-  | "youtube_channel.channel_id"
-  | "youtube_video.video_id";
+export type CampaignCriterionField =
+  | "campaign_criterion.ad_schedule.day_of_week"
+  | "campaign_criterion.ad_schedule.end_hour"
+  | "campaign_criterion.ad_schedule.end_minute"
+  | "campaign_criterion.ad_schedule.start_hour"
+  | "campaign_criterion.ad_schedule.start_minute"
+  | "campaign_criterion.age_range.type"
+  | "campaign_criterion.bid_modifier"
+  | "campaign_criterion.campaign"
+  | "campaign_criterion.carrier.carrier_constant"
+  | "campaign_criterion.content_label.type"
+  | "campaign_criterion.criterion_id"
+  | "campaign_criterion.device.type"
+  | "campaign_criterion.gender.type"
+  | "campaign_criterion.income_range.type"
+  | "campaign_criterion.ip_block.ip_address"
+  | "campaign_criterion.keyword.match_type"
+  | "campaign_criterion.keyword.text"
+  | "campaign_criterion.language.language_constant"
+  | "campaign_criterion.listing_scope.dimensions"
+  | "campaign_criterion.listing_scope.dimensions.hotel_city.city_criterion"
+  | "campaign_criterion.listing_scope.dimensions.hotel_country_region.country_region_criterion"
+  | "campaign_criterion.listing_scope.dimensions.hotel_state.state_criterion"
+  | "campaign_criterion.location.geo_target_constant"
+  | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_device.mobile_device_constant"
+  | "campaign_criterion.negative"
+  | "campaign_criterion.operating_system_version.operating_system_version_constant"
+  | "campaign_criterion.parental_status.type"
+  | "campaign_criterion.placement.url"
+  | "campaign_criterion.proximity.address.city_name"
+  | "campaign_criterion.proximity.address.country_code"
+  | "campaign_criterion.proximity.address.postal_code"
+  | "campaign_criterion.proximity.address.province_code"
+  | "campaign_criterion.proximity.address.province_name"
+  | "campaign_criterion.proximity.address.street_address"
+  | "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees"
+  | "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees"
+  | "campaign_criterion.proximity.radius"
+  | "campaign_criterion.proximity.radius_units"
+  | "campaign_criterion.resource_name"
+  | "campaign_criterion.topic.path"
+  | "campaign_criterion.topic.topic_constant"
+  | "campaign_criterion.type"
+  | "campaign_criterion.user_interest.user_interest_category"
+  | "campaign_criterion.user_list.user_list"
+  | "campaign_criterion.webpage.conditions"
+  | "campaign_criterion.webpage.criterion_name"
+  | "campaign_criterion.youtube_channel.channel_id"
+  | "campaign_criterion.youtube_video.video_id";
 
-export type campaign_criterion_fields = Array<campaign_criterion_field>;
+export type CampaignCriterionFields = Array<CampaignCriterionField>;
 
-export const campaign_extension_setting = [
+/*
+ --- End of CampaignCriterion ---
+*/
+
+/*
+ --- Start of CampaignExtensionSetting ---
+*/
+export const CampaignExtensionSetting = [
   "campaign_extension_setting.campaign",
   "campaign_extension_setting.device",
   "campaign_extension_setting.extension_feed_items",
@@ -1039,16 +1878,23 @@ export const campaign_extension_setting = [
   "campaign_extension_setting.resource_name",
 ];
 
-export type campaign_extension_setting_field =
-  | "campaign"
-  | "device"
-  | "extension_feed_items"
-  | "extension_type"
-  | "resource_name";
+export type CampaignExtensionSettingField =
+  | "campaign_extension_setting.campaign"
+  | "campaign_extension_setting.device"
+  | "campaign_extension_setting.extension_feed_items"
+  | "campaign_extension_setting.extension_type"
+  | "campaign_extension_setting.resource_name";
 
-export type campaign_extension_setting_fields = Array<campaign_extension_setting_field>;
+export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField>;
 
-export const campaign_feed = [
+/*
+ --- End of CampaignExtensionSetting ---
+*/
+
+/*
+ --- Start of CampaignFeed ---
+*/
+export const CampaignFeed = [
   "campaign_feed.campaign",
   "campaign_feed.feed",
   "campaign_feed.matching_function.function_string",
@@ -1060,52 +1906,91 @@ export const campaign_feed = [
   "campaign_feed.status",
 ];
 
-export type campaign_feed_field =
-  | "campaign"
-  | "feed"
-  | "matching_function.function_string"
-  | "matching_function.left_operands"
-  | "matching_function.operator"
-  | "matching_function.right_operands"
-  | "placeholder_types"
-  | "resource_name"
-  | "status";
+export type CampaignFeedField =
+  | "campaign_feed.campaign"
+  | "campaign_feed.feed"
+  | "campaign_feed.matching_function.function_string"
+  | "campaign_feed.matching_function.left_operands"
+  | "campaign_feed.matching_function.operator"
+  | "campaign_feed.matching_function.right_operands"
+  | "campaign_feed.placeholder_types"
+  | "campaign_feed.resource_name"
+  | "campaign_feed.status";
 
-export type campaign_feed_fields = Array<campaign_feed_field>;
+export type CampaignFeedFields = Array<CampaignFeedField>;
 
-export const campaign_label = [
+/*
+ --- End of CampaignFeed ---
+*/
+
+/*
+ --- Start of CampaignLabel ---
+*/
+export const CampaignLabel = [
   "campaign_label.campaign",
   "campaign_label.label",
   "campaign_label.resource_name",
 ];
 
-export type campaign_label_field = "campaign" | "label" | "resource_name";
+export type CampaignLabelField =
+  | "campaign_label.campaign"
+  | "campaign_label.label"
+  | "campaign_label.resource_name";
 
-export type campaign_label_fields = Array<campaign_label_field>;
+export type CampaignLabelFields = Array<CampaignLabelField>;
 
-export const campaign_shared_set = [
+/*
+ --- End of CampaignLabel ---
+*/
+
+/*
+ --- Start of CampaignSharedSet ---
+*/
+export const CampaignSharedSet = [
   "campaign_shared_set.campaign",
   "campaign_shared_set.resource_name",
   "campaign_shared_set.shared_set",
   "campaign_shared_set.status",
 ];
 
-export type campaign_shared_set_field = "campaign" | "resource_name" | "shared_set" | "status";
+export type CampaignSharedSetField =
+  | "campaign_shared_set.campaign"
+  | "campaign_shared_set.resource_name"
+  | "campaign_shared_set.shared_set"
+  | "campaign_shared_set.status";
 
-export type campaign_shared_set_fields = Array<campaign_shared_set_field>;
+export type CampaignSharedSetFields = Array<CampaignSharedSetField>;
 
-export const carrier_constant = [
+/*
+ --- End of CampaignSharedSet ---
+*/
+
+/*
+ --- Start of CarrierConstant ---
+*/
+export const CarrierConstant = [
   "carrier_constant.country_code",
   "carrier_constant.id",
   "carrier_constant.name",
   "carrier_constant.resource_name",
 ];
 
-export type carrier_constant_field = "country_code" | "id" | "name" | "resource_name";
+export type CarrierConstantField =
+  | "carrier_constant.country_code"
+  | "carrier_constant.id"
+  | "carrier_constant.name"
+  | "carrier_constant.resource_name";
 
-export type carrier_constant_fields = Array<carrier_constant_field>;
+export type CarrierConstantFields = Array<CarrierConstantField>;
 
-export const change_status = [
+/*
+ --- End of CarrierConstant ---
+*/
+
+/*
+ --- Start of ChangeStatus ---
+*/
+export const ChangeStatus = [
   "change_status.ad_group",
   "change_status.ad_group_ad",
   "change_status.ad_group_bid_modifier",
@@ -1122,25 +2007,32 @@ export const change_status = [
   "change_status.resource_type",
 ];
 
-export type change_status_field =
-  | "ad_group"
-  | "ad_group_ad"
-  | "ad_group_bid_modifier"
-  | "ad_group_criterion"
-  | "ad_group_feed"
-  | "campaign"
-  | "campaign_criterion"
-  | "campaign_feed"
-  | "feed"
-  | "feed_item"
-  | "last_change_date_time"
-  | "resource_name"
-  | "resource_status"
-  | "resource_type";
+export type ChangeStatusField =
+  | "change_status.ad_group"
+  | "change_status.ad_group_ad"
+  | "change_status.ad_group_bid_modifier"
+  | "change_status.ad_group_criterion"
+  | "change_status.ad_group_feed"
+  | "change_status.campaign"
+  | "change_status.campaign_criterion"
+  | "change_status.campaign_feed"
+  | "change_status.feed"
+  | "change_status.feed_item"
+  | "change_status.last_change_date_time"
+  | "change_status.resource_name"
+  | "change_status.resource_status"
+  | "change_status.resource_type";
 
-export type change_status_fields = Array<change_status_field>;
+export type ChangeStatusFields = Array<ChangeStatusField>;
 
-export const click_view = [
+/*
+ --- End of ChangeStatus ---
+*/
+
+/*
+ --- Start of ClickView ---
+*/
+export const ClickView = [
   "click_view.area_of_interest.city",
   "click_view.area_of_interest.country",
   "click_view.area_of_interest.metro",
@@ -1156,24 +2048,47 @@ export const click_view = [
   "click_view.resource_name",
 ];
 
-export type click_view_field =
-  | "area_of_interest.city"
-  | "area_of_interest.country"
-  | "area_of_interest.metro"
-  | "area_of_interest.most_specific"
-  | "area_of_interest.region"
-  | "gclid"
-  | "location_of_presence.city"
-  | "location_of_presence.country"
-  | "location_of_presence.metro"
-  | "location_of_presence.most_specific"
-  | "location_of_presence.region"
-  | "page_number"
-  | "resource_name";
+export type ClickViewField =
+  | "click_view.area_of_interest.city"
+  | "click_view.area_of_interest.country"
+  | "click_view.area_of_interest.metro"
+  | "click_view.area_of_interest.most_specific"
+  | "click_view.area_of_interest.region"
+  | "click_view.gclid"
+  | "click_view.location_of_presence.city"
+  | "click_view.location_of_presence.country"
+  | "click_view.location_of_presence.metro"
+  | "click_view.location_of_presence.most_specific"
+  | "click_view.location_of_presence.region"
+  | "click_view.page_number"
+  | "click_view.resource_name";
 
-export type click_view_fields = Array<click_view_field>;
+export type ClickViewFields = Array<ClickViewField>;
 
-export const conversion_action = [
+export type ClickViewMetric = "metrics.clicks";
+
+export type ClickViewMetrics = Array<ClickViewMetric>;
+
+export type ClickViewSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.date"
+  | "segments.device"
+  | "segments.month_of_year"
+  | "segments.slot";
+
+export type ClickViewSegments = Array<ClickViewSegment>;
+
+/*
+ --- End of ClickView ---
+*/
+
+/*
+ --- Start of ConversionAction ---
+*/
+export const ConversionAction = [
   "conversion_action.app_id",
   "conversion_action.attribution_model_settings.attribution_model",
   "conversion_action.attribution_model_settings.data_driven_model_status",
@@ -1195,30 +2110,37 @@ export const conversion_action = [
   "conversion_action.view_through_lookback_window_days",
 ];
 
-export type conversion_action_field =
-  | "app_id"
-  | "attribution_model_settings.attribution_model"
-  | "attribution_model_settings.data_driven_model_status"
-  | "category"
-  | "click_through_lookback_window_days"
-  | "counting_type"
-  | "id"
-  | "include_in_conversions_metric"
-  | "name"
-  | "owner_customer"
-  | "phone_call_duration_seconds"
-  | "resource_name"
-  | "status"
-  | "tag_snippets"
-  | "type"
-  | "value_settings.always_use_default_value"
-  | "value_settings.default_currency_code"
-  | "value_settings.default_value"
-  | "view_through_lookback_window_days";
+export type ConversionActionField =
+  | "conversion_action.app_id"
+  | "conversion_action.attribution_model_settings.attribution_model"
+  | "conversion_action.attribution_model_settings.data_driven_model_status"
+  | "conversion_action.category"
+  | "conversion_action.click_through_lookback_window_days"
+  | "conversion_action.counting_type"
+  | "conversion_action.id"
+  | "conversion_action.include_in_conversions_metric"
+  | "conversion_action.name"
+  | "conversion_action.owner_customer"
+  | "conversion_action.phone_call_duration_seconds"
+  | "conversion_action.resource_name"
+  | "conversion_action.status"
+  | "conversion_action.tag_snippets"
+  | "conversion_action.type"
+  | "conversion_action.value_settings.always_use_default_value"
+  | "conversion_action.value_settings.default_currency_code"
+  | "conversion_action.value_settings.default_value"
+  | "conversion_action.view_through_lookback_window_days";
 
-export type conversion_action_fields = Array<conversion_action_field>;
+export type ConversionActionFields = Array<ConversionActionField>;
 
-export const custom_interest = [
+/*
+ --- End of ConversionAction ---
+*/
+
+/*
+ --- Start of CustomInterest ---
+*/
+export const CustomInterest = [
   "custom_interest.description",
   "custom_interest.id",
   "custom_interest.members",
@@ -1228,18 +2150,25 @@ export const custom_interest = [
   "custom_interest.type",
 ];
 
-export type custom_interest_field =
-  | "description"
-  | "id"
-  | "members"
-  | "name"
-  | "resource_name"
-  | "status"
-  | "type";
+export type CustomInterestField =
+  | "custom_interest.description"
+  | "custom_interest.id"
+  | "custom_interest.members"
+  | "custom_interest.name"
+  | "custom_interest.resource_name"
+  | "custom_interest.status"
+  | "custom_interest.type";
 
-export type custom_interest_fields = Array<custom_interest_field>;
+export type CustomInterestFields = Array<CustomInterestField>;
 
-export const customer = [
+/*
+ --- End of CustomInterest ---
+*/
+
+/*
+ --- Start of Customer ---
+*/
+export const Customer = [
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
   "customer.call_reporting_setting.call_conversion_reporting_enabled",
@@ -1259,39 +2188,129 @@ export const customer = [
   "customer.tracking_url_template",
 ];
 
-export type customer_field =
-  | "auto_tagging_enabled"
-  | "call_reporting_setting.call_conversion_action"
-  | "call_reporting_setting.call_conversion_reporting_enabled"
-  | "call_reporting_setting.call_reporting_enabled"
-  | "conversion_tracking_setting.conversion_tracking_id"
-  | "conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "currency_code"
-  | "descriptive_name"
-  | "final_url_suffix"
-  | "has_partners_badge"
-  | "id"
-  | "manager"
-  | "remarketing_setting.google_global_site_tag"
-  | "resource_name"
-  | "test_account"
-  | "time_zone"
-  | "tracking_url_template";
+export type CustomerField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template";
 
-export type customer_fields = Array<customer_field>;
+export type CustomerFields = Array<CustomerField>;
 
-export const customer_client = [
+export type CustomerMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.content_budget_lost_impression_share"
+  | "metrics.content_impression_share"
+  | "metrics.content_rank_lost_impression_share"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.invalid_click_rate"
+  | "metrics.invalid_clicks"
+  | "metrics.search_budget_lost_impression_share"
+  | "metrics.search_exact_match_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type CustomerMetrics = Array<CustomerMetric>;
+
+export type CustomerSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type CustomerSegments = Array<CustomerSegment>;
+
+/*
+ --- End of Customer ---
+*/
+
+/*
+ --- Start of CustomerClient ---
+*/
+export const CustomerClient = [
   "customer_client.client_customer",
   "customer_client.hidden",
   "customer_client.level",
   "customer_client.resource_name",
 ];
 
-export type customer_client_field = "client_customer" | "hidden" | "level" | "resource_name";
+export type CustomerClientField =
+  | "customer_client.client_customer"
+  | "customer_client.hidden"
+  | "customer_client.level"
+  | "customer_client.resource_name";
 
-export type customer_client_fields = Array<customer_client_field>;
+export type CustomerClientFields = Array<CustomerClientField>;
 
-export const customer_client_link = [
+/*
+ --- End of CustomerClient ---
+*/
+
+/*
+ --- Start of CustomerClientLink ---
+*/
+export const CustomerClientLink = [
   "customer_client_link.client_customer",
   "customer_client_link.hidden",
   "customer_client_link.manager_link_id",
@@ -1299,31 +2318,45 @@ export const customer_client_link = [
   "customer_client_link.status",
 ];
 
-export type customer_client_link_field =
-  | "client_customer"
-  | "hidden"
-  | "manager_link_id"
-  | "resource_name"
-  | "status";
+export type CustomerClientLinkField =
+  | "customer_client_link.client_customer"
+  | "customer_client_link.hidden"
+  | "customer_client_link.manager_link_id"
+  | "customer_client_link.resource_name"
+  | "customer_client_link.status";
 
-export type customer_client_link_fields = Array<customer_client_link_field>;
+export type CustomerClientLinkFields = Array<CustomerClientLinkField>;
 
-export const customer_extension_setting = [
+/*
+ --- End of CustomerClientLink ---
+*/
+
+/*
+ --- Start of CustomerExtensionSetting ---
+*/
+export const CustomerExtensionSetting = [
   "customer_extension_setting.device",
   "customer_extension_setting.extension_feed_items",
   "customer_extension_setting.extension_type",
   "customer_extension_setting.resource_name",
 ];
 
-export type customer_extension_setting_field =
-  | "device"
-  | "extension_feed_items"
-  | "extension_type"
-  | "resource_name";
+export type CustomerExtensionSettingField =
+  | "customer_extension_setting.device"
+  | "customer_extension_setting.extension_feed_items"
+  | "customer_extension_setting.extension_type"
+  | "customer_extension_setting.resource_name";
 
-export type customer_extension_setting_fields = Array<customer_extension_setting_field>;
+export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField>;
 
-export const customer_feed = [
+/*
+ --- End of CustomerExtensionSetting ---
+*/
+
+/*
+ --- Start of CustomerFeed ---
+*/
+export const CustomerFeed = [
   "customer_feed.feed",
   "customer_feed.matching_function.function_string",
   "customer_feed.matching_function.left_operands",
@@ -1334,44 +2367,68 @@ export const customer_feed = [
   "customer_feed.status",
 ];
 
-export type customer_feed_field =
-  | "feed"
-  | "matching_function.function_string"
-  | "matching_function.left_operands"
-  | "matching_function.operator"
-  | "matching_function.right_operands"
-  | "placeholder_types"
-  | "resource_name"
-  | "status";
+export type CustomerFeedField =
+  | "customer_feed.feed"
+  | "customer_feed.matching_function.function_string"
+  | "customer_feed.matching_function.left_operands"
+  | "customer_feed.matching_function.operator"
+  | "customer_feed.matching_function.right_operands"
+  | "customer_feed.placeholder_types"
+  | "customer_feed.resource_name"
+  | "customer_feed.status";
 
-export type customer_feed_fields = Array<customer_feed_field>;
+export type CustomerFeedFields = Array<CustomerFeedField>;
 
-export const customer_label = [
+/*
+ --- End of CustomerFeed ---
+*/
+
+/*
+ --- Start of CustomerLabel ---
+*/
+export const CustomerLabel = [
   "customer_label.customer",
   "customer_label.label",
   "customer_label.resource_name",
 ];
 
-export type customer_label_field = "customer" | "label" | "resource_name";
+export type CustomerLabelField =
+  | "customer_label.customer"
+  | "customer_label.label"
+  | "customer_label.resource_name";
 
-export type customer_label_fields = Array<customer_label_field>;
+export type CustomerLabelFields = Array<CustomerLabelField>;
 
-export const customer_manager_link = [
+/*
+ --- End of CustomerLabel ---
+*/
+
+/*
+ --- Start of CustomerManagerLink ---
+*/
+export const CustomerManagerLink = [
   "customer_manager_link.manager_customer",
   "customer_manager_link.manager_link_id",
   "customer_manager_link.resource_name",
   "customer_manager_link.status",
 ];
 
-export type customer_manager_link_field =
-  | "manager_customer"
-  | "manager_link_id"
-  | "resource_name"
-  | "status";
+export type CustomerManagerLinkField =
+  | "customer_manager_link.manager_customer"
+  | "customer_manager_link.manager_link_id"
+  | "customer_manager_link.resource_name"
+  | "customer_manager_link.status";
 
-export type customer_manager_link_fields = Array<customer_manager_link_field>;
+export type CustomerManagerLinkFields = Array<CustomerManagerLinkField>;
 
-export const customer_negative_criterion = [
+/*
+ --- End of CustomerManagerLink ---
+*/
+
+/*
+ --- Start of CustomerNegativeCriterion ---
+*/
+export const CustomerNegativeCriterion = [
   "customer_negative_criterion.content_label.type",
   "customer_negative_criterion.id",
   "customer_negative_criterion.mobile_app_category.mobile_app_category_constant",
@@ -1383,20 +2440,27 @@ export const customer_negative_criterion = [
   "customer_negative_criterion.youtube_video.video_id",
 ];
 
-export type customer_negative_criterion_field =
-  | "content_label.type"
-  | "id"
-  | "mobile_app_category.mobile_app_category_constant"
-  | "mobile_application.app_id"
-  | "placement.url"
-  | "resource_name"
-  | "type"
-  | "youtube_channel.channel_id"
-  | "youtube_video.video_id";
+export type CustomerNegativeCriterionField =
+  | "customer_negative_criterion.content_label.type"
+  | "customer_negative_criterion.id"
+  | "customer_negative_criterion.mobile_app_category.mobile_app_category_constant"
+  | "customer_negative_criterion.mobile_application.app_id"
+  | "customer_negative_criterion.placement.url"
+  | "customer_negative_criterion.resource_name"
+  | "customer_negative_criterion.type"
+  | "customer_negative_criterion.youtube_channel.channel_id"
+  | "customer_negative_criterion.youtube_video.video_id";
 
-export type customer_negative_criterion_fields = Array<customer_negative_criterion_field>;
+export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionField>;
 
-export const detail_placement_view = [
+/*
+ --- End of CustomerNegativeCriterion ---
+*/
+
+/*
+ --- Start of DetailPlacementView ---
+*/
+export const DetailPlacementView = [
   "detail_placement_view.display_name",
   "detail_placement_view.group_placement_target_url",
   "detail_placement_view.placement",
@@ -1405,23 +2469,119 @@ export const detail_placement_view = [
   "detail_placement_view.target_url",
 ];
 
-export type detail_placement_view_field =
-  | "display_name"
-  | "group_placement_target_url"
-  | "placement"
-  | "placement_type"
-  | "resource_name"
-  | "target_url";
+export type DetailPlacementViewField =
+  | "detail_placement_view.display_name"
+  | "detail_placement_view.group_placement_target_url"
+  | "detail_placement_view.placement"
+  | "detail_placement_view.placement_type"
+  | "detail_placement_view.resource_name"
+  | "detail_placement_view.target_url";
 
-export type detail_placement_view_fields = Array<detail_placement_view_field>;
+export type DetailPlacementViewFields = Array<DetailPlacementViewField>;
 
-export const display_keyword_view = ["display_keyword_view.resource_name"];
+export type DetailPlacementViewMetric =
+  | "metrics.clicks"
+  | "metrics.impressions"
+  | "metrics.video_views";
 
-export type display_keyword_view_field = "resource_name";
+export type DetailPlacementViewMetrics = Array<DetailPlacementViewMetric>;
 
-export type display_keyword_view_fields = Array<display_keyword_view_field>;
+export type DetailPlacementViewSegment =
+  | "segments.date"
+  | "segments.device"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
 
-export const domain_category = [
+export type DetailPlacementViewSegments = Array<DetailPlacementViewSegment>;
+
+/*
+ --- End of DetailPlacementView ---
+*/
+
+/*
+ --- Start of DisplayKeywordView ---
+*/
+export const DisplayKeywordView = ["display_keyword_view.resource_name"];
+
+export type DisplayKeywordViewField = "display_keyword_view.resource_name";
+
+export type DisplayKeywordViewFields = Array<DisplayKeywordViewField>;
+
+export type DisplayKeywordViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type DisplayKeywordViewMetrics = Array<DisplayKeywordViewMetric>;
+
+export type DisplayKeywordViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type DisplayKeywordViewSegments = Array<DisplayKeywordViewSegment>;
+
+/*
+ --- End of DisplayKeywordView ---
+*/
+
+/*
+ --- Start of DomainCategory ---
+*/
+export const DomainCategory = [
   "domain_category.campaign",
   "domain_category.category",
   "domain_category.category_rank",
@@ -1433,20 +2593,27 @@ export const domain_category = [
   "domain_category.resource_name",
 ];
 
-export type domain_category_field =
-  | "campaign"
-  | "category"
-  | "category_rank"
-  | "coverage_fraction"
-  | "domain"
-  | "has_children"
-  | "language_code"
-  | "recommended_cpc_bid_micros"
-  | "resource_name";
+export type DomainCategoryField =
+  | "domain_category.campaign"
+  | "domain_category.category"
+  | "domain_category.category_rank"
+  | "domain_category.coverage_fraction"
+  | "domain_category.domain"
+  | "domain_category.has_children"
+  | "domain_category.language_code"
+  | "domain_category.recommended_cpc_bid_micros"
+  | "domain_category.resource_name";
 
-export type domain_category_fields = Array<domain_category_field>;
+export type DomainCategoryFields = Array<DomainCategoryField>;
 
-export const dynamic_search_ads_search_term_view = [
+/*
+ --- End of DomainCategory ---
+*/
+
+/*
+ --- Start of DynamicSearchAdsSearchTermView ---
+*/
+export const DynamicSearchAdsSearchTermView = [
   "dynamic_search_ads_search_term_view.headline",
   "dynamic_search_ads_search_term_view.landing_page",
   "dynamic_search_ads_search_term_view.page_url",
@@ -1454,18 +2621,59 @@ export const dynamic_search_ads_search_term_view = [
   "dynamic_search_ads_search_term_view.search_term",
 ];
 
-export type dynamic_search_ads_search_term_view_field =
-  | "headline"
-  | "landing_page"
-  | "page_url"
-  | "resource_name"
-  | "search_term";
+export type DynamicSearchAdsSearchTermViewField =
+  | "dynamic_search_ads_search_term_view.headline"
+  | "dynamic_search_ads_search_term_view.landing_page"
+  | "dynamic_search_ads_search_term_view.page_url"
+  | "dynamic_search_ads_search_term_view.resource_name"
+  | "dynamic_search_ads_search_term_view.search_term";
 
-export type dynamic_search_ads_search_term_view_fields = Array<
-  dynamic_search_ads_search_term_view_field
->;
+export type DynamicSearchAdsSearchTermViewFields = Array<DynamicSearchAdsSearchTermViewField>;
 
-export const extension_feed_item = [
+export type DynamicSearchAdsSearchTermViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion";
+
+export type DynamicSearchAdsSearchTermViewMetrics = Array<DynamicSearchAdsSearchTermViewMetric>;
+
+export type DynamicSearchAdsSearchTermViewSegment =
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearchTermViewSegment>;
+
+/*
+ --- End of DynamicSearchAdsSearchTermView ---
+*/
+
+/*
+ --- Start of ExtensionFeedItem ---
+*/
+export const ExtensionFeedItem = [
   "extension_feed_item.app_feed_item.app_id",
   "extension_feed_item.app_feed_item.app_store",
   "extension_feed_item.app_feed_item.final_mobile_urls",
@@ -1522,65 +2730,118 @@ export const extension_feed_item = [
   "extension_feed_item.text_message_feed_item.text",
 ];
 
-export type extension_feed_item_field =
-  | "app_feed_item.app_id"
-  | "app_feed_item.app_store"
-  | "app_feed_item.final_mobile_urls"
-  | "app_feed_item.final_url_suffix"
-  | "app_feed_item.final_urls"
-  | "app_feed_item.link_text"
-  | "app_feed_item.tracking_url_template"
-  | "call_feed_item.call_conversion_action"
-  | "call_feed_item.call_conversion_reporting_state"
-  | "call_feed_item.call_conversion_tracking_disabled"
-  | "call_feed_item.call_tracking_enabled"
-  | "call_feed_item.country_code"
-  | "call_feed_item.phone_number"
-  | "callout_feed_item.callout_text"
-  | "end_date_time"
-  | "price_feed_item.final_url_suffix"
-  | "price_feed_item.language_code"
-  | "price_feed_item.price_offerings"
-  | "price_feed_item.price_qualifier"
-  | "price_feed_item.tracking_url_template"
-  | "price_feed_item.type"
-  | "promotion_feed_item.discount_modifier"
-  | "promotion_feed_item.final_mobile_urls"
-  | "promotion_feed_item.final_url_suffix"
-  | "promotion_feed_item.final_urls"
-  | "promotion_feed_item.language_code"
-  | "promotion_feed_item.money_amount_off.amount_micros"
-  | "promotion_feed_item.money_amount_off.currency_code"
-  | "promotion_feed_item.occasion"
-  | "promotion_feed_item.orders_over_amount.amount_micros"
-  | "promotion_feed_item.orders_over_amount.currency_code"
-  | "promotion_feed_item.percent_off"
-  | "promotion_feed_item.promotion_code"
-  | "promotion_feed_item.promotion_end_date"
-  | "promotion_feed_item.promotion_start_date"
-  | "promotion_feed_item.promotion_target"
-  | "promotion_feed_item.tracking_url_template"
-  | "resource_name"
-  | "sitelink_feed_item.final_mobile_urls"
-  | "sitelink_feed_item.final_url_suffix"
-  | "sitelink_feed_item.final_urls"
-  | "sitelink_feed_item.line1"
-  | "sitelink_feed_item.line2"
-  | "sitelink_feed_item.link_text"
-  | "sitelink_feed_item.tracking_url_template"
-  | "start_date_time"
-  | "status"
-  | "structured_snippet_feed_item.header"
-  | "structured_snippet_feed_item.values"
-  | "text_message_feed_item.business_name"
-  | "text_message_feed_item.country_code"
-  | "text_message_feed_item.extension_text"
-  | "text_message_feed_item.phone_number"
-  | "text_message_feed_item.text";
+export type ExtensionFeedItemField =
+  | "extension_feed_item.app_feed_item.app_id"
+  | "extension_feed_item.app_feed_item.app_store"
+  | "extension_feed_item.app_feed_item.final_mobile_urls"
+  | "extension_feed_item.app_feed_item.final_url_suffix"
+  | "extension_feed_item.app_feed_item.final_urls"
+  | "extension_feed_item.app_feed_item.link_text"
+  | "extension_feed_item.app_feed_item.tracking_url_template"
+  | "extension_feed_item.call_feed_item.call_conversion_action"
+  | "extension_feed_item.call_feed_item.call_conversion_reporting_state"
+  | "extension_feed_item.call_feed_item.call_conversion_tracking_disabled"
+  | "extension_feed_item.call_feed_item.call_tracking_enabled"
+  | "extension_feed_item.call_feed_item.country_code"
+  | "extension_feed_item.call_feed_item.phone_number"
+  | "extension_feed_item.callout_feed_item.callout_text"
+  | "extension_feed_item.end_date_time"
+  | "extension_feed_item.price_feed_item.final_url_suffix"
+  | "extension_feed_item.price_feed_item.language_code"
+  | "extension_feed_item.price_feed_item.price_offerings"
+  | "extension_feed_item.price_feed_item.price_qualifier"
+  | "extension_feed_item.price_feed_item.tracking_url_template"
+  | "extension_feed_item.price_feed_item.type"
+  | "extension_feed_item.promotion_feed_item.discount_modifier"
+  | "extension_feed_item.promotion_feed_item.final_mobile_urls"
+  | "extension_feed_item.promotion_feed_item.final_url_suffix"
+  | "extension_feed_item.promotion_feed_item.final_urls"
+  | "extension_feed_item.promotion_feed_item.language_code"
+  | "extension_feed_item.promotion_feed_item.money_amount_off.amount_micros"
+  | "extension_feed_item.promotion_feed_item.money_amount_off.currency_code"
+  | "extension_feed_item.promotion_feed_item.occasion"
+  | "extension_feed_item.promotion_feed_item.orders_over_amount.amount_micros"
+  | "extension_feed_item.promotion_feed_item.orders_over_amount.currency_code"
+  | "extension_feed_item.promotion_feed_item.percent_off"
+  | "extension_feed_item.promotion_feed_item.promotion_code"
+  | "extension_feed_item.promotion_feed_item.promotion_end_date"
+  | "extension_feed_item.promotion_feed_item.promotion_start_date"
+  | "extension_feed_item.promotion_feed_item.promotion_target"
+  | "extension_feed_item.promotion_feed_item.tracking_url_template"
+  | "extension_feed_item.resource_name"
+  | "extension_feed_item.sitelink_feed_item.final_mobile_urls"
+  | "extension_feed_item.sitelink_feed_item.final_url_suffix"
+  | "extension_feed_item.sitelink_feed_item.final_urls"
+  | "extension_feed_item.sitelink_feed_item.line1"
+  | "extension_feed_item.sitelink_feed_item.line2"
+  | "extension_feed_item.sitelink_feed_item.link_text"
+  | "extension_feed_item.sitelink_feed_item.tracking_url_template"
+  | "extension_feed_item.start_date_time"
+  | "extension_feed_item.status"
+  | "extension_feed_item.structured_snippet_feed_item.header"
+  | "extension_feed_item.structured_snippet_feed_item.values"
+  | "extension_feed_item.text_message_feed_item.business_name"
+  | "extension_feed_item.text_message_feed_item.country_code"
+  | "extension_feed_item.text_message_feed_item.extension_text"
+  | "extension_feed_item.text_message_feed_item.phone_number"
+  | "extension_feed_item.text_message_feed_item.text";
 
-export type extension_feed_item_fields = Array<extension_feed_item_field>;
+export type ExtensionFeedItemFields = Array<ExtensionFeedItemField>;
 
-export const feed = [
+export type ExtensionFeedItemMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views";
+
+export type ExtensionFeedItemMetrics = Array<ExtensionFeedItemMetric>;
+
+export type ExtensionFeedItemSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.interaction_on_this_extension"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type ExtensionFeedItemSegments = Array<ExtensionFeedItemSegment>;
+
+/*
+ --- End of ExtensionFeedItem ---
+*/
+
+/*
+ --- Start of Feed ---
+*/
+export const Feed = [
   "feed.affiliate_location_feed_data.chain_ids",
   "feed.affiliate_location_feed_data.relationship_type",
   "feed.attributes",
@@ -1595,23 +2856,30 @@ export const feed = [
   "feed.status",
 ];
 
-export type feed_field =
-  | "affiliate_location_feed_data.chain_ids"
-  | "affiliate_location_feed_data.relationship_type"
-  | "attributes"
-  | "id"
-  | "name"
-  | "origin"
-  | "places_location_feed_data.business_name_filter"
-  | "places_location_feed_data.category_filters"
-  | "places_location_feed_data.email_address"
-  | "places_location_feed_data.label_filters"
-  | "resource_name"
-  | "status";
+export type FeedField =
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status";
 
-export type feed_fields = Array<feed_field>;
+export type FeedFields = Array<FeedField>;
 
-export const feed_item = [
+/*
+ --- End of Feed ---
+*/
+
+/*
+ --- Start of FeedItem ---
+*/
+export const FeedItem = [
   "feed_item.attribute_values",
   "feed_item.end_date_time",
   "feed_item.feed",
@@ -1624,21 +2892,82 @@ export const feed_item = [
   "feed_item.url_custom_parameters",
 ];
 
-export type feed_item_field =
-  | "attribute_values"
-  | "end_date_time"
-  | "feed"
-  | "geo_targeting_restriction"
-  | "id"
-  | "policy_infos"
-  | "resource_name"
-  | "start_date_time"
-  | "status"
-  | "url_custom_parameters";
+export type FeedItemField =
+  | "feed_item.attribute_values"
+  | "feed_item.end_date_time"
+  | "feed_item.feed"
+  | "feed_item.geo_targeting_restriction"
+  | "feed_item.id"
+  | "feed_item.policy_infos"
+  | "feed_item.resource_name"
+  | "feed_item.start_date_time"
+  | "feed_item.status"
+  | "feed_item.url_custom_parameters";
 
-export type feed_item_fields = Array<feed_item_field>;
+export type FeedItemFields = Array<FeedItemField>;
 
-export const feed_item_target = [
+export type FeedItemMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views";
+
+export type FeedItemMetrics = Array<FeedItemMetric>;
+
+export type FeedItemSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.interaction_on_this_extension"
+  | "segments.month"
+  | "segments.placeholder_type"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type FeedItemSegments = Array<FeedItemSegment>;
+
+/*
+ --- End of FeedItem ---
+*/
+
+/*
+ --- Start of FeedItemTarget ---
+*/
+export const FeedItemTarget = [
   "feed_item_target.ad_group",
   "feed_item_target.ad_schedule",
   "feed_item_target.ad_schedule.day_of_week",
@@ -1653,23 +2982,30 @@ export const feed_item_target = [
   "feed_item_target.resource_name",
 ];
 
-export type feed_item_target_field =
-  | "ad_group"
-  | "ad_schedule"
-  | "ad_schedule.day_of_week"
-  | "campaign"
-  | "device"
-  | "feed_item"
-  | "feed_item_target_id"
-  | "feed_item_target_type"
-  | "geo_target_constant"
-  | "keyword.match_type"
-  | "keyword.text"
-  | "resource_name";
+export type FeedItemTargetField =
+  | "feed_item_target.ad_group"
+  | "feed_item_target.ad_schedule"
+  | "feed_item_target.ad_schedule.day_of_week"
+  | "feed_item_target.campaign"
+  | "feed_item_target.device"
+  | "feed_item_target.feed_item"
+  | "feed_item_target.feed_item_target_id"
+  | "feed_item_target.feed_item_target_type"
+  | "feed_item_target.geo_target_constant"
+  | "feed_item_target.keyword.match_type"
+  | "feed_item_target.keyword.text"
+  | "feed_item_target.resource_name";
 
-export type feed_item_target_fields = Array<feed_item_target_field>;
+export type FeedItemTargetFields = Array<FeedItemTargetField>;
 
-export const feed_mapping = [
+/*
+ --- End of FeedItemTarget ---
+*/
+
+/*
+ --- Start of FeedMapping ---
+*/
+export const FeedMapping = [
   "feed_mapping.attribute_field_mappings",
   "feed_mapping.criterion_type",
   "feed_mapping.feed",
@@ -1678,32 +3014,172 @@ export const feed_mapping = [
   "feed_mapping.status",
 ];
 
-export type feed_mapping_field =
-  | "attribute_field_mappings"
-  | "criterion_type"
-  | "feed"
-  | "placeholder_type"
-  | "resource_name"
-  | "status";
+export type FeedMappingField =
+  | "feed_mapping.attribute_field_mappings"
+  | "feed_mapping.criterion_type"
+  | "feed_mapping.feed"
+  | "feed_mapping.placeholder_type"
+  | "feed_mapping.resource_name"
+  | "feed_mapping.status";
 
-export type feed_mapping_fields = Array<feed_mapping_field>;
+export type FeedMappingFields = Array<FeedMappingField>;
 
-export const feed_placeholder_view = [
+/*
+ --- End of FeedMapping ---
+*/
+
+/*
+ --- Start of FeedPlaceholderView ---
+*/
+export const FeedPlaceholderView = [
   "feed_placeholder_view.placeholder_type",
   "feed_placeholder_view.resource_name",
 ];
 
-export type feed_placeholder_view_field = "placeholder_type" | "resource_name";
+export type FeedPlaceholderViewField =
+  | "feed_placeholder_view.placeholder_type"
+  | "feed_placeholder_view.resource_name";
 
-export type feed_placeholder_view_fields = Array<feed_placeholder_view_field>;
+export type FeedPlaceholderViewFields = Array<FeedPlaceholderViewField>;
 
-export const gender_view = ["gender_view.resource_name"];
+export type FeedPlaceholderViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
-export type gender_view_field = "resource_name";
+export type FeedPlaceholderViewMetrics = Array<FeedPlaceholderViewMetric>;
 
-export type gender_view_fields = Array<gender_view_field>;
+export type FeedPlaceholderViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
 
-export const geo_target_constant = [
+export type FeedPlaceholderViewSegments = Array<FeedPlaceholderViewSegment>;
+
+/*
+ --- End of FeedPlaceholderView ---
+*/
+
+/*
+ --- Start of GenderView ---
+*/
+export const GenderView = ["gender_view.resource_name"];
+
+export type GenderViewField = "gender_view.resource_name";
+
+export type GenderViewFields = Array<GenderViewField>;
+
+export type GenderViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type GenderViewMetrics = Array<GenderViewMetric>;
+
+export type GenderViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type GenderViewSegments = Array<GenderViewSegment>;
+
+/*
+ --- End of GenderView ---
+*/
+
+/*
+ --- Start of GeoTargetConstant ---
+*/
+export const GeoTargetConstant = [
   "geo_target_constant.canonical_name",
   "geo_target_constant.country_code",
   "geo_target_constant.id",
@@ -1713,31 +3189,93 @@ export const geo_target_constant = [
   "geo_target_constant.target_type",
 ];
 
-export type geo_target_constant_field =
-  | "canonical_name"
-  | "country_code"
-  | "id"
-  | "name"
-  | "resource_name"
-  | "status"
-  | "target_type";
+export type GeoTargetConstantField =
+  | "geo_target_constant.canonical_name"
+  | "geo_target_constant.country_code"
+  | "geo_target_constant.id"
+  | "geo_target_constant.name"
+  | "geo_target_constant.resource_name"
+  | "geo_target_constant.status"
+  | "geo_target_constant.target_type";
 
-export type geo_target_constant_fields = Array<geo_target_constant_field>;
+export type GeoTargetConstantFields = Array<GeoTargetConstantField>;
 
-export const geographic_view = [
+/*
+ --- End of GeoTargetConstant ---
+*/
+
+/*
+ --- Start of GeographicView ---
+*/
+export const GeographicView = [
   "geographic_view.country_geo_target_constant",
   "geographic_view.location_type",
   "geographic_view.resource_name",
 ];
 
-export type geographic_view_field =
-  | "country_geo_target_constant"
-  | "location_type"
-  | "resource_name";
+export type GeographicViewField =
+  | "geographic_view.country_geo_target_constant"
+  | "geographic_view.location_type"
+  | "geographic_view.resource_name";
 
-export type geographic_view_fields = Array<geographic_view_field>;
+export type GeographicViewFields = Array<GeographicViewField>;
 
-export const group_placement_view = [
+export type GeographicViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type GeographicViewMetrics = Array<GeographicViewMetric>;
+
+export type GeographicViewSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.geo_target_city"
+  | "segments.geo_target_metro"
+  | "segments.geo_target_region"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type GeographicViewSegments = Array<GeographicViewSegment>;
+
+/*
+ --- End of GeographicView ---
+*/
+
+/*
+ --- Start of GroupPlacementView ---
+*/
+export const GroupPlacementView = [
   "group_placement_view.display_name",
   "group_placement_view.placement",
   "group_placement_view.placement_type",
@@ -1745,39 +3283,185 @@ export const group_placement_view = [
   "group_placement_view.target_url",
 ];
 
-export type group_placement_view_field =
-  | "display_name"
-  | "placement"
-  | "placement_type"
-  | "resource_name"
-  | "target_url";
+export type GroupPlacementViewField =
+  | "group_placement_view.display_name"
+  | "group_placement_view.placement"
+  | "group_placement_view.placement_type"
+  | "group_placement_view.resource_name"
+  | "group_placement_view.target_url";
 
-export type group_placement_view_fields = Array<group_placement_view_field>;
+export type GroupPlacementViewFields = Array<GroupPlacementViewField>;
 
-export const hotel_group_view = ["hotel_group_view.resource_name"];
+export type GroupPlacementViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
-export type hotel_group_view_field = "resource_name";
+export type GroupPlacementViewMetrics = Array<GroupPlacementViewMetric>;
 
-export type hotel_group_view_fields = Array<hotel_group_view_field>;
+export type GroupPlacementViewSegment =
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
 
-export const hotel_performance_view = ["hotel_performance_view.resource_name"];
+export type GroupPlacementViewSegments = Array<GroupPlacementViewSegment>;
 
-export type hotel_performance_view_field = "resource_name";
+/*
+ --- End of GroupPlacementView ---
+*/
 
-export type hotel_performance_view_fields = Array<hotel_performance_view_field>;
+/*
+ --- Start of HotelGroupView ---
+*/
+export const HotelGroupView = ["hotel_group_view.resource_name"];
 
-export const keyword_plan = [
+export type HotelGroupViewField = "hotel_group_view.resource_name";
+
+export type HotelGroupViewFields = Array<HotelGroupViewField>;
+
+export type HotelGroupViewMetric =
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.cost_micros"
+  | "metrics.ctr"
+  | "metrics.hotel_average_lead_value_micros"
+  | "metrics.impressions";
+
+export type HotelGroupViewMetrics = Array<HotelGroupViewMetric>;
+
+export type HotelGroupViewSegment =
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type HotelGroupViewSegments = Array<HotelGroupViewSegment>;
+
+/*
+ --- End of HotelGroupView ---
+*/
+
+/*
+ --- Start of HotelPerformanceView ---
+*/
+export const HotelPerformanceView = ["hotel_performance_view.resource_name"];
+
+export type HotelPerformanceViewField = "hotel_performance_view.resource_name";
+
+export type HotelPerformanceViewFields = Array<HotelPerformanceViewField>;
+
+export type HotelPerformanceViewMetric =
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.cost_micros"
+  | "metrics.ctr"
+  | "metrics.hotel_average_lead_value_micros"
+  | "metrics.impressions";
+
+export type HotelPerformanceViewMetrics = Array<HotelPerformanceViewMetric>;
+
+export type HotelPerformanceViewSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.hotel_booking_window_days"
+  | "segments.hotel_center_id"
+  | "segments.hotel_check_in_date"
+  | "segments.hotel_check_in_day_of_week"
+  | "segments.hotel_city"
+  | "segments.hotel_class"
+  | "segments.hotel_country"
+  | "segments.hotel_date_selection_type"
+  | "segments.hotel_length_of_stay"
+  | "segments.hotel_state"
+  | "segments.hour"
+  | "segments.month"
+  | "segments.partner_hotel_id"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type HotelPerformanceViewSegments = Array<HotelPerformanceViewSegment>;
+
+/*
+ --- End of HotelPerformanceView ---
+*/
+
+/*
+ --- Start of KeywordPlan ---
+*/
+export const KeywordPlan = [
   "keyword_plan.forecast_period",
   "keyword_plan.id",
   "keyword_plan.name",
   "keyword_plan.resource_name",
 ];
 
-export type keyword_plan_field = "forecast_period" | "id" | "name" | "resource_name";
+export type KeywordPlanField =
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name";
 
-export type keyword_plan_fields = Array<keyword_plan_field>;
+export type KeywordPlanFields = Array<KeywordPlanField>;
 
-export const keyword_plan_ad_group = [
+/*
+ --- End of KeywordPlan ---
+*/
+
+/*
+ --- Start of KeywordPlanAdGroup ---
+*/
+export const KeywordPlanAdGroup = [
   "keyword_plan_ad_group.cpc_bid_micros",
   "keyword_plan_ad_group.id",
   "keyword_plan_ad_group.keyword_plan_campaign",
@@ -1785,16 +3469,23 @@ export const keyword_plan_ad_group = [
   "keyword_plan_ad_group.resource_name",
 ];
 
-export type keyword_plan_ad_group_field =
-  | "cpc_bid_micros"
-  | "id"
-  | "keyword_plan_campaign"
-  | "name"
-  | "resource_name";
+export type KeywordPlanAdGroupField =
+  | "keyword_plan_ad_group.cpc_bid_micros"
+  | "keyword_plan_ad_group.id"
+  | "keyword_plan_ad_group.keyword_plan_campaign"
+  | "keyword_plan_ad_group.name"
+  | "keyword_plan_ad_group.resource_name";
 
-export type keyword_plan_ad_group_fields = Array<keyword_plan_ad_group_field>;
+export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
 
-export const keyword_plan_campaign = [
+/*
+ --- End of KeywordPlanAdGroup ---
+*/
+
+/*
+ --- Start of KeywordPlanCampaign ---
+*/
+export const KeywordPlanCampaign = [
   "keyword_plan_campaign.cpc_bid_micros",
   "keyword_plan_campaign.geo_targets",
   "keyword_plan_campaign.geo_targets.geo_target_constant",
@@ -1806,20 +3497,27 @@ export const keyword_plan_campaign = [
   "keyword_plan_campaign.resource_name",
 ];
 
-export type keyword_plan_campaign_field =
-  | "cpc_bid_micros"
-  | "geo_targets"
-  | "geo_targets.geo_target_constant"
-  | "id"
-  | "keyword_plan"
-  | "keyword_plan_network"
-  | "language_constants"
-  | "name"
-  | "resource_name";
+export type KeywordPlanCampaignField =
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.geo_targets.geo_target_constant"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name";
 
-export type keyword_plan_campaign_fields = Array<keyword_plan_campaign_field>;
+export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
 
-export const keyword_plan_keyword = [
+/*
+ --- End of KeywordPlanCampaign ---
+*/
+
+/*
+ --- Start of KeywordPlanKeyword ---
+*/
+export const KeywordPlanKeyword = [
   "keyword_plan_keyword.cpc_bid_micros",
   "keyword_plan_keyword.id",
   "keyword_plan_keyword.keyword_plan_ad_group",
@@ -1828,17 +3526,24 @@ export const keyword_plan_keyword = [
   "keyword_plan_keyword.text",
 ];
 
-export type keyword_plan_keyword_field =
-  | "cpc_bid_micros"
-  | "id"
-  | "keyword_plan_ad_group"
-  | "match_type"
-  | "resource_name"
-  | "text";
+export type KeywordPlanKeywordField =
+  | "keyword_plan_keyword.cpc_bid_micros"
+  | "keyword_plan_keyword.id"
+  | "keyword_plan_keyword.keyword_plan_ad_group"
+  | "keyword_plan_keyword.match_type"
+  | "keyword_plan_keyword.resource_name"
+  | "keyword_plan_keyword.text";
 
-export type keyword_plan_keyword_fields = Array<keyword_plan_keyword_field>;
+export type KeywordPlanKeywordFields = Array<KeywordPlanKeywordField>;
 
-export const keyword_plan_negative_keyword = [
+/*
+ --- End of KeywordPlanKeyword ---
+*/
+
+/*
+ --- Start of KeywordPlanNegativeKeyword ---
+*/
+export const KeywordPlanNegativeKeyword = [
   "keyword_plan_negative_keyword.id",
   "keyword_plan_negative_keyword.keyword_plan_campaign",
   "keyword_plan_negative_keyword.match_type",
@@ -1846,22 +3551,129 @@ export const keyword_plan_negative_keyword = [
   "keyword_plan_negative_keyword.text",
 ];
 
-export type keyword_plan_negative_keyword_field =
-  | "id"
-  | "keyword_plan_campaign"
-  | "match_type"
-  | "resource_name"
-  | "text";
+export type KeywordPlanNegativeKeywordField =
+  | "keyword_plan_negative_keyword.id"
+  | "keyword_plan_negative_keyword.keyword_plan_campaign"
+  | "keyword_plan_negative_keyword.match_type"
+  | "keyword_plan_negative_keyword.resource_name"
+  | "keyword_plan_negative_keyword.text";
 
-export type keyword_plan_negative_keyword_fields = Array<keyword_plan_negative_keyword_field>;
+export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordField>;
 
-export const keyword_view = ["keyword_view.resource_name"];
+/*
+ --- End of KeywordPlanNegativeKeyword ---
+*/
 
-export type keyword_view_field = "resource_name";
+/*
+ --- Start of KeywordView ---
+*/
+export const KeywordView = ["keyword_view.resource_name"];
 
-export type keyword_view_fields = Array<keyword_view_field>;
+export type KeywordViewField = "keyword_view.resource_name";
 
-export const label = [
+export type KeywordViewFields = Array<KeywordViewField>;
+
+export type KeywordViewMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_page_views"
+  | "metrics.average_position"
+  | "metrics.average_time_on_site"
+  | "metrics.bounce_rate"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.ctr"
+  | "metrics.current_model_attributed_conversions"
+  | "metrics.current_model_attributed_conversions_value"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.historical_creative_quality_score"
+  | "metrics.historical_landing_page_quality_score"
+  | "metrics.historical_quality_score"
+  | "metrics.historical_search_predicted_ctr"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.percent_new_visitors"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_exact_match_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.value_per_current_model_attributed_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type KeywordViewMetrics = Array<KeywordViewMetric>;
+
+export type KeywordViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type KeywordViewSegments = Array<KeywordViewSegment>;
+
+/*
+ --- End of KeywordView ---
+*/
+
+/*
+ --- Start of Label ---
+*/
+export const Label = [
   "label.id",
   "label.name",
   "label.resource_name",
@@ -1870,17 +3682,24 @@ export const label = [
   "label.text_label.description",
 ];
 
-export type label_field =
-  | "id"
-  | "name"
-  | "resource_name"
-  | "status"
-  | "text_label.background_color"
-  | "text_label.description";
+export type LabelField =
+  | "label.id"
+  | "label.name"
+  | "label.resource_name"
+  | "label.status"
+  | "label.text_label.background_color"
+  | "label.text_label.description";
 
-export type label_fields = Array<label_field>;
+export type LabelFields = Array<LabelField>;
 
-export const language_constant = [
+/*
+ --- End of Label ---
+*/
+
+/*
+ --- Start of LanguageConstant ---
+*/
+export const LanguageConstant = [
   "language_constant.code",
   "language_constant.id",
   "language_constant.name",
@@ -1888,23 +3707,154 @@ export const language_constant = [
   "language_constant.targetable",
 ];
 
-export type language_constant_field = "code" | "id" | "name" | "resource_name" | "targetable";
+export type LanguageConstantField =
+  | "language_constant.code"
+  | "language_constant.id"
+  | "language_constant.name"
+  | "language_constant.resource_name"
+  | "language_constant.targetable";
 
-export type language_constant_fields = Array<language_constant_field>;
+export type LanguageConstantFields = Array<LanguageConstantField>;
 
-export const location_view = ["location_view.resource_name"];
+/*
+ --- End of LanguageConstant ---
+*/
 
-export type location_view_field = "resource_name";
+/*
+ --- Start of LocationView ---
+*/
+export const LocationView = ["location_view.resource_name"];
 
-export type location_view_fields = Array<location_view_field>;
+export type LocationViewField = "location_view.resource_name";
 
-export const managed_placement_view = ["managed_placement_view.resource_name"];
+export type LocationViewFields = Array<LocationViewField>;
 
-export type managed_placement_view_field = "resource_name";
+export type LocationViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
-export type managed_placement_view_fields = Array<managed_placement_view_field>;
+export type LocationViewMetrics = Array<LocationViewMetric>;
 
-export const media_file = [
+export type LocationViewSegment =
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type LocationViewSegments = Array<LocationViewSegment>;
+
+/*
+ --- End of LocationView ---
+*/
+
+/*
+ --- Start of ManagedPlacementView ---
+*/
+export const ManagedPlacementView = ["managed_placement_view.resource_name"];
+
+export type ManagedPlacementViewField = "managed_placement_view.resource_name";
+
+export type ManagedPlacementViewFields = Array<ManagedPlacementViewField>;
+
+export type ManagedPlacementViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type ManagedPlacementViewMetrics = Array<ManagedPlacementViewMetric>;
+
+export type ManagedPlacementViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type ManagedPlacementViewSegments = Array<ManagedPlacementViewSegment>;
+
+/*
+ --- End of ManagedPlacementView ---
+*/
+
+/*
+ --- Start of MediaFile ---
+*/
+export const MediaFile = [
   "media_file.audio.ad_duration_millis",
   "media_file.file_size",
   "media_file.id",
@@ -1919,33 +3869,50 @@ export const media_file = [
   "media_file.video.youtube_video_id",
 ];
 
-export type media_file_field =
-  | "audio.ad_duration_millis"
-  | "file_size"
-  | "id"
-  | "mime_type"
-  | "name"
-  | "resource_name"
-  | "source_url"
-  | "type"
-  | "video.ad_duration_millis"
-  | "video.advertising_id_code"
-  | "video.isci_code"
-  | "video.youtube_video_id";
+export type MediaFileField =
+  | "media_file.audio.ad_duration_millis"
+  | "media_file.file_size"
+  | "media_file.id"
+  | "media_file.mime_type"
+  | "media_file.name"
+  | "media_file.resource_name"
+  | "media_file.source_url"
+  | "media_file.type"
+  | "media_file.video.ad_duration_millis"
+  | "media_file.video.advertising_id_code"
+  | "media_file.video.isci_code"
+  | "media_file.video.youtube_video_id";
 
-export type media_file_fields = Array<media_file_field>;
+export type MediaFileFields = Array<MediaFileField>;
 
-export const mobile_app_category_constant = [
+/*
+ --- End of MediaFile ---
+*/
+
+/*
+ --- Start of MobileAppCategoryConstant ---
+*/
+export const MobileAppCategoryConstant = [
   "mobile_app_category_constant.id",
   "mobile_app_category_constant.name",
   "mobile_app_category_constant.resource_name",
 ];
 
-export type mobile_app_category_constant_field = "id" | "name" | "resource_name";
+export type MobileAppCategoryConstantField =
+  | "mobile_app_category_constant.id"
+  | "mobile_app_category_constant.name"
+  | "mobile_app_category_constant.resource_name";
 
-export type mobile_app_category_constant_fields = Array<mobile_app_category_constant_field>;
+export type MobileAppCategoryConstantFields = Array<MobileAppCategoryConstantField>;
 
-export const mobile_device_constant = [
+/*
+ --- End of MobileAppCategoryConstant ---
+*/
+
+/*
+ --- Start of MobileDeviceConstant ---
+*/
+export const MobileDeviceConstant = [
   "mobile_device_constant.id",
   "mobile_device_constant.manufacturer_name",
   "mobile_device_constant.name",
@@ -1954,17 +3921,24 @@ export const mobile_device_constant = [
   "mobile_device_constant.type",
 ];
 
-export type mobile_device_constant_field =
-  | "id"
-  | "manufacturer_name"
-  | "name"
-  | "operating_system_name"
-  | "resource_name"
-  | "type";
+export type MobileDeviceConstantField =
+  | "mobile_device_constant.id"
+  | "mobile_device_constant.manufacturer_name"
+  | "mobile_device_constant.name"
+  | "mobile_device_constant.operating_system_name"
+  | "mobile_device_constant.resource_name"
+  | "mobile_device_constant.type";
 
-export type mobile_device_constant_fields = Array<mobile_device_constant_field>;
+export type MobileDeviceConstantFields = Array<MobileDeviceConstantField>;
 
-export const operating_system_version_constant = [
+/*
+ --- End of MobileDeviceConstant ---
+*/
+
+/*
+ --- Start of OperatingSystemVersionConstant ---
+*/
+export const OperatingSystemVersionConstant = [
   "operating_system_version_constant.id",
   "operating_system_version_constant.name",
   "operating_system_version_constant.operator_type",
@@ -1973,25 +3947,102 @@ export const operating_system_version_constant = [
   "operating_system_version_constant.resource_name",
 ];
 
-export type operating_system_version_constant_field =
-  | "id"
-  | "name"
-  | "operator_type"
-  | "os_major_version"
-  | "os_minor_version"
-  | "resource_name";
+export type OperatingSystemVersionConstantField =
+  | "operating_system_version_constant.id"
+  | "operating_system_version_constant.name"
+  | "operating_system_version_constant.operator_type"
+  | "operating_system_version_constant.os_major_version"
+  | "operating_system_version_constant.os_minor_version"
+  | "operating_system_version_constant.resource_name";
 
-export type operating_system_version_constant_fields = Array<
-  operating_system_version_constant_field
->;
+export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionConstantField>;
 
-export const parental_status_view = ["parental_status_view.resource_name"];
+/*
+ --- End of OperatingSystemVersionConstant ---
+*/
 
-export type parental_status_view_field = "resource_name";
+/*
+ --- Start of ParentalStatusView ---
+*/
+export const ParentalStatusView = ["parental_status_view.resource_name"];
 
-export type parental_status_view_fields = Array<parental_status_view_field>;
+export type ParentalStatusViewField = "parental_status_view.resource_name";
 
-export const product_bidding_category_constant = [
+export type ParentalStatusViewFields = Array<ParentalStatusViewField>;
+
+export type ParentalStatusViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type ParentalStatusViewMetrics = Array<ParentalStatusViewMetric>;
+
+export type ParentalStatusViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type ParentalStatusViewSegments = Array<ParentalStatusViewSegment>;
+
+/*
+ --- End of ParentalStatusView ---
+*/
+
+/*
+ --- Start of ProductBiddingCategoryConstant ---
+*/
+export const ProductBiddingCategoryConstant = [
   "product_bidding_category_constant.country_code",
   "product_bidding_category_constant.id",
   "product_bidding_category_constant.language_code",
@@ -2002,27 +4053,84 @@ export const product_bidding_category_constant = [
   "product_bidding_category_constant.status",
 ];
 
-export type product_bidding_category_constant_field =
-  | "country_code"
-  | "id"
-  | "language_code"
-  | "level"
-  | "localized_name"
-  | "product_bidding_category_constant_parent"
-  | "resource_name"
-  | "status";
+export type ProductBiddingCategoryConstantField =
+  | "product_bidding_category_constant.country_code"
+  | "product_bidding_category_constant.id"
+  | "product_bidding_category_constant.language_code"
+  | "product_bidding_category_constant.level"
+  | "product_bidding_category_constant.localized_name"
+  | "product_bidding_category_constant.product_bidding_category_constant_parent"
+  | "product_bidding_category_constant.resource_name"
+  | "product_bidding_category_constant.status";
 
-export type product_bidding_category_constant_fields = Array<
-  product_bidding_category_constant_field
->;
+export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryConstantField>;
 
-export const product_group_view = ["product_group_view.resource_name"];
+/*
+ --- End of ProductBiddingCategoryConstant ---
+*/
 
-export type product_group_view_field = "resource_name";
+/*
+ --- Start of ProductGroupView ---
+*/
+export const ProductGroupView = ["product_group_view.resource_name"];
 
-export type product_group_view_fields = Array<product_group_view_field>;
+export type ProductGroupViewField = "product_group_view.resource_name";
 
-export const recommendation = [
+export type ProductGroupViewFields = Array<ProductGroupViewField>;
+
+export type ProductGroupViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.benchmark_average_max_cpc"
+  | "metrics.benchmark_ctr"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_click_share"
+  | "metrics.search_impression_share"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.view_through_conversions";
+
+export type ProductGroupViewMetrics = Array<ProductGroupViewMetric>;
+
+export type ProductGroupViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type ProductGroupViewSegments = Array<ProductGroupViewSegment>;
+
+/*
+ --- End of ProductGroupView ---
+*/
+
+/*
+ --- Start of Recommendation ---
+*/
+export const Recommendation = [
   "recommendation.ad_group",
   "recommendation.campaign",
   "recommendation.campaign_budget",
@@ -2041,49 +4149,138 @@ export const recommendation = [
   "recommendation.type",
 ];
 
-export type recommendation_field =
-  | "ad_group"
-  | "campaign"
-  | "campaign_budget"
-  | "campaign_budget_recommendation"
-  | "dismissed"
-  | "enhanced_cpc_opt_in_recommendation"
-  | "impact"
-  | "keyword_recommendation"
-  | "maximize_clicks_opt_in_recommendation"
-  | "maximize_conversions_opt_in_recommendation"
-  | "optimize_ad_rotation_recommendation"
-  | "resource_name"
-  | "search_partners_opt_in_recommendation"
-  | "target_cpa_opt_in_recommendation"
-  | "text_ad_recommendation"
-  | "type";
+export type RecommendationField =
+  | "recommendation.ad_group"
+  | "recommendation.campaign"
+  | "recommendation.campaign_budget"
+  | "recommendation.campaign_budget_recommendation"
+  | "recommendation.dismissed"
+  | "recommendation.enhanced_cpc_opt_in_recommendation"
+  | "recommendation.impact"
+  | "recommendation.keyword_recommendation"
+  | "recommendation.maximize_clicks_opt_in_recommendation"
+  | "recommendation.maximize_conversions_opt_in_recommendation"
+  | "recommendation.optimize_ad_rotation_recommendation"
+  | "recommendation.resource_name"
+  | "recommendation.search_partners_opt_in_recommendation"
+  | "recommendation.target_cpa_opt_in_recommendation"
+  | "recommendation.text_ad_recommendation"
+  | "recommendation.type";
 
-export type recommendation_fields = Array<recommendation_field>;
+export type RecommendationFields = Array<RecommendationField>;
 
-export const remarketing_action = [
+/*
+ --- End of Recommendation ---
+*/
+
+/*
+ --- Start of RemarketingAction ---
+*/
+export const RemarketingAction = [
   "remarketing_action.id",
   "remarketing_action.name",
   "remarketing_action.resource_name",
   "remarketing_action.tag_snippets",
 ];
 
-export type remarketing_action_field = "id" | "name" | "resource_name" | "tag_snippets";
+export type RemarketingActionField =
+  | "remarketing_action.id"
+  | "remarketing_action.name"
+  | "remarketing_action.resource_name"
+  | "remarketing_action.tag_snippets";
 
-export type remarketing_action_fields = Array<remarketing_action_field>;
+export type RemarketingActionFields = Array<RemarketingActionField>;
 
-export const search_term_view = [
+/*
+ --- End of RemarketingAction ---
+*/
+
+/*
+ --- Start of SearchTermView ---
+*/
+export const SearchTermView = [
   "search_term_view.ad_group",
   "search_term_view.resource_name",
   "search_term_view.search_term",
   "search_term_view.status",
 ];
 
-export type search_term_view_field = "ad_group" | "resource_name" | "search_term" | "status";
+export type SearchTermViewField =
+  | "search_term_view.ad_group"
+  | "search_term_view.resource_name"
+  | "search_term_view.search_term"
+  | "search_term_view.status";
 
-export type search_term_view_fields = Array<search_term_view_field>;
+export type SearchTermViewFields = Array<SearchTermViewField>;
 
-export const shared_criterion = [
+export type SearchTermViewMetric =
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_position"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_from_interactions_value_per_interaction"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type SearchTermViewMetrics = Array<SearchTermViewMetric>;
+
+export type SearchTermViewSegment =
+  | "segments.ad_network_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.search_term_match_type"
+  | "segments.week"
+  | "segments.year";
+
+export type SearchTermViewSegments = Array<SearchTermViewSegment>;
+
+/*
+ --- End of SearchTermView ---
+*/
+
+/*
+ --- Start of SharedCriterion ---
+*/
+export const SharedCriterion = [
   "shared_criterion.criterion_id",
   "shared_criterion.keyword.match_type",
   "shared_criterion.keyword.text",
@@ -2096,21 +4293,28 @@ export const shared_criterion = [
   "shared_criterion.youtube_video.video_id",
 ];
 
-export type shared_criterion_field =
-  | "criterion_id"
-  | "keyword.match_type"
-  | "keyword.text"
-  | "mobile_app_category.mobile_app_category_constant"
-  | "placement.url"
-  | "resource_name"
-  | "shared_set"
-  | "type"
-  | "youtube_channel.channel_id"
-  | "youtube_video.video_id";
+export type SharedCriterionField =
+  | "shared_criterion.criterion_id"
+  | "shared_criterion.keyword.match_type"
+  | "shared_criterion.keyword.text"
+  | "shared_criterion.mobile_app_category.mobile_app_category_constant"
+  | "shared_criterion.placement.url"
+  | "shared_criterion.resource_name"
+  | "shared_criterion.shared_set"
+  | "shared_criterion.type"
+  | "shared_criterion.youtube_channel.channel_id"
+  | "shared_criterion.youtube_video.video_id";
 
-export type shared_criterion_fields = Array<shared_criterion_field>;
+export type SharedCriterionFields = Array<SharedCriterionField>;
 
-export const shared_set = [
+/*
+ --- End of SharedCriterion ---
+*/
+
+/*
+ --- Start of SharedSet ---
+*/
+export const SharedSet = [
   "shared_set.id",
   "shared_set.member_count",
   "shared_set.name",
@@ -2120,41 +4324,203 @@ export const shared_set = [
   "shared_set.type",
 ];
 
-export type shared_set_field =
-  | "id"
-  | "member_count"
-  | "name"
-  | "reference_count"
-  | "resource_name"
-  | "status"
-  | "type";
+export type SharedSetField =
+  | "shared_set.id"
+  | "shared_set.member_count"
+  | "shared_set.name"
+  | "shared_set.reference_count"
+  | "shared_set.resource_name"
+  | "shared_set.status"
+  | "shared_set.type";
 
-export type shared_set_fields = Array<shared_set_field>;
+export type SharedSetFields = Array<SharedSetField>;
 
-export const shopping_performance_view = ["shopping_performance_view.resource_name"];
+/*
+ --- End of SharedSet ---
+*/
 
-export type shopping_performance_view_field = "resource_name";
+/*
+ --- Start of ShoppingPerformanceView ---
+*/
+export const ShoppingPerformanceView = ["shopping_performance_view.resource_name"];
 
-export type shopping_performance_view_fields = Array<shopping_performance_view_field>;
+export type ShoppingPerformanceViewField = "shopping_performance_view.resource_name";
 
-export const topic_constant = [
+export type ShoppingPerformanceViewFields = Array<ShoppingPerformanceViewField>;
+
+export type ShoppingPerformanceViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_click_share"
+  | "metrics.search_impression_share"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion";
+
+export type ShoppingPerformanceViewMetrics = Array<ShoppingPerformanceViewMetric>;
+
+export type ShoppingPerformanceViewSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.product_aggregator_id"
+  | "segments.product_bidding_category_level1"
+  | "segments.product_bidding_category_level2"
+  | "segments.product_bidding_category_level3"
+  | "segments.product_bidding_category_level4"
+  | "segments.product_bidding_category_level5"
+  | "segments.product_brand"
+  | "segments.product_channel"
+  | "segments.product_channel_exclusivity"
+  | "segments.product_condition"
+  | "segments.product_country"
+  | "segments.product_custom_attribute0"
+  | "segments.product_custom_attribute1"
+  | "segments.product_custom_attribute2"
+  | "segments.product_custom_attribute3"
+  | "segments.product_custom_attribute4"
+  | "segments.product_item_id"
+  | "segments.product_language"
+  | "segments.product_merchant_id"
+  | "segments.product_store_id"
+  | "segments.product_title"
+  | "segments.product_type_l1"
+  | "segments.product_type_l2"
+  | "segments.product_type_l3"
+  | "segments.product_type_l4"
+  | "segments.product_type_l5"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegment>;
+
+/*
+ --- End of ShoppingPerformanceView ---
+*/
+
+/*
+ --- Start of TopicConstant ---
+*/
+export const TopicConstant = [
   "topic_constant.id",
   "topic_constant.path",
   "topic_constant.resource_name",
   "topic_constant.topic_constant_parent",
 ];
 
-export type topic_constant_field = "id" | "path" | "resource_name" | "topic_constant_parent";
+export type TopicConstantField =
+  | "topic_constant.id"
+  | "topic_constant.path"
+  | "topic_constant.resource_name"
+  | "topic_constant.topic_constant_parent";
 
-export type topic_constant_fields = Array<topic_constant_field>;
+export type TopicConstantFields = Array<TopicConstantField>;
 
-export const topic_view = ["topic_view.resource_name"];
+/*
+ --- End of TopicConstant ---
+*/
 
-export type topic_view_field = "resource_name";
+/*
+ --- Start of TopicView ---
+*/
+export const TopicView = ["topic_view.resource_name"];
 
-export type topic_view_fields = Array<topic_view_field>;
+export type TopicViewField = "topic_view.resource_name";
 
-export const user_interest = [
+export type TopicViewFields = Array<TopicViewField>;
+
+export type TopicViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type TopicViewMetrics = Array<TopicViewMetric>;
+
+export type TopicViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type TopicViewSegments = Array<TopicViewSegment>;
+
+/*
+ --- End of TopicView ---
+*/
+
+/*
+ --- Start of UserInterest ---
+*/
+export const UserInterest = [
   "user_interest.availabilities",
   "user_interest.launched_to_all",
   "user_interest.name",
@@ -2164,18 +4530,25 @@ export const user_interest = [
   "user_interest.user_interest_parent",
 ];
 
-export type user_interest_field =
-  | "availabilities"
-  | "launched_to_all"
-  | "name"
-  | "resource_name"
-  | "taxonomy_type"
-  | "user_interest_id"
-  | "user_interest_parent";
+export type UserInterestField =
+  | "user_interest.availabilities"
+  | "user_interest.launched_to_all"
+  | "user_interest.name"
+  | "user_interest.resource_name"
+  | "user_interest.taxonomy_type"
+  | "user_interest.user_interest_id"
+  | "user_interest.user_interest_parent";
 
-export type user_interest_fields = Array<user_interest_field>;
+export type UserInterestFields = Array<UserInterestField>;
 
-export const user_list = [
+/*
+ --- End of UserInterest ---
+*/
+
+/*
+ --- Start of UserList ---
+*/
+export const UserList = [
   "user_list.access_reason",
   "user_list.account_user_list_status",
   "user_list.basic_user_list.actions",
@@ -2214,47 +4587,54 @@ export const user_list = [
   "user_list.type",
 ];
 
-export type user_list_field =
-  | "access_reason"
-  | "account_user_list_status"
-  | "basic_user_list.actions"
-  | "closing_reason"
-  | "crm_based_user_list.app_id"
-  | "crm_based_user_list.data_source_type"
-  | "crm_based_user_list.upload_key_type"
-  | "description"
-  | "eligible_for_display"
-  | "eligible_for_search"
-  | "id"
-  | "integration_code"
-  | "logical_user_list.rules"
-  | "membership_life_span"
-  | "membership_status"
-  | "name"
-  | "read_only"
-  | "resource_name"
-  | "rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
-  | "rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
-  | "rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
-  | "rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
-  | "rule_based_user_list.combined_rule_user_list.rule_operator"
-  | "rule_based_user_list.date_specific_rule_user_list.end_date"
-  | "rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
-  | "rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
-  | "rule_based_user_list.date_specific_rule_user_list.start_date"
-  | "rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
-  | "rule_based_user_list.expression_rule_user_list.rule.rule_type"
-  | "rule_based_user_list.prepopulation_status"
-  | "similar_user_list.seed_user_list"
-  | "size_for_display"
-  | "size_for_search"
-  | "size_range_for_display"
-  | "size_range_for_search"
-  | "type";
+export type UserListField =
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type";
 
-export type user_list_fields = Array<user_list_field>;
+export type UserListFields = Array<UserListField>;
 
-export const video = [
+/*
+ --- End of UserList ---
+*/
+
+/*
+ --- Start of Video ---
+*/
+export const Video = [
   "video.channel_id",
   "video.duration_millis",
   "video.id",
@@ -2262,80 +4642,137 @@ export const video = [
   "video.title",
 ];
 
-export type video_field = "channel_id" | "duration_millis" | "id" | "resource_name" | "title";
+export type VideoField =
+  | "video.channel_id"
+  | "video.duration_millis"
+  | "video.id"
+  | "video.resource_name"
+  | "video.title";
 
-export type video_fields = Array<video_field>;
+export type VideoFields = Array<VideoField>;
 
+export type VideoMetric =
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_from_interactions_value_per_interaction"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.impressions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type VideoMetrics = Array<VideoMetric>;
+
+export type VideoSegment =
+  | "ad_group"
+  | "ad_group_ad"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type VideoSegments = Array<VideoSegment>;
+
+/*
+ --- End of Video ---
+*/
 /*
   -- SEGMENTS --
 */
 export type Segment =
-  | "ad_network_type"
-  | "click_type"
-  | "conversion_action"
-  | "conversion_action_category"
-  | "conversion_action_name"
-  | "conversion_adjustment"
-  | "conversion_attribution_event_type"
-  | "conversion_lag_bucket"
-  | "conversion_or_adjustment_lag_bucket"
-  | "date"
-  | "day_of_week"
-  | "device"
-  | "external_conversion_source"
-  | "geo_target_city"
-  | "geo_target_metro"
-  | "geo_target_region"
-  | "hotel_booking_window_days"
-  | "hotel_center_id"
-  | "hotel_check_in_date"
-  | "hotel_check_in_day_of_week"
-  | "hotel_city"
-  | "hotel_class"
-  | "hotel_country"
-  | "hotel_date_selection_type"
-  | "hotel_length_of_stay"
-  | "hotel_state"
-  | "hour"
-  | "interaction_on_this_extension"
-  | "keyword.ad_group_criterion"
-  | "keyword.info.match_type"
-  | "keyword.info.text"
-  | "month"
-  | "month_of_year"
-  | "partner_hotel_id"
-  | "placeholder_type"
-  | "product_aggregator_id"
-  | "product_bidding_category_level1"
-  | "product_bidding_category_level2"
-  | "product_bidding_category_level3"
-  | "product_bidding_category_level4"
-  | "product_bidding_category_level5"
-  | "product_brand"
-  | "product_channel"
-  | "product_channel_exclusivity"
-  | "product_condition"
-  | "product_country"
-  | "product_custom_attribute0"
-  | "product_custom_attribute1"
-  | "product_custom_attribute2"
-  | "product_custom_attribute3"
-  | "product_custom_attribute4"
-  | "product_item_id"
-  | "product_language"
-  | "product_merchant_id"
-  | "product_store_id"
-  | "product_title"
-  | "product_type_l1"
-  | "product_type_l2"
-  | "product_type_l3"
-  | "product_type_l4"
-  | "product_type_l5"
-  | "quarter"
-  | "search_term_match_type"
-  | "slot"
-  | "week"
-  | "year";
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_attribution_event_type"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.geo_target_city"
+  | "segments.geo_target_metro"
+  | "segments.geo_target_region"
+  | "segments.hotel_booking_window_days"
+  | "segments.hotel_center_id"
+  | "segments.hotel_check_in_date"
+  | "segments.hotel_check_in_day_of_week"
+  | "segments.hotel_city"
+  | "segments.hotel_class"
+  | "segments.hotel_country"
+  | "segments.hotel_date_selection_type"
+  | "segments.hotel_length_of_stay"
+  | "segments.hotel_state"
+  | "segments.hour"
+  | "segments.interaction_on_this_extension"
+  | "segments.keyword.ad_group_criterion"
+  | "segments.keyword.info.match_type"
+  | "segments.keyword.info.text"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.partner_hotel_id"
+  | "segments.placeholder_type"
+  | "segments.product_aggregator_id"
+  | "segments.product_bidding_category_level1"
+  | "segments.product_bidding_category_level2"
+  | "segments.product_bidding_category_level3"
+  | "segments.product_bidding_category_level4"
+  | "segments.product_bidding_category_level5"
+  | "segments.product_brand"
+  | "segments.product_channel"
+  | "segments.product_channel_exclusivity"
+  | "segments.product_condition"
+  | "segments.product_country"
+  | "segments.product_custom_attribute0"
+  | "segments.product_custom_attribute1"
+  | "segments.product_custom_attribute2"
+  | "segments.product_custom_attribute3"
+  | "segments.product_custom_attribute4"
+  | "segments.product_item_id"
+  | "segments.product_language"
+  | "segments.product_merchant_id"
+  | "segments.product_store_id"
+  | "segments.product_title"
+  | "segments.product_type_l1"
+  | "segments.product_type_l2"
+  | "segments.product_type_l3"
+  | "segments.product_type_l4"
+  | "segments.product_type_l5"
+  | "segments.quarter"
+  | "segments.search_term_match_type"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
 
 export type Segments = Array<Segment>;
 
@@ -2343,96 +4780,96 @@ export type Segments = Array<Segment>;
   -- METRICS --
 */
 export type Metric =
-  | "absolute_top_impression_percentage"
-  | "active_view_cpm"
-  | "active_view_ctr"
-  | "active_view_impressions"
-  | "active_view_measurability"
-  | "active_view_measurable_cost_micros"
-  | "active_view_measurable_impressions"
-  | "active_view_viewability"
-  | "all_conversions"
-  | "all_conversions_from_interactions_rate"
-  | "all_conversions_from_interactions_value_per_interaction"
-  | "all_conversions_value"
-  | "all_conversions_value_per_cost"
-  | "average_cost"
-  | "average_cpc"
-  | "average_cpe"
-  | "average_cpm"
-  | "average_cpv"
-  | "average_frequency"
-  | "average_page_views"
-  | "average_position"
-  | "average_time_on_site"
-  | "benchmark_average_max_cpc"
-  | "benchmark_ctr"
-  | "bounce_rate"
-  | "clicks"
-  | "content_budget_lost_impression_share"
-  | "content_impression_share"
-  | "content_rank_lost_impression_share"
-  | "conversion_last_conversion_date"
-  | "conversion_last_received_request_date_time"
-  | "conversions"
-  | "conversions_from_interactions_rate"
-  | "conversions_from_interactions_value_per_interaction"
-  | "conversions_value"
-  | "conversions_value_per_cost"
-  | "cost_micros"
-  | "cost_per_all_conversions"
-  | "cost_per_conversion"
-  | "cost_per_current_model_attributed_conversion"
-  | "cross_device_conversions"
-  | "ctr"
-  | "current_model_attributed_conversions"
-  | "current_model_attributed_conversions_from_interactions_rate"
-  | "current_model_attributed_conversions_from_interactions_value_per_interaction"
-  | "current_model_attributed_conversions_value"
-  | "current_model_attributed_conversions_value_per_cost"
-  | "engagement_rate"
-  | "engagements"
-  | "gmail_forwards"
-  | "gmail_saves"
-  | "gmail_secondary_clicks"
-  | "historical_creative_quality_score"
-  | "historical_landing_page_quality_score"
-  | "historical_quality_score"
-  | "historical_search_predicted_ctr"
-  | "hotel_average_lead_value_micros"
-  | "impression_reach"
-  | "impressions"
-  | "interaction_event_types"
-  | "interaction_rate"
-  | "interactions"
-  | "invalid_click_rate"
-  | "invalid_clicks"
-  | "percent_new_visitors"
-  | "phone_calls"
-  | "phone_impressions"
-  | "phone_through_rate"
-  | "relative_ctr"
-  | "search_absolute_top_impression_share"
-  | "search_budget_lost_absolute_top_impression_share"
-  | "search_budget_lost_impression_share"
-  | "search_budget_lost_top_impression_share"
-  | "search_click_share"
-  | "search_exact_match_impression_share"
-  | "search_impression_share"
-  | "search_rank_lost_absolute_top_impression_share"
-  | "search_rank_lost_impression_share"
-  | "search_rank_lost_top_impression_share"
-  | "search_top_impression_share"
-  | "top_impression_percentage"
-  | "value_per_all_conversions"
-  | "value_per_conversion"
-  | "value_per_current_model_attributed_conversion"
-  | "video_quartile_100_rate"
-  | "video_quartile_25_rate"
-  | "video_quartile_50_rate"
-  | "video_quartile_75_rate"
-  | "video_view_rate"
-  | "video_views"
-  | "view_through_conversions";
+  | "metrics.absolute_top_impression_percentage"
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.average_frequency"
+  | "metrics.average_page_views"
+  | "metrics.average_position"
+  | "metrics.average_time_on_site"
+  | "metrics.benchmark_average_max_cpc"
+  | "metrics.benchmark_ctr"
+  | "metrics.bounce_rate"
+  | "metrics.clicks"
+  | "metrics.content_budget_lost_impression_share"
+  | "metrics.content_impression_share"
+  | "metrics.content_rank_lost_impression_share"
+  | "metrics.conversion_last_conversion_date"
+  | "metrics.conversion_last_received_request_date_time"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_from_interactions_value_per_interaction"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.current_model_attributed_conversions"
+  | "metrics.current_model_attributed_conversions_from_interactions_rate"
+  | "metrics.current_model_attributed_conversions_from_interactions_value_per_interaction"
+  | "metrics.current_model_attributed_conversions_value"
+  | "metrics.current_model_attributed_conversions_value_per_cost"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.historical_creative_quality_score"
+  | "metrics.historical_landing_page_quality_score"
+  | "metrics.historical_quality_score"
+  | "metrics.historical_search_predicted_ctr"
+  | "metrics.hotel_average_lead_value_micros"
+  | "metrics.impression_reach"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.invalid_click_rate"
+  | "metrics.invalid_clicks"
+  | "metrics.percent_new_visitors"
+  | "metrics.phone_calls"
+  | "metrics.phone_impressions"
+  | "metrics.phone_through_rate"
+  | "metrics.relative_ctr"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_click_share"
+  | "metrics.search_exact_match_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.top_impression_percentage"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.value_per_current_model_attributed_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
 export type Metrics = Array<Metric>;
