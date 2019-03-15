@@ -93,6 +93,7 @@ export type ResourceNames = Array<ResourceName>;
 /*
  --- Start of AccountBudget ---
 */
+// @ts-ignore
 export const AccountBudget = [
   "account_budget.adjusted_spending_limit_micros",
   "account_budget.adjusted_spending_limit_type",
@@ -171,6 +172,7 @@ export type AccountBudgetFields = Array<AccountBudgetField>;
 /*
  --- Start of AccountBudgetProposal ---
 */
+// @ts-ignore
 export const AccountBudgetProposal = [
   "account_budget_proposal.account_budget",
   "account_budget_proposal.approval_date_time",
@@ -227,6 +229,7 @@ export type AccountBudgetProposalFields = Array<AccountBudgetProposalField>;
 /*
  --- Start of AdGroup ---
 */
+// @ts-ignore
 export const AdGroup = [
   "ad_group.ad_rotation_mode",
   "ad_group.campaign",
@@ -384,6 +387,7 @@ export type AdGroupSegments = Array<AdGroupSegment>;
 /*
  --- Start of AdGroupAd ---
 */
+// @ts-ignore
 export const AdGroupAd = [
   "ad_group_ad.ad.added_by_google_ads",
   "ad_group_ad.ad.call_only_ad.business_name",
@@ -661,6 +665,7 @@ export type AdGroupAdSegments = Array<AdGroupAdSegment>;
 /*
  --- Start of AdGroupAdLabel ---
 */
+// @ts-ignore
 export const AdGroupAdLabel = [
   "ad_group_ad_label.ad_group_ad",
   "ad_group_ad_label.label",
@@ -681,6 +686,7 @@ export type AdGroupAdLabelFields = Array<AdGroupAdLabelField>;
 /*
  --- Start of AdGroupAudienceView ---
 */
+// @ts-ignore
 export const AdGroupAudienceView = ["ad_group_audience_view.resource_name"];
 
 export type AdGroupAudienceViewField = "ad_group_audience_view.resource_name";
@@ -753,6 +759,7 @@ export type AdGroupAudienceViewSegments = Array<AdGroupAudienceViewSegment>;
 /*
  --- Start of AdGroupBidModifier ---
 */
+// @ts-ignore
 export const AdGroupBidModifier = [
   "ad_group_bid_modifier.ad_group",
   "ad_group_bid_modifier.base_ad_group",
@@ -795,6 +802,7 @@ export type AdGroupBidModifierFields = Array<AdGroupBidModifierField>;
 /*
  --- Start of AdGroupCriterion ---
 */
+// @ts-ignore
 export const AdGroupCriterion = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
@@ -953,6 +961,7 @@ export type AdGroupCriterionFields = Array<AdGroupCriterionField>;
 /*
  --- Start of AdGroupCriterionLabel ---
 */
+// @ts-ignore
 export const AdGroupCriterionLabel = [
   "ad_group_criterion_label.ad_group_criterion",
   "ad_group_criterion_label.label",
@@ -973,6 +982,7 @@ export type AdGroupCriterionLabelFields = Array<AdGroupCriterionLabelField>;
 /*
  --- Start of AdGroupExtensionSetting ---
 */
+// @ts-ignore
 export const AdGroupExtensionSetting = [
   "ad_group_extension_setting.ad_group",
   "ad_group_extension_setting.device",
@@ -997,6 +1007,7 @@ export type AdGroupExtensionSettingFields = Array<AdGroupExtensionSettingField>;
 /*
  --- Start of AdGroupFeed ---
 */
+// @ts-ignore
 export const AdGroupFeed = [
   "ad_group_feed.ad_group",
   "ad_group_feed.feed",
@@ -1029,6 +1040,7 @@ export type AdGroupFeedFields = Array<AdGroupFeedField>;
 /*
  --- Start of AdGroupLabel ---
 */
+// @ts-ignore
 export const AdGroupLabel = [
   "ad_group_label.ad_group",
   "ad_group_label.label",
@@ -1049,6 +1061,7 @@ export type AdGroupLabelFields = Array<AdGroupLabelField>;
 /*
  --- Start of AdScheduleView ---
 */
+// @ts-ignore
 export const AdScheduleView = ["ad_schedule_view.resource_name"];
 
 export type AdScheduleViewField = "ad_schedule_view.resource_name";
@@ -1113,6 +1126,7 @@ export type AdScheduleViewSegments = Array<AdScheduleViewSegment>;
 /*
  --- Start of AgeRangeView ---
 */
+// @ts-ignore
 export const AgeRangeView = ["age_range_view.resource_name"];
 
 export type AgeRangeViewField = "age_range_view.resource_name";
@@ -1190,6 +1204,7 @@ export type AgeRangeViewSegments = Array<AgeRangeViewSegment>;
 /*
  --- Start of BiddingStrategy ---
 */
+// @ts-ignore
 export const BiddingStrategy = [
   "bidding_strategy.campaign_count",
   "bidding_strategy.enhanced_cpc",
@@ -1304,6 +1319,7 @@ export type BiddingStrategySegments = Array<BiddingStrategySegment>;
 /*
  --- Start of BillingSetup ---
 */
+// @ts-ignore
 export const BillingSetup = [
   "billing_setup.end_date_time",
   "billing_setup.end_time_type",
@@ -1342,6 +1358,7 @@ export type BillingSetupFields = Array<BillingSetupField>;
 /*
  --- Start of Campaign ---
 */
+// @ts-ignore
 export const Campaign = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
@@ -1578,6 +1595,7 @@ export type CampaignSegments = Array<CampaignSegment>;
 /*
  --- Start of CampaignAudienceView ---
 */
+// @ts-ignore
 export const CampaignAudienceView = ["campaign_audience_view.resource_name"];
 
 export type CampaignAudienceViewField = "campaign_audience_view.resource_name";
@@ -1647,6 +1665,7 @@ export type CampaignAudienceViewSegments = Array<CampaignAudienceViewSegment>;
 /*
  --- Start of CampaignBidModifier ---
 */
+// @ts-ignore
 export const CampaignBidModifier = [
   "campaign_bid_modifier.bid_modifier",
   "campaign_bid_modifier.campaign",
@@ -1675,6 +1694,7 @@ export type CampaignBidModifierMetrics = Array<CampaignBidModifierMetric>;
 /*
  --- Start of CampaignBudget ---
 */
+// @ts-ignore
 export const CampaignBudget = [
   "campaign_budget.amount_micros",
   "campaign_budget.delivery_method",
@@ -1758,6 +1778,7 @@ export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
 /*
  --- Start of CampaignCriterion ---
 */
+// @ts-ignore
 export const CampaignCriterion = [
   "campaign_criterion.ad_schedule.day_of_week",
   "campaign_criterion.ad_schedule.end_hour",
@@ -1870,6 +1891,7 @@ export type CampaignCriterionFields = Array<CampaignCriterionField>;
 /*
  --- Start of CampaignExtensionSetting ---
 */
+// @ts-ignore
 export const CampaignExtensionSetting = [
   "campaign_extension_setting.campaign",
   "campaign_extension_setting.device",
@@ -1894,6 +1916,7 @@ export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField
 /*
  --- Start of CampaignFeed ---
 */
+// @ts-ignore
 export const CampaignFeed = [
   "campaign_feed.campaign",
   "campaign_feed.feed",
@@ -1926,6 +1949,7 @@ export type CampaignFeedFields = Array<CampaignFeedField>;
 /*
  --- Start of CampaignLabel ---
 */
+// @ts-ignore
 export const CampaignLabel = [
   "campaign_label.campaign",
   "campaign_label.label",
@@ -1946,6 +1970,7 @@ export type CampaignLabelFields = Array<CampaignLabelField>;
 /*
  --- Start of CampaignSharedSet ---
 */
+// @ts-ignore
 export const CampaignSharedSet = [
   "campaign_shared_set.campaign",
   "campaign_shared_set.resource_name",
@@ -1968,6 +1993,7 @@ export type CampaignSharedSetFields = Array<CampaignSharedSetField>;
 /*
  --- Start of CarrierConstant ---
 */
+// @ts-ignore
 export const CarrierConstant = [
   "carrier_constant.country_code",
   "carrier_constant.id",
@@ -1990,6 +2016,7 @@ export type CarrierConstantFields = Array<CarrierConstantField>;
 /*
  --- Start of ChangeStatus ---
 */
+// @ts-ignore
 export const ChangeStatus = [
   "change_status.ad_group",
   "change_status.ad_group_ad",
@@ -2032,6 +2059,7 @@ export type ChangeStatusFields = Array<ChangeStatusField>;
 /*
  --- Start of ClickView ---
 */
+// @ts-ignore
 export const ClickView = [
   "click_view.area_of_interest.city",
   "click_view.area_of_interest.country",
@@ -2088,6 +2116,7 @@ export type ClickViewSegments = Array<ClickViewSegment>;
 /*
  --- Start of ConversionAction ---
 */
+// @ts-ignore
 export const ConversionAction = [
   "conversion_action.app_id",
   "conversion_action.attribution_model_settings.attribution_model",
@@ -2140,6 +2169,7 @@ export type ConversionActionFields = Array<ConversionActionField>;
 /*
  --- Start of CustomInterest ---
 */
+// @ts-ignore
 export const CustomInterest = [
   "custom_interest.description",
   "custom_interest.id",
@@ -2168,6 +2198,7 @@ export type CustomInterestFields = Array<CustomInterestField>;
 /*
  --- Start of Customer ---
 */
+// @ts-ignore
 export const Customer = [
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
@@ -2288,6 +2319,7 @@ export type CustomerSegments = Array<CustomerSegment>;
 /*
  --- Start of CustomerClient ---
 */
+// @ts-ignore
 export const CustomerClient = [
   "customer_client.client_customer",
   "customer_client.hidden",
@@ -2310,6 +2342,7 @@ export type CustomerClientFields = Array<CustomerClientField>;
 /*
  --- Start of CustomerClientLink ---
 */
+// @ts-ignore
 export const CustomerClientLink = [
   "customer_client_link.client_customer",
   "customer_client_link.hidden",
@@ -2334,6 +2367,7 @@ export type CustomerClientLinkFields = Array<CustomerClientLinkField>;
 /*
  --- Start of CustomerExtensionSetting ---
 */
+// @ts-ignore
 export const CustomerExtensionSetting = [
   "customer_extension_setting.device",
   "customer_extension_setting.extension_feed_items",
@@ -2356,6 +2390,7 @@ export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField
 /*
  --- Start of CustomerFeed ---
 */
+// @ts-ignore
 export const CustomerFeed = [
   "customer_feed.feed",
   "customer_feed.matching_function.function_string",
@@ -2386,6 +2421,7 @@ export type CustomerFeedFields = Array<CustomerFeedField>;
 /*
  --- Start of CustomerLabel ---
 */
+// @ts-ignore
 export const CustomerLabel = [
   "customer_label.customer",
   "customer_label.label",
@@ -2406,6 +2442,7 @@ export type CustomerLabelFields = Array<CustomerLabelField>;
 /*
  --- Start of CustomerManagerLink ---
 */
+// @ts-ignore
 export const CustomerManagerLink = [
   "customer_manager_link.manager_customer",
   "customer_manager_link.manager_link_id",
@@ -2428,6 +2465,7 @@ export type CustomerManagerLinkFields = Array<CustomerManagerLinkField>;
 /*
  --- Start of CustomerNegativeCriterion ---
 */
+// @ts-ignore
 export const CustomerNegativeCriterion = [
   "customer_negative_criterion.content_label.type",
   "customer_negative_criterion.id",
@@ -2460,6 +2498,7 @@ export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionFie
 /*
  --- Start of DetailPlacementView ---
 */
+// @ts-ignore
 export const DetailPlacementView = [
   "detail_placement_view.display_name",
   "detail_placement_view.group_placement_target_url",
@@ -2503,6 +2542,7 @@ export type DetailPlacementViewSegments = Array<DetailPlacementViewSegment>;
 /*
  --- Start of DisplayKeywordView ---
 */
+// @ts-ignore
 export const DisplayKeywordView = ["display_keyword_view.resource_name"];
 
 export type DisplayKeywordViewField = "display_keyword_view.resource_name";
@@ -2581,6 +2621,7 @@ export type DisplayKeywordViewSegments = Array<DisplayKeywordViewSegment>;
 /*
  --- Start of DomainCategory ---
 */
+// @ts-ignore
 export const DomainCategory = [
   "domain_category.campaign",
   "domain_category.category",
@@ -2613,6 +2654,7 @@ export type DomainCategoryFields = Array<DomainCategoryField>;
 /*
  --- Start of DynamicSearchAdsSearchTermView ---
 */
+// @ts-ignore
 export const DynamicSearchAdsSearchTermView = [
   "dynamic_search_ads_search_term_view.headline",
   "dynamic_search_ads_search_term_view.landing_page",
@@ -2673,6 +2715,7 @@ export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearc
 /*
  --- Start of ExtensionFeedItem ---
 */
+// @ts-ignore
 export const ExtensionFeedItem = [
   "extension_feed_item.app_feed_item.app_id",
   "extension_feed_item.app_feed_item.app_store",
@@ -2841,6 +2884,7 @@ export type ExtensionFeedItemSegments = Array<ExtensionFeedItemSegment>;
 /*
  --- Start of Feed ---
 */
+// @ts-ignore
 export const Feed = [
   "feed.affiliate_location_feed_data.chain_ids",
   "feed.affiliate_location_feed_data.relationship_type",
@@ -2879,6 +2923,7 @@ export type FeedFields = Array<FeedField>;
 /*
  --- Start of FeedItem ---
 */
+// @ts-ignore
 export const FeedItem = [
   "feed_item.attribute_values",
   "feed_item.end_date_time",
@@ -2967,6 +3012,7 @@ export type FeedItemSegments = Array<FeedItemSegment>;
 /*
  --- Start of FeedItemTarget ---
 */
+// @ts-ignore
 export const FeedItemTarget = [
   "feed_item_target.ad_group",
   "feed_item_target.ad_schedule",
@@ -3005,6 +3051,7 @@ export type FeedItemTargetFields = Array<FeedItemTargetField>;
 /*
  --- Start of FeedMapping ---
 */
+// @ts-ignore
 export const FeedMapping = [
   "feed_mapping.attribute_field_mappings",
   "feed_mapping.criterion_type",
@@ -3031,6 +3078,7 @@ export type FeedMappingFields = Array<FeedMappingField>;
 /*
  --- Start of FeedPlaceholderView ---
 */
+// @ts-ignore
 export const FeedPlaceholderView = [
   "feed_placeholder_view.placeholder_type",
   "feed_placeholder_view.resource_name",
@@ -3101,6 +3149,7 @@ export type FeedPlaceholderViewSegments = Array<FeedPlaceholderViewSegment>;
 /*
  --- Start of GenderView ---
 */
+// @ts-ignore
 export const GenderView = ["gender_view.resource_name"];
 
 export type GenderViewField = "gender_view.resource_name";
@@ -3179,6 +3228,7 @@ export type GenderViewSegments = Array<GenderViewSegment>;
 /*
  --- Start of GeoTargetConstant ---
 */
+// @ts-ignore
 export const GeoTargetConstant = [
   "geo_target_constant.canonical_name",
   "geo_target_constant.country_code",
@@ -3207,6 +3257,7 @@ export type GeoTargetConstantFields = Array<GeoTargetConstantField>;
 /*
  --- Start of GeographicView ---
 */
+// @ts-ignore
 export const GeographicView = [
   "geographic_view.country_geo_target_constant",
   "geographic_view.location_type",
@@ -3275,6 +3326,7 @@ export type GeographicViewSegments = Array<GeographicViewSegment>;
 /*
  --- Start of GroupPlacementView ---
 */
+// @ts-ignore
 export const GroupPlacementView = [
   "group_placement_view.display_name",
   "group_placement_view.placement",
@@ -3351,6 +3403,7 @@ export type GroupPlacementViewSegments = Array<GroupPlacementViewSegment>;
 /*
  --- Start of HotelGroupView ---
 */
+// @ts-ignore
 export const HotelGroupView = ["hotel_group_view.resource_name"];
 
 export type HotelGroupViewField = "hotel_group_view.resource_name";
@@ -3387,6 +3440,7 @@ export type HotelGroupViewSegments = Array<HotelGroupViewSegment>;
 /*
  --- Start of HotelPerformanceView ---
 */
+// @ts-ignore
 export const HotelPerformanceView = ["hotel_performance_view.resource_name"];
 
 export type HotelPerformanceViewField = "hotel_performance_view.resource_name";
@@ -3439,6 +3493,7 @@ export type HotelPerformanceViewSegments = Array<HotelPerformanceViewSegment>;
 /*
  --- Start of KeywordPlan ---
 */
+// @ts-ignore
 export const KeywordPlan = [
   "keyword_plan.forecast_period",
   "keyword_plan.id",
@@ -3461,6 +3516,7 @@ export type KeywordPlanFields = Array<KeywordPlanField>;
 /*
  --- Start of KeywordPlanAdGroup ---
 */
+// @ts-ignore
 export const KeywordPlanAdGroup = [
   "keyword_plan_ad_group.cpc_bid_micros",
   "keyword_plan_ad_group.id",
@@ -3485,6 +3541,7 @@ export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
 /*
  --- Start of KeywordPlanCampaign ---
 */
+// @ts-ignore
 export const KeywordPlanCampaign = [
   "keyword_plan_campaign.cpc_bid_micros",
   "keyword_plan_campaign.geo_targets",
@@ -3517,6 +3574,7 @@ export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
 /*
  --- Start of KeywordPlanKeyword ---
 */
+// @ts-ignore
 export const KeywordPlanKeyword = [
   "keyword_plan_keyword.cpc_bid_micros",
   "keyword_plan_keyword.id",
@@ -3543,6 +3601,7 @@ export type KeywordPlanKeywordFields = Array<KeywordPlanKeywordField>;
 /*
  --- Start of KeywordPlanNegativeKeyword ---
 */
+// @ts-ignore
 export const KeywordPlanNegativeKeyword = [
   "keyword_plan_negative_keyword.id",
   "keyword_plan_negative_keyword.keyword_plan_campaign",
@@ -3567,6 +3626,7 @@ export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordF
 /*
  --- Start of KeywordView ---
 */
+// @ts-ignore
 export const KeywordView = ["keyword_view.resource_name"];
 
 export type KeywordViewField = "keyword_view.resource_name";
@@ -3673,6 +3733,7 @@ export type KeywordViewSegments = Array<KeywordViewSegment>;
 /*
  --- Start of Label ---
 */
+// @ts-ignore
 export const Label = [
   "label.id",
   "label.name",
@@ -3699,6 +3760,7 @@ export type LabelFields = Array<LabelField>;
 /*
  --- Start of LanguageConstant ---
 */
+// @ts-ignore
 export const LanguageConstant = [
   "language_constant.code",
   "language_constant.id",
@@ -3723,6 +3785,7 @@ export type LanguageConstantFields = Array<LanguageConstantField>;
 /*
  --- Start of LocationView ---
 */
+// @ts-ignore
 export const LocationView = ["location_view.resource_name"];
 
 export type LocationViewField = "location_view.resource_name";
@@ -3779,6 +3842,7 @@ export type LocationViewSegments = Array<LocationViewSegment>;
 /*
  --- Start of ManagedPlacementView ---
 */
+// @ts-ignore
 export const ManagedPlacementView = ["managed_placement_view.resource_name"];
 
 export type ManagedPlacementViewField = "managed_placement_view.resource_name";
@@ -3854,6 +3918,7 @@ export type ManagedPlacementViewSegments = Array<ManagedPlacementViewSegment>;
 /*
  --- Start of MediaFile ---
 */
+// @ts-ignore
 export const MediaFile = [
   "media_file.audio.ad_duration_millis",
   "media_file.file_size",
@@ -3892,6 +3957,7 @@ export type MediaFileFields = Array<MediaFileField>;
 /*
  --- Start of MobileAppCategoryConstant ---
 */
+// @ts-ignore
 export const MobileAppCategoryConstant = [
   "mobile_app_category_constant.id",
   "mobile_app_category_constant.name",
@@ -3912,6 +3978,7 @@ export type MobileAppCategoryConstantFields = Array<MobileAppCategoryConstantFie
 /*
  --- Start of MobileDeviceConstant ---
 */
+// @ts-ignore
 export const MobileDeviceConstant = [
   "mobile_device_constant.id",
   "mobile_device_constant.manufacturer_name",
@@ -3938,6 +4005,7 @@ export type MobileDeviceConstantFields = Array<MobileDeviceConstantField>;
 /*
  --- Start of OperatingSystemVersionConstant ---
 */
+// @ts-ignore
 export const OperatingSystemVersionConstant = [
   "operating_system_version_constant.id",
   "operating_system_version_constant.name",
@@ -3964,6 +4032,7 @@ export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionC
 /*
  --- Start of ParentalStatusView ---
 */
+// @ts-ignore
 export const ParentalStatusView = ["parental_status_view.resource_name"];
 
 export type ParentalStatusViewField = "parental_status_view.resource_name";
@@ -4042,6 +4111,7 @@ export type ParentalStatusViewSegments = Array<ParentalStatusViewSegment>;
 /*
  --- Start of ProductBiddingCategoryConstant ---
 */
+// @ts-ignore
 export const ProductBiddingCategoryConstant = [
   "product_bidding_category_constant.country_code",
   "product_bidding_category_constant.id",
@@ -4072,6 +4142,7 @@ export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryC
 /*
  --- Start of ProductGroupView ---
 */
+// @ts-ignore
 export const ProductGroupView = ["product_group_view.resource_name"];
 
 export type ProductGroupViewField = "product_group_view.resource_name";
@@ -4130,6 +4201,7 @@ export type ProductGroupViewSegments = Array<ProductGroupViewSegment>;
 /*
  --- Start of Recommendation ---
 */
+// @ts-ignore
 export const Recommendation = [
   "recommendation.ad_group",
   "recommendation.campaign",
@@ -4176,6 +4248,7 @@ export type RecommendationFields = Array<RecommendationField>;
 /*
  --- Start of RemarketingAction ---
 */
+// @ts-ignore
 export const RemarketingAction = [
   "remarketing_action.id",
   "remarketing_action.name",
@@ -4198,6 +4271,7 @@ export type RemarketingActionFields = Array<RemarketingActionField>;
 /*
  --- Start of SearchTermView ---
 */
+// @ts-ignore
 export const SearchTermView = [
   "search_term_view.ad_group",
   "search_term_view.resource_name",
@@ -4280,6 +4354,7 @@ export type SearchTermViewSegments = Array<SearchTermViewSegment>;
 /*
  --- Start of SharedCriterion ---
 */
+// @ts-ignore
 export const SharedCriterion = [
   "shared_criterion.criterion_id",
   "shared_criterion.keyword.match_type",
@@ -4314,6 +4389,7 @@ export type SharedCriterionFields = Array<SharedCriterionField>;
 /*
  --- Start of SharedSet ---
 */
+// @ts-ignore
 export const SharedSet = [
   "shared_set.id",
   "shared_set.member_count",
@@ -4342,6 +4418,7 @@ export type SharedSetFields = Array<SharedSetField>;
 /*
  --- Start of ShoppingPerformanceView ---
 */
+// @ts-ignore
 export const ShoppingPerformanceView = ["shopping_performance_view.resource_name"];
 
 export type ShoppingPerformanceViewField = "shopping_performance_view.resource_name";
@@ -4423,6 +4500,7 @@ export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegme
 /*
  --- Start of TopicConstant ---
 */
+// @ts-ignore
 export const TopicConstant = [
   "topic_constant.id",
   "topic_constant.path",
@@ -4445,6 +4523,7 @@ export type TopicConstantFields = Array<TopicConstantField>;
 /*
  --- Start of TopicView ---
 */
+// @ts-ignore
 export const TopicView = ["topic_view.resource_name"];
 
 export type TopicViewField = "topic_view.resource_name";
@@ -4520,6 +4599,7 @@ export type TopicViewSegments = Array<TopicViewSegment>;
 /*
  --- Start of UserInterest ---
 */
+// @ts-ignore
 export const UserInterest = [
   "user_interest.availabilities",
   "user_interest.launched_to_all",
@@ -4548,6 +4628,7 @@ export type UserInterestFields = Array<UserInterestField>;
 /*
  --- Start of UserList ---
 */
+// @ts-ignore
 export const UserList = [
   "user_list.access_reason",
   "user_list.account_user_list_status",
@@ -4634,6 +4715,7 @@ export type UserListFields = Array<UserListField>;
 /*
  --- Start of Video ---
 */
+// @ts-ignore
 export const Video = [
   "video.channel_id",
   "video.duration_millis",
