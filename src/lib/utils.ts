@@ -129,12 +129,16 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
       const firstProp = splitPath[0];
       const firstPropExists = parent.hasOwnProperty(firstProp);
 
+      const remainingProps = splitPath.slice(1).join(".");
+      const child = data[firstProp];
+
+      if (!child) {
+        continue;
+      }
+
       if (!firstPropExists) {
         parent[firstProp] = {};
       }
-
-      const remainingProps = splitPath.slice(1).join(".");
-      const child = data[firstProp];
 
       if (!parent[firstProp].resourceName && child.hasOwnProperty("resourceName")) {
         parent[firstProp].resourceName = child.resourceName;
@@ -147,7 +151,11 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
 
       /* Case for array types where gRPC types append "List" (for some reason) */
       if (!value || typeof value === "undefined") {
-        value = data[`${path}List`];
+        if (data[`${path}List`]) {
+          value = data[`${path}List`];
+        } else {
+          continue;
+        }
       }
 
       parent[displayKey] = isObject ? value.value : value;

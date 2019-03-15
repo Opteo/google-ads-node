@@ -194,6 +194,44 @@ test("parsing removes the append list postfix to array types", () => {
   });
 });
 
+test("parsing removes undefined properties even if they're defined in the field mask", () => {
+  const result = [
+    {
+      campaign: {
+        resourceName: "customers/9262111890/campaigns/1485014801",
+        id: 123,
+        finalUrlSuffix: undefined,
+        dynamicSearchSettings: undefined,
+        searchSettings: {
+          one: "one",
+          two: undefined,
+        },
+      },
+    },
+  ];
+
+  const parsedResult = formatCallResults(result, {
+    pathsList: [
+      "campaign.resource_name",
+      "campaign.id",
+      "campaign.final_url_suffix",
+      "campaign.dynamic_search_settings",
+      "campaign.search_settings.one",
+      "campaign.search_settings.two",
+    ],
+  });
+
+  expect(parsedResult[0]).toEqual({
+    campaign: {
+      resourceName: "customers/9262111890/campaigns/1485014801",
+      id: 123,
+      searchSettings: {
+        one: "one",
+      },
+    },
+  });
+});
+
 const fakeCampaignResponse = `
   {
    "resourceName": "customers/9262111890/campaigns/1485014801",
