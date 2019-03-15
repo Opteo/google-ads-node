@@ -83,7 +83,7 @@ async function main() {
     if (!fields) continue;
 
     /* Field values */
-    stream.write(`\n// @ts-ignore\nexport const ${toTypeCase(resource)} = [\n`);
+    stream.write(`\n// @ts-ignore\nexport const ${resource} = [\n`);
     for (const field of fields) {
       stream.write(`"${field.name}",\n`);
     }
