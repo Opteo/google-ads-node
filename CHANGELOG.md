@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/opteo/google-ads-node/compare/v1.3.0...v1.3.1) (2019-03-15)
+
+
+### Bug Fixes
+
+* **fields:** ignore const names ([b5bdc14](https://github.com/opteo/google-ads-node/commit/b5bdc14))
+* **fields:** more types and minor changes to fields ([538b3d5](https://github.com/opteo/google-ads-node/commit/538b3d5))
+* **tslint:** ignore variable name constraint ([990777d](https://github.com/opteo/google-ads-node/commit/990777d))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/opteo/google-ads-node/compare/v1.2.0...v1.3.0) (2019-03-14)
 
