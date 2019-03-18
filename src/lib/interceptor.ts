@@ -1,7 +1,7 @@
 import grpc from "grpc";
 
 import Auth from "./auth";
-import { GoogleAdsFailure } from "./types";
+import { GoogleAdsFailure, GoogleAdsError } from "./types";
 import { formatCallResults } from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v1.errors.googleadsfailure-bin";
@@ -111,11 +111,11 @@ export class ExceptionInterceptor {
     return null;
   }
 
-  private getRequestId(metadata: grpc.Metadata): string | null {
+  private getRequestId(metadata: grpc.Metadata): string | undefined {
     if (metadata.get(REQUEST_ID_KEY)) {
       return metadata.get(REQUEST_ID_KEY)[0] as string;
     }
-    return null;
+    return "";
   }
 
   private handleGrpcFailure(status: grpc.StatusObject): Error {
@@ -126,29 +126,35 @@ export class ExceptionInterceptor {
       throw new Error(status.details);
     }
 
-    const ga_failure = this.getGoogleAdsFailure(metadata);
+    const gaFailure = this.getGoogleAdsFailure(metadata);
 
-    if (!ga_failure) {
+    if (!gaFailure) {
       /* Throw error with status details if not a Google Ads API error */
-      // throw new Error(status.details);
       return new Error(status.details);
     }
 
-    const request_id = this.getRequestId(metadata);
+    const requestId = this.getRequestId(metadata);
     let error: ClientError;
+
+    const errorsList: GoogleAdsError[] = gaFailure.getErrorsList();
+
+    if (errorsList && errorsList.length > 0) {
+      const firstError = errorsList[0] as GoogleAdsError;
+      const firstErrorObj = firstError.toObject();
+      return new ClientError(firstErrorObj.message, requestId, gaFailure);
+    }
 
     try {
       /* Try to parse the error */
-      const error_pieces = ga_failure.toString().split(",");
-      const error_message = error_pieces[error_pieces.length - 1];
-      error = new ClientError(error_message, request_id, ga_failure);
+      const errorPieces = gaFailure.toString().split(",");
+      const errorMessage = errorPieces[errorPieces.length - 1];
+      error = new ClientError(errorMessage, requestId, gaFailure);
     } catch (err) {
       /* Use the original error message if parsing fails */
-      error = new ClientError(status.details, request_id, ga_failure);
+      error = new ClientError(status.details, requestId, gaFailure);
     }
 
     return error;
-    // Promise.reject(error);
   }
 }
 
@@ -205,13 +211,13 @@ export class ResponseParsingInterceptor {
 }
 
 class ClientError extends Error {
-  public request_id: string | null;
-  public failure: GoogleAdsFailure;
+  public readonly request_id: string | undefined;
+  public readonly failure: GoogleAdsFailure;
 
-  constructor(public message: string, request_id: string | null, failure: GoogleAdsFailure) {
+  constructor(public message: string, requestId: string | undefined, failure: GoogleAdsFailure) {
     super(message);
-    // this.stack = (new Error() as any).stack;
-    this.request_id = request_id;
+
+    this.request_id = requestId;
     this.failure = failure;
   }
 }
