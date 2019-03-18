@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/opteo/google-ads-node/compare/v1.3.3...v1.4.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* **interceptors:** cleanup of error interceptor + use google ads error pb ([e4cbe86](https://github.com/opteo/google-ads-node/commit/e4cbe86))
+* **utils:** added enum check when converting objects to pb format ([2ad04a1](https://github.com/opteo/google-ads-node/commit/2ad04a1))
+* **utils:** ensure resource names are normal strings and not a protobuf string instance ([37a2087](https://github.com/opteo/google-ads-node/commit/37a2087))
+
+
+### Features
+
+* **utils:** added getFieldMask method to generate FieldMask instance from resource object ([73a289e](https://github.com/opteo/google-ads-node/commit/73a289e))
+
+
+
 <a name="1.3.3"></a>
 ## [1.3.3](https://github.com/opteo/google-ads-node/compare/v1.3.2...v1.3.3) (2019-03-15)
 
