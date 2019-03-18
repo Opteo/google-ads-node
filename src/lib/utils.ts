@@ -51,7 +51,7 @@ export function formatCallResults(resultsList: any[], fieldMask: FieldMask | und
   return parsedResults;
 }
 
-export function convertToProtoFormat(data: any): any {
+export function convertToProtoFormat(data: any, type: any): any {
   const pb: any = {};
 
   for (const key of Object.keys(data)) {
@@ -64,16 +64,20 @@ export function convertToProtoFormat(data: any): any {
       continue;
     }
     pb[displayKey] =
-      typeof value === "object" ? convertToProtoFormat(value) : toProtoValueFormat(value);
+      typeof value === "object" ? convertToProtoFormat(value, type) : toProtoValueFormat(value);
+  }
+
+  /* Check if number values are enums (this is a bit of a hack) */
+  const err = type.verify(pb);
+  if (err && err.includes("enum value expected")) {
+    const key = err.split(":")[0];
+    pb[key] = pb[key].value;
   }
 
   return pb;
 }
 
-function toProtoValueFormat(value: any): number | any {
-  if (typeof value === "number") {
-    return value;
-  }
+function toProtoValueFormat(value: any): any {
   return {
     value,
   };

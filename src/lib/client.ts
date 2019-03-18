@@ -98,7 +98,7 @@ export class GoogleAdsClient {
       This translates ts values, such as string, to the protobuf format
       e.g. {some_name: "campaign"} -> {someName: { value: "campaign" }}
     */
-    const protoFormatData = convertToProtoFormat(data);
+    const protoFormatData = convertToProtoFormat(data, type);
 
     /* Create a new protobuf Message of the specified type */
     const message = type.fromObject(protoFormatData);
