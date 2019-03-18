@@ -1,3 +1,4 @@
+import protobufHelpers from "google-protobuf/google/protobuf/field_mask_pb";
 import { Client } from "grpc";
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
@@ -173,4 +174,33 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
   }
 
   return parent;
+}
+
+function recursiveFieldMaskSearch(data: any) {
+  const paths: string[] = [];
+
+  for (const key of Object.keys(data)) {
+    if (key === "resource_name") {
+      continue;
+    }
+    const value = data[key];
+
+    if (typeof value === "object") {
+      const children = recursiveFieldMaskSearch(value);
+      for (const child of children) {
+        paths.push(`${key}.${child}`);
+      }
+      continue;
+    }
+    paths.push(key);
+  }
+
+  return paths;
+}
+
+export function getFieldMask(data: any): protobufHelpers.FieldMask {
+  const fieldMask = new protobufHelpers.FieldMask();
+  const paths = recursiveFieldMaskSearch(data);
+  fieldMask.setPathsList(paths);
+  return fieldMask;
 }

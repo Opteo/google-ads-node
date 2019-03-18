@@ -1,4 +1,4 @@
-import { formatCallResults } from "./utils";
+import { formatCallResults, getFieldMask } from "./utils";
 
 test("proto object result is parsed from field mask", () => {
   const fakeResponse = [
@@ -230,6 +230,25 @@ test("parsing removes undefined properties even if they're defined in the field 
       },
     },
   });
+});
+
+test("update mask can be generated from a resource object", () => {
+  const resource = {
+    resource_name: "customers/123/campaignBudgets/321",
+    amount_micros: 20000,
+    status: 2,
+    settings: {
+      another_setting: {
+        something: "value",
+      },
+    },
+  };
+  const mask = getFieldMask(resource);
+  expect(mask.toObject().pathsList).toEqual([
+    "amount_micros",
+    "status",
+    "settings.another_setting.something",
+  ]);
 });
 
 const fakeCampaignResponse = `
