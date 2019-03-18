@@ -57,6 +57,12 @@ export function convertToProtoFormat(data: any): any {
   for (const key of Object.keys(data)) {
     const displayKey = toCamelCase(key);
     const value = data[key];
+
+    /* Resource names are string values, not a protobuf string instance, so just set the string value */
+    if (displayKey === "resourceName") {
+      pb[displayKey] = value;
+      continue;
+    }
     pb[displayKey] =
       typeof value === "object" ? convertToProtoFormat(value) : toProtoValueFormat(value);
   }
