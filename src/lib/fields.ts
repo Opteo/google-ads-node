@@ -420,9 +420,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id",
   "ad_group_ad.ad.gmail_ad.marketing_image_headline",
   "ad_group_ad.ad.gmail_ad.product_images",
-  "ad_group_ad.ad.gmail_ad.product_images.product_image",
   "ad_group_ad.ad.gmail_ad.product_videos",
-  "ad_group_ad.ad.gmail_ad.product_videos.product_video",
   "ad_group_ad.ad.gmail_ad.teaser.business_name",
   "ad_group_ad.ad.gmail_ad.teaser.description",
   "ad_group_ad.ad.gmail_ad.teaser.headline",
@@ -430,7 +428,6 @@ export const ad_group_ad = [
   "ad_group_ad.ad.hotel_ad",
   "ad_group_ad.ad.id",
   "ad_group_ad.ad.image_ad.image_url",
-  "ad_group_ad.ad.image_ad.media_file",
   "ad_group_ad.ad.image_ad.mime_type",
   "ad_group_ad.ad.image_ad.name",
   "ad_group_ad.ad.image_ad.pixel_height",
@@ -514,9 +511,7 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
   | "ad_group_ad.ad.gmail_ad.marketing_image_headline"
   | "ad_group_ad.ad.gmail_ad.product_images"
-  | "ad_group_ad.ad.gmail_ad.product_images.product_image"
   | "ad_group_ad.ad.gmail_ad.product_videos"
-  | "ad_group_ad.ad.gmail_ad.product_videos.product_video"
   | "ad_group_ad.ad.gmail_ad.teaser.business_name"
   | "ad_group_ad.ad.gmail_ad.teaser.description"
   | "ad_group_ad.ad.gmail_ad.teaser.headline"
@@ -524,7 +519,6 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.hotel_ad"
   | "ad_group_ad.ad.id"
   | "ad_group_ad.ad.image_ad.image_url"
-  | "ad_group_ad.ad.image_ad.media_file"
   | "ad_group_ad.ad.image_ad.mime_type"
   | "ad_group_ad.ad.image_ad.name"
   | "ad_group_ad.ad.image_ad.pixel_height"
@@ -1799,9 +1793,6 @@ export const campaign_criterion = [
   "campaign_criterion.keyword.text",
   "campaign_criterion.language.language_constant",
   "campaign_criterion.listing_scope.dimensions",
-  "campaign_criterion.listing_scope.dimensions.hotel_city.city_criterion",
-  "campaign_criterion.listing_scope.dimensions.hotel_country_region.country_region_criterion",
-  "campaign_criterion.listing_scope.dimensions.hotel_state.state_criterion",
   "campaign_criterion.location.geo_target_constant",
   "campaign_criterion.mobile_app_category.mobile_app_category_constant",
   "campaign_criterion.mobile_device.mobile_device_constant",
@@ -1851,9 +1842,6 @@ export type CampaignCriterionField =
   | "campaign_criterion.keyword.text"
   | "campaign_criterion.language.language_constant"
   | "campaign_criterion.listing_scope.dimensions"
-  | "campaign_criterion.listing_scope.dimensions.hotel_city.city_criterion"
-  | "campaign_criterion.listing_scope.dimensions.hotel_country_region.country_region_criterion"
-  | "campaign_criterion.listing_scope.dimensions.hotel_state.state_criterion"
   | "campaign_criterion.location.geo_target_constant"
   | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
   | "campaign_criterion.mobile_device.mobile_device_constant"
@@ -3545,7 +3533,6 @@ export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
 export const keyword_plan_campaign = [
   "keyword_plan_campaign.cpc_bid_micros",
   "keyword_plan_campaign.geo_targets",
-  "keyword_plan_campaign.geo_targets.geo_target_constant",
   "keyword_plan_campaign.id",
   "keyword_plan_campaign.keyword_plan",
   "keyword_plan_campaign.keyword_plan_network",
@@ -3557,7 +3544,6 @@ export const keyword_plan_campaign = [
 export type KeywordPlanCampaignField =
   | "keyword_plan_campaign.cpc_bid_micros"
   | "keyword_plan_campaign.geo_targets"
-  | "keyword_plan_campaign.geo_targets.geo_target_constant"
   | "keyword_plan_campaign.id"
   | "keyword_plan_campaign.keyword_plan"
   | "keyword_plan_campaign.keyword_plan_network"

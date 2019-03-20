@@ -13,10 +13,10 @@ const {
   It should only be run when updating the Google Ads API version
 */
 
-const CLIENT_ID = process.env.GADS_CLIENT_ID;
-const CLIENT_SECRET = process.env.GADS_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.GADS_REFRESH_TOKEN;
-const DEVELOPER_TOKEN = process.env.GADS_DEVELOPER_TOKEN;
+const CLIENT_ID = process.env.GADS_NODE_CLIENT_ID;
+const CLIENT_SECRET = process.env.GADS_NODE_CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.GADS_NODE_REFRESH_TOKEN;
+const DEVELOPER_TOKEN = process.env.GADS_NODE_DEVELOPER_TOKEN;
 
 const client = new GoogleAdsClient({
   client_id: CLIENT_ID,
@@ -85,12 +85,15 @@ async function main() {
     /* Field values */
     stream.write(`\n// @ts-ignore\nexport const ${resource} = [\n`);
     for (const field of fields) {
+      if (!field.selectable) {
+        continue;
+      }
       stream.write(`"${field.name}",\n`);
     }
     stream.write(`]\n\n`);
 
     /* Field types */
-    buildUnionArray(fields, `${toTypeCase(resource)}Field`);
+    buildUnionArray(fields.filter(f => f.selectable), `${toTypeCase(resource)}Field`);
 
     /* Per resource metrics */
     const metrics = resourceMetrics[resource];
