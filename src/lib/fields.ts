@@ -2331,7 +2331,7 @@ export const ad_group_criterion = [
   // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
-  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  // "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.prepopulation_status",
   "user_list.similar_user_list.seed_user_list",
@@ -2555,7 +2555,7 @@ export type AdGroupCriterionField =
   // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
-  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  // | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.prepopulation_status"
   | "user_list.similar_user_list.seed_user_list"
@@ -5915,7 +5915,7 @@ export const campaign_criterion = [
   // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
-  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  // "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.prepopulation_status",
   "user_list.similar_user_list.seed_user_list",
@@ -6110,7 +6110,7 @@ export type CampaignCriterionField =
   // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
-  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  // | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.prepopulation_status"
   | "user_list.similar_user_list.seed_user_list"
