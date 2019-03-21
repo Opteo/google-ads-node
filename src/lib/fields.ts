@@ -2297,7 +2297,7 @@ export const ad_group_criterion = [
   "topic_constant.path",
   "topic_constant.resource_name",
   "topic_constant.topic_constant_parent",
-  "user_interest.availabilities",
+  // "user_interest.availabilities",
   "user_interest.launched_to_all",
   "user_interest.name",
   "user_interest.resource_name",
@@ -2306,7 +2306,7 @@ export const ad_group_criterion = [
   "user_interest.user_interest_parent",
   "user_list.access_reason",
   "user_list.account_user_list_status",
-  "user_list.basic_user_list.actions",
+  // "user_list.basic_user_list.actions",
   "user_list.closing_reason",
   "user_list.crm_based_user_list.app_id",
   "user_list.crm_based_user_list.data_source_type",
@@ -2316,19 +2316,19 @@ export const ad_group_criterion = [
   "user_list.eligible_for_search",
   "user_list.id",
   "user_list.integration_code",
-  "user_list.logical_user_list.rules",
+  // "user_list.logical_user_list.rules",
   "user_list.membership_life_span",
   "user_list.membership_status",
   "user_list.name",
   "user_list.read_only",
   "user_list.resource_name",
-  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  // "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
-  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  // "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
   "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
   "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
-  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
@@ -2521,7 +2521,7 @@ export type AdGroupCriterionField =
   | "topic_constant.path"
   | "topic_constant.resource_name"
   | "topic_constant.topic_constant_parent"
-  | "user_interest.availabilities"
+  // | "user_interest.availabilities"
   | "user_interest.launched_to_all"
   | "user_interest.name"
   | "user_interest.resource_name"
@@ -2530,7 +2530,7 @@ export type AdGroupCriterionField =
   | "user_interest.user_interest_parent"
   | "user_list.access_reason"
   | "user_list.account_user_list_status"
-  | "user_list.basic_user_list.actions"
+  // | "user_list.basic_user_list.actions"
   | "user_list.closing_reason"
   | "user_list.crm_based_user_list.app_id"
   | "user_list.crm_based_user_list.data_source_type"
@@ -2540,19 +2540,19 @@ export type AdGroupCriterionField =
   | "user_list.eligible_for_search"
   | "user_list.id"
   | "user_list.integration_code"
-  | "user_list.logical_user_list.rules"
+  // | "user_list.logical_user_list.rules"
   | "user_list.membership_life_span"
   | "user_list.membership_status"
   | "user_list.name"
   | "user_list.read_only"
   | "user_list.resource_name"
-  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  // | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
-  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  // | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
   | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
-  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
@@ -5866,7 +5866,7 @@ export const campaign_criterion = [
   "mobile_app_category_constant.name",
   "mobile_app_category_constant.resource_name",
   "mobile_device_constant.id",
-  "mobile_device_constant.manufacturer_name",
+  // "mobile_device_constant.manufacturer_name",
   "mobile_device_constant.name",
   "mobile_device_constant.operating_system_name",
   "mobile_device_constant.resource_name",
@@ -5881,7 +5881,7 @@ export const campaign_criterion = [
   "topic_constant.path",
   "topic_constant.resource_name",
   "topic_constant.topic_constant_parent",
-  "user_interest.availabilities",
+  // "user_interest.availabilities",
   "user_interest.launched_to_all",
   "user_interest.name",
   "user_interest.resource_name",
@@ -5890,7 +5890,7 @@ export const campaign_criterion = [
   "user_interest.user_interest_parent",
   "user_list.access_reason",
   "user_list.account_user_list_status",
-  "user_list.basic_user_list.actions",
+  // "user_list.basic_user_list.actions",
   "user_list.closing_reason",
   "user_list.crm_based_user_list.app_id",
   "user_list.crm_based_user_list.data_source_type",
@@ -5900,19 +5900,19 @@ export const campaign_criterion = [
   "user_list.eligible_for_search",
   "user_list.id",
   "user_list.integration_code",
-  "user_list.logical_user_list.rules",
+  // "user_list.logical_user_list.rules",
   "user_list.membership_life_span",
   "user_list.membership_status",
   "user_list.name",
   "user_list.read_only",
   "user_list.resource_name",
-  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  // "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
-  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  // "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
   "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
   "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
-  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
@@ -6061,7 +6061,7 @@ export type CampaignCriterionField =
   | "mobile_app_category_constant.name"
   | "mobile_app_category_constant.resource_name"
   | "mobile_device_constant.id"
-  | "mobile_device_constant.manufacturer_name"
+  // | "mobile_device_constant.manufacturer_name"
   | "mobile_device_constant.name"
   | "mobile_device_constant.operating_system_name"
   | "mobile_device_constant.resource_name"
@@ -6076,7 +6076,7 @@ export type CampaignCriterionField =
   | "topic_constant.path"
   | "topic_constant.resource_name"
   | "topic_constant.topic_constant_parent"
-  | "user_interest.availabilities"
+  // | "user_interest.availabilities"
   | "user_interest.launched_to_all"
   | "user_interest.name"
   | "user_interest.resource_name"
@@ -6085,7 +6085,7 @@ export type CampaignCriterionField =
   | "user_interest.user_interest_parent"
   | "user_list.access_reason"
   | "user_list.account_user_list_status"
-  | "user_list.basic_user_list.actions"
+  // | "user_list.basic_user_list.actions"
   | "user_list.closing_reason"
   | "user_list.crm_based_user_list.app_id"
   | "user_list.crm_based_user_list.data_source_type"
@@ -6095,19 +6095,19 @@ export type CampaignCriterionField =
   | "user_list.eligible_for_search"
   | "user_list.id"
   | "user_list.integration_code"
-  | "user_list.logical_user_list.rules"
+  // | "user_list.logical_user_list.rules"
   | "user_list.membership_life_span"
   | "user_list.membership_status"
   | "user_list.name"
   | "user_list.read_only"
   | "user_list.resource_name"
-  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  // | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
-  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  // | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
   | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
-  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
