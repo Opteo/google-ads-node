@@ -40,6 +40,19 @@ async function main() {
     if (isResource(row.category)) {
       resources[row.name] = [];
 
+      /* Find selectable with attributes for the resource */
+      const selectableWith = Object.values(row.selectableWith).filter(
+        val => !val.includes("segments.") && !val.includes("metrics.")
+      );
+      for (const selectableResource of selectableWith) {
+        const selectableAttributes = resultsList.filter(r => {
+          return isAttribute(r.category) && r.resourceName.includes(`/${selectableResource}.`);
+        });
+        for (const selectableWithRow of selectableAttributes) {
+          resources[row.name].push(selectableWithRow);
+        }
+      }
+
       /* Save the metrics */
       if (!resourceMetrics.hasOwnProperty(row.name)) {
         resourceMetrics[row.name] = [];
@@ -56,6 +69,7 @@ async function main() {
         resourceSegments[row.name].push(row.segments[segment]);
       }
     }
+
     if (isAttribute(row.category)) {
       const resourceName = row.name.split(".")[0];
       resources[resourceName].push(row);
@@ -159,6 +173,8 @@ async function getAllFields() {
       name,
       category,
       selectable,
+      selectable_with,
+      attribute_resources,
       filterable,
       metrics,
       segments

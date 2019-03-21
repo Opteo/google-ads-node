@@ -95,6 +95,35 @@ export type ResourceNames = Array<ResourceName>;
 */
 // @ts-ignore
 export const account_budget = [
+  "billing_setup.end_date_time",
+  "billing_setup.end_time_type",
+  "billing_setup.id",
+  "billing_setup.payments_account",
+  "billing_setup.payments_account_info.payments_account_id",
+  "billing_setup.payments_account_info.payments_account_name",
+  "billing_setup.payments_account_info.payments_profile_id",
+  "billing_setup.payments_account_info.payments_profile_name",
+  "billing_setup.payments_account_info.secondary_payments_profile_id",
+  "billing_setup.resource_name",
+  "billing_setup.start_date_time",
+  "billing_setup.status",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "account_budget.adjusted_spending_limit_micros",
   "account_budget.adjusted_spending_limit_type",
   "account_budget.amount_served_micros",
@@ -130,6 +159,35 @@ export const account_budget = [
 ];
 
 export type AccountBudgetField =
+  | "billing_setup.end_date_time"
+  | "billing_setup.end_time_type"
+  | "billing_setup.id"
+  | "billing_setup.payments_account"
+  | "billing_setup.payments_account_info.payments_account_id"
+  | "billing_setup.payments_account_info.payments_account_name"
+  | "billing_setup.payments_account_info.payments_profile_id"
+  | "billing_setup.payments_account_info.payments_profile_name"
+  | "billing_setup.payments_account_info.secondary_payments_profile_id"
+  | "billing_setup.resource_name"
+  | "billing_setup.start_date_time"
+  | "billing_setup.status"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "account_budget.adjusted_spending_limit_micros"
   | "account_budget.adjusted_spending_limit_type"
   | "account_budget.amount_served_micros"
@@ -174,6 +232,35 @@ export type AccountBudgetFields = Array<AccountBudgetField>;
 */
 // @ts-ignore
 export const account_budget_proposal = [
+  "billing_setup.end_date_time",
+  "billing_setup.end_time_type",
+  "billing_setup.id",
+  "billing_setup.payments_account",
+  "billing_setup.payments_account_info.payments_account_id",
+  "billing_setup.payments_account_info.payments_account_name",
+  "billing_setup.payments_account_info.payments_profile_id",
+  "billing_setup.payments_account_info.payments_profile_name",
+  "billing_setup.payments_account_info.secondary_payments_profile_id",
+  "billing_setup.resource_name",
+  "billing_setup.start_date_time",
+  "billing_setup.status",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "account_budget_proposal.account_budget",
   "account_budget_proposal.approval_date_time",
   "account_budget_proposal.approved_end_date_time",
@@ -198,6 +285,35 @@ export const account_budget_proposal = [
 ];
 
 export type AccountBudgetProposalField =
+  | "billing_setup.end_date_time"
+  | "billing_setup.end_time_type"
+  | "billing_setup.id"
+  | "billing_setup.payments_account"
+  | "billing_setup.payments_account_info.payments_account_id"
+  | "billing_setup.payments_account_info.payments_account_name"
+  | "billing_setup.payments_account_info.payments_profile_id"
+  | "billing_setup.payments_account_info.payments_profile_name"
+  | "billing_setup.payments_account_info.secondary_payments_profile_id"
+  | "billing_setup.resource_name"
+  | "billing_setup.start_date_time"
+  | "billing_setup.status"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "account_budget_proposal.account_budget"
   | "account_budget_proposal.approval_date_time"
   | "account_budget_proposal.approved_end_date_time"
@@ -231,6 +347,81 @@ export type AccountBudgetProposalFields = Array<AccountBudgetProposalField>;
 */
 // @ts-ignore
 export const ad_group = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "ad_group.ad_rotation_mode",
   "ad_group.campaign",
   "ad_group.cpc_bid_micros",
@@ -258,6 +449,81 @@ export const ad_group = [
 ];
 
 export type AdGroupField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "ad_group.ad_rotation_mode"
   | "ad_group.campaign"
   | "ad_group.cpc_bid_micros"
@@ -389,6 +655,105 @@ export type AdGroupSegments = Array<AdGroupSegment>;
 */
 // @ts-ignore
 export const ad_group_ad = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "ad_group_ad.ad.added_by_google_ads",
   "ad_group_ad.ad.call_only_ad.business_name",
   "ad_group_ad.ad.call_only_ad.call_tracked",
@@ -480,6 +845,105 @@ export const ad_group_ad = [
 ];
 
 export type AdGroupAdField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "ad_group_ad.ad.added_by_google_ads"
   | "ad_group_ad.ad.call_only_ad.business_name"
   | "ad_group_ad.ad.call_only_ad.call_tracked"
@@ -661,12 +1125,398 @@ export type AdGroupAdSegments = Array<AdGroupAdSegment>;
 */
 // @ts-ignore
 export const ad_group_ad_label = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.call_only_ad.business_name",
+  "ad_group_ad.ad.call_only_ad.call_tracked",
+  "ad_group_ad.ad.call_only_ad.conversion_action",
+  "ad_group_ad.ad.call_only_ad.conversion_reporting_state",
+  "ad_group_ad.ad.call_only_ad.country_code",
+  "ad_group_ad.ad.call_only_ad.description1",
+  "ad_group_ad.ad.call_only_ad.description2",
+  "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.phone_number",
+  "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
+  "ad_group_ad.ad.device_preference",
+  "ad_group_ad.ad.display_url",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part1",
+  "ad_group_ad.ad.expanded_text_ad.headline_part2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part3",
+  "ad_group_ad.ad.expanded_text_ad.path1",
+  "ad_group_ad.ad.expanded_text_ad.path2",
+  "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_urls",
+  "ad_group_ad.ad.gmail_ad.header_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image_description",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id",
+  "ad_group_ad.ad.gmail_ad.marketing_image_headline",
+  "ad_group_ad.ad.gmail_ad.product_images",
+  "ad_group_ad.ad.gmail_ad.product_videos",
+  "ad_group_ad.ad.gmail_ad.teaser.business_name",
+  "ad_group_ad.ad.gmail_ad.teaser.description",
+  "ad_group_ad.ad.gmail_ad.teaser.headline",
+  "ad_group_ad.ad.gmail_ad.teaser.logo_image",
+  "ad_group_ad.ad.hotel_ad",
+  "ad_group_ad.ad.id",
+  "ad_group_ad.ad.image_ad.image_url",
+  "ad_group_ad.ad.image_ad.mime_type",
+  "ad_group_ad.ad.image_ad.name",
+  "ad_group_ad.ad.image_ad.pixel_height",
+  "ad_group_ad.ad.image_ad.pixel_width",
+  "ad_group_ad.ad.image_ad.preview_image_url",
+  "ad_group_ad.ad.image_ad.preview_pixel_height",
+  "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
+  "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.description",
+  "ad_group_ad.ad.legacy_responsive_display_ad.format_setting",
+  "ad_group_ad.ad.legacy_responsive_display_ad.logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.long_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.main_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.legacy_responsive_display_ad.promo_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.name",
+  "ad_group_ad.ad.responsive_search_ad.descriptions",
+  "ad_group_ad.ad.responsive_search_ad.headlines",
+  "ad_group_ad.ad.responsive_search_ad.path1",
+  "ad_group_ad.ad.responsive_search_ad.path2",
+  "ad_group_ad.ad.shopping_product_ad",
+  "ad_group_ad.ad.shopping_smart_ad",
+  "ad_group_ad.ad.system_managed_resource_source",
+  "ad_group_ad.ad.text_ad.description1",
+  "ad_group_ad.ad.text_ad.description2",
+  "ad_group_ad.ad.text_ad.headline",
+  "ad_group_ad.ad.tracking_url_template",
+  "ad_group_ad.ad.type",
+  "ad_group_ad.ad.url_collections",
+  "ad_group_ad.ad.url_custom_parameters",
+  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.in_stream.action_button_label",
+  "ad_group_ad.ad.video_ad.in_stream.action_headline",
+  "ad_group_ad.ad.video_ad.media_file",
+  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.out_stream.description",
+  "ad_group_ad.ad.video_ad.out_stream.headline",
+  "ad_group_ad.ad_group",
+  "ad_group_ad.ad_strength",
+  "ad_group_ad.policy_summary",
+  "ad_group_ad.resource_name",
+  "ad_group_ad.status",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "label.id",
+  "label.name",
+  "label.resource_name",
+  "label.status",
+  "label.text_label.background_color",
+  "label.text_label.description",
   "ad_group_ad_label.ad_group_ad",
   "ad_group_ad_label.label",
   "ad_group_ad_label.resource_name",
 ];
 
 export type AdGroupAdLabelField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.call_only_ad.business_name"
+  | "ad_group_ad.ad.call_only_ad.call_tracked"
+  | "ad_group_ad.ad.call_only_ad.conversion_action"
+  | "ad_group_ad.ad.call_only_ad.conversion_reporting_state"
+  | "ad_group_ad.ad.call_only_ad.country_code"
+  | "ad_group_ad.ad.call_only_ad.description1"
+  | "ad_group_ad.ad.call_only_ad.description2"
+  | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.phone_number"
+  | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
+  | "ad_group_ad.ad.device_preference"
+  | "ad_group_ad.ad.display_url"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part1"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part3"
+  | "ad_group_ad.ad.expanded_text_ad.path1"
+  | "ad_group_ad.ad.expanded_text_ad.path2"
+  | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_urls"
+  | "ad_group_ad.ad.gmail_ad.header_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_description"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_headline"
+  | "ad_group_ad.ad.gmail_ad.product_images"
+  | "ad_group_ad.ad.gmail_ad.product_videos"
+  | "ad_group_ad.ad.gmail_ad.teaser.business_name"
+  | "ad_group_ad.ad.gmail_ad.teaser.description"
+  | "ad_group_ad.ad.gmail_ad.teaser.headline"
+  | "ad_group_ad.ad.gmail_ad.teaser.logo_image"
+  | "ad_group_ad.ad.hotel_ad"
+  | "ad_group_ad.ad.id"
+  | "ad_group_ad.ad.image_ad.image_url"
+  | "ad_group_ad.ad.image_ad.mime_type"
+  | "ad_group_ad.ad.image_ad.name"
+  | "ad_group_ad.ad.image_ad.pixel_height"
+  | "ad_group_ad.ad.image_ad.pixel_width"
+  | "ad_group_ad.ad.image_ad.preview_image_url"
+  | "ad_group_ad.ad.image_ad.preview_pixel_height"
+  | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.description"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.main_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_search_ad.descriptions"
+  | "ad_group_ad.ad.responsive_search_ad.headlines"
+  | "ad_group_ad.ad.responsive_search_ad.path1"
+  | "ad_group_ad.ad.responsive_search_ad.path2"
+  | "ad_group_ad.ad.shopping_product_ad"
+  | "ad_group_ad.ad.shopping_smart_ad"
+  | "ad_group_ad.ad.system_managed_resource_source"
+  | "ad_group_ad.ad.text_ad.description1"
+  | "ad_group_ad.ad.text_ad.description2"
+  | "ad_group_ad.ad.text_ad.headline"
+  | "ad_group_ad.ad.tracking_url_template"
+  | "ad_group_ad.ad.type"
+  | "ad_group_ad.ad.url_collections"
+  | "ad_group_ad.ad.url_custom_parameters"
+  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
+  | "ad_group_ad.ad.video_ad.in_stream.action_headline"
+  | "ad_group_ad.ad.video_ad.media_file"
+  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.out_stream.description"
+  | "ad_group_ad.ad.video_ad.out_stream.headline"
+  | "ad_group_ad.ad_group"
+  | "ad_group_ad.ad_strength"
+  | "ad_group_ad.policy_summary"
+  | "ad_group_ad.resource_name"
+  | "ad_group_ad.status"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "label.id"
+  | "label.name"
+  | "label.resource_name"
+  | "label.status"
+  | "label.text_label.background_color"
+  | "label.text_label.description"
   | "ad_group_ad_label.ad_group_ad"
   | "ad_group_ad_label.label"
   | "ad_group_ad_label.resource_name";
@@ -681,9 +1531,354 @@ export type AdGroupAdLabelFields = Array<AdGroupAdLabelField>;
  --- Start of AdGroupAudienceView ---
 */
 // @ts-ignore
-export const ad_group_audience_view = ["ad_group_audience_view.resource_name"];
+export const ad_group_audience_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "ad_group_audience_view.resource_name",
+];
 
-export type AdGroupAudienceViewField = "ad_group_audience_view.resource_name";
+export type AdGroupAudienceViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "ad_group_audience_view.resource_name";
 
 export type AdGroupAudienceViewFields = Array<AdGroupAudienceViewField>;
 
@@ -755,6 +1950,105 @@ export type AdGroupAudienceViewSegments = Array<AdGroupAudienceViewSegment>;
 */
 // @ts-ignore
 export const ad_group_bid_modifier = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "ad_group_bid_modifier.ad_group",
   "ad_group_bid_modifier.base_ad_group",
   "ad_group_bid_modifier.bid_modifier",
@@ -772,6 +2066,105 @@ export const ad_group_bid_modifier = [
 ];
 
 export type AdGroupBidModifierField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "ad_group_bid_modifier.ad_group"
   | "ad_group_bid_modifier.base_ad_group"
   | "ad_group_bid_modifier.bid_modifier"
@@ -798,6 +2191,155 @@ export type AdGroupBidModifierFields = Array<AdGroupBidModifierField>;
 */
 // @ts-ignore
 export const ad_group_criterion = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "mobile_app_category_constant.id",
+  "mobile_app_category_constant.name",
+  "mobile_app_category_constant.resource_name",
+  "topic_constant.id",
+  "topic_constant.path",
+  "topic_constant.resource_name",
+  "topic_constant.topic_constant_parent",
+  "user_interest.availabilities",
+  "user_interest.launched_to_all",
+  "user_interest.name",
+  "user_interest.resource_name",
+  "user_interest.taxonomy_type",
+  "user_interest.user_interest_id",
+  "user_interest.user_interest_parent",
+  "user_list.access_reason",
+  "user_list.account_user_list_status",
+  "user_list.basic_user_list.actions",
+  "user_list.closing_reason",
+  "user_list.crm_based_user_list.app_id",
+  "user_list.crm_based_user_list.data_source_type",
+  "user_list.crm_based_user_list.upload_key_type",
+  "user_list.description",
+  "user_list.eligible_for_display",
+  "user_list.eligible_for_search",
+  "user_list.id",
+  "user_list.integration_code",
+  "user_list.logical_user_list.rules",
+  "user_list.membership_life_span",
+  "user_list.membership_status",
+  "user_list.name",
+  "user_list.read_only",
+  "user_list.resource_name",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.prepopulation_status",
+  "user_list.similar_user_list.seed_user_list",
+  "user_list.size_for_display",
+  "user_list.size_for_search",
+  "user_list.size_range_for_display",
+  "user_list.size_range_for_search",
+  "user_list.type",
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
@@ -873,6 +2415,155 @@ export const ad_group_criterion = [
 ];
 
 export type AdGroupCriterionField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "mobile_app_category_constant.id"
+  | "mobile_app_category_constant.name"
+  | "mobile_app_category_constant.resource_name"
+  | "topic_constant.id"
+  | "topic_constant.path"
+  | "topic_constant.resource_name"
+  | "topic_constant.topic_constant_parent"
+  | "user_interest.availabilities"
+  | "user_interest.launched_to_all"
+  | "user_interest.name"
+  | "user_interest.resource_name"
+  | "user_interest.taxonomy_type"
+  | "user_interest.user_interest_id"
+  | "user_interest.user_interest_parent"
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type"
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
@@ -957,12 +2648,366 @@ export type AdGroupCriterionFields = Array<AdGroupCriterionField>;
 */
 // @ts-ignore
 export const ad_group_criterion_label = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "label.id",
+  "label.name",
+  "label.resource_name",
+  "label.status",
+  "label.text_label.background_color",
+  "label.text_label.description",
   "ad_group_criterion_label.ad_group_criterion",
   "ad_group_criterion_label.label",
   "ad_group_criterion_label.resource_name",
 ];
 
 export type AdGroupCriterionLabelField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "label.id"
+  | "label.name"
+  | "label.resource_name"
+  | "label.status"
+  | "label.text_label.background_color"
+  | "label.text_label.description"
   | "ad_group_criterion_label.ad_group_criterion"
   | "ad_group_criterion_label.label"
   | "ad_group_criterion_label.resource_name";
@@ -978,6 +3023,105 @@ export type AdGroupCriterionLabelFields = Array<AdGroupCriterionLabelField>;
 */
 // @ts-ignore
 export const ad_group_extension_setting = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "ad_group_extension_setting.ad_group",
   "ad_group_extension_setting.device",
   "ad_group_extension_setting.extension_feed_items",
@@ -986,6 +3130,105 @@ export const ad_group_extension_setting = [
 ];
 
 export type AdGroupExtensionSettingField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "ad_group_extension_setting.ad_group"
   | "ad_group_extension_setting.device"
   | "ad_group_extension_setting.extension_feed_items"
@@ -1003,6 +3246,117 @@ export type AdGroupExtensionSettingFields = Array<AdGroupExtensionSettingField>;
 */
 // @ts-ignore
 export const ad_group_feed = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
   "ad_group_feed.ad_group",
   "ad_group_feed.feed",
   "ad_group_feed.matching_function.function_string",
@@ -1015,6 +3369,117 @@ export const ad_group_feed = [
 ];
 
 export type AdGroupFeedField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
   | "ad_group_feed.ad_group"
   | "ad_group_feed.feed"
   | "ad_group_feed.matching_function.function_string"
@@ -1036,12 +3501,222 @@ export type AdGroupFeedFields = Array<AdGroupFeedField>;
 */
 // @ts-ignore
 export const ad_group_label = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "label.id",
+  "label.name",
+  "label.resource_name",
+  "label.status",
+  "label.text_label.background_color",
+  "label.text_label.description",
   "ad_group_label.ad_group",
   "ad_group_label.label",
   "ad_group_label.resource_name",
 ];
 
 export type AdGroupLabelField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "label.id"
+  | "label.name"
+  | "label.resource_name"
+  | "label.status"
+  | "label.text_label.background_color"
+  | "label.text_label.description"
   | "ad_group_label.ad_group"
   | "ad_group_label.label"
   | "ad_group_label.resource_name";
@@ -1056,9 +3731,254 @@ export type AdGroupLabelFields = Array<AdGroupLabelField>;
  --- Start of AdScheduleView ---
 */
 // @ts-ignore
-export const ad_schedule_view = ["ad_schedule_view.resource_name"];
+export const ad_schedule_view = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "campaign_criterion.ad_schedule.day_of_week",
+  "campaign_criterion.ad_schedule.end_hour",
+  "campaign_criterion.ad_schedule.end_minute",
+  "campaign_criterion.ad_schedule.start_hour",
+  "campaign_criterion.ad_schedule.start_minute",
+  "campaign_criterion.age_range.type",
+  "campaign_criterion.bid_modifier",
+  "campaign_criterion.campaign",
+  "campaign_criterion.carrier.carrier_constant",
+  "campaign_criterion.content_label.type",
+  "campaign_criterion.criterion_id",
+  "campaign_criterion.device.type",
+  "campaign_criterion.gender.type",
+  "campaign_criterion.income_range.type",
+  "campaign_criterion.ip_block.ip_address",
+  "campaign_criterion.keyword.match_type",
+  "campaign_criterion.keyword.text",
+  "campaign_criterion.language.language_constant",
+  "campaign_criterion.listing_scope.dimensions",
+  "campaign_criterion.location.geo_target_constant",
+  "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_device.mobile_device_constant",
+  "campaign_criterion.negative",
+  "campaign_criterion.operating_system_version.operating_system_version_constant",
+  "campaign_criterion.parental_status.type",
+  "campaign_criterion.placement.url",
+  "campaign_criterion.proximity.address.city_name",
+  "campaign_criterion.proximity.address.country_code",
+  "campaign_criterion.proximity.address.postal_code",
+  "campaign_criterion.proximity.address.province_code",
+  "campaign_criterion.proximity.address.province_name",
+  "campaign_criterion.proximity.address.street_address",
+  "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees",
+  "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees",
+  "campaign_criterion.proximity.radius",
+  "campaign_criterion.proximity.radius_units",
+  "campaign_criterion.resource_name",
+  "campaign_criterion.topic.path",
+  "campaign_criterion.topic.topic_constant",
+  "campaign_criterion.type",
+  "campaign_criterion.user_interest.user_interest_category",
+  "campaign_criterion.user_list.user_list",
+  "campaign_criterion.webpage.conditions",
+  "campaign_criterion.webpage.criterion_name",
+  "campaign_criterion.youtube_channel.channel_id",
+  "campaign_criterion.youtube_video.video_id",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "ad_schedule_view.resource_name",
+];
 
-export type AdScheduleViewField = "ad_schedule_view.resource_name";
+export type AdScheduleViewField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "campaign_criterion.ad_schedule.day_of_week"
+  | "campaign_criterion.ad_schedule.end_hour"
+  | "campaign_criterion.ad_schedule.end_minute"
+  | "campaign_criterion.ad_schedule.start_hour"
+  | "campaign_criterion.ad_schedule.start_minute"
+  | "campaign_criterion.age_range.type"
+  | "campaign_criterion.bid_modifier"
+  | "campaign_criterion.campaign"
+  | "campaign_criterion.carrier.carrier_constant"
+  | "campaign_criterion.content_label.type"
+  | "campaign_criterion.criterion_id"
+  | "campaign_criterion.device.type"
+  | "campaign_criterion.gender.type"
+  | "campaign_criterion.income_range.type"
+  | "campaign_criterion.ip_block.ip_address"
+  | "campaign_criterion.keyword.match_type"
+  | "campaign_criterion.keyword.text"
+  | "campaign_criterion.language.language_constant"
+  | "campaign_criterion.listing_scope.dimensions"
+  | "campaign_criterion.location.geo_target_constant"
+  | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_device.mobile_device_constant"
+  | "campaign_criterion.negative"
+  | "campaign_criterion.operating_system_version.operating_system_version_constant"
+  | "campaign_criterion.parental_status.type"
+  | "campaign_criterion.placement.url"
+  | "campaign_criterion.proximity.address.city_name"
+  | "campaign_criterion.proximity.address.country_code"
+  | "campaign_criterion.proximity.address.postal_code"
+  | "campaign_criterion.proximity.address.province_code"
+  | "campaign_criterion.proximity.address.province_name"
+  | "campaign_criterion.proximity.address.street_address"
+  | "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees"
+  | "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees"
+  | "campaign_criterion.proximity.radius"
+  | "campaign_criterion.proximity.radius_units"
+  | "campaign_criterion.resource_name"
+  | "campaign_criterion.topic.path"
+  | "campaign_criterion.topic.topic_constant"
+  | "campaign_criterion.type"
+  | "campaign_criterion.user_interest.user_interest_category"
+  | "campaign_criterion.user_list.user_list"
+  | "campaign_criterion.webpage.conditions"
+  | "campaign_criterion.webpage.criterion_name"
+  | "campaign_criterion.youtube_channel.channel_id"
+  | "campaign_criterion.youtube_video.video_id"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "ad_schedule_view.resource_name";
 
 export type AdScheduleViewFields = Array<AdScheduleViewField>;
 
@@ -1121,9 +4041,354 @@ export type AdScheduleViewSegments = Array<AdScheduleViewSegment>;
  --- Start of AgeRangeView ---
 */
 // @ts-ignore
-export const age_range_view = ["age_range_view.resource_name"];
+export const age_range_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "age_range_view.resource_name",
+];
 
-export type AgeRangeViewField = "age_range_view.resource_name";
+export type AgeRangeViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "age_range_view.resource_name";
 
 export type AgeRangeViewFields = Array<AgeRangeViewField>;
 
@@ -1200,6 +4465,23 @@ export type AgeRangeViewSegments = Array<AgeRangeViewSegment>;
 */
 // @ts-ignore
 export const bidding_strategy = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "bidding_strategy.campaign_count",
   "bidding_strategy.enhanced_cpc",
   "bidding_strategy.id",
@@ -1233,6 +4515,23 @@ export const bidding_strategy = [
 ];
 
 export type BiddingStrategyField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "bidding_strategy.campaign_count"
   | "bidding_strategy.enhanced_cpc"
   | "bidding_strategy.id"
@@ -1315,6 +4614,23 @@ export type BiddingStrategySegments = Array<BiddingStrategySegment>;
 */
 // @ts-ignore
 export const billing_setup = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "billing_setup.end_date_time",
   "billing_setup.end_time_type",
   "billing_setup.id",
@@ -1330,6 +4646,23 @@ export const billing_setup = [
 ];
 
 export type BillingSetupField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "billing_setup.end_date_time"
   | "billing_setup.end_time_type"
   | "billing_setup.id"
@@ -1354,6 +4687,69 @@ export type BillingSetupFields = Array<BillingSetupField>;
 */
 // @ts-ignore
 export const campaign = [
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.page_one_promoted.bid_modifier",
+  "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros",
+  "bidding_strategy.page_one_promoted.only_raise_cpc_bids",
+  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained",
+  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low",
+  "bidding_strategy.page_one_promoted.strategy_goal",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_outrank_share.competitor_domain",
+  "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_outrank_share.only_raise_cpc_bids",
+  "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low",
+  "bidding_strategy.target_outrank_share.target_outrank_share_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
+  "campaign_budget.amount_micros",
+  "campaign_budget.delivery_method",
+  "campaign_budget.explicitly_shared",
+  "campaign_budget.has_recommended_budget",
+  "campaign_budget.id",
+  "campaign_budget.name",
+  "campaign_budget.period",
+  "campaign_budget.recommended_budget_amount_micros",
+  "campaign_budget.recommended_budget_estimated_change_weekly_clicks",
+  "campaign_budget.recommended_budget_estimated_change_weekly_cost_micros",
+  "campaign_budget.recommended_budget_estimated_change_weekly_interactions",
+  "campaign_budget.recommended_budget_estimated_change_weekly_views",
+  "campaign_budget.reference_count",
+  "campaign_budget.resource_name",
+  "campaign_budget.status",
+  "campaign_budget.total_amount_micros",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -1415,6 +4811,69 @@ export const campaign = [
 ];
 
 export type CampaignField =
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.page_one_promoted.bid_modifier"
+  | "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros"
+  | "bidding_strategy.page_one_promoted.only_raise_cpc_bids"
+  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained"
+  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low"
+  | "bidding_strategy.page_one_promoted.strategy_goal"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_outrank_share.competitor_domain"
+  | "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_outrank_share.only_raise_cpc_bids"
+  | "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low"
+  | "bidding_strategy.target_outrank_share.target_outrank_share_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
+  | "campaign_budget.amount_micros"
+  | "campaign_budget.delivery_method"
+  | "campaign_budget.explicitly_shared"
+  | "campaign_budget.has_recommended_budget"
+  | "campaign_budget.id"
+  | "campaign_budget.name"
+  | "campaign_budget.period"
+  | "campaign_budget.recommended_budget_amount_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_clicks"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_cost_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_interactions"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_views"
+  | "campaign_budget.reference_count"
+  | "campaign_budget.resource_name"
+  | "campaign_budget.status"
+  | "campaign_budget.total_amount_micros"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -1590,9 +5049,254 @@ export type CampaignSegments = Array<CampaignSegment>;
  --- Start of CampaignAudienceView ---
 */
 // @ts-ignore
-export const campaign_audience_view = ["campaign_audience_view.resource_name"];
+export const campaign_audience_view = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "campaign_criterion.ad_schedule.day_of_week",
+  "campaign_criterion.ad_schedule.end_hour",
+  "campaign_criterion.ad_schedule.end_minute",
+  "campaign_criterion.ad_schedule.start_hour",
+  "campaign_criterion.ad_schedule.start_minute",
+  "campaign_criterion.age_range.type",
+  "campaign_criterion.bid_modifier",
+  "campaign_criterion.campaign",
+  "campaign_criterion.carrier.carrier_constant",
+  "campaign_criterion.content_label.type",
+  "campaign_criterion.criterion_id",
+  "campaign_criterion.device.type",
+  "campaign_criterion.gender.type",
+  "campaign_criterion.income_range.type",
+  "campaign_criterion.ip_block.ip_address",
+  "campaign_criterion.keyword.match_type",
+  "campaign_criterion.keyword.text",
+  "campaign_criterion.language.language_constant",
+  "campaign_criterion.listing_scope.dimensions",
+  "campaign_criterion.location.geo_target_constant",
+  "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_device.mobile_device_constant",
+  "campaign_criterion.negative",
+  "campaign_criterion.operating_system_version.operating_system_version_constant",
+  "campaign_criterion.parental_status.type",
+  "campaign_criterion.placement.url",
+  "campaign_criterion.proximity.address.city_name",
+  "campaign_criterion.proximity.address.country_code",
+  "campaign_criterion.proximity.address.postal_code",
+  "campaign_criterion.proximity.address.province_code",
+  "campaign_criterion.proximity.address.province_name",
+  "campaign_criterion.proximity.address.street_address",
+  "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees",
+  "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees",
+  "campaign_criterion.proximity.radius",
+  "campaign_criterion.proximity.radius_units",
+  "campaign_criterion.resource_name",
+  "campaign_criterion.topic.path",
+  "campaign_criterion.topic.topic_constant",
+  "campaign_criterion.type",
+  "campaign_criterion.user_interest.user_interest_category",
+  "campaign_criterion.user_list.user_list",
+  "campaign_criterion.webpage.conditions",
+  "campaign_criterion.webpage.criterion_name",
+  "campaign_criterion.youtube_channel.channel_id",
+  "campaign_criterion.youtube_video.video_id",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "campaign_audience_view.resource_name",
+];
 
-export type CampaignAudienceViewField = "campaign_audience_view.resource_name";
+export type CampaignAudienceViewField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "campaign_criterion.ad_schedule.day_of_week"
+  | "campaign_criterion.ad_schedule.end_hour"
+  | "campaign_criterion.ad_schedule.end_minute"
+  | "campaign_criterion.ad_schedule.start_hour"
+  | "campaign_criterion.ad_schedule.start_minute"
+  | "campaign_criterion.age_range.type"
+  | "campaign_criterion.bid_modifier"
+  | "campaign_criterion.campaign"
+  | "campaign_criterion.carrier.carrier_constant"
+  | "campaign_criterion.content_label.type"
+  | "campaign_criterion.criterion_id"
+  | "campaign_criterion.device.type"
+  | "campaign_criterion.gender.type"
+  | "campaign_criterion.income_range.type"
+  | "campaign_criterion.ip_block.ip_address"
+  | "campaign_criterion.keyword.match_type"
+  | "campaign_criterion.keyword.text"
+  | "campaign_criterion.language.language_constant"
+  | "campaign_criterion.listing_scope.dimensions"
+  | "campaign_criterion.location.geo_target_constant"
+  | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_device.mobile_device_constant"
+  | "campaign_criterion.negative"
+  | "campaign_criterion.operating_system_version.operating_system_version_constant"
+  | "campaign_criterion.parental_status.type"
+  | "campaign_criterion.placement.url"
+  | "campaign_criterion.proximity.address.city_name"
+  | "campaign_criterion.proximity.address.country_code"
+  | "campaign_criterion.proximity.address.postal_code"
+  | "campaign_criterion.proximity.address.province_code"
+  | "campaign_criterion.proximity.address.province_name"
+  | "campaign_criterion.proximity.address.street_address"
+  | "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees"
+  | "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees"
+  | "campaign_criterion.proximity.radius"
+  | "campaign_criterion.proximity.radius_units"
+  | "campaign_criterion.resource_name"
+  | "campaign_criterion.topic.path"
+  | "campaign_criterion.topic.topic_constant"
+  | "campaign_criterion.type"
+  | "campaign_criterion.user_interest.user_interest_category"
+  | "campaign_criterion.user_list.user_list"
+  | "campaign_criterion.webpage.conditions"
+  | "campaign_criterion.webpage.criterion_name"
+  | "campaign_criterion.youtube_channel.channel_id"
+  | "campaign_criterion.youtube_video.video_id"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "campaign_audience_view.resource_name";
 
 export type CampaignAudienceViewFields = Array<CampaignAudienceViewField>;
 
@@ -1661,6 +5365,81 @@ export type CampaignAudienceViewSegments = Array<CampaignAudienceViewSegment>;
 */
 // @ts-ignore
 export const campaign_bid_modifier = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "campaign_bid_modifier.bid_modifier",
   "campaign_bid_modifier.campaign",
   "campaign_bid_modifier.criterion_id",
@@ -1669,6 +5448,81 @@ export const campaign_bid_modifier = [
 ];
 
 export type CampaignBidModifierField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "campaign_bid_modifier.bid_modifier"
   | "campaign_bid_modifier.campaign"
   | "campaign_bid_modifier.criterion_id"
@@ -1690,6 +5544,81 @@ export type CampaignBidModifierMetrics = Array<CampaignBidModifierMetric>;
 */
 // @ts-ignore
 export const campaign_budget = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "campaign_budget.amount_micros",
   "campaign_budget.delivery_method",
   "campaign_budget.explicitly_shared",
@@ -1709,6 +5638,81 @@ export const campaign_budget = [
 ];
 
 export type CampaignBudgetField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "campaign_budget.amount_micros"
   | "campaign_budget.delivery_method"
   | "campaign_budget.explicitly_shared"
@@ -1774,6 +5778,152 @@ export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
 */
 // @ts-ignore
 export const campaign_criterion = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "carrier_constant.country_code",
+  "carrier_constant.id",
+  "carrier_constant.name",
+  "carrier_constant.resource_name",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "language_constant.code",
+  "language_constant.id",
+  "language_constant.name",
+  "language_constant.resource_name",
+  "language_constant.targetable",
+  "mobile_app_category_constant.id",
+  "mobile_app_category_constant.name",
+  "mobile_app_category_constant.resource_name",
+  "mobile_device_constant.id",
+  "mobile_device_constant.manufacturer_name",
+  "mobile_device_constant.name",
+  "mobile_device_constant.operating_system_name",
+  "mobile_device_constant.resource_name",
+  "mobile_device_constant.type",
+  "operating_system_version_constant.id",
+  "operating_system_version_constant.name",
+  "operating_system_version_constant.operator_type",
+  "operating_system_version_constant.os_major_version",
+  "operating_system_version_constant.os_minor_version",
+  "operating_system_version_constant.resource_name",
+  "topic_constant.id",
+  "topic_constant.path",
+  "topic_constant.resource_name",
+  "topic_constant.topic_constant_parent",
+  "user_interest.availabilities",
+  "user_interest.launched_to_all",
+  "user_interest.name",
+  "user_interest.resource_name",
+  "user_interest.taxonomy_type",
+  "user_interest.user_interest_id",
+  "user_interest.user_interest_parent",
+  "user_list.access_reason",
+  "user_list.account_user_list_status",
+  "user_list.basic_user_list.actions",
+  "user_list.closing_reason",
+  "user_list.crm_based_user_list.app_id",
+  "user_list.crm_based_user_list.data_source_type",
+  "user_list.crm_based_user_list.upload_key_type",
+  "user_list.description",
+  "user_list.eligible_for_display",
+  "user_list.eligible_for_search",
+  "user_list.id",
+  "user_list.integration_code",
+  "user_list.logical_user_list.rules",
+  "user_list.membership_life_span",
+  "user_list.membership_status",
+  "user_list.name",
+  "user_list.read_only",
+  "user_list.resource_name",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.prepopulation_status",
+  "user_list.similar_user_list.seed_user_list",
+  "user_list.size_for_display",
+  "user_list.size_for_search",
+  "user_list.size_range_for_display",
+  "user_list.size_range_for_search",
+  "user_list.type",
   "campaign_criterion.ad_schedule.day_of_week",
   "campaign_criterion.ad_schedule.end_hour",
   "campaign_criterion.ad_schedule.end_minute",
@@ -1823,6 +5973,152 @@ export const campaign_criterion = [
 ];
 
 export type CampaignCriterionField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "carrier_constant.country_code"
+  | "carrier_constant.id"
+  | "carrier_constant.name"
+  | "carrier_constant.resource_name"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "language_constant.code"
+  | "language_constant.id"
+  | "language_constant.name"
+  | "language_constant.resource_name"
+  | "language_constant.targetable"
+  | "mobile_app_category_constant.id"
+  | "mobile_app_category_constant.name"
+  | "mobile_app_category_constant.resource_name"
+  | "mobile_device_constant.id"
+  | "mobile_device_constant.manufacturer_name"
+  | "mobile_device_constant.name"
+  | "mobile_device_constant.operating_system_name"
+  | "mobile_device_constant.resource_name"
+  | "mobile_device_constant.type"
+  | "operating_system_version_constant.id"
+  | "operating_system_version_constant.name"
+  | "operating_system_version_constant.operator_type"
+  | "operating_system_version_constant.os_major_version"
+  | "operating_system_version_constant.os_minor_version"
+  | "operating_system_version_constant.resource_name"
+  | "topic_constant.id"
+  | "topic_constant.path"
+  | "topic_constant.resource_name"
+  | "topic_constant.topic_constant_parent"
+  | "user_interest.availabilities"
+  | "user_interest.launched_to_all"
+  | "user_interest.name"
+  | "user_interest.resource_name"
+  | "user_interest.taxonomy_type"
+  | "user_interest.user_interest_id"
+  | "user_interest.user_interest_parent"
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type"
   | "campaign_criterion.ad_schedule.day_of_week"
   | "campaign_criterion.ad_schedule.end_hour"
   | "campaign_criterion.ad_schedule.end_minute"
@@ -1881,6 +6177,81 @@ export type CampaignCriterionFields = Array<CampaignCriterionField>;
 */
 // @ts-ignore
 export const campaign_extension_setting = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "campaign_extension_setting.campaign",
   "campaign_extension_setting.device",
   "campaign_extension_setting.extension_feed_items",
@@ -1889,6 +6260,81 @@ export const campaign_extension_setting = [
 ];
 
 export type CampaignExtensionSettingField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "campaign_extension_setting.campaign"
   | "campaign_extension_setting.device"
   | "campaign_extension_setting.extension_feed_items"
@@ -1906,6 +6352,93 @@ export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField
 */
 // @ts-ignore
 export const campaign_feed = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
   "campaign_feed.campaign",
   "campaign_feed.feed",
   "campaign_feed.matching_function.function_string",
@@ -1918,6 +6451,93 @@ export const campaign_feed = [
 ];
 
 export type CampaignFeedField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
   | "campaign_feed.campaign"
   | "campaign_feed.feed"
   | "campaign_feed.matching_function.function_string"
@@ -1939,12 +6559,174 @@ export type CampaignFeedFields = Array<CampaignFeedField>;
 */
 // @ts-ignore
 export const campaign_label = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "label.id",
+  "label.name",
+  "label.resource_name",
+  "label.status",
+  "label.text_label.background_color",
+  "label.text_label.description",
   "campaign_label.campaign",
   "campaign_label.label",
   "campaign_label.resource_name",
 ];
 
 export type CampaignLabelField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "label.id"
+  | "label.name"
+  | "label.resource_name"
+  | "label.status"
+  | "label.text_label.background_color"
+  | "label.text_label.description"
   | "campaign_label.campaign"
   | "campaign_label.label"
   | "campaign_label.resource_name";
@@ -1960,6 +6742,88 @@ export type CampaignLabelFields = Array<CampaignLabelField>;
 */
 // @ts-ignore
 export const campaign_shared_set = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "shared_set.id",
+  "shared_set.member_count",
+  "shared_set.name",
+  "shared_set.reference_count",
+  "shared_set.resource_name",
+  "shared_set.status",
+  "shared_set.type",
   "campaign_shared_set.campaign",
   "campaign_shared_set.resource_name",
   "campaign_shared_set.shared_set",
@@ -1967,6 +6831,88 @@ export const campaign_shared_set = [
 ];
 
 export type CampaignSharedSetField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "shared_set.id"
+  | "shared_set.member_count"
+  | "shared_set.name"
+  | "shared_set.reference_count"
+  | "shared_set.resource_name"
+  | "shared_set.status"
+  | "shared_set.type"
   | "campaign_shared_set.campaign"
   | "campaign_shared_set.resource_name"
   | "campaign_shared_set.shared_set"
@@ -2006,6 +6952,127 @@ export type CarrierConstantFields = Array<CarrierConstantField>;
 */
 // @ts-ignore
 export const change_status = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
+  "feed_item.attribute_values",
+  "feed_item.end_date_time",
+  "feed_item.feed",
+  "feed_item.geo_targeting_restriction",
+  "feed_item.id",
+  "feed_item.policy_infos",
+  "feed_item.resource_name",
+  "feed_item.start_date_time",
+  "feed_item.status",
+  "feed_item.url_custom_parameters",
   "change_status.ad_group",
   "change_status.ad_group_ad",
   "change_status.ad_group_bid_modifier",
@@ -2023,6 +7090,127 @@ export const change_status = [
 ];
 
 export type ChangeStatusField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
+  | "feed_item.attribute_values"
+  | "feed_item.end_date_time"
+  | "feed_item.feed"
+  | "feed_item.geo_targeting_restriction"
+  | "feed_item.id"
+  | "feed_item.policy_infos"
+  | "feed_item.resource_name"
+  | "feed_item.start_date_time"
+  | "feed_item.status"
+  | "feed_item.url_custom_parameters"
   | "change_status.ad_group"
   | "change_status.ad_group_ad"
   | "change_status.ad_group_bid_modifier"
@@ -2049,6 +7237,105 @@ export type ChangeStatusFields = Array<ChangeStatusField>;
 */
 // @ts-ignore
 export const click_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "click_view.area_of_interest.city",
   "click_view.area_of_interest.country",
   "click_view.area_of_interest.metro",
@@ -2065,6 +7352,105 @@ export const click_view = [
 ];
 
 export type ClickViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "click_view.area_of_interest.city"
   | "click_view.area_of_interest.country"
   | "click_view.area_of_interest.metro"
@@ -2106,6 +7492,23 @@ export type ClickViewSegments = Array<ClickViewSegment>;
 */
 // @ts-ignore
 export const conversion_action = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "conversion_action.app_id",
   "conversion_action.attribution_model_settings.attribution_model",
   "conversion_action.attribution_model_settings.data_driven_model_status",
@@ -2128,6 +7531,23 @@ export const conversion_action = [
 ];
 
 export type ConversionActionField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "conversion_action.app_id"
   | "conversion_action.attribution_model_settings.attribution_model"
   | "conversion_action.attribution_model_settings.data_driven_model_status"
@@ -2159,6 +7579,23 @@ export type ConversionActionFields = Array<ConversionActionField>;
 */
 // @ts-ignore
 export const custom_interest = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "custom_interest.description",
   "custom_interest.id",
   "custom_interest.members",
@@ -2169,6 +7606,23 @@ export const custom_interest = [
 ];
 
 export type CustomInterestField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "custom_interest.description"
   | "custom_interest.id"
   | "custom_interest.members"
@@ -2309,6 +7763,23 @@ export type CustomerSegments = Array<CustomerSegment>;
 */
 // @ts-ignore
 export const customer_client = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "customer_client.client_customer",
   "customer_client.hidden",
   "customer_client.level",
@@ -2316,6 +7787,23 @@ export const customer_client = [
 ];
 
 export type CustomerClientField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "customer_client.client_customer"
   | "customer_client.hidden"
   | "customer_client.level"
@@ -2332,6 +7820,23 @@ export type CustomerClientFields = Array<CustomerClientField>;
 */
 // @ts-ignore
 export const customer_client_link = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "customer_client_link.client_customer",
   "customer_client_link.hidden",
   "customer_client_link.manager_link_id",
@@ -2340,6 +7845,23 @@ export const customer_client_link = [
 ];
 
 export type CustomerClientLinkField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "customer_client_link.client_customer"
   | "customer_client_link.hidden"
   | "customer_client_link.manager_link_id"
@@ -2357,6 +7879,23 @@ export type CustomerClientLinkFields = Array<CustomerClientLinkField>;
 */
 // @ts-ignore
 export const customer_extension_setting = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "customer_extension_setting.device",
   "customer_extension_setting.extension_feed_items",
   "customer_extension_setting.extension_type",
@@ -2364,6 +7903,23 @@ export const customer_extension_setting = [
 ];
 
 export type CustomerExtensionSettingField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "customer_extension_setting.device"
   | "customer_extension_setting.extension_feed_items"
   | "customer_extension_setting.extension_type"
@@ -2380,6 +7936,35 @@ export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField
 */
 // @ts-ignore
 export const customer_feed = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
   "customer_feed.feed",
   "customer_feed.matching_function.function_string",
   "customer_feed.matching_function.left_operands",
@@ -2391,6 +7976,35 @@ export const customer_feed = [
 ];
 
 export type CustomerFeedField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
   | "customer_feed.feed"
   | "customer_feed.matching_function.function_string"
   | "customer_feed.matching_function.left_operands"
@@ -2411,12 +8025,46 @@ export type CustomerFeedFields = Array<CustomerFeedField>;
 */
 // @ts-ignore
 export const customer_label = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "customer_label.customer",
   "customer_label.label",
   "customer_label.resource_name",
 ];
 
 export type CustomerLabelField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "customer_label.customer"
   | "customer_label.label"
   | "customer_label.resource_name";
@@ -2432,6 +8080,23 @@ export type CustomerLabelFields = Array<CustomerLabelField>;
 */
 // @ts-ignore
 export const customer_manager_link = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "customer_manager_link.manager_customer",
   "customer_manager_link.manager_link_id",
   "customer_manager_link.resource_name",
@@ -2439,6 +8104,23 @@ export const customer_manager_link = [
 ];
 
 export type CustomerManagerLinkField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "customer_manager_link.manager_customer"
   | "customer_manager_link.manager_link_id"
   | "customer_manager_link.resource_name"
@@ -2455,6 +8137,26 @@ export type CustomerManagerLinkFields = Array<CustomerManagerLinkField>;
 */
 // @ts-ignore
 export const customer_negative_criterion = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "mobile_app_category_constant.id",
+  "mobile_app_category_constant.name",
+  "mobile_app_category_constant.resource_name",
   "customer_negative_criterion.content_label.type",
   "customer_negative_criterion.id",
   "customer_negative_criterion.mobile_app_category.mobile_app_category_constant",
@@ -2467,6 +8169,26 @@ export const customer_negative_criterion = [
 ];
 
 export type CustomerNegativeCriterionField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "mobile_app_category_constant.id"
+  | "mobile_app_category_constant.name"
+  | "mobile_app_category_constant.resource_name"
   | "customer_negative_criterion.content_label.type"
   | "customer_negative_criterion.id"
   | "customer_negative_criterion.mobile_app_category.mobile_app_category_constant"
@@ -2488,6 +8210,105 @@ export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionFie
 */
 // @ts-ignore
 export const detail_placement_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "detail_placement_view.display_name",
   "detail_placement_view.group_placement_target_url",
   "detail_placement_view.placement",
@@ -2497,6 +8318,105 @@ export const detail_placement_view = [
 ];
 
 export type DetailPlacementViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "detail_placement_view.display_name"
   | "detail_placement_view.group_placement_target_url"
   | "detail_placement_view.placement"
@@ -2531,9 +8451,354 @@ export type DetailPlacementViewSegments = Array<DetailPlacementViewSegment>;
  --- Start of DisplayKeywordView ---
 */
 // @ts-ignore
-export const display_keyword_view = ["display_keyword_view.resource_name"];
+export const display_keyword_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "display_keyword_view.resource_name",
+];
 
-export type DisplayKeywordViewField = "display_keyword_view.resource_name";
+export type DisplayKeywordViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "display_keyword_view.resource_name";
 
 export type DisplayKeywordViewFields = Array<DisplayKeywordViewField>;
 
@@ -2611,6 +8876,81 @@ export type DisplayKeywordViewSegments = Array<DisplayKeywordViewSegment>;
 */
 // @ts-ignore
 export const domain_category = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "domain_category.campaign",
   "domain_category.category",
   "domain_category.category_rank",
@@ -2623,6 +8963,81 @@ export const domain_category = [
 ];
 
 export type DomainCategoryField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "domain_category.campaign"
   | "domain_category.category"
   | "domain_category.category_rank"
@@ -2644,6 +9059,105 @@ export type DomainCategoryFields = Array<DomainCategoryField>;
 */
 // @ts-ignore
 export const dynamic_search_ads_search_term_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "dynamic_search_ads_search_term_view.headline",
   "dynamic_search_ads_search_term_view.landing_page",
   "dynamic_search_ads_search_term_view.page_url",
@@ -2652,6 +9166,105 @@ export const dynamic_search_ads_search_term_view = [
 ];
 
 export type DynamicSearchAdsSearchTermViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "dynamic_search_ads_search_term_view.headline"
   | "dynamic_search_ads_search_term_view.landing_page"
   | "dynamic_search_ads_search_term_view.page_url"
@@ -2705,6 +9318,105 @@ export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearc
 */
 // @ts-ignore
 export const extension_feed_item = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "extension_feed_item.app_feed_item.app_id",
   "extension_feed_item.app_feed_item.app_store",
   "extension_feed_item.app_feed_item.final_mobile_urls",
@@ -2762,6 +9474,105 @@ export const extension_feed_item = [
 ];
 
 export type ExtensionFeedItemField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "extension_feed_item.app_feed_item.app_id"
   | "extension_feed_item.app_feed_item.app_store"
   | "extension_feed_item.app_feed_item.final_mobile_urls"
@@ -2874,6 +9685,23 @@ export type ExtensionFeedItemSegments = Array<ExtensionFeedItemSegment>;
 */
 // @ts-ignore
 export const feed = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "feed.affiliate_location_feed_data.chain_ids",
   "feed.affiliate_location_feed_data.relationship_type",
   "feed.attributes",
@@ -2889,6 +9717,23 @@ export const feed = [
 ];
 
 export type FeedField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "feed.affiliate_location_feed_data.chain_ids"
   | "feed.affiliate_location_feed_data.relationship_type"
   | "feed.attributes"
@@ -2913,6 +9758,117 @@ export type FeedFields = Array<FeedField>;
 */
 // @ts-ignore
 export const feed_item = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
   "feed_item.attribute_values",
   "feed_item.end_date_time",
   "feed_item.feed",
@@ -2926,6 +9882,117 @@ export const feed_item = [
 ];
 
 export type FeedItemField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
   | "feed_item.attribute_values"
   | "feed_item.end_date_time"
   | "feed_item.feed"
@@ -3002,6 +10069,127 @@ export type FeedItemSegments = Array<FeedItemSegment>;
 */
 // @ts-ignore
 export const feed_item_target = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
+  "feed_item.attribute_values",
+  "feed_item.end_date_time",
+  "feed_item.feed",
+  "feed_item.geo_targeting_restriction",
+  "feed_item.id",
+  "feed_item.policy_infos",
+  "feed_item.resource_name",
+  "feed_item.start_date_time",
+  "feed_item.status",
+  "feed_item.url_custom_parameters",
   "feed_item_target.ad_group",
   "feed_item_target.ad_schedule",
   "feed_item_target.ad_schedule.day_of_week",
@@ -3017,6 +10205,127 @@ export const feed_item_target = [
 ];
 
 export type FeedItemTargetField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
+  | "feed_item.attribute_values"
+  | "feed_item.end_date_time"
+  | "feed_item.feed"
+  | "feed_item.geo_targeting_restriction"
+  | "feed_item.id"
+  | "feed_item.policy_infos"
+  | "feed_item.resource_name"
+  | "feed_item.start_date_time"
+  | "feed_item.status"
+  | "feed_item.url_custom_parameters"
   | "feed_item_target.ad_group"
   | "feed_item_target.ad_schedule"
   | "feed_item_target.ad_schedule.day_of_week"
@@ -3041,6 +10350,35 @@ export type FeedItemTargetFields = Array<FeedItemTargetField>;
 */
 // @ts-ignore
 export const feed_mapping = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "feed.affiliate_location_feed_data.chain_ids",
+  "feed.affiliate_location_feed_data.relationship_type",
+  "feed.attributes",
+  "feed.id",
+  "feed.name",
+  "feed.origin",
+  "feed.places_location_feed_data.business_name_filter",
+  "feed.places_location_feed_data.category_filters",
+  "feed.places_location_feed_data.email_address",
+  "feed.places_location_feed_data.label_filters",
+  "feed.resource_name",
+  "feed.status",
   "feed_mapping.attribute_field_mappings",
   "feed_mapping.criterion_type",
   "feed_mapping.feed",
@@ -3050,6 +10388,35 @@ export const feed_mapping = [
 ];
 
 export type FeedMappingField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "feed.affiliate_location_feed_data.chain_ids"
+  | "feed.affiliate_location_feed_data.relationship_type"
+  | "feed.attributes"
+  | "feed.id"
+  | "feed.name"
+  | "feed.origin"
+  | "feed.places_location_feed_data.business_name_filter"
+  | "feed.places_location_feed_data.category_filters"
+  | "feed.places_location_feed_data.email_address"
+  | "feed.places_location_feed_data.label_filters"
+  | "feed.resource_name"
+  | "feed.status"
   | "feed_mapping.attribute_field_mappings"
   | "feed_mapping.criterion_type"
   | "feed_mapping.feed"
@@ -3068,11 +10435,45 @@ export type FeedMappingFields = Array<FeedMappingField>;
 */
 // @ts-ignore
 export const feed_placeholder_view = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "feed_placeholder_view.placeholder_type",
   "feed_placeholder_view.resource_name",
 ];
 
 export type FeedPlaceholderViewField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "feed_placeholder_view.placeholder_type"
   | "feed_placeholder_view.resource_name";
 
@@ -3138,9 +10539,354 @@ export type FeedPlaceholderViewSegments = Array<FeedPlaceholderViewSegment>;
  --- Start of GenderView ---
 */
 // @ts-ignore
-export const gender_view = ["gender_view.resource_name"];
+export const gender_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "gender_view.resource_name",
+];
 
-export type GenderViewField = "gender_view.resource_name";
+export type GenderViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "gender_view.resource_name";
 
 export type GenderViewFields = Array<GenderViewField>;
 
@@ -3247,12 +10993,210 @@ export type GeoTargetConstantFields = Array<GeoTargetConstantField>;
 */
 // @ts-ignore
 export const geographic_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "geographic_view.country_geo_target_constant",
   "geographic_view.location_type",
   "geographic_view.resource_name",
 ];
 
 export type GeographicViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "geographic_view.country_geo_target_constant"
   | "geographic_view.location_type"
   | "geographic_view.resource_name";
@@ -3316,6 +11260,105 @@ export type GeographicViewSegments = Array<GeographicViewSegment>;
 */
 // @ts-ignore
 export const group_placement_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "group_placement_view.display_name",
   "group_placement_view.placement",
   "group_placement_view.placement_type",
@@ -3324,6 +11367,105 @@ export const group_placement_view = [
 ];
 
 export type GroupPlacementViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "group_placement_view.display_name"
   | "group_placement_view.placement"
   | "group_placement_view.placement_type"
@@ -3392,9 +11534,354 @@ export type GroupPlacementViewSegments = Array<GroupPlacementViewSegment>;
  --- Start of HotelGroupView ---
 */
 // @ts-ignore
-export const hotel_group_view = ["hotel_group_view.resource_name"];
+export const hotel_group_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "hotel_group_view.resource_name",
+];
 
-export type HotelGroupViewField = "hotel_group_view.resource_name";
+export type HotelGroupViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "hotel_group_view.resource_name";
 
 export type HotelGroupViewFields = Array<HotelGroupViewField>;
 
@@ -3429,9 +11916,176 @@ export type HotelGroupViewSegments = Array<HotelGroupViewSegment>;
  --- Start of HotelPerformanceView ---
 */
 // @ts-ignore
-export const hotel_performance_view = ["hotel_performance_view.resource_name"];
+export const hotel_performance_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "hotel_performance_view.resource_name",
+];
 
-export type HotelPerformanceViewField = "hotel_performance_view.resource_name";
+export type HotelPerformanceViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "hotel_performance_view.resource_name";
 
 export type HotelPerformanceViewFields = Array<HotelPerformanceViewField>;
 
@@ -3483,6 +12137,23 @@ export type HotelPerformanceViewSegments = Array<HotelPerformanceViewSegment>;
 */
 // @ts-ignore
 export const keyword_plan = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "keyword_plan.forecast_period",
   "keyword_plan.id",
   "keyword_plan.name",
@@ -3490,6 +12161,23 @@ export const keyword_plan = [
 ];
 
 export type KeywordPlanField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "keyword_plan.forecast_period"
   | "keyword_plan.id"
   | "keyword_plan.name"
@@ -3506,6 +12194,35 @@ export type KeywordPlanFields = Array<KeywordPlanField>;
 */
 // @ts-ignore
 export const keyword_plan_ad_group = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
   "keyword_plan_ad_group.cpc_bid_micros",
   "keyword_plan_ad_group.id",
   "keyword_plan_ad_group.keyword_plan_campaign",
@@ -3514,6 +12231,35 @@ export const keyword_plan_ad_group = [
 ];
 
 export type KeywordPlanAdGroupField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
   | "keyword_plan_ad_group.cpc_bid_micros"
   | "keyword_plan_ad_group.id"
   | "keyword_plan_ad_group.keyword_plan_campaign"
@@ -3531,6 +12277,27 @@ export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
 */
 // @ts-ignore
 export const keyword_plan_campaign = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
   "keyword_plan_campaign.cpc_bid_micros",
   "keyword_plan_campaign.geo_targets",
   "keyword_plan_campaign.id",
@@ -3542,6 +12309,27 @@ export const keyword_plan_campaign = [
 ];
 
 export type KeywordPlanCampaignField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
   | "keyword_plan_campaign.cpc_bid_micros"
   | "keyword_plan_campaign.geo_targets"
   | "keyword_plan_campaign.id"
@@ -3562,6 +12350,40 @@ export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
 */
 // @ts-ignore
 export const keyword_plan_keyword = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_ad_group.cpc_bid_micros",
+  "keyword_plan_ad_group.id",
+  "keyword_plan_ad_group.keyword_plan_campaign",
+  "keyword_plan_ad_group.name",
+  "keyword_plan_ad_group.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
   "keyword_plan_keyword.cpc_bid_micros",
   "keyword_plan_keyword.id",
   "keyword_plan_keyword.keyword_plan_ad_group",
@@ -3571,6 +12393,40 @@ export const keyword_plan_keyword = [
 ];
 
 export type KeywordPlanKeywordField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_ad_group.cpc_bid_micros"
+  | "keyword_plan_ad_group.id"
+  | "keyword_plan_ad_group.keyword_plan_campaign"
+  | "keyword_plan_ad_group.name"
+  | "keyword_plan_ad_group.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
   | "keyword_plan_keyword.cpc_bid_micros"
   | "keyword_plan_keyword.id"
   | "keyword_plan_keyword.keyword_plan_ad_group"
@@ -3589,6 +12445,35 @@ export type KeywordPlanKeywordFields = Array<KeywordPlanKeywordField>;
 */
 // @ts-ignore
 export const keyword_plan_negative_keyword = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
   "keyword_plan_negative_keyword.id",
   "keyword_plan_negative_keyword.keyword_plan_campaign",
   "keyword_plan_negative_keyword.match_type",
@@ -3597,6 +12482,35 @@ export const keyword_plan_negative_keyword = [
 ];
 
 export type KeywordPlanNegativeKeywordField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
   | "keyword_plan_negative_keyword.id"
   | "keyword_plan_negative_keyword.keyword_plan_campaign"
   | "keyword_plan_negative_keyword.match_type"
@@ -3613,9 +12527,354 @@ export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordF
  --- Start of KeywordView ---
 */
 // @ts-ignore
-export const keyword_view = ["keyword_view.resource_name"];
+export const keyword_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_view.resource_name",
+];
 
-export type KeywordViewField = "keyword_view.resource_name";
+export type KeywordViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_view.resource_name";
 
 export type KeywordViewFields = Array<KeywordViewField>;
 
@@ -3721,6 +12980,23 @@ export type KeywordViewSegments = Array<KeywordViewSegment>;
 */
 // @ts-ignore
 export const label = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "label.id",
   "label.name",
   "label.resource_name",
@@ -3730,6 +13006,23 @@ export const label = [
 ];
 
 export type LabelField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "label.id"
   | "label.name"
   | "label.resource_name"
@@ -3772,9 +13065,254 @@ export type LanguageConstantFields = Array<LanguageConstantField>;
  --- Start of LocationView ---
 */
 // @ts-ignore
-export const location_view = ["location_view.resource_name"];
+export const location_view = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "campaign_criterion.ad_schedule.day_of_week",
+  "campaign_criterion.ad_schedule.end_hour",
+  "campaign_criterion.ad_schedule.end_minute",
+  "campaign_criterion.ad_schedule.start_hour",
+  "campaign_criterion.ad_schedule.start_minute",
+  "campaign_criterion.age_range.type",
+  "campaign_criterion.bid_modifier",
+  "campaign_criterion.campaign",
+  "campaign_criterion.carrier.carrier_constant",
+  "campaign_criterion.content_label.type",
+  "campaign_criterion.criterion_id",
+  "campaign_criterion.device.type",
+  "campaign_criterion.gender.type",
+  "campaign_criterion.income_range.type",
+  "campaign_criterion.ip_block.ip_address",
+  "campaign_criterion.keyword.match_type",
+  "campaign_criterion.keyword.text",
+  "campaign_criterion.language.language_constant",
+  "campaign_criterion.listing_scope.dimensions",
+  "campaign_criterion.location.geo_target_constant",
+  "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_device.mobile_device_constant",
+  "campaign_criterion.negative",
+  "campaign_criterion.operating_system_version.operating_system_version_constant",
+  "campaign_criterion.parental_status.type",
+  "campaign_criterion.placement.url",
+  "campaign_criterion.proximity.address.city_name",
+  "campaign_criterion.proximity.address.country_code",
+  "campaign_criterion.proximity.address.postal_code",
+  "campaign_criterion.proximity.address.province_code",
+  "campaign_criterion.proximity.address.province_name",
+  "campaign_criterion.proximity.address.street_address",
+  "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees",
+  "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees",
+  "campaign_criterion.proximity.radius",
+  "campaign_criterion.proximity.radius_units",
+  "campaign_criterion.resource_name",
+  "campaign_criterion.topic.path",
+  "campaign_criterion.topic.topic_constant",
+  "campaign_criterion.type",
+  "campaign_criterion.user_interest.user_interest_category",
+  "campaign_criterion.user_list.user_list",
+  "campaign_criterion.webpage.conditions",
+  "campaign_criterion.webpage.criterion_name",
+  "campaign_criterion.youtube_channel.channel_id",
+  "campaign_criterion.youtube_video.video_id",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "location_view.resource_name",
+];
 
-export type LocationViewField = "location_view.resource_name";
+export type LocationViewField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "campaign_criterion.ad_schedule.day_of_week"
+  | "campaign_criterion.ad_schedule.end_hour"
+  | "campaign_criterion.ad_schedule.end_minute"
+  | "campaign_criterion.ad_schedule.start_hour"
+  | "campaign_criterion.ad_schedule.start_minute"
+  | "campaign_criterion.age_range.type"
+  | "campaign_criterion.bid_modifier"
+  | "campaign_criterion.campaign"
+  | "campaign_criterion.carrier.carrier_constant"
+  | "campaign_criterion.content_label.type"
+  | "campaign_criterion.criterion_id"
+  | "campaign_criterion.device.type"
+  | "campaign_criterion.gender.type"
+  | "campaign_criterion.income_range.type"
+  | "campaign_criterion.ip_block.ip_address"
+  | "campaign_criterion.keyword.match_type"
+  | "campaign_criterion.keyword.text"
+  | "campaign_criterion.language.language_constant"
+  | "campaign_criterion.listing_scope.dimensions"
+  | "campaign_criterion.location.geo_target_constant"
+  | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_device.mobile_device_constant"
+  | "campaign_criterion.negative"
+  | "campaign_criterion.operating_system_version.operating_system_version_constant"
+  | "campaign_criterion.parental_status.type"
+  | "campaign_criterion.placement.url"
+  | "campaign_criterion.proximity.address.city_name"
+  | "campaign_criterion.proximity.address.country_code"
+  | "campaign_criterion.proximity.address.postal_code"
+  | "campaign_criterion.proximity.address.province_code"
+  | "campaign_criterion.proximity.address.province_name"
+  | "campaign_criterion.proximity.address.street_address"
+  | "campaign_criterion.proximity.geo_point.latitude_in_micro_degrees"
+  | "campaign_criterion.proximity.geo_point.longitude_in_micro_degrees"
+  | "campaign_criterion.proximity.radius"
+  | "campaign_criterion.proximity.radius_units"
+  | "campaign_criterion.resource_name"
+  | "campaign_criterion.topic.path"
+  | "campaign_criterion.topic.topic_constant"
+  | "campaign_criterion.type"
+  | "campaign_criterion.user_interest.user_interest_category"
+  | "campaign_criterion.user_list.user_list"
+  | "campaign_criterion.webpage.conditions"
+  | "campaign_criterion.webpage.criterion_name"
+  | "campaign_criterion.youtube_channel.channel_id"
+  | "campaign_criterion.youtube_video.video_id"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "location_view.resource_name";
 
 export type LocationViewFields = Array<LocationViewField>;
 
@@ -3829,9 +13367,354 @@ export type LocationViewSegments = Array<LocationViewSegment>;
  --- Start of ManagedPlacementView ---
 */
 // @ts-ignore
-export const managed_placement_view = ["managed_placement_view.resource_name"];
+export const managed_placement_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "managed_placement_view.resource_name",
+];
 
-export type ManagedPlacementViewField = "managed_placement_view.resource_name";
+export type ManagedPlacementViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "managed_placement_view.resource_name";
 
 export type ManagedPlacementViewFields = Array<ManagedPlacementViewField>;
 
@@ -3906,6 +13789,23 @@ export type ManagedPlacementViewSegments = Array<ManagedPlacementViewSegment>;
 */
 // @ts-ignore
 export const media_file = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "media_file.audio.ad_duration_millis",
   "media_file.file_size",
   "media_file.id",
@@ -3921,6 +13821,23 @@ export const media_file = [
 ];
 
 export type MediaFileField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "media_file.audio.ad_duration_millis"
   | "media_file.file_size"
   | "media_file.id"
@@ -4019,9 +13936,354 @@ export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionC
  --- Start of ParentalStatusView ---
 */
 // @ts-ignore
-export const parental_status_view = ["parental_status_view.resource_name"];
+export const parental_status_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "parental_status_view.resource_name",
+];
 
-export type ParentalStatusViewField = "parental_status_view.resource_name";
+export type ParentalStatusViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "parental_status_view.resource_name";
 
 export type ParentalStatusViewFields = Array<ParentalStatusViewField>;
 
@@ -4129,9 +14391,354 @@ export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryC
  --- Start of ProductGroupView ---
 */
 // @ts-ignore
-export const product_group_view = ["product_group_view.resource_name"];
+export const product_group_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "product_group_view.resource_name",
+];
 
-export type ProductGroupViewField = "product_group_view.resource_name";
+export type ProductGroupViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "product_group_view.resource_name";
 
 export type ProductGroupViewFields = Array<ProductGroupViewField>;
 
@@ -4189,6 +14796,121 @@ export type ProductGroupViewSegments = Array<ProductGroupViewSegment>;
 */
 // @ts-ignore
 export const recommendation = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "campaign_budget.amount_micros",
+  "campaign_budget.delivery_method",
+  "campaign_budget.explicitly_shared",
+  "campaign_budget.has_recommended_budget",
+  "campaign_budget.id",
+  "campaign_budget.name",
+  "campaign_budget.period",
+  "campaign_budget.recommended_budget_amount_micros",
+  "campaign_budget.recommended_budget_estimated_change_weekly_clicks",
+  "campaign_budget.recommended_budget_estimated_change_weekly_cost_micros",
+  "campaign_budget.recommended_budget_estimated_change_weekly_interactions",
+  "campaign_budget.recommended_budget_estimated_change_weekly_views",
+  "campaign_budget.reference_count",
+  "campaign_budget.resource_name",
+  "campaign_budget.status",
+  "campaign_budget.total_amount_micros",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "recommendation.ad_group",
   "recommendation.campaign",
   "recommendation.campaign_budget",
@@ -4208,6 +14930,121 @@ export const recommendation = [
 ];
 
 export type RecommendationField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "campaign_budget.amount_micros"
+  | "campaign_budget.delivery_method"
+  | "campaign_budget.explicitly_shared"
+  | "campaign_budget.has_recommended_budget"
+  | "campaign_budget.id"
+  | "campaign_budget.name"
+  | "campaign_budget.period"
+  | "campaign_budget.recommended_budget_amount_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_clicks"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_cost_micros"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_interactions"
+  | "campaign_budget.recommended_budget_estimated_change_weekly_views"
+  | "campaign_budget.reference_count"
+  | "campaign_budget.resource_name"
+  | "campaign_budget.status"
+  | "campaign_budget.total_amount_micros"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "recommendation.ad_group"
   | "recommendation.campaign"
   | "recommendation.campaign_budget"
@@ -4236,6 +15073,23 @@ export type RecommendationFields = Array<RecommendationField>;
 */
 // @ts-ignore
 export const remarketing_action = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "remarketing_action.id",
   "remarketing_action.name",
   "remarketing_action.resource_name",
@@ -4243,6 +15097,23 @@ export const remarketing_action = [
 ];
 
 export type RemarketingActionField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "remarketing_action.id"
   | "remarketing_action.name"
   | "remarketing_action.resource_name"
@@ -4259,6 +15130,105 @@ export type RemarketingActionFields = Array<RemarketingActionField>;
 */
 // @ts-ignore
 export const search_term_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "search_term_view.ad_group",
   "search_term_view.resource_name",
   "search_term_view.search_term",
@@ -4266,6 +15236,105 @@ export const search_term_view = [
 ];
 
 export type SearchTermViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "search_term_view.ad_group"
   | "search_term_view.resource_name"
   | "search_term_view.search_term"
@@ -4342,6 +15411,33 @@ export type SearchTermViewSegments = Array<SearchTermViewSegment>;
 */
 // @ts-ignore
 export const shared_criterion = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "mobile_app_category_constant.id",
+  "mobile_app_category_constant.name",
+  "mobile_app_category_constant.resource_name",
+  "shared_set.id",
+  "shared_set.member_count",
+  "shared_set.name",
+  "shared_set.reference_count",
+  "shared_set.resource_name",
+  "shared_set.status",
+  "shared_set.type",
   "shared_criterion.criterion_id",
   "shared_criterion.keyword.match_type",
   "shared_criterion.keyword.text",
@@ -4355,6 +15451,33 @@ export const shared_criterion = [
 ];
 
 export type SharedCriterionField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "mobile_app_category_constant.id"
+  | "mobile_app_category_constant.name"
+  | "mobile_app_category_constant.resource_name"
+  | "shared_set.id"
+  | "shared_set.member_count"
+  | "shared_set.name"
+  | "shared_set.reference_count"
+  | "shared_set.resource_name"
+  | "shared_set.status"
+  | "shared_set.type"
   | "shared_criterion.criterion_id"
   | "shared_criterion.keyword.match_type"
   | "shared_criterion.keyword.text"
@@ -4377,6 +15500,23 @@ export type SharedCriterionFields = Array<SharedCriterionField>;
 */
 // @ts-ignore
 export const shared_set = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "shared_set.id",
   "shared_set.member_count",
   "shared_set.name",
@@ -4387,6 +15527,23 @@ export const shared_set = [
 ];
 
 export type SharedSetField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "shared_set.id"
   | "shared_set.member_count"
   | "shared_set.name"
@@ -4405,9 +15562,210 @@ export type SharedSetFields = Array<SharedSetField>;
  --- Start of ShoppingPerformanceView ---
 */
 // @ts-ignore
-export const shopping_performance_view = ["shopping_performance_view.resource_name"];
+export const shopping_performance_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "shopping_performance_view.resource_name",
+];
 
-export type ShoppingPerformanceViewField = "shopping_performance_view.resource_name";
+export type ShoppingPerformanceViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "shopping_performance_view.resource_name";
 
 export type ShoppingPerformanceViewFields = Array<ShoppingPerformanceViewField>;
 
@@ -4510,9 +15868,354 @@ export type TopicConstantFields = Array<TopicConstantField>;
  --- Start of TopicView ---
 */
 // @ts-ignore
-export const topic_view = ["topic_view.resource_name"];
+export const topic_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.listing_brand.value",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "topic_view.resource_name",
+];
 
-export type TopicViewField = "topic_view.resource_name";
+export type TopicViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "topic_view.resource_name";
 
 export type TopicViewFields = Array<TopicViewField>;
 
@@ -4616,6 +16319,23 @@ export type UserInterestFields = Array<UserInterestField>;
 */
 // @ts-ignore
 export const user_list = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "user_list.access_reason",
   "user_list.account_user_list_status",
   "user_list.basic_user_list.actions",
@@ -4655,6 +16375,23 @@ export const user_list = [
 ];
 
 export type UserListField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "user_list.access_reason"
   | "user_list.account_user_list_status"
   | "user_list.basic_user_list.actions"
@@ -4703,6 +16440,193 @@ export type UserListFields = Array<UserListField>;
 */
 // @ts-ignore
 export const video = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.call_only_ad.business_name",
+  "ad_group_ad.ad.call_only_ad.call_tracked",
+  "ad_group_ad.ad.call_only_ad.conversion_action",
+  "ad_group_ad.ad.call_only_ad.conversion_reporting_state",
+  "ad_group_ad.ad.call_only_ad.country_code",
+  "ad_group_ad.ad.call_only_ad.description1",
+  "ad_group_ad.ad.call_only_ad.description2",
+  "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.phone_number",
+  "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
+  "ad_group_ad.ad.device_preference",
+  "ad_group_ad.ad.display_url",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part1",
+  "ad_group_ad.ad.expanded_text_ad.headline_part2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part3",
+  "ad_group_ad.ad.expanded_text_ad.path1",
+  "ad_group_ad.ad.expanded_text_ad.path2",
+  "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_urls",
+  "ad_group_ad.ad.gmail_ad.header_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image_description",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id",
+  "ad_group_ad.ad.gmail_ad.marketing_image_headline",
+  "ad_group_ad.ad.gmail_ad.product_images",
+  "ad_group_ad.ad.gmail_ad.product_videos",
+  "ad_group_ad.ad.gmail_ad.teaser.business_name",
+  "ad_group_ad.ad.gmail_ad.teaser.description",
+  "ad_group_ad.ad.gmail_ad.teaser.headline",
+  "ad_group_ad.ad.gmail_ad.teaser.logo_image",
+  "ad_group_ad.ad.hotel_ad",
+  "ad_group_ad.ad.id",
+  "ad_group_ad.ad.image_ad.image_url",
+  "ad_group_ad.ad.image_ad.mime_type",
+  "ad_group_ad.ad.image_ad.name",
+  "ad_group_ad.ad.image_ad.pixel_height",
+  "ad_group_ad.ad.image_ad.pixel_width",
+  "ad_group_ad.ad.image_ad.preview_image_url",
+  "ad_group_ad.ad.image_ad.preview_pixel_height",
+  "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
+  "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.description",
+  "ad_group_ad.ad.legacy_responsive_display_ad.format_setting",
+  "ad_group_ad.ad.legacy_responsive_display_ad.logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.long_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.main_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.legacy_responsive_display_ad.promo_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.name",
+  "ad_group_ad.ad.responsive_search_ad.descriptions",
+  "ad_group_ad.ad.responsive_search_ad.headlines",
+  "ad_group_ad.ad.responsive_search_ad.path1",
+  "ad_group_ad.ad.responsive_search_ad.path2",
+  "ad_group_ad.ad.shopping_product_ad",
+  "ad_group_ad.ad.shopping_smart_ad",
+  "ad_group_ad.ad.system_managed_resource_source",
+  "ad_group_ad.ad.text_ad.description1",
+  "ad_group_ad.ad.text_ad.description2",
+  "ad_group_ad.ad.text_ad.headline",
+  "ad_group_ad.ad.tracking_url_template",
+  "ad_group_ad.ad.type",
+  "ad_group_ad.ad.url_collections",
+  "ad_group_ad.ad.url_custom_parameters",
+  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.in_stream.action_button_label",
+  "ad_group_ad.ad.video_ad.in_stream.action_headline",
+  "ad_group_ad.ad.video_ad.media_file",
+  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.out_stream.description",
+  "ad_group_ad.ad.video_ad.out_stream.headline",
+  "ad_group_ad.ad_group",
+  "ad_group_ad.ad_strength",
+  "ad_group_ad.policy_summary",
+  "ad_group_ad.resource_name",
+  "ad_group_ad.status",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
   "video.channel_id",
   "video.duration_millis",
   "video.id",
@@ -4711,6 +16635,193 @@ export const video = [
 ];
 
 export type VideoField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.call_only_ad.business_name"
+  | "ad_group_ad.ad.call_only_ad.call_tracked"
+  | "ad_group_ad.ad.call_only_ad.conversion_action"
+  | "ad_group_ad.ad.call_only_ad.conversion_reporting_state"
+  | "ad_group_ad.ad.call_only_ad.country_code"
+  | "ad_group_ad.ad.call_only_ad.description1"
+  | "ad_group_ad.ad.call_only_ad.description2"
+  | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.phone_number"
+  | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
+  | "ad_group_ad.ad.device_preference"
+  | "ad_group_ad.ad.display_url"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part1"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part3"
+  | "ad_group_ad.ad.expanded_text_ad.path1"
+  | "ad_group_ad.ad.expanded_text_ad.path2"
+  | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_urls"
+  | "ad_group_ad.ad.gmail_ad.header_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_description"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_headline"
+  | "ad_group_ad.ad.gmail_ad.product_images"
+  | "ad_group_ad.ad.gmail_ad.product_videos"
+  | "ad_group_ad.ad.gmail_ad.teaser.business_name"
+  | "ad_group_ad.ad.gmail_ad.teaser.description"
+  | "ad_group_ad.ad.gmail_ad.teaser.headline"
+  | "ad_group_ad.ad.gmail_ad.teaser.logo_image"
+  | "ad_group_ad.ad.hotel_ad"
+  | "ad_group_ad.ad.id"
+  | "ad_group_ad.ad.image_ad.image_url"
+  | "ad_group_ad.ad.image_ad.mime_type"
+  | "ad_group_ad.ad.image_ad.name"
+  | "ad_group_ad.ad.image_ad.pixel_height"
+  | "ad_group_ad.ad.image_ad.pixel_width"
+  | "ad_group_ad.ad.image_ad.preview_image_url"
+  | "ad_group_ad.ad.image_ad.preview_pixel_height"
+  | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.description"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.main_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_search_ad.descriptions"
+  | "ad_group_ad.ad.responsive_search_ad.headlines"
+  | "ad_group_ad.ad.responsive_search_ad.path1"
+  | "ad_group_ad.ad.responsive_search_ad.path2"
+  | "ad_group_ad.ad.shopping_product_ad"
+  | "ad_group_ad.ad.shopping_smart_ad"
+  | "ad_group_ad.ad.system_managed_resource_source"
+  | "ad_group_ad.ad.text_ad.description1"
+  | "ad_group_ad.ad.text_ad.description2"
+  | "ad_group_ad.ad.text_ad.headline"
+  | "ad_group_ad.ad.tracking_url_template"
+  | "ad_group_ad.ad.type"
+  | "ad_group_ad.ad.url_collections"
+  | "ad_group_ad.ad.url_custom_parameters"
+  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
+  | "ad_group_ad.ad.video_ad.in_stream.action_headline"
+  | "ad_group_ad.ad.video_ad.media_file"
+  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.out_stream.description"
+  | "ad_group_ad.ad.video_ad.out_stream.headline"
+  | "ad_group_ad.ad_group"
+  | "ad_group_ad.ad_strength"
+  | "ad_group_ad.policy_summary"
+  | "ad_group_ad.resource_name"
+  | "ad_group_ad.status"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
   | "video.channel_id"
   | "video.duration_millis"
   | "video.id"
