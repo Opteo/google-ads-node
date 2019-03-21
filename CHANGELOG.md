@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.3"></a>
+## [1.4.3](https://github.com/opteo/google-ads-node/compare/v1.4.2...v1.4.3) (2019-03-21)
+
+
+### Bug Fixes
+
+* **fields:** temporarily remove fields which cause internal api errors ([b5ac79f](https://github.com/opteo/google-ads-node/commit/b5ac79f))
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/opteo/google-ads-node/compare/v1.4.1...v1.4.2) (2019-03-21)
 
