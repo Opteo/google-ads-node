@@ -4,6 +4,11 @@ interface AuthOptions {
   clientId: string;
   clientSecret: string;
   refreshToken: string;
+  accessTokenGetter?(
+    clientId?: string,
+    clientSecret?: string,
+    refreshToken?: string
+  ): Promise<string>;
 }
 
 export default class Auth {
@@ -17,6 +22,15 @@ export default class Auth {
   }
 
   public async getAccessToken(): Promise<string> {
+    if (this.options.accessTokenGetter) {
+      const token_from_getter = await this.options.accessTokenGetter(
+        this.options.clientId,
+        this.options.clientSecret,
+        this.options.refreshToken
+      );
+      return token_from_getter;
+    }
+
     try {
       const { token } = await this.client.getAccessToken();
       return token as string;

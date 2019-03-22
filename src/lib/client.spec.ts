@@ -141,3 +141,34 @@ test("supports using callbacks instead of async service calls", done => {
     done();
   });
 });
+
+test("supports usage of an async access token getter function", async () => {
+  expect.assertions(6);
+  let tokenGetterCalled = "";
+
+  async function accessTokenGetter(clientId: string, clientSecret: string, refreshToken: string) {
+    tokenGetterCalled = await new Promise(resolve =>
+      setTimeout(() => resolve("<access-token>"), 1000)
+    );
+    expect(clientId).toEqual(CLIENT_ID);
+    expect(clientSecret).toEqual(CLIENT_SECRET);
+    expect(refreshToken).toEqual(REFRESH_TOKEN);
+    return "<access-token>";
+  }
+
+  const client = new GoogleAdsClient({
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    refresh_token: REFRESH_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    accessTokenGetter,
+  });
+
+  /* Do a service request so the accessTokenGetter is called */
+  const service = client.getService("GoogleAdsService");
+  const request = new SearchGoogleAdsRequest();
+  await expect(service.search(request)).rejects.toThrow();
+
+  expect(client).toBeInstanceOf(GoogleAdsClient);
+  expect(tokenGetterCalled).toEqual("<access-token>");
+});

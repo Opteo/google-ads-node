@@ -35,6 +35,11 @@ interface ClientOptionsNoToken extends CommonClientOptions {
   client_id: string;
   client_secret: string;
   refresh_token: string;
+  accessTokenGetter?(
+    clientId?: string,
+    clientSecret?: string,
+    refreshToken?: string
+  ): Promise<string>;
 }
 
 export class GoogleAdsClient {
@@ -53,6 +58,7 @@ export class GoogleAdsClient {
         clientId: this.options.client_id,
         clientSecret: this.options.client_secret,
         refreshToken: this.options.refresh_token,
+        accessTokenGetter: this.options.accessTokenGetter,
       });
     }
   }
