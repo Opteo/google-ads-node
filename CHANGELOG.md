@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/opteo/google-ads-node/compare/v1.4.4...v1.5.0) (2019-03-22)
+
+
+### Features
+
+* **client:** added async access token getter to client options ([3df5bd8](https://github.com/opteo/google-ads-node/commit/3df5bd8))
+* **docs:** added documentation on the accessTokenGetter option ([9488744](https://github.com/opteo/google-ads-node/commit/9488744))
+
+
+
 <a name="1.4.4"></a>
 ## [1.4.4](https://github.com/opteo/google-ads-node/compare/v1.4.3...v1.4.4) (2019-03-21)
 
