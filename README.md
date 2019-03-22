@@ -142,6 +142,31 @@ const client = new GoogleAdsClient({
 });
 ```
 
+#### 3. Access token getter
+You can also additionaly pass in an async access token getter method to the client instance. This will be called on every request. The main purpose is to allow you to handle authentication yourself, and cache tokens/use cached tokens from elsewhere. The method expects a return type of `Promise<string>` e.g. `Promise.resolve("<access-token>")`. An example of how you might use the `accessTokenGetter` option is provided below:
+
+```typescript
+const client = new GoogleAdsClient({
+  client_id: "<CLIENT_ID>",
+  client_secret: "<CLIENT_SECRET>",
+  refresh_token: "<REFRESH_TOKEN>",
+  developer_token: "<DEVELOPER_TOKEN>",
+  // You can optionally use the parameters
+  async accessTokenGetter(clientId?: string, clientSecret?: string, refreshToken?: string) {
+    await logger.someLoggingFunction()
+    
+    if(cache.checkTokenExists()) {
+      return cache.getCachedToken()
+    }
+    
+    const accessToken = await auth.someCallToGetAccessToken()
+    return accessToken
+  }
+});
+```
+
+The returned token string will be used in the gRPC metadata per request, as the `Authorization` header. You don't need to include the `Bearer:` part of the token, this is appended automatically.
+
 ### Services
 
 To load a Google Ads service, simply use the `getService` method. It supports a single string, being the name of the service. For a full list of avaiable services, check out the [Google Ads service reference](https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services).
