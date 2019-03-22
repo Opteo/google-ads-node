@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/opteo/google-ads-node/compare/v1.5.0...v1.6.0) (2019-03-22)
+
+
+### Features
+
+* **client:** added support for building request types from plain object ([e47625f](https://github.com/opteo/google-ads-node/commit/e47625f))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/opteo/google-ads-node/compare/v1.4.4...v1.5.0) (2019-03-22)
 
