@@ -14,6 +14,10 @@ PROTO_COMMON_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/common/*
 PROTO_ERRORS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/errors/*.proto
 PROTO_ENUMS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/enums/*.proto
 PROTO_RESOURCES_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/resources/*.proto
+PROTO_SERVICES_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/services/*.proto
+
+PROTO_GOOGLE_DEPENDENCIES=$(PROTO_ROOT_DIR)google/rpc/*.proto $(PROTO_ROOT_DIR)google/longrunning/*.proto
+ALL_PROTOBUFS=$(PROTO_GOOGLE_DEPENDENCIES) $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY) $(PROTO_SERVICES_ONLY)
 
 # Directory to write generated code to (.js and .d.ts files)
 OUT_DIR=src/protos
@@ -40,8 +44,8 @@ enums:
 	rm ./scripts/$(OUT_COMPILED_ENUMS)
 
 types:
-	pbjs -t json $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
-	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY)
+	pbjs -t json $(ALL_PROTOBUFS) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
+	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(ALL_PROTOBUFS)
 	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES)
 	cp ./scripts/$(OUT_COMPILED_RESOURCES) ./src/protos/$(OUT_COMPILED_RESOURCES)
 	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)

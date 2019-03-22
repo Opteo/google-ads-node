@@ -861,7 +861,11 @@ export type PolicyTopicEvidence =
   | { text_list?: { texts?: string[] } }
   | { language_code?: string }
   | { destination_text_list?: { destination_texts?: string[] } }
-  | { destination_mismatch?: { url_types?: PolicyTopicEvidenceDestinationMismatchUrlType[] } };
+  | {
+      destination_mismatch?: {
+        url_types?: PolicyTopicEvidenceDestinationMismatchUrlType[];
+      };
+    };
 export type PolicyTopicConstraint =
   | {
       country_constraint_list?: {
@@ -1900,10 +1904,20 @@ export interface Feed {
   resource_name?: string;
   id?: number;
   name?: string;
-  attributes?: { id?: number; name?: string; type?: FeedAttributeType; is_part_of_key?: boolean }[];
+  attributes?: {
+    id?: number;
+    name?: string;
+    type?: FeedAttributeType;
+    is_part_of_key?: boolean;
+  }[];
   attribute_operations?: {
     operator?: undefined;
-    value?: { id?: number; name?: string; type?: FeedAttributeType; is_part_of_key?: boolean };
+    value?: {
+      id?: number;
+      name?: string;
+      type?: FeedAttributeType;
+      is_part_of_key?: boolean;
+    };
   }[];
   origin?: FeedOrigin;
   status?: FeedStatus;
@@ -2139,7 +2153,10 @@ export interface KeywordPlan {
   resource_name?: string;
   id?: number;
   name?: string;
-  forecast_period?: { date_interval?: KeywordPlanForecastInterval; date_range?: DateRange };
+  forecast_period?: {
+    date_interval?: KeywordPlanForecastInterval;
+    date_range?: DateRange;
+  };
 }
 
 /* .google.ads.googleads.v1.resources.KeywordPlanForecastPeriod */
@@ -2557,6 +2574,3083 @@ export interface Video {
   title?: string;
 }
 
+/* .google.ads.googleads.v1.services.AccountBudgetProposalService */
+export interface AccountBudgetProposalService {}
+
+/* .google.ads.googleads.v1.services.GetAccountBudgetProposalRequest */
+export interface GetAccountBudgetProposalRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalRequest */
+export interface MutateAccountBudgetProposalRequest {
+  customer_id?: string;
+  operation?: {
+    update_mask?: { paths?: string[] };
+    create?: AccountBudgetProposal;
+    remove?: string;
+  };
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AccountBudgetProposalOperation */
+export interface AccountBudgetProposalOperation {
+  update_mask?: { paths?: string[] };
+  create?: AccountBudgetProposal;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalResponse */
+export interface MutateAccountBudgetProposalResponse {
+  result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalResult */
+export interface MutateAccountBudgetProposalResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AccountBudgetService */
+export interface AccountBudgetService {}
+
+/* .google.ads.googleads.v1.services.GetAccountBudgetRequest */
+export interface GetAccountBudgetRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupAdLabelService */
+export interface AdGroupAdLabelService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupAdLabelRequest */
+export interface GetAdGroupAdLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelsRequest */
+export interface MutateAdGroupAdLabelsRequest {
+  customer_id?: string;
+  operations?: { create?: AdGroupAdLabel; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupAdLabelOperation */
+export interface AdGroupAdLabelOperation {
+  create?: AdGroupAdLabel;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelsResponse */
+export interface MutateAdGroupAdLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelResult */
+export interface MutateAdGroupAdLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupAdService */
+export interface AdGroupAdService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupAdRequest */
+export interface GetAdGroupAdRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdsRequest */
+export interface MutateAdGroupAdsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    policy_validation_parameter?: PolicyValidationParameter;
+    create?: AdGroupAd;
+    update?: AdGroupAd;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupAdOperation */
+export interface AdGroupAdOperation {
+  update_mask?: { paths?: string[] };
+  policy_validation_parameter?: PolicyValidationParameter;
+  create?: AdGroupAd;
+  update?: AdGroupAd;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdsResponse */
+export interface MutateAdGroupAdsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupAdResult */
+export interface MutateAdGroupAdResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupAudienceViewService */
+export interface AdGroupAudienceViewService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupAudienceViewRequest */
+export interface GetAdGroupAudienceViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupBidModifierService */
+export interface AdGroupBidModifierService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupBidModifierRequest */
+export interface GetAdGroupBidModifierRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupBidModifiersRequest */
+export interface MutateAdGroupBidModifiersRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdGroupBidModifier;
+    update?: AdGroupBidModifier;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupBidModifierOperation */
+export interface AdGroupBidModifierOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdGroupBidModifier;
+  update?: AdGroupBidModifier;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupBidModifiersResponse */
+export interface MutateAdGroupBidModifiersResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupBidModifierResult */
+export interface MutateAdGroupBidModifierResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupCriterionLabelService */
+export interface AdGroupCriterionLabelService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupCriterionLabelRequest */
+export interface GetAdGroupCriterionLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelsRequest */
+export interface MutateAdGroupCriterionLabelsRequest {
+  customer_id?: string;
+  operations?: { create?: AdGroupCriterionLabel; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupCriterionLabelOperation */
+export interface AdGroupCriterionLabelOperation {
+  create?: AdGroupCriterionLabel;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelsResponse */
+export interface MutateAdGroupCriterionLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelResult */
+export interface MutateAdGroupCriterionLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupCriterionService */
+export interface AdGroupCriterionService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupCriterionRequest */
+export interface GetAdGroupCriterionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriteriaRequest */
+export interface MutateAdGroupCriteriaRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdGroupCriterion;
+    update?: AdGroupCriterion;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupCriterionOperation */
+export interface AdGroupCriterionOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdGroupCriterion;
+  update?: AdGroupCriterion;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriteriaResponse */
+export interface MutateAdGroupCriteriaResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupCriterionResult */
+export interface MutateAdGroupCriterionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupExtensionSettingService */
+export interface AdGroupExtensionSettingService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupExtensionSettingRequest */
+export interface GetAdGroupExtensionSettingRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingsRequest */
+export interface MutateAdGroupExtensionSettingsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdGroupExtensionSetting;
+    update?: AdGroupExtensionSetting;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupExtensionSettingOperation */
+export interface AdGroupExtensionSettingOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdGroupExtensionSetting;
+  update?: AdGroupExtensionSetting;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingsResponse */
+export interface MutateAdGroupExtensionSettingsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingResult */
+export interface MutateAdGroupExtensionSettingResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupFeedService */
+export interface AdGroupFeedService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupFeedRequest */
+export interface GetAdGroupFeedRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupFeedsRequest */
+export interface MutateAdGroupFeedsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdGroupFeed;
+    update?: AdGroupFeed;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupFeedOperation */
+export interface AdGroupFeedOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdGroupFeed;
+  update?: AdGroupFeed;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupFeedsResponse */
+export interface MutateAdGroupFeedsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupFeedResult */
+export interface MutateAdGroupFeedResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupLabelService */
+export interface AdGroupLabelService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupLabelRequest */
+export interface GetAdGroupLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupLabelsRequest */
+export interface MutateAdGroupLabelsRequest {
+  customer_id?: string;
+  operations?: { create?: AdGroupLabel; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupLabelOperation */
+export interface AdGroupLabelOperation {
+  create?: AdGroupLabel;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupLabelsResponse */
+export interface MutateAdGroupLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupLabelResult */
+export interface MutateAdGroupLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupService */
+export interface AdGroupService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupRequest */
+export interface GetAdGroupRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupsRequest */
+export interface MutateAdGroupsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdGroup;
+    update?: AdGroup;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupOperation */
+export interface AdGroupOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdGroup;
+  update?: AdGroup;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupsResponse */
+export interface MutateAdGroupsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdGroupResult */
+export interface MutateAdGroupResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdParameterService */
+export interface AdParameterService {}
+
+/* .google.ads.googleads.v1.services.GetAdParameterRequest */
+export interface GetAdParameterRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdParametersRequest */
+export interface MutateAdParametersRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: AdParameter;
+    update?: AdParameter;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.AdParameterOperation */
+export interface AdParameterOperation {
+  update_mask?: { paths?: string[] };
+  create?: AdParameter;
+  update?: AdParameter;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateAdParametersResponse */
+export interface MutateAdParametersResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateAdParameterResult */
+export interface MutateAdParameterResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdScheduleViewService */
+export interface AdScheduleViewService {}
+
+/* .google.ads.googleads.v1.services.GetAdScheduleViewRequest */
+export interface GetAdScheduleViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AgeRangeViewService */
+export interface AgeRangeViewService {}
+
+/* .google.ads.googleads.v1.services.GetAgeRangeViewRequest */
+export interface GetAgeRangeViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.BiddingStrategyService */
+export interface BiddingStrategyService {}
+
+/* .google.ads.googleads.v1.services.GetBiddingStrategyRequest */
+export interface GetBiddingStrategyRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateBiddingStrategiesRequest */
+export interface MutateBiddingStrategiesRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: BiddingStrategy;
+    update?: BiddingStrategy;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.BiddingStrategyOperation */
+export interface BiddingStrategyOperation {
+  update_mask?: { paths?: string[] };
+  create?: BiddingStrategy;
+  update?: BiddingStrategy;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateBiddingStrategiesResponse */
+export interface MutateBiddingStrategiesResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateBiddingStrategyResult */
+export interface MutateBiddingStrategyResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.BillingSetupService */
+export interface BillingSetupService {}
+
+/* .google.ads.googleads.v1.services.GetBillingSetupRequest */
+export interface GetBillingSetupRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateBillingSetupRequest */
+export interface MutateBillingSetupRequest {
+  customer_id?: string;
+  operation?: { create?: BillingSetup; remove?: string };
+}
+
+/* .google.ads.googleads.v1.services.BillingSetupOperation */
+export interface BillingSetupOperation {
+  create?: BillingSetup;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateBillingSetupResponse */
+export interface MutateBillingSetupResponse {
+  result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.MutateBillingSetupResult */
+export interface MutateBillingSetupResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignAudienceViewService */
+export interface CampaignAudienceViewService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignAudienceViewRequest */
+export interface GetCampaignAudienceViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignBidModifierService */
+export interface CampaignBidModifierService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignBidModifierRequest */
+export interface GetCampaignBidModifierRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBidModifiersRequest */
+export interface MutateCampaignBidModifiersRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CampaignBidModifier;
+    update?: CampaignBidModifier;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignBidModifierOperation */
+export interface CampaignBidModifierOperation {
+  update_mask?: { paths?: string[] };
+  create?: CampaignBidModifier;
+  update?: CampaignBidModifier;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBidModifiersResponse */
+export interface MutateCampaignBidModifiersResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBidModifierResult */
+export interface MutateCampaignBidModifierResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignBudgetService */
+export interface CampaignBudgetService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignBudgetRequest */
+export interface GetCampaignBudgetRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBudgetsRequest */
+export interface MutateCampaignBudgetsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CampaignBudget;
+    update?: CampaignBudget;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignBudgetOperation */
+export interface CampaignBudgetOperation {
+  update_mask?: { paths?: string[] };
+  create?: CampaignBudget;
+  update?: CampaignBudget;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBudgetsResponse */
+export interface MutateCampaignBudgetsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignBudgetResult */
+export interface MutateCampaignBudgetResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignCriterionService */
+export interface CampaignCriterionService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignCriterionRequest */
+export interface GetCampaignCriterionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignCriteriaRequest */
+export interface MutateCampaignCriteriaRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CampaignCriterion;
+    update?: CampaignCriterion;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignCriterionOperation */
+export interface CampaignCriterionOperation {
+  update_mask?: { paths?: string[] };
+  create?: CampaignCriterion;
+  update?: CampaignCriterion;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignCriteriaResponse */
+export interface MutateCampaignCriteriaResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignCriterionResult */
+export interface MutateCampaignCriterionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignExtensionSettingService */
+export interface CampaignExtensionSettingService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignExtensionSettingRequest */
+export interface GetCampaignExtensionSettingRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingsRequest */
+export interface MutateCampaignExtensionSettingsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CampaignExtensionSetting;
+    update?: CampaignExtensionSetting;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignExtensionSettingOperation */
+export interface CampaignExtensionSettingOperation {
+  update_mask?: { paths?: string[] };
+  create?: CampaignExtensionSetting;
+  update?: CampaignExtensionSetting;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingsResponse */
+export interface MutateCampaignExtensionSettingsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingResult */
+export interface MutateCampaignExtensionSettingResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignFeedService */
+export interface CampaignFeedService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignFeedRequest */
+export interface GetCampaignFeedRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignFeedsRequest */
+export interface MutateCampaignFeedsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CampaignFeed;
+    update?: CampaignFeed;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignFeedOperation */
+export interface CampaignFeedOperation {
+  update_mask?: { paths?: string[] };
+  create?: CampaignFeed;
+  update?: CampaignFeed;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignFeedsResponse */
+export interface MutateCampaignFeedsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignFeedResult */
+export interface MutateCampaignFeedResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignLabelService */
+export interface CampaignLabelService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignLabelRequest */
+export interface GetCampaignLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignLabelsRequest */
+export interface MutateCampaignLabelsRequest {
+  customer_id?: string;
+  operations?: { create?: CampaignLabel; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignLabelOperation */
+export interface CampaignLabelOperation {
+  create?: CampaignLabel;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignLabelsResponse */
+export interface MutateCampaignLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignLabelResult */
+export interface MutateCampaignLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignService */
+export interface CampaignService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignRequest */
+export interface GetCampaignRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignsRequest */
+export interface MutateCampaignsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: Campaign;
+    update?: Campaign;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignOperation */
+export interface CampaignOperation {
+  update_mask?: { paths?: string[] };
+  create?: Campaign;
+  update?: Campaign;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignsResponse */
+export interface MutateCampaignsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignResult */
+export interface MutateCampaignResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignSharedSetService */
+export interface CampaignSharedSetService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignSharedSetRequest */
+export interface GetCampaignSharedSetRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignSharedSetsRequest */
+export interface MutateCampaignSharedSetsRequest {
+  customer_id?: string;
+  operations?: { create?: CampaignSharedSet; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CampaignSharedSetOperation */
+export interface CampaignSharedSetOperation {
+  create?: CampaignSharedSet;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignSharedSetsResponse */
+export interface MutateCampaignSharedSetsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCampaignSharedSetResult */
+export interface MutateCampaignSharedSetResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CarrierConstantService */
+export interface CarrierConstantService {}
+
+/* .google.ads.googleads.v1.services.GetCarrierConstantRequest */
+export interface GetCarrierConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ChangeStatusService */
+export interface ChangeStatusService {}
+
+/* .google.ads.googleads.v1.services.GetChangeStatusRequest */
+export interface GetChangeStatusRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ClickViewService */
+export interface ClickViewService {}
+
+/* .google.ads.googleads.v1.services.GetClickViewRequest */
+export interface GetClickViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ConversionActionService */
+export interface ConversionActionService {}
+
+/* .google.ads.googleads.v1.services.GetConversionActionRequest */
+export interface GetConversionActionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateConversionActionsRequest */
+export interface MutateConversionActionsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: ConversionAction;
+    update?: ConversionAction;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.ConversionActionOperation */
+export interface ConversionActionOperation {
+  update_mask?: { paths?: string[] };
+  create?: ConversionAction;
+  update?: ConversionAction;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateConversionActionsResponse */
+export interface MutateConversionActionsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateConversionActionResult */
+export interface MutateConversionActionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ConversionUploadService */
+export interface ConversionUploadService {}
+
+/* .google.ads.googleads.v1.services.UploadClickConversionsRequest */
+export interface UploadClickConversionsRequest {
+  customer_id?: string;
+  conversions?: {
+    gclid?: string;
+    conversion_action?: string;
+    conversion_date_time?: string;
+    conversion_value?: number;
+    currency_code?: string;
+    order_id?: string;
+    external_attribution_data?: {
+      external_attribution_credit?: number;
+      external_attribution_model?: string;
+    };
+  }[];
+  partial_failure?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.UploadClickConversionsResponse */
+export interface UploadClickConversionsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: {
+    gclid?: string;
+    conversion_action?: string;
+    conversion_date_time?: string;
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.ClickConversion */
+export interface ClickConversion {
+  gclid?: string;
+  conversion_action?: string;
+  conversion_date_time?: string;
+  conversion_value?: number;
+  currency_code?: string;
+  order_id?: string;
+  external_attribution_data?: {
+    external_attribution_credit?: number;
+    external_attribution_model?: string;
+  };
+}
+
+/* .google.ads.googleads.v1.services.ExternalAttributionData */
+export interface ExternalAttributionData {
+  external_attribution_credit?: number;
+  external_attribution_model?: string;
+}
+
+/* .google.ads.googleads.v1.services.ClickConversionResult */
+export interface ClickConversionResult {
+  gclid?: string;
+  conversion_action?: string;
+  conversion_date_time?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomInterestService */
+export interface CustomInterestService {}
+
+/* .google.ads.googleads.v1.services.GetCustomInterestRequest */
+export interface GetCustomInterestRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomInterestsRequest */
+export interface MutateCustomInterestsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CustomInterest;
+    update?: CustomInterest;
+  }[];
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CustomInterestOperation */
+export interface CustomInterestOperation {
+  update_mask?: { paths?: string[] };
+  create?: CustomInterest;
+  update?: CustomInterest;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomInterestsResponse */
+export interface MutateCustomInterestsResponse {
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomInterestResult */
+export interface MutateCustomInterestResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerClientLinkService */
+export interface CustomerClientLinkService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerClientLinkRequest */
+export interface GetCustomerClientLinkRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerClientLinkRequest */
+export interface MutateCustomerClientLinkRequest {
+  customer_id?: string;
+  operation?: {
+    update_mask?: { paths?: string[] };
+    create?: CustomerClientLink;
+    update?: CustomerClientLink;
+  };
+}
+
+/* .google.ads.googleads.v1.services.CustomerClientLinkOperation */
+export interface CustomerClientLinkOperation {
+  update_mask?: { paths?: string[] };
+  create?: CustomerClientLink;
+  update?: CustomerClientLink;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerClientLinkResponse */
+export interface MutateCustomerClientLinkResponse {
+  result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerClientLinkResult */
+export interface MutateCustomerClientLinkResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerClientService */
+export interface CustomerClientService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerClientRequest */
+export interface GetCustomerClientRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerExtensionSettingService */
+export interface CustomerExtensionSettingService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerExtensionSettingRequest */
+export interface GetCustomerExtensionSettingRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingsRequest */
+export interface MutateCustomerExtensionSettingsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CustomerExtensionSetting;
+    update?: CustomerExtensionSetting;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CustomerExtensionSettingOperation */
+export interface CustomerExtensionSettingOperation {
+  update_mask?: { paths?: string[] };
+  create?: CustomerExtensionSetting;
+  update?: CustomerExtensionSetting;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingsResponse */
+export interface MutateCustomerExtensionSettingsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingResult */
+export interface MutateCustomerExtensionSettingResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerFeedService */
+export interface CustomerFeedService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerFeedRequest */
+export interface GetCustomerFeedRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerFeedsRequest */
+export interface MutateCustomerFeedsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: CustomerFeed;
+    update?: CustomerFeed;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CustomerFeedOperation */
+export interface CustomerFeedOperation {
+  update_mask?: { paths?: string[] };
+  create?: CustomerFeed;
+  update?: CustomerFeed;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerFeedsResponse */
+export interface MutateCustomerFeedsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerFeedResult */
+export interface MutateCustomerFeedResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerLabelService */
+export interface CustomerLabelService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerLabelRequest */
+export interface GetCustomerLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerLabelsRequest */
+export interface MutateCustomerLabelsRequest {
+  customer_id?: string;
+  operations?: { create?: CustomerLabel; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CustomerLabelOperation */
+export interface CustomerLabelOperation {
+  create?: CustomerLabel;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerLabelsResponse */
+export interface MutateCustomerLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerLabelResult */
+export interface MutateCustomerLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerManagerLinkService */
+export interface CustomerManagerLinkService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerManagerLinkRequest */
+export interface GetCustomerManagerLinkRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkRequest */
+export interface MutateCustomerManagerLinkRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    update?: CustomerManagerLink;
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.CustomerManagerLinkOperation */
+export interface CustomerManagerLinkOperation {
+  update_mask?: { paths?: string[] };
+  update?: CustomerManagerLink;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkResponse */
+export interface MutateCustomerManagerLinkResponse {
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkResult */
+export interface MutateCustomerManagerLinkResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerNegativeCriterionService */
+export interface CustomerNegativeCriterionService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerNegativeCriterionRequest */
+export interface GetCustomerNegativeCriterionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaRequest */
+export interface MutateCustomerNegativeCriteriaRequest {
+  customer_id?: string;
+  operations?: { create?: CustomerNegativeCriterion; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CustomerNegativeCriterionOperation */
+export interface CustomerNegativeCriterionOperation {
+  create?: CustomerNegativeCriterion;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResponse */
+export interface MutateCustomerNegativeCriteriaResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResult */
+export interface MutateCustomerNegativeCriteriaResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CustomerService */
+export interface CustomerService {}
+
+/* .google.ads.googleads.v1.services.GetCustomerRequest */
+export interface GetCustomerRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerRequest */
+export interface MutateCustomerRequest {
+  customer_id?: string;
+  operation?: { update?: Customer; update_mask?: { paths?: string[] } };
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.CreateCustomerClientRequest */
+export interface CreateCustomerClientRequest {
+  customer_id?: string;
+  customer_client?: Customer;
+}
+
+/* .google.ads.googleads.v1.services.CustomerOperation */
+export interface CustomerOperation {
+  update?: Customer;
+  update_mask?: { paths?: string[] };
+}
+
+/* .google.ads.googleads.v1.services.CreateCustomerClientResponse */
+export interface CreateCustomerClientResponse {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerResponse */
+export interface MutateCustomerResponse {
+  result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.MutateCustomerResult */
+export interface MutateCustomerResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ListAccessibleCustomersRequest */
+export interface ListAccessibleCustomersRequest {}
+
+/* .google.ads.googleads.v1.services.ListAccessibleCustomersResponse */
+export interface ListAccessibleCustomersResponse {
+  resource_names?: string[];
+}
+
+/* .google.ads.googleads.v1.services.DetailPlacementViewService */
+export interface DetailPlacementViewService {}
+
+/* .google.ads.googleads.v1.services.GetDetailPlacementViewRequest */
+export interface GetDetailPlacementViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DisplayKeywordViewService */
+export interface DisplayKeywordViewService {}
+
+/* .google.ads.googleads.v1.services.GetDisplayKeywordViewRequest */
+export interface GetDisplayKeywordViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DomainCategoryService */
+export interface DomainCategoryService {}
+
+/* .google.ads.googleads.v1.services.GetDomainCategoryRequest */
+export interface GetDomainCategoryRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DynamicSearchAdsSearchTermViewService */
+export interface DynamicSearchAdsSearchTermViewService {}
+
+/* .google.ads.googleads.v1.services.GetDynamicSearchAdsSearchTermViewRequest */
+export interface GetDynamicSearchAdsSearchTermViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ExtensionFeedItemService */
+export interface ExtensionFeedItemService {}
+
+/* .google.ads.googleads.v1.services.GetExtensionFeedItemRequest */
+export interface GetExtensionFeedItemRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateExtensionFeedItemsRequest */
+export interface MutateExtensionFeedItemsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: ExtensionFeedItem;
+    update?: ExtensionFeedItem;
+    remove?: string;
+  }[];
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.ExtensionFeedItemOperation */
+export interface ExtensionFeedItemOperation {
+  update_mask?: { paths?: string[] };
+  create?: ExtensionFeedItem;
+  update?: ExtensionFeedItem;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateExtensionFeedItemsResponse */
+export interface MutateExtensionFeedItemsResponse {
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateExtensionFeedItemResult */
+export interface MutateExtensionFeedItemResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.FeedItemService */
+export interface FeedItemService {}
+
+/* .google.ads.googleads.v1.services.GetFeedItemRequest */
+export interface GetFeedItemRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemsRequest */
+export interface MutateFeedItemsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: FeedItem;
+    update?: FeedItem;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.FeedItemOperation */
+export interface FeedItemOperation {
+  update_mask?: { paths?: string[] };
+  create?: FeedItem;
+  update?: FeedItem;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemsResponse */
+export interface MutateFeedItemsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemResult */
+export interface MutateFeedItemResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.FeedItemTargetService */
+export interface FeedItemTargetService {}
+
+/* .google.ads.googleads.v1.services.GetFeedItemTargetRequest */
+export interface GetFeedItemTargetRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemTargetsRequest */
+export interface MutateFeedItemTargetsRequest {
+  customer_id?: string;
+  operations?: { create?: FeedItemTarget; remove?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.FeedItemTargetOperation */
+export interface FeedItemTargetOperation {
+  create?: FeedItemTarget;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemTargetsResponse */
+export interface MutateFeedItemTargetsResponse {
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedItemTargetResult */
+export interface MutateFeedItemTargetResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.FeedMappingService */
+export interface FeedMappingService {}
+
+/* .google.ads.googleads.v1.services.GetFeedMappingRequest */
+export interface GetFeedMappingRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedMappingsRequest */
+export interface MutateFeedMappingsRequest {
+  customer_id?: string;
+  operations?: { create?: FeedMapping; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.FeedMappingOperation */
+export interface FeedMappingOperation {
+  create?: FeedMapping;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedMappingsResponse */
+export interface MutateFeedMappingsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedMappingResult */
+export interface MutateFeedMappingResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.FeedPlaceholderViewService */
+export interface FeedPlaceholderViewService {}
+
+/* .google.ads.googleads.v1.services.GetFeedPlaceholderViewRequest */
+export interface GetFeedPlaceholderViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.FeedService */
+export interface FeedService {}
+
+/* .google.ads.googleads.v1.services.GetFeedRequest */
+export interface GetFeedRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedsRequest */
+export interface MutateFeedsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: Feed;
+    update?: Feed;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.FeedOperation */
+export interface FeedOperation {
+  update_mask?: { paths?: string[] };
+  create?: Feed;
+  update?: Feed;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedsResponse */
+export interface MutateFeedsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateFeedResult */
+export interface MutateFeedResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.GenderViewService */
+export interface GenderViewService {}
+
+/* .google.ads.googleads.v1.services.GetGenderViewRequest */
+export interface GetGenderViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.GeoTargetConstantService */
+export interface GeoTargetConstantService {}
+
+/* .google.ads.googleads.v1.services.GetGeoTargetConstantRequest */
+export interface GetGeoTargetConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest.LocationNames */
+export interface LocationNames {
+  names?: string[];
+}
+
+/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest.GeoTargets */
+export interface GeoTargets {
+  geo_target_constants?: string[];
+}
+
+/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest */
+export interface SuggestGeoTargetConstantsRequest {
+  locale?: string;
+  country_code?: string;
+  location_names?: LocationNames;
+  geo_targets?: GeoTargets;
+}
+
+/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsResponse */
+export interface SuggestGeoTargetConstantsResponse {
+  geo_target_constant_suggestions?: {
+    locale?: string;
+    reach?: number;
+    search_term?: string;
+    geo_target_constant?: GeoTargetConstant;
+    geo_target_constant_parents?: GeoTargetConstant[];
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.GeoTargetConstantSuggestion */
+export interface GeoTargetConstantSuggestion {
+  locale?: string;
+  reach?: number;
+  search_term?: string;
+  geo_target_constant?: GeoTargetConstant;
+  geo_target_constant_parents?: GeoTargetConstant[];
+}
+
+/* .google.ads.googleads.v1.services.GeographicViewService */
+export interface GeographicViewService {}
+
+/* .google.ads.googleads.v1.services.GetGeographicViewRequest */
+export interface GetGeographicViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.GoogleAdsFieldService */
+export interface GoogleAdsFieldService {}
+
+/* .google.ads.googleads.v1.services.GetGoogleAdsFieldRequest */
+export interface GetGoogleAdsFieldRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.SearchGoogleAdsFieldsRequest */
+export interface SearchGoogleAdsFieldsRequest {
+  query?: string;
+  page_token?: string;
+  page_size?: number;
+}
+
+/* .google.ads.googleads.v1.services.SearchGoogleAdsFieldsResponse */
+export interface SearchGoogleAdsFieldsResponse {
+  results?: GoogleAdsField[];
+  next_page_token?: string;
+  total_results_count?: number;
+}
+
+/* .google.ads.googleads.v1.services.GoogleAdsService */
+export interface GoogleAdsService {}
+
+/* .google.ads.googleads.v1.services.SearchGoogleAdsRequest */
+export interface SearchGoogleAdsRequest {
+  customer_id?: string;
+  query?: string;
+  page_token?: string;
+  page_size?: number;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.SearchGoogleAdsResponse */
+export interface SearchGoogleAdsResponse {
+  results?: {
+    account_budget?: AccountBudget;
+    account_budget_proposal?: AccountBudgetProposal;
+    ad_group?: AdGroup;
+    ad_group_ad?: AdGroupAd;
+    ad_group_ad_label?: AdGroupAdLabel;
+    ad_group_audience_view?: AdGroupAudienceView;
+    ad_group_bid_modifier?: AdGroupBidModifier;
+    ad_group_criterion?: AdGroupCriterion;
+    ad_group_criterion_label?: AdGroupCriterionLabel;
+    ad_group_extension_setting?: AdGroupExtensionSetting;
+    ad_group_feed?: AdGroupFeed;
+    ad_group_label?: AdGroupLabel;
+    age_range_view?: AgeRangeView;
+    ad_schedule_view?: AdScheduleView;
+    domain_category?: DomainCategory;
+    bidding_strategy?: BiddingStrategy;
+    billing_setup?: BillingSetup;
+    campaign_budget?: CampaignBudget;
+    campaign?: Campaign;
+    campaign_audience_view?: CampaignAudienceView;
+    campaign_bid_modifier?: CampaignBidModifier;
+    campaign_criterion?: CampaignCriterion;
+    campaign_extension_setting?: CampaignExtensionSetting;
+    campaign_feed?: CampaignFeed;
+    campaign_label?: CampaignLabel;
+    campaign_shared_set?: CampaignSharedSet;
+    carrier_constant?: CarrierConstant;
+    change_status?: ChangeStatus;
+    conversion_action?: ConversionAction;
+    click_view?: ClickView;
+    custom_interest?: CustomInterest;
+    customer?: Customer;
+    customer_manager_link?: CustomerManagerLink;
+    customer_client_link?: CustomerClientLink;
+    customer_client?: CustomerClient;
+    customer_extension_setting?: CustomerExtensionSetting;
+    customer_feed?: CustomerFeed;
+    customer_label?: CustomerLabel;
+    customer_negative_criterion?: CustomerNegativeCriterion;
+    detail_placement_view?: DetailPlacementView;
+    display_keyword_view?: DisplayKeywordView;
+    dynamic_search_ads_search_term_view?: DynamicSearchAdsSearchTermView;
+    extension_feed_item?: ExtensionFeedItem;
+    feed?: Feed;
+    feed_item?: FeedItem;
+    feed_item_target?: FeedItemTarget;
+    feed_mapping?: FeedMapping;
+    feed_placeholder_view?: FeedPlaceholderView;
+    gender_view?: GenderView;
+    geo_target_constant?: GeoTargetConstant;
+    geographic_view?: GeographicView;
+    group_placement_view?: GroupPlacementView;
+    hotel_group_view?: HotelGroupView;
+    hotel_performance_view?: HotelPerformanceView;
+    keyword_view?: KeywordView;
+    keyword_plan?: KeywordPlan;
+    keyword_plan_campaign?: KeywordPlanCampaign;
+    keyword_plan_negative_keyword?: KeywordPlanNegativeKeyword;
+    keyword_plan_ad_group?: KeywordPlanAdGroup;
+    keyword_plan_keyword?: KeywordPlanKeyword;
+    label?: Label;
+    language_constant?: LanguageConstant;
+    location_view?: LocationView;
+    managed_placement_view?: ManagedPlacementView;
+    media_file?: MediaFile;
+    mobile_app_category_constant?: MobileAppCategoryConstant;
+    mobile_device_constant?: MobileDeviceConstant;
+    operating_system_version_constant?: OperatingSystemVersionConstant;
+    parental_status_view?: ParentalStatusView;
+    product_bidding_category_constant?: ProductBiddingCategoryConstant;
+    product_group_view?: ProductGroupView;
+    recommendation?: Recommendation;
+    search_term_view?: SearchTermView;
+    shared_criterion?: SharedCriterion;
+    shared_set?: SharedSet;
+    shopping_performance_view?: ShoppingPerformanceView;
+    topic_view?: TopicView;
+    user_interest?: UserInterest;
+    user_list?: UserList;
+    remarketing_action?: RemarketingAction;
+    topic_constant?: TopicConstant;
+    video?: Video;
+    metrics?: Metrics;
+    segments?: Segments;
+  }[];
+  next_page_token?: string;
+  total_results_count?: number;
+  field_mask?: { paths?: string[] };
+}
+
+/* .google.ads.googleads.v1.services.GoogleAdsRow */
+export interface GoogleAdsRow {
+  account_budget?: AccountBudget;
+  account_budget_proposal?: AccountBudgetProposal;
+  ad_group?: AdGroup;
+  ad_group_ad?: AdGroupAd;
+  ad_group_ad_label?: AdGroupAdLabel;
+  ad_group_audience_view?: AdGroupAudienceView;
+  ad_group_bid_modifier?: AdGroupBidModifier;
+  ad_group_criterion?: AdGroupCriterion;
+  ad_group_criterion_label?: AdGroupCriterionLabel;
+  ad_group_extension_setting?: AdGroupExtensionSetting;
+  ad_group_feed?: AdGroupFeed;
+  ad_group_label?: AdGroupLabel;
+  age_range_view?: AgeRangeView;
+  ad_schedule_view?: AdScheduleView;
+  domain_category?: DomainCategory;
+  bidding_strategy?: BiddingStrategy;
+  billing_setup?: BillingSetup;
+  campaign_budget?: CampaignBudget;
+  campaign?: Campaign;
+  campaign_audience_view?: CampaignAudienceView;
+  campaign_bid_modifier?: CampaignBidModifier;
+  campaign_criterion?: CampaignCriterion;
+  campaign_extension_setting?: CampaignExtensionSetting;
+  campaign_feed?: CampaignFeed;
+  campaign_label?: CampaignLabel;
+  campaign_shared_set?: CampaignSharedSet;
+  carrier_constant?: CarrierConstant;
+  change_status?: ChangeStatus;
+  conversion_action?: ConversionAction;
+  click_view?: ClickView;
+  custom_interest?: CustomInterest;
+  customer?: Customer;
+  customer_manager_link?: CustomerManagerLink;
+  customer_client_link?: CustomerClientLink;
+  customer_client?: CustomerClient;
+  customer_extension_setting?: CustomerExtensionSetting;
+  customer_feed?: CustomerFeed;
+  customer_label?: CustomerLabel;
+  customer_negative_criterion?: CustomerNegativeCriterion;
+  detail_placement_view?: DetailPlacementView;
+  display_keyword_view?: DisplayKeywordView;
+  dynamic_search_ads_search_term_view?: DynamicSearchAdsSearchTermView;
+  extension_feed_item?: ExtensionFeedItem;
+  feed?: Feed;
+  feed_item?: FeedItem;
+  feed_item_target?: FeedItemTarget;
+  feed_mapping?: FeedMapping;
+  feed_placeholder_view?: FeedPlaceholderView;
+  gender_view?: GenderView;
+  geo_target_constant?: GeoTargetConstant;
+  geographic_view?: GeographicView;
+  group_placement_view?: GroupPlacementView;
+  hotel_group_view?: HotelGroupView;
+  hotel_performance_view?: HotelPerformanceView;
+  keyword_view?: KeywordView;
+  keyword_plan?: KeywordPlan;
+  keyword_plan_campaign?: KeywordPlanCampaign;
+  keyword_plan_negative_keyword?: KeywordPlanNegativeKeyword;
+  keyword_plan_ad_group?: KeywordPlanAdGroup;
+  keyword_plan_keyword?: KeywordPlanKeyword;
+  label?: Label;
+  language_constant?: LanguageConstant;
+  location_view?: LocationView;
+  managed_placement_view?: ManagedPlacementView;
+  media_file?: MediaFile;
+  mobile_app_category_constant?: MobileAppCategoryConstant;
+  mobile_device_constant?: MobileDeviceConstant;
+  operating_system_version_constant?: OperatingSystemVersionConstant;
+  parental_status_view?: ParentalStatusView;
+  product_bidding_category_constant?: ProductBiddingCategoryConstant;
+  product_group_view?: ProductGroupView;
+  recommendation?: Recommendation;
+  search_term_view?: SearchTermView;
+  shared_criterion?: SharedCriterion;
+  shared_set?: SharedSet;
+  shopping_performance_view?: ShoppingPerformanceView;
+  topic_view?: TopicView;
+  user_interest?: UserInterest;
+  user_list?: UserList;
+  remarketing_action?: RemarketingAction;
+  topic_constant?: TopicConstant;
+  video?: Video;
+  metrics?: Metrics;
+  segments?: Segments;
+}
+
+/* .google.ads.googleads.v1.services.MutateGoogleAdsRequest */
+export interface MutateGoogleAdsRequest {
+  customer_id?: string;
+  mutate_operations?: {
+    ad_group_ad_label_operation?: AdGroupAdLabelOperation;
+    ad_group_ad_operation?: AdGroupAdOperation;
+    ad_group_bid_modifier_operation?: AdGroupBidModifierOperation;
+    ad_group_criterion_label_operation?: AdGroupCriterionLabelOperation;
+    ad_group_criterion_operation?: AdGroupCriterionOperation;
+    ad_group_extension_setting_operation?: AdGroupExtensionSettingOperation;
+    ad_group_feed_operation?: AdGroupFeedOperation;
+    ad_group_label_operation?: AdGroupLabelOperation;
+    ad_group_operation?: AdGroupOperation;
+    ad_parameter_operation?: AdParameterOperation;
+    bidding_strategy_operation?: BiddingStrategyOperation;
+    campaign_bid_modifier_operation?: CampaignBidModifierOperation;
+    campaign_budget_operation?: CampaignBudgetOperation;
+    campaign_criterion_operation?: CampaignCriterionOperation;
+    campaign_extension_setting_operation?: CampaignExtensionSettingOperation;
+    campaign_feed_operation?: CampaignFeedOperation;
+    campaign_label_operation?: CampaignLabelOperation;
+    campaign_operation?: CampaignOperation;
+    campaign_shared_set_operation?: CampaignSharedSetOperation;
+    conversion_action_operation?: ConversionActionOperation;
+    customer_extension_setting_operation?: CustomerExtensionSettingOperation;
+    customer_feed_operation?: CustomerFeedOperation;
+    customer_label_operation?: CustomerLabelOperation;
+    customer_negative_criterion_operation?: CustomerNegativeCriterionOperation;
+    customer_operation?: CustomerOperation;
+    extension_feed_item_operation?: ExtensionFeedItemOperation;
+    feed_item_operation?: FeedItemOperation;
+    feed_item_target_operation?: FeedItemTargetOperation;
+    feed_mapping_operation?: FeedMappingOperation;
+    feed_operation?: FeedOperation;
+    label_operation?: {
+      update_mask?: { paths?: string[] };
+      create?: Label;
+      update?: Label;
+      remove?: string;
+    };
+    media_file_operation?: { create?: MediaFile };
+    remarketing_action_operation?: {
+      update_mask?: { paths?: string[] };
+      create?: RemarketingAction;
+      update?: RemarketingAction;
+    };
+    shared_criterion_operation?: { create?: SharedCriterion; remove?: string };
+    shared_set_operation?: {
+      update_mask?: { paths?: string[] };
+      create?: SharedSet;
+      update?: SharedSet;
+      remove?: string;
+    };
+    user_list_operation?: {
+      update_mask?: { paths?: string[] };
+      create?: UserList;
+      update?: UserList;
+      remove?: string;
+    };
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.MutateGoogleAdsResponse */
+export interface MutateGoogleAdsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  mutate_operation_responses?: {
+    ad_group_ad_label_result?: MutateAdGroupAdLabelResult;
+    ad_group_ad_result?: MutateAdGroupAdResult;
+    ad_group_bid_modifier_result?: MutateAdGroupBidModifierResult;
+    ad_group_criterion_label_result?: MutateAdGroupCriterionLabelResult;
+    ad_group_criterion_result?: MutateAdGroupCriterionResult;
+    ad_group_extension_setting_result?: MutateAdGroupExtensionSettingResult;
+    ad_group_feed_result?: MutateAdGroupFeedResult;
+    ad_group_label_result?: MutateAdGroupLabelResult;
+    ad_group_result?: MutateAdGroupResult;
+    ad_parameter_result?: MutateAdParameterResult;
+    bidding_strategy_result?: MutateBiddingStrategyResult;
+    campaign_bid_modifier_result?: MutateCampaignBidModifierResult;
+    campaign_budget_result?: MutateCampaignBudgetResult;
+    campaign_criterion_result?: MutateCampaignCriterionResult;
+    campaign_extension_setting_result?: MutateCampaignExtensionSettingResult;
+    campaign_feed_result?: MutateCampaignFeedResult;
+    campaign_label_result?: MutateCampaignLabelResult;
+    campaign_result?: MutateCampaignResult;
+    campaign_shared_set_result?: MutateCampaignSharedSetResult;
+    conversion_action_result?: MutateConversionActionResult;
+    customer_extension_setting_result?: MutateCustomerExtensionSettingResult;
+    customer_feed_result?: MutateCustomerFeedResult;
+    customer_label_result?: MutateCustomerLabelResult;
+    customer_negative_criterion_result?: MutateCustomerNegativeCriteriaResult;
+    customer_result?: MutateCustomerResult;
+    extension_feed_item_result?: MutateExtensionFeedItemResult;
+    feed_item_result?: MutateFeedItemResult;
+    feed_item_target_result?: MutateFeedItemTargetResult;
+    feed_mapping_result?: MutateFeedMappingResult;
+    feed_result?: MutateFeedResult;
+    label_result?: { resource_name?: string };
+    media_file_result?: { resource_name?: string };
+    remarketing_action_result?: { resource_name?: string };
+    shared_criterion_result?: { resource_name?: string };
+    shared_set_result?: { resource_name?: string };
+    user_list_result?: { resource_name?: string };
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateOperation */
+export interface MutateOperation {
+  ad_group_ad_label_operation?: AdGroupAdLabelOperation;
+  ad_group_ad_operation?: AdGroupAdOperation;
+  ad_group_bid_modifier_operation?: AdGroupBidModifierOperation;
+  ad_group_criterion_label_operation?: AdGroupCriterionLabelOperation;
+  ad_group_criterion_operation?: AdGroupCriterionOperation;
+  ad_group_extension_setting_operation?: AdGroupExtensionSettingOperation;
+  ad_group_feed_operation?: AdGroupFeedOperation;
+  ad_group_label_operation?: AdGroupLabelOperation;
+  ad_group_operation?: AdGroupOperation;
+  ad_parameter_operation?: AdParameterOperation;
+  bidding_strategy_operation?: BiddingStrategyOperation;
+  campaign_bid_modifier_operation?: CampaignBidModifierOperation;
+  campaign_budget_operation?: CampaignBudgetOperation;
+  campaign_criterion_operation?: CampaignCriterionOperation;
+  campaign_extension_setting_operation?: CampaignExtensionSettingOperation;
+  campaign_feed_operation?: CampaignFeedOperation;
+  campaign_label_operation?: CampaignLabelOperation;
+  campaign_operation?: CampaignOperation;
+  campaign_shared_set_operation?: CampaignSharedSetOperation;
+  conversion_action_operation?: ConversionActionOperation;
+  customer_extension_setting_operation?: CustomerExtensionSettingOperation;
+  customer_feed_operation?: CustomerFeedOperation;
+  customer_label_operation?: CustomerLabelOperation;
+  customer_negative_criterion_operation?: CustomerNegativeCriterionOperation;
+  customer_operation?: CustomerOperation;
+  extension_feed_item_operation?: ExtensionFeedItemOperation;
+  feed_item_operation?: FeedItemOperation;
+  feed_item_target_operation?: FeedItemTargetOperation;
+  feed_mapping_operation?: FeedMappingOperation;
+  feed_operation?: FeedOperation;
+  label_operation?: {
+    update_mask?: { paths?: string[] };
+    create?: Label;
+    update?: Label;
+    remove?: string;
+  };
+  media_file_operation?: { create?: MediaFile };
+  remarketing_action_operation?: {
+    update_mask?: { paths?: string[] };
+    create?: RemarketingAction;
+    update?: RemarketingAction;
+  };
+  shared_criterion_operation?: { create?: SharedCriterion; remove?: string };
+  shared_set_operation?: {
+    update_mask?: { paths?: string[] };
+    create?: SharedSet;
+    update?: SharedSet;
+    remove?: string;
+  };
+  user_list_operation?: {
+    update_mask?: { paths?: string[] };
+    create?: UserList;
+    update?: UserList;
+    remove?: string;
+  };
+}
+
+/* .google.ads.googleads.v1.services.MutateOperationResponse */
+export interface MutateOperationResponse {
+  ad_group_ad_label_result?: MutateAdGroupAdLabelResult;
+  ad_group_ad_result?: MutateAdGroupAdResult;
+  ad_group_bid_modifier_result?: MutateAdGroupBidModifierResult;
+  ad_group_criterion_label_result?: MutateAdGroupCriterionLabelResult;
+  ad_group_criterion_result?: MutateAdGroupCriterionResult;
+  ad_group_extension_setting_result?: MutateAdGroupExtensionSettingResult;
+  ad_group_feed_result?: MutateAdGroupFeedResult;
+  ad_group_label_result?: MutateAdGroupLabelResult;
+  ad_group_result?: MutateAdGroupResult;
+  ad_parameter_result?: MutateAdParameterResult;
+  bidding_strategy_result?: MutateBiddingStrategyResult;
+  campaign_bid_modifier_result?: MutateCampaignBidModifierResult;
+  campaign_budget_result?: MutateCampaignBudgetResult;
+  campaign_criterion_result?: MutateCampaignCriterionResult;
+  campaign_extension_setting_result?: MutateCampaignExtensionSettingResult;
+  campaign_feed_result?: MutateCampaignFeedResult;
+  campaign_label_result?: MutateCampaignLabelResult;
+  campaign_result?: MutateCampaignResult;
+  campaign_shared_set_result?: MutateCampaignSharedSetResult;
+  conversion_action_result?: MutateConversionActionResult;
+  customer_extension_setting_result?: MutateCustomerExtensionSettingResult;
+  customer_feed_result?: MutateCustomerFeedResult;
+  customer_label_result?: MutateCustomerLabelResult;
+  customer_negative_criterion_result?: MutateCustomerNegativeCriteriaResult;
+  customer_result?: MutateCustomerResult;
+  extension_feed_item_result?: MutateExtensionFeedItemResult;
+  feed_item_result?: MutateFeedItemResult;
+  feed_item_target_result?: MutateFeedItemTargetResult;
+  feed_mapping_result?: MutateFeedMappingResult;
+  feed_result?: MutateFeedResult;
+  label_result?: { resource_name?: string };
+  media_file_result?: { resource_name?: string };
+  remarketing_action_result?: { resource_name?: string };
+  shared_criterion_result?: { resource_name?: string };
+  shared_set_result?: { resource_name?: string };
+  user_list_result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.GroupPlacementViewService */
+export interface GroupPlacementViewService {}
+
+/* .google.ads.googleads.v1.services.GetGroupPlacementViewRequest */
+export interface GetGroupPlacementViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.HotelGroupViewService */
+export interface HotelGroupViewService {}
+
+/* .google.ads.googleads.v1.services.GetHotelGroupViewRequest */
+export interface GetHotelGroupViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.HotelPerformanceViewService */
+export interface HotelPerformanceViewService {}
+
+/* .google.ads.googleads.v1.services.GetHotelPerformanceViewRequest */
+export interface GetHotelPerformanceViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanAdGroupService */
+export interface KeywordPlanAdGroupService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordPlanAdGroupRequest */
+export interface GetKeywordPlanAdGroupRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupsRequest */
+export interface MutateKeywordPlanAdGroupsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: KeywordPlanAdGroup;
+    update?: KeywordPlanAdGroup;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanAdGroupOperation */
+export interface KeywordPlanAdGroupOperation {
+  update_mask?: { paths?: string[] };
+  create?: KeywordPlanAdGroup;
+  update?: KeywordPlanAdGroup;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupsResponse */
+export interface MutateKeywordPlanAdGroupsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupResult */
+export interface MutateKeywordPlanAdGroupResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanCampaignService */
+export interface KeywordPlanCampaignService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordPlanCampaignRequest */
+export interface GetKeywordPlanCampaignRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignsRequest */
+export interface MutateKeywordPlanCampaignsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: KeywordPlanCampaign;
+    update?: KeywordPlanCampaign;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanCampaignOperation */
+export interface KeywordPlanCampaignOperation {
+  update_mask?: { paths?: string[] };
+  create?: KeywordPlanCampaign;
+  update?: KeywordPlanCampaign;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignsResponse */
+export interface MutateKeywordPlanCampaignsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignResult */
+export interface MutateKeywordPlanCampaignResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanIdeaService */
+export interface KeywordPlanIdeaService {}
+
+/* .google.ads.googleads.v1.services.GenerateKeywordIdeasRequest */
+export interface GenerateKeywordIdeasRequest {
+  customer_id?: string;
+  language?: string;
+  geo_target_constants?: string[];
+  keyword_plan_network?: KeywordPlanNetwork;
+  keyword_and_url_seed?: { url?: string; keywords?: string[] };
+  keyword_seed?: { keywords?: string[] };
+  url_seed?: { url?: string };
+}
+
+/* .google.ads.googleads.v1.services.KeywordAndUrlSeed */
+export interface KeywordAndUrlSeed {
+  url?: string;
+  keywords?: string[];
+}
+
+/* .google.ads.googleads.v1.services.KeywordSeed */
+export interface KeywordSeed {
+  keywords?: string[];
+}
+
+/* .google.ads.googleads.v1.services.UrlSeed */
+export interface UrlSeed {
+  url?: string;
+}
+
+/* .google.ads.googleads.v1.services.GenerateKeywordIdeaResponse */
+export interface GenerateKeywordIdeaResponse {
+  results?: {
+    text?: string;
+    keyword_idea_metrics?: KeywordPlanHistoricalMetrics;
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.GenerateKeywordIdeaResult */
+export interface GenerateKeywordIdeaResult {
+  text?: string;
+  keyword_idea_metrics?: KeywordPlanHistoricalMetrics;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanKeywordService */
+export interface KeywordPlanKeywordService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordPlanKeywordRequest */
+export interface GetKeywordPlanKeywordRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordsRequest */
+export interface MutateKeywordPlanKeywordsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: KeywordPlanKeyword;
+    update?: KeywordPlanKeyword;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanKeywordOperation */
+export interface KeywordPlanKeywordOperation {
+  update_mask?: { paths?: string[] };
+  create?: KeywordPlanKeyword;
+  update?: KeywordPlanKeyword;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordsResponse */
+export interface MutateKeywordPlanKeywordsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordResult */
+export interface MutateKeywordPlanKeywordResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanNegativeKeywordService */
+export interface KeywordPlanNegativeKeywordService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordPlanNegativeKeywordRequest */
+export interface GetKeywordPlanNegativeKeywordRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordsRequest */
+export interface MutateKeywordPlanNegativeKeywordsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: KeywordPlanNegativeKeyword;
+    update?: KeywordPlanNegativeKeyword;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanNegativeKeywordOperation */
+export interface KeywordPlanNegativeKeywordOperation {
+  update_mask?: { paths?: string[] };
+  create?: KeywordPlanNegativeKeyword;
+  update?: KeywordPlanNegativeKeyword;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordsResponse */
+export interface MutateKeywordPlanNegativeKeywordsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordResult */
+export interface MutateKeywordPlanNegativeKeywordResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanService */
+export interface KeywordPlanService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordPlanRequest */
+export interface GetKeywordPlanRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlansRequest */
+export interface MutateKeywordPlansRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: KeywordPlan;
+    update?: KeywordPlan;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanOperation */
+export interface KeywordPlanOperation {
+  update_mask?: { paths?: string[] };
+  create?: KeywordPlan;
+  update?: KeywordPlan;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlansResponse */
+export interface MutateKeywordPlansResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateKeywordPlansResult */
+export interface MutateKeywordPlansResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.GenerateForecastMetricsRequest */
+export interface GenerateForecastMetricsRequest {
+  keyword_plan?: string;
+}
+
+/* .google.ads.googleads.v1.services.GenerateForecastMetricsResponse */
+export interface GenerateForecastMetricsResponse {
+  campaign_forecasts?: {
+    keyword_plan_campaign?: string;
+    campaign_forecast?: {
+      impressions?: number;
+      ctr?: number;
+      average_cpc?: number;
+      clicks?: number;
+      cost_micros?: number;
+    };
+  }[];
+  ad_group_forecasts?: {
+    keyword_plan_ad_group?: string;
+    ad_group_forecast?: {
+      impressions?: number;
+      ctr?: number;
+      average_cpc?: number;
+      clicks?: number;
+      cost_micros?: number;
+    };
+  }[];
+  keyword_forecasts?: {
+    keyword_plan_ad_group_keyword?: string;
+    keyword_forecast?: {
+      impressions?: number;
+      ctr?: number;
+      average_cpc?: number;
+      clicks?: number;
+      cost_micros?: number;
+    };
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanCampaignForecast */
+export interface KeywordPlanCampaignForecast {
+  keyword_plan_campaign?: string;
+  campaign_forecast?: {
+    impressions?: number;
+    ctr?: number;
+    average_cpc?: number;
+    clicks?: number;
+    cost_micros?: number;
+  };
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanAdGroupForecast */
+export interface KeywordPlanAdGroupForecast {
+  keyword_plan_ad_group?: string;
+  ad_group_forecast?: {
+    impressions?: number;
+    ctr?: number;
+    average_cpc?: number;
+    clicks?: number;
+    cost_micros?: number;
+  };
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanKeywordForecast */
+export interface KeywordPlanKeywordForecast {
+  keyword_plan_ad_group_keyword?: string;
+  keyword_forecast?: {
+    impressions?: number;
+    ctr?: number;
+    average_cpc?: number;
+    clicks?: number;
+    cost_micros?: number;
+  };
+}
+
+/* .google.ads.googleads.v1.services.ForecastMetrics */
+export interface ForecastMetrics {
+  impressions?: number;
+  ctr?: number;
+  average_cpc?: number;
+  clicks?: number;
+  cost_micros?: number;
+}
+
+/* .google.ads.googleads.v1.services.GenerateHistoricalMetricsRequest */
+export interface GenerateHistoricalMetricsRequest {
+  keyword_plan?: string;
+}
+
+/* .google.ads.googleads.v1.services.GenerateHistoricalMetricsResponse */
+export interface GenerateHistoricalMetricsResponse {
+  metrics?: {
+    search_query?: string;
+    keyword_metrics?: KeywordPlanHistoricalMetrics;
+  }[];
+}
+
+/* .google.ads.googleads.v1.services.KeywordPlanKeywordHistoricalMetrics */
+export interface KeywordPlanKeywordHistoricalMetrics {
+  search_query?: string;
+  keyword_metrics?: KeywordPlanHistoricalMetrics;
+}
+
+/* .google.ads.googleads.v1.services.KeywordViewService */
+export interface KeywordViewService {}
+
+/* .google.ads.googleads.v1.services.GetKeywordViewRequest */
+export interface GetKeywordViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.LabelService */
+export interface LabelService {}
+
+/* .google.ads.googleads.v1.services.GetLabelRequest */
+export interface GetLabelRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateLabelsRequest */
+export interface MutateLabelsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: Label;
+    update?: Label;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.LabelOperation */
+export interface LabelOperation {
+  update_mask?: { paths?: string[] };
+  create?: Label;
+  update?: Label;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateLabelsResponse */
+export interface MutateLabelsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateLabelResult */
+export interface MutateLabelResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.LanguageConstantService */
+export interface LanguageConstantService {}
+
+/* .google.ads.googleads.v1.services.GetLanguageConstantRequest */
+export interface GetLanguageConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.LocationViewService */
+export interface LocationViewService {}
+
+/* .google.ads.googleads.v1.services.GetLocationViewRequest */
+export interface GetLocationViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ManagedPlacementViewService */
+export interface ManagedPlacementViewService {}
+
+/* .google.ads.googleads.v1.services.GetManagedPlacementViewRequest */
+export interface GetManagedPlacementViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MediaFileService */
+export interface MediaFileService {}
+
+/* .google.ads.googleads.v1.services.GetMediaFileRequest */
+export interface GetMediaFileRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateMediaFilesRequest */
+export interface MutateMediaFilesRequest {
+  customer_id?: string;
+  operations?: { create?: MediaFile }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.MediaFileOperation */
+export interface MediaFileOperation {
+  create?: MediaFile;
+}
+
+/* .google.ads.googleads.v1.services.MutateMediaFilesResponse */
+export interface MutateMediaFilesResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateMediaFileResult */
+export interface MutateMediaFileResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MerchantCenterLinkService */
+export interface MerchantCenterLinkService {}
+
+/* .google.ads.googleads.v1.services.ListMerchantCenterLinksRequest */
+export interface ListMerchantCenterLinksRequest {
+  customer_id?: string;
+}
+
+/* .google.ads.googleads.v1.services.ListMerchantCenterLinksResponse */
+export interface ListMerchantCenterLinksResponse {
+  merchant_center_links?: MerchantCenterLink[];
+}
+
+/* .google.ads.googleads.v1.services.GetMerchantCenterLinkRequest */
+export interface GetMerchantCenterLinkRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkRequest */
+export interface MutateMerchantCenterLinkRequest {
+  customer_id?: string;
+  operation?: {
+    update_mask?: { paths?: string[] };
+    update?: MerchantCenterLink;
+    remove?: string;
+  };
+}
+
+/* .google.ads.googleads.v1.services.MerchantCenterLinkOperation */
+export interface MerchantCenterLinkOperation {
+  update_mask?: { paths?: string[] };
+  update?: MerchantCenterLink;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkResponse */
+export interface MutateMerchantCenterLinkResponse {
+  result?: { resource_name?: string };
+}
+
+/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkResult */
+export interface MutateMerchantCenterLinkResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MobileAppCategoryConstantService */
+export interface MobileAppCategoryConstantService {}
+
+/* .google.ads.googleads.v1.services.GetMobileAppCategoryConstantRequest */
+export interface GetMobileAppCategoryConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MobileDeviceConstantService */
+export interface MobileDeviceConstantService {}
+
+/* .google.ads.googleads.v1.services.GetMobileDeviceConstantRequest */
+export interface GetMobileDeviceConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateJobService */
+export interface MutateJobService {}
+
+/* .google.ads.googleads.v1.services.CreateMutateJobRequest */
+export interface CreateMutateJobRequest {
+  customer_id?: string;
+}
+
+/* .google.ads.googleads.v1.services.CreateMutateJobResponse */
+export interface CreateMutateJobResponse {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.GetMutateJobRequest */
+export interface GetMutateJobRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.RunMutateJobRequest */
+export interface RunMutateJobRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AddMutateJobOperationsRequest */
+export interface AddMutateJobOperationsRequest {
+  resource_name?: string;
+  sequence_token?: string;
+  mutate_operations?: MutateOperation[];
+}
+
+/* .google.ads.googleads.v1.services.AddMutateJobOperationsResponse */
+export interface AddMutateJobOperationsResponse {
+  total_operations?: number;
+  next_sequence_token?: string;
+}
+
+/* .google.ads.googleads.v1.services.ListMutateJobResultsRequest */
+export interface ListMutateJobResultsRequest {
+  resource_name?: string;
+  page_token?: string;
+  page_size?: number;
+}
+
+/* .google.ads.googleads.v1.services.ListMutateJobResultsResponse */
+export interface ListMutateJobResultsResponse {
+  results?: {
+    operation_index?: number;
+    mutate_operation_response?: MutateOperationResponse;
+    status?: {
+      code?: number;
+      message?: string;
+      details?: { type_url?: string; value?: string }[];
+    };
+  }[];
+  next_page_token?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateJobResult */
+export interface MutateJobResult {
+  operation_index?: number;
+  mutate_operation_response?: MutateOperationResponse;
+  status?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+}
+
+/* .google.ads.googleads.v1.services.OperatingSystemVersionConstantService */
+export interface OperatingSystemVersionConstantService {}
+
+/* .google.ads.googleads.v1.services.GetOperatingSystemVersionConstantRequest */
+export interface GetOperatingSystemVersionConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ParentalStatusViewService */
+export interface ParentalStatusViewService {}
+
+/* .google.ads.googleads.v1.services.GetParentalStatusViewRequest */
+export interface GetParentalStatusViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.PaymentsAccountService */
+export interface PaymentsAccountService {}
+
+/* .google.ads.googleads.v1.services.ListPaymentsAccountsRequest */
+export interface ListPaymentsAccountsRequest {
+  customer_id?: string;
+}
+
+/* .google.ads.googleads.v1.services.ListPaymentsAccountsResponse */
+export interface ListPaymentsAccountsResponse {
+  payments_accounts?: PaymentsAccount[];
+}
+
+/* .google.ads.googleads.v1.services.ProductBiddingCategoryConstantService */
+export interface ProductBiddingCategoryConstantService {}
+
+/* .google.ads.googleads.v1.services.GetProductBiddingCategoryConstantRequest */
+export interface GetProductBiddingCategoryConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ProductGroupViewService */
+export interface ProductGroupViewService {}
+
+/* .google.ads.googleads.v1.services.GetProductGroupViewRequest */
+export interface GetProductGroupViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.RecommendationService */
+export interface RecommendationService {}
+
+/* .google.ads.googleads.v1.services.GetRecommendationRequest */
+export interface GetRecommendationRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationRequest */
+export interface ApplyRecommendationRequest {
+  customer_id?: string;
+  operations?: {
+    resource_name?: string;
+    campaign_budget?: { new_budget_amount_micros?: number };
+    text_ad?: { ad?: Ad };
+    keyword?: {
+      ad_group?: string;
+      match_type?: KeywordMatchType;
+      cpc_bid_micros?: number;
+    };
+    target_cpa_opt_in?: {
+      target_cpa_micros?: number;
+      new_campaign_budget_amount_micros?: number;
+    };
+  }[];
+  partial_failure?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CampaignBudgetParameters */
+export interface CampaignBudgetParameters {
+  new_budget_amount_micros?: number;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.TextAdParameters */
+export interface TextAdParameters {
+  ad?: Ad;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.KeywordParameters */
+export interface KeywordParameters {
+  ad_group?: string;
+  match_type?: KeywordMatchType;
+  cpc_bid_micros?: number;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.TargetCpaOptInParameters */
+export interface TargetCpaOptInParameters {
+  target_cpa_micros?: number;
+  new_campaign_budget_amount_micros?: number;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation */
+export interface ApplyRecommendationOperation {
+  resource_name?: string;
+  campaign_budget?: CampaignBudgetParameters;
+  text_ad?: TextAdParameters;
+  keyword?: KeywordParameters;
+  target_cpa_opt_in?: TargetCpaOptInParameters;
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationResponse */
+export interface ApplyRecommendationResponse {
+  results?: { resource_name?: string }[];
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationResult */
+export interface ApplyRecommendationResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DismissRecommendationRequest.DismissRecommendationOperation */
+export interface DismissRecommendationOperation {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DismissRecommendationRequest */
+export interface DismissRecommendationRequest {
+  customer_id?: string;
+  operations?: DismissRecommendationOperation[];
+  partial_failure?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.DismissRecommendationResponse.DismissRecommendationResult */
+export interface DismissRecommendationResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.DismissRecommendationResponse */
+export interface DismissRecommendationResponse {
+  results?: DismissRecommendationResult[];
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+}
+
+/* .google.ads.googleads.v1.services.RemarketingActionService */
+export interface RemarketingActionService {}
+
+/* .google.ads.googleads.v1.services.GetRemarketingActionRequest */
+export interface GetRemarketingActionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateRemarketingActionsRequest */
+export interface MutateRemarketingActionsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: RemarketingAction;
+    update?: RemarketingAction;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.RemarketingActionOperation */
+export interface RemarketingActionOperation {
+  update_mask?: { paths?: string[] };
+  create?: RemarketingAction;
+  update?: RemarketingAction;
+}
+
+/* .google.ads.googleads.v1.services.MutateRemarketingActionsResponse */
+export interface MutateRemarketingActionsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateRemarketingActionResult */
+export interface MutateRemarketingActionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.SearchTermViewService */
+export interface SearchTermViewService {}
+
+/* .google.ads.googleads.v1.services.GetSearchTermViewRequest */
+export interface GetSearchTermViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.SharedCriterionService */
+export interface SharedCriterionService {}
+
+/* .google.ads.googleads.v1.services.GetSharedCriterionRequest */
+export interface GetSharedCriterionRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedCriteriaRequest */
+export interface MutateSharedCriteriaRequest {
+  customer_id?: string;
+  operations?: { create?: SharedCriterion; remove?: string }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.SharedCriterionOperation */
+export interface SharedCriterionOperation {
+  create?: SharedCriterion;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedCriteriaResponse */
+export interface MutateSharedCriteriaResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedCriterionResult */
+export interface MutateSharedCriterionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.SharedSetService */
+export interface SharedSetService {}
+
+/* .google.ads.googleads.v1.services.GetSharedSetRequest */
+export interface GetSharedSetRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedSetsRequest */
+export interface MutateSharedSetsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: SharedSet;
+    update?: SharedSet;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.SharedSetOperation */
+export interface SharedSetOperation {
+  update_mask?: { paths?: string[] };
+  create?: SharedSet;
+  update?: SharedSet;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedSetsResponse */
+export interface MutateSharedSetsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateSharedSetResult */
+export interface MutateSharedSetResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.ShoppingPerformanceViewService */
+export interface ShoppingPerformanceViewService {}
+
+/* .google.ads.googleads.v1.services.GetShoppingPerformanceViewRequest */
+export interface GetShoppingPerformanceViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.TopicConstantService */
+export interface TopicConstantService {}
+
+/* .google.ads.googleads.v1.services.GetTopicConstantRequest */
+export interface GetTopicConstantRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.TopicViewService */
+export interface TopicViewService {}
+
+/* .google.ads.googleads.v1.services.GetTopicViewRequest */
+export interface GetTopicViewRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.UserInterestService */
+export interface UserInterestService {}
+
+/* .google.ads.googleads.v1.services.GetUserInterestRequest */
+export interface GetUserInterestRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.UserListService */
+export interface UserListService {}
+
+/* .google.ads.googleads.v1.services.GetUserListRequest */
+export interface GetUserListRequest {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateUserListsRequest */
+export interface MutateUserListsRequest {
+  customer_id?: string;
+  operations?: {
+    update_mask?: { paths?: string[] };
+    create?: UserList;
+    update?: UserList;
+    remove?: string;
+  }[];
+  partial_failure?: boolean;
+  validate_only?: boolean;
+}
+
+/* .google.ads.googleads.v1.services.UserListOperation */
+export interface UserListOperation {
+  update_mask?: { paths?: string[] };
+  create?: UserList;
+  update?: UserList;
+  remove?: string;
+}
+
+/* .google.ads.googleads.v1.services.MutateUserListsResponse */
+export interface MutateUserListsResponse {
+  partial_failure_error?: {
+    code?: number;
+    message?: string;
+    details?: { type_url?: string; value?: string }[];
+  };
+  results?: { resource_name?: string }[];
+}
+
+/* .google.ads.googleads.v1.services.MutateUserListResult */
+export interface MutateUserListResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.VideoService */
+export interface VideoService {}
+
+/* .google.ads.googleads.v1.services.GetVideoRequest */
+export interface GetVideoRequest {
+  resource_name?: string;
+}
+
 /* MetricFields (custom type) */
 export type MetricFields =
   | "absolute_top_impression_percentage"
@@ -2830,5 +5924,5 @@ import {
   UserListType,
   UserListClosingReason,
   AccessReason,
-  UserListAccessStatus,
+  UserListAccessStatus
 } from "./enums";

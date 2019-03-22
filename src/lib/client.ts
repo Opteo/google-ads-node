@@ -6,7 +6,7 @@ import {
   MetadataInterceptor,
   ExceptionInterceptor,
   ResponseParsingInterceptor,
-  InterceptorMethod,
+  InterceptorMethod
 } from "./interceptor";
 import * as services from "./services";
 import * as GrpcTypes from "./types";
@@ -58,7 +58,7 @@ export class GoogleAdsClient {
         clientId: this.options.client_id,
         clientSecret: this.options.client_secret,
         refreshToken: this.options.refresh_token,
-        accessTokenGetter: this.options.accessTokenGetter,
+        accessTokenGetter: this.options.accessTokenGetter
       });
     }
   }
@@ -79,7 +79,7 @@ export class GoogleAdsClient {
       GOOGLE_ADS_ENDPOINT,
       grpc.credentials.createSsl(),
       {
-        interceptors,
+        interceptors
       }
     );
 
@@ -90,14 +90,17 @@ export class GoogleAdsClient {
   }
 
   public buildResource(resource: string, data: any): unknown {
-    if (!allProtos.resources.hasOwnProperty(resource)) {
+    if (
+      !allProtos.resources.hasOwnProperty(resource) &&
+      !allProtos.services.hasOwnProperty(resource)
+    ) {
       throw new Error(
         `Specified type "${resource}" does not exist in Google Ads API ${DEFAULT_VERSION}`
       );
     }
 
     /* Load the relevant types */
-    const type = allProtos.resources[resource];
+    const type = allProtos.resources[resource] || allProtos.services[resource];
     const grpcType = (GrpcTypes as any)[resource];
 
     /* 
@@ -149,7 +152,7 @@ export class GoogleAdsClient {
       (
         options: grpc.CallOptions,
         nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
-      ) => exceptionInterceptor.intercept(options, nextCall),
+      ) => exceptionInterceptor.intercept(options, nextCall)
     ];
 
     if (this.options.parseResults) {
@@ -164,7 +167,9 @@ export class GoogleAdsClient {
     return interceptors;
   }
 
-  private validateOptions(options: ClientOptionsNoToken | ClientOptionsWithToken): void {
+  private validateOptions(
+    options: ClientOptionsNoToken | ClientOptionsWithToken
+  ): void {
     if (!options) {
       throw new Error(`Client expects initialisation options`);
     }
@@ -172,7 +177,10 @@ export class GoogleAdsClient {
       throw new Error(`Missing required key "developer_token" in options`);
     }
 
-    if (this.usingToken(options) && !(options as ClientOptionsWithToken).access_token) {
+    if (
+      this.usingToken(options) &&
+      !(options as ClientOptionsWithToken).access_token
+    ) {
       throw new Error(
         `Missing required keys in options, expected "access_token", "developer_token"`
       );
@@ -191,7 +199,9 @@ export class GoogleAdsClient {
     }
   }
 
-  private usingToken(options: ClientOptionsNoToken | ClientOptionsWithToken): boolean {
+  private usingToken(
+    options: ClientOptionsNoToken | ClientOptionsWithToken
+  ): boolean {
     return "access_token" in options;
   }
 }

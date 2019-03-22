@@ -64,8 +64,17 @@ export function convertToProtoFormat(data: any, type: any): any {
       pb[displayKey] = value;
       continue;
     }
+
+    /* Build array of proto values */
+    if (Array.isArray(value)) {
+      pb[displayKey] = value.map(v => toProtoValueFormat(v));
+      continue;
+    }
+
     pb[displayKey] =
-      typeof value === "object" ? convertToProtoFormat(value, type) : toProtoValueFormat(value);
+      typeof value === "object"
+        ? convertToProtoFormat(value, type)
+        : toProtoValueFormat(value);
   }
 
   /* Check if number values are enums (this is a bit of a hack) */

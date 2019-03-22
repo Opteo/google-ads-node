@@ -1,8 +1,17 @@
 import grpc from "grpc";
 
 import { GoogleAdsClient } from "./client";
-import { AdvertisingChannelType, BiddingStrategyType, CampaignStatus } from "./enums";
-import { SearchGoogleAdsRequest, SearchGoogleAdsResponse, Campaign } from "./types";
+import {
+  AdvertisingChannelType,
+  BiddingStrategyType,
+  CampaignStatus
+} from "./enums";
+import {
+  SearchGoogleAdsRequest,
+  SearchGoogleAdsResponse,
+  Campaign,
+  SuggestGeoTargetConstantsRequest
+} from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
@@ -15,7 +24,7 @@ test("new client with access token", () => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    login_customer_id: LOGIN_CUSTOMER_ID,
+    login_customer_id: LOGIN_CUSTOMER_ID
   });
   expect(client).toBeInstanceOf(GoogleAdsClient);
 });
@@ -25,7 +34,7 @@ test("new client with refresh token", () => {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     refresh_token: REFRESH_TOKEN,
-    developer_token: DEVELOPER_TOKEN,
+    developer_token: DEVELOPER_TOKEN
   });
   expect(client).toBeInstanceOf(GoogleAdsClient);
 });
@@ -34,7 +43,7 @@ test("new client fails when missing developer token", () => {
   expect(() => {
     // @ts-ignore
     const client = new GoogleAdsClient({
-      access_token: ACCESS_TOKEN,
+      access_token: ACCESS_TOKEN
     });
   }).toThrow("Missing required");
 });
@@ -45,7 +54,7 @@ test("new client fails when not using valid options interface", () => {
     const client = new GoogleAdsClient({
       client_id: CLIENT_ID,
       refresh_token: REFRESH_TOKEN,
-      developer_token: DEVELOPER_TOKEN,
+      developer_token: DEVELOPER_TOKEN
     });
   }).toThrow("Missing required keys");
 });
@@ -53,7 +62,7 @@ test("new client fails when not using valid options interface", () => {
 test("loading api services", () => {
   const client = new GoogleAdsClient({
     access_token: "123",
-    developer_token: "123",
+    developer_token: "123"
   });
 
   expect(() => client.getService("NonExistentService")).toThrowError();
@@ -67,7 +76,7 @@ test("correctly builds a grpc resource from an object", () => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    login_customer_id: LOGIN_CUSTOMER_ID,
+    login_customer_id: LOGIN_CUSTOMER_ID
   });
 
   const campaign = {
@@ -77,19 +86,52 @@ test("correctly builds a grpc resource from an object", () => {
     bidding_strategy_type: BiddingStrategyType.MANUAL_CPC,
     campaign_budget: "resources/123/campaignBudgets/321",
     manual_cpc: {
-      enhanced_cpc_enabled: true,
-    },
+      enhanced_cpc_enabled: true
+    }
   };
 
   const protobuf = client.buildResource("Campaign", campaign) as Campaign;
 
   expect(protobuf instanceof Campaign);
 
-  expect((protobuf.getName() as any).toObject().value).toEqual("Interplanetary Flights");
+  expect((protobuf.getName() as any).toObject().value).toEqual(
+    "Interplanetary Flights"
+  );
   expect(protobuf.getStatus()).toEqual(3);
 
   expect((protobuf.getManualCpc() as any).toObject()).toEqual({
-    enhancedCpcEnabled: { value: true },
+    enhancedCpcEnabled: { value: true }
+  });
+});
+
+test("correctly builds a grpc request from an object", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID
+  });
+
+  const suggestGeoTargetConstantsRequest = {
+    locale: "gb",
+    country_code: "GB",
+    location_names: {
+      names: ["location1", "location2"]
+    }
+  };
+
+  const protobuf = client.buildResource(
+    "SuggestGeoTargetConstantsRequest",
+    suggestGeoTargetConstantsRequest
+  ) as SuggestGeoTargetConstantsRequest;
+
+  expect(protobuf instanceof SuggestGeoTargetConstantsRequest);
+  expect((protobuf.getCountryCode() as any).toObject().value).toEqual("GB");
+  expect(protobuf.toObject()).toEqual({
+    locale: { value: "gb" },
+    countryCode: { value: "GB" },
+    locationNames: {
+      namesList: [{ value: "location1" }, { value: "location2" }]
+    }
   });
 });
 
@@ -97,7 +139,7 @@ test("throws an error when attempting to build a non-existent resource", done =>
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    login_customer_id: LOGIN_CUSTOMER_ID,
+    login_customer_id: LOGIN_CUSTOMER_ID
   });
 
   try {
@@ -112,24 +154,26 @@ test("throws an unauthenticated error when access token is invalid", async done 
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    login_customer_id: LOGIN_CUSTOMER_ID,
+    login_customer_id: LOGIN_CUSTOMER_ID
   });
 
   const service = client.getService("GoogleAdsService");
   const request = new SearchGoogleAdsRequest();
 
-  await service.search(request).catch((err: Error, res: SearchGoogleAdsResponse) => {
-    expect(res).toBe(undefined);
-    expect(err.message).toContain("16 UNAUTHENTICATED");
-    done();
-  });
+  await service
+    .search(request)
+    .catch((err: Error, res: SearchGoogleAdsResponse) => {
+      expect(res).toBe(undefined);
+      expect(err.message).toContain("16 UNAUTHENTICATED");
+      done();
+    });
 });
 
 test("supports using callbacks instead of async service calls", done => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    login_customer_id: LOGIN_CUSTOMER_ID,
+    login_customer_id: LOGIN_CUSTOMER_ID
   });
 
   const service = client.getService("GoogleAdsService");
@@ -146,7 +190,11 @@ test("supports usage of an async access token getter function", async () => {
   expect.assertions(6);
   let tokenGetterCalled = "";
 
-  async function accessTokenGetter(clientId: string, clientSecret: string, refreshToken: string) {
+  async function accessTokenGetter(
+    clientId: string,
+    clientSecret: string,
+    refreshToken: string
+  ) {
     tokenGetterCalled = await new Promise(resolve =>
       setTimeout(() => resolve("<access-token>"), 1000)
     );
@@ -161,7 +209,7 @@ test("supports usage of an async access token getter function", async () => {
     client_secret: CLIENT_SECRET,
     refresh_token: REFRESH_TOKEN,
     developer_token: DEVELOPER_TOKEN,
-    accessTokenGetter,
+    accessTokenGetter
   });
 
   /* Do a service request so the accessTokenGetter is called */
