@@ -1,7 +1,7 @@
 import grpc from "grpc";
 
 import Auth from "./auth";
-import { GoogleAdsFailure, GoogleAdsError } from "./types";
+import { GoogleAdsFailure, GoogleAdsError, ErrorCode } from "./types";
 import { formatCallResults } from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v1.errors.googleadsfailure-bin";
@@ -78,6 +78,12 @@ export class ExceptionInterceptor {
         if (status.code !== grpc.status.OK) {
           // TODO: Throw this error instead of returning a new status?
           const error = this.handleGrpcFailure(status);
+
+          if (error.hasOwnProperty("error_code")) {
+            // @ts-ignore
+            status.metadata.add("error-code", JSON.stringify(error.error_code));
+          }
+
           const errorStatus = new grpc.StatusBuilder()
             .withCode(status.code)
             .withDetails(error.message)
@@ -123,7 +129,7 @@ export class ExceptionInterceptor {
 
     if (RETRY_STATUS_CODES.includes(code)) {
       /* Throw error if code one of INTERNAL or RESOURCE_EXHAUSTED */
-      throw new Error(status.details);
+      return new Error(status.details);
     }
 
     const gaFailure = this.getGoogleAdsFailure(metadata);
@@ -213,11 +219,19 @@ export class ResponseParsingInterceptor {
 class ClientError extends Error {
   public readonly request_id: string | undefined;
   public readonly failure: GoogleAdsFailure;
+  public readonly error_code: object;
 
   constructor(public message: string, requestId: string | undefined, failure: GoogleAdsFailure) {
     super(message);
 
     this.request_id = requestId;
     this.failure = failure;
+
+    if (failure.getErrorsList() && failure.getErrorsList().length > 0) {
+      const errorCode = failure.getErrorsList()[0].getErrorCode() as ErrorCode;
+      this.error_code = errorCode.toObject();
+    } else {
+      this.error_code = {};
+    }
   }
 }
