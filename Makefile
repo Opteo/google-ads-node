@@ -39,7 +39,7 @@ protos: clean compile-protos
 	@echo "finished all"
 
 enums:
-	pbjs -t json $(PROTO_ENUMS_ONLY) > ./scripts/$(OUT_COMPILED_ENUMS)
+	pbjs -t json $(PROTO_ENUMS_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_COMMON_ONLY) > ./scripts/$(OUT_COMPILED_ENUMS)
 	node ./scripts/generate-enums.js $(OUT_COMPILED_ENUMS) $(ADS_VERSION) $(OUT_STATIC_TS_ENUMS)
 	rm ./scripts/$(OUT_COMPILED_ENUMS)
 
