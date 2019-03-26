@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/opteo/google-ads-node/compare/v1.6.0...v1.7.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* **interceptor:** add enum error codes to error metadata ([bd08481](https://github.com/opteo/google-ads-node/commit/bd08481))
+* **scripts:** generate error enums as well ([fddac65](https://github.com/opteo/google-ads-node/commit/fddac65))
+
+
+### Features
+
+* **examples:** added new examples directory + first reporting example ([15a5051](https://github.com/opteo/google-ads-node/commit/15a5051))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/opteo/google-ads-node/compare/v1.5.0...v1.6.0) (2019-03-22)
 
