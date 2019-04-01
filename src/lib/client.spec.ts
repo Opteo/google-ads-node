@@ -10,7 +10,8 @@ import {
   SearchGoogleAdsRequest,
   SearchGoogleAdsResponse,
   Campaign,
-  SuggestGeoTargetConstantsRequest
+  SuggestGeoTargetConstantsRequest,
+  AdGroupCriterion
 } from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
@@ -133,6 +134,37 @@ test("correctly builds a grpc request from an object", () => {
       namesList: [{ value: "location1" }, { value: "location2" }]
     }
   });
+});
+
+
+test("correctly builds a keyword request from an object", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID
+  });
+
+  const ad_group_criterion = {
+    keyword: {
+      text: 'some_keyword',
+      match_type: 2,
+    },
+  }
+
+  const protobuf = client.buildResource(
+    "AdGroupCriterion",
+    ad_group_criterion
+  ) as AdGroupCriterion;
+
+  expect(protobuf.toObject()).toEqual(expect.objectContaining({
+    keyword: {
+      text: {
+        value : 'some_keyword',
+      },
+      matchType: 2,
+    }
+  }))
+
 });
 
 test("throws an error when attempting to build a non-existent resource", done => {

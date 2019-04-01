@@ -1,5 +1,7 @@
 import protobufHelpers from "google-protobuf/google/protobuf/field_mask_pb";
 import { Client } from "grpc";
+import get  from 'lodash.get'
+import set  from 'lodash.set'
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -81,7 +83,10 @@ export function convertToProtoFormat(data: any, type: any): any {
   const err = type.verify(pb);
   if (err && err.includes("enum value expected")) {
     const key = err.split(":")[0];
-    pb[key] = pb[key].value;
+
+    const enum_value = get(pb, key).value
+
+    set(pb, key,enum_value)
   }
 
   return pb;
