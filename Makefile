@@ -30,6 +30,7 @@ OUT_COMPILED_RESOURCES_JSON=compiled-resources.json
 # Static enum filepath (ts)
 OUT_STATIC_TS_ENUMS=src/lib/enums.ts
 OUT_STATIC_TS_RESOURCES=src/lib/resources.ts
+OUT_STATIC_TS_ENUM_MAPPING=src/lib/mapping.ts
 
 .SILENT: protos enums
 
@@ -46,7 +47,7 @@ enums:
 types:
 	pbjs -t json $(ALL_PROTOBUFS) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
 	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(ALL_PROTOBUFS)
-	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES)
+	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES) $(OUT_STATIC_TS_ENUM_MAPPING)
 	cp ./scripts/$(OUT_COMPILED_RESOURCES) ./src/protos/$(OUT_COMPILED_RESOURCES)
 	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
 
