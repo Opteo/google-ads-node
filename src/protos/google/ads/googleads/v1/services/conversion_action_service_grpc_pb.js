@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateConversionActionsRes
 }
 
 
+// Proto file describing the Conversion Action service.
+//
 // Service to manage conversion actions.
 var ConversionActionServiceService = exports.ConversionActionServiceService = {
   // Returns the requested conversion action.

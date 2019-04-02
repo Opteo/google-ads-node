@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_extensions_pb from "../../../../../google/ads/googleads/v1/common/extensions_pb";
+import * as google_ads_googleads_v1_enums_extension_type_pb from "../../../../../google/ads/googleads/v1/enums/extension_type_pb";
 import * as google_ads_googleads_v1_enums_feed_item_status_pb from "../../../../../google/ads/googleads/v1/enums/feed_item_status_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
@@ -10,6 +11,9 @@ import * as google_api_annotations_pb from "../../../../../google/api/annotation
 export class ExtensionFeedItem extends jspb.Message {
   getResourceName(): string;
   setResourceName(value: string): void;
+
+  getExtensionType(): google_ads_googleads_v1_enums_extension_type_pb.ExtensionTypeEnum.ExtensionType;
+  setExtensionType(value: google_ads_googleads_v1_enums_extension_type_pb.ExtensionTypeEnum.ExtensionType): void;
 
   hasStartDateTime(): boolean;
   clearStartDateTime(): void;
@@ -78,6 +82,7 @@ export class ExtensionFeedItem extends jspb.Message {
 export namespace ExtensionFeedItem {
   export type AsObject = {
     resourceName: string,
+    extensionType: google_ads_googleads_v1_enums_extension_type_pb.ExtensionTypeEnum.ExtensionType,
     startDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
     endDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
     status: google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus,

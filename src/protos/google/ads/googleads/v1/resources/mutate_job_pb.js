@@ -246,7 +246,9 @@ proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.toObject = f
   var f, obj = {
     creationDateTime: (f = msg.getCreationDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     completionDateTime: (f = msg.getCompletionDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    estimatedCompletionRatio: (f = msg.getEstimatedCompletionRatio()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f)
+    estimatedCompletionRatio: (f = msg.getEstimatedCompletionRatio()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    operationCount: (f = msg.getOperationCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    executedOperationCount: (f = msg.getExecutedOperationCount()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -297,6 +299,16 @@ proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.deserializeB
       var value = new google_protobuf_wrappers_pb.DoubleValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
       msg.setEstimatedCompletionRatio(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setOperationCount(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setExecutedOperationCount(value);
       break;
     default:
       reader.skipField();
@@ -349,6 +361,22 @@ proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.serializeBin
       3,
       f,
       google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getOperationCount();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getExecutedOperationCount();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
 };
@@ -441,6 +469,66 @@ proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.cl
  */
 proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.hasEstimatedCompletionRatio = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value operation_count = 4;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.getOperationCount = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 4));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.setOperationCount = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.clearOperationCount = function() {
+  this.setOperationCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.hasOperationCount = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value executed_operation_count = 5;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.getExecutedOperationCount = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 5));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.setExecutedOperationCount = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.clearExecutedOperationCount = function() {
+  this.setExecutedOperationCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.prototype.hasExecutedOperationCount = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

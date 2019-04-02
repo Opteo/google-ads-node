@@ -19,6 +19,7 @@
 'use strict';
 var grpc = require('grpc');
 var google_ads_googleads_v1_services_ad_group_criterion_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_group_criterion_service_pb.js');
+var google_ads_googleads_v1_common_policy_pb = require('../../../../../google/ads/googleads/v1/common/policy_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -70,6 +71,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupCriteriaRespo
 }
 
 
+// Proto file describing the Ad Group Criterion service.
+//
 // Service to manage ad group criteria.
 var AdGroupCriterionServiceService = exports.AdGroupCriterionServiceService = {
   // Returns the requested criterion in full detail.

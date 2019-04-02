@@ -10,11 +10,14 @@ import * as google_ads_googleads_v1_common_targeting_setting_pb from "../../../.
 import * as google_ads_googleads_v1_enums_ad_serving_optimization_status_pb from "../../../../../google/ads/googleads/v1/enums/ad_serving_optimization_status_pb";
 import * as google_ads_googleads_v1_enums_advertising_channel_sub_type_pb from "../../../../../google/ads/googleads/v1/enums/advertising_channel_sub_type_pb";
 import * as google_ads_googleads_v1_enums_advertising_channel_type_pb from "../../../../../google/ads/googleads/v1/enums/advertising_channel_type_pb";
+import * as google_ads_googleads_v1_enums_app_campaign_app_store_pb from "../../../../../google/ads/googleads/v1/enums/app_campaign_app_store_pb";
+import * as google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb from "../../../../../google/ads/googleads/v1/enums/app_campaign_bidding_strategy_goal_type_pb";
 import * as google_ads_googleads_v1_enums_bidding_strategy_type_pb from "../../../../../google/ads/googleads/v1/enums/bidding_strategy_type_pb";
 import * as google_ads_googleads_v1_enums_brand_safety_suitability_pb from "../../../../../google/ads/googleads/v1/enums/brand_safety_suitability_pb";
 import * as google_ads_googleads_v1_enums_campaign_serving_status_pb from "../../../../../google/ads/googleads/v1/enums/campaign_serving_status_pb";
 import * as google_ads_googleads_v1_enums_campaign_status_pb from "../../../../../google/ads/googleads/v1/enums/campaign_status_pb";
 import * as google_ads_googleads_v1_enums_negative_geo_target_type_pb from "../../../../../google/ads/googleads/v1/enums/negative_geo_target_type_pb";
+import * as google_ads_googleads_v1_enums_payment_mode_pb from "../../../../../google/ads/googleads/v1/enums/payment_mode_pb";
 import * as google_ads_googleads_v1_enums_positive_geo_target_type_pb from "../../../../../google/ads/googleads/v1/enums/positive_geo_target_type_pb";
 import * as google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb from "../../../../../google/ads/googleads/v1/enums/vanity_pharma_display_url_mode_pb";
 import * as google_ads_googleads_v1_enums_vanity_pharma_text_pb from "../../../../../google/ads/googleads/v1/enums/vanity_pharma_text_pb";
@@ -95,6 +98,11 @@ export class Campaign extends jspb.Message {
   getGeoTargetTypeSetting(): Campaign.GeoTargetTypeSetting | undefined;
   setGeoTargetTypeSetting(value?: Campaign.GeoTargetTypeSetting): void;
 
+  hasAppCampaignSetting(): boolean;
+  clearAppCampaignSetting(): void;
+  getAppCampaignSetting(): Campaign.AppCampaignSetting | undefined;
+  setAppCampaignSetting(value?: Campaign.AppCampaignSetting): void;
+
   hasCampaignBudget(): boolean;
   clearCampaignBudget(): void;
   getCampaignBudget(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -141,10 +149,18 @@ export class Campaign extends jspb.Message {
   getTrackingSetting(): Campaign.TrackingSetting | undefined;
   setTrackingSetting(value?: Campaign.TrackingSetting): void;
 
+  getPaymentMode(): google_ads_googleads_v1_enums_payment_mode_pb.PaymentModeEnum.PaymentMode;
+  setPaymentMode(value: google_ads_googleads_v1_enums_payment_mode_pb.PaymentModeEnum.PaymentMode): void;
+
   hasBiddingStrategy(): boolean;
   clearBiddingStrategy(): void;
   getBiddingStrategy(): google_protobuf_wrappers_pb.StringValue | undefined;
   setBiddingStrategy(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCommission(): boolean;
+  clearCommission(): void;
+  getCommission(): google_ads_googleads_v1_common_bidding_pb.Commission | undefined;
+  setCommission(value?: google_ads_googleads_v1_common_bidding_pb.Commission): void;
 
   hasManualCpc(): boolean;
   clearManualCpc(): void;
@@ -231,6 +247,7 @@ export namespace Campaign {
     shoppingSetting?: Campaign.ShoppingSetting.AsObject,
     targetingSetting?: google_ads_googleads_v1_common_targeting_setting_pb.TargetingSetting.AsObject,
     geoTargetTypeSetting?: Campaign.GeoTargetTypeSetting.AsObject,
+    appCampaignSetting?: Campaign.AppCampaignSetting.AsObject,
     campaignBudget?: google_protobuf_wrappers_pb.StringValue.AsObject,
     biddingStrategyType: google_ads_googleads_v1_enums_bidding_strategy_type_pb.BiddingStrategyTypeEnum.BiddingStrategyType,
     startDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -241,7 +258,9 @@ export namespace Campaign {
     vanityPharma?: Campaign.VanityPharma.AsObject,
     selectiveOptimization?: Campaign.SelectiveOptimization.AsObject,
     trackingSetting?: Campaign.TrackingSetting.AsObject,
+    paymentMode: google_ads_googleads_v1_enums_payment_mode_pb.PaymentModeEnum.PaymentMode,
     biddingStrategy?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    commission?: google_ads_googleads_v1_common_bidding_pb.Commission.AsObject,
     manualCpc?: google_ads_googleads_v1_common_bidding_pb.ManualCpc.AsObject,
     manualCpm?: google_ads_googleads_v1_common_bidding_pb.ManualCpm.AsObject,
     manualCpv?: google_ads_googleads_v1_common_bidding_pb.ManualCpv.AsObject,
@@ -317,70 +336,6 @@ export namespace Campaign {
     }
   }
 
-  export class DynamicSearchAdsSetting extends jspb.Message {
-    hasDomainName(): boolean;
-    clearDomainName(): void;
-    getDomainName(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setDomainName(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    hasLanguageCode(): boolean;
-    clearLanguageCode(): void;
-    getLanguageCode(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setLanguageCode(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    hasUseSuppliedUrlsOnly(): boolean;
-    clearUseSuppliedUrlsOnly(): void;
-    getUseSuppliedUrlsOnly(): google_protobuf_wrappers_pb.BoolValue | undefined;
-    setUseSuppliedUrlsOnly(value?: google_protobuf_wrappers_pb.BoolValue): void;
-
-    clearFeedsList(): void;
-    getFeedsList(): Array<google_protobuf_wrappers_pb.StringValue>;
-    setFeedsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
-    addFeeds(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): DynamicSearchAdsSetting.AsObject;
-    static toObject(includeInstance: boolean, msg: DynamicSearchAdsSetting): DynamicSearchAdsSetting.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: DynamicSearchAdsSetting, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): DynamicSearchAdsSetting;
-    static deserializeBinaryFromReader(message: DynamicSearchAdsSetting, reader: jspb.BinaryReader): DynamicSearchAdsSetting;
-  }
-
-  export namespace DynamicSearchAdsSetting {
-    export type AsObject = {
-      domainName?: google_protobuf_wrappers_pb.StringValue.AsObject,
-      languageCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
-      useSuppliedUrlsOnly?: google_protobuf_wrappers_pb.BoolValue.AsObject,
-      feedsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
-    }
-  }
-
-  export class GeoTargetTypeSetting extends jspb.Message {
-    getPositiveGeoTargetType(): google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType;
-    setPositiveGeoTargetType(value: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType): void;
-
-    getNegativeGeoTargetType(): google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType;
-    setNegativeGeoTargetType(value: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): GeoTargetTypeSetting.AsObject;
-    static toObject(includeInstance: boolean, msg: GeoTargetTypeSetting): GeoTargetTypeSetting.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: GeoTargetTypeSetting, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): GeoTargetTypeSetting;
-    static deserializeBinaryFromReader(message: GeoTargetTypeSetting, reader: jspb.BinaryReader): GeoTargetTypeSetting;
-  }
-
-  export namespace GeoTargetTypeSetting {
-    export type AsObject = {
-      positiveGeoTargetType: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType,
-      negativeGeoTargetType: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType,
-    }
-  }
-
   export class ShoppingSetting extends jspb.Message {
     hasMerchantId(): boolean;
     clearMerchantId(): void;
@@ -421,47 +376,27 @@ export namespace Campaign {
     }
   }
 
-  export class SelectiveOptimization extends jspb.Message {
-    clearConversionActionsList(): void;
-    getConversionActionsList(): Array<google_protobuf_wrappers_pb.StringValue>;
-    setConversionActionsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
-    addConversionActions(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+  export class GeoTargetTypeSetting extends jspb.Message {
+    getPositiveGeoTargetType(): google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType;
+    setPositiveGeoTargetType(value: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType): void;
+
+    getNegativeGeoTargetType(): google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType;
+    setNegativeGeoTargetType(value: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType): void;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SelectiveOptimization.AsObject;
-    static toObject(includeInstance: boolean, msg: SelectiveOptimization): SelectiveOptimization.AsObject;
+    toObject(includeInstance?: boolean): GeoTargetTypeSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: GeoTargetTypeSetting): GeoTargetTypeSetting.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: SelectiveOptimization, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SelectiveOptimization;
-    static deserializeBinaryFromReader(message: SelectiveOptimization, reader: jspb.BinaryReader): SelectiveOptimization;
+    static serializeBinaryToWriter(message: GeoTargetTypeSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GeoTargetTypeSetting;
+    static deserializeBinaryFromReader(message: GeoTargetTypeSetting, reader: jspb.BinaryReader): GeoTargetTypeSetting;
   }
 
-  export namespace SelectiveOptimization {
+  export namespace GeoTargetTypeSetting {
     export type AsObject = {
-      conversionActionsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
-    }
-  }
-
-  export class TrackingSetting extends jspb.Message {
-    hasTrackingUrl(): boolean;
-    clearTrackingUrl(): void;
-    getTrackingUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setTrackingUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): TrackingSetting.AsObject;
-    static toObject(includeInstance: boolean, msg: TrackingSetting): TrackingSetting.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: TrackingSetting, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): TrackingSetting;
-    static deserializeBinaryFromReader(message: TrackingSetting, reader: jspb.BinaryReader): TrackingSetting;
-  }
-
-  export namespace TrackingSetting {
-    export type AsObject = {
-      trackingUrl?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      positiveGeoTargetType: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType,
+      negativeGeoTargetType: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType,
     }
   }
 
@@ -489,9 +424,124 @@ export namespace Campaign {
     }
   }
 
+  export class DynamicSearchAdsSetting extends jspb.Message {
+    hasDomainName(): boolean;
+    clearDomainName(): void;
+    getDomainName(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setDomainName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    hasLanguageCode(): boolean;
+    clearLanguageCode(): void;
+    getLanguageCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setLanguageCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    hasUseSuppliedUrlsOnly(): boolean;
+    clearUseSuppliedUrlsOnly(): void;
+    getUseSuppliedUrlsOnly(): google_protobuf_wrappers_pb.BoolValue | undefined;
+    setUseSuppliedUrlsOnly(value?: google_protobuf_wrappers_pb.BoolValue): void;
+
+    clearFeedsList(): void;
+    getFeedsList(): Array<google_protobuf_wrappers_pb.StringValue>;
+    setFeedsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
+    addFeeds(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DynamicSearchAdsSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: DynamicSearchAdsSetting): DynamicSearchAdsSetting.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DynamicSearchAdsSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DynamicSearchAdsSetting;
+    static deserializeBinaryFromReader(message: DynamicSearchAdsSetting, reader: jspb.BinaryReader): DynamicSearchAdsSetting;
+  }
+
+  export namespace DynamicSearchAdsSetting {
+    export type AsObject = {
+      domainName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      languageCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      useSuppliedUrlsOnly?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+      feedsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    }
+  }
+
+  export class TrackingSetting extends jspb.Message {
+    hasTrackingUrl(): boolean;
+    clearTrackingUrl(): void;
+    getTrackingUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setTrackingUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TrackingSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: TrackingSetting): TrackingSetting.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TrackingSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TrackingSetting;
+    static deserializeBinaryFromReader(message: TrackingSetting, reader: jspb.BinaryReader): TrackingSetting;
+  }
+
+  export namespace TrackingSetting {
+    export type AsObject = {
+      trackingUrl?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    }
+  }
+
+  export class AppCampaignSetting extends jspb.Message {
+    getBiddingStrategyGoalType(): google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType;
+    setBiddingStrategyGoalType(value: google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType): void;
+
+    hasAppId(): boolean;
+    clearAppId(): void;
+    getAppId(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setAppId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    getAppStore(): google_ads_googleads_v1_enums_app_campaign_app_store_pb.AppCampaignAppStoreEnum.AppCampaignAppStore;
+    setAppStore(value: google_ads_googleads_v1_enums_app_campaign_app_store_pb.AppCampaignAppStoreEnum.AppCampaignAppStore): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AppCampaignSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: AppCampaignSetting): AppCampaignSetting.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AppCampaignSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AppCampaignSetting;
+    static deserializeBinaryFromReader(message: AppCampaignSetting, reader: jspb.BinaryReader): AppCampaignSetting;
+  }
+
+  export namespace AppCampaignSetting {
+    export type AsObject = {
+      biddingStrategyGoalType: google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType,
+      appId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      appStore: google_ads_googleads_v1_enums_app_campaign_app_store_pb.AppCampaignAppStoreEnum.AppCampaignAppStore,
+    }
+  }
+
+  export class SelectiveOptimization extends jspb.Message {
+    clearConversionActionsList(): void;
+    getConversionActionsList(): Array<google_protobuf_wrappers_pb.StringValue>;
+    setConversionActionsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
+    addConversionActions(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SelectiveOptimization.AsObject;
+    static toObject(includeInstance: boolean, msg: SelectiveOptimization): SelectiveOptimization.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SelectiveOptimization, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SelectiveOptimization;
+    static deserializeBinaryFromReader(message: SelectiveOptimization, reader: jspb.BinaryReader): SelectiveOptimization;
+  }
+
+  export namespace SelectiveOptimization {
+    export type AsObject = {
+      conversionActionsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    }
+  }
+
   export enum CampaignBiddingStrategyCase {
     CAMPAIGN_BIDDING_STRATEGY_NOT_SET = 0,
     BIDDING_STRATEGY = 23,
+    COMMISSION = 49,
     MANUAL_CPC = 24,
     MANUAL_CPM = 25,
     MANUAL_CPV = 37,

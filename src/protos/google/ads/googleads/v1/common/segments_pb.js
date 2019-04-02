@@ -93,6 +93,7 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     dayOfWeek: jspb.Message.getFieldWithDefault(msg, 5, 0),
     device: jspb.Message.getFieldWithDefault(msg, 1, 0),
     externalConversionSource: jspb.Message.getFieldWithDefault(msg, 55, 0),
+    geoTargetAirport: (f = msg.getGeoTargetAirport()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetCity: (f = msg.getGeoTargetCity()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetMetro: (f = msg.getGeoTargetMetro()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetRegion: (f = msg.getGeoTargetRegion()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
@@ -142,6 +143,7 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     quarter: (f = msg.getQuarter()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     searchTermMatchType: jspb.Message.getFieldWithDefault(msg, 22, 0),
     slot: jspb.Message.getFieldWithDefault(msg, 23, 0),
+    webpage: (f = msg.getWebpage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     week: (f = msg.getWeek()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     year: (f = msg.getYear()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f)
   };
@@ -235,6 +237,11 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
     case 55:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.ExternalConversionSourceEnum.ExternalConversionSource} */ (reader.readEnum());
       msg.setExternalConversionSource(value);
+      break;
+    case 65:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetAirport(value);
       break;
     case 62:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -472,6 +479,11 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
       var value = /** @type {!proto.google.ads.googleads.v1.enums.SlotEnum.Slot} */ (reader.readEnum());
       msg.setSlot(value);
       break;
+    case 66:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setWebpage(value);
+      break;
     case 24:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
@@ -604,6 +616,14 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
     writer.writeEnum(
       55,
       f
+    );
+  }
+  f = message.getGeoTargetAirport();
+  if (f != null) {
+    writer.writeMessage(
+      65,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = message.getGeoTargetCity();
@@ -989,6 +1009,14 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getWebpage();
+  if (f != null) {
+    writer.writeMessage(
+      66,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
   f = message.getWeek();
   if (f != null) {
     writer.writeMessage(
@@ -1260,6 +1288,36 @@ proto.google.ads.googleads.v1.common.Segments.prototype.getExternalConversionSou
 /** @param {!proto.google.ads.googleads.v1.enums.ExternalConversionSourceEnum.ExternalConversionSource} value */
 proto.google.ads.googleads.v1.common.Segments.prototype.setExternalConversionSource = function(value) {
   jspb.Message.setProto3EnumField(this, 55, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue geo_target_airport = 65;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetAirport = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 65));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetAirport = function(value) {
+  jspb.Message.setWrapperField(this, 65, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetAirport = function() {
+  this.setGeoTargetAirport(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetAirport = function() {
+  return jspb.Message.getField(this, 65) != null;
 };
 
 
@@ -2595,6 +2653,36 @@ proto.google.ads.googleads.v1.common.Segments.prototype.getSlot = function() {
 /** @param {!proto.google.ads.googleads.v1.enums.SlotEnum.Slot} value */
 proto.google.ads.googleads.v1.common.Segments.prototype.setSlot = function(value) {
   jspb.Message.setProto3EnumField(this, 23, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue webpage = 66;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getWebpage = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 66));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setWebpage = function(value) {
+  jspb.Message.setWrapperField(this, 66, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearWebpage = function() {
+  this.setWebpage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasWebpage = function() {
+  return jspb.Message.getField(this, 66) != null;
 };
 
 

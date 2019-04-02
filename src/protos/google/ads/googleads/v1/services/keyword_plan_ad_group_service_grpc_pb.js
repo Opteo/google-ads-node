@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateKeywordPlanAdGroupsR
 }
 
 
+// Proto file describing the keyword plan ad group service.
+//
 // Service to manage Keyword Plan ad groups.
 var KeywordPlanAdGroupServiceService = exports.KeywordPlanAdGroupServiceService = {
   // Returns the requested Keyword Plan ad group in full detail.

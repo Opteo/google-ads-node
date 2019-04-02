@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateFeedMappingsResponse
 }
 
 
+// Proto file describing the FeedMapping service.
+//
 // Service to manage feed mappings.
 var FeedMappingServiceService = exports.FeedMappingServiceService = {
   // Returns the requested feed mapping in full detail.

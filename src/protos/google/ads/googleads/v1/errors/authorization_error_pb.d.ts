@@ -31,6 +31,7 @@ export namespace AuthorizationErrorEnum {
     INCOMPLETE_SIGNUP = 8,
     CUSTOMER_NOT_ENABLED = 24,
     MISSING_TOS = 9,
+    DEVELOPER_TOKEN_NOT_APPROVED = 10,
   }
 }
 

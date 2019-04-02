@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_criteria_pb from "../../../../../google/ads/googleads/v1/common/criteria_pb";
 import * as google_ads_googleads_v1_common_custom_parameter_pb from "../../../../../google/ads/googleads/v1/common/custom_parameter_pb";
+import * as google_ads_googleads_v1_enums_ad_group_criterion_approval_status_pb from "../../../../../google/ads/googleads/v1/enums/ad_group_criterion_approval_status_pb";
 import * as google_ads_googleads_v1_enums_ad_group_criterion_status_pb from "../../../../../google/ads/googleads/v1/enums/ad_group_criterion_status_pb";
 import * as google_ads_googleads_v1_enums_bidding_source_pb from "../../../../../google/ads/googleads/v1/enums/bidding_source_pb";
 import * as google_ads_googleads_v1_enums_criterion_system_serving_status_pb from "../../../../../google/ads/googleads/v1/enums/criterion_system_serving_status_pb";
@@ -44,6 +45,9 @@ export class AdGroupCriterion extends jspb.Message {
 
   getSystemServingStatus(): google_ads_googleads_v1_enums_criterion_system_serving_status_pb.CriterionSystemServingStatusEnum.CriterionSystemServingStatus;
   setSystemServingStatus(value: google_ads_googleads_v1_enums_criterion_system_serving_status_pb.CriterionSystemServingStatusEnum.CriterionSystemServingStatus): void;
+
+  getApprovalStatus(): google_ads_googleads_v1_enums_ad_group_criterion_approval_status_pb.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus;
+  setApprovalStatus(value: google_ads_googleads_v1_enums_ad_group_criterion_approval_status_pb.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus): void;
 
   hasBidModifier(): boolean;
   clearBidModifier(): void;
@@ -147,6 +151,11 @@ export class AdGroupCriterion extends jspb.Message {
   getMobileAppCategory(): google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo | undefined;
   setMobileAppCategory(value?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo): void;
 
+  hasMobileApplication(): boolean;
+  clearMobileApplication(): void;
+  getMobileApplication(): google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo | undefined;
+  setMobileApplication(value?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo): void;
+
   hasListingGroup(): boolean;
   clearListingGroup(): void;
   getListingGroup(): google_ads_googleads_v1_common_criteria_pb.ListingGroupInfo | undefined;
@@ -238,6 +247,7 @@ export namespace AdGroupCriterion {
     type: google_ads_googleads_v1_enums_criterion_type_pb.CriterionTypeEnum.CriterionType,
     negative?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     systemServingStatus: google_ads_googleads_v1_enums_criterion_system_serving_status_pb.CriterionSystemServingStatusEnum.CriterionSystemServingStatus,
+    approvalStatus: google_ads_googleads_v1_enums_ad_group_criterion_approval_status_pb.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus,
     bidModifier?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     cpcBidMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     cpmBidMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
@@ -260,6 +270,7 @@ export namespace AdGroupCriterion {
     keyword?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo.AsObject,
     placement?: google_ads_googleads_v1_common_criteria_pb.PlacementInfo.AsObject,
     mobileAppCategory?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.AsObject,
+    mobileApplication?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.AsObject,
     listingGroup?: google_ads_googleads_v1_common_criteria_pb.ListingGroupInfo.AsObject,
     ageRange?: google_ads_googleads_v1_common_criteria_pb.AgeRangeInfo.AsObject,
     gender?: google_ads_googleads_v1_common_criteria_pb.GenderInfo.AsObject,
@@ -361,6 +372,7 @@ export namespace AdGroupCriterion {
     KEYWORD = 27,
     PLACEMENT = 28,
     MOBILE_APP_CATEGORY = 29,
+    MOBILE_APPLICATION = 30,
     LISTING_GROUP = 32,
     AGE_RANGE = 36,
     GENDER = 37,

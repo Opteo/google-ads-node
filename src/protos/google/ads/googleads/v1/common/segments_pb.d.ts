@@ -71,6 +71,11 @@ export class Segments extends jspb.Message {
   getExternalConversionSource(): google_ads_googleads_v1_enums_external_conversion_source_pb.ExternalConversionSourceEnum.ExternalConversionSource;
   setExternalConversionSource(value: google_ads_googleads_v1_enums_external_conversion_source_pb.ExternalConversionSourceEnum.ExternalConversionSource): void;
 
+  hasGeoTargetAirport(): boolean;
+  clearGeoTargetAirport(): void;
+  getGeoTargetAirport(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetAirport(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasGeoTargetCity(): boolean;
   clearGeoTargetCity(): void;
   getGeoTargetCity(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -298,6 +303,11 @@ export class Segments extends jspb.Message {
   getSlot(): google_ads_googleads_v1_enums_slot_pb.SlotEnum.Slot;
   setSlot(value: google_ads_googleads_v1_enums_slot_pb.SlotEnum.Slot): void;
 
+  hasWebpage(): boolean;
+  clearWebpage(): void;
+  getWebpage(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setWebpage(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasWeek(): boolean;
   clearWeek(): void;
   getWeek(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -333,6 +343,7 @@ export namespace Segments {
     dayOfWeek: google_ads_googleads_v1_enums_day_of_week_pb.DayOfWeekEnum.DayOfWeek,
     device: google_ads_googleads_v1_enums_device_pb.DeviceEnum.Device,
     externalConversionSource: google_ads_googleads_v1_enums_external_conversion_source_pb.ExternalConversionSourceEnum.ExternalConversionSource,
+    geoTargetAirport?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetCity?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetMetro?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetRegion?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -382,6 +393,7 @@ export namespace Segments {
     quarter?: google_protobuf_wrappers_pb.StringValue.AsObject,
     searchTermMatchType: google_ads_googleads_v1_enums_search_term_match_type_pb.SearchTermMatchTypeEnum.SearchTermMatchType,
     slot: google_ads_googleads_v1_enums_slot_pb.SlotEnum.Slot,
+    webpage?: google_protobuf_wrappers_pb.StringValue.AsObject,
     week?: google_protobuf_wrappers_pb.StringValue.AsObject,
     year?: google_protobuf_wrappers_pb.Int32Value.AsObject,
   }

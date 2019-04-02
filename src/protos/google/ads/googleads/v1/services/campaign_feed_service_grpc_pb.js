@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignFeedsRespons
 }
 
 
+// Proto file describing the CampaignFeed service.
+//
 // Service to manage campaign feeds.
 var CampaignFeedServiceService = exports.CampaignFeedServiceService = {
   // Returns the requested campaign feed in full detail.

@@ -27,6 +27,7 @@ export namespace MutateErrorEnum {
     INCONSISTENT_FIELD_VALUES = 8,
     MUTATE_NOT_ALLOWED = 9,
     RESOURCE_NOT_IN_GOOGLE_ADS = 10,
+    RESOURCE_ALREADY_EXISTS = 11,
   }
 }
 

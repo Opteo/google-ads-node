@@ -144,7 +144,9 @@ proto.google.ads.googleads.v1.enums.RecommendationTypeEnum.RecommendationType = 
   ENHANCED_CPC_OPT_IN: 7,
   SEARCH_PARTNERS_OPT_IN: 8,
   MAXIMIZE_CLICKS_OPT_IN: 9,
-  OPTIMIZE_AD_ROTATION: 10
+  OPTIMIZE_AD_ROTATION: 10,
+  KEYWORD_MATCH_TYPE: 14,
+  MOVE_UNUSED_BUDGET: 15
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

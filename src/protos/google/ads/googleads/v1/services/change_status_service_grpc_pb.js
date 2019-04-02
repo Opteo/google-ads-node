@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetChangeStatusRequest(buf
 }
 
 
+// Proto file describing the Change Status service.
+//
 // Service to fetch change statuses.
 var ChangeStatusServiceService = exports.ChangeStatusServiceService = {
   // Returns the requested change status in full detail.

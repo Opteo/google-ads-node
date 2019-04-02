@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignCriteriaResp
 }
 
 
+// Proto file describing the Campaign Criterion service.
+//
 // Service to manage campaign criteria.
 var CampaignCriterionServiceService = exports.CampaignCriterionServiceService = {
   // Returns the requested criterion in full detail.

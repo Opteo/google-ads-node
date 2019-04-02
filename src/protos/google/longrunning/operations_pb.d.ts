@@ -4,8 +4,10 @@
 import * as jspb from "google-protobuf";
 import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as google_rpc_status_pb from "../../google/rpc/status_pb";
+import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
 
 export class Operation extends jspb.Message {
   getName(): string;
@@ -173,4 +175,56 @@ export namespace DeleteOperationRequest {
     name: string,
   }
 }
+
+export class WaitOperationRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): google_protobuf_duration_pb.Duration | undefined;
+  setTimeout(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WaitOperationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: WaitOperationRequest): WaitOperationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WaitOperationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WaitOperationRequest;
+  static deserializeBinaryFromReader(message: WaitOperationRequest, reader: jspb.BinaryReader): WaitOperationRequest;
+}
+
+export namespace WaitOperationRequest {
+  export type AsObject = {
+    name: string,
+    timeout?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
+export class OperationInfo extends jspb.Message {
+  getResponseType(): string;
+  setResponseType(value: string): void;
+
+  getMetadataType(): string;
+  setMetadataType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OperationInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: OperationInfo): OperationInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OperationInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OperationInfo;
+  static deserializeBinaryFromReader(message: OperationInfo, reader: jspb.BinaryReader): OperationInfo;
+}
+
+export namespace OperationInfo {
+  export type AsObject = {
+    responseType: string,
+    metadataType: string,
+  }
+}
+
+  export const operationInfo: jspb.ExtensionFieldInfo<OperationInfo>;
 

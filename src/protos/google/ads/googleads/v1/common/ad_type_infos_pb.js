@@ -14,9 +14,11 @@ var global = Function('return this')();
 var google_ads_googleads_v1_common_ad_asset_pb = require('../../../../../google/ads/googleads/v1/common/ad_asset_pb.js');
 var google_ads_googleads_v1_enums_call_conversion_reporting_state_pb = require('../../../../../google/ads/googleads/v1/enums/call_conversion_reporting_state_pb.js');
 var google_ads_googleads_v1_enums_display_ad_format_setting_pb = require('../../../../../google/ads/googleads/v1/enums/display_ad_format_setting_pb.js');
+var google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb = require('../../../../../google/ads/googleads/v1/enums/legacy_app_install_ad_app_store_pb.js');
 var google_ads_googleads_v1_enums_mime_type_pb = require('../../../../../google/ads/googleads/v1/enums/mime_type_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
+goog.exportSymbol('proto.google.ads.googleads.v1.common.AppAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.CallOnlyAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.DisplayCallToAction', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ExpandedDynamicSearchAdInfo', null, global);
@@ -25,9 +27,11 @@ goog.exportSymbol('proto.google.ads.googleads.v1.common.GmailAdInfo', null, glob
 goog.exportSymbol('proto.google.ads.googleads.v1.common.GmailTeaser', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.HotelAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ImageAdInfo', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ProductImage', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ProductVideo', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ResponsiveSearchAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ShoppingProductAdInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ShoppingSmartAdInfo', null, global);
@@ -757,6 +761,8 @@ proto.google.ads.googleads.v1.common.CallOnlyAdInfo.toObject = function(includeI
     countryCode: (f = msg.getCountryCode()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     phoneNumber: (f = msg.getPhoneNumber()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     businessName: (f = msg.getBusinessName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    headline1: (f = msg.getHeadline1()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    headline2: (f = msg.getHeadline2()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     description1: (f = msg.getDescription1()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     description2: (f = msg.getDescription2()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     callTracked: (f = msg.getCallTracked()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
@@ -814,6 +820,16 @@ proto.google.ads.googleads.v1.common.CallOnlyAdInfo.deserializeBinaryFromReader 
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setBusinessName(value);
+      break;
+    case 11:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setHeadline1(value);
+      break;
+    case 12:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setHeadline2(value);
       break;
     case 4:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -898,6 +914,22 @@ proto.google.ads.googleads.v1.common.CallOnlyAdInfo.serializeBinaryToWriter = fu
   if (f != null) {
     writer.writeMessage(
       3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeadline1();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeadline2();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
@@ -1047,6 +1079,66 @@ proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.clearBusinessName 
  */
 proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.hasBusinessName = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue headline1 = 11;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.getHeadline1 = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 11));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.setHeadline1 = function(value) {
+  jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.clearHeadline1 = function() {
+  this.setHeadline1(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.hasHeadline1 = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue headline2 = 12;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.getHeadline2 = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 12));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.setHeadline2 = function(value) {
+  jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.clearHeadline2 = function() {
+  this.setHeadline2(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.CallOnlyAdInfo.prototype.hasHeadline2 = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
@@ -5841,6 +5933,1543 @@ proto.google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo.prototype.cle
  */
 proto.google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo.prototype.hasPromoText = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.common.AppAdInfo.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.AppAdInfo, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.AppAdInfo.displayName = 'proto.google.ads.googleads.v1.common.AppAdInfo';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.repeatedFields_ = [2,3,4,5,6];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.AppAdInfo.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.AppAdInfo} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    mandatoryAdText: (f = msg.getMandatoryAdText()) && google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject(includeInstance, f),
+    headlinesList: jspb.Message.toObjectList(msg.getHeadlinesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject, includeInstance),
+    descriptionsList: jspb.Message.toObjectList(msg.getDescriptionsList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject, includeInstance),
+    imagesList: jspb.Message.toObjectList(msg.getImagesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.toObject, includeInstance),
+    youtubeVideosList: jspb.Message.toObjectList(msg.getYoutubeVideosList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.toObject, includeInstance),
+    html5MediaBundlesList: jspb.Message.toObjectList(msg.getHtml5MediaBundlesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.AppAdInfo}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.AppAdInfo;
+  return proto.google.ads.googleads.v1.common.AppAdInfo.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.AppAdInfo} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.AppAdInfo}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.setMandatoryAdText(value);
+      break;
+    case 2:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.addHeadlines(value);
+      break;
+    case 3:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.addDescriptions(value);
+      break;
+    case 4:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.deserializeBinaryFromReader);
+      msg.addImages(value);
+      break;
+    case 5:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.deserializeBinaryFromReader);
+      msg.addYoutubeVideos(value);
+      break;
+    case 6:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset.deserializeBinaryFromReader);
+      msg.addHtml5MediaBundles(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.AppAdInfo.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.AppAdInfo} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMandatoryAdText();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeadlinesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescriptionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getYoutubeVideosList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getHtml5MediaBundlesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional AdTextAsset mandatory_ad_text = 1;
+ * @return {?proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getMandatoryAdText = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.AdTextAsset} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 1));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.AdTextAsset|undefined} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setMandatoryAdText = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearMandatoryAdText = function() {
+  this.setMandatoryAdText(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.hasMandatoryAdText = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated AdTextAsset headlines = 2;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getHeadlinesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 2));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setHeadlinesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdTextAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.addHeadlines = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.google.ads.googleads.v1.common.AdTextAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearHeadlinesList = function() {
+  this.setHeadlinesList([]);
+};
+
+
+/**
+ * repeated AdTextAsset descriptions = 3;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getDescriptionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 3));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setDescriptionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdTextAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.addDescriptions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.google.ads.googleads.v1.common.AdTextAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearDescriptionsList = function() {
+  this.setDescriptionsList([]);
+};
+
+
+/**
+ * repeated AdImageAsset images = 4;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getImagesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, 4));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setImagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdImageAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdImageAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.addImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.google.ads.googleads.v1.common.AdImageAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearImagesList = function() {
+  this.setImagesList([]);
+};
+
+
+/**
+ * repeated AdVideoAsset youtube_videos = 5;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getYoutubeVideosList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset, 5));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setYoutubeVideosList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdVideoAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdVideoAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.addYoutubeVideos = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.google.ads.googleads.v1.common.AdVideoAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearYoutubeVideosList = function() {
+  this.setYoutubeVideosList([]);
+};
+
+
+/**
+ * repeated AdMediaBundleAsset html5_media_bundles = 6;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdMediaBundleAsset>}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.getHtml5MediaBundlesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdMediaBundleAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset, 6));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdMediaBundleAsset>} value */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.setHtml5MediaBundlesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdMediaBundleAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdMediaBundleAsset}
+ */
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.addHtml5MediaBundles = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.google.ads.googleads.v1.common.AdMediaBundleAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.AppAdInfo.prototype.clearHtml5MediaBundlesList = function() {
+  this.setHtml5MediaBundlesList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.displayName = 'proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    appId: (f = msg.getAppId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    appStore: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    headline: (f = msg.getHeadline()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    description1: (f = msg.getDescription1()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    description2: (f = msg.getDescription2()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo;
+  return proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setAppId(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore} */ (reader.readEnum());
+      msg.setAppStore(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setHeadline(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setDescription1(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setDescription2(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAppStore();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = message.getHeadline();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescription1();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescription2();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.StringValue app_id = 1;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.getAppId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.setAppId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.clearAppId = function() {
+  this.setAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.hasAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore app_store = 2;
+ * @return {!proto.google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.getAppStore = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore} value */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.setAppStore = function(value) {
+  jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue headline = 3;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.getHeadline = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.setHeadline = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.clearHeadline = function() {
+  this.setHeadline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.hasHeadline = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue description1 = 4;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.getDescription1 = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.setDescription1 = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.clearDescription1 = function() {
+  this.setDescription1(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.hasDescription1 = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue description2 = 5;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.getDescription2 = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 5));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.setDescription2 = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.clearDescription2 = function() {
+  this.setDescription2(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo.prototype.hasDescription2 = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.displayName = 'proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.repeatedFields_ = [1,2,3,4,5,7,8];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketingImagesList: jspb.Message.toObjectList(msg.getMarketingImagesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.toObject, includeInstance),
+    squareMarketingImagesList: jspb.Message.toObjectList(msg.getSquareMarketingImagesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.toObject, includeInstance),
+    logoImagesList: jspb.Message.toObjectList(msg.getLogoImagesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.toObject, includeInstance),
+    squareLogoImagesList: jspb.Message.toObjectList(msg.getSquareLogoImagesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.toObject, includeInstance),
+    headlinesList: jspb.Message.toObjectList(msg.getHeadlinesList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject, includeInstance),
+    longHeadline: (f = msg.getLongHeadline()) && google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject(includeInstance, f),
+    descriptionsList: jspb.Message.toObjectList(msg.getDescriptionsList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.toObject, includeInstance),
+    youtubeVideosList: jspb.Message.toObjectList(msg.getYoutubeVideosList(),
+    google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.toObject, includeInstance),
+    businessName: (f = msg.getBusinessName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    mainColor: (f = msg.getMainColor()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    accentColor: (f = msg.getAccentColor()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    allowFlexibleColor: (f = msg.getAllowFlexibleColor()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
+    callToActionText: (f = msg.getCallToActionText()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    pricePrefix: (f = msg.getPricePrefix()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    promoText: (f = msg.getPromoText()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    formatSetting: jspb.Message.getFieldWithDefault(msg, 16, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo;
+  return proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.deserializeBinaryFromReader);
+      msg.addMarketingImages(value);
+      break;
+    case 2:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.deserializeBinaryFromReader);
+      msg.addSquareMarketingImages(value);
+      break;
+    case 3:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.deserializeBinaryFromReader);
+      msg.addLogoImages(value);
+      break;
+    case 4:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.deserializeBinaryFromReader);
+      msg.addSquareLogoImages(value);
+      break;
+    case 5:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.addHeadlines(value);
+      break;
+    case 6:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.setLongHeadline(value);
+      break;
+    case 7:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.deserializeBinaryFromReader);
+      msg.addDescriptions(value);
+      break;
+    case 8:
+      var value = new google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.deserializeBinaryFromReader);
+      msg.addYoutubeVideos(value);
+      break;
+    case 9:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setBusinessName(value);
+      break;
+    case 10:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setMainColor(value);
+      break;
+    case 11:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setAccentColor(value);
+      break;
+    case 12:
+      var value = new google_protobuf_wrappers_pb.BoolValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
+      msg.setAllowFlexibleColor(value);
+      break;
+    case 13:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCallToActionText(value);
+      break;
+    case 14:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setPricePrefix(value);
+      break;
+    case 15:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setPromoText(value);
+      break;
+    case 16:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting} */ (reader.readEnum());
+      msg.setFormatSetting(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketingImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getSquareMarketingImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogoImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getSquareLogoImagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getHeadlinesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getLongHeadline();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescriptionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getYoutubeVideosList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getBusinessName();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getMainColor();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccentColor();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllowFlexibleColor();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallToActionText();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getPricePrefix();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getPromoText();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getFormatSetting();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      16,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated AdImageAsset marketing_images = 1;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getMarketingImagesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, 1));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setMarketingImagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdImageAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdImageAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addMarketingImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.google.ads.googleads.v1.common.AdImageAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearMarketingImagesList = function() {
+  this.setMarketingImagesList([]);
+};
+
+
+/**
+ * repeated AdImageAsset square_marketing_images = 2;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getSquareMarketingImagesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, 2));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setSquareMarketingImagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdImageAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdImageAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addSquareMarketingImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.google.ads.googleads.v1.common.AdImageAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearSquareMarketingImagesList = function() {
+  this.setSquareMarketingImagesList([]);
+};
+
+
+/**
+ * repeated AdImageAsset logo_images = 3;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getLogoImagesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, 3));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setLogoImagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdImageAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdImageAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addLogoImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.google.ads.googleads.v1.common.AdImageAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearLogoImagesList = function() {
+  this.setLogoImagesList([]);
+};
+
+
+/**
+ * repeated AdImageAsset square_logo_images = 4;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getSquareLogoImagesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, 4));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdImageAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setSquareLogoImagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdImageAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdImageAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addSquareLogoImages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.google.ads.googleads.v1.common.AdImageAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearSquareLogoImagesList = function() {
+  this.setSquareLogoImagesList([]);
+};
+
+
+/**
+ * repeated AdTextAsset headlines = 5;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getHeadlinesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 5));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setHeadlinesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdTextAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addHeadlines = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.google.ads.googleads.v1.common.AdTextAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearHeadlinesList = function() {
+  this.setHeadlinesList([]);
+};
+
+
+/**
+ * optional AdTextAsset long_headline = 6;
+ * @return {?proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getLongHeadline = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.AdTextAsset} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 6));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.AdTextAsset|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setLongHeadline = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearLongHeadline = function() {
+  this.setLongHeadline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasLongHeadline = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated AdTextAsset descriptions = 7;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getDescriptionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, 7));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdTextAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setDescriptionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdTextAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdTextAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addDescriptions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.google.ads.googleads.v1.common.AdTextAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearDescriptionsList = function() {
+  this.setDescriptionsList([]);
+};
+
+
+/**
+ * repeated AdVideoAsset youtube_videos = 8;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getYoutubeVideosList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset, 8));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdVideoAsset>} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setYoutubeVideosList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdVideoAsset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdVideoAsset}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.addYoutubeVideos = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.google.ads.googleads.v1.common.AdVideoAsset, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearYoutubeVideosList = function() {
+  this.setYoutubeVideosList([]);
+};
+
+
+/**
+ * optional google.protobuf.StringValue business_name = 9;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getBusinessName = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 9));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setBusinessName = function(value) {
+  jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearBusinessName = function() {
+  this.setBusinessName(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasBusinessName = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue main_color = 10;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getMainColor = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 10));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setMainColor = function(value) {
+  jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearMainColor = function() {
+  this.setMainColor(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasMainColor = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue accent_color = 11;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getAccentColor = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 11));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setAccentColor = function(value) {
+  jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearAccentColor = function() {
+  this.setAccentColor(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasAccentColor = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional google.protobuf.BoolValue allow_flexible_color = 12;
+ * @return {?proto.google.protobuf.BoolValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getAllowFlexibleColor = function() {
+  return /** @type{?proto.google.protobuf.BoolValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 12));
+};
+
+
+/** @param {?proto.google.protobuf.BoolValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setAllowFlexibleColor = function(value) {
+  jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearAllowFlexibleColor = function() {
+  this.setAllowFlexibleColor(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasAllowFlexibleColor = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue call_to_action_text = 13;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getCallToActionText = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 13));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setCallToActionText = function(value) {
+  jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearCallToActionText = function() {
+  this.setCallToActionText(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasCallToActionText = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue price_prefix = 14;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getPricePrefix = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 14));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setPricePrefix = function(value) {
+  jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearPricePrefix = function() {
+  this.setPricePrefix(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasPricePrefix = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue promo_text = 15;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getPromoText = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 15));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setPromoText = function(value) {
+  jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.clearPromoText = function() {
+  this.setPromoText(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.hasPromoText = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting format_setting = 16;
+ * @return {!proto.google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting}
+ */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.getFormatSetting = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting} value */
+proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo.prototype.setFormatSetting = function(value) {
+  jspb.Message.setProto3EnumField(this, 16, value);
 };
 
 

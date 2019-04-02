@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_enums_budget_delivery_method_pb from "../../../../../google/ads/googleads/v1/enums/budget_delivery_method_pb";
 import * as google_ads_googleads_v1_enums_budget_period_pb from "../../../../../google/ads/googleads/v1/enums/budget_period_pb";
 import * as google_ads_googleads_v1_enums_budget_status_pb from "../../../../../google/ads/googleads/v1/enums/budget_status_pb";
+import * as google_ads_googleads_v1_enums_budget_type_pb from "../../../../../google/ads/googleads/v1/enums/budget_type_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
@@ -81,6 +82,9 @@ export class CampaignBudget extends jspb.Message {
   getRecommendedBudgetEstimatedChangeWeeklyViews(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setRecommendedBudgetEstimatedChangeWeeklyViews(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  getType(): google_ads_googleads_v1_enums_budget_type_pb.BudgetTypeEnum.BudgetType;
+  setType(value: google_ads_googleads_v1_enums_budget_type_pb.BudgetTypeEnum.BudgetType): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CampaignBudget.AsObject;
   static toObject(includeInstance: boolean, msg: CampaignBudget): CampaignBudget.AsObject;
@@ -109,6 +113,7 @@ export namespace CampaignBudget {
     recommendedBudgetEstimatedChangeWeeklyCostMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     recommendedBudgetEstimatedChangeWeeklyInteractions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     recommendedBudgetEstimatedChangeWeeklyViews?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    type: google_ads_googleads_v1_enums_budget_type_pb.BudgetTypeEnum.BudgetType,
   }
 }
 

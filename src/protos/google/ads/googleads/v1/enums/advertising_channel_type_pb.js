@@ -140,7 +140,8 @@ proto.google.ads.googleads.v1.enums.AdvertisingChannelTypeEnum.AdvertisingChanne
   DISPLAY: 3,
   SHOPPING: 4,
   HOTEL: 5,
-  VIDEO: 6
+  VIDEO: 6,
+  MULTI_CHANNEL: 7
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

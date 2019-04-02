@@ -42,7 +42,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_ = [[8,9,10,12,13,15,16,17,18,19,22,20,21,23,24,25,26,27,28,29,30,31,32,33]];
+proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_ = [[8,9,10,11,12,13,15,16,17,18,19,22,20,21,23,24,25,26,27,28,29,30,31,32,33]];
 
 /**
  * @enum {number}
@@ -52,6 +52,7 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.CriterionCase = {
   KEYWORD: 8,
   PLACEMENT: 9,
   MOBILE_APP_CATEGORY: 10,
+  MOBILE_APPLICATION: 11,
   LOCATION: 12,
   DEVICE: 13,
   AD_SCHEDULE: 15,
@@ -120,6 +121,7 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.toObject = function(in
     keyword: (f = msg.getKeyword()) && google_ads_googleads_v1_common_criteria_pb.KeywordInfo.toObject(includeInstance, f),
     placement: (f = msg.getPlacement()) && google_ads_googleads_v1_common_criteria_pb.PlacementInfo.toObject(includeInstance, f),
     mobileAppCategory: (f = msg.getMobileAppCategory()) && google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.toObject(includeInstance, f),
+    mobileApplication: (f = msg.getMobileApplication()) && google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && google_ads_googleads_v1_common_criteria_pb.LocationInfo.toObject(includeInstance, f),
     device: (f = msg.getDevice()) && google_ads_googleads_v1_common_criteria_pb.DeviceInfo.toObject(includeInstance, f),
     adSchedule: (f = msg.getAdSchedule()) && google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.toObject(includeInstance, f),
@@ -219,6 +221,11 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.deserializeBinaryFromR
       var value = new google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.deserializeBinaryFromReader);
       msg.setMobileAppCategory(value);
+      break;
+    case 11:
+      var value = new google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.deserializeBinaryFromReader);
+      msg.setMobileApplication(value);
       break;
     case 12:
       var value = new google_ads_googleads_v1_common_criteria_pb.LocationInfo;
@@ -422,6 +429,14 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.serializeBinaryToWrite
       10,
       f,
       google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getMobileApplication();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
@@ -832,6 +847,36 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.clearMobileA
  */
 proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.hasMobileAppCategory = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 11;
+ * @return {?proto.google.ads.googleads.v1.common.MobileApplicationInfo}
+ */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.getMobileApplication = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.MobileApplicationInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo, 11));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.MobileApplicationInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.setMobileApplication = function(value) {
+  jspb.Message.setOneofWrapperField(this, 11, proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.clearMobileApplication = function() {
+  this.setMobileApplication(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.hasMobileApplication = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

@@ -302,6 +302,11 @@ export class ListingDimensionInfo extends jspb.Message {
   getProductType(): ProductTypeInfo | undefined;
   setProductType(value?: ProductTypeInfo): void;
 
+  hasUnknownListingDimension(): boolean;
+  clearUnknownListingDimension(): void;
+  getUnknownListingDimension(): UnknownListingDimensionInfo | undefined;
+  setUnknownListingDimension(value?: UnknownListingDimensionInfo): void;
+
   getDimensionCase(): ListingDimensionInfo.DimensionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListingDimensionInfo.AsObject;
@@ -328,6 +333,7 @@ export namespace ListingDimensionInfo {
     productCondition?: ProductConditionInfo.AsObject,
     productItemId?: ProductItemIdInfo.AsObject,
     productType?: ProductTypeInfo.AsObject,
+    unknownListingDimension?: UnknownListingDimensionInfo.AsObject,
   }
 
   export enum DimensionCase {
@@ -345,6 +351,7 @@ export namespace ListingDimensionInfo {
     PRODUCT_CONDITION = 10,
     PRODUCT_ITEM_ID = 11,
     PRODUCT_TYPE = 12,
+    UNKNOWN_LISTING_DIMENSION = 14,
   }
 }
 
@@ -643,6 +650,22 @@ export namespace ProductTypeInfo {
   export type AsObject = {
     value?: google_protobuf_wrappers_pb.StringValue.AsObject,
     level: google_ads_googleads_v1_enums_product_type_level_pb.ProductTypeLevelEnum.ProductTypeLevel,
+  }
+}
+
+export class UnknownListingDimensionInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnknownListingDimensionInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: UnknownListingDimensionInfo): UnknownListingDimensionInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnknownListingDimensionInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnknownListingDimensionInfo;
+  static deserializeBinaryFromReader(message: UnknownListingDimensionInfo, reader: jspb.BinaryReader): UnknownListingDimensionInfo;
+}
+
+export namespace UnknownListingDimensionInfo {
+  export type AsObject = {
   }
 }
 

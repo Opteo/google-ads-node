@@ -83,6 +83,11 @@ export class ApplyRecommendationOperation extends jspb.Message {
   getTargetCpaOptIn(): ApplyRecommendationOperation.TargetCpaOptInParameters | undefined;
   setTargetCpaOptIn(value?: ApplyRecommendationOperation.TargetCpaOptInParameters): void;
 
+  hasMoveUnusedBudget(): boolean;
+  clearMoveUnusedBudget(): void;
+  getMoveUnusedBudget(): ApplyRecommendationOperation.MoveUnusedBudgetParameters | undefined;
+  setMoveUnusedBudget(value?: ApplyRecommendationOperation.MoveUnusedBudgetParameters): void;
+
   getApplyParametersCase(): ApplyRecommendationOperation.ApplyParametersCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApplyRecommendationOperation.AsObject;
@@ -101,6 +106,7 @@ export namespace ApplyRecommendationOperation {
     textAd?: ApplyRecommendationOperation.TextAdParameters.AsObject,
     keyword?: ApplyRecommendationOperation.KeywordParameters.AsObject,
     targetCpaOptIn?: ApplyRecommendationOperation.TargetCpaOptInParameters.AsObject,
+    moveUnusedBudget?: ApplyRecommendationOperation.MoveUnusedBudgetParameters.AsObject,
   }
 
   export class CampaignBudgetParameters extends jspb.Message {
@@ -207,12 +213,35 @@ export namespace ApplyRecommendationOperation {
     }
   }
 
+  export class MoveUnusedBudgetParameters extends jspb.Message {
+    hasBudgetMicrosToMove(): boolean;
+    clearBudgetMicrosToMove(): void;
+    getBudgetMicrosToMove(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setBudgetMicrosToMove(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MoveUnusedBudgetParameters.AsObject;
+    static toObject(includeInstance: boolean, msg: MoveUnusedBudgetParameters): MoveUnusedBudgetParameters.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MoveUnusedBudgetParameters, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MoveUnusedBudgetParameters;
+    static deserializeBinaryFromReader(message: MoveUnusedBudgetParameters, reader: jspb.BinaryReader): MoveUnusedBudgetParameters;
+  }
+
+  export namespace MoveUnusedBudgetParameters {
+    export type AsObject = {
+      budgetMicrosToMove?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    }
+  }
+
   export enum ApplyParametersCase {
     APPLY_PARAMETERS_NOT_SET = 0,
     CAMPAIGN_BUDGET = 2,
     TEXT_AD = 3,
     KEYWORD = 4,
     TARGET_CPA_OPT_IN = 5,
+    MOVE_UNUSED_BUDGET = 9,
   }
 }
 

@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignBudgetsRespo
 }
 
 
+// Proto file describing the Campaign Budget service.
+//
 // Service to manage campaign budgets.
 var CampaignBudgetServiceService = exports.CampaignBudgetServiceService = {
   // Returns the requested Campaign Budget in full detail.

@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateKeywordPlanNegativeK
 }
 
 
+// Proto file describing the keyword plan negative keyword service.
+//
 // Service to manage Keyword Plan negative keywords.
 var KeywordPlanNegativeKeywordServiceService = exports.KeywordPlanNegativeKeywordServiceService = {
   // Returns the requested plan in full detail.

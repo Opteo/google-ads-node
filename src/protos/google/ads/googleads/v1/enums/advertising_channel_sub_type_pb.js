@@ -145,7 +145,8 @@ proto.google.ads.googleads.v1.enums.AdvertisingChannelSubTypeEnum.AdvertisingCha
   DISPLAY_SMART_CAMPAIGN: 8,
   VIDEO_OUTSTREAM: 9,
   VIDEO_ACTION: 10,
-  VIDEO_NON_SKIPPABLE: 11
+  VIDEO_NON_SKIPPABLE: 11,
+  APP_CAMPAIGN: 12
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

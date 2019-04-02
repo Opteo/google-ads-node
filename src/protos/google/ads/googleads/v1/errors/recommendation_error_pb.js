@@ -148,7 +148,8 @@ proto.google.ads.googleads.v1.errors.RecommendationErrorEnum.RecommendationError
   NO_OPERATIONS: 11,
   DIFFERENT_TYPES_NOT_SUPPORTED: 12,
   DUPLICATE_RESOURCE_NAME: 13,
-  RECOMMENDATION_ALREADY_DISMISSED: 14
+  RECOMMENDATION_ALREADY_DISMISSED: 14,
+  INVALID_APPLY_REQUEST: 15
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

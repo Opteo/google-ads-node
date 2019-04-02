@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomerLabelsRespon
 }
 
 
+// Proto file describing the Customer Label service.
+//
 // Service to manage labels on customers.
 var CustomerLabelServiceService = exports.CustomerLabelServiceService = {
   // Returns the requested customer-label relationship in full detail.

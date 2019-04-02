@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetFeedPlaceholderViewRequ
 }
 
 
+// Proto file describing the FeedPlaceholderView service.
+//
 // Service to fetch feed placeholder views.
 var FeedPlaceholderViewServiceService = exports.FeedPlaceholderViewServiceService = {
   // Returns the requested feed placeholder view in full detail.

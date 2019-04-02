@@ -35,6 +35,7 @@ var google_ads_googleads_v1_resources_ad_group_feed_pb = require('../../../../..
 var google_ads_googleads_v1_resources_ad_group_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_label_pb.js');
 var google_ads_googleads_v1_resources_ad_schedule_view_pb = require('../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb.js');
 var google_ads_googleads_v1_resources_age_range_view_pb = require('../../../../../google/ads/googleads/v1/resources/age_range_view_pb.js');
+var google_ads_googleads_v1_resources_asset_pb = require('../../../../../google/ads/googleads/v1/resources/asset_pb.js');
 var google_ads_googleads_v1_resources_bidding_strategy_pb = require('../../../../../google/ads/googleads/v1/resources/bidding_strategy_pb.js');
 var google_ads_googleads_v1_resources_billing_setup_pb = require('../../../../../google/ads/googleads/v1/resources/billing_setup_pb.js');
 var google_ads_googleads_v1_resources_campaign_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_pb.js');
@@ -113,6 +114,7 @@ var google_ads_googleads_v1_services_ad_group_feed_service_pb = require('../../.
 var google_ads_googleads_v1_services_ad_group_label_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_group_label_service_pb.js');
 var google_ads_googleads_v1_services_ad_group_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_group_service_pb.js');
 var google_ads_googleads_v1_services_ad_parameter_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_parameter_service_pb.js');
+var google_ads_googleads_v1_services_asset_service_pb = require('../../../../../google/ads/googleads/v1/services/asset_service_pb.js');
 var google_ads_googleads_v1_services_bidding_strategy_service_pb = require('../../../../../google/ads/googleads/v1/services/bidding_strategy_service_pb.js');
 var google_ads_googleads_v1_services_campaign_bid_modifier_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_bid_modifier_service_pb.js');
 var google_ads_googleads_v1_services_campaign_budget_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_budget_service_pb.js');
@@ -188,6 +190,8 @@ function deserialize_google_ads_googleads_v1_services_SearchGoogleAdsResponse(bu
 }
 
 
+// Proto file describing the GoogleAdsService.
+//
 // Service to fetch data and metrics across resources.
 var GoogleAdsServiceService = exports.GoogleAdsServiceService = {
   // Returns all rows that match the search query.

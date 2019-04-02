@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateExtensionFeedItemsRe
 }
 
 
+// Proto file describing the ExtensionFeedItem service.
+//
 // Service to manage extension feed items.
 var ExtensionFeedItemServiceService = exports.ExtensionFeedItemServiceService = {
   // Returns the requested extension feed item in full detail.

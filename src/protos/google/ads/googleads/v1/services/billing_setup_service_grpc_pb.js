@@ -67,6 +67,8 @@ function deserialize_google_ads_googleads_v1_services_MutateBillingSetupResponse
 }
 
 
+// Proto file describing the BillingSetup service.
+//
 // A service for designating the business entity responsible for accrued costs.
 //
 // A billing setup is associated with a Payments account.  Billing-related

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetProductGroupViewRequest
 }
 
 
+// Proto file describing the ProductGroup View service.
+//
 // Service to manage product group views.
 var ProductGroupViewServiceService = exports.ProductGroupViewServiceService = {
   // Returns the requested product group view in full detail.

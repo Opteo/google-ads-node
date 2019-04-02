@@ -113,6 +113,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomerResponse(buf
 }
 
 
+// Proto file describing the Customer service.
+//
 // Service to manage customers.
 var CustomerServiceService = exports.CustomerServiceService = {
   // Returns the requested customer in full detail.

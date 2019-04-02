@@ -49,6 +49,11 @@ export class CampaignCriterion extends jspb.Message {
   getMobileAppCategory(): google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo | undefined;
   setMobileAppCategory(value?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo): void;
 
+  hasMobileApplication(): boolean;
+  clearMobileApplication(): void;
+  getMobileApplication(): google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo | undefined;
+  setMobileApplication(value?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo): void;
+
   hasLocation(): boolean;
   clearLocation(): void;
   getLocation(): google_ads_googleads_v1_common_criteria_pb.LocationInfo | undefined;
@@ -176,6 +181,7 @@ export namespace CampaignCriterion {
     keyword?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo.AsObject,
     placement?: google_ads_googleads_v1_common_criteria_pb.PlacementInfo.AsObject,
     mobileAppCategory?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.AsObject,
+    mobileApplication?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.AsObject,
     location?: google_ads_googleads_v1_common_criteria_pb.LocationInfo.AsObject,
     device?: google_ads_googleads_v1_common_criteria_pb.DeviceInfo.AsObject,
     adSchedule?: google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.AsObject,
@@ -204,6 +210,7 @@ export namespace CampaignCriterion {
     KEYWORD = 8,
     PLACEMENT = 9,
     MOBILE_APP_CATEGORY = 10,
+    MOBILE_APPLICATION = 11,
     LOCATION = 12,
     DEVICE = 13,
     AD_SCHEDULE = 15,

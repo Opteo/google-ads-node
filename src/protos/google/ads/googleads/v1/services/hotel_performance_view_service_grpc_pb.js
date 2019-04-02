@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetHotelPerformanceViewReq
 }
 
 
+// Proto file describing the Hotel Performance View Service.
+//
 // Service to manage Hotel Performance Views.
 var HotelPerformanceViewServiceService = exports.HotelPerformanceViewServiceService = {
   // Returns the requested Hotel Performance View in full detail.

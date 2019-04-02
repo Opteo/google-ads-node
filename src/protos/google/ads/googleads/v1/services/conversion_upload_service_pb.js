@@ -14,9 +14,13 @@ var global = Function('return this')();
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_rpc_status_pb = require('../../../../../google/rpc/status_pb.js');
+goog.exportSymbol('proto.google.ads.googleads.v1.services.CallConversion', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.services.CallConversionResult', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.services.ClickConversion', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.services.ClickConversionResult', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.services.ExternalAttributionData', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.services.UploadCallConversionsRequest', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.services.UploadCallConversionsResponse', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.services.UploadClickConversionsRequest', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.services.UploadClickConversionsResponse', null, global);
 
@@ -466,6 +470,442 @@ proto.google.ads.googleads.v1.services.UploadClickConversionsResponse.prototype.
  * @extends {jspb.Message}
  * @constructor
  */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.services.UploadCallConversionsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.displayName = 'proto.google.ads.googleads.v1.services.UploadCallConversionsRequest';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    customerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    conversionsList: jspb.Message.toObjectList(msg.getConversionsList(),
+    proto.google.ads.googleads.v1.services.CallConversion.toObject, includeInstance),
+    partialFailure: jspb.Message.getFieldWithDefault(msg, 3, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.services.UploadCallConversionsRequest}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.services.UploadCallConversionsRequest;
+  return proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.services.UploadCallConversionsRequest}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerId(value);
+      break;
+    case 2:
+      var value = new proto.google.ads.googleads.v1.services.CallConversion;
+      reader.readMessage(value,proto.google.ads.googleads.v1.services.CallConversion.deserializeBinaryFromReader);
+      msg.addConversions(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPartialFailure(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCustomerId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getConversionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.google.ads.googleads.v1.services.CallConversion.serializeBinaryToWriter
+    );
+  }
+  f = message.getPartialFailure();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string customer_id = 1;
+ * @return {string}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.getCustomerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.setCustomerId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated CallConversion conversions = 2;
+ * @return {!Array<!proto.google.ads.googleads.v1.services.CallConversion>}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.getConversionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.services.CallConversion>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.google.ads.googleads.v1.services.CallConversion, 2));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.services.CallConversion>} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.setConversionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.services.CallConversion=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.services.CallConversion}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.addConversions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.google.ads.googleads.v1.services.CallConversion, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.clearConversionsList = function() {
+  this.setConversionsList([]);
+};
+
+
+/**
+ * optional bool partial_failure = 3;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.getPartialFailure = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
+};
+
+
+/** @param {boolean} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.setPartialFailure = function(value) {
+  jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.services.UploadCallConversionsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.displayName = 'proto.google.ads.googleads.v1.services.UploadCallConversionsResponse';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partialFailureError: (f = msg.getPartialFailureError()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
+    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+    proto.google.ads.googleads.v1.services.CallConversionResult.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.services.UploadCallConversionsResponse}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.services.UploadCallConversionsResponse;
+  return proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.services.UploadCallConversionsResponse}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_rpc_status_pb.Status;
+      reader.readMessage(value,google_rpc_status_pb.Status.deserializeBinaryFromReader);
+      msg.setPartialFailureError(value);
+      break;
+    case 2:
+      var value = new proto.google.ads.googleads.v1.services.CallConversionResult;
+      reader.readMessage(value,proto.google.ads.googleads.v1.services.CallConversionResult.deserializeBinaryFromReader);
+      msg.addResults(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.services.UploadCallConversionsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPartialFailureError();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_rpc_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getResultsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.google.ads.googleads.v1.services.CallConversionResult.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.rpc.Status partial_failure_error = 1;
+ * @return {?proto.google.rpc.Status}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.getPartialFailureError = function() {
+  return /** @type{?proto.google.rpc.Status} */ (
+    jspb.Message.getWrapperField(this, google_rpc_status_pb.Status, 1));
+};
+
+
+/** @param {?proto.google.rpc.Status|undefined} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.setPartialFailureError = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.clearPartialFailureError = function() {
+  this.setPartialFailureError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.hasPartialFailureError = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated CallConversionResult results = 2;
+ * @return {!Array<!proto.google.ads.googleads.v1.services.CallConversionResult>}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.getResultsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.services.CallConversionResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.google.ads.googleads.v1.services.CallConversionResult, 2));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.services.CallConversionResult>} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.setResultsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.services.CallConversionResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.services.CallConversionResult}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.addResults = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.google.ads.googleads.v1.services.CallConversionResult, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.services.UploadCallConversionsResponse.prototype.clearResultsList = function() {
+  this.setResultsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.google.ads.googleads.v1.services.ClickConversion = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -875,6 +1315,385 @@ proto.google.ads.googleads.v1.services.ClickConversion.prototype.clearExternalAt
  */
 proto.google.ads.googleads.v1.services.ClickConversion.prototype.hasExternalAttributionData = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.services.CallConversion = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.services.CallConversion, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.services.CallConversion.displayName = 'proto.google.ads.googleads.v1.services.CallConversion';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.services.CallConversion.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.services.CallConversion} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.CallConversion.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    callerId: (f = msg.getCallerId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    callStartDateTime: (f = msg.getCallStartDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    conversionAction: (f = msg.getConversionAction()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    conversionDateTime: (f = msg.getConversionDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    conversionValue: (f = msg.getConversionValue()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    currencyCode: (f = msg.getCurrencyCode()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.services.CallConversion}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.services.CallConversion;
+  return proto.google.ads.googleads.v1.services.CallConversion.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.services.CallConversion} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.services.CallConversion}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCallerId(value);
+      break;
+    case 2:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCallStartDateTime(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setConversionAction(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setConversionDateTime(value);
+      break;
+    case 5:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setConversionValue(value);
+      break;
+    case 6:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCurrencyCode(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.services.CallConversion.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.services.CallConversion} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.CallConversion.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCallerId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallStartDateTime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversionAction();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversionDateTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversionValue();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCurrencyCode();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.StringValue caller_id = 1;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getCallerId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setCallerId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearCallerId = function() {
+  this.setCallerId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasCallerId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue call_start_date_time = 2;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getCallStartDateTime = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setCallStartDateTime = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearCallStartDateTime = function() {
+  this.setCallStartDateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasCallStartDateTime = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue conversion_action = 3;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getConversionAction = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setConversionAction = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearConversionAction = function() {
+  this.setConversionAction(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasConversionAction = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue conversion_date_time = 4;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getConversionDateTime = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setConversionDateTime = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearConversionDateTime = function() {
+  this.setConversionDateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasConversionDateTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue conversion_value = 5;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getConversionValue = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 5));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setConversionValue = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearConversionValue = function() {
+  this.setConversionValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasConversionValue = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue currency_code = 6;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.getCurrencyCode = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 6));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.setCurrencyCode = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversion.prototype.clearCurrencyCode = function() {
+  this.setCurrencyCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversion.prototype.hasCurrencyCode = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -1325,6 +2144,297 @@ proto.google.ads.googleads.v1.services.ClickConversionResult.prototype.clearConv
  */
 proto.google.ads.googleads.v1.services.ClickConversionResult.prototype.hasConversionDateTime = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.services.CallConversionResult, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.services.CallConversionResult.displayName = 'proto.google.ads.googleads.v1.services.CallConversionResult';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.services.CallConversionResult.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.services.CallConversionResult} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    callerId: (f = msg.getCallerId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    callStartDateTime: (f = msg.getCallStartDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    conversionAction: (f = msg.getConversionAction()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    conversionDateTime: (f = msg.getConversionDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.services.CallConversionResult}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.services.CallConversionResult;
+  return proto.google.ads.googleads.v1.services.CallConversionResult.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.services.CallConversionResult} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.services.CallConversionResult}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCallerId(value);
+      break;
+    case 2:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCallStartDateTime(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setConversionAction(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setConversionDateTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.services.CallConversionResult.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.services.CallConversionResult} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCallerId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallStartDateTime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversionAction();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConversionDateTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.StringValue caller_id = 1;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.getCallerId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.setCallerId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.clearCallerId = function() {
+  this.setCallerId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.hasCallerId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue call_start_date_time = 2;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.getCallStartDateTime = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.setCallStartDateTime = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.clearCallStartDateTime = function() {
+  this.setCallStartDateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.hasCallStartDateTime = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue conversion_action = 3;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.getConversionAction = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.setConversionAction = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.clearConversionAction = function() {
+  this.setConversionAction(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.hasConversionAction = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue conversion_date_time = 4;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.getConversionDateTime = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 4));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.setConversionDateTime = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.clearConversionDateTime = function() {
+  this.setConversionDateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.CallConversionResult.prototype.hasConversionDateTime = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

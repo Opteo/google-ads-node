@@ -144,7 +144,8 @@ proto.google.ads.googleads.v1.errors.AuthorizationErrorEnum.AuthorizationError =
   ACTION_NOT_PERMITTED: 7,
   INCOMPLETE_SIGNUP: 8,
   CUSTOMER_NOT_ENABLED: 24,
-  MISSING_TOS: 9
+  MISSING_TOS: 9,
+  DEVELOPER_TOKEN_NOT_APPROVED: 10
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

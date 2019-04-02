@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetDetailPlacementViewRequ
 }
 
 
+// Proto file describing the Detail Placement View service.
+//
 // Service to fetch Detail Placement views.
 var DetailPlacementViewServiceService = exports.DetailPlacementViewServiceService = {
   // Returns the requested Detail Placement view in full detail.

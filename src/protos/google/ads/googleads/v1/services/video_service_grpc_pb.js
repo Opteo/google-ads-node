@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetVideoRequest(buffer_arg
 }
 
 
+// Proto file describing the Video service.
+//
 // Service to manage videos.
 var VideoServiceService = exports.VideoServiceService = {
   // Returns the requested video in full detail.

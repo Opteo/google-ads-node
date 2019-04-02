@@ -83,6 +83,18 @@ export enum AdGroupAdStatus {
 }
 
 /**
+ * @name AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus
+ */
+export enum AdGroupCriterionApprovalStatus {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "APPROVED" = 2,
+  "DISAPPROVED" = 3,
+  "PENDING_REVIEW" = 4,
+  "UNDER_REVIEW" = 5,
+}
+
+/**
  * @name AdGroupCriterionStatusEnum.AdGroupCriterionStatus
  */
 export enum AdGroupCriterionStatus {
@@ -120,6 +132,7 @@ export enum AdGroupType {
   "VIDEO_TRUE_VIEW_IN_DISPLAY" = 10,
   "VIDEO_NON_SKIPPABLE_IN_STREAM" = 11,
   "VIDEO_OUTSTREAM" = 12,
+  "SEARCH_DYNAMIC_ADS" = 13,
 }
 
 /**
@@ -181,6 +194,9 @@ export enum AdType {
   "IMAGE_AD" = 14,
   "RESPONSIVE_SEARCH_AD" = 15,
   "LEGACY_RESPONSIVE_DISPLAY_AD" = 16,
+  "APP_AD" = 17,
+  "LEGACY_APP_INSTALL_AD" = 18,
+  "RESPONSIVE_DISPLAY_AD" = 19,
 }
 
 /**
@@ -199,6 +215,7 @@ export enum AdvertisingChannelSubType {
   "VIDEO_OUTSTREAM" = 9,
   "VIDEO_ACTION" = 10,
   "VIDEO_NON_SKIPPABLE" = 11,
+  "APP_CAMPAIGN" = 12,
 }
 
 /**
@@ -212,6 +229,7 @@ export enum AdvertisingChannelType {
   "SHOPPING" = 4,
   "HOTEL" = 5,
   "VIDEO" = 6,
+  "MULTI_CHANNEL" = 7,
 }
 
 /**
@@ -258,6 +276,28 @@ export enum AgeRangeType {
 }
 
 /**
+ * @name AppCampaignAppStoreEnum.AppCampaignAppStore
+ */
+export enum AppCampaignAppStore {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "APPLE_APP_STORE" = 2,
+  "GOOGLE_APP_STORE" = 3,
+}
+
+/**
+ * @name AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType
+ */
+export enum AppCampaignBiddingStrategyGoalType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "OPTIMIZE_INSTALLS_TARGET_INSTALL_COST" = 2,
+  "OPTIMIZE_IN_APP_CONVERSIONS_TARGET_INSTALL_COST" = 3,
+  "OPTIMIZE_IN_APP_CONVERSIONS_TARGET_CONVERSION_COST" = 4,
+  "OPTIMIZE_RETURN_ON_ADVERTISING_SPEND" = 5,
+}
+
+/**
  * @name AppPaymentModelTypeEnum.AppPaymentModelType
  */
 export enum AppPaymentModelType {
@@ -290,6 +330,17 @@ export enum AppStore {
   "UNKNOWN" = 1,
   "APPLE_ITUNES" = 2,
   "GOOGLE_PLAY" = 3,
+}
+
+/**
+ * @name AssetTypeEnum.AssetType
+ */
+export enum AssetType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "YOUTUBE_VIDEO" = 2,
+  "MEDIA_BUNDLE" = 3,
+  "IMAGE" = 4,
 }
 
 /**
@@ -412,6 +463,16 @@ export enum BudgetStatus {
   "UNKNOWN" = 1,
   "ENABLED" = 2,
   "REMOVED" = 3,
+}
+
+/**
+ * @name BudgetTypeEnum.BudgetType
+ */
+export enum BudgetType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "STANDARD" = 2,
+  "HOTEL_ADS_COMMISSION" = 3,
 }
 
 /**
@@ -642,6 +703,16 @@ export enum ConversionActionType {
   "UPLOAD_CLICKS" = 7,
   "WEBPAGE" = 8,
   "WEBSITE_CALL" = 9,
+}
+
+/**
+ * @name ConversionAdjustmentTypeEnum.ConversionAdjustmentType
+ */
+export enum ConversionAdjustmentType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "RETRACTION" = 2,
+  "RESTATEMENT" = 3,
 }
 
 /**
@@ -1439,6 +1510,19 @@ export enum LabelStatus {
 }
 
 /**
+ * @name LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore
+ */
+export enum LegacyAppInstallAdAppStore {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "APPLE_APP_STORE" = 2,
+  "GOOGLE_PLAY" = 3,
+  "WINDOWS_STORE" = 4,
+  "WINDOWS_PHONE_STORE" = 5,
+  "CN_APP_STORE" = 6,
+}
+
+/**
  * @name ListingCustomAttributeIndexEnum.ListingCustomAttributeIndex
  */
 export enum ListingCustomAttributeIndex {
@@ -1703,6 +1787,16 @@ export enum ParentalStatusType {
   "PARENT" = 300,
   "NOT_A_PARENT" = 301,
   "UNDETERMINED" = 302,
+}
+
+/**
+ * @name PaymentModeEnum.PaymentMode
+ */
+export enum PaymentMode {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CLICKS" = 4,
+  "CONVERSION_VALUE" = 5,
 }
 
 /**
@@ -2122,6 +2216,8 @@ export enum RecommendationType {
   "SEARCH_PARTNERS_OPT_IN" = 8,
   "MAXIMIZE_CLICKS_OPT_IN" = 9,
   "OPTIMIZE_AD_ROTATION" = 10,
+  "KEYWORD_MATCH_TYPE" = 14,
+  "MOVE_UNUSED_BUDGET" = 15,
 }
 
 /**
@@ -2880,6 +2976,18 @@ export enum AdxError {
 }
 
 /**
+ * @name AssetErrorEnum.AssetError
+ */
+export enum AssetError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CUSTOMER_NOT_WHITELISTED_FOR_ASSET_TYPE" = 2,
+  "DUPLICATE_ASSET" = 3,
+  "DUPLICATE_ASSET_NAME" = 4,
+  "ASSET_DATA_IS_MISSING" = 5,
+}
+
+/**
  * @name AuthenticationErrorEnum.AuthenticationError
  */
 export enum AuthenticationError {
@@ -2920,6 +3028,7 @@ export enum AuthorizationError {
   "INCOMPLETE_SIGNUP" = 8,
   "CUSTOMER_NOT_ENABLED" = 24,
   "MISSING_TOS" = 9,
+  "DEVELOPER_TOKEN_NOT_APPROVED" = 10,
 }
 
 /**
@@ -2949,6 +3058,7 @@ export enum BiddingError {
   "BID_TOO_MANY_FRACTIONAL_DIGITS" = 32,
   "INVALID_DOMAIN_NAME" = 33,
   "NOT_COMPATIBLE_WITH_PAYMENT_MODE" = 34,
+  "NOT_COMPATIBLE_WITH_BUDGET_TYPE" = 35,
 }
 
 /**
@@ -3070,6 +3180,7 @@ export enum CampaignError {
   "INVALID_HOTEL_CUSTOMER_LINK" = 38,
   "MISSING_HOTEL_SETTING" = 39,
   "CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP" = 40,
+  "APP_NOT_FOUND" = 41,
 }
 
 /**
@@ -3141,6 +3252,23 @@ export enum ConversionActionError {
 }
 
 /**
+ * @name ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError
+ */
+export enum ConversionAdjustmentUploadError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "TOO_RECENT_CONVERSION_ACTION" = 2,
+  "INVALID_CONVERSION_ACTION" = 3,
+  "CONVERSION_ALREADY_RETRACTED" = 4,
+  "CONVERSION_NOT_FOUND" = 5,
+  "CONVERSION_EXPIRED" = 6,
+  "ADJUSTMENT_PRECEDES_CONVERSION" = 7,
+  "MORE_RECENT_RESTATEMENT_FOUND" = 8,
+  "TOO_RECENT_CONVERSION" = 9,
+  "CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE" = 10,
+}
+
+/**
  * @name ConversionUploadErrorEnum.ConversionUploadError
  */
 export enum ConversionUploadError {
@@ -3161,6 +3289,12 @@ export enum ConversionUploadError {
   "ORDER_ID_NOT_PERMITTED_FOR_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION" = 14,
   "ORDER_ID_ALREADY_IN_USE" = 15,
   "DUPLICATE_ORDER_ID" = 16,
+  "TOO_RECENT_CALL" = 17,
+  "EXPIRED_CALL" = 18,
+  "CALL_NOT_FOUND" = 19,
+  "CONVERSION_PRECEDES_CALL" = 20,
+  "CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME" = 21,
+  "UNPARSEABLE_CALLERS_PHONE_NUMBER" = 22,
 }
 
 /**
@@ -3210,6 +3344,8 @@ export enum CriterionError {
   "CANNOT_ADD_USER_INTERESTS_TO_SEARCH_CAMPAIGNS" = 31,
   "CANNOT_SET_BIDS_ON_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS" = 32,
   "CANNOT_ADD_URLS_TO_CRITERION_TYPE_FOR_CAMPAIGN_TYPE" = 33,
+  "INVALID_CUSTOM_AFFINITY" = 96,
+  "INVALID_CUSTOM_INTENT" = 97,
   "INVALID_IP_ADDRESS" = 34,
   "INVALID_IP_FORMAT" = 35,
   "INVALID_MOBILE_APP" = 36,
@@ -4079,6 +4215,7 @@ export enum MutateError {
   "INCONSISTENT_FIELD_VALUES" = 8,
   "MUTATE_NOT_ALLOWED" = 9,
   "RESOURCE_NOT_IN_GOOGLE_ADS" = 10,
+  "RESOURCE_ALREADY_EXISTS" = 11,
 }
 
 /**
@@ -4176,6 +4313,8 @@ export enum PolicyValidationParameterError {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "UNSUPPORTED_AD_TYPE_FOR_IGNORABLE_POLICY_TOPICS" = 2,
+  "UNSUPPORTED_AD_TYPE_FOR_EXEMPT_POLICY_VIOLATION_KEYS" = 3,
+  "CANNOT_SET_BOTH_IGNORABLE_POLICY_TOPICS_AND_EXEMPT_POLICY_VIOLATION_KEYS" = 4,
 }
 
 /**
@@ -4285,6 +4424,7 @@ export enum RecommendationError {
   "DIFFERENT_TYPES_NOT_SUPPORTED" = 12,
   "DUPLICATE_RESOURCE_NAME" = 13,
   "RECOMMENDATION_ALREADY_DISMISSED" = 14,
+  "INVALID_APPLY_REQUEST" = 15,
 }
 
 /**

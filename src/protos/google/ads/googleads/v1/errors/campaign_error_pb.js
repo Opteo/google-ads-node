@@ -171,7 +171,8 @@ proto.google.ads.googleads.v1.errors.CampaignErrorEnum.CampaignError = {
   MISSING_HOTEL_CUSTOMER_LINK: 37,
   INVALID_HOTEL_CUSTOMER_LINK: 38,
   MISSING_HOTEL_SETTING: 39,
-  CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP: 40
+  CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP: 40,
+  APP_NOT_FOUND: 41
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

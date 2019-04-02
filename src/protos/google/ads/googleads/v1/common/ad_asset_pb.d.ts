@@ -32,3 +32,69 @@ export namespace AdTextAsset {
   }
 }
 
+export class AdImageAsset extends jspb.Message {
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAsset(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdImageAsset.AsObject;
+  static toObject(includeInstance: boolean, msg: AdImageAsset): AdImageAsset.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdImageAsset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdImageAsset;
+  static deserializeBinaryFromReader(message: AdImageAsset, reader: jspb.BinaryReader): AdImageAsset;
+}
+
+export namespace AdImageAsset {
+  export type AsObject = {
+    asset?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class AdVideoAsset extends jspb.Message {
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAsset(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdVideoAsset.AsObject;
+  static toObject(includeInstance: boolean, msg: AdVideoAsset): AdVideoAsset.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdVideoAsset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdVideoAsset;
+  static deserializeBinaryFromReader(message: AdVideoAsset, reader: jspb.BinaryReader): AdVideoAsset;
+}
+
+export namespace AdVideoAsset {
+  export type AsObject = {
+    asset?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class AdMediaBundleAsset extends jspb.Message {
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAsset(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdMediaBundleAsset.AsObject;
+  static toObject(includeInstance: boolean, msg: AdMediaBundleAsset): AdMediaBundleAsset.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AdMediaBundleAsset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdMediaBundleAsset;
+  static deserializeBinaryFromReader(message: AdMediaBundleAsset, reader: jspb.BinaryReader): AdMediaBundleAsset;
+}
+
+export namespace AdMediaBundleAsset {
+  export type AsObject = {
+    asset?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+

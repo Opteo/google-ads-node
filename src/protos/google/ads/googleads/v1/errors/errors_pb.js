@@ -24,6 +24,7 @@ var google_ads_googleads_v1_errors_ad_group_feed_error_pb = require('../../../..
 var google_ads_googleads_v1_errors_ad_parameter_error_pb = require('../../../../../google/ads/googleads/v1/errors/ad_parameter_error_pb.js');
 var google_ads_googleads_v1_errors_ad_sharing_error_pb = require('../../../../../google/ads/googleads/v1/errors/ad_sharing_error_pb.js');
 var google_ads_googleads_v1_errors_adx_error_pb = require('../../../../../google/ads/googleads/v1/errors/adx_error_pb.js');
+var google_ads_googleads_v1_errors_asset_error_pb = require('../../../../../google/ads/googleads/v1/errors/asset_error_pb.js');
 var google_ads_googleads_v1_errors_authentication_error_pb = require('../../../../../google/ads/googleads/v1/errors/authentication_error_pb.js');
 var google_ads_googleads_v1_errors_authorization_error_pb = require('../../../../../google/ads/googleads/v1/errors/authorization_error_pb.js');
 var google_ads_googleads_v1_errors_bidding_error_pb = require('../../../../../google/ads/googleads/v1/errors/bidding_error_pb.js');
@@ -38,6 +39,7 @@ var google_ads_googleads_v1_errors_change_status_error_pb = require('../../../..
 var google_ads_googleads_v1_errors_collection_size_error_pb = require('../../../../../google/ads/googleads/v1/errors/collection_size_error_pb.js');
 var google_ads_googleads_v1_errors_context_error_pb = require('../../../../../google/ads/googleads/v1/errors/context_error_pb.js');
 var google_ads_googleads_v1_errors_conversion_action_error_pb = require('../../../../../google/ads/googleads/v1/errors/conversion_action_error_pb.js');
+var google_ads_googleads_v1_errors_conversion_adjustment_upload_error_pb = require('../../../../../google/ads/googleads/v1/errors/conversion_adjustment_upload_error_pb.js');
 var google_ads_googleads_v1_errors_conversion_upload_error_pb = require('../../../../../google/ads/googleads/v1/errors/conversion_upload_error_pb.js');
 var google_ads_googleads_v1_errors_country_code_error_pb = require('../../../../../google/ads/googleads/v1/errors/country_code_error_pb.js');
 var google_ads_googleads_v1_errors_criterion_error_pb = require('../../../../../google/ads/googleads/v1/errors/criterion_error_pb.js');
@@ -628,7 +630,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,59,60,61,62,63,64,65,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,83,84,87,88,91,92,93,94,96,97,100,101,102,103,104,105,108,112,114]];
+proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,107,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,59,60,61,62,63,64,65,115,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,83,84,87,88,91,92,93,94,96,97,100,101,102,103,104,105,108,112,114]];
 
 /**
  * @enum {number}
@@ -655,6 +657,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   AD_GROUP_AD_ERROR: 21,
   AD_SHARING_ERROR: 24,
   ADX_ERROR: 25,
+  ASSET_ERROR: 107,
   BIDDING_ERROR: 26,
   CAMPAIGN_CRITERION_ERROR: 29,
   COLLECTION_SIZE_ERROR: 31,
@@ -693,6 +696,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   SHARED_CRITERION_ERROR: 63,
   CAMPAIGN_SHARED_SET_ERROR: 64,
   CONVERSION_ACTION_ERROR: 65,
+  CONVERSION_ADJUSTMENT_UPLOAD_ERROR: 115,
   CONVERSION_UPLOAD_ERROR: 111,
   HEADER_ERROR: 66,
   DATABASE_ERROR: 67,
@@ -786,6 +790,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     adGroupAdError: jspb.Message.getFieldWithDefault(msg, 21, 0),
     adSharingError: jspb.Message.getFieldWithDefault(msg, 24, 0),
     adxError: jspb.Message.getFieldWithDefault(msg, 25, 0),
+    assetError: jspb.Message.getFieldWithDefault(msg, 107, 0),
     biddingError: jspb.Message.getFieldWithDefault(msg, 26, 0),
     campaignCriterionError: jspb.Message.getFieldWithDefault(msg, 29, 0),
     collectionSizeError: jspb.Message.getFieldWithDefault(msg, 31, 0),
@@ -824,6 +829,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     sharedCriterionError: jspb.Message.getFieldWithDefault(msg, 63, 0),
     campaignSharedSetError: jspb.Message.getFieldWithDefault(msg, 64, 0),
     conversionActionError: jspb.Message.getFieldWithDefault(msg, 65, 0),
+    conversionAdjustmentUploadError: jspb.Message.getFieldWithDefault(msg, 115, 0),
     conversionUploadError: jspb.Message.getFieldWithDefault(msg, 111, 0),
     headerError: jspb.Message.getFieldWithDefault(msg, 66, 0),
     databaseError: jspb.Message.getFieldWithDefault(msg, 67, 0),
@@ -974,6 +980,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
     case 25:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.AdxErrorEnum.AdxError} */ (reader.readEnum());
       msg.setAdxError(value);
+      break;
+    case 107:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError} */ (reader.readEnum());
+      msg.setAssetError(value);
       break;
     case 26:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.BiddingErrorEnum.BiddingError} */ (reader.readEnum());
@@ -1126,6 +1136,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
     case 65:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.ConversionActionErrorEnum.ConversionActionError} */ (reader.readEnum());
       msg.setConversionActionError(value);
+      break;
+    case 115:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError} */ (reader.readEnum());
+      msg.setConversionAdjustmentUploadError(value);
       break;
     case 111:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.ConversionUploadErrorEnum.ConversionUploadError} */ (reader.readEnum());
@@ -1436,6 +1450,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
       f
     );
   }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError} */ (jspb.Message.getField(message, 107));
+  if (f != null) {
+    writer.writeEnum(
+      107,
+      f
+    );
+  }
   f = /** @type {!proto.google.ads.googleads.v1.errors.BiddingErrorEnum.BiddingError} */ (jspb.Message.getField(message, 26));
   if (f != null) {
     writer.writeEnum(
@@ -1699,6 +1720,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
   if (f != null) {
     writer.writeEnum(
       65,
+      f
+    );
+  }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError} */ (jspb.Message.getField(message, 115));
+  if (f != null) {
+    writer.writeEnum(
+      115,
       f
     );
   }
@@ -2527,6 +2555,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearAdxError = functio
  */
 proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasAdxError = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional AssetErrorEnum.AssetError asset_error = 107;
+ * @return {!proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getAssetError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError} */ (jspb.Message.getFieldWithDefault(this, 107, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setAssetError = function(value) {
+  jspb.Message.setOneofField(this, 107, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearAssetError = function() {
+  jspb.Message.setOneofField(this, 107, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasAssetError = function() {
+  return jspb.Message.getField(this, 107) != null;
 };
 
 
@@ -3629,6 +3686,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearConversionActionEr
  */
 proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasConversionActionError = function() {
   return jspb.Message.getField(this, 65) != null;
+};
+
+
+/**
+ * optional ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;
+ * @return {!proto.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getConversionAdjustmentUploadError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError} */ (jspb.Message.getFieldWithDefault(this, 115, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setConversionAdjustmentUploadError = function(value) {
+  jspb.Message.setOneofField(this, 115, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearConversionAdjustmentUploadError = function() {
+  jspb.Message.setOneofField(this, 115, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasConversionAdjustmentUploadError = function() {
+  return jspb.Message.getField(this, 115) != null;
 };
 
 

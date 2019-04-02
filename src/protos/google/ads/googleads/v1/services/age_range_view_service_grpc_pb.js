@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetAgeRangeViewRequest(buf
 }
 
 
+// Proto file describing the Age Range View service.
+//
 // Service to manage age range views.
 var AgeRangeViewServiceService = exports.AgeRangeViewServiceService = {
   // Returns the requested age range view in full detail.

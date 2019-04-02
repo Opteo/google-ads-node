@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupFeedsResponse
 }
 
 
+// Proto file describing the AdGroupFeed service.
+//
 // Service to manage ad group feeds.
 var AdGroupFeedServiceService = exports.AdGroupFeedServiceService = {
   // Returns the requested ad group feed in full detail.

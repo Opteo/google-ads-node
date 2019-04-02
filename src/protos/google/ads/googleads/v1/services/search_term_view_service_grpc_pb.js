@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetSearchTermViewRequest(b
 }
 
 
+// Proto file describing the Search Term View service.
+//
 // Service to manage search term views.
 var SearchTermViewServiceService = exports.SearchTermViewServiceService = {
   // Returns the attributes of the requested search term view.

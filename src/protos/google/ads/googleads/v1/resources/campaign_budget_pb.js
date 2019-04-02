@@ -14,6 +14,7 @@ var global = Function('return this')();
 var google_ads_googleads_v1_enums_budget_delivery_method_pb = require('../../../../../google/ads/googleads/v1/enums/budget_delivery_method_pb.js');
 var google_ads_googleads_v1_enums_budget_period_pb = require('../../../../../google/ads/googleads/v1/enums/budget_period_pb.js');
 var google_ads_googleads_v1_enums_budget_status_pb = require('../../../../../google/ads/googleads/v1/enums/budget_status_pb.js');
+var google_ads_googleads_v1_enums_budget_type_pb = require('../../../../../google/ads/googleads/v1/enums/budget_type_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.CampaignBudget', null, global);
@@ -79,7 +80,8 @@ proto.google.ads.googleads.v1.resources.CampaignBudget.toObject = function(inclu
     recommendedBudgetEstimatedChangeWeeklyClicks: (f = msg.getRecommendedBudgetEstimatedChangeWeeklyClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     recommendedBudgetEstimatedChangeWeeklyCostMicros: (f = msg.getRecommendedBudgetEstimatedChangeWeeklyCostMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     recommendedBudgetEstimatedChangeWeeklyInteractions: (f = msg.getRecommendedBudgetEstimatedChangeWeeklyInteractions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    recommendedBudgetEstimatedChangeWeeklyViews: (f = msg.getRecommendedBudgetEstimatedChangeWeeklyViews()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    recommendedBudgetEstimatedChangeWeeklyViews: (f = msg.getRecommendedBudgetEstimatedChangeWeeklyViews()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    type: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
   if (includeInstance) {
@@ -191,6 +193,10 @@ proto.google.ads.googleads.v1.resources.CampaignBudget.deserializeBinaryFromRead
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setRecommendedBudgetEstimatedChangeWeeklyViews(value);
+      break;
+    case 18:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -343,6 +349,13 @@ proto.google.ads.googleads.v1.resources.CampaignBudget.serializeBinaryToWriter =
       17,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      18,
+      f
     );
   }
 };
@@ -765,6 +778,21 @@ proto.google.ads.googleads.v1.resources.CampaignBudget.prototype.clearRecommende
  */
 proto.google.ads.googleads.v1.resources.CampaignBudget.prototype.hasRecommendedBudgetEstimatedChangeWeeklyViews = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType type = 18;
+ * @return {!proto.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType}
+ */
+proto.google.ads.googleads.v1.resources.CampaignBudget.prototype.getType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType} value */
+proto.google.ads.googleads.v1.resources.CampaignBudget.prototype.setType = function(value) {
+  jspb.Message.setProto3EnumField(this, 18, value);
 };
 
 

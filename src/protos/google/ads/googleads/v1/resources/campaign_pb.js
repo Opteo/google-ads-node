@@ -19,17 +19,21 @@ var google_ads_googleads_v1_common_targeting_setting_pb = require('../../../../.
 var google_ads_googleads_v1_enums_ad_serving_optimization_status_pb = require('../../../../../google/ads/googleads/v1/enums/ad_serving_optimization_status_pb.js');
 var google_ads_googleads_v1_enums_advertising_channel_sub_type_pb = require('../../../../../google/ads/googleads/v1/enums/advertising_channel_sub_type_pb.js');
 var google_ads_googleads_v1_enums_advertising_channel_type_pb = require('../../../../../google/ads/googleads/v1/enums/advertising_channel_type_pb.js');
+var google_ads_googleads_v1_enums_app_campaign_app_store_pb = require('../../../../../google/ads/googleads/v1/enums/app_campaign_app_store_pb.js');
+var google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb = require('../../../../../google/ads/googleads/v1/enums/app_campaign_bidding_strategy_goal_type_pb.js');
 var google_ads_googleads_v1_enums_bidding_strategy_type_pb = require('../../../../../google/ads/googleads/v1/enums/bidding_strategy_type_pb.js');
 var google_ads_googleads_v1_enums_brand_safety_suitability_pb = require('../../../../../google/ads/googleads/v1/enums/brand_safety_suitability_pb.js');
 var google_ads_googleads_v1_enums_campaign_serving_status_pb = require('../../../../../google/ads/googleads/v1/enums/campaign_serving_status_pb.js');
 var google_ads_googleads_v1_enums_campaign_status_pb = require('../../../../../google/ads/googleads/v1/enums/campaign_status_pb.js');
 var google_ads_googleads_v1_enums_negative_geo_target_type_pb = require('../../../../../google/ads/googleads/v1/enums/negative_geo_target_type_pb.js');
+var google_ads_googleads_v1_enums_payment_mode_pb = require('../../../../../google/ads/googleads/v1/enums/payment_mode_pb.js');
 var google_ads_googleads_v1_enums_positive_geo_target_type_pb = require('../../../../../google/ads/googleads/v1/enums/positive_geo_target_type_pb.js');
 var google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb = require('../../../../../google/ads/googleads/v1/enums/vanity_pharma_display_url_mode_pb.js');
 var google_ads_googleads_v1_enums_vanity_pharma_text_pb = require('../../../../../google/ads/googleads/v1/enums/vanity_pharma_text_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Campaign', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Campaign.HotelSettingInfo', null, global);
@@ -71,7 +75,7 @@ proto.google.ads.googleads.v1.resources.Campaign.repeatedFields_ = [12,40];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.Campaign.oneofGroups_ = [[23,24,25,37,30,31,26,48,29,27,34,41]];
+proto.google.ads.googleads.v1.resources.Campaign.oneofGroups_ = [[23,49,24,25,37,30,31,26,48,29,27,34,41]];
 
 /**
  * @enum {number}
@@ -79,6 +83,7 @@ proto.google.ads.googleads.v1.resources.Campaign.oneofGroups_ = [[23,24,25,37,30
 proto.google.ads.googleads.v1.resources.Campaign.CampaignBiddingStrategyCase = {
   CAMPAIGN_BIDDING_STRATEGY_NOT_SET: 0,
   BIDDING_STRATEGY: 23,
+  COMMISSION: 49,
   MANUAL_CPC: 24,
   MANUAL_CPM: 25,
   MANUAL_CPV: 37,
@@ -146,6 +151,7 @@ proto.google.ads.googleads.v1.resources.Campaign.toObject = function(includeInst
     shoppingSetting: (f = msg.getShoppingSetting()) && proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject(includeInstance, f),
     targetingSetting: (f = msg.getTargetingSetting()) && google_ads_googleads_v1_common_targeting_setting_pb.TargetingSetting.toObject(includeInstance, f),
     geoTargetTypeSetting: (f = msg.getGeoTargetTypeSetting()) && proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject(includeInstance, f),
+    appCampaignSetting: (f = msg.getAppCampaignSetting()) && proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.toObject(includeInstance, f),
     campaignBudget: (f = msg.getCampaignBudget()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     biddingStrategyType: jspb.Message.getFieldWithDefault(msg, 22, 0),
     startDate: (f = msg.getStartDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
@@ -157,7 +163,9 @@ proto.google.ads.googleads.v1.resources.Campaign.toObject = function(includeInst
     vanityPharma: (f = msg.getVanityPharma()) && proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.toObject(includeInstance, f),
     selectiveOptimization: (f = msg.getSelectiveOptimization()) && proto.google.ads.googleads.v1.resources.Campaign.SelectiveOptimization.toObject(includeInstance, f),
     trackingSetting: (f = msg.getTrackingSetting()) && proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.toObject(includeInstance, f),
+    paymentMode: jspb.Message.getFieldWithDefault(msg, 52, 0),
     biddingStrategy: (f = msg.getBiddingStrategy()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    commission: (f = msg.getCommission()) && google_ads_googleads_v1_common_bidding_pb.Commission.toObject(includeInstance, f),
     manualCpc: (f = msg.getManualCpc()) && google_ads_googleads_v1_common_bidding_pb.ManualCpc.toObject(includeInstance, f),
     manualCpm: (f = msg.getManualCpm()) && google_ads_googleads_v1_common_bidding_pb.ManualCpm.toObject(includeInstance, f),
     manualCpv: (f = msg.getManualCpv()) && google_ads_googleads_v1_common_bidding_pb.ManualCpv.toObject(includeInstance, f),
@@ -284,6 +292,11 @@ proto.google.ads.googleads.v1.resources.Campaign.deserializeBinaryFromReader = f
       reader.readMessage(value,proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinaryFromReader);
       msg.setGeoTargetTypeSetting(value);
       break;
+    case 51:
+      var value = new proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting;
+      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.deserializeBinaryFromReader);
+      msg.setAppCampaignSetting(value);
+      break;
     case 6:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
@@ -332,10 +345,19 @@ proto.google.ads.googleads.v1.resources.Campaign.deserializeBinaryFromReader = f
       reader.readMessage(value,proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinaryFromReader);
       msg.setTrackingSetting(value);
       break;
+    case 52:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode} */ (reader.readEnum());
+      msg.setPaymentMode(value);
+      break;
     case 23:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setBiddingStrategy(value);
+      break;
+    case 49:
+      var value = new google_ads_googleads_v1_common_bidding_pb.Commission;
+      reader.readMessage(value,google_ads_googleads_v1_common_bidding_pb.Commission.deserializeBinaryFromReader);
+      msg.setCommission(value);
       break;
     case 24:
       var value = new google_ads_googleads_v1_common_bidding_pb.ManualCpc;
@@ -551,6 +573,14 @@ proto.google.ads.googleads.v1.resources.Campaign.serializeBinaryToWriter = funct
       proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.serializeBinaryToWriter
     );
   }
+  f = message.getAppCampaignSetting();
+  if (f != null) {
+    writer.writeMessage(
+      51,
+      f,
+      proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.serializeBinaryToWriter
+    );
+  }
   f = message.getCampaignBudget();
   if (f != null) {
     writer.writeMessage(
@@ -629,12 +659,27 @@ proto.google.ads.googleads.v1.resources.Campaign.serializeBinaryToWriter = funct
       proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.serializeBinaryToWriter
     );
   }
+  f = message.getPaymentMode();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      52,
+      f
+    );
+  }
   f = message.getBiddingStrategy();
   if (f != null) {
     writer.writeMessage(
       23,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCommission();
+  if (f != null) {
+    writer.writeMessage(
+      49,
+      f,
+      google_ads_googleads_v1_common_bidding_pb.Commission.serializeBinaryToWriter
     );
   }
   f = message.getManualCpc();
@@ -1189,6 +1234,635 @@ proto.google.ads.googleads.v1.resources.Campaign.HotelSettingInfo.prototype.hasH
  * @extends {jspb.Message}
  * @constructor
  */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    merchantId: (f = msg.getMerchantId()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    salesCountry: (f = msg.getSalesCountry()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    campaignPriority: (f = msg.getCampaignPriority()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+    enableLocal: (f = msg.getEnableLocal()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting;
+  return proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setMerchantId(value);
+      break;
+    case 2:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setSalesCountry(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.Int32Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int32Value.deserializeBinaryFromReader);
+      msg.setCampaignPriority(value);
+      break;
+    case 4:
+      var value = new google_protobuf_wrappers_pb.BoolValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
+      msg.setEnableLocal(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMerchantId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSalesCountry();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignPriority();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.Int32Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEnableLocal();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Int64Value merchant_id = 1;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getMerchantId = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 1));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setMerchantId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearMerchantId = function() {
+  this.setMerchantId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasMerchantId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue sales_country = 2;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getSalesCountry = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setSalesCountry = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearSalesCountry = function() {
+  this.setSalesCountry(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasSalesCountry = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int32Value campaign_priority = 3;
+ * @return {?proto.google.protobuf.Int32Value}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getCampaignPriority = function() {
+  return /** @type{?proto.google.protobuf.Int32Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int32Value, 3));
+};
+
+
+/** @param {?proto.google.protobuf.Int32Value|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setCampaignPriority = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearCampaignPriority = function() {
+  this.setCampaignPriority(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasCampaignPriority = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.BoolValue enable_local = 4;
+ * @return {?proto.google.protobuf.BoolValue}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getEnableLocal = function() {
+  return /** @type{?proto.google.protobuf.BoolValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 4));
+};
+
+
+/** @param {?proto.google.protobuf.BoolValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setEnableLocal = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearEnableLocal = function() {
+  this.setEnableLocal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasEnableLocal = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    positiveGeoTargetType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    negativeGeoTargetType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting;
+  return proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} */ (reader.readEnum());
+      msg.setPositiveGeoTargetType(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} */ (reader.readEnum());
+      msg.setNegativeGeoTargetType(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPositiveGeoTargetType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getNegativeGeoTargetType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType positive_geo_target_type = 1;
+ * @return {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.getPositiveGeoTargetType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} value */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.setPositiveGeoTargetType = function(value) {
+  jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType negative_geo_target_type = 2;
+ * @return {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.getNegativeGeoTargetType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} value */
+proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.setNegativeGeoTargetType = function(value) {
+  jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.VanityPharma, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.VanityPharma';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    vanityPharmaDisplayUrlMode: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    vanityPharmaText: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Campaign.VanityPharma;
+  return proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} */ (reader.readEnum());
+      msg.setVanityPharmaDisplayUrlMode(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} */ (reader.readEnum());
+      msg.setVanityPharmaText(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getVanityPharmaDisplayUrlMode();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getVanityPharmaText();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode vanity_pharma_display_url_mode = 1;
+ * @return {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.getVanityPharmaDisplayUrlMode = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} value */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.setVanityPharmaDisplayUrlMode = function(value) {
+  jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText vanity_pharma_text = 2;
+ * @return {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.getVanityPharmaText = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} value */
+proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.setVanityPharmaText = function(value) {
+  jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting.repeatedFields_, null);
 };
@@ -1489,12 +2163,12 @@ proto.google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting.prototy
  * @extends {jspb.Message}
  * @constructor
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting = function(opt_data) {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting, jspb.Message);
+goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting';
+  proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting';
 }
 
 
@@ -1509,8 +2183,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject(opt_includeInstance, this);
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.toObject(opt_includeInstance, this);
 };
 
 
@@ -1519,14 +2193,13 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} msg The msg instance to transform.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject = function(includeInstance, msg) {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.toObject = function(includeInstance, msg) {
   var f, obj = {
-    positiveGeoTargetType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    negativeGeoTargetType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    trackingUrl: (f = msg.getTrackingUrl()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1540,23 +2213,23 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.toObject =
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting}
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinary = function(bytes) {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting;
-  return proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting;
+  return proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} msg The message object to deserialize into.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting}
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializeBinaryFromReader = function(msg, reader) {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1564,12 +2237,9 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} */ (reader.readEnum());
-      msg.setPositiveGeoTargetType(value);
-      break;
-    case 2:
-      var value = /** @type {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} */ (reader.readEnum());
-      msg.setNegativeGeoTargetType(value);
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setTrackingUrl(value);
       break;
     default:
       reader.skipField();
@@ -1584,9 +2254,9 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.deserializ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.serializeBinary = function() {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.serializeBinaryToWriter(this, writer);
+  proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1594,56 +2264,50 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting} message
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.serializeBinaryToWriter = function(message, writer) {
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPositiveGeoTargetType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getTrackingUrl();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getNegativeGeoTargetType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType positive_geo_target_type = 1;
- * @return {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType}
+ * optional google.protobuf.StringValue tracking_url = 1;
+ * @return {?proto.google.protobuf.StringValue}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.getPositiveGeoTargetType = function() {
-  return /** @type {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.getTrackingUrl = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
 };
 
 
-/** @param {!proto.google.ads.googleads.v1.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType} value */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.setPositiveGeoTargetType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.setTrackingUrl = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.clearTrackingUrl = function() {
+  this.setTrackingUrl(undefined);
 };
 
 
 /**
- * optional google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType negative_geo_target_type = 2;
- * @return {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.getNegativeGeoTargetType = function() {
-  return /** @type {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {!proto.google.ads.googleads.v1.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType} value */
-proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.setNegativeGeoTargetType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.hasTrackingUrl = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1658,12 +2322,12 @@ proto.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting.prototype.
  * @extends {jspb.Message}
  * @constructor
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting = function(opt_data) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting, jspb.Message);
+goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting';
+  proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting';
 }
 
 
@@ -1678,8 +2342,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject(opt_includeInstance, this);
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.toObject(opt_includeInstance, this);
 };
 
 
@@ -1688,16 +2352,15 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.toObj
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} msg The msg instance to transform.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject = function(includeInstance, msg) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.toObject = function(includeInstance, msg) {
   var f, obj = {
-    merchantId: (f = msg.getMerchantId()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    salesCountry: (f = msg.getSalesCountry()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    campaignPriority: (f = msg.getCampaignPriority()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
-    enableLocal: (f = msg.getEnableLocal()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f)
+    biddingStrategyGoalType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    appId: (f = msg.getAppId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    appStore: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1711,23 +2374,23 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.toObject = func
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting}
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinary = function(bytes) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting;
-  return proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting;
+  return proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} msg The message object to deserialize into.
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting}
+ * @return {!proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBinaryFromReader = function(msg, reader) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1735,24 +2398,17 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBina
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.Int64Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
-      msg.setMerchantId(value);
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType} */ (reader.readEnum());
+      msg.setBiddingStrategyGoalType(value);
       break;
     case 2:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setSalesCountry(value);
+      msg.setAppId(value);
       break;
     case 3:
-      var value = new google_protobuf_wrappers_pb.Int32Value;
-      reader.readMessage(value,google_protobuf_wrappers_pb.Int32Value.deserializeBinaryFromReader);
-      msg.setCampaignPriority(value);
-      break;
-    case 4:
-      var value = new google_protobuf_wrappers_pb.BoolValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.BoolValue.deserializeBinaryFromReader);
-      msg.setEnableLocal(value);
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore} */ (reader.readEnum());
+      msg.setAppStore(value);
       break;
     default:
       reader.skipField();
@@ -1767,9 +2423,9 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.deserializeBina
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.serializeBinary = function() {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.serializeBinaryToWriter(this, writer);
+  proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1777,21 +2433,20 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.seria
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting} message
+ * @param {!proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.serializeBinaryToWriter = function(message, writer) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMerchantId();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getBiddingStrategyGoalType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       1,
-      f,
-      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getSalesCountry();
+  f = message.getAppId();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1799,73 +2454,49 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.serializeBinary
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
-  f = message.getCampaignPriority();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getAppStore();
+  if (f !== 0.0) {
+    writer.writeEnum(
       3,
-      f,
-      google_protobuf_wrappers_pb.Int32Value.serializeBinaryToWriter
-    );
-  }
-  f = message.getEnableLocal();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_wrappers_pb.BoolValue.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional google.protobuf.Int64Value merchant_id = 1;
- * @return {?proto.google.protobuf.Int64Value}
+ * optional google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType bidding_strategy_goal_type = 1;
+ * @return {!proto.google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getMerchantId = function() {
-  return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 1));
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.getBiddingStrategyGoalType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.google.protobuf.Int64Value|undefined} value */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setMerchantId = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearMerchantId = function() {
-  this.setMerchantId(undefined);
+/** @param {!proto.google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType} value */
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.setBiddingStrategyGoalType = function(value) {
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasMerchantId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional google.protobuf.StringValue sales_country = 2;
+ * optional google.protobuf.StringValue app_id = 2;
  * @return {?proto.google.protobuf.StringValue}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getSalesCountry = function() {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.getAppId = function() {
   return /** @type{?proto.google.protobuf.StringValue} */ (
     jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
 };
 
 
 /** @param {?proto.google.protobuf.StringValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setSalesCountry = function(value) {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.setAppId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearSalesCountry = function() {
-  this.setSalesCountry(undefined);
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.clearAppId = function() {
+  this.setAppId(undefined);
 };
 
 
@@ -1873,68 +2504,23 @@ proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clear
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasSalesCountry = function() {
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.hasAppId = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional google.protobuf.Int32Value campaign_priority = 3;
- * @return {?proto.google.protobuf.Int32Value}
+ * optional google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;
+ * @return {!proto.google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore}
  */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getCampaignPriority = function() {
-  return /** @type{?proto.google.protobuf.Int32Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int32Value, 3));
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.getAppStore = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {?proto.google.protobuf.Int32Value|undefined} value */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setCampaignPriority = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearCampaignPriority = function() {
-  this.setCampaignPriority(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasCampaignPriority = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.BoolValue enable_local = 4;
- * @return {?proto.google.protobuf.BoolValue}
- */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.getEnableLocal = function() {
-  return /** @type{?proto.google.protobuf.BoolValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.BoolValue, 4));
-};
-
-
-/** @param {?proto.google.protobuf.BoolValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.setEnableLocal = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.clearEnableLocal = function() {
-  this.setEnableLocal(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Campaign.ShoppingSetting.prototype.hasEnableLocal = function() {
-  return jspb.Message.getField(this, 4) != null;
+/** @param {!proto.google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore} value */
+proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting.prototype.setAppStore = function(value) {
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -2103,334 +2689,6 @@ proto.google.ads.googleads.v1.resources.Campaign.SelectiveOptimization.prototype
 
 proto.google.ads.googleads.v1.resources.Campaign.SelectiveOptimization.prototype.clearConversionActionsList = function() {
   this.setConversionActionsList([]);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    trackingUrl: (f = msg.getTrackingUrl()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting;
-  return proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setTrackingUrl(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getTrackingUrl();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional google.protobuf.StringValue tracking_url = 1;
- * @return {?proto.google.protobuf.StringValue}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.getTrackingUrl = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
-};
-
-
-/** @param {?proto.google.protobuf.StringValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.setTrackingUrl = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.clearTrackingUrl = function() {
-  this.setTrackingUrl(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Campaign.TrackingSetting.prototype.hasTrackingUrl = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.google.ads.googleads.v1.resources.Campaign.VanityPharma, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.displayName = 'proto.google.ads.googleads.v1.resources.Campaign.VanityPharma';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    vanityPharmaDisplayUrlMode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    vanityPharmaText: jspb.Message.getFieldWithDefault(msg, 2, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Campaign.VanityPharma;
-  return proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} */ (reader.readEnum());
-      msg.setVanityPharmaDisplayUrlMode(value);
-      break;
-    case 2:
-      var value = /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} */ (reader.readEnum());
-      msg.setVanityPharmaText(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Campaign.VanityPharma} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getVanityPharmaDisplayUrlMode();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      1,
-      f
-    );
-  }
-  f = message.getVanityPharmaText();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode vanity_pharma_display_url_mode = 1;
- * @return {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.getVanityPharmaDisplayUrlMode = function() {
-  return /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/** @param {!proto.google.ads.googleads.v1.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode} value */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.setVanityPharmaDisplayUrlMode = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
-};
-
-
-/**
- * optional google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText vanity_pharma_text = 2;
- * @return {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText}
- */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.getVanityPharmaText = function() {
-  return /** @type {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {!proto.google.ads.googleads.v1.enums.VanityPharmaTextEnum.VanityPharmaText} value */
-proto.google.ads.googleads.v1.resources.Campaign.VanityPharma.prototype.setVanityPharmaText = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -2856,6 +3114,36 @@ proto.google.ads.googleads.v1.resources.Campaign.prototype.hasGeoTargetTypeSetti
 
 
 /**
+ * optional AppCampaignSetting app_campaign_setting = 51;
+ * @return {?proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.getAppCampaignSetting = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting, 51));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.setAppCampaignSetting = function(value) {
+  jspb.Message.setWrapperField(this, 51, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.prototype.clearAppCampaignSetting = function() {
+  this.setAppCampaignSetting(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.hasAppCampaignSetting = function() {
+  return jspb.Message.getField(this, 51) != null;
+};
+
+
+/**
  * optional google.protobuf.StringValue campaign_budget = 6;
  * @return {?proto.google.protobuf.StringValue}
  */
@@ -3127,6 +3415,21 @@ proto.google.ads.googleads.v1.resources.Campaign.prototype.hasTrackingSetting = 
 
 
 /**
+ * optional google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode payment_mode = 52;
+ * @return {!proto.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.getPaymentMode = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode} */ (jspb.Message.getFieldWithDefault(this, 52, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode} value */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.setPaymentMode = function(value) {
+  jspb.Message.setProto3EnumField(this, 52, value);
+};
+
+
+/**
  * optional google.protobuf.StringValue bidding_strategy = 23;
  * @return {?proto.google.protobuf.StringValue}
  */
@@ -3153,6 +3456,36 @@ proto.google.ads.googleads.v1.resources.Campaign.prototype.clearBiddingStrategy 
  */
 proto.google.ads.googleads.v1.resources.Campaign.prototype.hasBiddingStrategy = function() {
   return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.Commission commission = 49;
+ * @return {?proto.google.ads.googleads.v1.common.Commission}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.getCommission = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.Commission} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_bidding_pb.Commission, 49));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.Commission|undefined} value */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.setCommission = function(value) {
+  jspb.Message.setOneofWrapperField(this, 49, proto.google.ads.googleads.v1.resources.Campaign.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Campaign.prototype.clearCommission = function() {
+  this.setCommission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Campaign.prototype.hasCommission = function() {
+  return jspb.Message.getField(this, 49) != null;
 };
 
 

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetProductBiddingCategoryC
 }
 
 
+// Proto file describing the Product Bidding Category constant service
+//
 // Service to fetch Product Bidding Categories.
 var ProductBiddingCategoryConstantServiceService = exports.ProductBiddingCategoryConstantServiceService = {
   // Returns the requested Product Bidding Category in full detail.

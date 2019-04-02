@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_ads_googleads_v1_common_extensions_pb = require('../../../../../google/ads/googleads/v1/common/extensions_pb.js');
+var google_ads_googleads_v1_enums_extension_type_pb = require('../../../../../google/ads/googleads/v1/enums/extension_type_pb.js');
 var google_ads_googleads_v1_enums_feed_item_status_pb = require('../../../../../google/ads/googleads/v1/enums/feed_item_status_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
@@ -96,6 +97,7 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.toObject = f
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     resourceName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    extensionType: jspb.Message.getFieldWithDefault(msg, 13, 0),
     startDateTime: (f = msg.getStartDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     endDateTime: (f = msg.getEndDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -146,6 +148,10 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.deserializeBinaryFromR
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setResourceName(value);
+      break;
+    case 13:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType} */ (reader.readEnum());
+      msg.setExtensionType(value);
       break;
     case 5:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -234,6 +240,13 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.serializeBinaryToWrite
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getExtensionType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      13,
       f
     );
   }
@@ -339,6 +352,21 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getResourceN
 /** @param {string} value */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setResourceName = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;
+ * @return {!proto.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getExtensionType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setExtensionType = function(value) {
+  jspb.Message.setProto3EnumField(this, 13, value);
 };
 
 

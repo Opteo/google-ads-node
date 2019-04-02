@@ -49,6 +49,11 @@ export class SharedCriterion extends jspb.Message {
   getMobileAppCategory(): google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo | undefined;
   setMobileAppCategory(value?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo): void;
 
+  hasMobileApplication(): boolean;
+  clearMobileApplication(): void;
+  getMobileApplication(): google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo | undefined;
+  setMobileApplication(value?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo): void;
+
   getCriterionCase(): SharedCriterion.CriterionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SharedCriterion.AsObject;
@@ -71,6 +76,7 @@ export namespace SharedCriterion {
     youtubeChannel?: google_ads_googleads_v1_common_criteria_pb.YouTubeChannelInfo.AsObject,
     placement?: google_ads_googleads_v1_common_criteria_pb.PlacementInfo.AsObject,
     mobileAppCategory?: google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.AsObject,
+    mobileApplication?: google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.AsObject,
   }
 
   export enum CriterionCase {
@@ -80,6 +86,7 @@ export namespace SharedCriterion {
     YOUTUBE_CHANNEL = 6,
     PLACEMENT = 7,
     MOBILE_APP_CATEGORY = 8,
+    MOBILE_APPLICATION = 9,
   }
 }
 

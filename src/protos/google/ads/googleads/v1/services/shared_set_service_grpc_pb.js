@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateSharedSetsResponse(b
 }
 
 
+// Proto file describing the Shared Set service.
+//
 // Service to manage shared sets.
 var SharedSetServiceService = exports.SharedSetServiceService = {
   // Returns the requested shared set in full detail.

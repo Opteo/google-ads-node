@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateRemarketingActionsRe
 }
 
 
+// Proto file describing the Remarketing Action service.
+//
 // Service to manage remarketing actions.
 var RemarketingActionServiceService = exports.RemarketingActionServiceService = {
   // Returns the requested remarketing action in full detail.

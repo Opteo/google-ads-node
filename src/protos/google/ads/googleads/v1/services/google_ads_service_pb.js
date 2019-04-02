@@ -27,6 +27,7 @@ var google_ads_googleads_v1_resources_ad_group_feed_pb = require('../../../../..
 var google_ads_googleads_v1_resources_ad_group_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_label_pb.js');
 var google_ads_googleads_v1_resources_ad_schedule_view_pb = require('../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb.js');
 var google_ads_googleads_v1_resources_age_range_view_pb = require('../../../../../google/ads/googleads/v1/resources/age_range_view_pb.js');
+var google_ads_googleads_v1_resources_asset_pb = require('../../../../../google/ads/googleads/v1/resources/asset_pb.js');
 var google_ads_googleads_v1_resources_bidding_strategy_pb = require('../../../../../google/ads/googleads/v1/resources/bidding_strategy_pb.js');
 var google_ads_googleads_v1_resources_billing_setup_pb = require('../../../../../google/ads/googleads/v1/resources/billing_setup_pb.js');
 var google_ads_googleads_v1_resources_campaign_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_pb.js');
@@ -105,6 +106,7 @@ var google_ads_googleads_v1_services_ad_group_feed_service_pb = require('../../.
 var google_ads_googleads_v1_services_ad_group_label_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_group_label_service_pb.js');
 var google_ads_googleads_v1_services_ad_group_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_group_service_pb.js');
 var google_ads_googleads_v1_services_ad_parameter_service_pb = require('../../../../../google/ads/googleads/v1/services/ad_parameter_service_pb.js');
+var google_ads_googleads_v1_services_asset_service_pb = require('../../../../../google/ads/googleads/v1/services/asset_service_pb.js');
 var google_ads_googleads_v1_services_bidding_strategy_service_pb = require('../../../../../google/ads/googleads/v1/services/bidding_strategy_service_pb.js');
 var google_ads_googleads_v1_services_campaign_bid_modifier_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_bid_modifier_service_pb.js');
 var google_ads_googleads_v1_services_campaign_budget_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_budget_service_pb.js');
@@ -721,6 +723,7 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     ageRangeView: (f = msg.getAgeRangeView()) && google_ads_googleads_v1_resources_age_range_view_pb.AgeRangeView.toObject(includeInstance, f),
     adScheduleView: (f = msg.getAdScheduleView()) && google_ads_googleads_v1_resources_ad_schedule_view_pb.AdScheduleView.toObject(includeInstance, f),
     domainCategory: (f = msg.getDomainCategory()) && google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.toObject(includeInstance, f),
+    asset: (f = msg.getAsset()) && google_ads_googleads_v1_resources_asset_pb.Asset.toObject(includeInstance, f),
     biddingStrategy: (f = msg.getBiddingStrategy()) && google_ads_googleads_v1_resources_bidding_strategy_pb.BiddingStrategy.toObject(includeInstance, f),
     billingSetup: (f = msg.getBillingSetup()) && google_ads_googleads_v1_resources_billing_setup_pb.BillingSetup.toObject(includeInstance, f),
     campaignBudget: (f = msg.getCampaignBudget()) && google_ads_googleads_v1_resources_campaign_budget_pb.CampaignBudget.toObject(includeInstance, f),
@@ -900,6 +903,11 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       var value = new google_ads_googleads_v1_resources_domain_category_pb.DomainCategory;
       reader.readMessage(value,google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.deserializeBinaryFromReader);
       msg.setDomainCategory(value);
+      break;
+    case 105:
+      var value = new google_ads_googleads_v1_resources_asset_pb.Asset;
+      reader.readMessage(value,google_ads_googleads_v1_resources_asset_pb.Asset.deserializeBinaryFromReader);
+      msg.setAsset(value);
       break;
     case 18:
       var value = new google_ads_googleads_v1_resources_bidding_strategy_pb.BiddingStrategy;
@@ -1393,6 +1401,14 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       91,
       f,
       google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.serializeBinaryToWriter
+    );
+  }
+  f = message.getAsset();
+  if (f != null) {
+    writer.writeMessage(
+      105,
+      f,
+      google_ads_googleads_v1_resources_asset_pb.Asset.serializeBinaryToWriter
     );
   }
   f = message.getBiddingStrategy();
@@ -2397,6 +2413,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearDomainCategor
  */
 proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasDomainCategory = function() {
   return jspb.Message.getField(this, 91) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.Asset asset = 105;
+ * @return {?proto.google.ads.googleads.v1.resources.Asset}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getAsset = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Asset} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_asset_pb.Asset, 105));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Asset|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setAsset = function(value) {
+  jspb.Message.setWrapperField(this, 105, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearAsset = function() {
+  this.setAsset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAsset = function() {
+  return jspb.Message.getField(this, 105) != null;
 };
 
 
@@ -4961,7 +5007,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
+proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
 
 /**
  * @enum {number}
@@ -4978,6 +5024,7 @@ proto.google.ads.googleads.v1.services.MutateOperation.OperationCase = {
   AD_GROUP_LABEL_OPERATION: 21,
   AD_GROUP_OPERATION: 5,
   AD_PARAMETER_OPERATION: 22,
+  ASSET_OPERATION: 23,
   BIDDING_STRATEGY_OPERATION: 6,
   CAMPAIGN_BID_MODIFIER_OPERATION: 7,
   CAMPAIGN_BUDGET_OPERATION: 8,
@@ -5052,6 +5099,7 @@ proto.google.ads.googleads.v1.services.MutateOperation.toObject = function(inclu
     adGroupLabelOperation: (f = msg.getAdGroupLabelOperation()) && google_ads_googleads_v1_services_ad_group_label_service_pb.AdGroupLabelOperation.toObject(includeInstance, f),
     adGroupOperation: (f = msg.getAdGroupOperation()) && google_ads_googleads_v1_services_ad_group_service_pb.AdGroupOperation.toObject(includeInstance, f),
     adParameterOperation: (f = msg.getAdParameterOperation()) && google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation.toObject(includeInstance, f),
+    assetOperation: (f = msg.getAssetOperation()) && google_ads_googleads_v1_services_asset_service_pb.AssetOperation.toObject(includeInstance, f),
     biddingStrategyOperation: (f = msg.getBiddingStrategyOperation()) && google_ads_googleads_v1_services_bidding_strategy_service_pb.BiddingStrategyOperation.toObject(includeInstance, f),
     campaignBidModifierOperation: (f = msg.getCampaignBidModifierOperation()) && google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.CampaignBidModifierOperation.toObject(includeInstance, f),
     campaignBudgetOperation: (f = msg.getCampaignBudgetOperation()) && google_ads_googleads_v1_services_campaign_budget_service_pb.CampaignBudgetOperation.toObject(includeInstance, f),
@@ -5163,6 +5211,11 @@ proto.google.ads.googleads.v1.services.MutateOperation.deserializeBinaryFromRead
       var value = new google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation;
       reader.readMessage(value,google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation.deserializeBinaryFromReader);
       msg.setAdParameterOperation(value);
+      break;
+    case 23:
+      var value = new google_ads_googleads_v1_services_asset_service_pb.AssetOperation;
+      reader.readMessage(value,google_ads_googleads_v1_services_asset_service_pb.AssetOperation.deserializeBinaryFromReader);
+      msg.setAssetOperation(value);
       break;
     case 6:
       var value = new google_ads_googleads_v1_services_bidding_strategy_service_pb.BiddingStrategyOperation;
@@ -5401,6 +5454,14 @@ proto.google.ads.googleads.v1.services.MutateOperation.serializeBinaryToWriter =
       22,
       f,
       google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation.serializeBinaryToWriter
+    );
+  }
+  f = message.getAssetOperation();
+  if (f != null) {
+    writer.writeMessage(
+      23,
+      f,
+      google_ads_googleads_v1_services_asset_service_pb.AssetOperation.serializeBinaryToWriter
     );
   }
   f = message.getBiddingStrategyOperation();
@@ -5911,6 +5972,36 @@ proto.google.ads.googleads.v1.services.MutateOperation.prototype.clearAdParamete
  */
 proto.google.ads.googleads.v1.services.MutateOperation.prototype.hasAdParameterOperation = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional AssetOperation asset_operation = 23;
+ * @return {?proto.google.ads.googleads.v1.services.AssetOperation}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.getAssetOperation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.AssetOperation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_asset_service_pb.AssetOperation, 23));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.AssetOperation|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.setAssetOperation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 23, proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.clearAssetOperation = function() {
+  this.setAssetOperation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.hasAssetOperation = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
@@ -6720,7 +6811,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
+proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
 
 /**
  * @enum {number}
@@ -6737,6 +6828,7 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.ResponseCase = {
   AD_GROUP_LABEL_RESULT: 21,
   AD_GROUP_RESULT: 5,
   AD_PARAMETER_RESULT: 22,
+  ASSET_RESULT: 23,
   BIDDING_STRATEGY_RESULT: 6,
   CAMPAIGN_BID_MODIFIER_RESULT: 7,
   CAMPAIGN_BUDGET_RESULT: 8,
@@ -6811,6 +6903,7 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.toObject = functi
     adGroupLabelResult: (f = msg.getAdGroupLabelResult()) && google_ads_googleads_v1_services_ad_group_label_service_pb.MutateAdGroupLabelResult.toObject(includeInstance, f),
     adGroupResult: (f = msg.getAdGroupResult()) && google_ads_googleads_v1_services_ad_group_service_pb.MutateAdGroupResult.toObject(includeInstance, f),
     adParameterResult: (f = msg.getAdParameterResult()) && google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult.toObject(includeInstance, f),
+    assetResult: (f = msg.getAssetResult()) && google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult.toObject(includeInstance, f),
     biddingStrategyResult: (f = msg.getBiddingStrategyResult()) && google_ads_googleads_v1_services_bidding_strategy_service_pb.MutateBiddingStrategyResult.toObject(includeInstance, f),
     campaignBidModifierResult: (f = msg.getCampaignBidModifierResult()) && google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifierResult.toObject(includeInstance, f),
     campaignBudgetResult: (f = msg.getCampaignBudgetResult()) && google_ads_googleads_v1_services_campaign_budget_service_pb.MutateCampaignBudgetResult.toObject(includeInstance, f),
@@ -6922,6 +7015,11 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.deserializeBinary
       var value = new google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult;
       reader.readMessage(value,google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult.deserializeBinaryFromReader);
       msg.setAdParameterResult(value);
+      break;
+    case 23:
+      var value = new google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult;
+      reader.readMessage(value,google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult.deserializeBinaryFromReader);
+      msg.setAssetResult(value);
       break;
     case 6:
       var value = new google_ads_googleads_v1_services_bidding_strategy_service_pb.MutateBiddingStrategyResult;
@@ -7160,6 +7258,14 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.serializeBinaryTo
       22,
       f,
       google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult.serializeBinaryToWriter
+    );
+  }
+  f = message.getAssetResult();
+  if (f != null) {
+    writer.writeMessage(
+      23,
+      f,
+      google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult.serializeBinaryToWriter
     );
   }
   f = message.getBiddingStrategyResult();
@@ -7670,6 +7776,36 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.clearAd
  */
 proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.hasAdParameterResult = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional MutateAssetResult asset_result = 23;
+ * @return {?proto.google.ads.googleads.v1.services.MutateAssetResult}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.getAssetResult = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.MutateAssetResult} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult, 23));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.MutateAssetResult|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.setAssetResult = function(value) {
+  jspb.Message.setOneofWrapperField(this, 23, proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.clearAssetResult = function() {
+  this.setAssetResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.hasAssetResult = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 

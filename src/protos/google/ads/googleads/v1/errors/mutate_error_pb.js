@@ -140,7 +140,8 @@ proto.google.ads.googleads.v1.errors.MutateErrorEnum.MutateError = {
   ID_EXISTS_IN_MULTIPLE_MUTATES: 7,
   INCONSISTENT_FIELD_VALUES: 8,
   MUTATE_NOT_ALLOWED: 9,
-  RESOURCE_NOT_IN_GOOGLE_ADS: 10
+  RESOURCE_NOT_IN_GOOGLE_ADS: 10,
+  RESOURCE_ALREADY_EXISTS: 11
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

@@ -67,6 +67,8 @@ function deserialize_google_ads_googleads_v1_services_SearchGoogleAdsFieldsRespo
 }
 
 
+// Proto file describing the GoogleAdsFieldService
+//
 // Service to fetch Google Ads API fields.
 var GoogleAdsFieldServiceService = exports.GoogleAdsFieldServiceService = {
   // Returns just the requested field.

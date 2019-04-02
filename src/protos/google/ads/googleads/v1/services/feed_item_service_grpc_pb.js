@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateFeedItemsResponse(bu
 }
 
 
+// Proto file describing the FeedItem service.
+//
 // Service to manage feed items.
 var FeedItemServiceService = exports.FeedItemServiceService = {
   // Returns the requested feed item in full detail.

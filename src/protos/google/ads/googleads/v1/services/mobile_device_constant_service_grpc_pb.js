@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetMobileDeviceConstantReq
 }
 
 
+// Proto file describing the mobile device constant service.
+//
 // Service to fetch mobile device constants.
 var MobileDeviceConstantServiceService = exports.MobileDeviceConstantServiceService = {
   // Returns the requested mobile device constant in full detail.

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetHotelGroupViewRequest(b
 }
 
 
+// Proto file describing the Hotel Group View Service.
+//
 // Service to manage Hotel Group Views.
 var HotelGroupViewServiceService = exports.HotelGroupViewServiceService = {
   // Returns the requested Hotel Group View in full detail.

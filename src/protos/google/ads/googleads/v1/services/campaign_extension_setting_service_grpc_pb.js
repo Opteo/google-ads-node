@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignExtensionSet
 }
 
 
+// Proto file describing the CampaignExtensionSetting service.
+//
 // Service to manage campaign extension settings.
 var CampaignExtensionSettingServiceService = exports.CampaignExtensionSettingServiceService = {
   // Returns the requested campaign extension setting in full detail.

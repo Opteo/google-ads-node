@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateKeywordPlanCampaigns
 }
 
 
+// Proto file describing the keyword plan campaign service.
+//
 // Service to manage Keyword Plan campaigns.
 var KeywordPlanCampaignServiceService = exports.KeywordPlanCampaignServiceService = {
   // Returns the requested Keyword Plan campaign in full detail.

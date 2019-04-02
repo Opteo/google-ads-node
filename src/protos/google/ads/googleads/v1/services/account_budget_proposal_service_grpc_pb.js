@@ -68,6 +68,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAccountBudgetProposa
 }
 
 
+// Proto file describing the AccountBudgetProposal service.
+//
 // A service for managing account-level budgets via proposals.
 //
 // A proposal is a request to create a new budget or make changes to an

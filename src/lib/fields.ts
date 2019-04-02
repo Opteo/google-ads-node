@@ -19,6 +19,7 @@ export type ResourceName =
   | "ad_group_label"
   | "ad_schedule_view"
   | "age_range_view"
+  | "asset"
   | "bidding_strategy"
   | "billing_setup"
   | "campaign"
@@ -155,7 +156,7 @@ export const account_budget = [
   "account_budget.purchase_order_number",
   "account_budget.resource_name",
   "account_budget.status",
-  "account_budget.total_adjustments_micros",
+  "account_budget.total_adjustments_micros"
 ];
 
 export type AccountBudgetField =
@@ -281,7 +282,7 @@ export const account_budget_proposal = [
   "account_budget_proposal.proposed_spending_limit_type",
   "account_budget_proposal.proposed_start_date_time",
   "account_budget_proposal.resource_name",
-  "account_budget_proposal.status",
+  "account_budget_proposal.status"
 ];
 
 export type AccountBudgetProposalField =
@@ -350,9 +351,13 @@ export const ad_group = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -374,6 +379,7 @@ export const ad_group = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -445,16 +451,20 @@ export const ad_group = [
   "ad_group.targeting_setting.target_restrictions",
   "ad_group.tracking_url_template",
   "ad_group.type",
-  "ad_group.url_custom_parameters",
+  "ad_group.url_custom_parameters"
 ];
 
 export type AdGroupField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -476,6 +486,7 @@ export type AdGroupField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -682,9 +693,13 @@ export const ad_group_ad = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -706,6 +721,7 @@ export const ad_group_ad = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -755,6 +771,12 @@ export const ad_group_ad = [
   "customer.time_zone",
   "customer.tracking_url_template",
   "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.app_ad.descriptions",
+  "ad_group_ad.ad.app_ad.headlines",
+  "ad_group_ad.ad.app_ad.html5_media_bundles",
+  "ad_group_ad.ad.app_ad.images",
+  "ad_group_ad.ad.app_ad.mandatory_ad_text",
+  "ad_group_ad.ad.app_ad.youtube_videos",
   "ad_group_ad.ad.call_only_ad.business_name",
   "ad_group_ad.ad.call_only_ad.call_tracked",
   "ad_group_ad.ad.call_only_ad.conversion_action",
@@ -763,6 +785,8 @@ export const ad_group_ad = [
   "ad_group_ad.ad.call_only_ad.description1",
   "ad_group_ad.ad.call_only_ad.description2",
   "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.headline1",
+  "ad_group_ad.ad.call_only_ad.headline2",
   "ad_group_ad.ad.call_only_ad.phone_number",
   "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
   "ad_group_ad.ad.device_preference",
@@ -800,6 +824,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad.image_ad.preview_image_url",
   "ad_group_ad.ad.image_ad.preview_pixel_height",
   "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_app_install_ad",
   "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
@@ -816,6 +841,22 @@ export const ad_group_ad = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.responsive_display_ad.accent_color",
+  "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.responsive_display_ad.business_name",
+  "ad_group_ad.ad.responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.responsive_display_ad.descriptions",
+  "ad_group_ad.ad.responsive_display_ad.format_setting",
+  "ad_group_ad.ad.responsive_display_ad.headlines",
+  "ad_group_ad.ad.responsive_display_ad.logo_images",
+  "ad_group_ad.ad.responsive_display_ad.long_headline",
+  "ad_group_ad.ad.responsive_display_ad.main_color",
+  "ad_group_ad.ad.responsive_display_ad.marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.responsive_display_ad.promo_text",
+  "ad_group_ad.ad.responsive_display_ad.square_logo_images",
+  "ad_group_ad.ad.responsive_display_ad.square_marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.youtube_videos",
   "ad_group_ad.ad.responsive_search_ad.descriptions",
   "ad_group_ad.ad.responsive_search_ad.headlines",
   "ad_group_ad.ad.responsive_search_ad.path1",
@@ -841,7 +882,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad_strength",
   "ad_group_ad.policy_summary",
   "ad_group_ad.resource_name",
-  "ad_group_ad.status",
+  "ad_group_ad.status"
 ];
 
 export type AdGroupAdField =
@@ -872,9 +913,13 @@ export type AdGroupAdField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -896,6 +941,7 @@ export type AdGroupAdField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -945,6 +991,12 @@ export type AdGroupAdField =
   | "customer.time_zone"
   | "customer.tracking_url_template"
   | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.app_ad.descriptions"
+  | "ad_group_ad.ad.app_ad.headlines"
+  | "ad_group_ad.ad.app_ad.html5_media_bundles"
+  | "ad_group_ad.ad.app_ad.images"
+  | "ad_group_ad.ad.app_ad.mandatory_ad_text"
+  | "ad_group_ad.ad.app_ad.youtube_videos"
   | "ad_group_ad.ad.call_only_ad.business_name"
   | "ad_group_ad.ad.call_only_ad.call_tracked"
   | "ad_group_ad.ad.call_only_ad.conversion_action"
@@ -953,6 +1005,8 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.call_only_ad.description1"
   | "ad_group_ad.ad.call_only_ad.description2"
   | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.headline1"
+  | "ad_group_ad.ad.call_only_ad.headline2"
   | "ad_group_ad.ad.call_only_ad.phone_number"
   | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
   | "ad_group_ad.ad.device_preference"
@@ -990,6 +1044,7 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.image_ad.preview_image_url"
   | "ad_group_ad.ad.image_ad.preview_pixel_height"
   | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_app_install_ad"
   | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
@@ -1006,6 +1061,22 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.responsive_display_ad.business_name"
+  | "ad_group_ad.ad.responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.responsive_display_ad.descriptions"
+  | "ad_group_ad.ad.responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.responsive_display_ad.headlines"
+  | "ad_group_ad.ad.responsive_display_ad.logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.responsive_display_ad.main_color"
+  | "ad_group_ad.ad.responsive_display_ad.marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.responsive_display_ad.square_logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.square_marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.youtube_videos"
   | "ad_group_ad.ad.responsive_search_ad.descriptions"
   | "ad_group_ad.ad.responsive_search_ad.headlines"
   | "ad_group_ad.ad.responsive_search_ad.path1"
@@ -1150,6 +1221,12 @@ export const ad_group_ad_label = [
   "ad_group.type",
   "ad_group.url_custom_parameters",
   "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.app_ad.descriptions",
+  "ad_group_ad.ad.app_ad.headlines",
+  "ad_group_ad.ad.app_ad.html5_media_bundles",
+  "ad_group_ad.ad.app_ad.images",
+  "ad_group_ad.ad.app_ad.mandatory_ad_text",
+  "ad_group_ad.ad.app_ad.youtube_videos",
   "ad_group_ad.ad.call_only_ad.business_name",
   "ad_group_ad.ad.call_only_ad.call_tracked",
   "ad_group_ad.ad.call_only_ad.conversion_action",
@@ -1158,6 +1235,8 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.call_only_ad.description1",
   "ad_group_ad.ad.call_only_ad.description2",
   "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.headline1",
+  "ad_group_ad.ad.call_only_ad.headline2",
   "ad_group_ad.ad.call_only_ad.phone_number",
   "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
   "ad_group_ad.ad.device_preference",
@@ -1195,6 +1274,7 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.image_ad.preview_image_url",
   "ad_group_ad.ad.image_ad.preview_pixel_height",
   "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_app_install_ad",
   "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
@@ -1211,6 +1291,22 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.responsive_display_ad.accent_color",
+  "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.responsive_display_ad.business_name",
+  "ad_group_ad.ad.responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.responsive_display_ad.descriptions",
+  "ad_group_ad.ad.responsive_display_ad.format_setting",
+  "ad_group_ad.ad.responsive_display_ad.headlines",
+  "ad_group_ad.ad.responsive_display_ad.logo_images",
+  "ad_group_ad.ad.responsive_display_ad.long_headline",
+  "ad_group_ad.ad.responsive_display_ad.main_color",
+  "ad_group_ad.ad.responsive_display_ad.marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.responsive_display_ad.promo_text",
+  "ad_group_ad.ad.responsive_display_ad.square_logo_images",
+  "ad_group_ad.ad.responsive_display_ad.square_marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.youtube_videos",
   "ad_group_ad.ad.responsive_search_ad.descriptions",
   "ad_group_ad.ad.responsive_search_ad.headlines",
   "ad_group_ad.ad.responsive_search_ad.path1",
@@ -1240,9 +1336,13 @@ export const ad_group_ad_label = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -1264,6 +1364,7 @@ export const ad_group_ad_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -1320,7 +1421,7 @@ export const ad_group_ad_label = [
   "label.text_label.description",
   "ad_group_ad_label.ad_group_ad",
   "ad_group_ad_label.label",
-  "ad_group_ad_label.resource_name",
+  "ad_group_ad_label.resource_name"
 ];
 
 export type AdGroupAdLabelField =
@@ -1349,6 +1450,12 @@ export type AdGroupAdLabelField =
   | "ad_group.type"
   | "ad_group.url_custom_parameters"
   | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.app_ad.descriptions"
+  | "ad_group_ad.ad.app_ad.headlines"
+  | "ad_group_ad.ad.app_ad.html5_media_bundles"
+  | "ad_group_ad.ad.app_ad.images"
+  | "ad_group_ad.ad.app_ad.mandatory_ad_text"
+  | "ad_group_ad.ad.app_ad.youtube_videos"
   | "ad_group_ad.ad.call_only_ad.business_name"
   | "ad_group_ad.ad.call_only_ad.call_tracked"
   | "ad_group_ad.ad.call_only_ad.conversion_action"
@@ -1357,6 +1464,8 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.call_only_ad.description1"
   | "ad_group_ad.ad.call_only_ad.description2"
   | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.headline1"
+  | "ad_group_ad.ad.call_only_ad.headline2"
   | "ad_group_ad.ad.call_only_ad.phone_number"
   | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
   | "ad_group_ad.ad.device_preference"
@@ -1394,6 +1503,7 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.image_ad.preview_image_url"
   | "ad_group_ad.ad.image_ad.preview_pixel_height"
   | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_app_install_ad"
   | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
@@ -1410,6 +1520,22 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.responsive_display_ad.business_name"
+  | "ad_group_ad.ad.responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.responsive_display_ad.descriptions"
+  | "ad_group_ad.ad.responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.responsive_display_ad.headlines"
+  | "ad_group_ad.ad.responsive_display_ad.logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.responsive_display_ad.main_color"
+  | "ad_group_ad.ad.responsive_display_ad.marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.responsive_display_ad.square_logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.square_marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.youtube_videos"
   | "ad_group_ad.ad.responsive_search_ad.descriptions"
   | "ad_group_ad.ad.responsive_search_ad.headlines"
   | "ad_group_ad.ad.responsive_search_ad.path1"
@@ -1439,9 +1565,13 @@ export type AdGroupAdLabelField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -1463,6 +1593,7 @@ export type AdGroupAdLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -1559,6 +1690,7 @@ export const ad_group_audience_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -1601,6 +1733,7 @@ export const ad_group_audience_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -1631,9 +1764,13 @@ export const ad_group_audience_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -1655,6 +1792,7 @@ export const ad_group_audience_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -1703,7 +1841,7 @@ export const ad_group_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "ad_group_audience_view.resource_name",
+  "ad_group_audience_view.resource_name"
 ];
 
 export type AdGroupAudienceViewField =
@@ -1734,6 +1872,7 @@ export type AdGroupAudienceViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -1776,6 +1915,7 @@ export type AdGroupAudienceViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -1806,9 +1946,13 @@ export type AdGroupAudienceViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -1830,6 +1974,7 @@ export type AdGroupAudienceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -1977,9 +2122,13 @@ export const ad_group_bid_modifier = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -2001,6 +2150,7 @@ export const ad_group_bid_modifier = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -2062,7 +2212,7 @@ export const ad_group_bid_modifier = [
   "ad_group_bid_modifier.hotel_length_of_stay.max_nights",
   "ad_group_bid_modifier.hotel_length_of_stay.min_nights",
   "ad_group_bid_modifier.preferred_content.type",
-  "ad_group_bid_modifier.resource_name",
+  "ad_group_bid_modifier.resource_name"
 ];
 
 export type AdGroupBidModifierField =
@@ -2093,9 +2243,13 @@ export type AdGroupBidModifierField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -2117,6 +2271,7 @@ export type AdGroupBidModifierField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -2218,9 +2373,13 @@ export const ad_group_criterion = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -2242,6 +2401,7 @@ export const ad_group_criterion = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -2297,7 +2457,7 @@ export const ad_group_criterion = [
   "topic_constant.path",
   "topic_constant.resource_name",
   "topic_constant.topic_constant_parent",
-  // "user_interest.availabilities",
+  "user_interest.availabilities",
   "user_interest.launched_to_all",
   "user_interest.name",
   "user_interest.resource_name",
@@ -2306,7 +2466,7 @@ export const ad_group_criterion = [
   "user_interest.user_interest_parent",
   "user_list.access_reason",
   "user_list.account_user_list_status",
-  // "user_list.basic_user_list.actions",
+  "user_list.basic_user_list.actions",
   "user_list.closing_reason",
   "user_list.crm_based_user_list.app_id",
   "user_list.crm_based_user_list.data_source_type",
@@ -2316,22 +2476,22 @@ export const ad_group_criterion = [
   "user_list.eligible_for_search",
   "user_list.id",
   "user_list.integration_code",
-  // "user_list.logical_user_list.rules",
+  "user_list.logical_user_list.rules",
   "user_list.membership_life_span",
   "user_list.membership_status",
   "user_list.name",
   "user_list.read_only",
   "user_list.resource_name",
-  // "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
-  // "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
   "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
   "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
-  // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
-  // "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.prepopulation_status",
   "user_list.similar_user_list.seed_user_list",
@@ -2343,6 +2503,7 @@ export const ad_group_criterion = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -2385,6 +2546,7 @@ export const ad_group_criterion = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -2411,7 +2573,7 @@ export const ad_group_criterion = [
   "ad_group_criterion.webpage.conditions",
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
-  "ad_group_criterion.youtube_video.video_id",
+  "ad_group_criterion.youtube_video.video_id"
 ];
 
 export type AdGroupCriterionField =
@@ -2442,9 +2604,13 @@ export type AdGroupCriterionField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -2466,6 +2632,7 @@ export type AdGroupCriterionField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -2521,7 +2688,7 @@ export type AdGroupCriterionField =
   | "topic_constant.path"
   | "topic_constant.resource_name"
   | "topic_constant.topic_constant_parent"
-  // | "user_interest.availabilities"
+  | "user_interest.availabilities"
   | "user_interest.launched_to_all"
   | "user_interest.name"
   | "user_interest.resource_name"
@@ -2530,7 +2697,7 @@ export type AdGroupCriterionField =
   | "user_interest.user_interest_parent"
   | "user_list.access_reason"
   | "user_list.account_user_list_status"
-  // | "user_list.basic_user_list.actions"
+  | "user_list.basic_user_list.actions"
   | "user_list.closing_reason"
   | "user_list.crm_based_user_list.app_id"
   | "user_list.crm_based_user_list.data_source_type"
@@ -2540,22 +2707,22 @@ export type AdGroupCriterionField =
   | "user_list.eligible_for_search"
   | "user_list.id"
   | "user_list.integration_code"
-  // | "user_list.logical_user_list.rules"
+  | "user_list.logical_user_list.rules"
   | "user_list.membership_life_span"
   | "user_list.membership_status"
   | "user_list.name"
   | "user_list.read_only"
   | "user_list.resource_name"
-  // | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
-  // | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
   | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
-  // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
-  // | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.prepopulation_status"
   | "user_list.similar_user_list.seed_user_list"
@@ -2567,6 +2734,7 @@ export type AdGroupCriterionField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -2609,6 +2777,7 @@ export type AdGroupCriterionField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -2675,6 +2844,7 @@ export const ad_group_criterion_label = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -2717,6 +2887,7 @@ export const ad_group_criterion_label = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -2747,9 +2918,13 @@ export const ad_group_criterion_label = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -2771,6 +2946,7 @@ export const ad_group_criterion_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -2827,7 +3003,7 @@ export const ad_group_criterion_label = [
   "label.text_label.description",
   "ad_group_criterion_label.ad_group_criterion",
   "ad_group_criterion_label.label",
-  "ad_group_criterion_label.resource_name",
+  "ad_group_criterion_label.resource_name"
 ];
 
 export type AdGroupCriterionLabelField =
@@ -2858,6 +3034,7 @@ export type AdGroupCriterionLabelField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -2900,6 +3077,7 @@ export type AdGroupCriterionLabelField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -2930,9 +3108,13 @@ export type AdGroupCriterionLabelField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -2954,6 +3136,7 @@ export type AdGroupCriterionLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -3050,9 +3233,13 @@ export const ad_group_extension_setting = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -3074,6 +3261,7 @@ export const ad_group_extension_setting = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -3126,7 +3314,7 @@ export const ad_group_extension_setting = [
   "ad_group_extension_setting.device",
   "ad_group_extension_setting.extension_feed_items",
   "ad_group_extension_setting.extension_type",
-  "ad_group_extension_setting.resource_name",
+  "ad_group_extension_setting.resource_name"
 ];
 
 export type AdGroupExtensionSettingField =
@@ -3157,9 +3345,13 @@ export type AdGroupExtensionSettingField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -3181,6 +3373,7 @@ export type AdGroupExtensionSettingField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -3273,9 +3466,13 @@ export const ad_group_feed = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -3297,6 +3494,7 @@ export const ad_group_feed = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -3365,7 +3563,7 @@ export const ad_group_feed = [
   "ad_group_feed.matching_function.right_operands",
   "ad_group_feed.placeholder_types",
   "ad_group_feed.resource_name",
-  "ad_group_feed.status",
+  "ad_group_feed.status"
 ];
 
 export type AdGroupFeedField =
@@ -3396,9 +3594,13 @@ export type AdGroupFeedField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -3420,6 +3622,7 @@ export type AdGroupFeedField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -3528,9 +3731,13 @@ export const ad_group_label = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -3552,6 +3759,7 @@ export const ad_group_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -3608,7 +3816,7 @@ export const ad_group_label = [
   "label.text_label.description",
   "ad_group_label.ad_group",
   "ad_group_label.label",
-  "ad_group_label.resource_name",
+  "ad_group_label.resource_name"
 ];
 
 export type AdGroupLabelField =
@@ -3639,9 +3847,13 @@ export type AdGroupLabelField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -3663,6 +3875,7 @@ export type AdGroupLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -3735,9 +3948,13 @@ export const ad_schedule_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -3759,6 +3976,7 @@ export const ad_schedule_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -3811,6 +4029,7 @@ export const ad_schedule_view = [
   "campaign_criterion.listing_scope.dimensions",
   "campaign_criterion.location.geo_target_constant",
   "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_application.app_id",
   "campaign_criterion.mobile_device.mobile_device_constant",
   "campaign_criterion.negative",
   "campaign_criterion.operating_system_version.operating_system_version_constant",
@@ -3853,16 +4072,20 @@ export const ad_schedule_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "ad_schedule_view.resource_name",
+  "ad_schedule_view.resource_name"
 ];
 
 export type AdScheduleViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -3884,6 +4107,7 @@ export type AdScheduleViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -3936,6 +4160,7 @@ export type AdScheduleViewField =
   | "campaign_criterion.listing_scope.dimensions"
   | "campaign_criterion.location.geo_target_constant"
   | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_application.app_id"
   | "campaign_criterion.mobile_device.mobile_device_constant"
   | "campaign_criterion.negative"
   | "campaign_criterion.operating_system_version.operating_system_version_constant"
@@ -4069,6 +4294,7 @@ export const age_range_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -4111,6 +4337,7 @@ export const age_range_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -4141,9 +4368,13 @@ export const age_range_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -4165,6 +4396,7 @@ export const age_range_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -4213,7 +4445,7 @@ export const age_range_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "age_range_view.resource_name",
+  "age_range_view.resource_name"
 ];
 
 export type AgeRangeViewField =
@@ -4244,6 +4476,7 @@ export type AgeRangeViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -4286,6 +4519,7 @@ export type AgeRangeViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -4316,9 +4550,13 @@ export type AgeRangeViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -4340,6 +4578,7 @@ export type AgeRangeViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -4461,6 +4700,90 @@ export type AgeRangeViewSegments = Array<AgeRangeViewSegment>;
 */
 
 /*
+ --- Start of Asset ---
+*/
+// @ts-ignore
+export const asset = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "asset.id",
+  "asset.image_asset.file_size",
+  "asset.image_asset.full_size.height_pixels",
+  "asset.image_asset.full_size.url",
+  "asset.image_asset.full_size.width_pixels",
+  "asset.image_asset.mime_type",
+  "asset.name",
+  "asset.resource_name",
+  "asset.type",
+  "asset.youtube_video_asset.youtube_video_id"
+];
+
+export type AssetField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "asset.id"
+  | "asset.image_asset.file_size"
+  | "asset.image_asset.full_size.height_pixels"
+  | "asset.image_asset.full_size.url"
+  | "asset.image_asset.full_size.width_pixels"
+  | "asset.image_asset.mime_type"
+  | "asset.name"
+  | "asset.resource_name"
+  | "asset.type"
+  | "asset.youtube_video_asset.youtube_video_id";
+
+export type AssetFields = Array<AssetField>;
+
+export type AssetMetric = "metrics.interaction_event_types";
+
+export type AssetMetrics = Array<AssetMetric>;
+
+export type AssetSegment =
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.conversion_adjustment"
+  | "segments.conversion_lag_bucket"
+  | "segments.conversion_or_adjustment_lag_bucket"
+  | "segments.external_conversion_source";
+
+export type AssetSegments = Array<AssetSegment>;
+
+/*
+ --- End of Asset ---
+*/
+
+/*
  --- Start of BiddingStrategy ---
 */
 // @ts-ignore
@@ -4511,7 +4834,7 @@ export const bidding_strategy = [
   "bidding_strategy.target_roas.target_roas",
   "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
   "bidding_strategy.target_spend.target_spend_micros",
-  "bidding_strategy.type",
+  "bidding_strategy.type"
 ];
 
 export type BiddingStrategyField =
@@ -4642,7 +4965,7 @@ export const billing_setup = [
   "billing_setup.payments_account_info.secondary_payments_profile_id",
   "billing_setup.resource_name",
   "billing_setup.start_date_time",
-  "billing_setup.status",
+  "billing_setup.status"
 ];
 
 export type BillingSetupField =
@@ -4733,6 +5056,7 @@ export const campaign = [
   "campaign_budget.resource_name",
   "campaign_budget.status",
   "campaign_budget.total_amount_micros",
+  "campaign_budget.type",
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
   "customer.call_reporting_setting.call_conversion_reporting_enabled",
@@ -4753,9 +5077,13 @@ export const campaign = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -4777,6 +5105,7 @@ export const campaign = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -4807,7 +5136,7 @@ export const campaign = [
   "campaign.url_custom_parameters",
   "campaign.vanity_pharma.vanity_pharma_display_url_mode",
   "campaign.vanity_pharma.vanity_pharma_text",
-  "campaign.video_brand_safety_suitability",
+  "campaign.video_brand_safety_suitability"
 ];
 
 export type CampaignField =
@@ -4857,6 +5186,7 @@ export type CampaignField =
   | "campaign_budget.resource_name"
   | "campaign_budget.status"
   | "campaign_budget.total_amount_micros"
+  | "campaign_budget.type"
   | "customer.auto_tagging_enabled"
   | "customer.call_reporting_setting.call_conversion_action"
   | "customer.call_reporting_setting.call_conversion_reporting_enabled"
@@ -4877,9 +5207,13 @@ export type CampaignField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -4901,6 +5235,7 @@ export type CampaignField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -5053,9 +5388,13 @@ export const campaign_audience_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -5077,6 +5416,7 @@ export const campaign_audience_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -5129,6 +5469,7 @@ export const campaign_audience_view = [
   "campaign_criterion.listing_scope.dimensions",
   "campaign_criterion.location.geo_target_constant",
   "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_application.app_id",
   "campaign_criterion.mobile_device.mobile_device_constant",
   "campaign_criterion.negative",
   "campaign_criterion.operating_system_version.operating_system_version_constant",
@@ -5171,16 +5512,20 @@ export const campaign_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "campaign_audience_view.resource_name",
+  "campaign_audience_view.resource_name"
 ];
 
 export type CampaignAudienceViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -5202,6 +5547,7 @@ export type CampaignAudienceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -5254,6 +5600,7 @@ export type CampaignAudienceViewField =
   | "campaign_criterion.listing_scope.dimensions"
   | "campaign_criterion.location.geo_target_constant"
   | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_application.app_id"
   | "campaign_criterion.mobile_device.mobile_device_constant"
   | "campaign_criterion.negative"
   | "campaign_criterion.operating_system_version.operating_system_version_constant"
@@ -5368,9 +5715,13 @@ export const campaign_bid_modifier = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -5392,6 +5743,7 @@ export const campaign_bid_modifier = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -5444,16 +5796,20 @@ export const campaign_bid_modifier = [
   "campaign_bid_modifier.campaign",
   "campaign_bid_modifier.criterion_id",
   "campaign_bid_modifier.interaction_type.type",
-  "campaign_bid_modifier.resource_name",
+  "campaign_bid_modifier.resource_name"
 ];
 
 export type CampaignBidModifierField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -5475,6 +5831,7 @@ export type CampaignBidModifierField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -5547,9 +5904,13 @@ export const campaign_budget = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -5571,6 +5932,7 @@ export const campaign_budget = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -5635,15 +5997,20 @@ export const campaign_budget = [
   "campaign_budget.resource_name",
   "campaign_budget.status",
   "campaign_budget.total_amount_micros",
+  "campaign_budget.type"
 ];
 
 export type CampaignBudgetField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -5665,6 +6032,7 @@ export type CampaignBudgetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -5728,7 +6096,8 @@ export type CampaignBudgetField =
   | "campaign_budget.reference_count"
   | "campaign_budget.resource_name"
   | "campaign_budget.status"
-  | "campaign_budget.total_amount_micros";
+  | "campaign_budget.total_amount_micros"
+  | "campaign_budget.type";
 
 export type CampaignBudgetFields = Array<CampaignBudgetField>;
 
@@ -5765,7 +6134,12 @@ export type CampaignBudgetMetric =
 
 export type CampaignBudgetMetrics = Array<CampaignBudgetMetric>;
 
-export type CampaignBudgetSegment = "campaign";
+export type CampaignBudgetSegment =
+  | "campaign"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.external_conversion_source";
 
 export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
 
@@ -5781,9 +6155,13 @@ export const campaign_criterion = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -5805,6 +6183,7 @@ export const campaign_criterion = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -5866,7 +6245,7 @@ export const campaign_criterion = [
   "mobile_app_category_constant.name",
   "mobile_app_category_constant.resource_name",
   "mobile_device_constant.id",
-  // "mobile_device_constant.manufacturer_name",
+  "mobile_device_constant.manufacturer_name",
   "mobile_device_constant.name",
   "mobile_device_constant.operating_system_name",
   "mobile_device_constant.resource_name",
@@ -5881,7 +6260,7 @@ export const campaign_criterion = [
   "topic_constant.path",
   "topic_constant.resource_name",
   "topic_constant.topic_constant_parent",
-  // "user_interest.availabilities",
+  "user_interest.availabilities",
   "user_interest.launched_to_all",
   "user_interest.name",
   "user_interest.resource_name",
@@ -5890,7 +6269,7 @@ export const campaign_criterion = [
   "user_interest.user_interest_parent",
   "user_list.access_reason",
   "user_list.account_user_list_status",
-  // "user_list.basic_user_list.actions",
+  "user_list.basic_user_list.actions",
   "user_list.closing_reason",
   "user_list.crm_based_user_list.app_id",
   "user_list.crm_based_user_list.data_source_type",
@@ -5900,22 +6279,22 @@ export const campaign_criterion = [
   "user_list.eligible_for_search",
   "user_list.id",
   "user_list.integration_code",
-  // "user_list.logical_user_list.rules",
+  "user_list.logical_user_list.rules",
   "user_list.membership_life_span",
   "user_list.membership_status",
   "user_list.name",
   "user_list.read_only",
   "user_list.resource_name",
-  // "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
-  // "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
   "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
   "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
   "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
-  // "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
-  // "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
   "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
   "user_list.rule_based_user_list.prepopulation_status",
   "user_list.similar_user_list.seed_user_list",
@@ -5945,6 +6324,7 @@ export const campaign_criterion = [
   "campaign_criterion.listing_scope.dimensions",
   "campaign_criterion.location.geo_target_constant",
   "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_application.app_id",
   "campaign_criterion.mobile_device.mobile_device_constant",
   "campaign_criterion.negative",
   "campaign_criterion.operating_system_version.operating_system_version_constant",
@@ -5969,16 +6349,20 @@ export const campaign_criterion = [
   "campaign_criterion.webpage.conditions",
   "campaign_criterion.webpage.criterion_name",
   "campaign_criterion.youtube_channel.channel_id",
-  "campaign_criterion.youtube_video.video_id",
+  "campaign_criterion.youtube_video.video_id"
 ];
 
 export type CampaignCriterionField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -6000,6 +6384,7 @@ export type CampaignCriterionField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -6061,7 +6446,7 @@ export type CampaignCriterionField =
   | "mobile_app_category_constant.name"
   | "mobile_app_category_constant.resource_name"
   | "mobile_device_constant.id"
-  // | "mobile_device_constant.manufacturer_name"
+  | "mobile_device_constant.manufacturer_name"
   | "mobile_device_constant.name"
   | "mobile_device_constant.operating_system_name"
   | "mobile_device_constant.resource_name"
@@ -6076,7 +6461,7 @@ export type CampaignCriterionField =
   | "topic_constant.path"
   | "topic_constant.resource_name"
   | "topic_constant.topic_constant_parent"
-  // | "user_interest.availabilities"
+  | "user_interest.availabilities"
   | "user_interest.launched_to_all"
   | "user_interest.name"
   | "user_interest.resource_name"
@@ -6085,7 +6470,7 @@ export type CampaignCriterionField =
   | "user_interest.user_interest_parent"
   | "user_list.access_reason"
   | "user_list.account_user_list_status"
-  // | "user_list.basic_user_list.actions"
+  | "user_list.basic_user_list.actions"
   | "user_list.closing_reason"
   | "user_list.crm_based_user_list.app_id"
   | "user_list.crm_based_user_list.data_source_type"
@@ -6095,22 +6480,22 @@ export type CampaignCriterionField =
   | "user_list.eligible_for_search"
   | "user_list.id"
   | "user_list.integration_code"
-  // | "user_list.logical_user_list.rules"
+  | "user_list.logical_user_list.rules"
   | "user_list.membership_life_span"
   | "user_list.membership_status"
   | "user_list.name"
   | "user_list.read_only"
   | "user_list.resource_name"
-  // | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
-  // | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
   | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
   | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
-  // | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
-  // | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
   | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
   | "user_list.rule_based_user_list.prepopulation_status"
   | "user_list.similar_user_list.seed_user_list"
@@ -6140,6 +6525,7 @@ export type CampaignCriterionField =
   | "campaign_criterion.listing_scope.dimensions"
   | "campaign_criterion.location.geo_target_constant"
   | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_application.app_id"
   | "campaign_criterion.mobile_device.mobile_device_constant"
   | "campaign_criterion.negative"
   | "campaign_criterion.operating_system_version.operating_system_version_constant"
@@ -6180,9 +6566,13 @@ export const campaign_extension_setting = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -6204,6 +6594,7 @@ export const campaign_extension_setting = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -6256,16 +6647,20 @@ export const campaign_extension_setting = [
   "campaign_extension_setting.device",
   "campaign_extension_setting.extension_feed_items",
   "campaign_extension_setting.extension_type",
-  "campaign_extension_setting.resource_name",
+  "campaign_extension_setting.resource_name"
 ];
 
 export type CampaignExtensionSettingField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -6287,6 +6682,7 @@ export type CampaignExtensionSettingField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -6341,7 +6737,9 @@ export type CampaignExtensionSettingField =
   | "campaign_extension_setting.extension_type"
   | "campaign_extension_setting.resource_name";
 
-export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField>;
+export type CampaignExtensionSettingFields = Array<
+  CampaignExtensionSettingField
+>;
 
 /*
  --- End of CampaignExtensionSetting ---
@@ -6355,9 +6753,13 @@ export const campaign_feed = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -6379,6 +6781,7 @@ export const campaign_feed = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -6447,16 +6850,20 @@ export const campaign_feed = [
   "campaign_feed.matching_function.right_operands",
   "campaign_feed.placeholder_types",
   "campaign_feed.resource_name",
-  "campaign_feed.status",
+  "campaign_feed.status"
 ];
 
 export type CampaignFeedField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -6478,6 +6885,7 @@ export type CampaignFeedField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -6562,9 +6970,13 @@ export const campaign_label = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -6586,6 +6998,7 @@ export const campaign_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -6642,16 +7055,20 @@ export const campaign_label = [
   "label.text_label.description",
   "campaign_label.campaign",
   "campaign_label.label",
-  "campaign_label.resource_name",
+  "campaign_label.resource_name"
 ];
 
 export type CampaignLabelField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -6673,6 +7090,7 @@ export type CampaignLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -6745,9 +7163,13 @@ export const campaign_shared_set = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -6769,6 +7191,7 @@ export const campaign_shared_set = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -6827,16 +7250,20 @@ export const campaign_shared_set = [
   "campaign_shared_set.campaign",
   "campaign_shared_set.resource_name",
   "campaign_shared_set.shared_set",
-  "campaign_shared_set.status",
+  "campaign_shared_set.status"
 ];
 
 export type CampaignSharedSetField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -6858,6 +7285,7 @@ export type CampaignSharedSetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -6932,7 +7360,7 @@ export const carrier_constant = [
   "carrier_constant.country_code",
   "carrier_constant.id",
   "carrier_constant.name",
-  "carrier_constant.resource_name",
+  "carrier_constant.resource_name"
 ];
 
 export type CarrierConstantField =
@@ -6979,9 +7407,13 @@ export const change_status = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -7003,6 +7435,7 @@ export const change_status = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -7086,7 +7519,7 @@ export const change_status = [
   "change_status.last_change_date_time",
   "change_status.resource_name",
   "change_status.resource_status",
-  "change_status.resource_type",
+  "change_status.resource_type"
 ];
 
 export type ChangeStatusField =
@@ -7117,9 +7550,13 @@ export type ChangeStatusField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -7141,6 +7578,7 @@ export type ChangeStatusField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -7264,9 +7702,13 @@ export const click_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -7288,6 +7730,7 @@ export const click_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -7348,7 +7791,7 @@ export const click_view = [
   "click_view.location_of_presence.most_specific",
   "click_view.location_of_presence.region",
   "click_view.page_number",
-  "click_view.resource_name",
+  "click_view.resource_name"
 ];
 
 export type ClickViewField =
@@ -7379,9 +7822,13 @@ export type ClickViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -7403,6 +7850,7 @@ export type ClickViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -7527,7 +7975,7 @@ export const conversion_action = [
   "conversion_action.value_settings.always_use_default_value",
   "conversion_action.value_settings.default_currency_code",
   "conversion_action.value_settings.default_value",
-  "conversion_action.view_through_lookback_window_days",
+  "conversion_action.view_through_lookback_window_days"
 ];
 
 export type ConversionActionField =
@@ -7602,7 +8050,7 @@ export const custom_interest = [
   "custom_interest.name",
   "custom_interest.resource_name",
   "custom_interest.status",
-  "custom_interest.type",
+  "custom_interest.type"
 ];
 
 export type CustomInterestField =
@@ -7658,7 +8106,7 @@ export const customer = [
   "customer.resource_name",
   "customer.test_account",
   "customer.time_zone",
-  "customer.tracking_url_template",
+  "customer.tracking_url_template"
 ];
 
 export type CustomerField =
@@ -7783,7 +8231,7 @@ export const customer_client = [
   "customer_client.client_customer",
   "customer_client.hidden",
   "customer_client.level",
-  "customer_client.resource_name",
+  "customer_client.resource_name"
 ];
 
 export type CustomerClientField =
@@ -7841,7 +8289,7 @@ export const customer_client_link = [
   "customer_client_link.hidden",
   "customer_client_link.manager_link_id",
   "customer_client_link.resource_name",
-  "customer_client_link.status",
+  "customer_client_link.status"
 ];
 
 export type CustomerClientLinkField =
@@ -7899,7 +8347,7 @@ export const customer_extension_setting = [
   "customer_extension_setting.device",
   "customer_extension_setting.extension_feed_items",
   "customer_extension_setting.extension_type",
-  "customer_extension_setting.resource_name",
+  "customer_extension_setting.resource_name"
 ];
 
 export type CustomerExtensionSettingField =
@@ -7925,7 +8373,9 @@ export type CustomerExtensionSettingField =
   | "customer_extension_setting.extension_type"
   | "customer_extension_setting.resource_name";
 
-export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField>;
+export type CustomerExtensionSettingFields = Array<
+  CustomerExtensionSettingField
+>;
 
 /*
  --- End of CustomerExtensionSetting ---
@@ -7972,7 +8422,7 @@ export const customer_feed = [
   "customer_feed.matching_function.right_operands",
   "customer_feed.placeholder_types",
   "customer_feed.resource_name",
-  "customer_feed.status",
+  "customer_feed.status"
 ];
 
 export type CustomerFeedField =
@@ -8044,7 +8494,7 @@ export const customer_label = [
   "customer.tracking_url_template",
   "customer_label.customer",
   "customer_label.label",
-  "customer_label.resource_name",
+  "customer_label.resource_name"
 ];
 
 export type CustomerLabelField =
@@ -8100,7 +8550,7 @@ export const customer_manager_link = [
   "customer_manager_link.manager_customer",
   "customer_manager_link.manager_link_id",
   "customer_manager_link.resource_name",
-  "customer_manager_link.status",
+  "customer_manager_link.status"
 ];
 
 export type CustomerManagerLinkField =
@@ -8165,7 +8615,7 @@ export const customer_negative_criterion = [
   "customer_negative_criterion.resource_name",
   "customer_negative_criterion.type",
   "customer_negative_criterion.youtube_channel.channel_id",
-  "customer_negative_criterion.youtube_video.video_id",
+  "customer_negative_criterion.youtube_video.video_id"
 ];
 
 export type CustomerNegativeCriterionField =
@@ -8199,7 +8649,9 @@ export type CustomerNegativeCriterionField =
   | "customer_negative_criterion.youtube_channel.channel_id"
   | "customer_negative_criterion.youtube_video.video_id";
 
-export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionField>;
+export type CustomerNegativeCriterionFields = Array<
+  CustomerNegativeCriterionField
+>;
 
 /*
  --- End of CustomerNegativeCriterion ---
@@ -8237,9 +8689,13 @@ export const detail_placement_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -8261,6 +8717,7 @@ export const detail_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -8314,7 +8771,7 @@ export const detail_placement_view = [
   "detail_placement_view.placement",
   "detail_placement_view.placement_type",
   "detail_placement_view.resource_name",
-  "detail_placement_view.target_url",
+  "detail_placement_view.target_url"
 ];
 
 export type DetailPlacementViewField =
@@ -8345,9 +8802,13 @@ export type DetailPlacementViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -8369,6 +8830,7 @@ export type DetailPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -8479,6 +8941,7 @@ export const display_keyword_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -8521,6 +8984,7 @@ export const display_keyword_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -8551,9 +9015,13 @@ export const display_keyword_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -8575,6 +9043,7 @@ export const display_keyword_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -8623,7 +9092,7 @@ export const display_keyword_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "display_keyword_view.resource_name",
+  "display_keyword_view.resource_name"
 ];
 
 export type DisplayKeywordViewField =
@@ -8654,6 +9123,7 @@ export type DisplayKeywordViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -8696,6 +9166,7 @@ export type DisplayKeywordViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -8726,9 +9197,13 @@ export type DisplayKeywordViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -8750,6 +9225,7 @@ export type DisplayKeywordViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -8861,6 +9337,7 @@ export type DisplayKeywordViewSegment =
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.month"
+  | "segments.month_of_year"
   | "segments.quarter"
   | "segments.week"
   | "segments.year";
@@ -8879,9 +9356,13 @@ export const domain_category = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -8903,6 +9384,7 @@ export const domain_category = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -8959,16 +9441,20 @@ export const domain_category = [
   "domain_category.has_children",
   "domain_category.language_code",
   "domain_category.recommended_cpc_bid_micros",
-  "domain_category.resource_name",
+  "domain_category.resource_name"
 ];
 
 export type DomainCategoryField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -8990,6 +9476,7 @@ export type DomainCategoryField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -9086,9 +9573,13 @@ export const dynamic_search_ads_search_term_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -9110,6 +9601,7 @@ export const dynamic_search_ads_search_term_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -9162,7 +9654,7 @@ export const dynamic_search_ads_search_term_view = [
   "dynamic_search_ads_search_term_view.landing_page",
   "dynamic_search_ads_search_term_view.page_url",
   "dynamic_search_ads_search_term_view.resource_name",
-  "dynamic_search_ads_search_term_view.search_term",
+  "dynamic_search_ads_search_term_view.search_term"
 ];
 
 export type DynamicSearchAdsSearchTermViewField =
@@ -9193,9 +9685,13 @@ export type DynamicSearchAdsSearchTermViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -9217,6 +9713,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -9271,7 +9768,9 @@ export type DynamicSearchAdsSearchTermViewField =
   | "dynamic_search_ads_search_term_view.resource_name"
   | "dynamic_search_ads_search_term_view.search_term";
 
-export type DynamicSearchAdsSearchTermViewFields = Array<DynamicSearchAdsSearchTermViewField>;
+export type DynamicSearchAdsSearchTermViewFields = Array<
+  DynamicSearchAdsSearchTermViewField
+>;
 
 export type DynamicSearchAdsSearchTermViewMetric =
   | "metrics.all_conversions"
@@ -9292,7 +9791,9 @@ export type DynamicSearchAdsSearchTermViewMetric =
   | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion";
 
-export type DynamicSearchAdsSearchTermViewMetrics = Array<DynamicSearchAdsSearchTermViewMetric>;
+export type DynamicSearchAdsSearchTermViewMetrics = Array<
+  DynamicSearchAdsSearchTermViewMetric
+>;
 
 export type DynamicSearchAdsSearchTermViewSegment =
   | "segments.conversion_action"
@@ -9304,10 +9805,13 @@ export type DynamicSearchAdsSearchTermViewSegment =
   | "segments.month"
   | "segments.month_of_year"
   | "segments.quarter"
+  | "segments.webpage"
   | "segments.week"
   | "segments.year";
 
-export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearchTermViewSegment>;
+export type DynamicSearchAdsSearchTermViewSegments = Array<
+  DynamicSearchAdsSearchTermViewSegment
+>;
 
 /*
  --- End of DynamicSearchAdsSearchTermView ---
@@ -9345,9 +9849,13 @@ export const extension_feed_item = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -9369,6 +9877,7 @@ export const extension_feed_item = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -9432,6 +9941,7 @@ export const extension_feed_item = [
   "extension_feed_item.call_feed_item.phone_number",
   "extension_feed_item.callout_feed_item.callout_text",
   "extension_feed_item.end_date_time",
+  "extension_feed_item.extension_type",
   "extension_feed_item.price_feed_item.final_url_suffix",
   "extension_feed_item.price_feed_item.language_code",
   "extension_feed_item.price_feed_item.price_offerings",
@@ -9470,7 +9980,7 @@ export const extension_feed_item = [
   "extension_feed_item.text_message_feed_item.country_code",
   "extension_feed_item.text_message_feed_item.extension_text",
   "extension_feed_item.text_message_feed_item.phone_number",
-  "extension_feed_item.text_message_feed_item.text",
+  "extension_feed_item.text_message_feed_item.text"
 ];
 
 export type ExtensionFeedItemField =
@@ -9501,9 +10011,13 @@ export type ExtensionFeedItemField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -9525,6 +10039,7 @@ export type ExtensionFeedItemField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -9588,6 +10103,7 @@ export type ExtensionFeedItemField =
   | "extension_feed_item.call_feed_item.phone_number"
   | "extension_feed_item.callout_feed_item.callout_text"
   | "extension_feed_item.end_date_time"
+  | "extension_feed_item.extension_type"
   | "extension_feed_item.price_feed_item.final_url_suffix"
   | "extension_feed_item.price_feed_item.language_code"
   | "extension_feed_item.price_feed_item.price_offerings"
@@ -9665,6 +10181,7 @@ export type ExtensionFeedItemSegment =
   | "segments.conversion_action_category"
   | "segments.conversion_action_name"
   | "segments.date"
+  | "segments.day_of_week"
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.interaction_on_this_extension"
@@ -9713,7 +10230,7 @@ export const feed = [
   "feed.places_location_feed_data.email_address",
   "feed.places_location_feed_data.label_filters",
   "feed.resource_name",
-  "feed.status",
+  "feed.status"
 ];
 
 export type FeedField =
@@ -9785,9 +10302,13 @@ export const feed_item = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -9809,6 +10330,7 @@ export const feed_item = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -9878,7 +10400,7 @@ export const feed_item = [
   "feed_item.resource_name",
   "feed_item.start_date_time",
   "feed_item.status",
-  "feed_item.url_custom_parameters",
+  "feed_item.url_custom_parameters"
 ];
 
 export type FeedItemField =
@@ -9909,9 +10431,13 @@ export type FeedItemField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -9933,6 +10459,7 @@ export type FeedItemField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -10048,6 +10575,7 @@ export type FeedItemSegment =
   | "segments.conversion_action_category"
   | "segments.conversion_action_name"
   | "segments.date"
+  | "segments.day_of_week"
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.interaction_on_this_extension"
@@ -10096,9 +10624,13 @@ export const feed_item_target = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -10120,6 +10652,7 @@ export const feed_item_target = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -10201,7 +10734,7 @@ export const feed_item_target = [
   "feed_item_target.geo_target_constant",
   "feed_item_target.keyword.match_type",
   "feed_item_target.keyword.text",
-  "feed_item_target.resource_name",
+  "feed_item_target.resource_name"
 ];
 
 export type FeedItemTargetField =
@@ -10232,9 +10765,13 @@ export type FeedItemTargetField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -10256,6 +10793,7 @@ export type FeedItemTargetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -10384,7 +10922,7 @@ export const feed_mapping = [
   "feed_mapping.feed",
   "feed_mapping.placeholder_type",
   "feed_mapping.resource_name",
-  "feed_mapping.status",
+  "feed_mapping.status"
 ];
 
 export type FeedMappingField =
@@ -10453,7 +10991,7 @@ export const feed_placeholder_view = [
   "customer.time_zone",
   "customer.tracking_url_template",
   "feed_placeholder_view.placeholder_type",
-  "feed_placeholder_view.resource_name",
+  "feed_placeholder_view.resource_name"
 ];
 
 export type FeedPlaceholderViewField =
@@ -10567,6 +11105,7 @@ export const gender_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -10609,6 +11148,7 @@ export const gender_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -10639,9 +11179,13 @@ export const gender_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -10663,6 +11207,7 @@ export const gender_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -10711,7 +11256,7 @@ export const gender_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "gender_view.resource_name",
+  "gender_view.resource_name"
 ];
 
 export type GenderViewField =
@@ -10742,6 +11287,7 @@ export type GenderViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -10784,6 +11330,7 @@ export type GenderViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -10814,9 +11361,13 @@ export type GenderViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -10838,6 +11389,7 @@ export type GenderViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -10970,7 +11522,7 @@ export const geo_target_constant = [
   "geo_target_constant.name",
   "geo_target_constant.resource_name",
   "geo_target_constant.status",
-  "geo_target_constant.target_type",
+  "geo_target_constant.target_type"
 ];
 
 export type GeoTargetConstantField =
@@ -11020,9 +11572,13 @@ export const geographic_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -11044,6 +11600,7 @@ export const geographic_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -11094,7 +11651,7 @@ export const geographic_view = [
   "customer.tracking_url_template",
   "geographic_view.country_geo_target_constant",
   "geographic_view.location_type",
-  "geographic_view.resource_name",
+  "geographic_view.resource_name"
 ];
 
 export type GeographicViewField =
@@ -11125,9 +11682,13 @@ export type GeographicViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -11149,6 +11710,7 @@ export type GeographicViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -11240,6 +11802,7 @@ export type GeographicViewSegment =
   | "segments.day_of_week"
   | "segments.device"
   | "segments.external_conversion_source"
+  | "segments.geo_target_airport"
   | "segments.geo_target_city"
   | "segments.geo_target_metro"
   | "segments.geo_target_region"
@@ -11287,9 +11850,13 @@ export const group_placement_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -11311,6 +11878,7 @@ export const group_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -11363,7 +11931,7 @@ export const group_placement_view = [
   "group_placement_view.placement",
   "group_placement_view.placement_type",
   "group_placement_view.resource_name",
-  "group_placement_view.target_url",
+  "group_placement_view.target_url"
 ];
 
 export type GroupPlacementViewField =
@@ -11394,9 +11962,13 @@ export type GroupPlacementViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -11418,6 +11990,7 @@ export type GroupPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -11498,6 +12071,8 @@ export type GroupPlacementViewMetric =
   | "metrics.cost_per_conversion"
   | "metrics.cross_device_conversions"
   | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
   | "metrics.impressions"
   | "metrics.interaction_event_types"
   | "metrics.interaction_rate"
@@ -11511,6 +12086,7 @@ export type GroupPlacementViewMetric =
 export type GroupPlacementViewMetrics = Array<GroupPlacementViewMetric>;
 
 export type GroupPlacementViewSegment =
+  | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
   | "segments.conversion_action_category"
@@ -11520,6 +12096,7 @@ export type GroupPlacementViewSegment =
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.month"
+  | "segments.month_of_year"
   | "segments.quarter"
   | "segments.week"
   | "segments.year";
@@ -11562,6 +12139,7 @@ export const hotel_group_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -11604,6 +12182,7 @@ export const hotel_group_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -11634,9 +12213,13 @@ export const hotel_group_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -11658,6 +12241,7 @@ export const hotel_group_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -11706,7 +12290,7 @@ export const hotel_group_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "hotel_group_view.resource_name",
+  "hotel_group_view.resource_name"
 ];
 
 export type HotelGroupViewField =
@@ -11737,6 +12321,7 @@ export type HotelGroupViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -11779,6 +12364,7 @@ export type HotelGroupViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -11809,9 +12395,13 @@ export type HotelGroupViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -11833,6 +12423,7 @@ export type HotelGroupViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -11886,14 +12477,38 @@ export type HotelGroupViewField =
 export type HotelGroupViewFields = Array<HotelGroupViewField>;
 
 export type HotelGroupViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
   | "metrics.average_cpc"
   | "metrics.average_cpm"
   | "metrics.average_position"
   | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_from_interactions_value_per_interaction"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
   | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.hotel_average_lead_value_micros"
-  | "metrics.impressions";
+  | "metrics.impressions"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion";
 
 export type HotelGroupViewMetrics = Array<HotelGroupViewMetric>;
 
@@ -11944,9 +12559,13 @@ export const hotel_performance_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -11968,6 +12587,7 @@ export const hotel_performance_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -11999,7 +12619,7 @@ export const hotel_performance_view = [
   "campaign.vanity_pharma.vanity_pharma_display_url_mode",
   "campaign.vanity_pharma.vanity_pharma_text",
   "campaign.video_brand_safety_suitability",
-  "hotel_performance_view.resource_name",
+  "hotel_performance_view.resource_name"
 ];
 
 export type HotelPerformanceViewField =
@@ -12030,9 +12650,13 @@ export type HotelPerformanceViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -12054,6 +12678,7 @@ export type HotelPerformanceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -12090,14 +12715,38 @@ export type HotelPerformanceViewField =
 export type HotelPerformanceViewFields = Array<HotelPerformanceViewField>;
 
 export type HotelPerformanceViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
   | "metrics.average_cpc"
   | "metrics.average_cpm"
   | "metrics.average_position"
   | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_from_interactions_value_per_interaction"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
   | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.hotel_average_lead_value_micros"
-  | "metrics.impressions";
+  | "metrics.impressions"
+  | "metrics.search_absolute_top_impression_share"
+  | "metrics.search_budget_lost_absolute_top_impression_share"
+  | "metrics.search_budget_lost_impression_share"
+  | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_impression_share"
+  | "metrics.search_rank_lost_absolute_top_impression_share"
+  | "metrics.search_rank_lost_impression_share"
+  | "metrics.search_rank_lost_top_impression_share"
+  | "metrics.search_top_impression_share"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion";
 
 export type HotelPerformanceViewMetrics = Array<HotelPerformanceViewMetric>;
 
@@ -12157,7 +12806,7 @@ export const keyword_plan = [
   "keyword_plan.forecast_period",
   "keyword_plan.id",
   "keyword_plan.name",
-  "keyword_plan.resource_name",
+  "keyword_plan.resource_name"
 ];
 
 export type KeywordPlanField =
@@ -12227,7 +12876,7 @@ export const keyword_plan_ad_group = [
   "keyword_plan_ad_group.id",
   "keyword_plan_ad_group.keyword_plan_campaign",
   "keyword_plan_ad_group.name",
-  "keyword_plan_ad_group.resource_name",
+  "keyword_plan_ad_group.resource_name"
 ];
 
 export type KeywordPlanAdGroupField =
@@ -12305,7 +12954,7 @@ export const keyword_plan_campaign = [
   "keyword_plan_campaign.keyword_plan_network",
   "keyword_plan_campaign.language_constants",
   "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name",
+  "keyword_plan_campaign.resource_name"
 ];
 
 export type KeywordPlanCampaignField =
@@ -12389,7 +13038,7 @@ export const keyword_plan_keyword = [
   "keyword_plan_keyword.keyword_plan_ad_group",
   "keyword_plan_keyword.match_type",
   "keyword_plan_keyword.resource_name",
-  "keyword_plan_keyword.text",
+  "keyword_plan_keyword.text"
 ];
 
 export type KeywordPlanKeywordField =
@@ -12478,7 +13127,7 @@ export const keyword_plan_negative_keyword = [
   "keyword_plan_negative_keyword.keyword_plan_campaign",
   "keyword_plan_negative_keyword.match_type",
   "keyword_plan_negative_keyword.resource_name",
-  "keyword_plan_negative_keyword.text",
+  "keyword_plan_negative_keyword.text"
 ];
 
 export type KeywordPlanNegativeKeywordField =
@@ -12517,7 +13166,9 @@ export type KeywordPlanNegativeKeywordField =
   | "keyword_plan_negative_keyword.resource_name"
   | "keyword_plan_negative_keyword.text";
 
-export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordField>;
+export type KeywordPlanNegativeKeywordFields = Array<
+  KeywordPlanNegativeKeywordField
+>;
 
 /*
  --- End of KeywordPlanNegativeKeyword ---
@@ -12555,6 +13206,7 @@ export const keyword_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -12597,6 +13249,7 @@ export const keyword_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -12627,9 +13280,13 @@ export const keyword_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -12651,6 +13308,7 @@ export const keyword_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -12699,7 +13357,7 @@ export const keyword_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "keyword_view.resource_name",
+  "keyword_view.resource_name"
 ];
 
 export type KeywordViewField =
@@ -12730,6 +13388,7 @@ export type KeywordViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -12772,6 +13431,7 @@ export type KeywordViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -12802,9 +13462,13 @@ export type KeywordViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -12826,6 +13490,7 @@ export type KeywordViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -12909,6 +13574,7 @@ export type KeywordViewMetric =
   | "metrics.cost_per_all_conversions"
   | "metrics.cost_per_conversion"
   | "metrics.cost_per_current_model_attributed_conversion"
+  | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.current_model_attributed_conversions"
   | "metrics.current_model_attributed_conversions_value"
@@ -12929,6 +13595,7 @@ export type KeywordViewMetric =
   | "metrics.search_absolute_top_impression_share"
   | "metrics.search_budget_lost_absolute_top_impression_share"
   | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_click_share"
   | "metrics.search_exact_match_impression_share"
   | "metrics.search_impression_share"
   | "metrics.search_rank_lost_absolute_top_impression_share"
@@ -13002,7 +13669,7 @@ export const label = [
   "label.resource_name",
   "label.status",
   "label.text_label.background_color",
-  "label.text_label.description",
+  "label.text_label.description"
 ];
 
 export type LabelField =
@@ -13045,7 +13712,7 @@ export const language_constant = [
   "language_constant.id",
   "language_constant.name",
   "language_constant.resource_name",
-  "language_constant.targetable",
+  "language_constant.targetable"
 ];
 
 export type LanguageConstantField =
@@ -13069,9 +13736,13 @@ export const location_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -13093,6 +13764,7 @@ export const location_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -13145,6 +13817,7 @@ export const location_view = [
   "campaign_criterion.listing_scope.dimensions",
   "campaign_criterion.location.geo_target_constant",
   "campaign_criterion.mobile_app_category.mobile_app_category_constant",
+  "campaign_criterion.mobile_application.app_id",
   "campaign_criterion.mobile_device.mobile_device_constant",
   "campaign_criterion.negative",
   "campaign_criterion.operating_system_version.operating_system_version_constant",
@@ -13187,16 +13860,20 @@ export const location_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "location_view.resource_name",
+  "location_view.resource_name"
 ];
 
 export type LocationViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -13218,6 +13895,7 @@ export type LocationViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -13270,6 +13948,7 @@ export type LocationViewField =
   | "campaign_criterion.listing_scope.dimensions"
   | "campaign_criterion.location.geo_target_constant"
   | "campaign_criterion.mobile_app_category.mobile_app_category_constant"
+  | "campaign_criterion.mobile_application.app_id"
   | "campaign_criterion.mobile_device.mobile_device_constant"
   | "campaign_criterion.negative"
   | "campaign_criterion.operating_system_version.operating_system_version_constant"
@@ -13395,6 +14074,7 @@ export const managed_placement_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -13437,6 +14117,7 @@ export const managed_placement_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -13467,9 +14148,13 @@ export const managed_placement_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -13491,6 +14176,7 @@ export const managed_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -13539,7 +14225,7 @@ export const managed_placement_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "managed_placement_view.resource_name",
+  "managed_placement_view.resource_name"
 ];
 
 export type ManagedPlacementViewField =
@@ -13570,6 +14256,7 @@ export type ManagedPlacementViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -13612,6 +14299,7 @@ export type ManagedPlacementViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -13642,9 +14330,13 @@ export type ManagedPlacementViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -13666,6 +14358,7 @@ export type ManagedPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -13817,7 +14510,7 @@ export const media_file = [
   "media_file.video.ad_duration_millis",
   "media_file.video.advertising_id_code",
   "media_file.video.isci_code",
-  "media_file.video.youtube_video_id",
+  "media_file.video.youtube_video_id"
 ];
 
 export type MediaFileField =
@@ -13864,7 +14557,7 @@ export type MediaFileFields = Array<MediaFileField>;
 export const mobile_app_category_constant = [
   "mobile_app_category_constant.id",
   "mobile_app_category_constant.name",
-  "mobile_app_category_constant.resource_name",
+  "mobile_app_category_constant.resource_name"
 ];
 
 export type MobileAppCategoryConstantField =
@@ -13872,7 +14565,9 @@ export type MobileAppCategoryConstantField =
   | "mobile_app_category_constant.name"
   | "mobile_app_category_constant.resource_name";
 
-export type MobileAppCategoryConstantFields = Array<MobileAppCategoryConstantField>;
+export type MobileAppCategoryConstantFields = Array<
+  MobileAppCategoryConstantField
+>;
 
 /*
  --- End of MobileAppCategoryConstant ---
@@ -13888,7 +14583,7 @@ export const mobile_device_constant = [
   "mobile_device_constant.name",
   "mobile_device_constant.operating_system_name",
   "mobile_device_constant.resource_name",
-  "mobile_device_constant.type",
+  "mobile_device_constant.type"
 ];
 
 export type MobileDeviceConstantField =
@@ -13915,7 +14610,7 @@ export const operating_system_version_constant = [
   "operating_system_version_constant.operator_type",
   "operating_system_version_constant.os_major_version",
   "operating_system_version_constant.os_minor_version",
-  "operating_system_version_constant.resource_name",
+  "operating_system_version_constant.resource_name"
 ];
 
 export type OperatingSystemVersionConstantField =
@@ -13926,7 +14621,9 @@ export type OperatingSystemVersionConstantField =
   | "operating_system_version_constant.os_minor_version"
   | "operating_system_version_constant.resource_name";
 
-export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionConstantField>;
+export type OperatingSystemVersionConstantFields = Array<
+  OperatingSystemVersionConstantField
+>;
 
 /*
  --- End of OperatingSystemVersionConstant ---
@@ -13964,6 +14661,7 @@ export const parental_status_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -14006,6 +14704,7 @@ export const parental_status_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -14036,9 +14735,13 @@ export const parental_status_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -14060,6 +14763,7 @@ export const parental_status_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -14108,7 +14812,7 @@ export const parental_status_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "parental_status_view.resource_name",
+  "parental_status_view.resource_name"
 ];
 
 export type ParentalStatusViewField =
@@ -14139,6 +14843,7 @@ export type ParentalStatusViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -14181,6 +14886,7 @@ export type ParentalStatusViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -14211,9 +14917,13 @@ export type ParentalStatusViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -14235,6 +14945,7 @@ export type ParentalStatusViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -14368,7 +15079,7 @@ export const product_bidding_category_constant = [
   "product_bidding_category_constant.localized_name",
   "product_bidding_category_constant.product_bidding_category_constant_parent",
   "product_bidding_category_constant.resource_name",
-  "product_bidding_category_constant.status",
+  "product_bidding_category_constant.status"
 ];
 
 export type ProductBiddingCategoryConstantField =
@@ -14381,7 +15092,9 @@ export type ProductBiddingCategoryConstantField =
   | "product_bidding_category_constant.resource_name"
   | "product_bidding_category_constant.status";
 
-export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryConstantField>;
+export type ProductBiddingCategoryConstantFields = Array<
+  ProductBiddingCategoryConstantField
+>;
 
 /*
  --- End of ProductBiddingCategoryConstant ---
@@ -14419,6 +15132,7 @@ export const product_group_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -14461,6 +15175,7 @@ export const product_group_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -14491,9 +15206,13 @@ export const product_group_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -14515,6 +15234,7 @@ export const product_group_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -14563,7 +15283,7 @@ export const product_group_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "product_group_view.resource_name",
+  "product_group_view.resource_name"
 ];
 
 export type ProductGroupViewField =
@@ -14594,6 +15314,7 @@ export type ProductGroupViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -14636,6 +15357,7 @@ export type ProductGroupViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -14666,9 +15388,13 @@ export type ProductGroupViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -14690,6 +15416,7 @@ export type ProductGroupViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -14823,9 +15550,13 @@ export const recommendation = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -14847,6 +15578,7 @@ export const recommendation = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -14894,6 +15626,7 @@ export const recommendation = [
   "campaign_budget.resource_name",
   "campaign_budget.status",
   "campaign_budget.total_amount_micros",
+  "campaign_budget.type",
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
   "customer.call_reporting_setting.call_conversion_reporting_enabled",
@@ -14918,15 +15651,17 @@ export const recommendation = [
   "recommendation.dismissed",
   "recommendation.enhanced_cpc_opt_in_recommendation",
   "recommendation.impact",
+  "recommendation.keyword_match_type_recommendation",
   "recommendation.keyword_recommendation",
   "recommendation.maximize_clicks_opt_in_recommendation",
   "recommendation.maximize_conversions_opt_in_recommendation",
+  "recommendation.move_unused_budget_recommendation",
   "recommendation.optimize_ad_rotation_recommendation",
   "recommendation.resource_name",
   "recommendation.search_partners_opt_in_recommendation",
   "recommendation.target_cpa_opt_in_recommendation",
   "recommendation.text_ad_recommendation",
-  "recommendation.type",
+  "recommendation.type"
 ];
 
 export type RecommendationField =
@@ -14957,9 +15692,13 @@ export type RecommendationField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -14981,6 +15720,7 @@ export type RecommendationField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -15028,6 +15768,7 @@ export type RecommendationField =
   | "campaign_budget.resource_name"
   | "campaign_budget.status"
   | "campaign_budget.total_amount_micros"
+  | "campaign_budget.type"
   | "customer.auto_tagging_enabled"
   | "customer.call_reporting_setting.call_conversion_action"
   | "customer.call_reporting_setting.call_conversion_reporting_enabled"
@@ -15052,9 +15793,11 @@ export type RecommendationField =
   | "recommendation.dismissed"
   | "recommendation.enhanced_cpc_opt_in_recommendation"
   | "recommendation.impact"
+  | "recommendation.keyword_match_type_recommendation"
   | "recommendation.keyword_recommendation"
   | "recommendation.maximize_clicks_opt_in_recommendation"
   | "recommendation.maximize_conversions_opt_in_recommendation"
+  | "recommendation.move_unused_budget_recommendation"
   | "recommendation.optimize_ad_rotation_recommendation"
   | "recommendation.resource_name"
   | "recommendation.search_partners_opt_in_recommendation"
@@ -15093,7 +15836,7 @@ export const remarketing_action = [
   "remarketing_action.id",
   "remarketing_action.name",
   "remarketing_action.resource_name",
-  "remarketing_action.tag_snippets",
+  "remarketing_action.tag_snippets"
 ];
 
 export type RemarketingActionField =
@@ -15157,9 +15900,13 @@ export const search_term_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -15181,6 +15928,7 @@ export const search_term_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -15232,7 +15980,7 @@ export const search_term_view = [
   "search_term_view.ad_group",
   "search_term_view.resource_name",
   "search_term_view.search_term",
-  "search_term_view.status",
+  "search_term_view.status"
 ];
 
 export type SearchTermViewField =
@@ -15263,9 +16011,13 @@ export type SearchTermViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -15287,6 +16039,7 @@ export type SearchTermViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -15379,6 +16132,7 @@ export type SearchTermViewMetric =
   | "metrics.video_quartile_25_rate"
   | "metrics.video_quartile_50_rate"
   | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
   | "metrics.video_views"
   | "metrics.view_through_conversions";
 
@@ -15393,6 +16147,9 @@ export type SearchTermViewSegment =
   | "segments.day_of_week"
   | "segments.device"
   | "segments.external_conversion_source"
+  | "segments.keyword.ad_group_criterion"
+  | "segments.keyword.info.match_type"
+  | "segments.keyword.info.text"
   | "segments.month"
   | "segments.month_of_year"
   | "segments.quarter"
@@ -15442,12 +16199,13 @@ export const shared_criterion = [
   "shared_criterion.keyword.match_type",
   "shared_criterion.keyword.text",
   "shared_criterion.mobile_app_category.mobile_app_category_constant",
+  "shared_criterion.mobile_application.app_id",
   "shared_criterion.placement.url",
   "shared_criterion.resource_name",
   "shared_criterion.shared_set",
   "shared_criterion.type",
   "shared_criterion.youtube_channel.channel_id",
-  "shared_criterion.youtube_video.video_id",
+  "shared_criterion.youtube_video.video_id"
 ];
 
 export type SharedCriterionField =
@@ -15482,6 +16240,7 @@ export type SharedCriterionField =
   | "shared_criterion.keyword.match_type"
   | "shared_criterion.keyword.text"
   | "shared_criterion.mobile_app_category.mobile_app_category_constant"
+  | "shared_criterion.mobile_application.app_id"
   | "shared_criterion.placement.url"
   | "shared_criterion.resource_name"
   | "shared_criterion.shared_set"
@@ -15523,7 +16282,7 @@ export const shared_set = [
   "shared_set.reference_count",
   "shared_set.resource_name",
   "shared_set.status",
-  "shared_set.type",
+  "shared_set.type"
 ];
 
 export type SharedSetField =
@@ -15590,9 +16349,13 @@ export const shopping_performance_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -15614,6 +16377,7 @@ export const shopping_performance_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -15662,7 +16426,7 @@ export const shopping_performance_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "shopping_performance_view.resource_name",
+  "shopping_performance_view.resource_name"
 ];
 
 export type ShoppingPerformanceViewField =
@@ -15693,9 +16457,13 @@ export type ShoppingPerformanceViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -15717,6 +16485,7 @@ export type ShoppingPerformanceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -15790,7 +16559,9 @@ export type ShoppingPerformanceViewMetric =
   | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion";
 
-export type ShoppingPerformanceViewMetrics = Array<ShoppingPerformanceViewMetric>;
+export type ShoppingPerformanceViewMetrics = Array<
+  ShoppingPerformanceViewMetric
+>;
 
 export type ShoppingPerformanceViewSegment =
   | "ad_group"
@@ -15835,7 +16606,9 @@ export type ShoppingPerformanceViewSegment =
   | "segments.week"
   | "segments.year";
 
-export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegment>;
+export type ShoppingPerformanceViewSegments = Array<
+  ShoppingPerformanceViewSegment
+>;
 
 /*
  --- End of ShoppingPerformanceView ---
@@ -15849,7 +16622,7 @@ export const topic_constant = [
   "topic_constant.id",
   "topic_constant.path",
   "topic_constant.resource_name",
-  "topic_constant.topic_constant_parent",
+  "topic_constant.topic_constant_parent"
 ];
 
 export type TopicConstantField =
@@ -15896,6 +16669,7 @@ export const topic_view = [
   "ad_group_criterion.ad_group",
   "ad_group_criterion.age_range.type",
   "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
   "ad_group_criterion.bid_modifier",
   "ad_group_criterion.cpc_bid_micros",
   "ad_group_criterion.cpm_bid_micros",
@@ -15938,6 +16712,7 @@ export const topic_view = [
   "ad_group_criterion.listing_group.parent_ad_group_criterion",
   "ad_group_criterion.listing_group.type",
   "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
   "ad_group_criterion.negative",
   "ad_group_criterion.parental_status.type",
   "ad_group_criterion.percent_cpc_bid_micros",
@@ -15968,9 +16743,13 @@ export const topic_view = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -15992,6 +16771,7 @@ export const topic_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -16040,7 +16820,7 @@ export const topic_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "topic_view.resource_name",
+  "topic_view.resource_name"
 ];
 
 export type TopicViewField =
@@ -16071,6 +16851,7 @@ export type TopicViewField =
   | "ad_group_criterion.ad_group"
   | "ad_group_criterion.age_range.type"
   | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
   | "ad_group_criterion.bid_modifier"
   | "ad_group_criterion.cpc_bid_micros"
   | "ad_group_criterion.cpm_bid_micros"
@@ -16113,6 +16894,7 @@ export type TopicViewField =
   | "ad_group_criterion.listing_group.parent_ad_group_criterion"
   | "ad_group_criterion.listing_group.type"
   | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
   | "ad_group_criterion.negative"
   | "ad_group_criterion.parental_status.type"
   | "ad_group_criterion.percent_cpc_bid_micros"
@@ -16143,9 +16925,13 @@ export type TopicViewField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -16167,6 +16953,7 @@ export type TopicViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -16296,7 +17083,7 @@ export const user_interest = [
   "user_interest.resource_name",
   "user_interest.taxonomy_type",
   "user_interest.user_interest_id",
-  "user_interest.user_interest_parent",
+  "user_interest.user_interest_parent"
 ];
 
 export type UserInterestField =
@@ -16371,7 +17158,7 @@ export const user_list = [
   "user_list.size_for_search",
   "user_list.size_range_for_display",
   "user_list.size_range_for_search",
-  "user_list.type",
+  "user_list.type"
 ];
 
 export type UserListField =
@@ -16465,6 +17252,12 @@ export const video = [
   "ad_group.type",
   "ad_group.url_custom_parameters",
   "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.app_ad.descriptions",
+  "ad_group_ad.ad.app_ad.headlines",
+  "ad_group_ad.ad.app_ad.html5_media_bundles",
+  "ad_group_ad.ad.app_ad.images",
+  "ad_group_ad.ad.app_ad.mandatory_ad_text",
+  "ad_group_ad.ad.app_ad.youtube_videos",
   "ad_group_ad.ad.call_only_ad.business_name",
   "ad_group_ad.ad.call_only_ad.call_tracked",
   "ad_group_ad.ad.call_only_ad.conversion_action",
@@ -16473,6 +17266,8 @@ export const video = [
   "ad_group_ad.ad.call_only_ad.description1",
   "ad_group_ad.ad.call_only_ad.description2",
   "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.headline1",
+  "ad_group_ad.ad.call_only_ad.headline2",
   "ad_group_ad.ad.call_only_ad.phone_number",
   "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
   "ad_group_ad.ad.device_preference",
@@ -16510,6 +17305,7 @@ export const video = [
   "ad_group_ad.ad.image_ad.preview_image_url",
   "ad_group_ad.ad.image_ad.preview_pixel_height",
   "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_app_install_ad",
   "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
@@ -16526,6 +17322,22 @@ export const video = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.responsive_display_ad.accent_color",
+  "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.responsive_display_ad.business_name",
+  "ad_group_ad.ad.responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.responsive_display_ad.descriptions",
+  "ad_group_ad.ad.responsive_display_ad.format_setting",
+  "ad_group_ad.ad.responsive_display_ad.headlines",
+  "ad_group_ad.ad.responsive_display_ad.logo_images",
+  "ad_group_ad.ad.responsive_display_ad.long_headline",
+  "ad_group_ad.ad.responsive_display_ad.main_color",
+  "ad_group_ad.ad.responsive_display_ad.marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.responsive_display_ad.promo_text",
+  "ad_group_ad.ad.responsive_display_ad.square_logo_images",
+  "ad_group_ad.ad.responsive_display_ad.square_marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.youtube_videos",
   "ad_group_ad.ad.responsive_search_ad.descriptions",
   "ad_group_ad.ad.responsive_search_ad.headlines",
   "ad_group_ad.ad.responsive_search_ad.path1",
@@ -16555,9 +17367,13 @@ export const video = [
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
   "campaign.bidding_strategy",
   "campaign.bidding_strategy_type",
   "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
   "campaign.dynamic_search_ads_setting.domain_name",
   "campaign.dynamic_search_ads_setting.feeds",
   "campaign.dynamic_search_ads_setting.language_code",
@@ -16579,6 +17395,7 @@ export const video = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
   "campaign.real_time_bidding_setting.opt_in",
@@ -16631,7 +17448,7 @@ export const video = [
   "video.duration_millis",
   "video.id",
   "video.resource_name",
-  "video.title",
+  "video.title"
 ];
 
 export type VideoField =
@@ -16660,6 +17477,12 @@ export type VideoField =
   | "ad_group.type"
   | "ad_group.url_custom_parameters"
   | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.app_ad.descriptions"
+  | "ad_group_ad.ad.app_ad.headlines"
+  | "ad_group_ad.ad.app_ad.html5_media_bundles"
+  | "ad_group_ad.ad.app_ad.images"
+  | "ad_group_ad.ad.app_ad.mandatory_ad_text"
+  | "ad_group_ad.ad.app_ad.youtube_videos"
   | "ad_group_ad.ad.call_only_ad.business_name"
   | "ad_group_ad.ad.call_only_ad.call_tracked"
   | "ad_group_ad.ad.call_only_ad.conversion_action"
@@ -16668,6 +17491,8 @@ export type VideoField =
   | "ad_group_ad.ad.call_only_ad.description1"
   | "ad_group_ad.ad.call_only_ad.description2"
   | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.headline1"
+  | "ad_group_ad.ad.call_only_ad.headline2"
   | "ad_group_ad.ad.call_only_ad.phone_number"
   | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
   | "ad_group_ad.ad.device_preference"
@@ -16705,6 +17530,7 @@ export type VideoField =
   | "ad_group_ad.ad.image_ad.preview_image_url"
   | "ad_group_ad.ad.image_ad.preview_pixel_height"
   | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_app_install_ad"
   | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
@@ -16721,6 +17547,22 @@ export type VideoField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.responsive_display_ad.business_name"
+  | "ad_group_ad.ad.responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.responsive_display_ad.descriptions"
+  | "ad_group_ad.ad.responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.responsive_display_ad.headlines"
+  | "ad_group_ad.ad.responsive_display_ad.logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.responsive_display_ad.main_color"
+  | "ad_group_ad.ad.responsive_display_ad.marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.responsive_display_ad.square_logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.square_marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.youtube_videos"
   | "ad_group_ad.ad.responsive_search_ad.descriptions"
   | "ad_group_ad.ad.responsive_search_ad.headlines"
   | "ad_group_ad.ad.responsive_search_ad.path1"
@@ -16750,9 +17592,13 @@ export type VideoField =
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
   | "campaign.bidding_strategy"
   | "campaign.bidding_strategy_type"
   | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
   | "campaign.dynamic_search_ads_setting.domain_name"
   | "campaign.dynamic_search_ads_setting.feeds"
   | "campaign.dynamic_search_ads_setting.language_code"
@@ -16774,6 +17620,7 @@ export type VideoField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
   | "campaign.real_time_bidding_setting.opt_in"
@@ -16831,6 +17678,9 @@ export type VideoField =
 export type VideoFields = Array<VideoField>;
 
 export type VideoMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
   | "metrics.average_cpc"
   | "metrics.average_cpe"
   | "metrics.average_cpm"
@@ -16842,11 +17692,14 @@ export type VideoMetric =
   | "metrics.conversions_value"
   | "metrics.conversions_value_per_cost"
   | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
   | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.engagement_rate"
   | "metrics.engagements"
   | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion"
   | "metrics.video_quartile_100_rate"
   | "metrics.video_quartile_25_rate"
@@ -16899,6 +17752,7 @@ export type Segment =
   | "segments.day_of_week"
   | "segments.device"
   | "segments.external_conversion_source"
+  | "segments.geo_target_airport"
   | "segments.geo_target_city"
   | "segments.geo_target_metro"
   | "segments.geo_target_region"
@@ -16950,6 +17804,7 @@ export type Segment =
   | "segments.quarter"
   | "segments.search_term_match_type"
   | "segments.slot"
+  | "segments.webpage"
   | "segments.week"
   | "segments.year";
 

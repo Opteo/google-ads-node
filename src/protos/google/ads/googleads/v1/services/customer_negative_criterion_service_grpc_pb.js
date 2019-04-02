@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomerNegativeCrit
 }
 
 
+// Proto file describing the Customer Negative Criterion service.
+//
 // Service to manage customer negative criteria.
 var CustomerNegativeCriterionServiceService = exports.CustomerNegativeCriterionServiceService = {
   // Returns the requested criterion in full detail.

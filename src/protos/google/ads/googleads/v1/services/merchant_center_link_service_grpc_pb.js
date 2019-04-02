@@ -90,6 +90,8 @@ function deserialize_google_ads_googleads_v1_services_MutateMerchantCenterLinkRe
 }
 
 
+// Proto file describing the MerchantCenterLink service.
+//
 // This service allows management of links between Google Ads and Google
 // Merchant Center.
 var MerchantCenterLinkServiceService = exports.MerchantCenterLinkServiceService = {

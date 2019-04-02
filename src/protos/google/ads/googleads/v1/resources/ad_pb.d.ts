@@ -126,6 +126,21 @@ export class Ad extends jspb.Message {
   getLegacyResponsiveDisplayAd(): google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo | undefined;
   setLegacyResponsiveDisplayAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo): void;
 
+  hasAppAd(): boolean;
+  clearAppAd(): void;
+  getAppAd(): google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo | undefined;
+  setAppAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo): void;
+
+  hasLegacyAppInstallAd(): boolean;
+  clearLegacyAppInstallAd(): void;
+  getLegacyAppInstallAd(): google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo | undefined;
+  setLegacyAppInstallAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo): void;
+
+  hasResponsiveDisplayAd(): boolean;
+  clearResponsiveDisplayAd(): void;
+  getResponsiveDisplayAd(): google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo | undefined;
+  setResponsiveDisplayAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo): void;
+
   getAdDataCase(): Ad.AdDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ad.AsObject;
@@ -163,6 +178,9 @@ export namespace Ad {
     videoAd?: google_ads_googleads_v1_common_ad_type_infos_pb.VideoAdInfo.AsObject,
     responsiveSearchAd?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveSearchAdInfo.AsObject,
     legacyResponsiveDisplayAd?: google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo.AsObject,
+    appAd?: google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo.AsObject,
+    legacyAppInstallAd?: google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.AsObject,
+    responsiveDisplayAd?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.AsObject,
   }
 
   export enum AdDataCase {
@@ -179,6 +197,9 @@ export namespace Ad {
     VIDEO_AD = 24,
     RESPONSIVE_SEARCH_AD = 25,
     LEGACY_RESPONSIVE_DISPLAY_AD = 28,
+    APP_AD = 29,
+    LEGACY_APP_INSTALL_AD = 30,
+    RESPONSIVE_DISPLAY_AD = 31,
   }
 }
 

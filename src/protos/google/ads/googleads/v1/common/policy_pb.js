@@ -253,7 +253,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.google.ads.googleads.v1.common.PolicyValidationParameter.repeatedFields_ = [1];
+proto.google.ads.googleads.v1.common.PolicyValidationParameter.repeatedFields_ = [1,2];
 
 
 
@@ -285,7 +285,9 @@ proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.toObjec
 proto.google.ads.googleads.v1.common.PolicyValidationParameter.toObject = function(includeInstance, msg) {
   var f, obj = {
     ignorablePolicyTopicsList: jspb.Message.toObjectList(msg.getIgnorablePolicyTopicsList(),
-    google_protobuf_wrappers_pb.StringValue.toObject, includeInstance)
+    google_protobuf_wrappers_pb.StringValue.toObject, includeInstance),
+    exemptPolicyViolationKeysList: jspb.Message.toObjectList(msg.getExemptPolicyViolationKeysList(),
+    proto.google.ads.googleads.v1.common.PolicyViolationKey.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -327,6 +329,11 @@ proto.google.ads.googleads.v1.common.PolicyValidationParameter.deserializeBinary
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.addIgnorablePolicyTopics(value);
       break;
+    case 2:
+      var value = new proto.google.ads.googleads.v1.common.PolicyViolationKey;
+      reader.readMessage(value,proto.google.ads.googleads.v1.common.PolicyViolationKey.deserializeBinaryFromReader);
+      msg.addExemptPolicyViolationKeys(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -364,6 +371,14 @@ proto.google.ads.googleads.v1.common.PolicyValidationParameter.serializeBinaryTo
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
+  f = message.getExemptPolicyViolationKeysList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.google.ads.googleads.v1.common.PolicyViolationKey.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -395,6 +410,37 @@ proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.addIgno
 
 proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.clearIgnorablePolicyTopicsList = function() {
   this.setIgnorablePolicyTopicsList([]);
+};
+
+
+/**
+ * repeated PolicyViolationKey exempt_policy_violation_keys = 2;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>}
+ */
+proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.getExemptPolicyViolationKeysList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.google.ads.googleads.v1.common.PolicyViolationKey, 2));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>} value */
+proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.setExemptPolicyViolationKeysList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.PolicyViolationKey=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.PolicyViolationKey}
+ */
+proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.addExemptPolicyViolationKeys = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.google.ads.googleads.v1.common.PolicyViolationKey, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.PolicyValidationParameter.prototype.clearExemptPolicyViolationKeysList = function() {
+  this.setExemptPolicyViolationKeysList([]);
 };
 
 

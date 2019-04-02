@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_ad_asset_pb from "../../../../../google/ads/googleads/v1/common/ad_asset_pb";
 import * as google_ads_googleads_v1_enums_call_conversion_reporting_state_pb from "../../../../../google/ads/googleads/v1/enums/call_conversion_reporting_state_pb";
 import * as google_ads_googleads_v1_enums_display_ad_format_setting_pb from "../../../../../google/ads/googleads/v1/enums/display_ad_format_setting_pb";
+import * as google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb from "../../../../../google/ads/googleads/v1/enums/legacy_app_install_ad_app_store_pb";
 import * as google_ads_googleads_v1_enums_mime_type_pb from "../../../../../google/ads/googleads/v1/enums/mime_type_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
@@ -117,6 +118,16 @@ export class CallOnlyAdInfo extends jspb.Message {
   getBusinessName(): google_protobuf_wrappers_pb.StringValue | undefined;
   setBusinessName(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasHeadline1(): boolean;
+  clearHeadline1(): void;
+  getHeadline1(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHeadline1(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasHeadline2(): boolean;
+  clearHeadline2(): void;
+  getHeadline2(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHeadline2(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasDescription1(): boolean;
   clearDescription1(): void;
   getDescription1(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -165,6 +176,8 @@ export namespace CallOnlyAdInfo {
     countryCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
     phoneNumber?: google_protobuf_wrappers_pb.StringValue.AsObject,
     businessName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    headline1?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    headline2?: google_protobuf_wrappers_pb.StringValue.AsObject,
     description1?: google_protobuf_wrappers_pb.StringValue.AsObject,
     description2?: google_protobuf_wrappers_pb.StringValue.AsObject,
     callTracked?: google_protobuf_wrappers_pb.BoolValue.AsObject,
@@ -811,6 +824,212 @@ export namespace LegacyResponsiveDisplayAdInfo {
     formatSetting: google_ads_googleads_v1_enums_display_ad_format_setting_pb.DisplayAdFormatSettingEnum.DisplayAdFormatSetting,
     pricePrefix?: google_protobuf_wrappers_pb.StringValue.AsObject,
     promoText?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class AppAdInfo extends jspb.Message {
+  hasMandatoryAdText(): boolean;
+  clearMandatoryAdText(): void;
+  getMandatoryAdText(): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset | undefined;
+  setMandatoryAdText(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset): void;
+
+  clearHeadlinesList(): void;
+  getHeadlinesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setHeadlinesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addHeadlines(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  clearDescriptionsList(): void;
+  getDescriptionsList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setDescriptionsList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addDescriptions(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  clearImagesList(): void;
+  getImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearYoutubeVideosList(): void;
+  getYoutubeVideosList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>;
+  setYoutubeVideosList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>): void;
+  addYoutubeVideos(value?: google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset;
+
+  clearHtml5MediaBundlesList(): void;
+  getHtml5MediaBundlesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset>;
+  setHtml5MediaBundlesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset>): void;
+  addHtml5MediaBundles(value?: google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: AppAdInfo): AppAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppAdInfo;
+  static deserializeBinaryFromReader(message: AppAdInfo, reader: jspb.BinaryReader): AppAdInfo;
+}
+
+export namespace AppAdInfo {
+  export type AsObject = {
+    mandatoryAdText?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject,
+    headlinesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    descriptionsList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    imagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    youtubeVideosList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.AsObject>,
+    html5MediaBundlesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset.AsObject>,
+  }
+}
+
+export class LegacyAppInstallAdInfo extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAppId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getAppStore(): google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore;
+  setAppStore(value: google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore): void;
+
+  hasHeadline(): boolean;
+  clearHeadline(): void;
+  getHeadline(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHeadline(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasDescription1(): boolean;
+  clearDescription1(): void;
+  getDescription1(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setDescription1(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasDescription2(): boolean;
+  clearDescription2(): void;
+  getDescription2(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setDescription2(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LegacyAppInstallAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: LegacyAppInstallAdInfo): LegacyAppInstallAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LegacyAppInstallAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LegacyAppInstallAdInfo;
+  static deserializeBinaryFromReader(message: LegacyAppInstallAdInfo, reader: jspb.BinaryReader): LegacyAppInstallAdInfo;
+}
+
+export namespace LegacyAppInstallAdInfo {
+  export type AsObject = {
+    appId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    appStore: google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore,
+    headline?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    description1?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    description2?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class ResponsiveDisplayAdInfo extends jspb.Message {
+  clearMarketingImagesList(): void;
+  getMarketingImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setMarketingImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addMarketingImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearSquareMarketingImagesList(): void;
+  getSquareMarketingImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setSquareMarketingImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addSquareMarketingImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearLogoImagesList(): void;
+  getLogoImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setLogoImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addLogoImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearSquareLogoImagesList(): void;
+  getSquareLogoImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setSquareLogoImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addSquareLogoImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearHeadlinesList(): void;
+  getHeadlinesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setHeadlinesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addHeadlines(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  hasLongHeadline(): boolean;
+  clearLongHeadline(): void;
+  getLongHeadline(): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset | undefined;
+  setLongHeadline(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset): void;
+
+  clearDescriptionsList(): void;
+  getDescriptionsList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setDescriptionsList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addDescriptions(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  clearYoutubeVideosList(): void;
+  getYoutubeVideosList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>;
+  setYoutubeVideosList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>): void;
+  addYoutubeVideos(value?: google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset;
+
+  hasBusinessName(): boolean;
+  clearBusinessName(): void;
+  getBusinessName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setBusinessName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasMainColor(): boolean;
+  clearMainColor(): void;
+  getMainColor(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setMainColor(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAccentColor(): boolean;
+  clearAccentColor(): void;
+  getAccentColor(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAccentColor(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAllowFlexibleColor(): boolean;
+  clearAllowFlexibleColor(): void;
+  getAllowFlexibleColor(): google_protobuf_wrappers_pb.BoolValue | undefined;
+  setAllowFlexibleColor(value?: google_protobuf_wrappers_pb.BoolValue): void;
+
+  hasCallToActionText(): boolean;
+  clearCallToActionText(): void;
+  getCallToActionText(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCallToActionText(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPricePrefix(): boolean;
+  clearPricePrefix(): void;
+  getPricePrefix(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPricePrefix(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPromoText(): boolean;
+  clearPromoText(): void;
+  getPromoText(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPromoText(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getFormatSetting(): google_ads_googleads_v1_enums_display_ad_format_setting_pb.DisplayAdFormatSettingEnum.DisplayAdFormatSetting;
+  setFormatSetting(value: google_ads_googleads_v1_enums_display_ad_format_setting_pb.DisplayAdFormatSettingEnum.DisplayAdFormatSetting): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResponsiveDisplayAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ResponsiveDisplayAdInfo): ResponsiveDisplayAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResponsiveDisplayAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResponsiveDisplayAdInfo;
+  static deserializeBinaryFromReader(message: ResponsiveDisplayAdInfo, reader: jspb.BinaryReader): ResponsiveDisplayAdInfo;
+}
+
+export namespace ResponsiveDisplayAdInfo {
+  export type AsObject = {
+    marketingImagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    squareMarketingImagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    logoImagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    squareLogoImagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    headlinesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    longHeadline?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject,
+    descriptionsList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    youtubeVideosList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.AsObject>,
+    businessName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    mainColor?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    accentColor?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    allowFlexibleColor?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+    callToActionText?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    pricePrefix?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    promoText?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    formatSetting: google_ads_googleads_v1_enums_display_ad_format_setting_pb.DisplayAdFormatSettingEnum.DisplayAdFormatSetting,
   }
 }
 

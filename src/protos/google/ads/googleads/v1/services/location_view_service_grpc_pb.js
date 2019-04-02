@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetLocationViewRequest(buf
 }
 
 
+// Proto file describing the Location View service.
+//
 // Service to fetch location views.
 var LocationViewServiceService = exports.LocationViewServiceService = {
   // Returns the requested location view in full detail.

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetTopicViewRequest(buffer
 }
 
 
+// Proto file describing the Topic View service.
+//
 // Service to manage topic views.
 var TopicViewServiceService = exports.TopicViewServiceService = {
   // Returns the requested topic view in full detail.

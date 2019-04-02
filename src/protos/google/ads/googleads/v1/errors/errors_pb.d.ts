@@ -15,6 +15,7 @@ import * as google_ads_googleads_v1_errors_ad_group_feed_error_pb from "../../..
 import * as google_ads_googleads_v1_errors_ad_parameter_error_pb from "../../../../../google/ads/googleads/v1/errors/ad_parameter_error_pb";
 import * as google_ads_googleads_v1_errors_ad_sharing_error_pb from "../../../../../google/ads/googleads/v1/errors/ad_sharing_error_pb";
 import * as google_ads_googleads_v1_errors_adx_error_pb from "../../../../../google/ads/googleads/v1/errors/adx_error_pb";
+import * as google_ads_googleads_v1_errors_asset_error_pb from "../../../../../google/ads/googleads/v1/errors/asset_error_pb";
 import * as google_ads_googleads_v1_errors_authentication_error_pb from "../../../../../google/ads/googleads/v1/errors/authentication_error_pb";
 import * as google_ads_googleads_v1_errors_authorization_error_pb from "../../../../../google/ads/googleads/v1/errors/authorization_error_pb";
 import * as google_ads_googleads_v1_errors_bidding_error_pb from "../../../../../google/ads/googleads/v1/errors/bidding_error_pb";
@@ -29,6 +30,7 @@ import * as google_ads_googleads_v1_errors_change_status_error_pb from "../../..
 import * as google_ads_googleads_v1_errors_collection_size_error_pb from "../../../../../google/ads/googleads/v1/errors/collection_size_error_pb";
 import * as google_ads_googleads_v1_errors_context_error_pb from "../../../../../google/ads/googleads/v1/errors/context_error_pb";
 import * as google_ads_googleads_v1_errors_conversion_action_error_pb from "../../../../../google/ads/googleads/v1/errors/conversion_action_error_pb";
+import * as google_ads_googleads_v1_errors_conversion_adjustment_upload_error_pb from "../../../../../google/ads/googleads/v1/errors/conversion_adjustment_upload_error_pb";
 import * as google_ads_googleads_v1_errors_conversion_upload_error_pb from "../../../../../google/ads/googleads/v1/errors/conversion_upload_error_pb";
 import * as google_ads_googleads_v1_errors_country_code_error_pb from "../../../../../google/ads/googleads/v1/errors/country_code_error_pb";
 import * as google_ads_googleads_v1_errors_criterion_error_pb from "../../../../../google/ads/googleads/v1/errors/criterion_error_pb";
@@ -267,6 +269,11 @@ export class ErrorCode extends jspb.Message {
   getAdxError(): google_ads_googleads_v1_errors_adx_error_pb.AdxErrorEnum.AdxError;
   setAdxError(value: google_ads_googleads_v1_errors_adx_error_pb.AdxErrorEnum.AdxError): void;
 
+  hasAssetError(): boolean;
+  clearAssetError(): void;
+  getAssetError(): google_ads_googleads_v1_errors_asset_error_pb.AssetErrorEnum.AssetError;
+  setAssetError(value: google_ads_googleads_v1_errors_asset_error_pb.AssetErrorEnum.AssetError): void;
+
   hasBiddingError(): boolean;
   clearBiddingError(): void;
   getBiddingError(): google_ads_googleads_v1_errors_bidding_error_pb.BiddingErrorEnum.BiddingError;
@@ -456,6 +463,11 @@ export class ErrorCode extends jspb.Message {
   clearConversionActionError(): void;
   getConversionActionError(): google_ads_googleads_v1_errors_conversion_action_error_pb.ConversionActionErrorEnum.ConversionActionError;
   setConversionActionError(value: google_ads_googleads_v1_errors_conversion_action_error_pb.ConversionActionErrorEnum.ConversionActionError): void;
+
+  hasConversionAdjustmentUploadError(): boolean;
+  clearConversionAdjustmentUploadError(): void;
+  getConversionAdjustmentUploadError(): google_ads_googleads_v1_errors_conversion_adjustment_upload_error_pb.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError;
+  setConversionAdjustmentUploadError(value: google_ads_googleads_v1_errors_conversion_adjustment_upload_error_pb.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError): void;
 
   hasConversionUploadError(): boolean;
   clearConversionUploadError(): void;
@@ -665,6 +677,7 @@ export namespace ErrorCode {
     adGroupAdError: google_ads_googleads_v1_errors_ad_group_ad_error_pb.AdGroupAdErrorEnum.AdGroupAdError,
     adSharingError: google_ads_googleads_v1_errors_ad_sharing_error_pb.AdSharingErrorEnum.AdSharingError,
     adxError: google_ads_googleads_v1_errors_adx_error_pb.AdxErrorEnum.AdxError,
+    assetError: google_ads_googleads_v1_errors_asset_error_pb.AssetErrorEnum.AssetError,
     biddingError: google_ads_googleads_v1_errors_bidding_error_pb.BiddingErrorEnum.BiddingError,
     campaignCriterionError: google_ads_googleads_v1_errors_campaign_criterion_error_pb.CampaignCriterionErrorEnum.CampaignCriterionError,
     collectionSizeError: google_ads_googleads_v1_errors_collection_size_error_pb.CollectionSizeErrorEnum.CollectionSizeError,
@@ -703,6 +716,7 @@ export namespace ErrorCode {
     sharedCriterionError: google_ads_googleads_v1_errors_shared_criterion_error_pb.SharedCriterionErrorEnum.SharedCriterionError,
     campaignSharedSetError: google_ads_googleads_v1_errors_campaign_shared_set_error_pb.CampaignSharedSetErrorEnum.CampaignSharedSetError,
     conversionActionError: google_ads_googleads_v1_errors_conversion_action_error_pb.ConversionActionErrorEnum.ConversionActionError,
+    conversionAdjustmentUploadError: google_ads_googleads_v1_errors_conversion_adjustment_upload_error_pb.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError,
     conversionUploadError: google_ads_googleads_v1_errors_conversion_upload_error_pb.ConversionUploadErrorEnum.ConversionUploadError,
     headerError: google_ads_googleads_v1_errors_header_error_pb.HeaderErrorEnum.HeaderError,
     databaseError: google_ads_googleads_v1_errors_database_error_pb.DatabaseErrorEnum.DatabaseError,
@@ -762,6 +776,7 @@ export namespace ErrorCode {
     AD_GROUP_AD_ERROR = 21,
     AD_SHARING_ERROR = 24,
     ADX_ERROR = 25,
+    ASSET_ERROR = 107,
     BIDDING_ERROR = 26,
     CAMPAIGN_CRITERION_ERROR = 29,
     COLLECTION_SIZE_ERROR = 31,
@@ -800,6 +815,7 @@ export namespace ErrorCode {
     SHARED_CRITERION_ERROR = 63,
     CAMPAIGN_SHARED_SET_ERROR = 64,
     CONVERSION_ACTION_ERROR = 65,
+    CONVERSION_ADJUSTMENT_UPLOAD_ERROR = 115,
     CONVERSION_UPLOAD_ERROR = 111,
     HEADER_ERROR = 66,
     DATABASE_ERROR = 67,

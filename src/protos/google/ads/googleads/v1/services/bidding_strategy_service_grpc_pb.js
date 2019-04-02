@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateBiddingStrategiesRes
 }
 
 
+// Proto file describing the Bidding Strategy service.
+//
 // Service to manage bidding strategies.
 var BiddingStrategyServiceService = exports.BiddingStrategyServiceService = {
   // Returns the requested bidding strategy in full detail.

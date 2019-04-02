@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetLanguageConstantRequest
 }
 
 
+// Proto file describing the language constant service.
+//
 // Service to fetch language constants.
 var LanguageConstantServiceService = exports.LanguageConstantServiceService = {
   // Returns the requested language constant.

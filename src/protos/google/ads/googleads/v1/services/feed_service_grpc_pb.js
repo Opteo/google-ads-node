@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateFeedsResponse(buffer
 }
 
 
+// Proto file describing the Feed service.
+//
 // Service to manage feeds.
 var FeedServiceService = exports.FeedServiceService = {
   // Returns the requested feed in full detail.

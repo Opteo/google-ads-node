@@ -42,7 +42,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.SharedCriterion.oneofGroups_ = [[3,5,6,7,8]];
+proto.google.ads.googleads.v1.resources.SharedCriterion.oneofGroups_ = [[3,5,6,7,8,9]];
 
 /**
  * @enum {number}
@@ -53,7 +53,8 @@ proto.google.ads.googleads.v1.resources.SharedCriterion.CriterionCase = {
   YOUTUBE_VIDEO: 5,
   YOUTUBE_CHANNEL: 6,
   PLACEMENT: 7,
-  MOBILE_APP_CATEGORY: 8
+  MOBILE_APP_CATEGORY: 8,
+  MOBILE_APPLICATION: 9
 };
 
 /**
@@ -100,7 +101,8 @@ proto.google.ads.googleads.v1.resources.SharedCriterion.toObject = function(incl
     youtubeVideo: (f = msg.getYoutubeVideo()) && google_ads_googleads_v1_common_criteria_pb.YouTubeVideoInfo.toObject(includeInstance, f),
     youtubeChannel: (f = msg.getYoutubeChannel()) && google_ads_googleads_v1_common_criteria_pb.YouTubeChannelInfo.toObject(includeInstance, f),
     placement: (f = msg.getPlacement()) && google_ads_googleads_v1_common_criteria_pb.PlacementInfo.toObject(includeInstance, f),
-    mobileAppCategory: (f = msg.getMobileAppCategory()) && google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.toObject(includeInstance, f)
+    mobileAppCategory: (f = msg.getMobileAppCategory()) && google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.toObject(includeInstance, f),
+    mobileApplication: (f = msg.getMobileApplication()) && google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -179,6 +181,11 @@ proto.google.ads.googleads.v1.resources.SharedCriterion.deserializeBinaryFromRea
       var value = new google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.deserializeBinaryFromReader);
       msg.setMobileAppCategory(value);
+      break;
+    case 9:
+      var value = new google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.deserializeBinaryFromReader);
+      msg.setMobileApplication(value);
       break;
     default:
       reader.skipField();
@@ -277,6 +284,14 @@ proto.google.ads.googleads.v1.resources.SharedCriterion.serializeBinaryToWriter 
       8,
       f,
       google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getMobileApplication();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.serializeBinaryToWriter
     );
   }
 };
@@ -519,6 +534,36 @@ proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.clearMobileApp
  */
 proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.hasMobileAppCategory = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 9;
+ * @return {?proto.google.ads.googleads.v1.common.MobileApplicationInfo}
+ */
+proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.getMobileApplication = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.MobileApplicationInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo, 9));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.MobileApplicationInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.setMobileApplication = function(value) {
+  jspb.Message.setOneofWrapperField(this, 9, proto.google.ads.googleads.v1.resources.SharedCriterion.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.clearMobileApplication = function() {
+  this.setMobileApplication(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.SharedCriterion.prototype.hasMobileApplication = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

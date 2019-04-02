@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_ListPaymentsAccountsRespon
 }
 
 
+// Proto file describing the Payments account service.
+//
 // Service to provide Payments accounts that can be used to set up consolidated
 // billing.
 var PaymentsAccountServiceService = exports.PaymentsAccountServiceService = {

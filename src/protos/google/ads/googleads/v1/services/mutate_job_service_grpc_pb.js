@@ -136,6 +136,8 @@ function deserialize_google_longrunning_Operation(buffer_arg) {
 }
 
 
+// Proto file describing the MutateJobService.
+//
 // Service to manage mutate jobs.
 var MutateJobServiceService = exports.MutateJobServiceService = {
   // Creates a mutate job.

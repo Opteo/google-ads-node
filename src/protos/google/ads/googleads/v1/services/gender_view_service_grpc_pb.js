@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetGenderViewRequest(buffe
 }
 
 
+// Proto file describing the Gender View service.
+//
 // Service to manage gender views.
 var GenderViewServiceService = exports.GenderViewServiceService = {
   // Returns the requested gender view in full detail.

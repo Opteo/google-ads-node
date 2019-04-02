@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetGroupPlacementViewReque
 }
 
 
+// Proto file describing the Group Placement View service.
+//
 // Service to fetch Group Placement views.
 var GroupPlacementViewServiceService = exports.GroupPlacementViewServiceService = {
   // Returns the requested Group Placement view in full detail.

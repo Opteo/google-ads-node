@@ -408,6 +408,7 @@ export * from "../protos/google/ads/googleads/v1/services/ad_group_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/ad_parameter_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/ad_schedule_view_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/age_range_view_service_pb";
+export * from "../protos/google/ads/googleads/v1/services/asset_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/bidding_strategy_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/billing_setup_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/campaign_audience_view_service_pb";
@@ -423,6 +424,7 @@ export * from "../protos/google/ads/googleads/v1/services/carrier_constant_servi
 export * from "../protos/google/ads/googleads/v1/services/change_status_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/click_view_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/conversion_action_service_pb";
+export * from "../protos/google/ads/googleads/v1/services/conversion_adjustment_upload_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/conversion_upload_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/custom_interest_service_pb";
 export * from "../protos/google/ads/googleads/v1/services/customer_client_link_service_pb";

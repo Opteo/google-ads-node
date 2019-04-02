@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetCarrierConstantRequest(
 }
 
 
+// Proto file describing the carrier constant service.
+//
 // Service to fetch carrier constants.
 var CarrierConstantServiceService = exports.CarrierConstantServiceService = {
   // Returns the requested carrier constant in full detail.

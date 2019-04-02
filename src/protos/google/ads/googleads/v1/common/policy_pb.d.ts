@@ -41,6 +41,11 @@ export class PolicyValidationParameter extends jspb.Message {
   setIgnorablePolicyTopicsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
   addIgnorablePolicyTopics(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
 
+  clearExemptPolicyViolationKeysList(): void;
+  getExemptPolicyViolationKeysList(): Array<PolicyViolationKey>;
+  setExemptPolicyViolationKeysList(value: Array<PolicyViolationKey>): void;
+  addExemptPolicyViolationKeys(value?: PolicyViolationKey, index?: number): PolicyViolationKey;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PolicyValidationParameter.AsObject;
   static toObject(includeInstance: boolean, msg: PolicyValidationParameter): PolicyValidationParameter.AsObject;
@@ -54,6 +59,7 @@ export class PolicyValidationParameter extends jspb.Message {
 export namespace PolicyValidationParameter {
   export type AsObject = {
     ignorablePolicyTopicsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    exemptPolicyViolationKeysList: Array<PolicyViolationKey.AsObject>,
   }
 }
 

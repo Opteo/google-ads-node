@@ -34,6 +34,9 @@ export namespace AdTypeEnum {
     IMAGE_AD = 14,
     RESPONSIVE_SEARCH_AD = 15,
     LEGACY_RESPONSIVE_DISPLAY_AD = 16,
+    APP_AD = 17,
+    LEGACY_APP_INSTALL_AD = 18,
+    RESPONSIVE_DISPLAY_AD = 19,
   }
 }
 

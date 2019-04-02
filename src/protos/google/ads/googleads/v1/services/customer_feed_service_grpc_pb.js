@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomerFeedsRespons
 }
 
 
+// Proto file describing the CustomerFeed service.
+//
 // Service to manage customer feeds.
 var CustomerFeedServiceService = exports.CustomerFeedServiceService = {
   // Returns the requested customer feed in full detail.

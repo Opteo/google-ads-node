@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetAdScheduleViewRequest(b
 }
 
 
+// Proto file describing the AdSchedule View service.
+//
 // Service to fetch ad schedule views.
 var AdScheduleViewServiceService = exports.AdScheduleViewServiceService = {
   // Returns the requested ad schedule view in full detail.

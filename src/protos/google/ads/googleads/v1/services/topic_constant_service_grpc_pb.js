@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetTopicConstantRequest(bu
 }
 
 
+// Proto file describing the Topic constant service
+//
 // Service to fetch topic constants.
 var TopicConstantServiceService = exports.TopicConstantServiceService = {
   // Returns the requested topic constant in full detail.

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetShoppingPerformanceView
 }
 
 
+// Proto file describing the ShoppingPerformanceView service.
+//
 // Service to fetch Shopping performance views.
 var ShoppingPerformanceViewServiceService = exports.ShoppingPerformanceViewServiceService = {
   // Returns the requested Shopping performance view in full detail.

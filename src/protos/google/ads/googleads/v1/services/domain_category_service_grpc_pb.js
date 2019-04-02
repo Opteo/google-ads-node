@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetDomainCategoryRequest(b
 }
 
 
+// Proto file describing the DomainCategory Service.
+//
 // Service to fetch domain categories.
 var DomainCategoryServiceService = exports.DomainCategoryServiceService = {
   // Returns the requested domain category.

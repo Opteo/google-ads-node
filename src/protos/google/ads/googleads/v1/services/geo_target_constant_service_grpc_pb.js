@@ -68,6 +68,8 @@ function deserialize_google_ads_googleads_v1_services_SuggestGeoTargetConstantsR
 }
 
 
+// Proto file describing the Geo target constant service.
+//
 // Service to fetch geo target constants.
 var GeoTargetConstantServiceService = exports.GeoTargetConstantServiceService = {
   // Returns the requested geo target constant in full detail.

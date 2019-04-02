@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdParametersResponse
 }
 
 
+// Proto file describing the Ad Parameter service.
+//
 // Service to manage ad parameters.
 var AdParameterServiceService = exports.AdParameterServiceService = {
   // Returns the requested ad parameter in full detail.

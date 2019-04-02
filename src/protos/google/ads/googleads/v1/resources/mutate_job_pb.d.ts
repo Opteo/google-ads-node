@@ -63,6 +63,16 @@ export namespace MutateJob {
     getEstimatedCompletionRatio(): google_protobuf_wrappers_pb.DoubleValue | undefined;
     setEstimatedCompletionRatio(value?: google_protobuf_wrappers_pb.DoubleValue): void;
 
+    hasOperationCount(): boolean;
+    clearOperationCount(): void;
+    getOperationCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setOperationCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+    hasExecutedOperationCount(): boolean;
+    clearExecutedOperationCount(): void;
+    getExecutedOperationCount(): google_protobuf_wrappers_pb.Int64Value | undefined;
+    setExecutedOperationCount(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): MutateJobMetadata.AsObject;
     static toObject(includeInstance: boolean, msg: MutateJobMetadata): MutateJobMetadata.AsObject;
@@ -78,6 +88,8 @@ export namespace MutateJob {
       creationDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
       completionDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
       estimatedCompletionRatio?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+      operationCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+      executedOperationCount?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     }
   }
 }

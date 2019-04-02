@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupCriterionLabe
 }
 
 
+// Proto file describing the Ad Group Criterion Label service.
+//
 // Service to manage labels on ad group criteria.
 var AdGroupCriterionLabelServiceService = exports.AdGroupCriterionLabelServiceService = {
   // Returns the requested ad group criterion label in full detail.

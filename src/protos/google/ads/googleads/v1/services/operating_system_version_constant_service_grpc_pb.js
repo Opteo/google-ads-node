@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetOperatingSystemVersionC
 }
 
 
+// Proto file describing the OS version constant service
+//
 // Service to fetch Operating System Version constants.
 var OperatingSystemVersionConstantServiceService = exports.OperatingSystemVersionConstantServiceService = {
   // Returns the requested OS version constant in full detail.

@@ -53,7 +53,7 @@ proto.google.ads.googleads.v1.resources.Ad.repeatedFields_ = [2,16,10,26];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.Ad.oneofGroups_ = [[6,7,13,14,15,17,18,21,22,24,25,28]];
+proto.google.ads.googleads.v1.resources.Ad.oneofGroups_ = [[6,7,13,14,15,17,18,21,22,24,25,28,29,30,31]];
 
 /**
  * @enum {number}
@@ -71,7 +71,10 @@ proto.google.ads.googleads.v1.resources.Ad.AdDataCase = {
   IMAGE_AD: 22,
   VIDEO_AD: 24,
   RESPONSIVE_SEARCH_AD: 25,
-  LEGACY_RESPONSIVE_DISPLAY_AD: 28
+  LEGACY_RESPONSIVE_DISPLAY_AD: 28,
+  APP_AD: 29,
+  LEGACY_APP_INSTALL_AD: 30,
+  RESPONSIVE_DISPLAY_AD: 31
 };
 
 /**
@@ -137,7 +140,10 @@ proto.google.ads.googleads.v1.resources.Ad.toObject = function(includeInstance, 
     imageAd: (f = msg.getImageAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.ImageAdInfo.toObject(includeInstance, f),
     videoAd: (f = msg.getVideoAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.VideoAdInfo.toObject(includeInstance, f),
     responsiveSearchAd: (f = msg.getResponsiveSearchAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveSearchAdInfo.toObject(includeInstance, f),
-    legacyResponsiveDisplayAd: (f = msg.getLegacyResponsiveDisplayAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo.toObject(includeInstance, f)
+    legacyResponsiveDisplayAd: (f = msg.getLegacyResponsiveDisplayAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo.toObject(includeInstance, f),
+    appAd: (f = msg.getAppAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo.toObject(includeInstance, f),
+    legacyAppInstallAd: (f = msg.getLegacyAppInstallAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.toObject(includeInstance, f),
+    responsiveDisplayAd: (f = msg.getResponsiveDisplayAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -290,6 +296,21 @@ proto.google.ads.googleads.v1.resources.Ad.deserializeBinaryFromReader = functio
       var value = new google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo.deserializeBinaryFromReader);
       msg.setLegacyResponsiveDisplayAd(value);
+      break;
+    case 29:
+      var value = new google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo.deserializeBinaryFromReader);
+      msg.setAppAd(value);
+      break;
+    case 30:
+      var value = new google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.deserializeBinaryFromReader);
+      msg.setLegacyAppInstallAd(value);
+      break;
+    case 31:
+      var value = new google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.deserializeBinaryFromReader);
+      msg.setResponsiveDisplayAd(value);
       break;
     default:
       reader.skipField();
@@ -507,6 +528,30 @@ proto.google.ads.googleads.v1.resources.Ad.serializeBinaryToWriter = function(me
       28,
       f,
       google_ads_googleads_v1_common_ad_type_infos_pb.LegacyResponsiveDisplayAdInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getAppAd();
+  if (f != null) {
+    writer.writeMessage(
+      29,
+      f,
+      google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getLegacyAppInstallAd();
+  if (f != null) {
+    writer.writeMessage(
+      30,
+      f,
+      google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getResponsiveDisplayAd();
+  if (f != null) {
+    writer.writeMessage(
+      31,
+      f,
+      google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1188,6 +1233,96 @@ proto.google.ads.googleads.v1.resources.Ad.prototype.clearLegacyResponsiveDispla
  */
 proto.google.ads.googleads.v1.resources.Ad.prototype.hasLegacyResponsiveDisplayAd = function() {
   return jspb.Message.getField(this, 28) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.AppAdInfo app_ad = 29;
+ * @return {?proto.google.ads.googleads.v1.common.AppAdInfo}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.getAppAd = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.AppAdInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo, 29));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.AppAdInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.Ad.prototype.setAppAd = function(value) {
+  jspb.Message.setOneofWrapperField(this, 29, proto.google.ads.googleads.v1.resources.Ad.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Ad.prototype.clearAppAd = function() {
+  this.setAppAd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.hasAppAd = function() {
+  return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30;
+ * @return {?proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.getLegacyAppInstallAd = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo, 30));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.LegacyAppInstallAdInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.Ad.prototype.setLegacyAppInstallAd = function(value) {
+  jspb.Message.setOneofWrapperField(this, 30, proto.google.ads.googleads.v1.resources.Ad.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Ad.prototype.clearLegacyAppInstallAd = function() {
+  this.setLegacyAppInstallAd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.hasLegacyAppInstallAd = function() {
+  return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.ResponsiveDisplayAdInfo responsive_display_ad = 31;
+ * @return {?proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.getResponsiveDisplayAd = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo, 31));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.Ad.prototype.setResponsiveDisplayAd = function(value) {
+  jspb.Message.setOneofWrapperField(this, 31, proto.google.ads.googleads.v1.resources.Ad.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Ad.prototype.clearResponsiveDisplayAd = function() {
+  this.setResponsiveDisplayAd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.hasResponsiveDisplayAd = function() {
+  return jspb.Message.getField(this, 31) != null;
 };
 
 

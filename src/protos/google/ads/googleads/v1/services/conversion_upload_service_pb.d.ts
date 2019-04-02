@@ -64,6 +64,64 @@ export namespace UploadClickConversionsResponse {
   }
 }
 
+export class UploadCallConversionsRequest extends jspb.Message {
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
+
+  clearConversionsList(): void;
+  getConversionsList(): Array<CallConversion>;
+  setConversionsList(value: Array<CallConversion>): void;
+  addConversions(value?: CallConversion, index?: number): CallConversion;
+
+  getPartialFailure(): boolean;
+  setPartialFailure(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadCallConversionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadCallConversionsRequest): UploadCallConversionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadCallConversionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadCallConversionsRequest;
+  static deserializeBinaryFromReader(message: UploadCallConversionsRequest, reader: jspb.BinaryReader): UploadCallConversionsRequest;
+}
+
+export namespace UploadCallConversionsRequest {
+  export type AsObject = {
+    customerId: string,
+    conversionsList: Array<CallConversion.AsObject>,
+    partialFailure: boolean,
+  }
+}
+
+export class UploadCallConversionsResponse extends jspb.Message {
+  hasPartialFailureError(): boolean;
+  clearPartialFailureError(): void;
+  getPartialFailureError(): google_rpc_status_pb.Status | undefined;
+  setPartialFailureError(value?: google_rpc_status_pb.Status): void;
+
+  clearResultsList(): void;
+  getResultsList(): Array<CallConversionResult>;
+  setResultsList(value: Array<CallConversionResult>): void;
+  addResults(value?: CallConversionResult, index?: number): CallConversionResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadCallConversionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadCallConversionsResponse): UploadCallConversionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadCallConversionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadCallConversionsResponse;
+  static deserializeBinaryFromReader(message: UploadCallConversionsResponse, reader: jspb.BinaryReader): UploadCallConversionsResponse;
+}
+
+export namespace UploadCallConversionsResponse {
+  export type AsObject = {
+    partialFailureError?: google_rpc_status_pb.Status.AsObject,
+    resultsList: Array<CallConversionResult.AsObject>,
+  }
+}
+
 export class ClickConversion extends jspb.Message {
   hasGclid(): boolean;
   clearGclid(): void;
@@ -119,6 +177,58 @@ export namespace ClickConversion {
     currencyCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
     orderId?: google_protobuf_wrappers_pb.StringValue.AsObject,
     externalAttributionData?: ExternalAttributionData.AsObject,
+  }
+}
+
+export class CallConversion extends jspb.Message {
+  hasCallerId(): boolean;
+  clearCallerId(): void;
+  getCallerId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCallerId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCallStartDateTime(): boolean;
+  clearCallStartDateTime(): void;
+  getCallStartDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCallStartDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasConversionAction(): boolean;
+  clearConversionAction(): void;
+  getConversionAction(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setConversionAction(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasConversionDateTime(): boolean;
+  clearConversionDateTime(): void;
+  getConversionDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setConversionDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasConversionValue(): boolean;
+  clearConversionValue(): void;
+  getConversionValue(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setConversionValue(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasCurrencyCode(): boolean;
+  clearCurrencyCode(): void;
+  getCurrencyCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCurrencyCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallConversion.AsObject;
+  static toObject(includeInstance: boolean, msg: CallConversion): CallConversion.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallConversion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallConversion;
+  static deserializeBinaryFromReader(message: CallConversion, reader: jspb.BinaryReader): CallConversion;
+}
+
+export namespace CallConversion {
+  export type AsObject = {
+    callerId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    callStartDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    conversionAction?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    conversionDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    conversionValue?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    currencyCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
@@ -179,6 +289,46 @@ export class ClickConversionResult extends jspb.Message {
 export namespace ClickConversionResult {
   export type AsObject = {
     gclid?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    conversionAction?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    conversionDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class CallConversionResult extends jspb.Message {
+  hasCallerId(): boolean;
+  clearCallerId(): void;
+  getCallerId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCallerId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCallStartDateTime(): boolean;
+  clearCallStartDateTime(): void;
+  getCallStartDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCallStartDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasConversionAction(): boolean;
+  clearConversionAction(): void;
+  getConversionAction(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setConversionAction(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasConversionDateTime(): boolean;
+  clearConversionDateTime(): void;
+  getConversionDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setConversionDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallConversionResult.AsObject;
+  static toObject(includeInstance: boolean, msg: CallConversionResult): CallConversionResult.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CallConversionResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallConversionResult;
+  static deserializeBinaryFromReader(message: CallConversionResult, reader: jspb.BinaryReader): CallConversionResult;
+}
+
+export namespace CallConversionResult {
+  export type AsObject = {
+    callerId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    callStartDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
     conversionAction?: google_protobuf_wrappers_pb.StringValue.AsObject,
     conversionDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }

@@ -5,6 +5,15 @@ export const ad_text_asset = {
   pinned_field: "ServedAssetFieldType",
 };
 
+/* .google.ads.googleads.v1.common.AdImageAsset */
+export const ad_image_asset = {};
+
+/* .google.ads.googleads.v1.common.AdVideoAsset */
+export const ad_video_asset = {};
+
+/* .google.ads.googleads.v1.common.AdMediaBundleAsset */
+export const ad_media_bundle_asset = {};
+
 /* .google.ads.googleads.v1.common.TextAdInfo */
 export const text_ad_info = {};
 
@@ -80,6 +89,51 @@ export const responsive_search_ad_info = {
 export const legacy_responsive_display_ad_info = {
   format_setting: "DisplayAdFormatSetting",
 };
+
+/* .google.ads.googleads.v1.common.AppAdInfo */
+export const app_ad_info = {
+  mandatory_ad_text: ad_text_asset,
+  headlines: ad_text_asset,
+  descriptions: ad_text_asset,
+  images: ad_image_asset,
+  youtube_videos: ad_video_asset,
+  html_5_media_bundles: ad_media_bundle_asset,
+};
+
+/* .google.ads.googleads.v1.common.LegacyAppInstallAdInfo */
+export const legacy_app_install_ad_info = {
+  app_store: "LegacyAppInstallAdAppStore",
+};
+
+/* .google.ads.googleads.v1.common.ResponsiveDisplayAdInfo */
+export const responsive_display_ad_info = {
+  marketing_images: ad_image_asset,
+  square_marketing_images: ad_image_asset,
+  logo_images: ad_image_asset,
+  square_logo_images: ad_image_asset,
+  headlines: ad_text_asset,
+  long_headline: ad_text_asset,
+  descriptions: ad_text_asset,
+  youtube_videos: ad_video_asset,
+  format_setting: "DisplayAdFormatSetting",
+};
+
+/* .google.ads.googleads.v1.common.YoutubeVideoAsset */
+export const youtube_video_asset = {};
+
+/* .google.ads.googleads.v1.common.MediaBundleAsset */
+export const media_bundle_asset = {};
+
+/* .google.ads.googleads.v1.common.ImageAsset */
+export const image_asset = {
+  mime_type: "MimeType",
+};
+
+/* .google.ads.googleads.v1.common.ImageDimension */
+export const image_dimension = {};
+
+/* .google.ads.googleads.v1.common.Commission */
+export const commission = {};
 
 /* .google.ads.googleads.v1.common.EnhancedCpc */
 export const enhanced_cpc = {};
@@ -218,6 +272,9 @@ export const product_item_id_info = {};
 export const product_type_info = {
   level: "ProductTypeLevel",
 };
+
+/* .google.ads.googleads.v1.common.UnknownListingDimensionInfo */
+export const unknown_listing_dimension_info = {};
 
 /* .google.ads.googleads.v1.common.HotelDateSelectionTypeInfo */
 export const hotel_date_selection_type_info = {
@@ -459,7 +516,9 @@ export const metrics = {
 export const policy_violation_key = {};
 
 /* .google.ads.googleads.v1.common.PolicyValidationParameter */
-export const policy_validation_parameter = {};
+export const policy_validation_parameter = {
+  exempt_policy_violation_keys: policy_violation_key,
+};
 
 /* .google.ads.googleads.v1.common.PolicyTopicEntry */
 export const policy_topic_entry = {
@@ -641,6 +700,9 @@ export const ad = {
   video_ad: video_ad_info,
   responsive_search_ad: responsive_search_ad_info,
   legacy_responsive_display_ad: legacy_responsive_display_ad_info,
+  app_ad: app_ad_info,
+  legacy_app_install_ad: legacy_app_install_ad_info,
+  responsive_display_ad: responsive_display_ad_info,
 };
 
 /* .google.ads.googleads.v1.resources.AdGroup */
@@ -703,6 +765,7 @@ export const ad_group_criterion = {
   quality_info,
   type: "CriterionType",
   system_serving_status: "CriterionSystemServingStatus",
+  approval_status: "AdGroupCriterionApprovalStatus",
   effective_cpc_bid_source: "BiddingSource",
   effective_cpm_bid_source: "BiddingSource",
   effective_cpv_bid_source: "BiddingSource",
@@ -712,6 +775,7 @@ export const ad_group_criterion = {
   keyword: keyword_info,
   placement: placement_info,
   mobile_app_category: mobile_app_category_info,
+  mobile_application: mobile_application_info,
   listing_group: listing_group_info,
   age_range: age_range_info,
   gender: gender_info,
@@ -756,6 +820,14 @@ export const ad_schedule_view = {};
 /* .google.ads.googleads.v1.resources.AgeRangeView */
 export const age_range_view = {};
 
+/* .google.ads.googleads.v1.resources.Asset */
+export const asset = {
+  type: "AssetType",
+  youtube_video_asset,
+  media_bundle_asset,
+  image_asset,
+};
+
 /* .google.ads.googleads.v1.resources.BiddingStrategy */
 export const bidding_strategy = {
   status: "BiddingStrategyStatus",
@@ -786,8 +858,8 @@ export const network_settings = {};
 /* .google.ads.googleads.v1.resources.Campaign.HotelSettingInfo */
 export const hotel_setting_info = {};
 
-/* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
-export const dynamic_search_ads_setting = {};
+/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
+export const shopping_setting = {};
 
 /* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
 export const geo_target_type_setting = {
@@ -795,20 +867,26 @@ export const geo_target_type_setting = {
   negative_geo_target_type: "NegativeGeoTargetType",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
-export const shopping_setting = {};
-
-/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
-export const selective_optimization = {};
-
-/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
-export const tracking_setting = {};
-
 /* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
 export const vanity_pharma = {
   vanity_pharma_display_url_mode: "VanityPharmaDisplayUrlMode",
   vanity_pharma_text: "VanityPharmaText",
 };
+
+/* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
+export const dynamic_search_ads_setting = {};
+
+/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
+export const tracking_setting = {};
+
+/* .google.ads.googleads.v1.resources.Campaign.AppCampaignSetting */
+export const app_campaign_setting = {
+  bidding_strategy_goal_type: "AppCampaignBiddingStrategyGoalType",
+  app_store: "AppCampaignAppStore",
+};
+
+/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
+export const selective_optimization = {};
 
 /* .google.ads.googleads.v1.resources.Campaign */
 export const campaign = {
@@ -825,12 +903,15 @@ export const campaign = {
   shopping_setting,
   targeting_setting,
   geo_target_type_setting,
+  app_campaign_setting,
   bidding_strategy_type: "BiddingStrategyType",
   frequency_caps: frequency_cap_entry,
   video_brand_safety_suitability: "BrandSafetySuitability",
   vanity_pharma,
   selective_optimization,
   tracking_setting,
+  payment_mode: "PaymentMode",
+  commission,
   manual_cpc,
   manual_cpm,
   manual_cpv,
@@ -857,6 +938,7 @@ export const campaign_budget = {
   status: "BudgetStatus",
   delivery_method: "BudgetDeliveryMethod",
   period: "BudgetPeriod",
+  type: "BudgetType",
 };
 
 /* .google.ads.googleads.v1.resources.CampaignCriterion */
@@ -865,6 +947,7 @@ export const campaign_criterion = {
   keyword: keyword_info,
   placement: placement_info,
   mobile_app_category: mobile_app_category_info,
+  mobile_application: mobile_application_info,
   location: location_info,
   device: device_info,
   ad_schedule: ad_schedule_info,
@@ -1023,6 +1106,7 @@ export const dynamic_search_ads_search_term_view = {};
 
 /* .google.ads.googleads.v1.resources.ExtensionFeedItem */
 export const extension_feed_item = {
+  extension_type: "ExtensionType",
   status: "FeedItemStatus",
   sitelink_feed_item,
   structured_snippet_feed_item,
@@ -1295,17 +1379,6 @@ export const keyword_recommendation = {
   keyword: keyword_info,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
-export const maximize_conversions_opt_in_recommendation = {};
-
-/* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
-export const maximize_clicks_opt_in_recommendation = {};
-
-/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
-export const text_ad_recommendation = {
-  ad,
-};
-
 /* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
 export const target_cpa_opt_in_recommendation_option = {
   goal: "TargetCpaOptInRecommendationGoal",
@@ -1317,14 +1390,36 @@ export const target_cpa_opt_in_recommendation = {
   options: target_cpa_opt_in_recommendation_option,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
-export const search_partners_opt_in_recommendation = {};
+/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
+export const move_unused_budget_recommendation = {
+  budget_recommendation: campaign_budget_recommendation,
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
+export const text_ad_recommendation = {
+  ad,
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
+export const maximize_conversions_opt_in_recommendation = {};
+
+/* .google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation */
+export const enhanced_cpc_opt_in_recommendation = {};
+
+/* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
+export const maximize_clicks_opt_in_recommendation = {};
 
 /* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
 export const optimize_ad_rotation_recommendation = {};
 
-/* .google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation */
-export const enhanced_cpc_opt_in_recommendation = {};
+/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
+export const search_partners_opt_in_recommendation = {};
+
+/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
+export const keyword_match_type_recommendation = {
+  keyword: keyword_info,
+  recommended_match_type: "KeywordMatchType",
+};
 
 /* .google.ads.googleads.v1.resources.Recommendation */
 export const recommendation = {
@@ -1339,6 +1434,8 @@ export const recommendation = {
   search_partners_opt_in_recommendation,
   maximize_clicks_opt_in_recommendation,
   optimize_ad_rotation_recommendation,
+  keyword_match_type_recommendation,
+  move_unused_budget_recommendation,
 };
 
 /* .google.ads.googleads.v1.resources.RemarketingAction */
@@ -1359,6 +1456,7 @@ export const shared_criterion = {
   youtube_channel: you_tube_channel_info,
   placement: placement_info,
   mobile_app_category: mobile_app_category_info,
+  mobile_application: mobile_application_info,
 };
 
 /* .google.ads.googleads.v1.resources.SharedSet */

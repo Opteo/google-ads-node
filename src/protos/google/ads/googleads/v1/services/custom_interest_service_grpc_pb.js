@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomInterestsRespo
 }
 
 
+// Proto file describing the Custom Interest service.
+//
 // Service to manage custom interests.
 var CustomInterestServiceService = exports.CustomInterestServiceService = {
   // Returns the requested custom interest in full detail.

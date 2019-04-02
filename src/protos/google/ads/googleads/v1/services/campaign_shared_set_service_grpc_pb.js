@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignSharedSetsRe
 }
 
 
+// Proto file describing the Campaign Shared Set service.
+//
 // Service to manage campaign shared sets.
 var CampaignSharedSetServiceService = exports.CampaignSharedSetServiceService = {
   // Returns the requested campaign shared set in full detail.

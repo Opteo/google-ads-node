@@ -23,6 +23,28 @@ var google_api_annotations_pb = require('../../../../../google/api/annotations_p
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_rpc_status_pb = require('../../../../../google/rpc/status_pb.js');
 
+function serialize_google_ads_googleads_v1_services_UploadCallConversionsRequest(arg) {
+  if (!(arg instanceof google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsRequest)) {
+    throw new Error('Expected argument of type google.ads.googleads.v1.services.UploadCallConversionsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_google_ads_googleads_v1_services_UploadCallConversionsRequest(buffer_arg) {
+  return google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_google_ads_googleads_v1_services_UploadCallConversionsResponse(arg) {
+  if (!(arg instanceof google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsResponse)) {
+    throw new Error('Expected argument of type google.ads.googleads.v1.services.UploadCallConversionsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_google_ads_googleads_v1_services_UploadCallConversionsResponse(buffer_arg) {
+  return google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_google_ads_googleads_v1_services_UploadClickConversionsRequest(arg) {
   if (!(arg instanceof google_ads_googleads_v1_services_conversion_upload_service_pb.UploadClickConversionsRequest)) {
     throw new Error('Expected argument of type google.ads.googleads.v1.services.UploadClickConversionsRequest');
@@ -59,6 +81,18 @@ var ConversionUploadServiceService = exports.ConversionUploadServiceService = {
     requestDeserialize: deserialize_google_ads_googleads_v1_services_UploadClickConversionsRequest,
     responseSerialize: serialize_google_ads_googleads_v1_services_UploadClickConversionsResponse,
     responseDeserialize: deserialize_google_ads_googleads_v1_services_UploadClickConversionsResponse,
+  },
+  // Processes the given call conversions.
+  uploadCallConversions: {
+    path: '/google.ads.googleads.v1.services.ConversionUploadService/UploadCallConversions',
+    requestStream: false,
+    responseStream: false,
+    requestType: google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsRequest,
+    responseType: google_ads_googleads_v1_services_conversion_upload_service_pb.UploadCallConversionsResponse,
+    requestSerialize: serialize_google_ads_googleads_v1_services_UploadCallConversionsRequest,
+    requestDeserialize: deserialize_google_ads_googleads_v1_services_UploadCallConversionsRequest,
+    responseSerialize: serialize_google_ads_googleads_v1_services_UploadCallConversionsResponse,
+    responseDeserialize: deserialize_google_ads_googleads_v1_services_UploadCallConversionsResponse,
   },
 };
 

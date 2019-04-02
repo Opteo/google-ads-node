@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetAdGroupAudienceViewRequ
 }
 
 
+// Proto file describing the AdGroup Audience View service.
+//
 // Service to manage ad group audience views.
 var AdGroupAudienceViewServiceService = exports.AdGroupAudienceViewServiceService = {
   // Returns the requested ad group audience view in full detail.

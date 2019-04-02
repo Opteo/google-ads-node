@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignsResponse(bu
 }
 
 
+// Proto file describing the Campaign service.
+//
 // Service to manage campaigns.
 var CampaignServiceService = exports.CampaignServiceService = {
   // Returns the requested campaign in full detail.

@@ -28,6 +28,8 @@ import { AdParameterServiceClient } from "../protos/google/ads/googleads/v1/serv
 import { AdScheduleViewServiceClient } from "../protos/google/ads/googleads/v1/services/ad_schedule_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AgeRangeViewServiceClient } from "../protos/google/ads/googleads/v1/services/age_range_view_service_grpc_pb";
+// @ts-ignore
+import { AssetServiceClient } from "../protos/google/ads/googleads/v1/services/asset_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { BiddingStrategyServiceClient } from "../protos/google/ads/googleads/v1/services/bidding_strategy_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -58,6 +60,8 @@ import { ChangeStatusServiceClient } from "../protos/google/ads/googleads/v1/ser
 import { ClickViewServiceClient } from "../protos/google/ads/googleads/v1/services/click_view_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { ConversionActionServiceClient } from "../protos/google/ads/googleads/v1/services/conversion_action_service_grpc_pb";
+// @ts-ignore
+import { ConversionAdjustmentUploadServiceClient } from "../protos/google/ads/googleads/v1/services/conversion_adjustment_upload_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { ConversionUploadServiceClient } from "../protos/google/ads/googleads/v1/services/conversion_upload_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -269,4 +273,6 @@ export {
   UserInterestServiceClient,
   UserListServiceClient,
   VideoServiceClient,
+  AssetServiceClient,
+  ConversionAdjustmentUploadServiceClient,
 };

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetKeywordViewRequest(buff
 }
 
 
+// Proto file describing the Keyword View service.
+//
 // Service to manage keyword views.
 var KeywordViewServiceService = exports.KeywordViewServiceService = {
   // Returns the requested keyword view in full detail.

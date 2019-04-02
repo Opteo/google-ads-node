@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetCustomerClientRequest(b
 }
 
 
+// Proto file describing the Customer Client service.
+//
 // Service to get clients in a customer's hierarchy.
 var CustomerClientServiceService = exports.CustomerClientServiceService = {
   // Returns the requested client in full detail.

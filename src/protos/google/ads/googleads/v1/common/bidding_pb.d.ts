@@ -7,6 +7,28 @@ import * as google_ads_googleads_v1_enums_target_impression_share_location_pb fr
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
+export class Commission extends jspb.Message {
+  hasCommissionRateMicros(): boolean;
+  clearCommissionRateMicros(): void;
+  getCommissionRateMicros(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setCommissionRateMicros(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Commission.AsObject;
+  static toObject(includeInstance: boolean, msg: Commission): Commission.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Commission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Commission;
+  static deserializeBinaryFromReader(message: Commission, reader: jspb.BinaryReader): Commission;
+}
+
+export namespace Commission {
+  export type AsObject = {
+    commissionRateMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+  }
+}
+
 export class EnhancedCpc extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnhancedCpc.AsObject;

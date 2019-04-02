@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetGeographicViewRequest(b
 }
 
 
+// Proto file describing the GeographicViewService.
+//
 // Service to manage geographic views.
 var GeographicViewServiceService = exports.GeographicViewServiceService = {
   // Returns the requested geographic view in full detail.

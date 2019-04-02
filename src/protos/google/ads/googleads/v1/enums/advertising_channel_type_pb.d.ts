@@ -27,6 +27,7 @@ export namespace AdvertisingChannelTypeEnum {
     SHOPPING = 4,
     HOTEL = 5,
     VIDEO = 6,
+    MULTI_CHANNEL = 7,
   }
 }
 

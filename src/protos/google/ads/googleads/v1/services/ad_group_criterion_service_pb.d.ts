@@ -2,6 +2,7 @@
 // file: google/ads/googleads/v1/services/ad_group_criterion_service.proto
 
 import * as jspb from "google-protobuf";
+import * as google_ads_googleads_v1_common_policy_pb from "../../../../../google/ads/googleads/v1/common/policy_pb";
 import * as google_ads_googleads_v1_resources_ad_group_criterion_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
@@ -68,6 +69,11 @@ export class AdGroupCriterionOperation extends jspb.Message {
   getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
 
+  clearExemptPolicyViolationKeysList(): void;
+  getExemptPolicyViolationKeysList(): Array<google_ads_googleads_v1_common_policy_pb.PolicyViolationKey>;
+  setExemptPolicyViolationKeysList(value: Array<google_ads_googleads_v1_common_policy_pb.PolicyViolationKey>): void;
+  addExemptPolicyViolationKeys(value?: google_ads_googleads_v1_common_policy_pb.PolicyViolationKey, index?: number): google_ads_googleads_v1_common_policy_pb.PolicyViolationKey;
+
   hasCreate(): boolean;
   clearCreate(): void;
   getCreate(): google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion | undefined;
@@ -97,6 +103,7 @@ export class AdGroupCriterionOperation extends jspb.Message {
 export namespace AdGroupCriterionOperation {
   export type AsObject = {
     updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    exemptPolicyViolationKeysList: Array<google_ads_googleads_v1_common_policy_pb.PolicyViolationKey.AsObject>,
     create?: google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.AsObject,
     update?: google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.AsObject,
     remove: string,

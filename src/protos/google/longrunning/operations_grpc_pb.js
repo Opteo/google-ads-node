@@ -1,7 +1,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2016 Google Inc.
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,13 +15,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+//
 'use strict';
 var grpc = require('grpc');
 var google_longrunning_operations_pb = require('../../google/longrunning/operations_pb.js');
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
+var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 
 function serialize_google_longrunning_CancelOperationRequest(arg) {
   if (!(arg instanceof google_longrunning_operations_pb.CancelOperationRequest)) {
@@ -89,6 +92,17 @@ function deserialize_google_longrunning_Operation(buffer_arg) {
   return google_longrunning_operations_pb.Operation.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_google_longrunning_WaitOperationRequest(arg) {
+  if (!(arg instanceof google_longrunning_operations_pb.WaitOperationRequest)) {
+    throw new Error('Expected argument of type google.longrunning.WaitOperationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_google_longrunning_WaitOperationRequest(buffer_arg) {
+  return google_longrunning_operations_pb.WaitOperationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_google_protobuf_Empty(arg) {
   if (!(arg instanceof google_protobuf_empty_pb.Empty)) {
     throw new Error('Expected argument of type google.protobuf.Empty');
@@ -104,18 +118,23 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // Manages long-running operations with an API service.
 //
 // When an API method normally takes long time to complete, it can be designed
-// to return [Operation][google.longrunning.Operation] to the client, and the
-// client can use this interface to receive the real response asynchronously by
-// polling the operation resource, or pass the operation resource to another API
-// (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
-// that returns long-running operations should implement the `Operations`
-// interface so developers can have a consistent client experience.
+// to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+// interface to receive the real response asynchronously by polling the
+// operation resource, or pass the operation resource to another API (such as
+// Google Cloud Pub/Sub API) to receive the response.  Any API service that
+// returns long-running operations should implement the `Operations` interface
+// so developers can have a consistent client experience.
 var OperationsService = exports.OperationsService = {
   // Lists operations that match the specified filter in the request. If the
   // server doesn't support this method, it returns `UNIMPLEMENTED`.
   //
-  // NOTE: the `name` binding below allows API services to override the binding
-  // to use different resource name schemes, such as `users/*/operations`.
+  // NOTE: the `name` binding allows API services to override the binding
+  // to use different resource name schemes, such as `users/*/operations`. To
+  // override the binding, API services can add a binding such as
+  // `"/v1/{name=users/*}/operations"` to their service configuration.
+  // For backwards compatibility, the default name includes the operations
+  // collection id, however overriding users must ensure the name binding
+  // is the parent resource, without the operations collection id.
   listOperations: {
     path: '/google.longrunning.Operations/ListOperations',
     requestStream: false,
@@ -164,9 +183,8 @@ var OperationsService = exports.OperationsService = {
   // other methods to check whether the cancellation succeeded or whether the
   // operation completed despite cancellation. On successful cancellation,
   // the operation is not deleted; instead, it becomes an operation with
-  // an [Operation.error][google.longrunning.Operation.error] value with a
-  // [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-  // `Code.CANCELLED`.
+  // an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+  // corresponding to `Code.CANCELLED`.
   cancelOperation: {
     path: '/google.longrunning.Operations/CancelOperation',
     requestStream: false,
@@ -177,6 +195,26 @@ var OperationsService = exports.OperationsService = {
     requestDeserialize: deserialize_google_longrunning_CancelOperationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // Waits for the specified long-running operation until it is done or reaches
+  // at most a specified timeout, returning the latest state.  If the operation
+  // is already done, the latest state is immediately returned.  If the timeout
+  // specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
+  // timeout is used.  If the server does not support this method, it returns
+  // `google.rpc.Code.UNIMPLEMENTED`.
+  // Note that this method is on a best-effort basis.  It may return the latest
+  // state before the specified timeout (including immediately), meaning even an
+  // immediate response is no guarantee that the operation is done.
+  waitOperation: {
+    path: '/google.longrunning.Operations/WaitOperation',
+    requestStream: false,
+    responseStream: false,
+    requestType: google_longrunning_operations_pb.WaitOperationRequest,
+    responseType: google_longrunning_operations_pb.Operation,
+    requestSerialize: serialize_google_longrunning_WaitOperationRequest,
+    requestDeserialize: deserialize_google_longrunning_WaitOperationRequest,
+    responseSerialize: serialize_google_longrunning_Operation,
+    responseDeserialize: deserialize_google_longrunning_Operation,
   },
 };
 

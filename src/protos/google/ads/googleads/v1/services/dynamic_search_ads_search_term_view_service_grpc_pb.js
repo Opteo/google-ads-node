@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetDynamicSearchAdsSearchT
 }
 
 
+// Proto file describing the Dynamic Search Ads Search Term View service.
+//
 // Service to fetch dynamic search ads views.
 var DynamicSearchAdsSearchTermViewServiceService = exports.DynamicSearchAdsSearchTermViewServiceService = {
   // Returns the requested dynamic search ads search term view in full detail.

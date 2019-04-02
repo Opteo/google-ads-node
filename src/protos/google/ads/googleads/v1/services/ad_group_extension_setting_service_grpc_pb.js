@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupExtensionSett
 }
 
 
+// Proto file describing the AdGroupExtensionSetting service.
+//
 // Service to manage ad group extension settings.
 var AdGroupExtensionSettingServiceService = exports.AdGroupExtensionSettingServiceService = {
   // Returns the requested ad group extension setting in full detail.

@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetParentalStatusViewReque
 }
 
 
+// Proto file describing the Parental Status View service.
+//
 // Service to manage parental status views.
 var ParentalStatusViewServiceService = exports.ParentalStatusViewServiceService = {
   // Returns the requested parental status view in full detail.

@@ -13,6 +13,7 @@ var global = Function('return this')();
 
 var google_ads_googleads_v1_common_criteria_pb = require('../../../../../google/ads/googleads/v1/common/criteria_pb.js');
 var google_ads_googleads_v1_common_custom_parameter_pb = require('../../../../../google/ads/googleads/v1/common/custom_parameter_pb.js');
+var google_ads_googleads_v1_enums_ad_group_criterion_approval_status_pb = require('../../../../../google/ads/googleads/v1/enums/ad_group_criterion_approval_status_pb.js');
 var google_ads_googleads_v1_enums_ad_group_criterion_status_pb = require('../../../../../google/ads/googleads/v1/enums/ad_group_criterion_status_pb.js');
 var google_ads_googleads_v1_enums_bidding_source_pb = require('../../../../../google/ads/googleads/v1/enums/bidding_source_pb.js');
 var google_ads_googleads_v1_enums_criterion_system_serving_status_pb = require('../../../../../google/ads/googleads/v1/enums/criterion_system_serving_status_pb.js');
@@ -56,7 +57,7 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.repeatedFields_ = [11,5
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.AdGroupCriterion.oneofGroups_ = [[27,28,29,32,36,37,38,39,42,40,41,43,45,46,47,48,49]];
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.oneofGroups_ = [[27,28,29,30,32,36,37,38,39,42,40,41,43,45,46,47,48,49]];
 
 /**
  * @enum {number}
@@ -66,6 +67,7 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.CriterionCase = {
   KEYWORD: 27,
   PLACEMENT: 28,
   MOBILE_APP_CATEGORY: 29,
+  MOBILE_APPLICATION: 30,
   LISTING_GROUP: 32,
   AGE_RANGE: 36,
   GENDER: 37,
@@ -126,6 +128,7 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.toObject = function(inc
     type: jspb.Message.getFieldWithDefault(msg, 25, 0),
     negative: (f = msg.getNegative()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
     systemServingStatus: jspb.Message.getFieldWithDefault(msg, 52, 0),
+    approvalStatus: jspb.Message.getFieldWithDefault(msg, 53, 0),
     bidModifier: (f = msg.getBidModifier()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     cpcBidMicros: (f = msg.getCpcBidMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     cpmBidMicros: (f = msg.getCpmBidMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
@@ -151,6 +154,7 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.toObject = function(inc
     keyword: (f = msg.getKeyword()) && google_ads_googleads_v1_common_criteria_pb.KeywordInfo.toObject(includeInstance, f),
     placement: (f = msg.getPlacement()) && google_ads_googleads_v1_common_criteria_pb.PlacementInfo.toObject(includeInstance, f),
     mobileAppCategory: (f = msg.getMobileAppCategory()) && google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.toObject(includeInstance, f),
+    mobileApplication: (f = msg.getMobileApplication()) && google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.toObject(includeInstance, f),
     listingGroup: (f = msg.getListingGroup()) && google_ads_googleads_v1_common_criteria_pb.ListingGroupInfo.toObject(includeInstance, f),
     ageRange: (f = msg.getAgeRange()) && google_ads_googleads_v1_common_criteria_pb.AgeRangeInfo.toObject(includeInstance, f),
     gender: (f = msg.getGender()) && google_ads_googleads_v1_common_criteria_pb.GenderInfo.toObject(includeInstance, f),
@@ -236,6 +240,10 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.deserializeBinaryFromRe
     case 52:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus} */ (reader.readEnum());
       msg.setSystemServingStatus(value);
+      break;
+    case 53:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus} */ (reader.readEnum());
+      msg.setApprovalStatus(value);
       break;
     case 44:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
@@ -342,6 +350,11 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.deserializeBinaryFromRe
       var value = new google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.deserializeBinaryFromReader);
       msg.setMobileAppCategory(value);
+      break;
+    case 30:
+      var value = new google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.deserializeBinaryFromReader);
+      msg.setMobileApplication(value);
       break;
     case 32:
       var value = new google_ads_googleads_v1_common_criteria_pb.ListingGroupInfo;
@@ -499,6 +512,13 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.serializeBinaryToWriter
   if (f !== 0.0) {
     writer.writeEnum(
       52,
+      f
+    );
+  }
+  f = message.getApprovalStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      53,
       f
     );
   }
@@ -672,6 +692,14 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.serializeBinaryToWriter
       29,
       f,
       google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getMobileApplication();
+  if (f != null) {
+    writer.writeMessage(
+      30,
+      f,
+      google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo.serializeBinaryToWriter
     );
   }
   f = message.getListingGroup();
@@ -1545,6 +1573,21 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.setSystemServ
 
 
 /**
+ * optional google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;
+ * @return {!proto.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus}
+ */
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.getApprovalStatus = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus} */ (jspb.Message.getFieldWithDefault(this, 53, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus} value */
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.setApprovalStatus = function(value) {
+  jspb.Message.setProto3EnumField(this, 53, value);
+};
+
+
+/**
  * optional google.protobuf.DoubleValue bid_modifier = 44;
  * @return {?proto.google.protobuf.DoubleValue}
  */
@@ -2144,6 +2187,36 @@ proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.clearMobileAp
  */
 proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.hasMobileAppCategory = function() {
   return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 30;
+ * @return {?proto.google.ads.googleads.v1.common.MobileApplicationInfo}
+ */
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.getMobileApplication = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.MobileApplicationInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.MobileApplicationInfo, 30));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.MobileApplicationInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.setMobileApplication = function(value) {
+  jspb.Message.setOneofWrapperField(this, 30, proto.google.ads.googleads.v1.resources.AdGroupCriterion.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.clearMobileApplication = function() {
+  this.setMobileApplication(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.AdGroupCriterion.prototype.hasMobileApplication = function() {
+  return jspb.Message.getField(this, 30) != null;
 };
 
 

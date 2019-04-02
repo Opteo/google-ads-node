@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var google_ads_googleads_v1_common_policy_pb = require('../../../../../google/ads/googleads/v1/common/policy_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
@@ -428,12 +429,19 @@ proto.google.ads.googleads.v1.services.MutateAdGroupCriteriaRequest.prototype.se
  * @constructor
  */
 proto.google.ads.googleads.v1.services.AdGroupCriterionOperation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.repeatedFields_, proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.oneofGroups_);
 };
 goog.inherits(proto.google.ads.googleads.v1.services.AdGroupCriterionOperation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.displayName = 'proto.google.ads.googleads.v1.services.AdGroupCriterionOperation';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.repeatedFields_ = [5];
+
 /**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
@@ -491,6 +499,8 @@ proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.toObj
 proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.toObject = function(includeInstance, msg) {
   var f, obj = {
     updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    exemptPolicyViolationKeysList: jspb.Message.toObjectList(msg.getExemptPolicyViolationKeysList(),
+    google_ads_googleads_v1_common_policy_pb.PolicyViolationKey.toObject, includeInstance),
     create: (f = msg.getCreate()) && google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.toObject(includeInstance, f),
     update: (f = msg.getUpdate()) && google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.toObject(includeInstance, f),
     remove: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -534,6 +544,11 @@ proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.deserializeBina
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setUpdateMask(value);
+      break;
+    case 5:
+      var value = new google_ads_googleads_v1_common_policy_pb.PolicyViolationKey;
+      reader.readMessage(value,google_ads_googleads_v1_common_policy_pb.PolicyViolationKey.deserializeBinaryFromReader);
+      msg.addExemptPolicyViolationKeys(value);
       break;
     case 1:
       var value = new google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion;
@@ -584,6 +599,14 @@ proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.serializeBinary
       4,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getExemptPolicyViolationKeysList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      google_ads_googleads_v1_common_policy_pb.PolicyViolationKey.serializeBinaryToWriter
     );
   }
   f = message.getCreate();
@@ -639,6 +662,37 @@ proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.clear
  */
 proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.hasUpdateMask = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated google.ads.googleads.v1.common.PolicyViolationKey exempt_policy_violation_keys = 5;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>}
+ */
+proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.getExemptPolicyViolationKeysList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_policy_pb.PolicyViolationKey, 5));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.PolicyViolationKey>} value */
+proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.setExemptPolicyViolationKeysList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.PolicyViolationKey=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.PolicyViolationKey}
+ */
+proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.addExemptPolicyViolationKeys = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.google.ads.googleads.v1.common.PolicyViolationKey, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.services.AdGroupCriterionOperation.prototype.clearExemptPolicyViolationKeysList = function() {
+  this.setExemptPolicyViolationKeysList([]);
 };
 
 

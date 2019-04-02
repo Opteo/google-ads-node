@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetUserInterestRequest(buf
 }
 
 
+// Proto file describing the user interest service
+//
 // Service to fetch Google Ads User Interest.
 var UserInterestServiceService = exports.UserInterestServiceService = {
   // Returns the requested user interest in full detail

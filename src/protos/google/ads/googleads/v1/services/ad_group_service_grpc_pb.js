@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupsResponse(buf
 }
 
 
+// Proto file describing the Ad Group service.
+//
 // Service to manage ad groups.
 var AdGroupServiceService = exports.AdGroupServiceService = {
   // Returns the requested ad group in full detail.

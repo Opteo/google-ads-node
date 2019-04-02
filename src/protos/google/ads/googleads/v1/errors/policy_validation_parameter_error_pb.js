@@ -136,7 +136,9 @@ proto.google.ads.googleads.v1.errors.PolicyValidationParameterErrorEnum.serializ
 proto.google.ads.googleads.v1.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError = {
   UNSPECIFIED: 0,
   UNKNOWN: 1,
-  UNSUPPORTED_AD_TYPE_FOR_IGNORABLE_POLICY_TOPICS: 2
+  UNSUPPORTED_AD_TYPE_FOR_IGNORABLE_POLICY_TOPICS: 2,
+  UNSUPPORTED_AD_TYPE_FOR_EXEMPT_POLICY_VIOLATION_KEYS: 3,
+  CANNOT_SET_BOTH_IGNORABLE_POLICY_TOPICS_AND_EXEMPT_POLICY_VIOLATION_KEYS: 4
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

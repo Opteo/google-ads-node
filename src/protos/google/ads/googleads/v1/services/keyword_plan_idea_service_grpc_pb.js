@@ -47,6 +47,8 @@ function deserialize_google_ads_googleads_v1_services_GenerateKeywordIdeasReques
 }
 
 
+// Proto file describing the keyword plan idea service.
+//
 // Service to generate keyword ideas.
 var KeywordPlanIdeaServiceService = exports.KeywordPlanIdeaServiceService = {
   // Returns a list of keyword ideas.

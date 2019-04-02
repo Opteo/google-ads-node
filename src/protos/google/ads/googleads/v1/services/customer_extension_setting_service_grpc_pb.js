@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCustomerExtensionSet
 }
 
 
+// Proto file describing the CustomerExtensionSetting service.
+//
 // Service to manage customer extension settings.
 var CustomerExtensionSettingServiceService = exports.CustomerExtensionSettingServiceService = {
   // Returns the requested customer extension setting in full detail.

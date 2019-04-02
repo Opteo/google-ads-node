@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateUserListsResponse(bu
 }
 
 
+// Proto file describing the User List service.
+//
 // Service to manage user lists.
 var UserListServiceService = exports.UserListServiceService = {
   // Returns the requested user list.

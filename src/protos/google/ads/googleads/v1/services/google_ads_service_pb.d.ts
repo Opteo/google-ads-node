@@ -18,6 +18,7 @@ import * as google_ads_googleads_v1_resources_ad_group_feed_pb from "../../../..
 import * as google_ads_googleads_v1_resources_ad_group_label_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_label_pb";
 import * as google_ads_googleads_v1_resources_ad_schedule_view_pb from "../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb";
 import * as google_ads_googleads_v1_resources_age_range_view_pb from "../../../../../google/ads/googleads/v1/resources/age_range_view_pb";
+import * as google_ads_googleads_v1_resources_asset_pb from "../../../../../google/ads/googleads/v1/resources/asset_pb";
 import * as google_ads_googleads_v1_resources_bidding_strategy_pb from "../../../../../google/ads/googleads/v1/resources/bidding_strategy_pb";
 import * as google_ads_googleads_v1_resources_billing_setup_pb from "../../../../../google/ads/googleads/v1/resources/billing_setup_pb";
 import * as google_ads_googleads_v1_resources_campaign_pb from "../../../../../google/ads/googleads/v1/resources/campaign_pb";
@@ -96,6 +97,7 @@ import * as google_ads_googleads_v1_services_ad_group_feed_service_pb from "../.
 import * as google_ads_googleads_v1_services_ad_group_label_service_pb from "../../../../../google/ads/googleads/v1/services/ad_group_label_service_pb";
 import * as google_ads_googleads_v1_services_ad_group_service_pb from "../../../../../google/ads/googleads/v1/services/ad_group_service_pb";
 import * as google_ads_googleads_v1_services_ad_parameter_service_pb from "../../../../../google/ads/googleads/v1/services/ad_parameter_service_pb";
+import * as google_ads_googleads_v1_services_asset_service_pb from "../../../../../google/ads/googleads/v1/services/asset_service_pb";
 import * as google_ads_googleads_v1_services_bidding_strategy_service_pb from "../../../../../google/ads/googleads/v1/services/bidding_strategy_service_pb";
 import * as google_ads_googleads_v1_services_campaign_bid_modifier_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_bid_modifier_service_pb";
 import * as google_ads_googleads_v1_services_campaign_budget_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_budget_service_pb";
@@ -273,6 +275,11 @@ export class GoogleAdsRow extends jspb.Message {
   clearDomainCategory(): void;
   getDomainCategory(): google_ads_googleads_v1_resources_domain_category_pb.DomainCategory | undefined;
   setDomainCategory(value?: google_ads_googleads_v1_resources_domain_category_pb.DomainCategory): void;
+
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): google_ads_googleads_v1_resources_asset_pb.Asset | undefined;
+  setAsset(value?: google_ads_googleads_v1_resources_asset_pb.Asset): void;
 
   hasBiddingStrategy(): boolean;
   clearBiddingStrategy(): void;
@@ -646,6 +653,7 @@ export namespace GoogleAdsRow {
     ageRangeView?: google_ads_googleads_v1_resources_age_range_view_pb.AgeRangeView.AsObject,
     adScheduleView?: google_ads_googleads_v1_resources_ad_schedule_view_pb.AdScheduleView.AsObject,
     domainCategory?: google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.AsObject,
+    asset?: google_ads_googleads_v1_resources_asset_pb.Asset.AsObject,
     biddingStrategy?: google_ads_googleads_v1_resources_bidding_strategy_pb.BiddingStrategy.AsObject,
     billingSetup?: google_ads_googleads_v1_resources_billing_setup_pb.BillingSetup.AsObject,
     campaignBudget?: google_ads_googleads_v1_resources_campaign_budget_pb.CampaignBudget.AsObject,
@@ -831,6 +839,11 @@ export class MutateOperation extends jspb.Message {
   getAdParameterOperation(): google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation | undefined;
   setAdParameterOperation(value?: google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation): void;
 
+  hasAssetOperation(): boolean;
+  clearAssetOperation(): void;
+  getAssetOperation(): google_ads_googleads_v1_services_asset_service_pb.AssetOperation | undefined;
+  setAssetOperation(value?: google_ads_googleads_v1_services_asset_service_pb.AssetOperation): void;
+
   hasBiddingStrategyOperation(): boolean;
   clearBiddingStrategyOperation(): void;
   getBiddingStrategyOperation(): google_ads_googleads_v1_services_bidding_strategy_service_pb.BiddingStrategyOperation | undefined;
@@ -984,6 +997,7 @@ export namespace MutateOperation {
     adGroupLabelOperation?: google_ads_googleads_v1_services_ad_group_label_service_pb.AdGroupLabelOperation.AsObject,
     adGroupOperation?: google_ads_googleads_v1_services_ad_group_service_pb.AdGroupOperation.AsObject,
     adParameterOperation?: google_ads_googleads_v1_services_ad_parameter_service_pb.AdParameterOperation.AsObject,
+    assetOperation?: google_ads_googleads_v1_services_asset_service_pb.AssetOperation.AsObject,
     biddingStrategyOperation?: google_ads_googleads_v1_services_bidding_strategy_service_pb.BiddingStrategyOperation.AsObject,
     campaignBidModifierOperation?: google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.CampaignBidModifierOperation.AsObject,
     campaignBudgetOperation?: google_ads_googleads_v1_services_campaign_budget_service_pb.CampaignBudgetOperation.AsObject,
@@ -1024,6 +1038,7 @@ export namespace MutateOperation {
     AD_GROUP_LABEL_OPERATION = 21,
     AD_GROUP_OPERATION = 5,
     AD_PARAMETER_OPERATION = 22,
+    ASSET_OPERATION = 23,
     BIDDING_STRATEGY_OPERATION = 6,
     CAMPAIGN_BID_MODIFIER_OPERATION = 7,
     CAMPAIGN_BUDGET_OPERATION = 8,
@@ -1103,6 +1118,11 @@ export class MutateOperationResponse extends jspb.Message {
   clearAdParameterResult(): void;
   getAdParameterResult(): google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult | undefined;
   setAdParameterResult(value?: google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult): void;
+
+  hasAssetResult(): boolean;
+  clearAssetResult(): void;
+  getAssetResult(): google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult | undefined;
+  setAssetResult(value?: google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult): void;
 
   hasBiddingStrategyResult(): boolean;
   clearBiddingStrategyResult(): void;
@@ -1257,6 +1277,7 @@ export namespace MutateOperationResponse {
     adGroupLabelResult?: google_ads_googleads_v1_services_ad_group_label_service_pb.MutateAdGroupLabelResult.AsObject,
     adGroupResult?: google_ads_googleads_v1_services_ad_group_service_pb.MutateAdGroupResult.AsObject,
     adParameterResult?: google_ads_googleads_v1_services_ad_parameter_service_pb.MutateAdParameterResult.AsObject,
+    assetResult?: google_ads_googleads_v1_services_asset_service_pb.MutateAssetResult.AsObject,
     biddingStrategyResult?: google_ads_googleads_v1_services_bidding_strategy_service_pb.MutateBiddingStrategyResult.AsObject,
     campaignBidModifierResult?: google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifierResult.AsObject,
     campaignBudgetResult?: google_ads_googleads_v1_services_campaign_budget_service_pb.MutateCampaignBudgetResult.AsObject,
@@ -1297,6 +1318,7 @@ export namespace MutateOperationResponse {
     AD_GROUP_LABEL_RESULT = 21,
     AD_GROUP_RESULT = 5,
     AD_PARAMETER_RESULT = 22,
+    ASSET_RESULT = 23,
     BIDDING_STRATEGY_RESULT = 6,
     CAMPAIGN_BID_MODIFIER_RESULT = 7,
     CAMPAIGN_BUDGET_RESULT = 8,

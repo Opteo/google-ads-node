@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetDisplayKeywordViewReque
 }
 
 
+// Proto file describing the Display Keyword View service.
+//
 // Service to manage display keyword views.
 var DisplayKeywordViewServiceService = exports.DisplayKeywordViewServiceService = {
   // Returns the requested display keyword view in full detail.

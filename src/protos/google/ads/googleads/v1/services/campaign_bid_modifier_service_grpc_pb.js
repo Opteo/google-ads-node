@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignBidModifiers
 }
 
 
+// Proto file describing the Campaign Bid Modifier service.
+//
 // Service to manage campaign bid modifiers.
 var CampaignBidModifierServiceService = exports.CampaignBidModifierServiceService = {
   // Returns the requested campaign bid modifier in full detail.

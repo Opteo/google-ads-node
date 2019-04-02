@@ -93,6 +93,8 @@ function deserialize_google_ads_googleads_v1_services_GetRecommendationRequest(b
 }
 
 
+// Proto file describing the Recommendation service.
+//
 // Service to manage recommendations.
 var RecommendationServiceService = exports.RecommendationServiceService = {
   // Returns the requested recommendation in full detail.

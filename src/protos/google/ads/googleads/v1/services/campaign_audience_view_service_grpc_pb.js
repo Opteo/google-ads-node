@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetCampaignAudienceViewReq
 }
 
 
+// Proto file describing the Campaign Audience View service.
+//
 // Service to manage campaign audience views.
 var CampaignAudienceViewServiceService = exports.CampaignAudienceViewServiceService = {
   // Returns the requested campaign audience view in full detail.

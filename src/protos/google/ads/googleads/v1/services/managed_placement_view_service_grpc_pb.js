@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetManagedPlacementViewReq
 }
 
 
+// Proto file describing the Managed Placement View service.
+//
 // Service to manage Managed Placement views.
 var ManagedPlacementViewServiceService = exports.ManagedPlacementViewServiceService = {
   // Returns the requested Managed Placement view in full detail.

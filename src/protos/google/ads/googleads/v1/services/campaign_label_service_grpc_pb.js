@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateCampaignLabelsRespon
 }
 
 
+// Proto file describing the Campaign Label service.
+//
 // Service to manage labels on campaigns.
 var CampaignLabelServiceService = exports.CampaignLabelServiceService = {
   // Returns the requested campaign-label relationship in full detail.

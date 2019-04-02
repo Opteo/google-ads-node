@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateMediaFilesResponse(b
 }
 
 
+// Proto file describing the Media File service.
+//
 // Service to manage media files.
 var MediaFileServiceService = exports.MediaFileServiceService = {
   // Returns the requested media file in full detail.

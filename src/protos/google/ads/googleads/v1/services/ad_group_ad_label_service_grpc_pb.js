@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupAdLabelsRespo
 }
 
 
+// Proto file describing the Ad Group Ad Label service.
+//
 // Service to manage labels on ad group ads.
 var AdGroupAdLabelServiceService = exports.AdGroupAdLabelServiceService = {
   // Returns the requested ad group ad label in full detail.

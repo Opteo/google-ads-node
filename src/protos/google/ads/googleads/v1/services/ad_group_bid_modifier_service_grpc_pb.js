@@ -70,6 +70,8 @@ function deserialize_google_ads_googleads_v1_services_MutateAdGroupBidModifiersR
 }
 
 
+// Proto file describing the Ad Group Bid Modifier service.
+//
 // Service to manage ad group bid modifiers.
 var AdGroupBidModifierServiceService = exports.AdGroupBidModifierServiceService = {
   // Returns the requested ad group bid modifier in full detail.

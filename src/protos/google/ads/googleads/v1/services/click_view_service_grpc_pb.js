@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetClickViewRequest(buffer
 }
 
 
+// Proto file describing the ClickView service.
+//
 // Service to fetch click views.
 var ClickViewServiceService = exports.ClickViewServiceService = {
   // Returns the requested click view in full detail.

@@ -69,6 +69,8 @@ function deserialize_google_ads_googleads_v1_services_MutateSharedCriteriaRespon
 }
 
 
+// Proto file describing the Shared Criterion service.
+//
 // Service to manage shared criteria.
 var SharedCriterionServiceService = exports.SharedCriterionServiceService = {
   // Returns the requested shared criterion in full detail.

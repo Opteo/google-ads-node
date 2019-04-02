@@ -45,6 +45,8 @@ function deserialize_google_ads_googleads_v1_services_GetAccountBudgetRequest(bu
 }
 
 
+// Proto file describing the AccountBudget service.
+//
 // A service for fetching an account-level budget.
 //
 // Account-level budgets are mutated by creating proposal resources.

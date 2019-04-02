@@ -67,6 +67,8 @@ function deserialize_google_ads_googleads_v1_services_MutateFeedItemTargetsRespo
 }
 
 
+// Proto file describing the FeedItemTarget service.
+//
 // Service to manage feed item targets.
 var FeedItemTargetServiceService = exports.FeedItemTargetServiceService = {
   // Returns the requested feed item targets in full detail.

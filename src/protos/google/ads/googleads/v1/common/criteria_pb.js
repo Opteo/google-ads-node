@@ -82,6 +82,7 @@ goog.exportSymbol('proto.google.ads.googleads.v1.common.ProductItemIdInfo', null
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ProductTypeInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.ProximityInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.TopicInfo', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.UserInterestInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.UserListInfo', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.WebpageConditionInfo', null, global);
@@ -1618,7 +1619,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.common.ListingDimensionInfo.oneofGroups_ = [[1,2,3,4,5,6,7,13,8,9,10,11,12]];
+proto.google.ads.googleads.v1.common.ListingDimensionInfo.oneofGroups_ = [[1,2,3,4,5,6,7,13,8,9,10,11,12,14]];
 
 /**
  * @enum {number}
@@ -1637,7 +1638,8 @@ proto.google.ads.googleads.v1.common.ListingDimensionInfo.DimensionCase = {
   PRODUCT_CHANNEL_EXCLUSIVITY: 9,
   PRODUCT_CONDITION: 10,
   PRODUCT_ITEM_ID: 11,
-  PRODUCT_TYPE: 12
+  PRODUCT_TYPE: 12,
+  UNKNOWN_LISTING_DIMENSION: 14
 };
 
 /**
@@ -1688,7 +1690,8 @@ proto.google.ads.googleads.v1.common.ListingDimensionInfo.toObject = function(in
     productChannelExclusivity: (f = msg.getProductChannelExclusivity()) && proto.google.ads.googleads.v1.common.ProductChannelExclusivityInfo.toObject(includeInstance, f),
     productCondition: (f = msg.getProductCondition()) && proto.google.ads.googleads.v1.common.ProductConditionInfo.toObject(includeInstance, f),
     productItemId: (f = msg.getProductItemId()) && proto.google.ads.googleads.v1.common.ProductItemIdInfo.toObject(includeInstance, f),
-    productType: (f = msg.getProductType()) && proto.google.ads.googleads.v1.common.ProductTypeInfo.toObject(includeInstance, f)
+    productType: (f = msg.getProductType()) && proto.google.ads.googleads.v1.common.ProductTypeInfo.toObject(includeInstance, f),
+    unknownListingDimension: (f = msg.getUnknownListingDimension()) && proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1789,6 +1792,11 @@ proto.google.ads.googleads.v1.common.ListingDimensionInfo.deserializeBinaryFromR
       var value = new proto.google.ads.googleads.v1.common.ProductTypeInfo;
       reader.readMessage(value,proto.google.ads.googleads.v1.common.ProductTypeInfo.deserializeBinaryFromReader);
       msg.setProductType(value);
+      break;
+    case 14:
+      var value = new proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo;
+      reader.readMessage(value,proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.deserializeBinaryFromReader);
+      msg.setUnknownListingDimension(value);
       break;
     default:
       reader.skipField();
@@ -1921,6 +1929,14 @@ proto.google.ads.googleads.v1.common.ListingDimensionInfo.serializeBinaryToWrite
       12,
       f,
       proto.google.ads.googleads.v1.common.ProductTypeInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getUnknownListingDimension();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2313,6 +2329,36 @@ proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.clearProduct
  */
 proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.hasProductType = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional UnknownListingDimensionInfo unknown_listing_dimension = 14;
+ * @return {?proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo}
+ */
+proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.getUnknownListingDimension = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo, 14));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo|undefined} value */
+proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.setUnknownListingDimension = function(value) {
+  jspb.Message.setOneofWrapperField(this, 14, proto.google.ads.googleads.v1.common.ListingDimensionInfo.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.clearUnknownListingDimension = function() {
+  this.setUnknownListingDimension(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.ListingDimensionInfo.prototype.hasUnknownListingDimension = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -4454,6 +4500,122 @@ proto.google.ads.googleads.v1.common.ProductTypeInfo.prototype.getLevel = functi
 /** @param {!proto.google.ads.googleads.v1.enums.ProductTypeLevelEnum.ProductTypeLevel} value */
 proto.google.ads.googleads.v1.common.ProductTypeInfo.prototype.setLevel = function(value) {
   jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.displayName = 'proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo}
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo;
+  return proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo}
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.UnknownListingDimensionInfo.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
 };
 
 
