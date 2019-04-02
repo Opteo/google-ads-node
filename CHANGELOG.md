@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/opteo/google-ads-node/compare/v1.7.2...v1.8.0) (2019-04-02)
+
+
+### Features
+
+* **api:** updated to google ads api v1.1.0 ([b2e7a4f](https://github.com/opteo/google-ads-node/commit/b2e7a4f))
+
+
+
 <a name="1.7.2"></a>
 ## [1.7.2](https://github.com/opteo/google-ads-node/compare/v1.7.1...v1.7.2) (2019-04-02)
 

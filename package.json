@@ -1,6 +1,6 @@
 {
   "name": "google-ads-node",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "description": "Google Ads gRPC Client Library for Node",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
