@@ -242,12 +242,14 @@ test("update mask can be generated from a resource object", () => {
         something: "value",
       },
     },
+    some_list: ["foo", "bar", "baz"]
   };
   const mask = getFieldMask(resource);
   expect(mask.toObject().pathsList).toEqual([
     "amount_micros",
     "status",
     "settings.another_setting.something",
+    "some_list",
   ]);
 });
 
