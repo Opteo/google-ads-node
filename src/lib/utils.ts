@@ -197,7 +197,7 @@ function recursiveFieldMaskSearch(data: any) {
     }
     const value = data[key];
 
-    if (typeof value === "object") {
+    if (typeof value === "object" && !Array.isArray(value)) {
       const children = recursiveFieldMaskSearch(value);
       for (const child of children) {
         paths.push(`${key}.${child}`);
