@@ -186,6 +186,32 @@ const ad = await service.getAdGroupAd(request);
 
 **Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
 
+### Mutations
+*to-do: make this section of the docs better*
+
+As it can be quite verbose to create a new gRPC message, especially entities in the Google Ads API which can have many fields, this library provides a `buildResource` method to handle this for you.
+
+```javascript
+// This is a regular js object, and can't be used in gRPC requests
+const campaign = {
+  name: "Interplanetary Cruises",
+  campaignBudget: "customers/123/campaignBudgets/123",
+  status: CampaignStatusEnum.CampaignStatus.ENABLED,
+  advertisingChannelType: AdvertisingChannelTypeEnum.AdvertisingChannelType.SEARCH,
+}
+
+/*
+  The buildResource method takes two arguments:
+    1. The message type to construct (matches the Google Ads API docs)
+    2. The object to convert
+  
+  It returns the object converted into a gRPC message instance,
+  which can then be used in mutate requests/operations
+*/
+const pb = client.buildResource("Campaign", campaign)
+console.log(pb.getName()) // "Interplanetary Cruises"
+```
+
 ### Results
 
 By default, since this library is implemented with gRPC, any calls via a service return an object in the protocol buffer format. This is a binary format object, which is difficult to understand, especially if you're not using the Typescript definitions.
