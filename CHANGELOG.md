@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.8.2"></a>
+## [1.8.2](https://github.com/opteo/google-ads-node/compare/v1.8.1...v1.8.2) (2019-04-12)
+
+
+### Bug Fixes
+
+* **utils:** ensure all possible enums are converted back to the correct format ([36d0da8](https://github.com/opteo/google-ads-node/commit/36d0da8))
+
+
+
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/opteo/google-ads-node/compare/v1.8.0...v1.8.1) (2019-04-08)
 
