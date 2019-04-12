@@ -145,6 +145,7 @@ test("correctly builds a keyword request from an object", () => {
   });
 
   const ad_group_criterion = {
+    status: 2,
     keyword: {
       text: 'some_keyword',
       match_type: 2,
@@ -157,6 +158,7 @@ test("correctly builds a keyword request from an object", () => {
   ) as AdGroupCriterion;
 
   expect(protobuf.toObject()).toEqual(expect.objectContaining({
+    status: 2,
     keyword: {
       text: {
         value : 'some_keyword',

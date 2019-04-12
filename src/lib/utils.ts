@@ -77,16 +77,23 @@ export function convertToProtoFormat(data: any, type: any): any {
       typeof value === "object" ? convertToProtoFormat(value, type) : toProtoValueFormat(value);
   }
 
-  /* Check if number values are enums (this is a bit of a hack) */
-  const err = type.verify(pb);
-  if (err && err.includes("enum value expected")) {
-    const key = err.split(":")[0];
+  /* Check if number values are enums (this is a bit of a hack) 
+      We have to run it for as many times as there are keys to ensure 
+      all possible enums are converted back to the correct format
+  */
+  Object.keys(pb).forEach(() => {
+    const err = type.verify(pb);
+    if (err && err.includes("enum value expected")) {
+      const key = err.split(":")[0];
+    
+      const enum_value = get(pb, key).value;
+    
+      set(pb, key, enum_value);
+    }
+  })
+    
 
-    const enum_value = get(pb, key).value;
-
-    set(pb, key, enum_value);
-  }
-
+  
   return pb;
 }
 
