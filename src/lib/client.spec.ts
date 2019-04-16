@@ -7,7 +7,8 @@ import {
   SearchGoogleAdsResponse,
   Campaign,
   SuggestGeoTargetConstantsRequest,
-  AdGroupCriterion
+  AdGroupCriterion,
+  AdGroupAd,
 } from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
@@ -98,7 +99,52 @@ test("correctly builds a grpc resource from an object", () => {
     enhancedCpcEnabled: { value: true },
   });
 });
+
+test("correctly builds a complex and deeply nested grpc resource", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
   });
+
+  const ad = {
+    ad_group: "customers/123/adGroups/321",
+    status: 3,
+    ad: {
+      final_urls: ["http://www.example.com"],
+      type: 3,
+      name: "best ad ever",
+      expanded_text_ad: {
+        headline_part_1: "Cruise to Mars #%d",
+        headline_part_2: "Best Space Cruise Line",
+        description: "Buy your tickets now!",
+        path_1: "all-inclusive",
+        path_2: "deals",
+      },
+    },
+  };
+
+  const protobuf = client.buildResource("AdGroupAd", ad) as AdGroupAd;
+
+  expect(protobuf instanceof AdGroupAd);
+  expect(protobuf.toObject()).toEqual(
+    expect.objectContaining({
+      status: 3,
+      adGroup: { value: "customers/123/adGroups/321" },
+      ad: expect.objectContaining({
+        finalUrlsList: [{ value: "http://www.example.com" }],
+        type: 3,
+        name: { value: "best ad ever" },
+        expandedTextAd: expect.objectContaining({
+          headlinePart1: { value: "Cruise to Mars #%d" },
+          headlinePart2: { value: "Best Space Cruise Line" },
+          description: { value: "Buy your tickets now!" },
+          path1: { value: "all-inclusive" },
+          path2: { value: "deals" },
+        }),
+      }),
+    })
+  );
 });
 
 test("correctly builds a grpc request from an object", () => {

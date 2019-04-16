@@ -1,5 +1,6 @@
 import protobufHelpers from "google-protobuf/google/protobuf/field_mask_pb";
 import { Client } from "grpc";
+import camelCase from "lodash.camelcase";
 import get from "lodash.get";
 import set from "lodash.set";
 
@@ -58,7 +59,7 @@ export function convertToProtoFormat(data: any, type: any): any {
   const pb: any = {};
 
   for (const key of Object.keys(data)) {
-    const displayKey = toCamelCase(key);
+    const displayKey = camelCase(key);
     const value = data[key];
 
     /* Resource names are string values, not a protobuf string instance, so just set the string value */
@@ -103,7 +104,8 @@ function toProtoValueFormat(value: any): any {
   };
 }
 
-function toCamelCase(str: string) {
+/* This is different to lodash.camelCase as it leaves any periods (".") */
+function convertPathToCamelCase(str: string) {
   return str.replace(/([-_][a-z])/gi, $1 => {
     return $1
       .toUpperCase()
@@ -147,7 +149,7 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
 
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {
   for (let path of props) {
-    path = toCamelCase(path);
+    path = convertPathToCamelCase(path);
 
     let displayKey = path;
     if (path.endsWith("List")) {
