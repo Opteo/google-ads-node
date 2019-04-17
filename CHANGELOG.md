@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/opteo/google-ads-node/compare/v1.8.3...v1.9.0) (2019-04-17)
+
+
+### Bug Fixes
+
+* **utils:** make sure getErrorLocationPath doesn't throw on undefined location ([ffec7a1](https://github.com/opteo/google-ads-node/commit/ffec7a1))
+
+
+### Features
+
+* **interceptor:** added bad field location to error response metadata ([562cd2c](https://github.com/opteo/google-ads-node/commit/562cd2c))
+* **utils:** added getErrorLocationPath for parsing field error locations ([734d995](https://github.com/opteo/google-ads-node/commit/734d995))
+
+
+
 <a name="1.8.3"></a>
 ## [1.8.3](https://github.com/opteo/google-ads-node/compare/v1.8.2...v1.8.3) (2019-04-16)
 
