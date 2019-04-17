@@ -225,7 +225,7 @@ export function getFieldMask(data: any): protobufHelpers.FieldMask {
 }
 
 export function getErrorLocationPath(location: any): string {
-  if (!location.hasOwnProperty("fieldPathElementsList")) {
+  if (!location || !location.hasOwnProperty("fieldPathElementsList")) {
     return "";
   }
   if (!Array.isArray(location.fieldPathElementsList) && location.fieldPathElementsList.length < 1) {

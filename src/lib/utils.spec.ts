@@ -272,6 +272,7 @@ test("field location error can be generated from errors list object", () => {
   expect(path).toEqual("operations[0].create.ad.display_url");
   expect(badPath).toEqual("");
   expect(emptyPath).toEqual("");
+  expect(getErrorLocationPath(undefined)).toEqual("");
 });
 
 const fakeCampaignResponse = `
