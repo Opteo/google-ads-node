@@ -2,7 +2,7 @@ import grpc from "grpc";
 
 import Auth from "./auth";
 import { GoogleAdsFailure, GoogleAdsError, ErrorCode } from "./types";
-import { formatCallResults } from "./utils";
+import { formatCallResults, getErrorLocationPath } from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v1.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
@@ -80,8 +80,12 @@ export class ExceptionInterceptor {
           const error = this.handleGrpcFailure(status);
 
           if (error.hasOwnProperty("error_code")) {
-            // @ts-ignore
+            // @ts-ignore Custom error field "error_code"
             status.metadata.add("error-code", JSON.stringify(error.error_code));
+          }
+          if (error.hasOwnProperty("location")) {
+            // @ts-ignore Custom error field "location"
+            status.metadata.add("location", error.location);
           }
 
           const errorStatus = new grpc.StatusBuilder()
@@ -147,7 +151,11 @@ export class ExceptionInterceptor {
     if (errorsList && errorsList.length > 0) {
       const firstError = errorsList[0] as GoogleAdsError;
       const firstErrorObj = firstError.toObject();
-      return new ClientError(firstErrorObj.message, requestId, gaFailure);
+      let path = "";
+      if (firstErrorObj.hasOwnProperty("location")) {
+        path = getErrorLocationPath(firstErrorObj.location as object);
+      }
+      return new ClientError(firstErrorObj.message, requestId, gaFailure, path);
     }
 
     try {
@@ -220,10 +228,17 @@ class ClientError extends Error {
   public readonly request_id: string | undefined;
   public readonly failure: GoogleAdsFailure;
   public readonly error_code: object;
+  public readonly location: string;
 
-  constructor(public message: string, requestId: string | undefined, failure: GoogleAdsFailure) {
+  constructor(
+    public message: string,
+    requestId: string | undefined,
+    failure: GoogleAdsFailure,
+    path?: string
+  ) {
     super(message);
 
+    this.location = path || "";
     this.request_id = requestId;
     this.failure = failure;
 
