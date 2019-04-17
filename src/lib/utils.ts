@@ -86,15 +86,13 @@ export function convertToProtoFormat(data: any, type: any): any {
     const err = type.verify(pb);
     if (err && err.includes("enum value expected")) {
       const key = err.split(":")[0];
-    
+
       const enum_value = get(pb, key).value;
-    
+
       set(pb, key, enum_value);
     }
-  })
-    
+  });
 
-  
   return pb;
 }
 
@@ -224,4 +222,25 @@ export function getFieldMask(data: any): protobufHelpers.FieldMask {
   const paths = recursiveFieldMaskSearch(data);
   fieldMask.setPathsList(paths);
   return fieldMask;
+}
+
+export function getErrorLocationPath(location: any): string {
+  if (!location.hasOwnProperty("fieldPathElementsList")) {
+    return "";
+  }
+  if (!Array.isArray(location.fieldPathElementsList) && location.fieldPathElementsList.length < 1) {
+    return "";
+  }
+
+  const { fieldPathElementsList } = location;
+
+  const paths = fieldPathElementsList.map((field: any) => {
+    let path = field.fieldName;
+    if (field.index && field.index.hasOwnProperty("value")) {
+      path += `[${field.index.value}]`;
+    }
+    return path;
+  });
+
+  return paths.join(".");
 }

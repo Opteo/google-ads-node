@@ -1,4 +1,4 @@
-import { formatCallResults, getFieldMask } from "./utils";
+import { formatCallResults, getFieldMask, getErrorLocationPath } from "./utils";
 
 test("proto object result is parsed from field mask", () => {
   const fakeResponse = [
@@ -251,6 +251,27 @@ test("update mask can be generated from a resource object", () => {
     "settings.another_setting.something",
     "some_list",
   ]);
+});
+
+test("field location error can be generated from errors list object", () => {
+  const fieldError = {
+    fieldPathElementsList: [
+      { fieldName: "operations", index: { value: 0 } },
+      { fieldName: "create" },
+      { fieldName: "ad" },
+      { fieldName: "display_url" },
+    ],
+  };
+  const badFieldError = { fieldPathBad: "invalid" };
+  const emptyFieldError = { fieldPathElementsList: [] };
+
+  const path = getErrorLocationPath(fieldError);
+  const badPath = getErrorLocationPath(badFieldError);
+  const emptyPath = getErrorLocationPath(emptyFieldError);
+
+  expect(path).toEqual("operations[0].create.ad.display_url");
+  expect(badPath).toEqual("");
+  expect(emptyPath).toEqual("");
 });
 
 const fakeCampaignResponse = `
