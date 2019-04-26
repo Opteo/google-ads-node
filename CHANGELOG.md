@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/opteo/google-ads-node/compare/v1.9.0...v1.10.0) (2019-04-26)
+
+
+### Features
+
+* **client:** support for loading client options from configuration file ([857ab85](https://github.com/opteo/google-ads-node/commit/857ab85))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/opteo/google-ads-node/compare/v1.8.3...v1.9.0) (2019-04-17)
 
