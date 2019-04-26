@@ -154,15 +154,15 @@ const client = new GoogleAdsClient({
   developer_token: "<DEVELOPER_TOKEN>",
   // You can optionally use the parameters
   async accessTokenGetter(clientId?: string, clientSecret?: string, refreshToken?: string) {
-    await logger.someLoggingFunction()
-    
-    if(cache.checkTokenExists()) {
-      return cache.getCachedToken()
+    await logger.someLoggingFunction();
+
+    if (cache.checkTokenExists()) {
+      return cache.getCachedToken();
     }
-    
-    const accessToken = await auth.someCallToGetAccessToken()
-    return accessToken
-  }
+
+    const accessToken = await auth.someCallToGetAccessToken();
+    return accessToken;
+  },
 });
 ```
 
@@ -170,7 +170,7 @@ The returned token string will be used in the gRPC metadata per request, as the 
 
 #### 4. Load `GoogleAdsClient` options from configuration file
 
-For convenience, you can store the required settings in a configuration file. Copy the sample [`googleads.config.js`](googleads.config.js) file (also accept `.googleadsrc` file in JSON or YAML format) to your project root or home directory and modify it to include the client ID, client secret, and refresh token.
+For convenience, you can store the required settings in a configuration file. Copy the sample [`googleads.config.js`](googleads.config.js) file (the library also accepts a `.googleadsrc` file in JSON or YAML format) to your project root or home directory, and modify it to include the client ID, client secret, and refresh token.
 
 The client will automatically read it from the configuration file if instantiated with no arguments:
 
@@ -204,7 +204,8 @@ const ad = await service.getAdGroupAd(request);
 **Note:** Service methods use `camelCase` in this library, whereas the Google Ads documentation uses `TitleCase`, so if a service method was called `GetCampaign()`, in this library it would be `getCampaign()`
 
 ### Mutations
-*to-do: make this section of the docs better*
+
+_to-do: make this section of the docs better_
 
 As it can be quite verbose to create a new gRPC message, especially entities in the Google Ads API which can have many fields, this library provides a `buildResource` method to handle this for you.
 
@@ -215,7 +216,7 @@ const campaign = {
   campaignBudget: "customers/123/campaignBudgets/123",
   status: CampaignStatusEnum.CampaignStatus.ENABLED,
   advertisingChannelType: AdvertisingChannelTypeEnum.AdvertisingChannelType.SEARCH,
-}
+};
 
 /*
   The buildResource method takes two arguments:
@@ -225,8 +226,8 @@ const campaign = {
   It returns the object converted into a gRPC message instance,
   which can then be used in mutate requests/operations
 */
-const pb = client.buildResource("Campaign", campaign)
-console.log(pb.getName()) // "Interplanetary Cruises"
+const pb = client.buildResource("Campaign", campaign);
+console.log(pb.getName()); // "Interplanetary Cruises"
 ```
 
 ### Results

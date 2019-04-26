@@ -1,4 +1,3 @@
-
 module.exports = {
   // Credential for accessing Google's OAuth servers.
   // Provided by https://console.developers.google.com.
@@ -19,5 +18,5 @@ module.exports = {
   // authenticate API calls. This will be the customer ID of the authenticated
   // manager account. You can also specify this later in code if your application
   // uses multiple manager account + OAuth pairs.
-  login_customer_id: "INSERT_LOGIN_CUSTOEMR_ID_HERE",
+  login_customer_id: "INSERT_LOGIN_CUSTOMER_ID_HERE",
 };
