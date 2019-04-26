@@ -1,3 +1,4 @@
+import cosmiconfig from "cosmiconfig";
 import grpc from "grpc";
 import get from "lodash.get";
 
@@ -46,7 +47,13 @@ export class GoogleAdsClient {
   private options: ClientOptionsNoToken | ClientOptionsWithToken;
   private auth: Auth | undefined;
 
-  constructor(options: ClientOptionsNoToken | ClientOptionsWithToken) {
+  constructor(options?: string | ClientOptionsNoToken | ClientOptionsWithToken) {
+    if (typeof options === 'string' || typeof options === 'undefined') {
+      const configPath = options;
+      const { config = {} } = this.loadConfig(configPath) || {};
+      options = config as ClientOptionsNoToken | ClientOptionsWithToken;
+    }
+
     this.validateOptions(options);
 
     if (this.usingToken(options)) {
@@ -165,6 +172,16 @@ export class GoogleAdsClient {
     }
 
     return interceptors;
+  }
+
+  private loadConfig(configPath?: string) : cosmiconfig.CosmiconfigResult {
+    const explorer = cosmiconfig('googleads');
+
+    if (configPath) {
+      return explorer.loadSync(configPath);
+    }
+
+    return explorer.searchSync();
   }
 
   private validateOptions(options: ClientOptionsNoToken | ClientOptionsWithToken): void {

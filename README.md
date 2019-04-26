@@ -143,6 +143,7 @@ const client = new GoogleAdsClient({
 ```
 
 #### 3. Access token getter
+
 You can also additionaly pass in an async access token getter method to the client instance. This will be called on every request. The main purpose is to allow you to handle authentication yourself, and cache tokens/use cached tokens from elsewhere. The method expects a return type of `Promise<string>` e.g. `Promise.resolve("<access-token>")`. An example of how you might use the `accessTokenGetter` option is provided below:
 
 ```typescript
@@ -166,6 +167,22 @@ const client = new GoogleAdsClient({
 ```
 
 The returned token string will be used in the gRPC metadata per request, as the `Authorization` header. You don't need to include the `Bearer:` part of the token, this is appended automatically.
+
+#### 4. Load `GoogleAdsClient` options from configuration file
+
+For convenience, you can store the required settings in a configuration file. Copy the sample [`googleads.config.js`](googleads.config.js) file (also accept `.googleadsrc` file in JSON or YAML format) to your project root or home directory and modify it to include the client ID, client secret, and refresh token.
+
+The client will automatically read it from the configuration file if instantiated with no arguments:
+
+```typescript
+const client = new GoogleAdsClient();
+```
+
+Alternatively, if you prefer to keep the file elsewhere, you can instantiate the client by passing the path to where you keep this file:
+
+```typescript
+const client = new GoogleAdsClient("path/to/googleads.config.js");
+```
 
 ### Services
 
