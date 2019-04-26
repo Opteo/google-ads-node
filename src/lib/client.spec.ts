@@ -57,6 +57,23 @@ test("new client fails when not using valid options interface", () => {
   }).toThrow("Missing required keys");
 });
 
+test("new client from config", () => {
+  const client = new GoogleAdsClient();
+  expect(client).toBeInstanceOf(GoogleAdsClient);
+})
+
+test("new client from config with path", () => {
+  const client = new GoogleAdsClient('./googleads.config.js');
+  expect(client).toBeInstanceOf(GoogleAdsClient);
+})
+
+test("new client fails when config file does not exist", () => {
+  expect(() => {
+    // @ts-ignore
+    const client = new GoogleAdsClient('./notfound.config.js');
+  }).toThrow();
+});
+
 test("loading api services", () => {
   const client = new GoogleAdsClient({
     access_token: "123",
