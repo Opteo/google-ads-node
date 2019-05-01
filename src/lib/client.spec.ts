@@ -138,6 +138,10 @@ test("correctly builds a complex and deeply nested grpc resource", () => {
         path_1: "all-inclusive",
         path_2: "deals",
       },
+      url_custom_parameters: [
+        { key: "season", value: "easter123" },
+        { key: "promocode", value: "nj123" },
+      ],
     },
   };
 
@@ -159,6 +163,10 @@ test("correctly builds a complex and deeply nested grpc resource", () => {
           path1: { value: "all-inclusive" },
           path2: { value: "deals" },
         }),
+        urlCustomParametersList: [
+          { key: { value: "season" }, value: { value: "easter123" } },
+          { key: { value: "promocode" }, value: { value: "nj123" } },
+        ],
       }),
     })
   );

@@ -70,7 +70,9 @@ export function convertToProtoFormat(data: any, type: any): any {
 
     /* Build array of proto values */
     if (Array.isArray(value)) {
-      pb[displayKey] = value.map(v => toProtoValueFormat(v));
+      pb[displayKey] = value.map(v => {
+        return typeof v === "object" ? convertToProtoFormat(v, type) : toProtoValueFormat(v);
+      });
       continue;
     }
 
