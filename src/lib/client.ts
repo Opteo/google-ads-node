@@ -48,7 +48,7 @@ export class GoogleAdsClient {
   private auth: Auth | undefined;
 
   constructor(options?: string | ClientOptionsNoToken | ClientOptionsWithToken) {
-    if (typeof options === 'string' || typeof options === 'undefined') {
+    if (typeof options === "string" || typeof options === "undefined") {
       const configPath = options;
       const { config = {} } = this.loadConfig(configPath) || {};
       options = config as ClientOptionsNoToken | ClientOptionsWithToken;
@@ -174,8 +174,8 @@ export class GoogleAdsClient {
     return interceptors;
   }
 
-  private loadConfig(configPath?: string) : cosmiconfig.CosmiconfigResult {
-    const explorer = cosmiconfig('googleads');
+  private loadConfig(configPath?: string): cosmiconfig.CosmiconfigResult {
+    const explorer = cosmiconfig("googleads");
 
     if (configPath) {
       return explorer.loadSync(configPath);
