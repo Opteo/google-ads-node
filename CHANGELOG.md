@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/opteo/google-ads-node/compare/v1.10.1...v1.11.0) (2019-05-03)
+
+
+### Bug Fixes
+
+* **types:** removed unused directory ([050ff98](https://github.com/opteo/google-ads-node/commit/050ff98))
+
+
+### Features
+
+* **api:** updated to google ads v1.2.0 ([#10](https://github.com/opteo/google-ads-node/issues/10)) ([83e565a](https://github.com/opteo/google-ads-node/commit/83e565a))
+
+
+
 <a name="1.10.1"></a>
 ## [1.10.1](https://github.com/opteo/google-ads-node/compare/v1.10.0...v1.10.1) (2019-05-02)
 
