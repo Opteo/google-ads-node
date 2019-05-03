@@ -33,6 +33,7 @@ export namespace AdvertisingChannelSubTypeEnum {
     VIDEO_ACTION = 10,
     VIDEO_NON_SKIPPABLE = 11,
     APP_CAMPAIGN = 12,
+    APP_CAMPAIGN_FOR_ENGAGEMENT = 13,
   }
 }
 

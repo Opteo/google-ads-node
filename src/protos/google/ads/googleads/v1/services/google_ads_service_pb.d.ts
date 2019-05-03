@@ -13,9 +13,12 @@ import * as google_ads_googleads_v1_resources_ad_group_audience_view_pb from "..
 import * as google_ads_googleads_v1_resources_ad_group_bid_modifier_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_bid_modifier_pb";
 import * as google_ads_googleads_v1_resources_ad_group_criterion_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb";
 import * as google_ads_googleads_v1_resources_ad_group_criterion_label_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_criterion_label_pb";
+import * as google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_criterion_simulation_pb";
 import * as google_ads_googleads_v1_resources_ad_group_extension_setting_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_extension_setting_pb";
 import * as google_ads_googleads_v1_resources_ad_group_feed_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_feed_pb";
 import * as google_ads_googleads_v1_resources_ad_group_label_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_label_pb";
+import * as google_ads_googleads_v1_resources_ad_group_simulation_pb from "../../../../../google/ads/googleads/v1/resources/ad_group_simulation_pb";
+import * as google_ads_googleads_v1_resources_ad_parameter_pb from "../../../../../google/ads/googleads/v1/resources/ad_parameter_pb";
 import * as google_ads_googleads_v1_resources_ad_schedule_view_pb from "../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb";
 import * as google_ads_googleads_v1_resources_age_range_view_pb from "../../../../../google/ads/googleads/v1/resources/age_range_view_pb";
 import * as google_ads_googleads_v1_resources_asset_pb from "../../../../../google/ads/googleads/v1/resources/asset_pb";
@@ -26,6 +29,7 @@ import * as google_ads_googleads_v1_resources_campaign_audience_view_pb from "..
 import * as google_ads_googleads_v1_resources_campaign_bid_modifier_pb from "../../../../../google/ads/googleads/v1/resources/campaign_bid_modifier_pb";
 import * as google_ads_googleads_v1_resources_campaign_budget_pb from "../../../../../google/ads/googleads/v1/resources/campaign_budget_pb";
 import * as google_ads_googleads_v1_resources_campaign_criterion_pb from "../../../../../google/ads/googleads/v1/resources/campaign_criterion_pb";
+import * as google_ads_googleads_v1_resources_campaign_criterion_simulation_pb from "../../../../../google/ads/googleads/v1/resources/campaign_criterion_simulation_pb";
 import * as google_ads_googleads_v1_resources_campaign_extension_setting_pb from "../../../../../google/ads/googleads/v1/resources/campaign_extension_setting_pb";
 import * as google_ads_googleads_v1_resources_campaign_feed_pb from "../../../../../google/ads/googleads/v1/resources/campaign_feed_pb";
 import * as google_ads_googleads_v1_resources_campaign_label_pb from "../../../../../google/ads/googleads/v1/resources/campaign_label_pb";
@@ -47,6 +51,7 @@ import * as google_ads_googleads_v1_resources_detail_placement_view_pb from "../
 import * as google_ads_googleads_v1_resources_display_keyword_view_pb from "../../../../../google/ads/googleads/v1/resources/display_keyword_view_pb";
 import * as google_ads_googleads_v1_resources_domain_category_pb from "../../../../../google/ads/googleads/v1/resources/domain_category_pb";
 import * as google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb from "../../../../../google/ads/googleads/v1/resources/dynamic_search_ads_search_term_view_pb";
+import * as google_ads_googleads_v1_resources_expanded_landing_page_view_pb from "../../../../../google/ads/googleads/v1/resources/expanded_landing_page_view_pb";
 import * as google_ads_googleads_v1_resources_extension_feed_item_pb from "../../../../../google/ads/googleads/v1/resources/extension_feed_item_pb";
 import * as google_ads_googleads_v1_resources_feed_pb from "../../../../../google/ads/googleads/v1/resources/feed_pb";
 import * as google_ads_googleads_v1_resources_feed_item_pb from "../../../../../google/ads/googleads/v1/resources/feed_item_pb";
@@ -66,13 +71,16 @@ import * as google_ads_googleads_v1_resources_keyword_plan_keyword_pb from "../.
 import * as google_ads_googleads_v1_resources_keyword_plan_negative_keyword_pb from "../../../../../google/ads/googleads/v1/resources/keyword_plan_negative_keyword_pb";
 import * as google_ads_googleads_v1_resources_keyword_view_pb from "../../../../../google/ads/googleads/v1/resources/keyword_view_pb";
 import * as google_ads_googleads_v1_resources_label_pb from "../../../../../google/ads/googleads/v1/resources/label_pb";
+import * as google_ads_googleads_v1_resources_landing_page_view_pb from "../../../../../google/ads/googleads/v1/resources/landing_page_view_pb";
 import * as google_ads_googleads_v1_resources_language_constant_pb from "../../../../../google/ads/googleads/v1/resources/language_constant_pb";
 import * as google_ads_googleads_v1_resources_location_view_pb from "../../../../../google/ads/googleads/v1/resources/location_view_pb";
 import * as google_ads_googleads_v1_resources_managed_placement_view_pb from "../../../../../google/ads/googleads/v1/resources/managed_placement_view_pb";
 import * as google_ads_googleads_v1_resources_media_file_pb from "../../../../../google/ads/googleads/v1/resources/media_file_pb";
 import * as google_ads_googleads_v1_resources_mobile_app_category_constant_pb from "../../../../../google/ads/googleads/v1/resources/mobile_app_category_constant_pb";
 import * as google_ads_googleads_v1_resources_mobile_device_constant_pb from "../../../../../google/ads/googleads/v1/resources/mobile_device_constant_pb";
+import * as google_ads_googleads_v1_resources_mutate_job_pb from "../../../../../google/ads/googleads/v1/resources/mutate_job_pb";
 import * as google_ads_googleads_v1_resources_operating_system_version_constant_pb from "../../../../../google/ads/googleads/v1/resources/operating_system_version_constant_pb";
+import * as google_ads_googleads_v1_resources_paid_organic_search_term_view_pb from "../../../../../google/ads/googleads/v1/resources/paid_organic_search_term_view_pb";
 import * as google_ads_googleads_v1_resources_parental_status_view_pb from "../../../../../google/ads/googleads/v1/resources/parental_status_view_pb";
 import * as google_ads_googleads_v1_resources_product_bidding_category_constant_pb from "../../../../../google/ads/googleads/v1/resources/product_bidding_category_constant_pb";
 import * as google_ads_googleads_v1_resources_product_group_view_pb from "../../../../../google/ads/googleads/v1/resources/product_group_view_pb";
@@ -246,6 +254,11 @@ export class GoogleAdsRow extends jspb.Message {
   getAdGroupCriterionLabel(): google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel | undefined;
   setAdGroupCriterionLabel(value?: google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel): void;
 
+  hasAdGroupCriterionSimulation(): boolean;
+  clearAdGroupCriterionSimulation(): void;
+  getAdGroupCriterionSimulation(): google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation | undefined;
+  setAdGroupCriterionSimulation(value?: google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation): void;
+
   hasAdGroupExtensionSetting(): boolean;
   clearAdGroupExtensionSetting(): void;
   getAdGroupExtensionSetting(): google_ads_googleads_v1_resources_ad_group_extension_setting_pb.AdGroupExtensionSetting | undefined;
@@ -260,6 +273,16 @@ export class GoogleAdsRow extends jspb.Message {
   clearAdGroupLabel(): void;
   getAdGroupLabel(): google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel | undefined;
   setAdGroupLabel(value?: google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel): void;
+
+  hasAdGroupSimulation(): boolean;
+  clearAdGroupSimulation(): void;
+  getAdGroupSimulation(): google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation | undefined;
+  setAdGroupSimulation(value?: google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation): void;
+
+  hasAdParameter(): boolean;
+  clearAdParameter(): void;
+  getAdParameter(): google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter | undefined;
+  setAdParameter(value?: google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter): void;
 
   hasAgeRangeView(): boolean;
   clearAgeRangeView(): void;
@@ -315,6 +338,11 @@ export class GoogleAdsRow extends jspb.Message {
   clearCampaignCriterion(): void;
   getCampaignCriterion(): google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion | undefined;
   setCampaignCriterion(value?: google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion): void;
+
+  hasCampaignCriterionSimulation(): boolean;
+  clearCampaignCriterionSimulation(): void;
+  getCampaignCriterionSimulation(): google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation | undefined;
+  setCampaignCriterionSimulation(value?: google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation): void;
 
   hasCampaignExtensionSetting(): boolean;
   clearCampaignExtensionSetting(): void;
@@ -416,6 +444,11 @@ export class GoogleAdsRow extends jspb.Message {
   getDynamicSearchAdsSearchTermView(): google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView | undefined;
   setDynamicSearchAdsSearchTermView(value?: google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView): void;
 
+  hasExpandedLandingPageView(): boolean;
+  clearExpandedLandingPageView(): void;
+  getExpandedLandingPageView(): google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView | undefined;
+  setExpandedLandingPageView(value?: google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView): void;
+
   hasExtensionFeedItem(): boolean;
   clearExtensionFeedItem(): void;
   getExtensionFeedItem(): google_ads_googleads_v1_resources_extension_feed_item_pb.ExtensionFeedItem | undefined;
@@ -511,6 +544,11 @@ export class GoogleAdsRow extends jspb.Message {
   getLabel(): google_ads_googleads_v1_resources_label_pb.Label | undefined;
   setLabel(value?: google_ads_googleads_v1_resources_label_pb.Label): void;
 
+  hasLandingPageView(): boolean;
+  clearLandingPageView(): void;
+  getLandingPageView(): google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView | undefined;
+  setLandingPageView(value?: google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView): void;
+
   hasLanguageConstant(): boolean;
   clearLanguageConstant(): void;
   getLanguageConstant(): google_ads_googleads_v1_resources_language_constant_pb.LanguageConstant | undefined;
@@ -541,10 +579,20 @@ export class GoogleAdsRow extends jspb.Message {
   getMobileDeviceConstant(): google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant | undefined;
   setMobileDeviceConstant(value?: google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant): void;
 
+  hasMutateJob(): boolean;
+  clearMutateJob(): void;
+  getMutateJob(): google_ads_googleads_v1_resources_mutate_job_pb.MutateJob | undefined;
+  setMutateJob(value?: google_ads_googleads_v1_resources_mutate_job_pb.MutateJob): void;
+
   hasOperatingSystemVersionConstant(): boolean;
   clearOperatingSystemVersionConstant(): void;
   getOperatingSystemVersionConstant(): google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant | undefined;
   setOperatingSystemVersionConstant(value?: google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant): void;
+
+  hasPaidOrganicSearchTermView(): boolean;
+  clearPaidOrganicSearchTermView(): void;
+  getPaidOrganicSearchTermView(): google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView | undefined;
+  setPaidOrganicSearchTermView(value?: google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView): void;
 
   hasParentalStatusView(): boolean;
   clearParentalStatusView(): void;
@@ -647,9 +695,12 @@ export namespace GoogleAdsRow {
     adGroupBidModifier?: google_ads_googleads_v1_resources_ad_group_bid_modifier_pb.AdGroupBidModifier.AsObject,
     adGroupCriterion?: google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.AsObject,
     adGroupCriterionLabel?: google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel.AsObject,
+    adGroupCriterionSimulation?: google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation.AsObject,
     adGroupExtensionSetting?: google_ads_googleads_v1_resources_ad_group_extension_setting_pb.AdGroupExtensionSetting.AsObject,
     adGroupFeed?: google_ads_googleads_v1_resources_ad_group_feed_pb.AdGroupFeed.AsObject,
     adGroupLabel?: google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel.AsObject,
+    adGroupSimulation?: google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation.AsObject,
+    adParameter?: google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter.AsObject,
     ageRangeView?: google_ads_googleads_v1_resources_age_range_view_pb.AgeRangeView.AsObject,
     adScheduleView?: google_ads_googleads_v1_resources_ad_schedule_view_pb.AdScheduleView.AsObject,
     domainCategory?: google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.AsObject,
@@ -661,6 +712,7 @@ export namespace GoogleAdsRow {
     campaignAudienceView?: google_ads_googleads_v1_resources_campaign_audience_view_pb.CampaignAudienceView.AsObject,
     campaignBidModifier?: google_ads_googleads_v1_resources_campaign_bid_modifier_pb.CampaignBidModifier.AsObject,
     campaignCriterion?: google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.AsObject,
+    campaignCriterionSimulation?: google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.AsObject,
     campaignExtensionSetting?: google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting.AsObject,
     campaignFeed?: google_ads_googleads_v1_resources_campaign_feed_pb.CampaignFeed.AsObject,
     campaignLabel?: google_ads_googleads_v1_resources_campaign_label_pb.CampaignLabel.AsObject,
@@ -681,6 +733,7 @@ export namespace GoogleAdsRow {
     detailPlacementView?: google_ads_googleads_v1_resources_detail_placement_view_pb.DetailPlacementView.AsObject,
     displayKeywordView?: google_ads_googleads_v1_resources_display_keyword_view_pb.DisplayKeywordView.AsObject,
     dynamicSearchAdsSearchTermView?: google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView.AsObject,
+    expandedLandingPageView?: google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView.AsObject,
     extensionFeedItem?: google_ads_googleads_v1_resources_extension_feed_item_pb.ExtensionFeedItem.AsObject,
     feed?: google_ads_googleads_v1_resources_feed_pb.Feed.AsObject,
     feedItem?: google_ads_googleads_v1_resources_feed_item_pb.FeedItem.AsObject,
@@ -700,13 +753,16 @@ export namespace GoogleAdsRow {
     keywordPlanAdGroup?: google_ads_googleads_v1_resources_keyword_plan_ad_group_pb.KeywordPlanAdGroup.AsObject,
     keywordPlanKeyword?: google_ads_googleads_v1_resources_keyword_plan_keyword_pb.KeywordPlanKeyword.AsObject,
     label?: google_ads_googleads_v1_resources_label_pb.Label.AsObject,
+    landingPageView?: google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView.AsObject,
     languageConstant?: google_ads_googleads_v1_resources_language_constant_pb.LanguageConstant.AsObject,
     locationView?: google_ads_googleads_v1_resources_location_view_pb.LocationView.AsObject,
     managedPlacementView?: google_ads_googleads_v1_resources_managed_placement_view_pb.ManagedPlacementView.AsObject,
     mediaFile?: google_ads_googleads_v1_resources_media_file_pb.MediaFile.AsObject,
     mobileAppCategoryConstant?: google_ads_googleads_v1_resources_mobile_app_category_constant_pb.MobileAppCategoryConstant.AsObject,
     mobileDeviceConstant?: google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant.AsObject,
+    mutateJob?: google_ads_googleads_v1_resources_mutate_job_pb.MutateJob.AsObject,
     operatingSystemVersionConstant?: google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant.AsObject,
+    paidOrganicSearchTermView?: google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView.AsObject,
     parentalStatusView?: google_ads_googleads_v1_resources_parental_status_view_pb.ParentalStatusView.AsObject,
     productBiddingCategoryConstant?: google_ads_googleads_v1_resources_product_bidding_category_constant_pb.ProductBiddingCategoryConstant.AsObject,
     productGroupView?: google_ads_googleads_v1_resources_product_group_view_pb.ProductGroupView.AsObject,

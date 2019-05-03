@@ -2,6 +2,7 @@
 // file: google/ads/googleads/v1/services/recommendation_service.proto
 
 import * as jspb from "google-protobuf";
+import * as google_ads_googleads_v1_common_extensions_pb from "../../../../../google/ads/googleads/v1/common/extensions_pb";
 import * as google_ads_googleads_v1_enums_keyword_match_type_pb from "../../../../../google/ads/googleads/v1/enums/keyword_match_type_pb";
 import * as google_ads_googleads_v1_resources_ad_pb from "../../../../../google/ads/googleads/v1/resources/ad_pb";
 import * as google_ads_googleads_v1_resources_recommendation_pb from "../../../../../google/ads/googleads/v1/resources/recommendation_pb";
@@ -83,6 +84,21 @@ export class ApplyRecommendationOperation extends jspb.Message {
   getTargetCpaOptIn(): ApplyRecommendationOperation.TargetCpaOptInParameters | undefined;
   setTargetCpaOptIn(value?: ApplyRecommendationOperation.TargetCpaOptInParameters): void;
 
+  hasCalloutExtension(): boolean;
+  clearCalloutExtension(): void;
+  getCalloutExtension(): ApplyRecommendationOperation.CalloutExtensionParameters | undefined;
+  setCalloutExtension(value?: ApplyRecommendationOperation.CalloutExtensionParameters): void;
+
+  hasCallExtension(): boolean;
+  clearCallExtension(): void;
+  getCallExtension(): ApplyRecommendationOperation.CallExtensionParameters | undefined;
+  setCallExtension(value?: ApplyRecommendationOperation.CallExtensionParameters): void;
+
+  hasSitelinkExtension(): boolean;
+  clearSitelinkExtension(): void;
+  getSitelinkExtension(): ApplyRecommendationOperation.SitelinkExtensionParameters | undefined;
+  setSitelinkExtension(value?: ApplyRecommendationOperation.SitelinkExtensionParameters): void;
+
   hasMoveUnusedBudget(): boolean;
   clearMoveUnusedBudget(): void;
   getMoveUnusedBudget(): ApplyRecommendationOperation.MoveUnusedBudgetParameters | undefined;
@@ -106,6 +122,9 @@ export namespace ApplyRecommendationOperation {
     textAd?: ApplyRecommendationOperation.TextAdParameters.AsObject,
     keyword?: ApplyRecommendationOperation.KeywordParameters.AsObject,
     targetCpaOptIn?: ApplyRecommendationOperation.TargetCpaOptInParameters.AsObject,
+    calloutExtension?: ApplyRecommendationOperation.CalloutExtensionParameters.AsObject,
+    callExtension?: ApplyRecommendationOperation.CallExtensionParameters.AsObject,
+    sitelinkExtension?: ApplyRecommendationOperation.SitelinkExtensionParameters.AsObject,
     moveUnusedBudget?: ApplyRecommendationOperation.MoveUnusedBudgetParameters.AsObject,
   }
 
@@ -213,6 +232,72 @@ export namespace ApplyRecommendationOperation {
     }
   }
 
+  export class CalloutExtensionParameters extends jspb.Message {
+    clearCalloutExtensionsList(): void;
+    getCalloutExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem>;
+    setCalloutExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem>): void;
+    addCalloutExtensions(value?: google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalloutExtensionParameters.AsObject;
+    static toObject(includeInstance: boolean, msg: CalloutExtensionParameters): CalloutExtensionParameters.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalloutExtensionParameters, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalloutExtensionParameters;
+    static deserializeBinaryFromReader(message: CalloutExtensionParameters, reader: jspb.BinaryReader): CalloutExtensionParameters;
+  }
+
+  export namespace CalloutExtensionParameters {
+    export type AsObject = {
+      calloutExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.AsObject>,
+    }
+  }
+
+  export class CallExtensionParameters extends jspb.Message {
+    clearCallExtensionsList(): void;
+    getCallExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem>;
+    setCallExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem>): void;
+    addCallExtensions(value?: google_ads_googleads_v1_common_extensions_pb.CallFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.CallFeedItem;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallExtensionParameters.AsObject;
+    static toObject(includeInstance: boolean, msg: CallExtensionParameters): CallExtensionParameters.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallExtensionParameters, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallExtensionParameters;
+    static deserializeBinaryFromReader(message: CallExtensionParameters, reader: jspb.BinaryReader): CallExtensionParameters;
+  }
+
+  export namespace CallExtensionParameters {
+    export type AsObject = {
+      callExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem.AsObject>,
+    }
+  }
+
+  export class SitelinkExtensionParameters extends jspb.Message {
+    clearSitelinkExtensionsList(): void;
+    getSitelinkExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem>;
+    setSitelinkExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem>): void;
+    addSitelinkExtensions(value?: google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SitelinkExtensionParameters.AsObject;
+    static toObject(includeInstance: boolean, msg: SitelinkExtensionParameters): SitelinkExtensionParameters.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SitelinkExtensionParameters, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SitelinkExtensionParameters;
+    static deserializeBinaryFromReader(message: SitelinkExtensionParameters, reader: jspb.BinaryReader): SitelinkExtensionParameters;
+  }
+
+  export namespace SitelinkExtensionParameters {
+    export type AsObject = {
+      sitelinkExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.AsObject>,
+    }
+  }
+
   export class MoveUnusedBudgetParameters extends jspb.Message {
     hasBudgetMicrosToMove(): boolean;
     clearBudgetMicrosToMove(): void;
@@ -241,6 +326,9 @@ export namespace ApplyRecommendationOperation {
     TEXT_AD = 3,
     KEYWORD = 4,
     TARGET_CPA_OPT_IN = 5,
+    CALLOUT_EXTENSION = 6,
+    CALL_EXTENSION = 7,
+    SITELINK_EXTENSION = 8,
     MOVE_UNUSED_BUDGET = 9,
   }
 }

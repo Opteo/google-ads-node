@@ -81,6 +81,7 @@ var google_ads_googleads_v1_errors_language_code_error_pb = require('../../../..
 var google_ads_googleads_v1_errors_list_operation_error_pb = require('../../../../../google/ads/googleads/v1/errors/list_operation_error_pb.js');
 var google_ads_googleads_v1_errors_media_bundle_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_bundle_error_pb.js');
 var google_ads_googleads_v1_errors_media_file_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_file_error_pb.js');
+var google_ads_googleads_v1_errors_media_upload_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_upload_error_pb.js');
 var google_ads_googleads_v1_errors_multiplier_error_pb = require('../../../../../google/ads/googleads/v1/errors/multiplier_error_pb.js');
 var google_ads_googleads_v1_errors_mutate_error_pb = require('../../../../../google/ads/googleads/v1/errors/mutate_error_pb.js');
 var google_ads_googleads_v1_errors_mutate_job_error_pb = require('../../../../../google/ads/googleads/v1/errors/mutate_job_error_pb.js');
@@ -104,10 +105,12 @@ var google_ads_googleads_v1_errors_resource_count_limit_exceeded_error_pb = requ
 var google_ads_googleads_v1_errors_setting_error_pb = require('../../../../../google/ads/googleads/v1/errors/setting_error_pb.js');
 var google_ads_googleads_v1_errors_shared_criterion_error_pb = require('../../../../../google/ads/googleads/v1/errors/shared_criterion_error_pb.js');
 var google_ads_googleads_v1_errors_shared_set_error_pb = require('../../../../../google/ads/googleads/v1/errors/shared_set_error_pb.js');
+var google_ads_googleads_v1_errors_size_limit_error_pb = require('../../../../../google/ads/googleads/v1/errors/size_limit_error_pb.js');
 var google_ads_googleads_v1_errors_string_format_error_pb = require('../../../../../google/ads/googleads/v1/errors/string_format_error_pb.js');
 var google_ads_googleads_v1_errors_string_length_error_pb = require('../../../../../google/ads/googleads/v1/errors/string_length_error_pb.js');
 var google_ads_googleads_v1_errors_url_field_error_pb = require('../../../../../google/ads/googleads/v1/errors/url_field_error_pb.js');
 var google_ads_googleads_v1_errors_user_list_error_pb = require('../../../../../google/ads/googleads/v1/errors/user_list_error_pb.js');
+var google_ads_googleads_v1_errors_youtube_video_registration_error_pb = require('../../../../../google/ads/googleads/v1/errors/youtube_video_registration_error_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.errors.ErrorCode', null, global);
@@ -630,7 +633,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,107,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,59,60,61,62,63,64,65,115,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,83,84,87,88,91,92,93,94,96,97,100,101,102,103,104,105,108,112,114]];
+proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,107,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,116,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,117,59,60,61,62,63,64,65,115,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,83,84,87,88,91,92,93,94,96,97,100,101,102,103,104,105,108,112,114,118]];
 
 /**
  * @enum {number}
@@ -674,6 +677,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   IMAGE_ERROR: 40,
   LANGUAGE_CODE_ERROR: 110,
   MEDIA_BUNDLE_ERROR: 42,
+  MEDIA_UPLOAD_ERROR: 116,
   MEDIA_FILE_ERROR: 86,
   MULTIPLIER_ERROR: 44,
   NEW_RESOURCE_CREATION_ERROR: 45,
@@ -689,6 +693,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   OPERATION_ACCESS_DENIED_ERROR: 55,
   RESOURCE_ACCESS_DENIED_ERROR: 56,
   RESOURCE_COUNT_LIMIT_EXCEEDED_ERROR: 57,
+  YOUTUBE_VIDEO_REGISTRATION_ERROR: 117,
   AD_GROUP_BID_MODIFIER_ERROR: 59,
   CONTEXT_ERROR: 60,
   FIELD_ERROR: 61,
@@ -731,7 +736,8 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   POLICY_VIOLATION_ERROR: 105,
   MUTATE_JOB_ERROR: 108,
   PARTIAL_FAILURE_ERROR: 112,
-  POLICY_VALIDATION_PARAMETER_ERROR: 114
+  POLICY_VALIDATION_PARAMETER_ERROR: 114,
+  SIZE_LIMIT_ERROR: 118
 };
 
 /**
@@ -807,6 +813,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     imageError: jspb.Message.getFieldWithDefault(msg, 40, 0),
     languageCodeError: jspb.Message.getFieldWithDefault(msg, 110, 0),
     mediaBundleError: jspb.Message.getFieldWithDefault(msg, 42, 0),
+    mediaUploadError: jspb.Message.getFieldWithDefault(msg, 116, 0),
     mediaFileError: jspb.Message.getFieldWithDefault(msg, 86, 0),
     multiplierError: jspb.Message.getFieldWithDefault(msg, 44, 0),
     newResourceCreationError: jspb.Message.getFieldWithDefault(msg, 45, 0),
@@ -822,6 +829,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     operationAccessDeniedError: jspb.Message.getFieldWithDefault(msg, 55, 0),
     resourceAccessDeniedError: jspb.Message.getFieldWithDefault(msg, 56, 0),
     resourceCountLimitExceededError: jspb.Message.getFieldWithDefault(msg, 57, 0),
+    youtubeVideoRegistrationError: jspb.Message.getFieldWithDefault(msg, 117, 0),
     adGroupBidModifierError: jspb.Message.getFieldWithDefault(msg, 59, 0),
     contextError: jspb.Message.getFieldWithDefault(msg, 60, 0),
     fieldError: jspb.Message.getFieldWithDefault(msg, 61, 0),
@@ -864,7 +872,8 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     policyViolationError: jspb.Message.getFieldWithDefault(msg, 105, 0),
     mutateJobError: jspb.Message.getFieldWithDefault(msg, 108, 0),
     partialFailureError: jspb.Message.getFieldWithDefault(msg, 112, 0),
-    policyValidationParameterError: jspb.Message.getFieldWithDefault(msg, 114, 0)
+    policyValidationParameterError: jspb.Message.getFieldWithDefault(msg, 114, 0),
+    sizeLimitError: jspb.Message.getFieldWithDefault(msg, 118, 0)
   };
 
   if (includeInstance) {
@@ -1049,6 +1058,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
       var value = /** @type {!proto.google.ads.googleads.v1.errors.MediaBundleErrorEnum.MediaBundleError} */ (reader.readEnum());
       msg.setMediaBundleError(value);
       break;
+    case 116:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError} */ (reader.readEnum());
+      msg.setMediaUploadError(value);
+      break;
     case 86:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.MediaFileErrorEnum.MediaFileError} */ (reader.readEnum());
       msg.setMediaFileError(value);
@@ -1108,6 +1121,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
     case 57:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError} */ (reader.readEnum());
       msg.setResourceCountLimitExceededError(value);
+      break;
+    case 117:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError} */ (reader.readEnum());
+      msg.setYoutubeVideoRegistrationError(value);
       break;
     case 59:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError} */ (reader.readEnum());
@@ -1280,6 +1297,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
     case 114:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError} */ (reader.readEnum());
       msg.setPolicyValidationParameterError(value);
+      break;
+    case 118:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError} */ (reader.readEnum());
+      msg.setSizeLimitError(value);
       break;
     default:
       reader.skipField();
@@ -1569,6 +1590,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
       f
     );
   }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError} */ (jspb.Message.getField(message, 116));
+  if (f != null) {
+    writer.writeEnum(
+      116,
+      f
+    );
+  }
   f = /** @type {!proto.google.ads.googleads.v1.errors.MediaFileErrorEnum.MediaFileError} */ (jspb.Message.getField(message, 86));
   if (f != null) {
     writer.writeEnum(
@@ -1671,6 +1699,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
   if (f != null) {
     writer.writeEnum(
       57,
+      f
+    );
+  }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError} */ (jspb.Message.getField(message, 117));
+  if (f != null) {
+    writer.writeEnum(
+      117,
       f
     );
   }
@@ -1972,6 +2007,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
   if (f != null) {
     writer.writeEnum(
       114,
+      f
+    );
+  }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError} */ (jspb.Message.getField(message, 118));
+  if (f != null) {
+    writer.writeEnum(
+      118,
       f
     );
   }
@@ -3052,6 +3094,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasMediaBundleError = f
 
 
 /**
+ * optional MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;
+ * @return {!proto.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getMediaUploadError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError} */ (jspb.Message.getFieldWithDefault(this, 116, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setMediaUploadError = function(value) {
+  jspb.Message.setOneofField(this, 116, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearMediaUploadError = function() {
+  jspb.Message.setOneofField(this, 116, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasMediaUploadError = function() {
+  return jspb.Message.getField(this, 116) != null;
+};
+
+
+/**
  * optional MediaFileErrorEnum.MediaFileError media_file_error = 86;
  * @return {!proto.google.ads.googleads.v1.errors.MediaFileErrorEnum.MediaFileError}
  */
@@ -3483,6 +3554,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearResourceCountLimit
  */
 proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasResourceCountLimitExceededError = function() {
   return jspb.Message.getField(this, 57) != null;
+};
+
+
+/**
+ * optional YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;
+ * @return {!proto.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getYoutubeVideoRegistrationError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError} */ (jspb.Message.getFieldWithDefault(this, 117, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setYoutubeVideoRegistrationError = function(value) {
+  jspb.Message.setOneofField(this, 117, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearYoutubeVideoRegistrationError = function() {
+  jspb.Message.setOneofField(this, 117, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasYoutubeVideoRegistrationError = function() {
+  return jspb.Message.getField(this, 117) != null;
 };
 
 
@@ -4730,6 +4830,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearPolicyValidationPa
  */
 proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasPolicyValidationParameterError = function() {
   return jspb.Message.getField(this, 114) != null;
+};
+
+
+/**
+ * optional SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;
+ * @return {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getSizeLimitError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError} */ (jspb.Message.getFieldWithDefault(this, 118, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setSizeLimitError = function(value) {
+  jspb.Message.setOneofField(this, 118, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearSizeLimitError = function() {
+  jspb.Message.setOneofField(this, 118, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasSizeLimitError = function() {
+  return jspb.Message.getField(this, 118) != null;
 };
 
 

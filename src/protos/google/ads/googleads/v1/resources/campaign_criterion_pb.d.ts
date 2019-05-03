@@ -159,6 +159,11 @@ export class CampaignCriterion extends jspb.Message {
   getMobileDevice(): google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo | undefined;
   setMobileDevice(value?: google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo): void;
 
+  hasLocationGroup(): boolean;
+  clearLocationGroup(): void;
+  getLocationGroup(): google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo | undefined;
+  setLocationGroup(value?: google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo): void;
+
   getCriterionCase(): CampaignCriterion.CriterionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CampaignCriterion.AsObject;
@@ -203,6 +208,7 @@ export namespace CampaignCriterion {
     webpage?: google_ads_googleads_v1_common_criteria_pb.WebpageInfo.AsObject,
     operatingSystemVersion?: google_ads_googleads_v1_common_criteria_pb.OperatingSystemVersionInfo.AsObject,
     mobileDevice?: google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo.AsObject,
+    locationGroup?: google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo.AsObject,
   }
 
   export enum CriterionCase {
@@ -232,6 +238,7 @@ export namespace CampaignCriterion {
     WEBPAGE = 31,
     OPERATING_SYSTEM_VERSION = 32,
     MOBILE_DEVICE = 33,
+    LOCATION_GROUP = 34,
   }
 }
 

@@ -39,6 +39,11 @@ export class Asset extends jspb.Message {
   getImageAsset(): google_ads_googleads_v1_common_asset_types_pb.ImageAsset | undefined;
   setImageAsset(value?: google_ads_googleads_v1_common_asset_types_pb.ImageAsset): void;
 
+  hasTextAsset(): boolean;
+  clearTextAsset(): void;
+  getTextAsset(): google_ads_googleads_v1_common_asset_types_pb.TextAsset | undefined;
+  setTextAsset(value?: google_ads_googleads_v1_common_asset_types_pb.TextAsset): void;
+
   getAssetDataCase(): Asset.AssetDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Asset.AsObject;
@@ -59,6 +64,7 @@ export namespace Asset {
     youtubeVideoAsset?: google_ads_googleads_v1_common_asset_types_pb.YoutubeVideoAsset.AsObject,
     mediaBundleAsset?: google_ads_googleads_v1_common_asset_types_pb.MediaBundleAsset.AsObject,
     imageAsset?: google_ads_googleads_v1_common_asset_types_pb.ImageAsset.AsObject,
+    textAsset?: google_ads_googleads_v1_common_asset_types_pb.TextAsset.AsObject,
   }
 
   export enum AssetDataCase {
@@ -66,6 +72,7 @@ export namespace Asset {
     YOUTUBE_VIDEO_ASSET = 5,
     MEDIA_BUNDLE_ASSET = 6,
     IMAGE_ASSET = 7,
+    TEXT_ASSET = 8,
   }
 }
 

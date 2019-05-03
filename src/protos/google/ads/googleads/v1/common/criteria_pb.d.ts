@@ -14,6 +14,7 @@ import * as google_ads_googleads_v1_enums_interaction_type_pb from "../../../../
 import * as google_ads_googleads_v1_enums_keyword_match_type_pb from "../../../../../google/ads/googleads/v1/enums/keyword_match_type_pb";
 import * as google_ads_googleads_v1_enums_listing_custom_attribute_index_pb from "../../../../../google/ads/googleads/v1/enums/listing_custom_attribute_index_pb";
 import * as google_ads_googleads_v1_enums_listing_group_type_pb from "../../../../../google/ads/googleads/v1/enums/listing_group_type_pb";
+import * as google_ads_googleads_v1_enums_location_group_radius_units_pb from "../../../../../google/ads/googleads/v1/enums/location_group_radius_units_pb";
 import * as google_ads_googleads_v1_enums_minute_of_hour_pb from "../../../../../google/ads/googleads/v1/enums/minute_of_hour_pb";
 import * as google_ads_googleads_v1_enums_parental_status_type_pb from "../../../../../google/ads/googleads/v1/enums/parental_status_type_pb";
 import * as google_ads_googleads_v1_enums_preferred_content_type_pb from "../../../../../google/ads/googleads/v1/enums/preferred_content_type_pb";
@@ -104,6 +105,11 @@ export class MobileApplicationInfo extends jspb.Message {
   getAppId(): google_protobuf_wrappers_pb.StringValue | undefined;
   setAppId(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasName(): boolean;
+  clearName(): void;
+  getName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MobileApplicationInfo.AsObject;
   static toObject(includeInstance: boolean, msg: MobileApplicationInfo): MobileApplicationInfo.AsObject;
@@ -117,6 +123,7 @@ export class MobileApplicationInfo extends jspb.Message {
 export namespace MobileApplicationInfo {
   export type AsObject = {
     appId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    name?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
@@ -1394,6 +1401,44 @@ export class CustomIntentInfo extends jspb.Message {
 export namespace CustomIntentInfo {
   export type AsObject = {
     customIntent?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class LocationGroupInfo extends jspb.Message {
+  hasFeed(): boolean;
+  clearFeed(): void;
+  getFeed(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setFeed(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  clearGeoTargetConstantsList(): void;
+  getGeoTargetConstantsList(): Array<google_protobuf_wrappers_pb.StringValue>;
+  setGeoTargetConstantsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
+  addGeoTargetConstants(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
+  hasRadius(): boolean;
+  clearRadius(): void;
+  getRadius(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setRadius(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  getRadiusUnits(): google_ads_googleads_v1_enums_location_group_radius_units_pb.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits;
+  setRadiusUnits(value: google_ads_googleads_v1_enums_location_group_radius_units_pb.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocationGroupInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: LocationGroupInfo): LocationGroupInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocationGroupInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocationGroupInfo;
+  static deserializeBinaryFromReader(message: LocationGroupInfo, reader: jspb.BinaryReader): LocationGroupInfo;
+}
+
+export namespace LocationGroupInfo {
+  export type AsObject = {
+    feed?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetConstantsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    radius?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    radiusUnits: google_ads_googleads_v1_enums_location_group_radius_units_pb.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits,
   }
 }
 

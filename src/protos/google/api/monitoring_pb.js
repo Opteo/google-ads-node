@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.api.Monitoring', null, global);
 goog.exportSymbol('proto.google.api.Monitoring.MonitoringDestination', null, global);
 

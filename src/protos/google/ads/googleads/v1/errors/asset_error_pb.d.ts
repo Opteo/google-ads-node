@@ -26,6 +26,7 @@ export namespace AssetErrorEnum {
     DUPLICATE_ASSET = 3,
     DUPLICATE_ASSET_NAME = 4,
     ASSET_DATA_IS_MISSING = 5,
+    CANNOT_MODIFY_ASSET_NAME = 6,
   }
 }
 

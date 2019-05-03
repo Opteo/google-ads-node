@@ -2,6 +2,7 @@
 // file: google/ads/googleads/v1/resources/customer.proto
 
 import * as jspb from "google-protobuf";
+import * as google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb from "../../../../../google/ads/googleads/v1/enums/customer_pay_per_conversion_eligibility_failure_reason_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
@@ -74,6 +75,11 @@ export class Customer extends jspb.Message {
   getRemarketingSetting(): RemarketingSetting | undefined;
   setRemarketingSetting(value?: RemarketingSetting): void;
 
+  clearPayPerConversionEligibilityFailureReasonsList(): void;
+  getPayPerConversionEligibilityFailureReasonsList(): Array<google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>;
+  setPayPerConversionEligibilityFailureReasonsList(value: Array<google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>): void;
+  addPayPerConversionEligibilityFailureReasons(value: google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason, index?: number): google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Customer.AsObject;
   static toObject(includeInstance: boolean, msg: Customer): Customer.AsObject;
@@ -100,6 +106,7 @@ export namespace Customer {
     callReportingSetting?: CallReportingSetting.AsObject,
     conversionTrackingSetting?: ConversionTrackingSetting.AsObject,
     remarketingSetting?: RemarketingSetting.AsObject,
+    payPerConversionEligibilityFailureReasonsList: Array<google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>,
   }
 }
 

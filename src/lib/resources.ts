@@ -133,6 +133,7 @@ export interface VideoNonSkippableInStreamAdInfo {}
 export interface VideoTrueViewInStreamAdInfo {
   action_button_label?: string;
   action_headline?: string;
+  companion_banner?: string;
 }
 
 /* .google.ads.googleads.v1.common.VideoOutstreamAdInfo */
@@ -187,6 +188,14 @@ export interface AppAdInfo {
   html_5_media_bundles?: AdMediaBundleAsset[];
 }
 
+/* .google.ads.googleads.v1.common.AppEngagementAdInfo */
+export interface AppEngagementAdInfo {
+  headlines?: AdTextAsset[];
+  descriptions?: AdTextAsset[];
+  images?: AdImageAsset[];
+  videos?: AdVideoAsset[];
+}
+
 /* .google.ads.googleads.v1.common.LegacyAppInstallAdInfo */
 export interface LegacyAppInstallAdInfo {
   app_id?: string;
@@ -216,6 +225,12 @@ export interface ResponsiveDisplayAdInfo {
   format_setting?: DisplayAdFormatSetting;
 }
 
+/* .google.ads.googleads.v1.common.DisplayUploadAdInfo */
+export interface DisplayUploadAdInfo {
+  display_upload_product_type?: DisplayUploadProductType;
+  media_bundle?: AdMediaBundleAsset;
+}
+
 /* .google.ads.googleads.v1.common.YoutubeVideoAsset */
 export interface YoutubeVideoAsset {
   youtube_video_id?: string;
@@ -239,6 +254,11 @@ export interface ImageDimension {
   height_pixels?: number;
   width_pixels?: number;
   url?: string;
+}
+
+/* .google.ads.googleads.v1.common.TextAsset */
+export interface TextAsset {
+  text?: string;
 }
 
 /* .google.ads.googleads.v1.common.Commission */
@@ -351,6 +371,7 @@ export interface MobileAppCategoryInfo {
 /* .google.ads.googleads.v1.common.MobileApplicationInfo */
 export interface MobileApplicationInfo {
   app_id?: string;
+  name?: string;
 }
 
 /* .google.ads.googleads.v1.common.LocationInfo */
@@ -635,6 +656,14 @@ export interface CustomIntentInfo {
   custom_intent?: string;
 }
 
+/* .google.ads.googleads.v1.common.LocationGroupInfo */
+export interface LocationGroupInfo {
+  feed?: string;
+  geo_target_constants?: string[];
+  radius?: number;
+  radius_units?: LocationGroupRadiusUnits;
+}
+
 /* .google.ads.googleads.v1.common.CriterionCategoryAvailability */
 export interface CriterionCategoryAvailability {
   channel?: CriterionCategoryChannelAvailability;
@@ -698,6 +727,32 @@ export interface CallFeedItem {
 /* .google.ads.googleads.v1.common.CalloutFeedItem */
 export interface CalloutFeedItem {
   callout_text?: string;
+}
+
+/* .google.ads.googleads.v1.common.LocationFeedItem */
+export interface LocationFeedItem {
+  business_name?: string;
+  address_line_1?: string;
+  address_line_2?: string;
+  city?: string;
+  province?: string;
+  postal_code?: string;
+  country_code?: string;
+  phone_number?: string;
+}
+
+/* .google.ads.googleads.v1.common.AffiliateLocationFeedItem */
+export interface AffiliateLocationFeedItem {
+  business_name?: string;
+  address_line_1?: string;
+  address_line_2?: string;
+  city?: string;
+  province?: string;
+  postal_code?: string;
+  country_code?: string;
+  phone_number?: string;
+  chain_id?: number;
+  chain_name?: string;
 }
 
 /* .google.ads.googleads.v1.common.TextMessageFeedItem */
@@ -770,6 +825,12 @@ export interface SitelinkFeedItem {
 export interface Money {
   currency_code?: string;
   amount_micros?: number;
+}
+
+/* .google.ads.googleads.v1.common.FinalAppUrl */
+export interface FinalAppUrl {
+  os_type?: AppUrlOperatingSystemType;
+  url?: string;
 }
 
 /* .google.ads.googleads.v1.common.FrequencyCapEntry */
@@ -846,7 +907,14 @@ export interface Metrics {
   all_conversions_value?: number;
   all_conversions?: number;
   all_conversions_value_per_cost?: number;
+  all_conversions_from_click_to_call?: number;
+  all_conversions_from_directions?: number;
   all_conversions_from_interactions_value_per_interaction?: number;
+  all_conversions_from_menu?: number;
+  all_conversions_from_order?: number;
+  all_conversions_from_other_engagement?: number;
+  all_conversions_from_store_visit?: number;
+  all_conversions_from_store_website?: number;
   average_cost?: number;
   average_cpc?: number;
   average_cpe?: number;
@@ -860,6 +928,9 @@ export interface Metrics {
   benchmark_ctr?: number;
   bounce_rate?: number;
   clicks?: number;
+  combined_clicks?: number;
+  combined_clicks_per_query?: number;
+  combined_queries?: number;
   content_budget_lost_impression_share?: number;
   content_impression_share?: number;
   conversion_last_received_request_date_time?: string;
@@ -892,12 +963,19 @@ export interface Metrics {
   gmail_saves?: number;
   gmail_secondary_clicks?: number;
   impression_reach?: number;
+  impressions_from_store_reach?: number;
   impressions?: number;
   interaction_rate?: number;
   interactions?: number;
   interaction_event_types?: InteractionEventType[];
   invalid_click_rate?: number;
   invalid_clicks?: number;
+  mobile_friendly_clicks_percentage?: number;
+  organic_clicks?: number;
+  organic_clicks_per_query?: number;
+  organic_impressions?: number;
+  organic_impressions_per_query?: number;
+  organic_queries?: number;
   percent_new_visitors?: number;
   phone_calls?: number;
   phone_impressions?: number;
@@ -914,7 +992,9 @@ export interface Metrics {
   search_rank_lost_impression_share?: number;
   search_rank_lost_top_impression_share?: number;
   search_top_impression_share?: number;
+  speed_score?: number;
   top_impression_percentage?: number;
+  valid_accelerated_mobile_pages_clicks_percentage?: number;
   value_per_all_conversions?: number;
   value_per_conversion?: number;
   value_per_current_model_attributed_conversion?: number;
@@ -955,6 +1035,13 @@ export type PolicyTopicEvidence =
   | {
       destination_mismatch?: {
         url_types?: PolicyTopicEvidenceDestinationMismatchUrlType[];
+      };
+    }
+  | {
+      destination_not_working?: {
+        expanded_url?: string;
+        device?: PolicyTopicEvidenceDestinationNotWorkingDevice;
+        last_checked_date_time?: string;
       };
     };
 export type PolicyTopicConstraint =
@@ -1000,8 +1087,13 @@ export interface Segments {
   external_conversion_source?: ExternalConversionSource;
   geo_target_airport?: string;
   geo_target_city?: string;
+  geo_target_county?: string;
+  geo_target_district?: string;
   geo_target_metro?: string;
+  geo_target_most_specific_location?: string;
+  geo_target_postal_code?: string;
   geo_target_region?: string;
+  geo_target_state?: string;
   hotel_booking_window_days?: number;
   hotel_center_id?: number;
   hotel_check_in_date?: string;
@@ -1046,6 +1138,7 @@ export interface Segments {
   product_type_l_4?: string;
   product_type_l_5?: string;
   quarter?: string;
+  search_engine_results_page_type?: SearchEngineResultsPageType;
   search_term_match_type?: SearchTermMatchType;
   slot?: Slot;
   webpage?: string;
@@ -1057,6 +1150,54 @@ export interface Segments {
 export interface Keyword {
   ad_group_criterion?: string;
   info?: KeywordInfo;
+}
+
+/* .google.ads.googleads.v1.common.BidModifierSimulationPointList */
+export interface BidModifierSimulationPointList {
+  points?: BidModifierSimulationPoint[];
+}
+
+/* .google.ads.googleads.v1.common.CpcBidSimulationPointList */
+export interface CpcBidSimulationPointList {
+  points?: CpcBidSimulationPoint[];
+}
+
+/* .google.ads.googleads.v1.common.TargetCpaSimulationPointList */
+export interface TargetCpaSimulationPointList {
+  points?: TargetCpaSimulationPoint[];
+}
+
+/* .google.ads.googleads.v1.common.BidModifierSimulationPoint */
+export interface BidModifierSimulationPoint {
+  bid_modifier?: number;
+  biddable_conversions?: number;
+  biddable_conversions_value?: number;
+  clicks?: number;
+  cost_micros?: number;
+  impressions?: number;
+  top_slot_impressions?: number;
+}
+
+/* .google.ads.googleads.v1.common.CpcBidSimulationPoint */
+export interface CpcBidSimulationPoint {
+  cpc_bid_micros?: number;
+  biddable_conversions?: number;
+  biddable_conversions_value?: number;
+  clicks?: number;
+  cost_micros?: number;
+  impressions?: number;
+  top_slot_impressions?: number;
+}
+
+/* .google.ads.googleads.v1.common.TargetCpaSimulationPoint */
+export interface TargetCpaSimulationPoint {
+  target_cpa_micros?: number;
+  biddable_conversions?: number;
+  biddable_conversions_value?: number;
+  clicks?: number;
+  cost_micros?: number;
+  impressions?: number;
+  top_slot_impressions?: number;
 }
 
 /* .google.ads.googleads.v1.common.TagSnippet */
@@ -1273,6 +1414,7 @@ export interface AccountBudgetProposal {
 export interface Ad {
   id?: number;
   final_urls?: string[];
+  final_app_urls?: FinalAppUrl[];
   final_mobile_urls?: string[];
   tracking_url_template?: string;
   url_custom_parameters?: CustomParameter[];
@@ -1298,6 +1440,8 @@ export interface Ad {
   app_ad?: AppAdInfo;
   legacy_app_install_ad?: LegacyAppInstallAdInfo;
   responsive_display_ad?: ResponsiveDisplayAdInfo;
+  display_upload_ad?: DisplayUploadAdInfo;
+  app_engagement_ad?: AppEngagementAdInfo;
 }
 
 /* .google.ads.googleads.v1.resources.AdGroup */
@@ -1451,6 +1595,18 @@ export interface AdGroupCriterionLabel {
   label?: string;
 }
 
+/* .google.ads.googleads.v1.resources.AdGroupCriterionSimulation */
+export interface AdGroupCriterionSimulation {
+  resource_name?: string;
+  ad_group_id?: number;
+  criterion_id?: number;
+  type?: SimulationType;
+  modification_method?: SimulationModificationMethod;
+  start_date?: string;
+  end_date?: string;
+  cpc_bid_point_list?: CpcBidSimulationPointList;
+}
+
 /* .google.ads.googleads.v1.resources.AdGroupExtensionSetting */
 export interface AdGroupExtensionSetting {
   resource_name?: string;
@@ -1475,6 +1631,18 @@ export interface AdGroupLabel {
   resource_name?: string;
   ad_group?: string;
   label?: string;
+}
+
+/* .google.ads.googleads.v1.resources.AdGroupSimulation */
+export interface AdGroupSimulation {
+  resource_name?: string;
+  ad_group_id?: number;
+  type?: SimulationType;
+  modification_method?: SimulationModificationMethod;
+  start_date?: string;
+  end_date?: string;
+  cpc_bid_point_list?: CpcBidSimulationPointList;
+  target_cpa_point_list?: TargetCpaSimulationPointList;
 }
 
 /* .google.ads.googleads.v1.resources.AdParameter */
@@ -1504,6 +1672,7 @@ export interface Asset {
   youtube_video_asset?: YoutubeVideoAsset;
   media_bundle_asset?: MediaBundleAsset;
   image_asset?: ImageAsset;
+  text_asset?: TextAsset;
 }
 
 /* .google.ads.googleads.v1.resources.BiddingStrategy */
@@ -1559,26 +1728,6 @@ export interface HotelSettingInfo {
   hotel_center_id?: number;
 }
 
-/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
-export interface ShoppingSetting {
-  merchant_id?: number;
-  sales_country?: string;
-  campaign_priority?: number;
-  enable_local?: boolean;
-}
-
-/* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
-export interface GeoTargetTypeSetting {
-  positive_geo_target_type?: PositiveGeoTargetType;
-  negative_geo_target_type?: NegativeGeoTargetType;
-}
-
-/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
-export interface VanityPharma {
-  vanity_pharma_display_url_mode?: VanityPharmaDisplayUrlMode;
-  vanity_pharma_text?: VanityPharmaText;
-}
-
 /* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
 export interface DynamicSearchAdsSetting {
   domain_name?: string;
@@ -1592,6 +1741,25 @@ export interface TrackingSetting {
   tracking_url?: string;
 }
 
+/* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
+export interface GeoTargetTypeSetting {
+  positive_geo_target_type?: PositiveGeoTargetType;
+  negative_geo_target_type?: NegativeGeoTargetType;
+}
+
+/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
+export interface SelectiveOptimization {
+  conversion_actions?: string[];
+}
+
+/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
+export interface ShoppingSetting {
+  merchant_id?: number;
+  sales_country?: string;
+  campaign_priority?: number;
+  enable_local?: boolean;
+}
+
 /* .google.ads.googleads.v1.resources.Campaign.AppCampaignSetting */
 export interface AppCampaignSetting {
   bidding_strategy_goal_type?: AppCampaignBiddingStrategyGoalType;
@@ -1599,9 +1767,10 @@ export interface AppCampaignSetting {
   app_store?: AppCampaignAppStore;
 }
 
-/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
-export interface SelectiveOptimization {
-  conversion_actions?: string[];
+/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
+export interface VanityPharma {
+  vanity_pharma_display_url_mode?: VanityPharmaDisplayUrlMode;
+  vanity_pharma_text?: VanityPharmaText;
 }
 
 /* .google.ads.googleads.v1.resources.Campaign */
@@ -1624,6 +1793,8 @@ export interface Campaign {
   targeting_setting?: TargetingSetting;
   geo_target_type_setting?: GeoTargetTypeSetting;
   app_campaign_setting?: AppCampaignSetting;
+  experiment_type?: CampaignExperimentType;
+  base_campaign?: string;
   campaign_budget?: string;
   bidding_strategy_type?: BiddingStrategyType;
   start_date?: string;
@@ -1718,6 +1889,19 @@ export interface CampaignCriterion {
   webpage?: WebpageInfo;
   operating_system_version?: OperatingSystemVersionInfo;
   mobile_device?: MobileDeviceInfo;
+  location_group?: LocationGroupInfo;
+}
+
+/* .google.ads.googleads.v1.resources.CampaignCriterionSimulation */
+export interface CampaignCriterionSimulation {
+  resource_name?: string;
+  campaign_id?: number;
+  criterion_id?: number;
+  type?: SimulationType;
+  modification_method?: SimulationModificationMethod;
+  start_date?: string;
+  end_date?: string;
+  bid_modifier_point_list?: BidModifierSimulationPointList;
 }
 
 /* .google.ads.googleads.v1.resources.CampaignExtensionSetting */
@@ -1862,6 +2046,7 @@ export interface Customer {
     cross_account_conversion_tracking_id?: number;
   };
   remarketing_setting?: { google_global_site_tag?: string };
+  pay_per_conversion_eligibility_failure_reasons?: CustomerPayPerConversionEligibilityFailureReason[];
 }
 
 /* .google.ads.googleads.v1.resources.CallReportingSetting */
@@ -1981,12 +2166,20 @@ export interface DynamicSearchAdsSearchTermView {
   page_url?: string;
 }
 
+/* .google.ads.googleads.v1.resources.ExpandedLandingPageView */
+export interface ExpandedLandingPageView {
+  resource_name?: string;
+  expanded_final_url?: string;
+}
+
 /* .google.ads.googleads.v1.resources.ExtensionFeedItem */
 export interface ExtensionFeedItem {
   resource_name?: string;
   extension_type?: ExtensionType;
   start_date_time?: string;
   end_date_time?: string;
+  ad_schedules?: AdScheduleInfo[];
+  device?: FeedItemTargetDevice;
   status?: FeedItemStatus;
   sitelink_feed_item?: SitelinkFeedItem;
   structured_snippet_feed_item?: StructuredSnippetFeedItem;
@@ -1996,6 +2189,8 @@ export interface ExtensionFeedItem {
   text_message_feed_item?: TextMessageFeedItem;
   price_feed_item?: PriceFeedItem;
   promotion_feed_item?: PromotionFeedItem;
+  location_feed_item?: LocationFeedItem;
+  affiliate_location_feed_item?: AffiliateLocationFeedItem;
 }
 
 /* .google.ads.googleads.v1.resources.Feed.PlacesLocationFeedData.OAuthInfo */
@@ -2340,6 +2535,12 @@ export interface KeywordView {
 /* .google.protobuf.FieldDescriptorProto.Label */
 export interface Label {}
 
+/* .google.ads.googleads.v1.resources.LandingPageView */
+export interface LandingPageView {
+  resource_name?: string;
+  unexpanded_final_url?: string;
+}
+
 /* .google.ads.googleads.v1.resources.LanguageConstant */
 export interface LanguageConstant {
   resource_name?: string;
@@ -2443,6 +2644,7 @@ export interface MutateJob {
   next_add_sequence_token?: string;
   metadata?: MutateJobMetadata;
   status?: MutateJobStatus;
+  long_running_operation?: string;
 }
 
 /* .google.ads.googleads.v1.resources.OperatingSystemVersionConstant */
@@ -2453,6 +2655,12 @@ export interface OperatingSystemVersionConstant {
   os_major_version?: number;
   os_minor_version?: number;
   operator_type?: OperatingSystemVersionOperatorType;
+}
+
+/* .google.ads.googleads.v1.resources.PaidOrganicSearchTermView */
+export interface PaidOrganicSearchTermView {
+  resource_name?: string;
+  search_term?: string;
 }
 
 /* .google.ads.googleads.v1.resources.ParentalStatusView */
@@ -2533,6 +2741,13 @@ export interface KeywordRecommendation {
   recommended_cpc_bid_micros?: number;
 }
 
+/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
+export interface TextAdRecommendation {
+  ad?: Ad;
+  creation_date?: string;
+  auto_apply_date?: string;
+}
+
 /* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
 export interface TargetCpaOptInRecommendationOption {
   goal?: TargetCpaOptInRecommendationGoal;
@@ -2547,17 +2762,10 @@ export interface TargetCpaOptInRecommendation {
   recommended_target_cpa_micros?: number;
 }
 
-/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
-export interface MoveUnusedBudgetRecommendation {
-  excess_campaign_budget?: string;
-  budget_recommendation?: CampaignBudgetRecommendation;
-}
-
-/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
-export interface TextAdRecommendation {
-  ad?: Ad;
-  creation_date?: string;
-  auto_apply_date?: string;
+/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
+export interface KeywordMatchTypeRecommendation {
+  keyword?: KeywordInfo;
+  recommended_match_type?: KeywordMatchType;
 }
 
 /* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
@@ -2568,6 +2776,14 @@ export interface MaximizeConversionsOptInRecommendation {
 /* .google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation */
 export interface EnhancedCpcOptInRecommendation {}
 
+/* .google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation */
+export interface CallExtensionRecommendation {
+  recommended_extensions?: CallFeedItem[];
+}
+
+/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
+export interface SearchPartnersOptInRecommendation {}
+
 /* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
 export interface MaximizeClicksOptInRecommendation {
   recommended_budget_amount_micros?: number;
@@ -2576,13 +2792,20 @@ export interface MaximizeClicksOptInRecommendation {
 /* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
 export interface OptimizeAdRotationRecommendation {}
 
-/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
-export interface SearchPartnersOptInRecommendation {}
+/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
+export interface MoveUnusedBudgetRecommendation {
+  excess_campaign_budget?: string;
+  budget_recommendation?: CampaignBudgetRecommendation;
+}
 
-/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
-export interface KeywordMatchTypeRecommendation {
-  keyword?: KeywordInfo;
-  recommended_match_type?: KeywordMatchType;
+/* .google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation */
+export interface CalloutExtensionRecommendation {
+  recommended_extensions?: CalloutFeedItem[];
+}
+
+/* .google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation */
+export interface SitelinkExtensionRecommendation {
+  recommended_extensions?: SitelinkFeedItem[];
 }
 
 /* .google.ads.googleads.v1.resources.Recommendation */
@@ -2603,6 +2826,9 @@ export interface Recommendation {
   search_partners_opt_in_recommendation?: SearchPartnersOptInRecommendation;
   maximize_clicks_opt_in_recommendation?: MaximizeClicksOptInRecommendation;
   optimize_ad_rotation_recommendation?: OptimizeAdRotationRecommendation;
+  callout_extension_recommendation?: CalloutExtensionRecommendation;
+  sitelink_extension_recommendation?: SitelinkExtensionRecommendation;
+  call_extension_recommendation?: CallExtensionRecommendation;
   keyword_match_type_recommendation?: KeywordMatchTypeRecommendation;
   move_unused_budget_recommendation?: MoveUnusedBudgetRecommendation;
 }
@@ -2975,6 +3201,14 @@ export interface MutateAdGroupCriterionResult {
   resource_name?: string;
 }
 
+/* .google.ads.googleads.v1.services.AdGroupCriterionSimulationService */
+export interface AdGroupCriterionSimulationService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupCriterionSimulationRequest */
+export interface GetAdGroupCriterionSimulationRequest {
+  resource_name?: string;
+}
+
 /* .google.ads.googleads.v1.services.AdGroupExtensionSettingService */
 export interface AdGroupExtensionSettingService {}
 
@@ -3141,6 +3375,14 @@ export interface MutateAdGroupsResponse {
 
 /* .google.ads.googleads.v1.services.MutateAdGroupResult */
 export interface MutateAdGroupResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.AdGroupSimulationService */
+export interface AdGroupSimulationService {}
+
+/* .google.ads.googleads.v1.services.GetAdGroupSimulationRequest */
+export interface GetAdGroupSimulationRequest {
   resource_name?: string;
 }
 
@@ -3444,6 +3686,14 @@ export interface MutateCampaignCriteriaResponse {
 
 /* .google.ads.googleads.v1.services.MutateCampaignCriterionResult */
 export interface MutateCampaignCriterionResult {
+  resource_name?: string;
+}
+
+/* .google.ads.googleads.v1.services.CampaignCriterionSimulationService */
+export interface CampaignCriterionSimulationService {}
+
+/* .google.ads.googleads.v1.services.GetCampaignCriterionSimulationRequest */
+export interface GetCampaignCriterionSimulationRequest {
   resource_name?: string;
 }
 
@@ -4250,6 +4500,14 @@ export interface GetDynamicSearchAdsSearchTermViewRequest {
   resource_name?: string;
 }
 
+/* .google.ads.googleads.v1.services.ExpandedLandingPageViewService */
+export interface ExpandedLandingPageViewService {}
+
+/* .google.ads.googleads.v1.services.GetExpandedLandingPageViewRequest */
+export interface GetExpandedLandingPageViewRequest {
+  resource_name?: string;
+}
+
 /* .google.ads.googleads.v1.services.ExtensionFeedItemService */
 export interface ExtensionFeedItemService {}
 
@@ -4559,9 +4817,12 @@ export interface SearchGoogleAdsResponse {
     ad_group_bid_modifier?: AdGroupBidModifier;
     ad_group_criterion?: AdGroupCriterion;
     ad_group_criterion_label?: AdGroupCriterionLabel;
+    ad_group_criterion_simulation?: AdGroupCriterionSimulation;
     ad_group_extension_setting?: AdGroupExtensionSetting;
     ad_group_feed?: AdGroupFeed;
     ad_group_label?: AdGroupLabel;
+    ad_group_simulation?: AdGroupSimulation;
+    ad_parameter?: AdParameter;
     age_range_view?: AgeRangeView;
     ad_schedule_view?: AdScheduleView;
     domain_category?: DomainCategory;
@@ -4573,6 +4834,7 @@ export interface SearchGoogleAdsResponse {
     campaign_audience_view?: CampaignAudienceView;
     campaign_bid_modifier?: CampaignBidModifier;
     campaign_criterion?: CampaignCriterion;
+    campaign_criterion_simulation?: CampaignCriterionSimulation;
     campaign_extension_setting?: CampaignExtensionSetting;
     campaign_feed?: CampaignFeed;
     campaign_label?: CampaignLabel;
@@ -4593,6 +4855,7 @@ export interface SearchGoogleAdsResponse {
     detail_placement_view?: DetailPlacementView;
     display_keyword_view?: DisplayKeywordView;
     dynamic_search_ads_search_term_view?: DynamicSearchAdsSearchTermView;
+    expanded_landing_page_view?: ExpandedLandingPageView;
     extension_feed_item?: ExtensionFeedItem;
     feed?: Feed;
     feed_item?: FeedItem;
@@ -4612,13 +4875,16 @@ export interface SearchGoogleAdsResponse {
     keyword_plan_ad_group?: KeywordPlanAdGroup;
     keyword_plan_keyword?: KeywordPlanKeyword;
     label?: Label;
+    landing_page_view?: LandingPageView;
     language_constant?: LanguageConstant;
     location_view?: LocationView;
     managed_placement_view?: ManagedPlacementView;
     media_file?: MediaFile;
     mobile_app_category_constant?: MobileAppCategoryConstant;
     mobile_device_constant?: MobileDeviceConstant;
+    mutate_job?: MutateJob;
     operating_system_version_constant?: OperatingSystemVersionConstant;
+    paid_organic_search_term_view?: PaidOrganicSearchTermView;
     parental_status_view?: ParentalStatusView;
     product_bidding_category_constant?: ProductBiddingCategoryConstant;
     product_group_view?: ProductGroupView;
@@ -4652,9 +4918,12 @@ export interface GoogleAdsRow {
   ad_group_bid_modifier?: AdGroupBidModifier;
   ad_group_criterion?: AdGroupCriterion;
   ad_group_criterion_label?: AdGroupCriterionLabel;
+  ad_group_criterion_simulation?: AdGroupCriterionSimulation;
   ad_group_extension_setting?: AdGroupExtensionSetting;
   ad_group_feed?: AdGroupFeed;
   ad_group_label?: AdGroupLabel;
+  ad_group_simulation?: AdGroupSimulation;
+  ad_parameter?: AdParameter;
   age_range_view?: AgeRangeView;
   ad_schedule_view?: AdScheduleView;
   domain_category?: DomainCategory;
@@ -4666,6 +4935,7 @@ export interface GoogleAdsRow {
   campaign_audience_view?: CampaignAudienceView;
   campaign_bid_modifier?: CampaignBidModifier;
   campaign_criterion?: CampaignCriterion;
+  campaign_criterion_simulation?: CampaignCriterionSimulation;
   campaign_extension_setting?: CampaignExtensionSetting;
   campaign_feed?: CampaignFeed;
   campaign_label?: CampaignLabel;
@@ -4686,6 +4956,7 @@ export interface GoogleAdsRow {
   detail_placement_view?: DetailPlacementView;
   display_keyword_view?: DisplayKeywordView;
   dynamic_search_ads_search_term_view?: DynamicSearchAdsSearchTermView;
+  expanded_landing_page_view?: ExpandedLandingPageView;
   extension_feed_item?: ExtensionFeedItem;
   feed?: Feed;
   feed_item?: FeedItem;
@@ -4705,13 +4976,16 @@ export interface GoogleAdsRow {
   keyword_plan_ad_group?: KeywordPlanAdGroup;
   keyword_plan_keyword?: KeywordPlanKeyword;
   label?: Label;
+  landing_page_view?: LandingPageView;
   language_constant?: LanguageConstant;
   location_view?: LocationView;
   managed_placement_view?: ManagedPlacementView;
   media_file?: MediaFile;
   mobile_app_category_constant?: MobileAppCategoryConstant;
   mobile_device_constant?: MobileDeviceConstant;
+  mutate_job?: MutateJob;
   operating_system_version_constant?: OperatingSystemVersionConstant;
+  paid_organic_search_term_view?: PaidOrganicSearchTermView;
   parental_status_view?: ParentalStatusView;
   product_bidding_category_constant?: ProductBiddingCategoryConstant;
   product_group_view?: ProductGroupView;
@@ -5387,6 +5661,14 @@ export interface MutateLabelResult {
   resource_name?: string;
 }
 
+/* .google.ads.googleads.v1.services.LandingPageViewService */
+export interface LandingPageViewService {}
+
+/* .google.ads.googleads.v1.services.GetLandingPageViewRequest */
+export interface GetLandingPageViewRequest {
+  resource_name?: string;
+}
+
 /* .google.ads.googleads.v1.services.LanguageConstantService */
 export interface LanguageConstantService {}
 
@@ -5584,6 +5866,14 @@ export interface GetOperatingSystemVersionConstantRequest {
   resource_name?: string;
 }
 
+/* .google.ads.googleads.v1.services.PaidOrganicSearchTermViewService */
+export interface PaidOrganicSearchTermViewService {}
+
+/* .google.ads.googleads.v1.services.GetPaidOrganicSearchTermViewRequest */
+export interface GetPaidOrganicSearchTermViewRequest {
+  resource_name?: string;
+}
+
 /* .google.ads.googleads.v1.services.ParentalStatusViewService */
 export interface ParentalStatusViewService {}
 
@@ -5645,6 +5935,9 @@ export interface ApplyRecommendationRequest {
       target_cpa_micros?: number;
       new_campaign_budget_amount_micros?: number;
     };
+    callout_extension?: { callout_extensions?: CalloutFeedItem[] };
+    call_extension?: { call_extensions?: CallFeedItem[] };
+    sitelink_extension?: { sitelink_extensions?: SitelinkFeedItem[] };
     move_unused_budget?: { budget_micros_to_move?: number };
   }[];
   partial_failure?: boolean;
@@ -5673,6 +5966,21 @@ export interface TargetCpaOptInParameters {
   new_campaign_budget_amount_micros?: number;
 }
 
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CalloutExtensionParameters */
+export interface CalloutExtensionParameters {
+  callout_extensions?: CalloutFeedItem[];
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CallExtensionParameters */
+export interface CallExtensionParameters {
+  call_extensions?: CallFeedItem[];
+}
+
+/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters */
+export interface SitelinkExtensionParameters {
+  sitelink_extensions?: SitelinkFeedItem[];
+}
+
 /* .google.ads.googleads.v1.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters */
 export interface MoveUnusedBudgetParameters {
   budget_micros_to_move?: number;
@@ -5685,6 +5993,9 @@ export interface ApplyRecommendationOperation {
   text_ad?: TextAdParameters;
   keyword?: KeywordParameters;
   target_cpa_opt_in?: TargetCpaOptInParameters;
+  callout_extension?: CalloutExtensionParameters;
+  call_extension?: CallExtensionParameters;
+  sitelink_extension?: SitelinkExtensionParameters;
   move_unused_budget?: MoveUnusedBudgetParameters;
 }
 
@@ -5959,7 +6270,14 @@ export type MetricFields =
   | "all_conversions_value"
   | "all_conversions"
   | "all_conversions_value_per_cost"
+  | "all_conversions_from_click_to_call"
+  | "all_conversions_from_directions"
   | "all_conversions_from_interactions_value_per_interaction"
+  | "all_conversions_from_menu"
+  | "all_conversions_from_order"
+  | "all_conversions_from_other_engagement"
+  | "all_conversions_from_store_visit"
+  | "all_conversions_from_store_website"
   | "average_cost"
   | "average_cpc"
   | "average_cpe"
@@ -5973,6 +6291,9 @@ export type MetricFields =
   | "benchmark_ctr"
   | "bounce_rate"
   | "clicks"
+  | "combined_clicks"
+  | "combined_clicks_per_query"
+  | "combined_queries"
   | "content_budget_lost_impression_share"
   | "content_impression_share"
   | "conversion_last_received_request_date_time"
@@ -6005,12 +6326,19 @@ export type MetricFields =
   | "gmail_saves"
   | "gmail_secondary_clicks"
   | "impression_reach"
+  | "impressions_from_store_reach"
   | "impressions"
   | "interaction_rate"
   | "interactions"
   | "interaction_event_types"
   | "invalid_click_rate"
   | "invalid_clicks"
+  | "mobile_friendly_clicks_percentage"
+  | "organic_clicks"
+  | "organic_clicks_per_query"
+  | "organic_impressions"
+  | "organic_impressions_per_query"
+  | "organic_queries"
   | "percent_new_visitors"
   | "phone_calls"
   | "phone_impressions"
@@ -6027,7 +6355,9 @@ export type MetricFields =
   | "search_rank_lost_impression_share"
   | "search_rank_lost_top_impression_share"
   | "search_top_impression_share"
+  | "speed_score"
   | "top_impression_percentage"
+  | "valid_accelerated_mobile_pages_clicks_percentage"
   | "value_per_all_conversions"
   | "value_per_conversion"
   | "value_per_current_model_attributed_conversion"
@@ -6045,6 +6375,7 @@ import {
   MimeType,
   DisplayAdFormatSetting,
   LegacyAppInstallAdAppStore,
+  DisplayUploadProductType,
   PageOnePromotedStrategyGoal,
   TargetImpressionShareLocation,
   KeywordMatchType,
@@ -6070,6 +6401,7 @@ import {
   WebpageConditionOperand,
   WebpageConditionOperator,
   AppPaymentModelType,
+  LocationGroupRadiusUnits,
   CriterionCategoryChannelAvailabilityMode,
   AdvertisingChannelType,
   AdvertisingChannelSubType,
@@ -6080,6 +6412,7 @@ import {
   PriceExtensionPriceUnit,
   PromotionExtensionDiscountModifier,
   PromotionExtensionOccasion,
+  AppUrlOperatingSystemType,
   FrequencyCapLevel,
   FrequencyCapEventType,
   FrequencyCapTimeUnit,
@@ -6090,6 +6423,7 @@ import {
   InteractionEventType,
   PolicyTopicEntryType,
   PolicyTopicEvidenceDestinationMismatchUrlType,
+  PolicyTopicEvidenceDestinationNotWorkingDevice,
   AdNetworkType,
   ClickType,
   ConversionActionCategory,
@@ -6099,6 +6433,7 @@ import {
   ExternalConversionSource,
   MonthOfYear,
   PlaceholderType,
+  SearchEngineResultsPageType,
   SearchTermMatchType,
   Slot,
   TrackingCodeType,
@@ -6133,6 +6468,8 @@ import {
   CriterionType,
   CriterionSystemServingStatus,
   AdGroupCriterionApprovalStatus,
+  SimulationType,
+  SimulationModificationMethod,
   ExtensionType,
   ExtensionSettingDevice,
   FeedLinkStatus,
@@ -6142,13 +6479,14 @@ import {
   BillingSetupStatus,
   PositiveGeoTargetType,
   NegativeGeoTargetType,
-  VanityPharmaDisplayUrlMode,
-  VanityPharmaText,
   AppCampaignBiddingStrategyGoalType,
   AppCampaignAppStore,
+  VanityPharmaDisplayUrlMode,
+  VanityPharmaText,
   CampaignStatus,
   CampaignServingStatus,
   AdServingOptimizationStatus,
+  CampaignExperimentType,
   BrandSafetySuitability,
   PaymentMode,
   BudgetStatus,
@@ -6166,8 +6504,10 @@ import {
   CustomInterestStatus,
   CustomInterestType,
   CustomInterestMemberType,
+  CustomerPayPerConversionEligibilityFailureReason,
   ManagerLinkStatus,
   PlacementType,
+  FeedItemTargetDevice,
   FeedItemStatus,
   AffiliateLocationFeedRelationshipType,
   FeedAttributeType,
@@ -6178,7 +6518,6 @@ import {
   FeedItemQualityApprovalStatus,
   FeedItemQualityDisapprovalReason,
   FeedItemTargetType,
-  FeedItemTargetDevice,
   SitelinkPlaceholderField,
   CallPlaceholderField,
   AppPlaceholderField,

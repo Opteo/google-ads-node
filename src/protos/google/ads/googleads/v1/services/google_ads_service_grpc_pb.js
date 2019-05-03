@@ -30,9 +30,12 @@ var google_ads_googleads_v1_resources_ad_group_audience_view_pb = require('../..
 var google_ads_googleads_v1_resources_ad_group_bid_modifier_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_bid_modifier_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_label_pb.js');
+var google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_simulation_pb.js');
 var google_ads_googleads_v1_resources_ad_group_extension_setting_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_extension_setting_pb.js');
 var google_ads_googleads_v1_resources_ad_group_feed_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_feed_pb.js');
 var google_ads_googleads_v1_resources_ad_group_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_label_pb.js');
+var google_ads_googleads_v1_resources_ad_group_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_simulation_pb.js');
+var google_ads_googleads_v1_resources_ad_parameter_pb = require('../../../../../google/ads/googleads/v1/resources/ad_parameter_pb.js');
 var google_ads_googleads_v1_resources_ad_schedule_view_pb = require('../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb.js');
 var google_ads_googleads_v1_resources_age_range_view_pb = require('../../../../../google/ads/googleads/v1/resources/age_range_view_pb.js');
 var google_ads_googleads_v1_resources_asset_pb = require('../../../../../google/ads/googleads/v1/resources/asset_pb.js');
@@ -43,6 +46,7 @@ var google_ads_googleads_v1_resources_campaign_audience_view_pb = require('../..
 var google_ads_googleads_v1_resources_campaign_bid_modifier_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_bid_modifier_pb.js');
 var google_ads_googleads_v1_resources_campaign_budget_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_budget_pb.js');
 var google_ads_googleads_v1_resources_campaign_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_pb.js');
+var google_ads_googleads_v1_resources_campaign_criterion_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_simulation_pb.js');
 var google_ads_googleads_v1_resources_campaign_extension_setting_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_extension_setting_pb.js');
 var google_ads_googleads_v1_resources_campaign_feed_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_feed_pb.js');
 var google_ads_googleads_v1_resources_campaign_label_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_label_pb.js');
@@ -64,6 +68,7 @@ var google_ads_googleads_v1_resources_detail_placement_view_pb = require('../../
 var google_ads_googleads_v1_resources_display_keyword_view_pb = require('../../../../../google/ads/googleads/v1/resources/display_keyword_view_pb.js');
 var google_ads_googleads_v1_resources_domain_category_pb = require('../../../../../google/ads/googleads/v1/resources/domain_category_pb.js');
 var google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb = require('../../../../../google/ads/googleads/v1/resources/dynamic_search_ads_search_term_view_pb.js');
+var google_ads_googleads_v1_resources_expanded_landing_page_view_pb = require('../../../../../google/ads/googleads/v1/resources/expanded_landing_page_view_pb.js');
 var google_ads_googleads_v1_resources_extension_feed_item_pb = require('../../../../../google/ads/googleads/v1/resources/extension_feed_item_pb.js');
 var google_ads_googleads_v1_resources_feed_pb = require('../../../../../google/ads/googleads/v1/resources/feed_pb.js');
 var google_ads_googleads_v1_resources_feed_item_pb = require('../../../../../google/ads/googleads/v1/resources/feed_item_pb.js');
@@ -83,13 +88,16 @@ var google_ads_googleads_v1_resources_keyword_plan_keyword_pb = require('../../.
 var google_ads_googleads_v1_resources_keyword_plan_negative_keyword_pb = require('../../../../../google/ads/googleads/v1/resources/keyword_plan_negative_keyword_pb.js');
 var google_ads_googleads_v1_resources_keyword_view_pb = require('../../../../../google/ads/googleads/v1/resources/keyword_view_pb.js');
 var google_ads_googleads_v1_resources_label_pb = require('../../../../../google/ads/googleads/v1/resources/label_pb.js');
+var google_ads_googleads_v1_resources_landing_page_view_pb = require('../../../../../google/ads/googleads/v1/resources/landing_page_view_pb.js');
 var google_ads_googleads_v1_resources_language_constant_pb = require('../../../../../google/ads/googleads/v1/resources/language_constant_pb.js');
 var google_ads_googleads_v1_resources_location_view_pb = require('../../../../../google/ads/googleads/v1/resources/location_view_pb.js');
 var google_ads_googleads_v1_resources_managed_placement_view_pb = require('../../../../../google/ads/googleads/v1/resources/managed_placement_view_pb.js');
 var google_ads_googleads_v1_resources_media_file_pb = require('../../../../../google/ads/googleads/v1/resources/media_file_pb.js');
 var google_ads_googleads_v1_resources_mobile_app_category_constant_pb = require('../../../../../google/ads/googleads/v1/resources/mobile_app_category_constant_pb.js');
 var google_ads_googleads_v1_resources_mobile_device_constant_pb = require('../../../../../google/ads/googleads/v1/resources/mobile_device_constant_pb.js');
+var google_ads_googleads_v1_resources_mutate_job_pb = require('../../../../../google/ads/googleads/v1/resources/mutate_job_pb.js');
 var google_ads_googleads_v1_resources_operating_system_version_constant_pb = require('../../../../../google/ads/googleads/v1/resources/operating_system_version_constant_pb.js');
+var google_ads_googleads_v1_resources_paid_organic_search_term_view_pb = require('../../../../../google/ads/googleads/v1/resources/paid_organic_search_term_view_pb.js');
 var google_ads_googleads_v1_resources_parental_status_view_pb = require('../../../../../google/ads/googleads/v1/resources/parental_status_view_pb.js');
 var google_ads_googleads_v1_resources_product_bidding_category_constant_pb = require('../../../../../google/ads/googleads/v1/resources/product_bidding_category_constant_pb.js');
 var google_ads_googleads_v1_resources_product_group_view_pb = require('../../../../../google/ads/googleads/v1/resources/product_group_view_pb.js');
@@ -206,7 +214,55 @@ var GoogleAdsServiceService = exports.GoogleAdsServiceService = {
     responseSerialize: serialize_google_ads_googleads_v1_services_SearchGoogleAdsResponse,
     responseDeserialize: deserialize_google_ads_googleads_v1_services_SearchGoogleAdsResponse,
   },
-  // Creates, updates, or removes resources. Operation statuses are returned.
+  // Creates, updates, or removes resources. This method supports atomic
+  // transactions with multiple types of resources. For example, you can
+  // atomically create a campaign and a campaign budget, or perform up to
+  // thousands of mutates atomically.
+  //
+  // This method is essentially a wrapper around a series of mutate methods. The
+  // only features it offers over calling those methods directly are:
+  // - Atomic transactions
+  // - Temp resource names (described below)
+  // - Somewhat reduced latency over making a series of mutate calls.
+  //
+  // Note: Only resources that support atomic transactions are included, so this
+  // method can't replace all calls to individual services.
+  //
+  // ## Atomic Transaction Benefits
+  //
+  // Atomicity makes error handling much easier. If you're making a series of
+  // changes and one fails, it can leave your account in an inconsistent state.
+  // With atomicity, you either reach the desired state directly, or the request
+  // fails and you can retry.
+  //
+  // ## Temp Resource Names
+  //
+  // Temp resource names are a special type of resource name used to create a
+  // resource and reference that resource in the same request. For example, if a
+  // campaign budget is created with 'resource_name' equal to
+  // 'customers/123/campaignBudgets/-1', that resource name can be reused in
+  // the 'Campaign.budget' field in the same request. That way, the two
+  // resources are created and linked atomically.
+  //
+  // To create a temp resource name, put a negative number in the part of the
+  // name that the server would normally allocate.
+  //
+  // Note:
+  // - Resources must be created with a temp name before the name can be reused.
+  //   For example, the previous CampaignBudget+Campaign example would fail if
+  //   the mutate order was reversed.
+  // - Temp names are not remembered across requests.
+  // - There's no limit to the number of temp names in a request.
+  // - Each temp name must use a unique negative number, even if the resource
+  //   types differ.
+  //
+  // ## Latency
+  //
+  // It's important to group mutates by resource type or the request may time
+  // out and fail. Latency is roughly equal to a series of calls to individual
+  // mutate methods, where each change in resource type is a new call. For
+  // example, mutating 10 campaigns then 10 ad groups is like 2 calls, while
+  // mutating 1 campaign, 1 ad group, 1 campaign, 1 ad group is like 4 calls.
   mutate: {
     path: '/google.ads.googleads.v1.services.GoogleAdsService/Mutate',
     requestStream: false,

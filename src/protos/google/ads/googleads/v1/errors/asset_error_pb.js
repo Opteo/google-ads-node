@@ -139,7 +139,8 @@ proto.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError = {
   CUSTOMER_NOT_WHITELISTED_FOR_ASSET_TYPE: 2,
   DUPLICATE_ASSET: 3,
   DUPLICATE_ASSET_NAME: 4,
-  ASSET_DATA_IS_MISSING: 5
+  ASSET_DATA_IS_MISSING: 5,
+  CANNOT_MODIFY_ASSET_NAME: 6
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

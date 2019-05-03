@@ -150,7 +150,10 @@ proto.google.ads.googleads.v1.enums.AdTypeEnum.AdType = {
   LEGACY_RESPONSIVE_DISPLAY_AD: 16,
   APP_AD: 17,
   LEGACY_APP_INSTALL_AD: 18,
-  RESPONSIVE_DISPLAY_AD: 19
+  RESPONSIVE_DISPLAY_AD: 19,
+  HTML5_UPLOAD_AD: 21,
+  DYNAMIC_HTML5_AD: 22,
+  APP_ENGAGEMENT_AD: 23
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

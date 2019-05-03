@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_ad_asset_pb from "../../../../../google/ads/googleads/v1/common/ad_asset_pb";
 import * as google_ads_googleads_v1_enums_call_conversion_reporting_state_pb from "../../../../../google/ads/googleads/v1/enums/call_conversion_reporting_state_pb";
 import * as google_ads_googleads_v1_enums_display_ad_format_setting_pb from "../../../../../google/ads/googleads/v1/enums/display_ad_format_setting_pb";
+import * as google_ads_googleads_v1_enums_display_upload_product_type_pb from "../../../../../google/ads/googleads/v1/enums/display_upload_product_type_pb";
 import * as google_ads_googleads_v1_enums_legacy_app_install_ad_app_store_pb from "../../../../../google/ads/googleads/v1/enums/legacy_app_install_ad_app_store_pb";
 import * as google_ads_googleads_v1_enums_mime_type_pb from "../../../../../google/ads/googleads/v1/enums/mime_type_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
@@ -583,6 +584,11 @@ export class VideoTrueViewInStreamAdInfo extends jspb.Message {
   getActionHeadline(): google_protobuf_wrappers_pb.StringValue | undefined;
   setActionHeadline(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasCompanionBanner(): boolean;
+  clearCompanionBanner(): void;
+  getCompanionBanner(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCompanionBanner(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VideoTrueViewInStreamAdInfo.AsObject;
   static toObject(includeInstance: boolean, msg: VideoTrueViewInStreamAdInfo): VideoTrueViewInStreamAdInfo.AsObject;
@@ -597,6 +603,7 @@ export namespace VideoTrueViewInStreamAdInfo {
   export type AsObject = {
     actionButtonLabel?: google_protobuf_wrappers_pb.StringValue.AsObject,
     actionHeadline?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    companionBanner?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 }
 
@@ -879,6 +886,46 @@ export namespace AppAdInfo {
   }
 }
 
+export class AppEngagementAdInfo extends jspb.Message {
+  clearHeadlinesList(): void;
+  getHeadlinesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setHeadlinesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addHeadlines(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  clearDescriptionsList(): void;
+  getDescriptionsList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>;
+  setDescriptionsList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset>): void;
+  addDescriptions(value?: google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset;
+
+  clearImagesList(): void;
+  getImagesList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>;
+  setImagesList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset>): void;
+  addImages(value?: google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset;
+
+  clearVideosList(): void;
+  getVideosList(): Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>;
+  setVideosList(value: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset>): void;
+  addVideos(value?: google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset, index?: number): google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppEngagementAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: AppEngagementAdInfo): AppEngagementAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppEngagementAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppEngagementAdInfo;
+  static deserializeBinaryFromReader(message: AppEngagementAdInfo, reader: jspb.BinaryReader): AppEngagementAdInfo;
+}
+
+export namespace AppEngagementAdInfo {
+  export type AsObject = {
+    headlinesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    descriptionsList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdTextAsset.AsObject>,
+    imagesList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdImageAsset.AsObject>,
+    videosList: Array<google_ads_googleads_v1_common_ad_asset_pb.AdVideoAsset.AsObject>,
+  }
+}
+
 export class LegacyAppInstallAdInfo extends jspb.Message {
   hasAppId(): boolean;
   clearAppId(): void;
@@ -1030,6 +1077,38 @@ export namespace ResponsiveDisplayAdInfo {
     pricePrefix?: google_protobuf_wrappers_pb.StringValue.AsObject,
     promoText?: google_protobuf_wrappers_pb.StringValue.AsObject,
     formatSetting: google_ads_googleads_v1_enums_display_ad_format_setting_pb.DisplayAdFormatSettingEnum.DisplayAdFormatSetting,
+  }
+}
+
+export class DisplayUploadAdInfo extends jspb.Message {
+  getDisplayUploadProductType(): google_ads_googleads_v1_enums_display_upload_product_type_pb.DisplayUploadProductTypeEnum.DisplayUploadProductType;
+  setDisplayUploadProductType(value: google_ads_googleads_v1_enums_display_upload_product_type_pb.DisplayUploadProductTypeEnum.DisplayUploadProductType): void;
+
+  hasMediaBundle(): boolean;
+  clearMediaBundle(): void;
+  getMediaBundle(): google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset | undefined;
+  setMediaBundle(value?: google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset): void;
+
+  getMediaAssetCase(): DisplayUploadAdInfo.MediaAssetCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisplayUploadAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: DisplayUploadAdInfo): DisplayUploadAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisplayUploadAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisplayUploadAdInfo;
+  static deserializeBinaryFromReader(message: DisplayUploadAdInfo, reader: jspb.BinaryReader): DisplayUploadAdInfo;
+}
+
+export namespace DisplayUploadAdInfo {
+  export type AsObject = {
+    displayUploadProductType: google_ads_googleads_v1_enums_display_upload_product_type_pb.DisplayUploadProductTypeEnum.DisplayUploadProductType,
+    mediaBundle?: google_ads_googleads_v1_common_ad_asset_pb.AdMediaBundleAsset.AsObject,
+  }
+
+  export enum MediaAssetCase {
+    MEDIA_ASSET_NOT_SET = 0,
+    MEDIA_BUNDLE = 2,
   }
 }
 

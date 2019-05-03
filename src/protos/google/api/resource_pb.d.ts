@@ -4,33 +4,71 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
 
-export class Resource extends jspb.Message {
-  getPattern(): string;
-  setPattern(value: string): void;
+export class ResourceDescriptor extends jspb.Message {
+  getType(): string;
+  setType(value: string): void;
 
-  getSymbol(): string;
-  setSymbol(value: string): void;
+  clearPatternList(): void;
+  getPatternList(): Array<string>;
+  setPatternList(value: Array<string>): void;
+  addPattern(value: string, index?: number): string;
+
+  getNameField(): string;
+  setNameField(value: string): void;
+
+  getHistory(): ResourceDescriptor.History;
+  setHistory(value: ResourceDescriptor.History): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Resource.AsObject;
-  static toObject(includeInstance: boolean, msg: Resource): Resource.AsObject;
+  toObject(includeInstance?: boolean): ResourceDescriptor.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceDescriptor): ResourceDescriptor.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Resource, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Resource;
-  static deserializeBinaryFromReader(message: Resource, reader: jspb.BinaryReader): Resource;
+  static serializeBinaryToWriter(message: ResourceDescriptor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceDescriptor;
+  static deserializeBinaryFromReader(message: ResourceDescriptor, reader: jspb.BinaryReader): ResourceDescriptor;
 }
 
-export namespace Resource {
+export namespace ResourceDescriptor {
   export type AsObject = {
-    pattern: string,
-    symbol: string,
+    type: string,
+    patternList: Array<string>,
+    nameField: string,
+    history: ResourceDescriptor.History,
+  }
+
+  export enum History {
+    HISTORY_UNSPECIFIED = 0,
+    ORIGINALLY_SINGLE_PATTERN = 1,
+    FUTURE_MULTI_PATTERN = 2,
   }
 }
 
-  export const resource: jspb.ExtensionFieldInfo<Resource>;
+export class ResourceReference extends jspb.Message {
+  getType(): string;
+  setType(value: string): void;
 
-  export const resourceReference: jspb.ExtensionFieldInfo<string>;
+  getChildType(): string;
+  setChildType(value: string): void;
 
-  export const resourceDefinition: jspb.ExtensionFieldInfo<Resource>;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResourceReference.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceReference): ResourceReference.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResourceReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceReference;
+  static deserializeBinaryFromReader(message: ResourceReference, reader: jspb.BinaryReader): ResourceReference;
+}
+
+export namespace ResourceReference {
+  export type AsObject = {
+    type: string,
+    childType: string,
+  }
+}
+
+  export const resourceReference: jspb.ExtensionFieldInfo<ResourceReference>;
+
+  export const resource: jspb.ExtensionFieldInfo<ResourceDescriptor>;
 

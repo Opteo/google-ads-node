@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_criteria_pb from "../../../../../google/ads/googleads/v1/common/criteria_pb";
+import * as google_ads_googleads_v1_common_extensions_pb from "../../../../../google/ads/googleads/v1/common/extensions_pb";
 import * as google_ads_googleads_v1_enums_keyword_match_type_pb from "../../../../../google/ads/googleads/v1/enums/keyword_match_type_pb";
 import * as google_ads_googleads_v1_enums_recommendation_type_pb from "../../../../../google/ads/googleads/v1/enums/recommendation_type_pb";
 import * as google_ads_googleads_v1_enums_target_cpa_opt_in_recommendation_goal_pb from "../../../../../google/ads/googleads/v1/enums/target_cpa_opt_in_recommendation_goal_pb";
@@ -87,6 +88,21 @@ export class Recommendation extends jspb.Message {
   getOptimizeAdRotationRecommendation(): Recommendation.OptimizeAdRotationRecommendation | undefined;
   setOptimizeAdRotationRecommendation(value?: Recommendation.OptimizeAdRotationRecommendation): void;
 
+  hasCalloutExtensionRecommendation(): boolean;
+  clearCalloutExtensionRecommendation(): void;
+  getCalloutExtensionRecommendation(): Recommendation.CalloutExtensionRecommendation | undefined;
+  setCalloutExtensionRecommendation(value?: Recommendation.CalloutExtensionRecommendation): void;
+
+  hasSitelinkExtensionRecommendation(): boolean;
+  clearSitelinkExtensionRecommendation(): void;
+  getSitelinkExtensionRecommendation(): Recommendation.SitelinkExtensionRecommendation | undefined;
+  setSitelinkExtensionRecommendation(value?: Recommendation.SitelinkExtensionRecommendation): void;
+
+  hasCallExtensionRecommendation(): boolean;
+  clearCallExtensionRecommendation(): void;
+  getCallExtensionRecommendation(): Recommendation.CallExtensionRecommendation | undefined;
+  setCallExtensionRecommendation(value?: Recommendation.CallExtensionRecommendation): void;
+
   hasKeywordMatchTypeRecommendation(): boolean;
   clearKeywordMatchTypeRecommendation(): void;
   getKeywordMatchTypeRecommendation(): Recommendation.KeywordMatchTypeRecommendation | undefined;
@@ -126,6 +142,9 @@ export namespace Recommendation {
     searchPartnersOptInRecommendation?: Recommendation.SearchPartnersOptInRecommendation.AsObject,
     maximizeClicksOptInRecommendation?: Recommendation.MaximizeClicksOptInRecommendation.AsObject,
     optimizeAdRotationRecommendation?: Recommendation.OptimizeAdRotationRecommendation.AsObject,
+    calloutExtensionRecommendation?: Recommendation.CalloutExtensionRecommendation.AsObject,
+    sitelinkExtensionRecommendation?: Recommendation.SitelinkExtensionRecommendation.AsObject,
+    callExtensionRecommendation?: Recommendation.CallExtensionRecommendation.AsObject,
     keywordMatchTypeRecommendation?: Recommendation.KeywordMatchTypeRecommendation.AsObject,
     moveUnusedBudgetRecommendation?: Recommendation.MoveUnusedBudgetRecommendation.AsObject,
   }
@@ -294,6 +313,40 @@ export namespace Recommendation {
     }
   }
 
+  export class TextAdRecommendation extends jspb.Message {
+    hasAd(): boolean;
+    clearAd(): void;
+    getAd(): google_ads_googleads_v1_resources_ad_pb.Ad | undefined;
+    setAd(value?: google_ads_googleads_v1_resources_ad_pb.Ad): void;
+
+    hasCreationDate(): boolean;
+    clearCreationDate(): void;
+    getCreationDate(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setCreationDate(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    hasAutoApplyDate(): boolean;
+    clearAutoApplyDate(): void;
+    getAutoApplyDate(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setAutoApplyDate(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TextAdRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: TextAdRecommendation): TextAdRecommendation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TextAdRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TextAdRecommendation;
+    static deserializeBinaryFromReader(message: TextAdRecommendation, reader: jspb.BinaryReader): TextAdRecommendation;
+  }
+
+  export namespace TextAdRecommendation {
+    export type AsObject = {
+      ad?: google_ads_googleads_v1_resources_ad_pb.Ad.AsObject,
+      creationDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      autoApplyDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    }
+  }
+
   export class TargetCpaOptInRecommendation extends jspb.Message {
     clearOptionsList(): void;
     getOptionsList(): Array<Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption>;
@@ -360,65 +413,29 @@ export namespace Recommendation {
     }
   }
 
-  export class MoveUnusedBudgetRecommendation extends jspb.Message {
-    hasExcessCampaignBudget(): boolean;
-    clearExcessCampaignBudget(): void;
-    getExcessCampaignBudget(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setExcessCampaignBudget(value?: google_protobuf_wrappers_pb.StringValue): void;
+  export class KeywordMatchTypeRecommendation extends jspb.Message {
+    hasKeyword(): boolean;
+    clearKeyword(): void;
+    getKeyword(): google_ads_googleads_v1_common_criteria_pb.KeywordInfo | undefined;
+    setKeyword(value?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo): void;
 
-    hasBudgetRecommendation(): boolean;
-    clearBudgetRecommendation(): void;
-    getBudgetRecommendation(): Recommendation.CampaignBudgetRecommendation | undefined;
-    setBudgetRecommendation(value?: Recommendation.CampaignBudgetRecommendation): void;
+    getRecommendedMatchType(): google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType;
+    setRecommendedMatchType(value: google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType): void;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): MoveUnusedBudgetRecommendation.AsObject;
-    static toObject(includeInstance: boolean, msg: MoveUnusedBudgetRecommendation): MoveUnusedBudgetRecommendation.AsObject;
+    toObject(includeInstance?: boolean): KeywordMatchTypeRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: KeywordMatchTypeRecommendation): KeywordMatchTypeRecommendation.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: MoveUnusedBudgetRecommendation, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): MoveUnusedBudgetRecommendation;
-    static deserializeBinaryFromReader(message: MoveUnusedBudgetRecommendation, reader: jspb.BinaryReader): MoveUnusedBudgetRecommendation;
+    static serializeBinaryToWriter(message: KeywordMatchTypeRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): KeywordMatchTypeRecommendation;
+    static deserializeBinaryFromReader(message: KeywordMatchTypeRecommendation, reader: jspb.BinaryReader): KeywordMatchTypeRecommendation;
   }
 
-  export namespace MoveUnusedBudgetRecommendation {
+  export namespace KeywordMatchTypeRecommendation {
     export type AsObject = {
-      excessCampaignBudget?: google_protobuf_wrappers_pb.StringValue.AsObject,
-      budgetRecommendation?: Recommendation.CampaignBudgetRecommendation.AsObject,
-    }
-  }
-
-  export class TextAdRecommendation extends jspb.Message {
-    hasAd(): boolean;
-    clearAd(): void;
-    getAd(): google_ads_googleads_v1_resources_ad_pb.Ad | undefined;
-    setAd(value?: google_ads_googleads_v1_resources_ad_pb.Ad): void;
-
-    hasCreationDate(): boolean;
-    clearCreationDate(): void;
-    getCreationDate(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setCreationDate(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    hasAutoApplyDate(): boolean;
-    clearAutoApplyDate(): void;
-    getAutoApplyDate(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setAutoApplyDate(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): TextAdRecommendation.AsObject;
-    static toObject(includeInstance: boolean, msg: TextAdRecommendation): TextAdRecommendation.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: TextAdRecommendation, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): TextAdRecommendation;
-    static deserializeBinaryFromReader(message: TextAdRecommendation, reader: jspb.BinaryReader): TextAdRecommendation;
-  }
-
-  export namespace TextAdRecommendation {
-    export type AsObject = {
-      ad?: google_ads_googleads_v1_resources_ad_pb.Ad.AsObject,
-      creationDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
-      autoApplyDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      keyword?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo.AsObject,
+      recommendedMatchType: google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType,
     }
   }
 
@@ -456,6 +473,44 @@ export namespace Recommendation {
   }
 
   export namespace EnhancedCpcOptInRecommendation {
+    export type AsObject = {
+    }
+  }
+
+  export class CallExtensionRecommendation extends jspb.Message {
+    clearRecommendedExtensionsList(): void;
+    getRecommendedExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem>;
+    setRecommendedExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem>): void;
+    addRecommendedExtensions(value?: google_ads_googleads_v1_common_extensions_pb.CallFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.CallFeedItem;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallExtensionRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: CallExtensionRecommendation): CallExtensionRecommendation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallExtensionRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallExtensionRecommendation;
+    static deserializeBinaryFromReader(message: CallExtensionRecommendation, reader: jspb.BinaryReader): CallExtensionRecommendation;
+  }
+
+  export namespace CallExtensionRecommendation {
+    export type AsObject = {
+      recommendedExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.CallFeedItem.AsObject>,
+    }
+  }
+
+  export class SearchPartnersOptInRecommendation extends jspb.Message {
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SearchPartnersOptInRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: SearchPartnersOptInRecommendation): SearchPartnersOptInRecommendation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SearchPartnersOptInRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SearchPartnersOptInRecommendation;
+    static deserializeBinaryFromReader(message: SearchPartnersOptInRecommendation, reader: jspb.BinaryReader): SearchPartnersOptInRecommendation;
+  }
+
+  export namespace SearchPartnersOptInRecommendation {
     export type AsObject = {
     }
   }
@@ -498,45 +553,75 @@ export namespace Recommendation {
     }
   }
 
-  export class SearchPartnersOptInRecommendation extends jspb.Message {
+  export class MoveUnusedBudgetRecommendation extends jspb.Message {
+    hasExcessCampaignBudget(): boolean;
+    clearExcessCampaignBudget(): void;
+    getExcessCampaignBudget(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setExcessCampaignBudget(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    hasBudgetRecommendation(): boolean;
+    clearBudgetRecommendation(): void;
+    getBudgetRecommendation(): Recommendation.CampaignBudgetRecommendation | undefined;
+    setBudgetRecommendation(value?: Recommendation.CampaignBudgetRecommendation): void;
+
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SearchPartnersOptInRecommendation.AsObject;
-    static toObject(includeInstance: boolean, msg: SearchPartnersOptInRecommendation): SearchPartnersOptInRecommendation.AsObject;
+    toObject(includeInstance?: boolean): MoveUnusedBudgetRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: MoveUnusedBudgetRecommendation): MoveUnusedBudgetRecommendation.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: SearchPartnersOptInRecommendation, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SearchPartnersOptInRecommendation;
-    static deserializeBinaryFromReader(message: SearchPartnersOptInRecommendation, reader: jspb.BinaryReader): SearchPartnersOptInRecommendation;
+    static serializeBinaryToWriter(message: MoveUnusedBudgetRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MoveUnusedBudgetRecommendation;
+    static deserializeBinaryFromReader(message: MoveUnusedBudgetRecommendation, reader: jspb.BinaryReader): MoveUnusedBudgetRecommendation;
   }
 
-  export namespace SearchPartnersOptInRecommendation {
+  export namespace MoveUnusedBudgetRecommendation {
     export type AsObject = {
+      excessCampaignBudget?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      budgetRecommendation?: Recommendation.CampaignBudgetRecommendation.AsObject,
     }
   }
 
-  export class KeywordMatchTypeRecommendation extends jspb.Message {
-    hasKeyword(): boolean;
-    clearKeyword(): void;
-    getKeyword(): google_ads_googleads_v1_common_criteria_pb.KeywordInfo | undefined;
-    setKeyword(value?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo): void;
-
-    getRecommendedMatchType(): google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType;
-    setRecommendedMatchType(value: google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType): void;
+  export class CalloutExtensionRecommendation extends jspb.Message {
+    clearRecommendedExtensionsList(): void;
+    getRecommendedExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem>;
+    setRecommendedExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem>): void;
+    addRecommendedExtensions(value?: google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): KeywordMatchTypeRecommendation.AsObject;
-    static toObject(includeInstance: boolean, msg: KeywordMatchTypeRecommendation): KeywordMatchTypeRecommendation.AsObject;
+    toObject(includeInstance?: boolean): CalloutExtensionRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: CalloutExtensionRecommendation): CalloutExtensionRecommendation.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: KeywordMatchTypeRecommendation, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): KeywordMatchTypeRecommendation;
-    static deserializeBinaryFromReader(message: KeywordMatchTypeRecommendation, reader: jspb.BinaryReader): KeywordMatchTypeRecommendation;
+    static serializeBinaryToWriter(message: CalloutExtensionRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalloutExtensionRecommendation;
+    static deserializeBinaryFromReader(message: CalloutExtensionRecommendation, reader: jspb.BinaryReader): CalloutExtensionRecommendation;
   }
 
-  export namespace KeywordMatchTypeRecommendation {
+  export namespace CalloutExtensionRecommendation {
     export type AsObject = {
-      keyword?: google_ads_googleads_v1_common_criteria_pb.KeywordInfo.AsObject,
-      recommendedMatchType: google_ads_googleads_v1_enums_keyword_match_type_pb.KeywordMatchTypeEnum.KeywordMatchType,
+      recommendedExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.AsObject>,
+    }
+  }
+
+  export class SitelinkExtensionRecommendation extends jspb.Message {
+    clearRecommendedExtensionsList(): void;
+    getRecommendedExtensionsList(): Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem>;
+    setRecommendedExtensionsList(value: Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem>): void;
+    addRecommendedExtensions(value?: google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem, index?: number): google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SitelinkExtensionRecommendation.AsObject;
+    static toObject(includeInstance: boolean, msg: SitelinkExtensionRecommendation): SitelinkExtensionRecommendation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SitelinkExtensionRecommendation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SitelinkExtensionRecommendation;
+    static deserializeBinaryFromReader(message: SitelinkExtensionRecommendation, reader: jspb.BinaryReader): SitelinkExtensionRecommendation;
+  }
+
+  export namespace SitelinkExtensionRecommendation {
+    export type AsObject = {
+      recommendedExtensionsList: Array<google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.AsObject>,
     }
   }
 
@@ -551,6 +636,9 @@ export namespace Recommendation {
     SEARCH_PARTNERS_OPT_IN_RECOMMENDATION = 14,
     MAXIMIZE_CLICKS_OPT_IN_RECOMMENDATION = 15,
     OPTIMIZE_AD_ROTATION_RECOMMENDATION = 16,
+    CALLOUT_EXTENSION_RECOMMENDATION = 17,
+    SITELINK_EXTENSION_RECOMMENDATION = 18,
+    CALL_EXTENSION_RECOMMENDATION = 19,
     KEYWORD_MATCH_TYPE_RECOMMENDATION = 20,
     MOVE_UNUSED_BUDGET_RECOMMENDATION = 21,
   }

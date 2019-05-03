@@ -164,7 +164,8 @@ proto.google.ads.googleads.v1.enums.CriterionTypeEnum.CriterionType = {
   APP_PAYMENT_MODEL: 27,
   MOBILE_DEVICE: 28,
   CUSTOM_AFFINITY: 29,
-  CUSTOM_INTENT: 30
+  CUSTOM_INTENT: 30,
+  LOCATION_GROUP: 31
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

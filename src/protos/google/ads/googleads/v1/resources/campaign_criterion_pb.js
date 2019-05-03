@@ -42,7 +42,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_ = [[8,9,10,11,12,13,15,16,17,18,19,22,20,21,23,24,25,26,27,28,29,30,31,32,33]];
+proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_ = [[8,9,10,11,12,13,15,16,17,18,19,22,20,21,23,24,25,26,27,28,29,30,31,32,33,34]];
 
 /**
  * @enum {number}
@@ -73,7 +73,8 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.CriterionCase = {
   USER_INTEREST: 30,
   WEBPAGE: 31,
   OPERATING_SYSTEM_VERSION: 32,
-  MOBILE_DEVICE: 33
+  MOBILE_DEVICE: 33,
+  LOCATION_GROUP: 34
 };
 
 /**
@@ -142,7 +143,8 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.toObject = function(in
     userInterest: (f = msg.getUserInterest()) && google_ads_googleads_v1_common_criteria_pb.UserInterestInfo.toObject(includeInstance, f),
     webpage: (f = msg.getWebpage()) && google_ads_googleads_v1_common_criteria_pb.WebpageInfo.toObject(includeInstance, f),
     operatingSystemVersion: (f = msg.getOperatingSystemVersion()) && google_ads_googleads_v1_common_criteria_pb.OperatingSystemVersionInfo.toObject(includeInstance, f),
-    mobileDevice: (f = msg.getMobileDevice()) && google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo.toObject(includeInstance, f)
+    mobileDevice: (f = msg.getMobileDevice()) && google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo.toObject(includeInstance, f),
+    locationGroup: (f = msg.getLocationGroup()) && google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -331,6 +333,11 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.deserializeBinaryFromR
       var value = new google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo.deserializeBinaryFromReader);
       msg.setMobileDevice(value);
+      break;
+    case 34:
+      var value = new google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo.deserializeBinaryFromReader);
+      msg.setLocationGroup(value);
       break;
     default:
       reader.skipField();
@@ -605,6 +612,14 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.serializeBinaryToWrite
       33,
       f,
       google_ads_googleads_v1_common_criteria_pb.MobileDeviceInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getLocationGroup();
+  if (f != null) {
+    writer.writeMessage(
+      34,
+      f,
+      google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1507,6 +1522,36 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.clearMobileD
  */
 proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.hasMobileDevice = function() {
   return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.LocationGroupInfo location_group = 34;
+ * @return {?proto.google.ads.googleads.v1.common.LocationGroupInfo}
+ */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.getLocationGroup = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.LocationGroupInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.LocationGroupInfo, 34));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.LocationGroupInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.setLocationGroup = function(value) {
+  jspb.Message.setOneofWrapperField(this, 34, proto.google.ads.googleads.v1.resources.CampaignCriterion.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.clearLocationGroup = function() {
+  this.setLocationGroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.hasLocationGroup = function() {
+  return jspb.Message.getField(this, 34) != null;
 };
 
 

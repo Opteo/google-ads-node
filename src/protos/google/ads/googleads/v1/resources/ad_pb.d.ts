@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_common_ad_type_infos_pb from "../../../../../google/ads/googleads/v1/common/ad_type_infos_pb";
 import * as google_ads_googleads_v1_common_custom_parameter_pb from "../../../../../google/ads/googleads/v1/common/custom_parameter_pb";
+import * as google_ads_googleads_v1_common_final_app_url_pb from "../../../../../google/ads/googleads/v1/common/final_app_url_pb";
 import * as google_ads_googleads_v1_common_url_collection_pb from "../../../../../google/ads/googleads/v1/common/url_collection_pb";
 import * as google_ads_googleads_v1_enums_ad_type_pb from "../../../../../google/ads/googleads/v1/enums/ad_type_pb";
 import * as google_ads_googleads_v1_enums_device_pb from "../../../../../google/ads/googleads/v1/enums/device_pb";
@@ -21,6 +22,11 @@ export class Ad extends jspb.Message {
   getFinalUrlsList(): Array<google_protobuf_wrappers_pb.StringValue>;
   setFinalUrlsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
   addFinalUrls(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
+  clearFinalAppUrlsList(): void;
+  getFinalAppUrlsList(): Array<google_ads_googleads_v1_common_final_app_url_pb.FinalAppUrl>;
+  setFinalAppUrlsList(value: Array<google_ads_googleads_v1_common_final_app_url_pb.FinalAppUrl>): void;
+  addFinalAppUrls(value?: google_ads_googleads_v1_common_final_app_url_pb.FinalAppUrl, index?: number): google_ads_googleads_v1_common_final_app_url_pb.FinalAppUrl;
 
   clearFinalMobileUrlsList(): void;
   getFinalMobileUrlsList(): Array<google_protobuf_wrappers_pb.StringValue>;
@@ -141,6 +147,16 @@ export class Ad extends jspb.Message {
   getResponsiveDisplayAd(): google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo | undefined;
   setResponsiveDisplayAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo): void;
 
+  hasDisplayUploadAd(): boolean;
+  clearDisplayUploadAd(): void;
+  getDisplayUploadAd(): google_ads_googleads_v1_common_ad_type_infos_pb.DisplayUploadAdInfo | undefined;
+  setDisplayUploadAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.DisplayUploadAdInfo): void;
+
+  hasAppEngagementAd(): boolean;
+  clearAppEngagementAd(): void;
+  getAppEngagementAd(): google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo | undefined;
+  setAppEngagementAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo): void;
+
   getAdDataCase(): Ad.AdDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ad.AsObject;
@@ -156,6 +172,7 @@ export namespace Ad {
   export type AsObject = {
     id?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     finalUrlsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    finalAppUrlsList: Array<google_ads_googleads_v1_common_final_app_url_pb.FinalAppUrl.AsObject>,
     finalMobileUrlsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
     trackingUrlTemplate?: google_protobuf_wrappers_pb.StringValue.AsObject,
     urlCustomParametersList: Array<google_ads_googleads_v1_common_custom_parameter_pb.CustomParameter.AsObject>,
@@ -181,6 +198,8 @@ export namespace Ad {
     appAd?: google_ads_googleads_v1_common_ad_type_infos_pb.AppAdInfo.AsObject,
     legacyAppInstallAd?: google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.AsObject,
     responsiveDisplayAd?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.AsObject,
+    displayUploadAd?: google_ads_googleads_v1_common_ad_type_infos_pb.DisplayUploadAdInfo.AsObject,
+    appEngagementAd?: google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.AsObject,
   }
 
   export enum AdDataCase {
@@ -200,6 +219,8 @@ export namespace Ad {
     APP_AD = 29,
     LEGACY_APP_INSTALL_AD = 30,
     RESPONSIVE_DISPLAY_AD = 31,
+    DISPLAY_UPLOAD_AD = 33,
+    APP_ENGAGEMENT_AD = 34,
   }
 }
 

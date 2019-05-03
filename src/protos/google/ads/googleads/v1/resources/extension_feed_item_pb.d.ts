@@ -2,9 +2,11 @@
 // file: google/ads/googleads/v1/resources/extension_feed_item.proto
 
 import * as jspb from "google-protobuf";
+import * as google_ads_googleads_v1_common_criteria_pb from "../../../../../google/ads/googleads/v1/common/criteria_pb";
 import * as google_ads_googleads_v1_common_extensions_pb from "../../../../../google/ads/googleads/v1/common/extensions_pb";
 import * as google_ads_googleads_v1_enums_extension_type_pb from "../../../../../google/ads/googleads/v1/enums/extension_type_pb";
 import * as google_ads_googleads_v1_enums_feed_item_status_pb from "../../../../../google/ads/googleads/v1/enums/feed_item_status_pb";
+import * as google_ads_googleads_v1_enums_feed_item_target_device_pb from "../../../../../google/ads/googleads/v1/enums/feed_item_target_device_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
@@ -24,6 +26,14 @@ export class ExtensionFeedItem extends jspb.Message {
   clearEndDateTime(): void;
   getEndDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
   setEndDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  clearAdSchedulesList(): void;
+  getAdSchedulesList(): Array<google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo>;
+  setAdSchedulesList(value: Array<google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo>): void;
+  addAdSchedules(value?: google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo, index?: number): google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo;
+
+  getDevice(): google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice;
+  setDevice(value: google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice): void;
 
   getStatus(): google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus;
   setStatus(value: google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus): void;
@@ -68,6 +78,16 @@ export class ExtensionFeedItem extends jspb.Message {
   getPromotionFeedItem(): google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem | undefined;
   setPromotionFeedItem(value?: google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem): void;
 
+  hasLocationFeedItem(): boolean;
+  clearLocationFeedItem(): void;
+  getLocationFeedItem(): google_ads_googleads_v1_common_extensions_pb.LocationFeedItem | undefined;
+  setLocationFeedItem(value?: google_ads_googleads_v1_common_extensions_pb.LocationFeedItem): void;
+
+  hasAffiliateLocationFeedItem(): boolean;
+  clearAffiliateLocationFeedItem(): void;
+  getAffiliateLocationFeedItem(): google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem | undefined;
+  setAffiliateLocationFeedItem(value?: google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem): void;
+
   getExtensionCase(): ExtensionFeedItem.ExtensionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExtensionFeedItem.AsObject;
@@ -85,6 +105,8 @@ export namespace ExtensionFeedItem {
     extensionType: google_ads_googleads_v1_enums_extension_type_pb.ExtensionTypeEnum.ExtensionType,
     startDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
     endDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    adSchedulesList: Array<google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.AsObject>,
+    device: google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice,
     status: google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus,
     sitelinkFeedItem?: google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.AsObject,
     structuredSnippetFeedItem?: google_ads_googleads_v1_common_extensions_pb.StructuredSnippetFeedItem.AsObject,
@@ -94,6 +116,8 @@ export namespace ExtensionFeedItem {
     textMessageFeedItem?: google_ads_googleads_v1_common_extensions_pb.TextMessageFeedItem.AsObject,
     priceFeedItem?: google_ads_googleads_v1_common_extensions_pb.PriceFeedItem.AsObject,
     promotionFeedItem?: google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.AsObject,
+    locationFeedItem?: google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.AsObject,
+    affiliateLocationFeedItem?: google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.AsObject,
   }
 
   export enum ExtensionCase {
@@ -106,6 +130,8 @@ export namespace ExtensionFeedItem {
     TEXT_MESSAGE_FEED_ITEM = 10,
     PRICE_FEED_ITEM = 11,
     PROMOTION_FEED_ITEM = 12,
+    LOCATION_FEED_ITEM = 14,
+    AFFILIATE_LOCATION_FEED_ITEM = 15,
   }
 }
 

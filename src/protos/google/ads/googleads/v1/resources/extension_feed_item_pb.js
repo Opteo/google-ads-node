@@ -11,9 +11,11 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var google_ads_googleads_v1_common_criteria_pb = require('../../../../../google/ads/googleads/v1/common/criteria_pb.js');
 var google_ads_googleads_v1_common_extensions_pb = require('../../../../../google/ads/googleads/v1/common/extensions_pb.js');
 var google_ads_googleads_v1_enums_extension_type_pb = require('../../../../../google/ads/googleads/v1/enums/extension_type_pb.js');
 var google_ads_googleads_v1_enums_feed_item_status_pb = require('../../../../../google/ads/googleads/v1/enums/feed_item_status_pb.js');
+var google_ads_googleads_v1_enums_feed_item_target_device_pb = require('../../../../../google/ads/googleads/v1/enums/feed_item_target_device_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.ExtensionFeedItem', null, global);
@@ -29,12 +31,19 @@ goog.exportSymbol('proto.google.ads.googleads.v1.resources.ExtensionFeedItem', n
  * @constructor
  */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.repeatedFields_, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_);
 };
 goog.inherits(proto.google.ads.googleads.v1.resources.ExtensionFeedItem, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.google.ads.googleads.v1.resources.ExtensionFeedItem.displayName = 'proto.google.ads.googleads.v1.resources.ExtensionFeedItem';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.repeatedFields_ = [16];
+
 /**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
@@ -43,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_ = [[2,3,7,8,9,10,11,12]];
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_ = [[2,3,7,8,9,10,11,12,14,15]];
 
 /**
  * @enum {number}
@@ -57,7 +66,9 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ExtensionCase = {
   CALLOUT_FEED_ITEM: 9,
   TEXT_MESSAGE_FEED_ITEM: 10,
   PRICE_FEED_ITEM: 11,
-  PROMOTION_FEED_ITEM: 12
+  PROMOTION_FEED_ITEM: 12,
+  LOCATION_FEED_ITEM: 14,
+  AFFILIATE_LOCATION_FEED_ITEM: 15
 };
 
 /**
@@ -100,6 +111,9 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.toObject = function(in
     extensionType: jspb.Message.getFieldWithDefault(msg, 13, 0),
     startDateTime: (f = msg.getStartDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     endDateTime: (f = msg.getEndDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    adSchedulesList: jspb.Message.toObjectList(msg.getAdSchedulesList(),
+    google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.toObject, includeInstance),
+    device: jspb.Message.getFieldWithDefault(msg, 17, 0),
     status: jspb.Message.getFieldWithDefault(msg, 4, 0),
     sitelinkFeedItem: (f = msg.getSitelinkFeedItem()) && google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.toObject(includeInstance, f),
     structuredSnippetFeedItem: (f = msg.getStructuredSnippetFeedItem()) && google_ads_googleads_v1_common_extensions_pb.StructuredSnippetFeedItem.toObject(includeInstance, f),
@@ -108,7 +122,9 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.toObject = function(in
     calloutFeedItem: (f = msg.getCalloutFeedItem()) && google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.toObject(includeInstance, f),
     textMessageFeedItem: (f = msg.getTextMessageFeedItem()) && google_ads_googleads_v1_common_extensions_pb.TextMessageFeedItem.toObject(includeInstance, f),
     priceFeedItem: (f = msg.getPriceFeedItem()) && google_ads_googleads_v1_common_extensions_pb.PriceFeedItem.toObject(includeInstance, f),
-    promotionFeedItem: (f = msg.getPromotionFeedItem()) && google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.toObject(includeInstance, f)
+    promotionFeedItem: (f = msg.getPromotionFeedItem()) && google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.toObject(includeInstance, f),
+    locationFeedItem: (f = msg.getLocationFeedItem()) && google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.toObject(includeInstance, f),
+    affiliateLocationFeedItem: (f = msg.getAffiliateLocationFeedItem()) && google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -163,6 +179,15 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.deserializeBinaryFromR
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setEndDateTime(value);
       break;
+    case 16:
+      var value = new google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.deserializeBinaryFromReader);
+      msg.addAdSchedules(value);
+      break;
+    case 17:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice} */ (reader.readEnum());
+      msg.setDevice(value);
+      break;
     case 4:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.FeedItemStatusEnum.FeedItemStatus} */ (reader.readEnum());
       msg.setStatus(value);
@@ -206,6 +231,16 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.deserializeBinaryFromR
       var value = new google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem;
       reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.deserializeBinaryFromReader);
       msg.setPromotionFeedItem(value);
+      break;
+    case 14:
+      var value = new google_ads_googleads_v1_common_extensions_pb.LocationFeedItem;
+      reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.deserializeBinaryFromReader);
+      msg.setLocationFeedItem(value);
+      break;
+    case 15:
+      var value = new google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem;
+      reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.deserializeBinaryFromReader);
+      msg.setAffiliateLocationFeedItem(value);
       break;
     default:
       reader.skipField();
@@ -264,6 +299,21 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.serializeBinaryToWrite
       6,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdSchedulesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      16,
+      f,
+      google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getDevice();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      17,
+      f
     );
   }
   f = message.getStatus();
@@ -335,6 +385,22 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.serializeBinaryToWrite
       12,
       f,
       google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getLocationFeedItem();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getAffiliateLocationFeedItem();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.serializeBinaryToWriter
     );
   }
 };
@@ -427,6 +493,52 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearEndDate
  */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasEndDateTime = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated google.ads.googleads.v1.common.AdScheduleInfo ad_schedules = 16;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.AdScheduleInfo>}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getAdSchedulesList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.AdScheduleInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo, 16));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.AdScheduleInfo>} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setAdSchedulesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 16, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.AdScheduleInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.AdScheduleInfo}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.addAdSchedules = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.google.ads.googleads.v1.common.AdScheduleInfo, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearAdSchedulesList = function() {
+  this.setAdSchedulesList([]);
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;
+ * @return {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getDevice = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setDevice = function(value) {
+  jspb.Message.setProto3EnumField(this, 17, value);
 };
 
 
@@ -682,6 +794,66 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearPromoti
  */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasPromotionFeedItem = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.LocationFeedItem location_feed_item = 14;
+ * @return {?proto.google.ads.googleads.v1.common.LocationFeedItem}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getLocationFeedItem = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.LocationFeedItem} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_extensions_pb.LocationFeedItem, 14));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.LocationFeedItem|undefined} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setLocationFeedItem = function(value) {
+  jspb.Message.setOneofWrapperField(this, 14, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearLocationFeedItem = function() {
+  this.setLocationFeedItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasLocationFeedItem = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15;
+ * @return {?proto.google.ads.googleads.v1.common.AffiliateLocationFeedItem}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getAffiliateLocationFeedItem = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.AffiliateLocationFeedItem} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem, 15));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.AffiliateLocationFeedItem|undefined} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setAffiliateLocationFeedItem = function(value) {
+  jspb.Message.setOneofWrapperField(this, 15, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearAffiliateLocationFeedItem = function() {
+  this.setAffiliateLocationFeedItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasAffiliateLocationFeedItem = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 

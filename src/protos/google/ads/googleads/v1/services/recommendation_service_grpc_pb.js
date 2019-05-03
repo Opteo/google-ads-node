@@ -19,6 +19,7 @@
 'use strict';
 var grpc = require('grpc');
 var google_ads_googleads_v1_services_recommendation_service_pb = require('../../../../../google/ads/googleads/v1/services/recommendation_service_pb.js');
+var google_ads_googleads_v1_common_extensions_pb = require('../../../../../google/ads/googleads/v1/common/extensions_pb.js');
 var google_ads_googleads_v1_enums_keyword_match_type_pb = require('../../../../../google/ads/googleads/v1/enums/keyword_match_type_pb.js');
 var google_ads_googleads_v1_resources_ad_pb = require('../../../../../google/ads/googleads/v1/resources/ad_pb.js');
 var google_ads_googleads_v1_resources_recommendation_pb = require('../../../../../google/ads/googleads/v1/resources/recommendation_pb.js');

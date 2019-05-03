@@ -82,7 +82,14 @@ proto.google.ads.googleads.v1.common.Metrics.toObject = function(includeInstance
     allConversionsValue: (f = msg.getAllConversionsValue()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     allConversions: (f = msg.getAllConversions()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     allConversionsValuePerCost: (f = msg.getAllConversionsValuePerCost()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromClickToCall: (f = msg.getAllConversionsFromClickToCall()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromDirections: (f = msg.getAllConversionsFromDirections()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     allConversionsFromInteractionsValuePerInteraction: (f = msg.getAllConversionsFromInteractionsValuePerInteraction()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromMenu: (f = msg.getAllConversionsFromMenu()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromOrder: (f = msg.getAllConversionsFromOrder()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromOtherEngagement: (f = msg.getAllConversionsFromOtherEngagement()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromStoreVisit: (f = msg.getAllConversionsFromStoreVisit()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    allConversionsFromStoreWebsite: (f = msg.getAllConversionsFromStoreWebsite()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     averageCost: (f = msg.getAverageCost()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     averageCpc: (f = msg.getAverageCpc()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     averageCpe: (f = msg.getAverageCpe()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
@@ -96,6 +103,9 @@ proto.google.ads.googleads.v1.common.Metrics.toObject = function(includeInstance
     benchmarkCtr: (f = msg.getBenchmarkCtr()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     bounceRate: (f = msg.getBounceRate()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     clicks: (f = msg.getClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    combinedClicks: (f = msg.getCombinedClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    combinedClicksPerQuery: (f = msg.getCombinedClicksPerQuery()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    combinedQueries: (f = msg.getCombinedQueries()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     contentBudgetLostImpressionShare: (f = msg.getContentBudgetLostImpressionShare()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     contentImpressionShare: (f = msg.getContentImpressionShare()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     conversionLastReceivedRequestDateTime: (f = msg.getConversionLastReceivedRequestDateTime()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
@@ -128,12 +138,19 @@ proto.google.ads.googleads.v1.common.Metrics.toObject = function(includeInstance
     gmailSaves: (f = msg.getGmailSaves()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     gmailSecondaryClicks: (f = msg.getGmailSecondaryClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     impressionReach: (f = msg.getImpressionReach()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    impressionsFromStoreReach: (f = msg.getImpressionsFromStoreReach()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     impressions: (f = msg.getImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     interactionRate: (f = msg.getInteractionRate()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     interactions: (f = msg.getInteractions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     interactionEventTypesList: jspb.Message.getRepeatedField(msg, 100),
     invalidClickRate: (f = msg.getInvalidClickRate()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     invalidClicks: (f = msg.getInvalidClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    mobileFriendlyClicksPercentage: (f = msg.getMobileFriendlyClicksPercentage()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    organicClicks: (f = msg.getOrganicClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    organicClicksPerQuery: (f = msg.getOrganicClicksPerQuery()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    organicImpressions: (f = msg.getOrganicImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    organicImpressionsPerQuery: (f = msg.getOrganicImpressionsPerQuery()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    organicQueries: (f = msg.getOrganicQueries()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     percentNewVisitors: (f = msg.getPercentNewVisitors()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     phoneCalls: (f = msg.getPhoneCalls()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     phoneImpressions: (f = msg.getPhoneImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
@@ -150,7 +167,9 @@ proto.google.ads.googleads.v1.common.Metrics.toObject = function(includeInstance
     searchRankLostImpressionShare: (f = msg.getSearchRankLostImpressionShare()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     searchRankLostTopImpressionShare: (f = msg.getSearchRankLostTopImpressionShare()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     searchTopImpressionShare: (f = msg.getSearchTopImpressionShare()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    speedScore: (f = msg.getSpeedScore()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     topImpressionPercentage: (f = msg.getTopImpressionPercentage()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    validAcceleratedMobilePagesClicksPercentage: (f = msg.getValidAcceleratedMobilePagesClicksPercentage()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     valuePerAllConversions: (f = msg.getValuePerAllConversions()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     valuePerConversion: (f = msg.getValuePerConversion()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
     valuePerCurrentModelAttributedConversion: (f = msg.getValuePerCurrentModelAttributedConversion()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
@@ -257,10 +276,45 @@ proto.google.ads.googleads.v1.common.Metrics.deserializeBinaryFromReader = funct
       reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
       msg.setAllConversionsValuePerCost(value);
       break;
+    case 118:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromClickToCall(value);
+      break;
+    case 119:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromDirections(value);
+      break;
     case 67:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
       msg.setAllConversionsFromInteractionsValuePerInteraction(value);
+      break;
+    case 120:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromMenu(value);
+      break;
+    case 121:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromOrder(value);
+      break;
+    case 122:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromOtherEngagement(value);
+      break;
+    case 123:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromStoreVisit(value);
+      break;
+    case 124:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setAllConversionsFromStoreWebsite(value);
       break;
     case 8:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
@@ -326,6 +380,21 @@ proto.google.ads.googleads.v1.common.Metrics.deserializeBinaryFromReader = funct
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setClicks(value);
+      break;
+    case 115:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setCombinedClicks(value);
+      break;
+    case 116:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setCombinedClicksPerQuery(value);
+      break;
+    case 117:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setCombinedQueries(value);
       break;
     case 20:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
@@ -484,6 +553,11 @@ proto.google.ads.googleads.v1.common.Metrics.deserializeBinaryFromReader = funct
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setImpressionReach(value);
       break;
+    case 125:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setImpressionsFromStoreReach(value);
+      break;
     case 37:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
@@ -512,6 +586,36 @@ proto.google.ads.googleads.v1.common.Metrics.deserializeBinaryFromReader = funct
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setInvalidClicks(value);
+      break;
+    case 109:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setMobileFriendlyClicksPercentage(value);
+      break;
+    case 110:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setOrganicClicks(value);
+      break;
+    case 111:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setOrganicClicksPerQuery(value);
+      break;
+    case 112:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setOrganicImpressions(value);
+      break;
+    case 113:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setOrganicImpressionsPerQuery(value);
+      break;
+    case 114:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setOrganicQueries(value);
       break;
     case 42:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
@@ -593,10 +697,20 @@ proto.google.ads.googleads.v1.common.Metrics.deserializeBinaryFromReader = funct
       reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
       msg.setSearchTopImpressionShare(value);
       break;
+    case 107:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setSpeedScore(value);
+      break;
     case 93:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
       msg.setTopImpressionPercentage(value);
+      break;
+    case 108:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setValidAcceleratedMobilePagesClicksPercentage(value);
       break;
     case 52:
       var value = new google_protobuf_wrappers_pb.DoubleValue;
@@ -773,10 +887,66 @@ proto.google.ads.googleads.v1.common.Metrics.serializeBinaryToWriter = function(
       google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
     );
   }
+  f = message.getAllConversionsFromClickToCall();
+  if (f != null) {
+    writer.writeMessage(
+      118,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromDirections();
+  if (f != null) {
+    writer.writeMessage(
+      119,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
   f = message.getAllConversionsFromInteractionsValuePerInteraction();
   if (f != null) {
     writer.writeMessage(
       67,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromMenu();
+  if (f != null) {
+    writer.writeMessage(
+      120,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromOrder();
+  if (f != null) {
+    writer.writeMessage(
+      121,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromOtherEngagement();
+  if (f != null) {
+    writer.writeMessage(
+      122,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromStoreVisit();
+  if (f != null) {
+    writer.writeMessage(
+      123,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllConversionsFromStoreWebsite();
+  if (f != null) {
+    writer.writeMessage(
+      124,
       f,
       google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
     );
@@ -881,6 +1051,30 @@ proto.google.ads.googleads.v1.common.Metrics.serializeBinaryToWriter = function(
   if (f != null) {
     writer.writeMessage(
       19,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCombinedClicks();
+  if (f != null) {
+    writer.writeMessage(
+      115,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCombinedClicksPerQuery();
+  if (f != null) {
+    writer.writeMessage(
+      116,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getCombinedQueries();
+  if (f != null) {
+    writer.writeMessage(
+      117,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -1138,6 +1332,14 @@ proto.google.ads.googleads.v1.common.Metrics.serializeBinaryToWriter = function(
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
   }
+  f = message.getImpressionsFromStoreReach();
+  if (f != null) {
+    writer.writeMessage(
+      125,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
   f = message.getImpressions();
   if (f != null) {
     writer.writeMessage(
@@ -1181,6 +1383,54 @@ proto.google.ads.googleads.v1.common.Metrics.serializeBinaryToWriter = function(
   if (f != null) {
     writer.writeMessage(
       41,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMobileFriendlyClicksPercentage();
+  if (f != null) {
+    writer.writeMessage(
+      109,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganicClicks();
+  if (f != null) {
+    writer.writeMessage(
+      110,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganicClicksPerQuery();
+  if (f != null) {
+    writer.writeMessage(
+      111,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganicImpressions();
+  if (f != null) {
+    writer.writeMessage(
+      112,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganicImpressionsPerQuery();
+  if (f != null) {
+    writer.writeMessage(
+      113,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganicQueries();
+  if (f != null) {
+    writer.writeMessage(
+      114,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -1313,10 +1563,26 @@ proto.google.ads.googleads.v1.common.Metrics.serializeBinaryToWriter = function(
       google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
     );
   }
+  f = message.getSpeedScore();
+  if (f != null) {
+    writer.writeMessage(
+      107,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
   f = message.getTopImpressionPercentage();
   if (f != null) {
     writer.writeMessage(
       93,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getValidAcceleratedMobilePagesClicksPercentage();
+  if (f != null) {
+    writer.writeMessage(
+      108,
       f,
       google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
     );
@@ -1765,6 +2031,66 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsValuePer
 
 
 /**
+ * optional google.protobuf.DoubleValue all_conversions_from_click_to_call = 118;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromClickToCall = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 118));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromClickToCall = function(value) {
+  jspb.Message.setWrapperField(this, 118, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromClickToCall = function() {
+  this.setAllConversionsFromClickToCall(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromClickToCall = function() {
+  return jspb.Message.getField(this, 118) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_directions = 119;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromDirections = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 119));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromDirections = function(value) {
+  jspb.Message.setWrapperField(this, 119, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromDirections = function() {
+  this.setAllConversionsFromDirections(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromDirections = function() {
+  return jspb.Message.getField(this, 119) != null;
+};
+
+
+/**
  * optional google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;
  * @return {?proto.google.protobuf.DoubleValue}
  */
@@ -1791,6 +2117,156 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromIn
  */
 proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromInteractionsValuePerInteraction = function() {
   return jspb.Message.getField(this, 67) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_menu = 120;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromMenu = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 120));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromMenu = function(value) {
+  jspb.Message.setWrapperField(this, 120, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromMenu = function() {
+  this.setAllConversionsFromMenu(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromMenu = function() {
+  return jspb.Message.getField(this, 120) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_order = 121;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromOrder = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 121));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromOrder = function(value) {
+  jspb.Message.setWrapperField(this, 121, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromOrder = function() {
+  this.setAllConversionsFromOrder(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromOrder = function() {
+  return jspb.Message.getField(this, 121) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_other_engagement = 122;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromOtherEngagement = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 122));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromOtherEngagement = function(value) {
+  jspb.Message.setWrapperField(this, 122, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromOtherEngagement = function() {
+  this.setAllConversionsFromOtherEngagement(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromOtherEngagement = function() {
+  return jspb.Message.getField(this, 122) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_store_visit = 123;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromStoreVisit = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 123));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromStoreVisit = function(value) {
+  jspb.Message.setWrapperField(this, 123, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromStoreVisit = function() {
+  this.setAllConversionsFromStoreVisit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromStoreVisit = function() {
+  return jspb.Message.getField(this, 123) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue all_conversions_from_store_website = 124;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getAllConversionsFromStoreWebsite = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 124));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setAllConversionsFromStoreWebsite = function(value) {
+  jspb.Message.setWrapperField(this, 124, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearAllConversionsFromStoreWebsite = function() {
+  this.setAllConversionsFromStoreWebsite(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasAllConversionsFromStoreWebsite = function() {
+  return jspb.Message.getField(this, 124) != null;
 };
 
 
@@ -2181,6 +2657,96 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.clearClicks = function() 
  */
 proto.google.ads.googleads.v1.common.Metrics.prototype.hasClicks = function() {
   return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value combined_clicks = 115;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getCombinedClicks = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 115));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setCombinedClicks = function(value) {
+  jspb.Message.setWrapperField(this, 115, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearCombinedClicks = function() {
+  this.setCombinedClicks(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasCombinedClicks = function() {
+  return jspb.Message.getField(this, 115) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue combined_clicks_per_query = 116;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getCombinedClicksPerQuery = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 116));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setCombinedClicksPerQuery = function(value) {
+  jspb.Message.setWrapperField(this, 116, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearCombinedClicksPerQuery = function() {
+  this.setCombinedClicksPerQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasCombinedClicksPerQuery = function() {
+  return jspb.Message.getField(this, 116) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value combined_queries = 117;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getCombinedQueries = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 117));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setCombinedQueries = function(value) {
+  jspb.Message.setWrapperField(this, 117, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearCombinedQueries = function() {
+  this.setCombinedQueries(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasCombinedQueries = function() {
+  return jspb.Message.getField(this, 117) != null;
 };
 
 
@@ -3100,6 +3666,36 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.hasImpressionReach = func
 
 
 /**
+ * optional google.protobuf.Int64Value impressions_from_store_reach = 125;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getImpressionsFromStoreReach = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 125));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setImpressionsFromStoreReach = function(value) {
+  jspb.Message.setWrapperField(this, 125, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearImpressionsFromStoreReach = function() {
+  this.setImpressionsFromStoreReach(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasImpressionsFromStoreReach = function() {
+  return jspb.Message.getField(this, 125) != null;
+};
+
+
+/**
  * optional google.protobuf.Int64Value impressions = 37;
  * @return {?proto.google.protobuf.Int64Value}
  */
@@ -3275,6 +3871,186 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.clearInvalidClicks = func
  */
 proto.google.ads.googleads.v1.common.Metrics.prototype.hasInvalidClicks = function() {
   return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue mobile_friendly_clicks_percentage = 109;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getMobileFriendlyClicksPercentage = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 109));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setMobileFriendlyClicksPercentage = function(value) {
+  jspb.Message.setWrapperField(this, 109, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearMobileFriendlyClicksPercentage = function() {
+  this.setMobileFriendlyClicksPercentage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasMobileFriendlyClicksPercentage = function() {
+  return jspb.Message.getField(this, 109) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value organic_clicks = 110;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getOrganicClicks = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 110));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setOrganicClicks = function(value) {
+  jspb.Message.setWrapperField(this, 110, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearOrganicClicks = function() {
+  this.setOrganicClicks(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasOrganicClicks = function() {
+  return jspb.Message.getField(this, 110) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue organic_clicks_per_query = 111;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getOrganicClicksPerQuery = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 111));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setOrganicClicksPerQuery = function(value) {
+  jspb.Message.setWrapperField(this, 111, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearOrganicClicksPerQuery = function() {
+  this.setOrganicClicksPerQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasOrganicClicksPerQuery = function() {
+  return jspb.Message.getField(this, 111) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value organic_impressions = 112;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getOrganicImpressions = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 112));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setOrganicImpressions = function(value) {
+  jspb.Message.setWrapperField(this, 112, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearOrganicImpressions = function() {
+  this.setOrganicImpressions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasOrganicImpressions = function() {
+  return jspb.Message.getField(this, 112) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue organic_impressions_per_query = 113;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getOrganicImpressionsPerQuery = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 113));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setOrganicImpressionsPerQuery = function(value) {
+  jspb.Message.setWrapperField(this, 113, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearOrganicImpressionsPerQuery = function() {
+  this.setOrganicImpressionsPerQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasOrganicImpressionsPerQuery = function() {
+  return jspb.Message.getField(this, 113) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value organic_queries = 114;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getOrganicQueries = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 114));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setOrganicQueries = function(value) {
+  jspb.Message.setWrapperField(this, 114, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearOrganicQueries = function() {
+  this.setOrganicQueries(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasOrganicQueries = function() {
+  return jspb.Message.getField(this, 114) != null;
 };
 
 
@@ -3759,6 +4535,36 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.hasSearchTopImpressionSha
 
 
 /**
+ * optional google.protobuf.Int64Value speed_score = 107;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getSpeedScore = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 107));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setSpeedScore = function(value) {
+  jspb.Message.setWrapperField(this, 107, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearSpeedScore = function() {
+  this.setSpeedScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasSpeedScore = function() {
+  return jspb.Message.getField(this, 107) != null;
+};
+
+
+/**
  * optional google.protobuf.DoubleValue top_impression_percentage = 93;
  * @return {?proto.google.protobuf.DoubleValue}
  */
@@ -3785,6 +4591,36 @@ proto.google.ads.googleads.v1.common.Metrics.prototype.clearTopImpressionPercent
  */
 proto.google.ads.googleads.v1.common.Metrics.prototype.hasTopImpressionPercentage = function() {
   return jspb.Message.getField(this, 93) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue valid_accelerated_mobile_pages_clicks_percentage = 108;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.getValidAcceleratedMobilePagesClicksPercentage = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 108));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.Metrics.prototype.setValidAcceleratedMobilePagesClicksPercentage = function(value) {
+  jspb.Message.setWrapperField(this, 108, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Metrics.prototype.clearValidAcceleratedMobilePagesClicksPercentage = function() {
+  this.setValidAcceleratedMobilePagesClicksPercentage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Metrics.prototype.hasValidAcceleratedMobilePagesClicksPercentage = function() {
+  return jspb.Message.getField(this, 108) != null;
 };
 
 

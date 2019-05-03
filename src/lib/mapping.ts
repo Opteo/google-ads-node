@@ -100,6 +100,14 @@ export const app_ad_info = {
   html_5_media_bundles: ad_media_bundle_asset,
 };
 
+/* .google.ads.googleads.v1.common.AppEngagementAdInfo */
+export const app_engagement_ad_info = {
+  headlines: ad_text_asset,
+  descriptions: ad_text_asset,
+  images: ad_image_asset,
+  videos: ad_video_asset,
+};
+
 /* .google.ads.googleads.v1.common.LegacyAppInstallAdInfo */
 export const legacy_app_install_ad_info = {
   app_store: "LegacyAppInstallAdAppStore",
@@ -118,6 +126,12 @@ export const responsive_display_ad_info = {
   format_setting: "DisplayAdFormatSetting",
 };
 
+/* .google.ads.googleads.v1.common.DisplayUploadAdInfo */
+export const display_upload_ad_info = {
+  display_upload_product_type: "DisplayUploadProductType",
+  media_bundle: ad_media_bundle_asset,
+};
+
 /* .google.ads.googleads.v1.common.YoutubeVideoAsset */
 export const youtube_video_asset = {};
 
@@ -131,6 +145,9 @@ export const image_asset = {
 
 /* .google.ads.googleads.v1.common.ImageDimension */
 export const image_dimension = {};
+
+/* .google.ads.googleads.v1.common.TextAsset */
+export const text_asset = {};
 
 /* .google.ads.googleads.v1.common.Commission */
 export const commission = {};
@@ -390,6 +407,11 @@ export const custom_affinity_info = {};
 /* .google.ads.googleads.v1.common.CustomIntentInfo */
 export const custom_intent_info = {};
 
+/* .google.ads.googleads.v1.common.LocationGroupInfo */
+export const location_group_info = {
+  radius_units: "LocationGroupRadiusUnits",
+};
+
 /* .google.ads.googleads.v1.common.CriterionCategoryAvailability */
 export const criterion_category_availability = {};
 
@@ -428,6 +450,12 @@ export const call_feed_item = {
 /* .google.ads.googleads.v1.common.CalloutFeedItem */
 export const callout_feed_item = {};
 
+/* .google.ads.googleads.v1.common.LocationFeedItem */
+export const location_feed_item = {};
+
+/* .google.ads.googleads.v1.common.AffiliateLocationFeedItem */
+export const affiliate_location_feed_item = {};
+
 /* .google.ads.googleads.v1.common.TextMessageFeedItem */
 export const text_message_feed_item = {};
 
@@ -459,6 +487,11 @@ export const sitelink_feed_item = {
 
 /* .google.ads.googleads.v1.common.Money */
 export const money = {};
+
+/* .google.ads.googleads.v1.common.FinalAppUrl */
+export const final_app_url = {
+  os_type: "AppUrlOperatingSystemType",
+};
 
 /* .google.ads.googleads.v1.common.FrequencyCapEntry */
 export const frequency_cap_entry = {};
@@ -546,6 +579,7 @@ export const segments = {
   product_channel: "ProductChannel",
   product_channel_exclusivity: "ProductChannelExclusivity",
   product_condition: "ProductCondition",
+  search_engine_results_page_type: "SearchEngineResultsPageType",
   search_term_match_type: "SearchTermMatchType",
   slot: "Slot",
 };
@@ -554,6 +588,24 @@ export const segments = {
 export const keyword = {
   info: keyword_info,
 };
+
+/* .google.ads.googleads.v1.common.BidModifierSimulationPointList */
+export const bid_modifier_simulation_point_list = {};
+
+/* .google.ads.googleads.v1.common.CpcBidSimulationPointList */
+export const cpc_bid_simulation_point_list = {};
+
+/* .google.ads.googleads.v1.common.TargetCpaSimulationPointList */
+export const target_cpa_simulation_point_list = {};
+
+/* .google.ads.googleads.v1.common.BidModifierSimulationPoint */
+export const bid_modifier_simulation_point = {};
+
+/* .google.ads.googleads.v1.common.CpcBidSimulationPoint */
+export const cpc_bid_simulation_point = {};
+
+/* .google.ads.googleads.v1.common.TargetCpaSimulationPoint */
+export const target_cpa_simulation_point = {};
 
 /* .google.ads.googleads.v1.common.TagSnippet */
 export const tag_snippet = {
@@ -683,6 +735,7 @@ export const account_budget_proposal = {
 
 /* .google.ads.googleads.v1.resources.Ad */
 export const ad = {
+  final_app_urls: final_app_url,
   url_custom_parameters: custom_parameter,
   type: "AdType",
   device_preference: "Device",
@@ -703,6 +756,8 @@ export const ad = {
   app_ad: app_ad_info,
   legacy_app_install_ad: legacy_app_install_ad_info,
   responsive_display_ad: responsive_display_ad_info,
+  display_upload_ad: display_upload_ad_info,
+  app_engagement_ad: app_engagement_ad_info,
 };
 
 /* .google.ads.googleads.v1.resources.AdGroup */
@@ -795,6 +850,13 @@ export const ad_group_criterion = {
 /* .google.ads.googleads.v1.resources.AdGroupCriterionLabel */
 export const ad_group_criterion_label = {};
 
+/* .google.ads.googleads.v1.resources.AdGroupCriterionSimulation */
+export const ad_group_criterion_simulation = {
+  type: "SimulationType",
+  modification_method: "SimulationModificationMethod",
+  cpc_bid_point_list: cpc_bid_simulation_point_list,
+};
+
 /* .google.ads.googleads.v1.resources.AdGroupExtensionSetting */
 export const ad_group_extension_setting = {
   extension_type: "ExtensionType",
@@ -811,6 +873,14 @@ export const ad_group_feed = {
 /* .google.ads.googleads.v1.resources.AdGroupLabel */
 export const ad_group_label = {};
 
+/* .google.ads.googleads.v1.resources.AdGroupSimulation */
+export const ad_group_simulation = {
+  type: "SimulationType",
+  modification_method: "SimulationModificationMethod",
+  cpc_bid_point_list: cpc_bid_simulation_point_list,
+  target_cpa_point_list: target_cpa_simulation_point_list,
+};
+
 /* .google.ads.googleads.v1.resources.AdParameter */
 export const ad_parameter = {};
 
@@ -826,6 +896,7 @@ export const asset = {
   youtube_video_asset,
   media_bundle_asset,
   image_asset,
+  text_asset,
 };
 
 /* .google.ads.googleads.v1.resources.BiddingStrategy */
@@ -858,8 +929,11 @@ export const network_settings = {};
 /* .google.ads.googleads.v1.resources.Campaign.HotelSettingInfo */
 export const hotel_setting_info = {};
 
-/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
-export const shopping_setting = {};
+/* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
+export const dynamic_search_ads_setting = {};
+
+/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
+export const tracking_setting = {};
 
 /* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
 export const geo_target_type_setting = {
@@ -867,17 +941,11 @@ export const geo_target_type_setting = {
   negative_geo_target_type: "NegativeGeoTargetType",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
-export const vanity_pharma = {
-  vanity_pharma_display_url_mode: "VanityPharmaDisplayUrlMode",
-  vanity_pharma_text: "VanityPharmaText",
-};
+/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
+export const selective_optimization = {};
 
-/* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
-export const dynamic_search_ads_setting = {};
-
-/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
-export const tracking_setting = {};
+/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
+export const shopping_setting = {};
 
 /* .google.ads.googleads.v1.resources.Campaign.AppCampaignSetting */
 export const app_campaign_setting = {
@@ -885,8 +953,11 @@ export const app_campaign_setting = {
   app_store: "AppCampaignAppStore",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
-export const selective_optimization = {};
+/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
+export const vanity_pharma = {
+  vanity_pharma_display_url_mode: "VanityPharmaDisplayUrlMode",
+  vanity_pharma_text: "VanityPharmaText",
+};
 
 /* .google.ads.googleads.v1.resources.Campaign */
 export const campaign = {
@@ -904,6 +975,7 @@ export const campaign = {
   targeting_setting,
   geo_target_type_setting,
   app_campaign_setting,
+  experiment_type: "CampaignExperimentType",
   bidding_strategy_type: "BiddingStrategyType",
   frequency_caps: frequency_cap_entry,
   video_brand_safety_suitability: "BrandSafetySuitability",
@@ -969,6 +1041,14 @@ export const campaign_criterion = {
   webpage: webpage_info,
   operating_system_version: operating_system_version_info,
   mobile_device: mobile_device_info,
+  location_group: location_group_info,
+};
+
+/* .google.ads.googleads.v1.resources.CampaignCriterionSimulation */
+export const campaign_criterion_simulation = {
+  type: "SimulationType",
+  modification_method: "SimulationModificationMethod",
+  bid_modifier_point_list: bid_modifier_simulation_point_list,
 };
 
 /* .google.ads.googleads.v1.resources.CampaignExtensionSetting */
@@ -1039,7 +1119,10 @@ export const custom_interest_member = {
 };
 
 /* .google.ads.googleads.v1.resources.Customer */
-export const customer = {};
+export const customer = {
+  pay_per_conversion_eligibility_failure_reasons:
+    "CustomerPayPerConversionEligibilityFailureReason",
+};
 
 /* .google.ads.googleads.v1.resources.CallReportingSetting */
 export const call_reporting_setting = {};
@@ -1104,9 +1187,14 @@ export const domain_category = {};
 /* .google.ads.googleads.v1.resources.DynamicSearchAdsSearchTermView */
 export const dynamic_search_ads_search_term_view = {};
 
+/* .google.ads.googleads.v1.resources.ExpandedLandingPageView */
+export const expanded_landing_page_view = {};
+
 /* .google.ads.googleads.v1.resources.ExtensionFeedItem */
 export const extension_feed_item = {
   extension_type: "ExtensionType",
+  ad_schedules: ad_schedule_info,
+  device: "FeedItemTargetDevice",
   status: "FeedItemStatus",
   sitelink_feed_item,
   structured_snippet_feed_item,
@@ -1116,6 +1204,8 @@ export const extension_feed_item = {
   text_message_feed_item,
   price_feed_item,
   promotion_feed_item,
+  location_feed_item,
+  affiliate_location_feed_item,
 };
 
 /* .google.ads.googleads.v1.resources.Feed.PlacesLocationFeedData.OAuthInfo */
@@ -1289,6 +1379,9 @@ export const keyword_view = {};
 /* .google.protobuf.FieldDescriptorProto.Label */
 export const label = {};
 
+/* .google.ads.googleads.v1.resources.LandingPageView */
+export const landing_page_view = {};
+
 /* .google.ads.googleads.v1.resources.LanguageConstant */
 export const language_constant = {};
 
@@ -1343,6 +1436,9 @@ export const operating_system_version_constant = {
   operator_type: "OperatingSystemVersionOperatorType",
 };
 
+/* .google.ads.googleads.v1.resources.PaidOrganicSearchTermView */
+export const paid_organic_search_term_view = {};
+
 /* .google.ads.googleads.v1.resources.ParentalStatusView */
 export const parental_status_view = {};
 
@@ -1379,6 +1475,11 @@ export const keyword_recommendation = {
   keyword: keyword_info,
 };
 
+/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
+export const text_ad_recommendation = {
+  ad,
+};
+
 /* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
 export const target_cpa_opt_in_recommendation_option = {
   goal: "TargetCpaOptInRecommendationGoal",
@@ -1390,14 +1491,10 @@ export const target_cpa_opt_in_recommendation = {
   options: target_cpa_opt_in_recommendation_option,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
-export const move_unused_budget_recommendation = {
-  budget_recommendation: campaign_budget_recommendation,
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
-export const text_ad_recommendation = {
-  ad,
+/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
+export const keyword_match_type_recommendation = {
+  keyword: keyword_info,
+  recommended_match_type: "KeywordMatchType",
 };
 
 /* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
@@ -1406,19 +1503,33 @@ export const maximize_conversions_opt_in_recommendation = {};
 /* .google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation */
 export const enhanced_cpc_opt_in_recommendation = {};
 
+/* .google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation */
+export const call_extension_recommendation = {
+  recommended_extensions: call_feed_item,
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
+export const search_partners_opt_in_recommendation = {};
+
 /* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
 export const maximize_clicks_opt_in_recommendation = {};
 
 /* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
 export const optimize_ad_rotation_recommendation = {};
 
-/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
-export const search_partners_opt_in_recommendation = {};
+/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
+export const move_unused_budget_recommendation = {
+  budget_recommendation: campaign_budget_recommendation,
+};
 
-/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
-export const keyword_match_type_recommendation = {
-  keyword: keyword_info,
-  recommended_match_type: "KeywordMatchType",
+/* .google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation */
+export const callout_extension_recommendation = {
+  recommended_extensions: callout_feed_item,
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation */
+export const sitelink_extension_recommendation = {
+  recommended_extensions: sitelink_feed_item,
 };
 
 /* .google.ads.googleads.v1.resources.Recommendation */
@@ -1434,6 +1545,9 @@ export const recommendation = {
   search_partners_opt_in_recommendation,
   maximize_clicks_opt_in_recommendation,
   optimize_ad_rotation_recommendation,
+  callout_extension_recommendation,
+  sitelink_extension_recommendation,
+  call_extension_recommendation,
   keyword_match_type_recommendation,
   move_unused_budget_recommendation,
 };

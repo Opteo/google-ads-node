@@ -148,6 +148,146 @@ export namespace CalloutFeedItem {
   }
 }
 
+export class LocationFeedItem extends jspb.Message {
+  hasBusinessName(): boolean;
+  clearBusinessName(): void;
+  getBusinessName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setBusinessName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAddressLine1(): boolean;
+  clearAddressLine1(): void;
+  getAddressLine1(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAddressLine1(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAddressLine2(): boolean;
+  clearAddressLine2(): void;
+  getAddressLine2(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAddressLine2(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCity(): boolean;
+  clearCity(): void;
+  getCity(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCity(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasProvince(): boolean;
+  clearProvince(): void;
+  getProvince(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setProvince(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPostalCode(): boolean;
+  clearPostalCode(): void;
+  getPostalCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPostalCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCountryCode(): boolean;
+  clearCountryCode(): void;
+  getCountryCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCountryCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPhoneNumber(): boolean;
+  clearPhoneNumber(): void;
+  getPhoneNumber(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPhoneNumber(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LocationFeedItem.AsObject;
+  static toObject(includeInstance: boolean, msg: LocationFeedItem): LocationFeedItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LocationFeedItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LocationFeedItem;
+  static deserializeBinaryFromReader(message: LocationFeedItem, reader: jspb.BinaryReader): LocationFeedItem;
+}
+
+export namespace LocationFeedItem {
+  export type AsObject = {
+    businessName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    addressLine1?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    addressLine2?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    city?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    province?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    postalCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    countryCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    phoneNumber?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
+export class AffiliateLocationFeedItem extends jspb.Message {
+  hasBusinessName(): boolean;
+  clearBusinessName(): void;
+  getBusinessName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setBusinessName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAddressLine1(): boolean;
+  clearAddressLine1(): void;
+  getAddressLine1(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAddressLine1(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasAddressLine2(): boolean;
+  clearAddressLine2(): void;
+  getAddressLine2(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setAddressLine2(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCity(): boolean;
+  clearCity(): void;
+  getCity(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCity(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasProvince(): boolean;
+  clearProvince(): void;
+  getProvince(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setProvince(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPostalCode(): boolean;
+  clearPostalCode(): void;
+  getPostalCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPostalCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasCountryCode(): boolean;
+  clearCountryCode(): void;
+  getCountryCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setCountryCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasPhoneNumber(): boolean;
+  clearPhoneNumber(): void;
+  getPhoneNumber(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setPhoneNumber(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasChainId(): boolean;
+  clearChainId(): void;
+  getChainId(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setChainId(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasChainName(): boolean;
+  clearChainName(): void;
+  getChainName(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setChainName(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AffiliateLocationFeedItem.AsObject;
+  static toObject(includeInstance: boolean, msg: AffiliateLocationFeedItem): AffiliateLocationFeedItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AffiliateLocationFeedItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AffiliateLocationFeedItem;
+  static deserializeBinaryFromReader(message: AffiliateLocationFeedItem, reader: jspb.BinaryReader): AffiliateLocationFeedItem;
+}
+
+export namespace AffiliateLocationFeedItem {
+  export type AsObject = {
+    businessName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    addressLine1?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    addressLine2?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    city?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    province?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    postalCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    countryCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    phoneNumber?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    chainId?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    chainName?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export class TextMessageFeedItem extends jspb.Message {
   hasBusinessName(): boolean;
   clearBusinessName(): void;

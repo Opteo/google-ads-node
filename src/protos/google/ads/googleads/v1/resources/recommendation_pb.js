@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_ads_googleads_v1_common_criteria_pb = require('../../../../../google/ads/googleads/v1/common/criteria_pb.js');
+var google_ads_googleads_v1_common_extensions_pb = require('../../../../../google/ads/googleads/v1/common/extensions_pb.js');
 var google_ads_googleads_v1_enums_keyword_match_type_pb = require('../../../../../google/ads/googleads/v1/enums/keyword_match_type_pb.js');
 var google_ads_googleads_v1_enums_recommendation_type_pb = require('../../../../../google/ads/googleads/v1/enums/recommendation_type_pb.js');
 var google_ads_googleads_v1_enums_target_cpa_opt_in_recommendation_goal_pb = require('../../../../../google/ads/googleads/v1/enums/target_cpa_opt_in_recommendation_goal_pb.js');
@@ -19,6 +20,8 @@ var google_ads_googleads_v1_resources_ad_pb = require('../../../../../google/ads
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation', null, global);
@@ -31,6 +34,7 @@ goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.Optimi
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.RecommendationImpact', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.RecommendationMetrics', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation', null, global);
@@ -60,7 +64,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.Recommendation.oneofGroups_ = [[4,8,9,10,11,12,14,15,16,20,21]];
+proto.google.ads.googleads.v1.resources.Recommendation.oneofGroups_ = [[4,8,9,10,11,12,14,15,16,17,18,19,20,21]];
 
 /**
  * @enum {number}
@@ -76,6 +80,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.RecommendationCase = {
   SEARCH_PARTNERS_OPT_IN_RECOMMENDATION: 14,
   MAXIMIZE_CLICKS_OPT_IN_RECOMMENDATION: 15,
   OPTIMIZE_AD_ROTATION_RECOMMENDATION: 16,
+  CALLOUT_EXTENSION_RECOMMENDATION: 17,
+  SITELINK_EXTENSION_RECOMMENDATION: 18,
+  CALL_EXTENSION_RECOMMENDATION: 19,
   KEYWORD_MATCH_TYPE_RECOMMENDATION: 20,
   MOVE_UNUSED_BUDGET_RECOMMENDATION: 21
 };
@@ -132,6 +139,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.toObject = function(inclu
     searchPartnersOptInRecommendation: (f = msg.getSearchPartnersOptInRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.toObject(includeInstance, f),
     maximizeClicksOptInRecommendation: (f = msg.getMaximizeClicksOptInRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation.toObject(includeInstance, f),
     optimizeAdRotationRecommendation: (f = msg.getOptimizeAdRotationRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation.toObject(includeInstance, f),
+    calloutExtensionRecommendation: (f = msg.getCalloutExtensionRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.toObject(includeInstance, f),
+    sitelinkExtensionRecommendation: (f = msg.getSitelinkExtensionRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.toObject(includeInstance, f),
+    callExtensionRecommendation: (f = msg.getCallExtensionRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.toObject(includeInstance, f),
     keywordMatchTypeRecommendation: (f = msg.getKeywordMatchTypeRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.toObject(includeInstance, f),
     moveUnusedBudgetRecommendation: (f = msg.getMoveUnusedBudgetRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.toObject(includeInstance, f)
   };
@@ -247,6 +257,21 @@ proto.google.ads.googleads.v1.resources.Recommendation.deserializeBinaryFromRead
       var value = new proto.google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation;
       reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation.deserializeBinaryFromReader);
       msg.setOptimizeAdRotationRecommendation(value);
+      break;
+    case 17:
+      var value = new proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation;
+      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.deserializeBinaryFromReader);
+      msg.setCalloutExtensionRecommendation(value);
+      break;
+    case 18:
+      var value = new proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation;
+      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.deserializeBinaryFromReader);
+      msg.setSitelinkExtensionRecommendation(value);
+      break;
+    case 19:
+      var value = new proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation;
+      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.deserializeBinaryFromReader);
+      msg.setCallExtensionRecommendation(value);
       break;
     case 20:
       var value = new proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation;
@@ -411,6 +436,30 @@ proto.google.ads.googleads.v1.resources.Recommendation.serializeBinaryToWriter =
       16,
       f,
       proto.google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCalloutExtensionRecommendation();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.serializeBinaryToWriter
+    );
+  }
+  f = message.getSitelinkExtensionRecommendation();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallExtensionRecommendation();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.serializeBinaryToWriter
     );
   }
   f = message.getKeywordMatchTypeRecommendation();
@@ -1643,6 +1692,253 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordRecommendation.pro
  * @extends {jspb.Message}
  * @constructor
  */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    ad: (f = msg.getAd()) && google_ads_googleads_v1_resources_ad_pb.Ad.toObject(includeInstance, f),
+    creationDate: (f = msg.getCreationDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    autoApplyDate: (f = msg.getAutoApplyDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_ads_googleads_v1_resources_ad_pb.Ad;
+      reader.readMessage(value,google_ads_googleads_v1_resources_ad_pb.Ad.deserializeBinaryFromReader);
+      msg.setAd(value);
+      break;
+    case 2:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setCreationDate(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setAutoApplyDate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAd();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_ads_googleads_v1_resources_ad_pb.Ad.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreationDate();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getAutoApplyDate();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Ad ad = 1;
+ * @return {?proto.google.ads.googleads.v1.resources.Ad}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getAd = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Ad} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_ad_pb.Ad, 1));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Ad|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setAd = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearAd = function() {
+  this.setAd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasAd = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue creation_date = 2;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getCreationDate = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setCreationDate = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearCreationDate = function() {
+  this.setCreationDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasCreationDate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue auto_apply_date = 3;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getAutoApplyDate = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setAutoApplyDate = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearAutoApplyDate = function() {
+  this.setAutoApplyDate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasAutoApplyDate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.repeatedFields_, null);
 };
@@ -2129,12 +2425,12 @@ proto.google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendat
  * @extends {jspb.Message}
  * @constructor
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation = function(opt_data) {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation, jspb.Message);
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation';
+  proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation';
 }
 
 
@@ -2149,8 +2445,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.toObject(opt_includeInstance, this);
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.toObject(opt_includeInstance, this);
 };
 
 
@@ -2159,14 +2455,14 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} msg The msg instance to transform.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.toObject = function(includeInstance, msg) {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    excessCampaignBudget: (f = msg.getExcessCampaignBudget()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    budgetRecommendation: (f = msg.getBudgetRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.toObject(includeInstance, f)
+    keyword: (f = msg.getKeyword()) && google_ads_googleads_v1_common_criteria_pb.KeywordInfo.toObject(includeInstance, f),
+    recommendedMatchType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2180,23 +2476,23 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinary = function(bytes) {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation;
-  return proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} msg The message object to deserialize into.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2204,14 +2500,13 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setExcessCampaignBudget(value);
+      var value = new google_ads_googleads_v1_common_criteria_pb.KeywordInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.KeywordInfo.deserializeBinaryFromReader);
+      msg.setKeyword(value);
       break;
     case 2:
-      var value = new proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation;
-      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.deserializeBinaryFromReader);
-      msg.setBudgetRecommendation(value);
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} */ (reader.readEnum());
+      msg.setRecommendedMatchType(value);
       break;
     default:
       reader.skipField();
@@ -2226,9 +2521,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.serializeBinary = function() {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.serializeBinaryToWriter(this, writer);
+  proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2236,49 +2531,48 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} message
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.serializeBinaryToWriter = function(message, writer) {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getExcessCampaignBudget();
+  f = message.getKeyword();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+      google_ads_googleads_v1_common_criteria_pb.KeywordInfo.serializeBinaryToWriter
     );
   }
-  f = message.getBudgetRecommendation();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getRecommendedMatchType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       2,
-      f,
-      proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional google.protobuf.StringValue excess_campaign_budget = 1;
- * @return {?proto.google.protobuf.StringValue}
+ * optional google.ads.googleads.v1.common.KeywordInfo keyword = 1;
+ * @return {?proto.google.ads.googleads.v1.common.KeywordInfo}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.getExcessCampaignBudget = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.getKeyword = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.KeywordInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.KeywordInfo, 1));
 };
 
 
-/** @param {?proto.google.protobuf.StringValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.setExcessCampaignBudget = function(value) {
+/** @param {?proto.google.ads.googleads.v1.common.KeywordInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.setKeyword = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.clearExcessCampaignBudget = function() {
-  this.setExcessCampaignBudget(undefined);
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.clearKeyword = function() {
+  this.setKeyword(undefined);
 };
 
 
@@ -2286,285 +2580,23 @@ proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommend
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.hasExcessCampaignBudget = function() {
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.hasKeyword = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional CampaignBudgetRecommendation budget_recommendation = 2;
- * @return {?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation}
+ * optional google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;
+ * @return {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.getBudgetRecommendation = function() {
-  return /** @type{?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation} */ (
-    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation, 2));
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.getRecommendedMatchType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.setBudgetRecommendation = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.clearBudgetRecommendation = function() {
-  this.setBudgetRecommendation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.hasBudgetRecommendation = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    ad: (f = msg.getAd()) && google_ads_googleads_v1_resources_ad_pb.Ad.toObject(includeInstance, f),
-    creationDate: (f = msg.getCreationDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    autoApplyDate: (f = msg.getAutoApplyDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation;
-  return proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new google_ads_googleads_v1_resources_ad_pb.Ad;
-      reader.readMessage(value,google_ads_googleads_v1_resources_ad_pb.Ad.deserializeBinaryFromReader);
-      msg.setAd(value);
-      break;
-    case 2:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setCreationDate(value);
-      break;
-    case 3:
-      var value = new google_protobuf_wrappers_pb.StringValue;
-      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
-      msg.setAutoApplyDate(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getAd();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      google_ads_googleads_v1_resources_ad_pb.Ad.serializeBinaryToWriter
-    );
-  }
-  f = message.getCreationDate();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
-    );
-  }
-  f = message.getAutoApplyDate();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional Ad ad = 1;
- * @return {?proto.google.ads.googleads.v1.resources.Ad}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getAd = function() {
-  return /** @type{?proto.google.ads.googleads.v1.resources.Ad} */ (
-    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_ad_pb.Ad, 1));
-};
-
-
-/** @param {?proto.google.ads.googleads.v1.resources.Ad|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setAd = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearAd = function() {
-  this.setAd(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasAd = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional google.protobuf.StringValue creation_date = 2;
- * @return {?proto.google.protobuf.StringValue}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getCreationDate = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 2));
-};
-
-
-/** @param {?proto.google.protobuf.StringValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setCreationDate = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearCreationDate = function() {
-  this.setCreationDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasCreationDate = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional google.protobuf.StringValue auto_apply_date = 3;
- * @return {?proto.google.protobuf.StringValue}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.getAutoApplyDate = function() {
-  return /** @type{?proto.google.protobuf.StringValue} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 3));
-};
-
-
-/** @param {?proto.google.protobuf.StringValue|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.setAutoApplyDate = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.clearAutoApplyDate = function() {
-  this.setAutoApplyDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation.prototype.hasAutoApplyDate = function() {
-  return jspb.Message.getField(this, 3) != null;
+/** @param {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} value */
+proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.setRecommendedMatchType = function(value) {
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -2839,6 +2871,290 @@ proto.google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommend
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recommendedExtensionsList: jspb.Message.toObjectList(msg.getRecommendedExtensionsList(),
+    google_ads_googleads_v1_common_extensions_pb.CallFeedItem.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_ads_googleads_v1_common_extensions_pb.CallFeedItem;
+      reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.CallFeedItem.deserializeBinaryFromReader);
+      msg.addRecommendedExtensions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecommendedExtensionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      google_ads_googleads_v1_common_extensions_pb.CallFeedItem.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated google.ads.googleads.v1.common.CallFeedItem recommended_extensions = 1;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.CallFeedItem>}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.getRecommendedExtensionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.CallFeedItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_extensions_pb.CallFeedItem, 1));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.CallFeedItem>} value */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.setRecommendedExtensionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.CallFeedItem=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.CallFeedItem}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.addRecommendedExtensions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.google.ads.googleads.v1.common.CallFeedItem, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation.prototype.clearRecommendedExtensionsList = function() {
+  this.setRecommendedExtensionsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -3129,12 +3445,12 @@ proto.google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecomme
  * @extends {jspb.Message}
  * @constructor
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation = function(opt_data) {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation, jspb.Message);
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation';
+  proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation';
 }
 
 
@@ -3149,8 +3465,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.toObject(opt_includeInstance, this);
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.toObject(opt_includeInstance, this);
 };
 
 
@@ -3159,13 +3475,14 @@ proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecomm
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} msg The msg instance to transform.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.toObject = function(includeInstance, msg) {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    excessCampaignBudget: (f = msg.getExcessCampaignBudget()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    budgetRecommendation: (f = msg.getBudgetRecommendation()) && proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3179,29 +3496,39 @@ proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecomm
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinary = function(bytes) {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation;
-  return proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} msg The message object to deserialize into.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setExcessCampaignBudget(value);
+      break;
+    case 2:
+      var value = new proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation;
+      reader.readMessage(value,proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.deserializeBinaryFromReader);
+      msg.setBudgetRecommendation(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3215,9 +3542,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecomm
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.prototype.serializeBinary = function() {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.serializeBinaryToWriter(this, writer);
+  proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3225,12 +3552,88 @@ proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecomm
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation} message
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation.serializeBinaryToWriter = function(message, writer) {
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getExcessCampaignBudget();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getBudgetRecommendation();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.StringValue excess_campaign_budget = 1;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.getExcessCampaignBudget = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 1));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.setExcessCampaignBudget = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.clearExcessCampaignBudget = function() {
+  this.setExcessCampaignBudget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.hasExcessCampaignBudget = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional CampaignBudgetRecommendation budget_recommendation = 2;
+ * @return {?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.getBudgetRecommendation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation, 2));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.setBudgetRecommendation = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.clearBudgetRecommendation = function() {
+  this.setBudgetRecommendation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation.prototype.hasBudgetRecommendation = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3245,13 +3648,20 @@ proto.google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecomm
  * @extends {jspb.Message}
  * @constructor
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.repeatedFields_, null);
 };
-goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation, jspb.Message);
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation';
+  proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3265,8 +3675,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.toObject = function(opt_includeInstance) {
-  return proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.toObject(opt_includeInstance, this);
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.toObject(opt_includeInstance, this);
 };
 
 
@@ -3275,14 +3685,14 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommend
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} msg The msg instance to transform.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.toObject = function(includeInstance, msg) {
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keyword: (f = msg.getKeyword()) && google_ads_googleads_v1_common_criteria_pb.KeywordInfo.toObject(includeInstance, f),
-    recommendedMatchType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    recommendedExtensionsList: jspb.Message.toObjectList(msg.getRecommendedExtensionsList(),
+    google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3296,23 +3706,23 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommend
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinary = function(bytes) {
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation;
-  return proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} msg The message object to deserialize into.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation}
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3320,13 +3730,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommend
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_ads_googleads_v1_common_criteria_pb.KeywordInfo;
-      reader.readMessage(value,google_ads_googleads_v1_common_criteria_pb.KeywordInfo.deserializeBinaryFromReader);
-      msg.setKeyword(value);
-      break;
-    case 2:
-      var value = /** @type {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} */ (reader.readEnum());
-      msg.setRecommendedMatchType(value);
+      var value = new google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem;
+      reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.deserializeBinaryFromReader);
+      msg.addRecommendedExtensions(value);
       break;
     default:
       reader.skipField();
@@ -3341,9 +3747,9 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommend
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.serializeBinary = function() {
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.serializeBinaryToWriter(this, writer);
+  proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3351,72 +3757,219 @@ proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommend
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation} message
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.serializeBinaryToWriter = function(message, writer) {
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKeyword();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getRecommendedExtensionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
-      google_ads_googleads_v1_common_criteria_pb.KeywordInfo.serializeBinaryToWriter
-    );
-  }
-  f = message.getRecommendedMatchType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
+      google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional google.ads.googleads.v1.common.KeywordInfo keyword = 1;
- * @return {?proto.google.ads.googleads.v1.common.KeywordInfo}
+ * repeated google.ads.googleads.v1.common.CalloutFeedItem recommended_extensions = 1;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.CalloutFeedItem>}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.getKeyword = function() {
-  return /** @type{?proto.google.ads.googleads.v1.common.KeywordInfo} */ (
-    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_criteria_pb.KeywordInfo, 1));
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.getRecommendedExtensionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.CalloutFeedItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_extensions_pb.CalloutFeedItem, 1));
 };
 
 
-/** @param {?proto.google.ads.googleads.v1.common.KeywordInfo|undefined} value */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.setKeyword = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.clearKeyword = function() {
-  this.setKeyword(undefined);
+/** @param {!Array<!proto.google.ads.googleads.v1.common.CalloutFeedItem>} value */
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.setRecommendedExtensionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {!boolean}
+ * @param {!proto.google.ads.googleads.v1.common.CalloutFeedItem=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.CalloutFeedItem}
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.hasKeyword = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.addRecommendedExtensions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.google.ads.googleads.v1.common.CalloutFeedItem, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation.prototype.clearRecommendedExtensionsList = function() {
+  this.setRecommendedExtensionsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.displayName = 'proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.toObject(opt_includeInstance, this);
 };
 
 
 /**
- * optional google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;
- * @return {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType}
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.getRecommendedMatchType = function() {
-  return /** @type {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recommendedExtensionsList: jspb.Message.toObjectList(msg.getRecommendedExtensionsList(),
+    google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation;
+  return proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.deserializeBinaryFromReader(msg, reader);
 };
 
 
-/** @param {!proto.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType} value */
-proto.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation.prototype.setRecommendedMatchType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem;
+      reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.deserializeBinaryFromReader);
+      msg.addRecommendedExtensions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecommendedExtensionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated google.ads.googleads.v1.common.SitelinkFeedItem recommended_extensions = 1;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.SitelinkFeedItem>}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.getRecommendedExtensionsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.SitelinkFeedItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem, 1));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.SitelinkFeedItem>} value */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.setRecommendedExtensionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.SitelinkFeedItem=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.SitelinkFeedItem}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.addRecommendedExtensions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.google.ads.googleads.v1.common.SitelinkFeedItem, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation.prototype.clearRecommendedExtensionsList = function() {
+  this.setRecommendedExtensionsList([]);
 };
 
 
@@ -3867,6 +4420,96 @@ proto.google.ads.googleads.v1.resources.Recommendation.prototype.clearOptimizeAd
  */
 proto.google.ads.googleads.v1.resources.Recommendation.prototype.hasOptimizeAdRotationRecommendation = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional CalloutExtensionRecommendation callout_extension_recommendation = 17;
+ * @return {?proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.getCalloutExtensionRecommendation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation, 17));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.setCalloutExtensionRecommendation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 17, proto.google.ads.googleads.v1.resources.Recommendation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.clearCalloutExtensionRecommendation = function() {
+  this.setCalloutExtensionRecommendation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.hasCalloutExtensionRecommendation = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional SitelinkExtensionRecommendation sitelink_extension_recommendation = 18;
+ * @return {?proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.getSitelinkExtensionRecommendation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation, 18));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.setSitelinkExtensionRecommendation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.google.ads.googleads.v1.resources.Recommendation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.clearSitelinkExtensionRecommendation = function() {
+  this.setSitelinkExtensionRecommendation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.hasSitelinkExtensionRecommendation = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional CallExtensionRecommendation call_extension_recommendation = 19;
+ * @return {?proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.getCallExtensionRecommendation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation} */ (
+    jspb.Message.getWrapperField(this, proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation, 19));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation|undefined} value */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.setCallExtensionRecommendation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 19, proto.google.ads.googleads.v1.resources.Recommendation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.clearCallExtensionRecommendation = function() {
+  this.setCallExtensionRecommendation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Recommendation.prototype.hasCallExtensionRecommendation = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

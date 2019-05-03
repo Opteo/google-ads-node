@@ -67,7 +67,8 @@ proto.google.ads.googleads.v1.resources.MutateJob.toObject = function(includeIns
     id: (f = msg.getId()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     nextAddSequenceToken: (f = msg.getNextAddSequenceToken()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     metadata: (f = msg.getMetadata()) && proto.google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    longRunningOperation: (f = msg.getLongRunningOperation()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -126,6 +127,11 @@ proto.google.ads.googleads.v1.resources.MutateJob.deserializeBinaryFromReader = 
     case 5:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.MutateJobStatusEnum.MutateJobStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 6:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setLongRunningOperation(value);
       break;
     default:
       reader.skipField();
@@ -192,6 +198,14 @@ proto.google.ads.googleads.v1.resources.MutateJob.serializeBinaryToWriter = func
     writer.writeEnum(
       5,
       f
+    );
+  }
+  f = message.getLongRunningOperation();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -649,6 +663,36 @@ proto.google.ads.googleads.v1.resources.MutateJob.prototype.getStatus = function
 /** @param {!proto.google.ads.googleads.v1.enums.MutateJobStatusEnum.MutateJobStatus} value */
 proto.google.ads.googleads.v1.resources.MutateJob.prototype.setStatus = function(value) {
   jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue long_running_operation = 6;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.prototype.getLongRunningOperation = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 6));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.MutateJob.prototype.setLongRunningOperation = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.MutateJob.prototype.clearLongRunningOperation = function() {
+  this.setLongRunningOperation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.MutateJob.prototype.hasLongRunningOperation = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

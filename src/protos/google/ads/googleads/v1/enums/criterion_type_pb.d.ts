@@ -51,6 +51,7 @@ export namespace CriterionTypeEnum {
     MOBILE_DEVICE = 28,
     CUSTOM_AFFINITY = 29,
     CUSTOM_INTENT = 30,
+    LOCATION_GROUP = 31,
   }
 }
 

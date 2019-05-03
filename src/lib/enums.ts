@@ -197,6 +197,9 @@ export enum AdType {
   "APP_AD" = 17,
   "LEGACY_APP_INSTALL_AD" = 18,
   "RESPONSIVE_DISPLAY_AD" = 19,
+  "HTML5_UPLOAD_AD" = 21,
+  "DYNAMIC_HTML5_AD" = 22,
+  "APP_ENGAGEMENT_AD" = 23,
 }
 
 /**
@@ -216,6 +219,7 @@ export enum AdvertisingChannelSubType {
   "VIDEO_ACTION" = 10,
   "VIDEO_NON_SKIPPABLE" = 11,
   "APP_CAMPAIGN" = 12,
+  "APP_CAMPAIGN_FOR_ENGAGEMENT" = 13,
 }
 
 /**
@@ -333,6 +337,16 @@ export enum AppStore {
 }
 
 /**
+ * @name AppUrlOperatingSystemTypeEnum.AppUrlOperatingSystemType
+ */
+export enum AppUrlOperatingSystemType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "IOS" = 2,
+  "ANDROID" = 3,
+}
+
+/**
  * @name AssetTypeEnum.AssetType
  */
 export enum AssetType {
@@ -341,6 +355,7 @@ export enum AssetType {
   "YOUTUBE_VIDEO" = 2,
   "MEDIA_BUNDLE" = 3,
   "IMAGE" = 4,
+  "TEXT" = 5,
 }
 
 /**
@@ -473,6 +488,7 @@ export enum BudgetType {
   "UNKNOWN" = 1,
   "STANDARD" = 2,
   "HOTEL_ADS_COMMISSION" = 3,
+  "FIXED_CPA" = 4,
 }
 
 /**
@@ -506,6 +522,17 @@ export enum CalloutPlaceholderField {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "CALLOUT_TEXT" = 2,
+}
+
+/**
+ * @name CampaignExperimentTypeEnum.CampaignExperimentType
+ */
+export enum CampaignExperimentType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "BASE" = 2,
+  "DRAFT" = 3,
+  "EXPERIMENT" = 4,
 }
 
 /**
@@ -869,6 +896,7 @@ export enum CriterionType {
   "MOBILE_DEVICE" = 28,
   "CUSTOM_AFFINITY" = 29,
   "CUSTOM_INTENT" = 30,
+  "LOCATION_GROUP" = 31,
 }
 
 /**
@@ -941,6 +969,21 @@ export enum CustomerMatchUploadKeyType {
 }
 
 /**
+ * @name CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason
+ */
+export enum CustomerPayPerConversionEligibilityFailureReason {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "NOT_ENOUGH_CONVERSIONS" = 2,
+  "CONVERSION_LAG_TOO_HIGH" = 3,
+  "HAS_CAMPAIGN_WITH_SHARED_BUDGET" = 4,
+  "HAS_UPLOAD_CLICKS_CONVERSION" = 5,
+  "AVERAGE_DAILY_SPEND_TOO_HIGH" = 6,
+  "ANALYSIS_NOT_COMPLETE" = 7,
+  "OTHER" = 8,
+}
+
+/**
  * @name DataDrivenModelStatusEnum.DataDrivenModelStatus
  */
 export enum DataDrivenModelStatus {
@@ -988,6 +1031,24 @@ export enum DisplayAdFormatSetting {
   "ALL_FORMATS" = 2,
   "NON_NATIVE" = 3,
   "NATIVE" = 4,
+}
+
+/**
+ * @name DisplayUploadProductTypeEnum.DisplayUploadProductType
+ */
+export enum DisplayUploadProductType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "HTML5_UPLOAD_AD" = 2,
+  "DYNAMIC_HTML5_EDUCATION_AD" = 3,
+  "DYNAMIC_HTML5_FLIGHT_AD" = 4,
+  "DYNAMIC_HTML5_HOTEL_RENTAL_AD" = 5,
+  "DYNAMIC_HTML5_JOB_AD" = 6,
+  "DYNAMIC_HTML5_LOCAL_AD" = 7,
+  "DYNAMIC_HTML5_REAL_ESTATE_AD" = 8,
+  "DYNAMIC_HTML5_CUSTOM_AD" = 9,
+  "DYNAMIC_HTML5_TRAVEL_AD" = 10,
+  "DYNAMIC_HTML5_HOTEL_AD" = 11,
 }
 
 /**
@@ -1051,6 +1112,8 @@ export enum ExtensionType {
   "REVIEW" = 9,
   "SITELINK" = 10,
   "STRUCTURED_SNIPPET" = 11,
+  "LOCATION" = 12,
+  "AFFILIATE_LOCATION" = 13,
 }
 
 /**
@@ -1587,6 +1650,16 @@ export enum LocationExtensionTargetingCriterionField {
 }
 
 /**
+ * @name LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
+ */
+export enum LocationGroupRadiusUnits {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "METERS" = 2,
+  "MILES" = 3,
+}
+
+/**
  * @name LocationPlaceholderFieldEnum.LocationPlaceholderField
  */
 export enum LocationPlaceholderField {
@@ -1797,6 +1870,7 @@ export enum PaymentMode {
   "UNKNOWN" = 1,
   "CLICKS" = 4,
   "CONVERSION_VALUE" = 5,
+  "CONVERSIONS" = 6,
 }
 
 /**
@@ -1870,6 +1944,7 @@ export enum PolicyTopicEntryType {
   "UNKNOWN" = 1,
   "PROHIBITED" = 2,
   "LIMITED" = 4,
+  "FULLY_LIMITED" = 8,
   "DESCRIPTIVE" = 5,
   "BROADENING" = 6,
   "AREA_OF_INTEREST_ONLY" = 7,
@@ -1886,6 +1961,17 @@ export enum PolicyTopicEvidenceDestinationMismatchUrlType {
   "FINAL_MOBILE_URL" = 4,
   "TRACKING_URL" = 5,
   "MOBILE_TRACKING_URL" = 6,
+}
+
+/**
+ * @name PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice
+ */
+export enum PolicyTopicEvidenceDestinationNotWorkingDevice {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "DESKTOP" = 2,
+  "ANDROID" = 3,
+  "IOS" = 4,
 }
 
 /**
@@ -2216,8 +2302,22 @@ export enum RecommendationType {
   "SEARCH_PARTNERS_OPT_IN" = 8,
   "MAXIMIZE_CLICKS_OPT_IN" = 9,
   "OPTIMIZE_AD_ROTATION" = 10,
+  "CALLOUT_EXTENSION" = 11,
+  "SITELINK_EXTENSION" = 12,
+  "CALL_EXTENSION" = 13,
   "KEYWORD_MATCH_TYPE" = 14,
   "MOVE_UNUSED_BUDGET" = 15,
+}
+
+/**
+ * @name SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType
+ */
+export enum SearchEngineResultsPageType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "ADS_ONLY" = 2,
+  "ORGANIC_ONLY" = 3,
+  "ADS_AND_ORGANIC" = 4,
 }
 
 /**
@@ -2276,6 +2376,28 @@ export enum SharedSetType {
   "UNKNOWN" = 1,
   "NEGATIVE_KEYWORDS" = 2,
   "NEGATIVE_PLACEMENTS" = 3,
+}
+
+/**
+ * @name SimulationModificationMethodEnum.SimulationModificationMethod
+ */
+export enum SimulationModificationMethod {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "UNIFORM" = 2,
+  "DEFAULT" = 3,
+}
+
+/**
+ * @name SimulationTypeEnum.SimulationType
+ */
+export enum SimulationType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CPC_BID" = 2,
+  "CPV_BID" = 3,
+  "TARGET_CPA" = 4,
+  "BID_MODIFIER" = 5,
 }
 
 /**
@@ -2837,6 +2959,9 @@ export enum AdError {
   "CANNOT_SET_PATH2_WITHOUT_PATH1" = 128,
   "MISSING_DYNAMIC_SEARCH_ADS_SETTING_DOMAIN_NAME" = 129,
   "INCOMPATIBLE_WITH_RESTRICTION_TYPE" = 130,
+  "CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED" = 131,
+  "MISSING_IMAGE_OR_MEDIA_BUNDLE" = 132,
+  "PRODUCT_TYPE_NOT_SUPPORTED_IN_THIS_CAMPAIGN" = 133,
 }
 
 /**
@@ -2985,6 +3110,7 @@ export enum AssetError {
   "DUPLICATE_ASSET" = 3,
   "DUPLICATE_ASSET_NAME" = 4,
   "ASSET_DATA_IS_MISSING" = 5,
+  "CANNOT_MODIFY_ASSET_NAME" = 6,
 }
 
 /**
@@ -3071,6 +3197,7 @@ export enum BiddingStrategyError {
   "CANNOT_CHANGE_BIDDING_STRATEGY_TYPE" = 3,
   "CANNOT_REMOVE_ASSOCIATED_STRATEGY" = 4,
   "BIDDING_STRATEGY_NOT_SUPPORTED" = 5,
+  "INCOMPATIBLE_BIDDING_STRATEGY_AND_BIDDING_STRATEGY_GOAL_TYPE" = 6,
 }
 
 /**
@@ -3392,6 +3519,7 @@ export enum CriterionError {
   "MISSING_SHOPPING_SETTING" = 77,
   "INVALID_MATCHING_FUNCTION" = 78,
   "LOCATION_FILTER_NOT_ALLOWED" = 79,
+  "INVALID_FEED_FOR_LOCATION_FILTER" = 98,
   "LOCATION_FILTER_INVALID" = 80,
   "CANNOT_ATTACH_CRITERIA_AT_CAMPAIGN_AND_ADGROUP" = 81,
   "HOTEL_LENGTH_OF_STAY_OVERLAPS_WITH_EXISTING_CRITERION" = 82,
@@ -3827,6 +3955,12 @@ export enum FeedItemValidationError {
   "IMAGE_SIZE_WRONG" = 88,
   "EMAIL_DELIVERY_NOT_AVAILABLE_IN_COUNTRY" = 89,
   "AUTO_REPLY_NOT_AVAILABLE_IN_COUNTRY" = 90,
+  "INVALID_LATITUDE_VALUE" = 91,
+  "INVALID_LONGITUDE_VALUE" = 92,
+  "TOO_MANY_LABELS" = 93,
+  "INVALID_IMAGE_URL" = 94,
+  "MISSING_LATITUDE_VALUE" = 95,
+  "MISSING_LONGITUDE_VALUE" = 96,
 }
 
 /**
@@ -4185,6 +4319,18 @@ export enum MediaFileError {
 }
 
 /**
+ * @name MediaUploadErrorEnum.MediaUploadError
+ */
+export enum MediaUploadError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "FILE_TOO_BIG" = 2,
+  "UNPARSEABLE_IMAGE" = 3,
+  "ANIMATED_IMAGE_NOT_ALLOWED" = 4,
+  "FORMAT_NOT_ALLOWED" = 5,
+}
+
+/**
  * @name MultiplierErrorEnum.MultiplierError
  */
 export enum MultiplierError {
@@ -4339,6 +4485,8 @@ export enum QueryError {
   "BAD_LIMIT_VALUE" = 15,
   "BAD_NUMBER" = 5,
   "BAD_OPERATOR" = 3,
+  "BAD_PARAMETER_NAME" = 61,
+  "BAD_PARAMETER_VALUE" = 62,
   "BAD_RESOURCE_TYPE_IN_FROM_CLAUSE" = 45,
   "BAD_SYMBOL" = 2,
   "BAD_VALUE" = 4,
@@ -4534,6 +4682,16 @@ export enum SharedSetError {
 }
 
 /**
+ * @name SizeLimitErrorEnum.SizeLimitError
+ */
+export enum SizeLimitError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "REQUEST_SIZE_LIMIT_EXCEEDED" = 2,
+  "RESPONSE_SIZE_LIMIT_EXCEEDED" = 3,
+}
+
+/**
  * @name StringFormatErrorEnum.StringFormatError
  */
 export enum StringFormatError {
@@ -4644,4 +4802,14 @@ export enum UserListError {
   "RULE_TYPE_IS_NOT_SUPPORTED" = 34,
   "CAN_NOT_ADD_A_SIMILAR_USERLIST_AS_LOGICAL_LIST_OPERAND" = 35,
   "CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS" = 36,
+}
+
+/**
+ * @name YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError
+ */
+export enum YoutubeVideoRegistrationError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "VIDEO_NOT_FOUND" = 2,
+  "VIDEO_NOT_ACCESSIBLE" = 3,
 }

@@ -72,6 +72,7 @@ import * as google_ads_googleads_v1_errors_language_code_error_pb from "../../..
 import * as google_ads_googleads_v1_errors_list_operation_error_pb from "../../../../../google/ads/googleads/v1/errors/list_operation_error_pb";
 import * as google_ads_googleads_v1_errors_media_bundle_error_pb from "../../../../../google/ads/googleads/v1/errors/media_bundle_error_pb";
 import * as google_ads_googleads_v1_errors_media_file_error_pb from "../../../../../google/ads/googleads/v1/errors/media_file_error_pb";
+import * as google_ads_googleads_v1_errors_media_upload_error_pb from "../../../../../google/ads/googleads/v1/errors/media_upload_error_pb";
 import * as google_ads_googleads_v1_errors_multiplier_error_pb from "../../../../../google/ads/googleads/v1/errors/multiplier_error_pb";
 import * as google_ads_googleads_v1_errors_mutate_error_pb from "../../../../../google/ads/googleads/v1/errors/mutate_error_pb";
 import * as google_ads_googleads_v1_errors_mutate_job_error_pb from "../../../../../google/ads/googleads/v1/errors/mutate_job_error_pb";
@@ -95,10 +96,12 @@ import * as google_ads_googleads_v1_errors_resource_count_limit_exceeded_error_p
 import * as google_ads_googleads_v1_errors_setting_error_pb from "../../../../../google/ads/googleads/v1/errors/setting_error_pb";
 import * as google_ads_googleads_v1_errors_shared_criterion_error_pb from "../../../../../google/ads/googleads/v1/errors/shared_criterion_error_pb";
 import * as google_ads_googleads_v1_errors_shared_set_error_pb from "../../../../../google/ads/googleads/v1/errors/shared_set_error_pb";
+import * as google_ads_googleads_v1_errors_size_limit_error_pb from "../../../../../google/ads/googleads/v1/errors/size_limit_error_pb";
 import * as google_ads_googleads_v1_errors_string_format_error_pb from "../../../../../google/ads/googleads/v1/errors/string_format_error_pb";
 import * as google_ads_googleads_v1_errors_string_length_error_pb from "../../../../../google/ads/googleads/v1/errors/string_length_error_pb";
 import * as google_ads_googleads_v1_errors_url_field_error_pb from "../../../../../google/ads/googleads/v1/errors/url_field_error_pb";
 import * as google_ads_googleads_v1_errors_user_list_error_pb from "../../../../../google/ads/googleads/v1/errors/user_list_error_pb";
+import * as google_ads_googleads_v1_errors_youtube_video_registration_error_pb from "../../../../../google/ads/googleads/v1/errors/youtube_video_registration_error_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
@@ -354,6 +357,11 @@ export class ErrorCode extends jspb.Message {
   getMediaBundleError(): google_ads_googleads_v1_errors_media_bundle_error_pb.MediaBundleErrorEnum.MediaBundleError;
   setMediaBundleError(value: google_ads_googleads_v1_errors_media_bundle_error_pb.MediaBundleErrorEnum.MediaBundleError): void;
 
+  hasMediaUploadError(): boolean;
+  clearMediaUploadError(): void;
+  getMediaUploadError(): google_ads_googleads_v1_errors_media_upload_error_pb.MediaUploadErrorEnum.MediaUploadError;
+  setMediaUploadError(value: google_ads_googleads_v1_errors_media_upload_error_pb.MediaUploadErrorEnum.MediaUploadError): void;
+
   hasMediaFileError(): boolean;
   clearMediaFileError(): void;
   getMediaFileError(): google_ads_googleads_v1_errors_media_file_error_pb.MediaFileErrorEnum.MediaFileError;
@@ -428,6 +436,11 @@ export class ErrorCode extends jspb.Message {
   clearResourceCountLimitExceededError(): void;
   getResourceCountLimitExceededError(): google_ads_googleads_v1_errors_resource_count_limit_exceeded_error_pb.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError;
   setResourceCountLimitExceededError(value: google_ads_googleads_v1_errors_resource_count_limit_exceeded_error_pb.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError): void;
+
+  hasYoutubeVideoRegistrationError(): boolean;
+  clearYoutubeVideoRegistrationError(): void;
+  getYoutubeVideoRegistrationError(): google_ads_googleads_v1_errors_youtube_video_registration_error_pb.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError;
+  setYoutubeVideoRegistrationError(value: google_ads_googleads_v1_errors_youtube_video_registration_error_pb.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError): void;
 
   hasAdGroupBidModifierError(): boolean;
   clearAdGroupBidModifierError(): void;
@@ -644,6 +657,11 @@ export class ErrorCode extends jspb.Message {
   getPolicyValidationParameterError(): google_ads_googleads_v1_errors_policy_validation_parameter_error_pb.PolicyValidationParameterErrorEnum.PolicyValidationParameterError;
   setPolicyValidationParameterError(value: google_ads_googleads_v1_errors_policy_validation_parameter_error_pb.PolicyValidationParameterErrorEnum.PolicyValidationParameterError): void;
 
+  hasSizeLimitError(): boolean;
+  clearSizeLimitError(): void;
+  getSizeLimitError(): google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError;
+  setSizeLimitError(value: google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError): void;
+
   getErrorCodeCase(): ErrorCode.ErrorCodeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ErrorCode.AsObject;
@@ -694,6 +712,7 @@ export namespace ErrorCode {
     imageError: google_ads_googleads_v1_errors_image_error_pb.ImageErrorEnum.ImageError,
     languageCodeError: google_ads_googleads_v1_errors_language_code_error_pb.LanguageCodeErrorEnum.LanguageCodeError,
     mediaBundleError: google_ads_googleads_v1_errors_media_bundle_error_pb.MediaBundleErrorEnum.MediaBundleError,
+    mediaUploadError: google_ads_googleads_v1_errors_media_upload_error_pb.MediaUploadErrorEnum.MediaUploadError,
     mediaFileError: google_ads_googleads_v1_errors_media_file_error_pb.MediaFileErrorEnum.MediaFileError,
     multiplierError: google_ads_googleads_v1_errors_multiplier_error_pb.MultiplierErrorEnum.MultiplierError,
     newResourceCreationError: google_ads_googleads_v1_errors_new_resource_creation_error_pb.NewResourceCreationErrorEnum.NewResourceCreationError,
@@ -709,6 +728,7 @@ export namespace ErrorCode {
     operationAccessDeniedError: google_ads_googleads_v1_errors_operation_access_denied_error_pb.OperationAccessDeniedErrorEnum.OperationAccessDeniedError,
     resourceAccessDeniedError: google_ads_googleads_v1_errors_resource_access_denied_error_pb.ResourceAccessDeniedErrorEnum.ResourceAccessDeniedError,
     resourceCountLimitExceededError: google_ads_googleads_v1_errors_resource_count_limit_exceeded_error_pb.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError,
+    youtubeVideoRegistrationError: google_ads_googleads_v1_errors_youtube_video_registration_error_pb.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError,
     adGroupBidModifierError: google_ads_googleads_v1_errors_ad_group_bid_modifier_error_pb.AdGroupBidModifierErrorEnum.AdGroupBidModifierError,
     contextError: google_ads_googleads_v1_errors_context_error_pb.ContextErrorEnum.ContextError,
     fieldError: google_ads_googleads_v1_errors_field_error_pb.FieldErrorEnum.FieldError,
@@ -752,6 +772,7 @@ export namespace ErrorCode {
     mutateJobError: google_ads_googleads_v1_errors_mutate_job_error_pb.MutateJobErrorEnum.MutateJobError,
     partialFailureError: google_ads_googleads_v1_errors_partial_failure_error_pb.PartialFailureErrorEnum.PartialFailureError,
     policyValidationParameterError: google_ads_googleads_v1_errors_policy_validation_parameter_error_pb.PolicyValidationParameterErrorEnum.PolicyValidationParameterError,
+    sizeLimitError: google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError,
   }
 
   export enum ErrorCodeCase {
@@ -793,6 +814,7 @@ export namespace ErrorCode {
     IMAGE_ERROR = 40,
     LANGUAGE_CODE_ERROR = 110,
     MEDIA_BUNDLE_ERROR = 42,
+    MEDIA_UPLOAD_ERROR = 116,
     MEDIA_FILE_ERROR = 86,
     MULTIPLIER_ERROR = 44,
     NEW_RESOURCE_CREATION_ERROR = 45,
@@ -808,6 +830,7 @@ export namespace ErrorCode {
     OPERATION_ACCESS_DENIED_ERROR = 55,
     RESOURCE_ACCESS_DENIED_ERROR = 56,
     RESOURCE_COUNT_LIMIT_EXCEEDED_ERROR = 57,
+    YOUTUBE_VIDEO_REGISTRATION_ERROR = 117,
     AD_GROUP_BID_MODIFIER_ERROR = 59,
     CONTEXT_ERROR = 60,
     FIELD_ERROR = 61,
@@ -851,6 +874,7 @@ export namespace ErrorCode {
     MUTATE_JOB_ERROR = 108,
     PARTIAL_FAILURE_ERROR = 112,
     POLICY_VALIDATION_PARAMETER_ERROR = 114,
+    SIZE_LIMIT_ERROR = 118,
   }
 }
 

@@ -22,9 +22,12 @@ var google_ads_googleads_v1_resources_ad_group_audience_view_pb = require('../..
 var google_ads_googleads_v1_resources_ad_group_bid_modifier_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_bid_modifier_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_pb.js');
 var google_ads_googleads_v1_resources_ad_group_criterion_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_label_pb.js');
+var google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_criterion_simulation_pb.js');
 var google_ads_googleads_v1_resources_ad_group_extension_setting_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_extension_setting_pb.js');
 var google_ads_googleads_v1_resources_ad_group_feed_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_feed_pb.js');
 var google_ads_googleads_v1_resources_ad_group_label_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_label_pb.js');
+var google_ads_googleads_v1_resources_ad_group_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/ad_group_simulation_pb.js');
+var google_ads_googleads_v1_resources_ad_parameter_pb = require('../../../../../google/ads/googleads/v1/resources/ad_parameter_pb.js');
 var google_ads_googleads_v1_resources_ad_schedule_view_pb = require('../../../../../google/ads/googleads/v1/resources/ad_schedule_view_pb.js');
 var google_ads_googleads_v1_resources_age_range_view_pb = require('../../../../../google/ads/googleads/v1/resources/age_range_view_pb.js');
 var google_ads_googleads_v1_resources_asset_pb = require('../../../../../google/ads/googleads/v1/resources/asset_pb.js');
@@ -35,6 +38,7 @@ var google_ads_googleads_v1_resources_campaign_audience_view_pb = require('../..
 var google_ads_googleads_v1_resources_campaign_bid_modifier_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_bid_modifier_pb.js');
 var google_ads_googleads_v1_resources_campaign_budget_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_budget_pb.js');
 var google_ads_googleads_v1_resources_campaign_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_pb.js');
+var google_ads_googleads_v1_resources_campaign_criterion_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_simulation_pb.js');
 var google_ads_googleads_v1_resources_campaign_extension_setting_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_extension_setting_pb.js');
 var google_ads_googleads_v1_resources_campaign_feed_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_feed_pb.js');
 var google_ads_googleads_v1_resources_campaign_label_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_label_pb.js');
@@ -56,6 +60,7 @@ var google_ads_googleads_v1_resources_detail_placement_view_pb = require('../../
 var google_ads_googleads_v1_resources_display_keyword_view_pb = require('../../../../../google/ads/googleads/v1/resources/display_keyword_view_pb.js');
 var google_ads_googleads_v1_resources_domain_category_pb = require('../../../../../google/ads/googleads/v1/resources/domain_category_pb.js');
 var google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb = require('../../../../../google/ads/googleads/v1/resources/dynamic_search_ads_search_term_view_pb.js');
+var google_ads_googleads_v1_resources_expanded_landing_page_view_pb = require('../../../../../google/ads/googleads/v1/resources/expanded_landing_page_view_pb.js');
 var google_ads_googleads_v1_resources_extension_feed_item_pb = require('../../../../../google/ads/googleads/v1/resources/extension_feed_item_pb.js');
 var google_ads_googleads_v1_resources_feed_pb = require('../../../../../google/ads/googleads/v1/resources/feed_pb.js');
 var google_ads_googleads_v1_resources_feed_item_pb = require('../../../../../google/ads/googleads/v1/resources/feed_item_pb.js');
@@ -75,13 +80,16 @@ var google_ads_googleads_v1_resources_keyword_plan_keyword_pb = require('../../.
 var google_ads_googleads_v1_resources_keyword_plan_negative_keyword_pb = require('../../../../../google/ads/googleads/v1/resources/keyword_plan_negative_keyword_pb.js');
 var google_ads_googleads_v1_resources_keyword_view_pb = require('../../../../../google/ads/googleads/v1/resources/keyword_view_pb.js');
 var google_ads_googleads_v1_resources_label_pb = require('../../../../../google/ads/googleads/v1/resources/label_pb.js');
+var google_ads_googleads_v1_resources_landing_page_view_pb = require('../../../../../google/ads/googleads/v1/resources/landing_page_view_pb.js');
 var google_ads_googleads_v1_resources_language_constant_pb = require('../../../../../google/ads/googleads/v1/resources/language_constant_pb.js');
 var google_ads_googleads_v1_resources_location_view_pb = require('../../../../../google/ads/googleads/v1/resources/location_view_pb.js');
 var google_ads_googleads_v1_resources_managed_placement_view_pb = require('../../../../../google/ads/googleads/v1/resources/managed_placement_view_pb.js');
 var google_ads_googleads_v1_resources_media_file_pb = require('../../../../../google/ads/googleads/v1/resources/media_file_pb.js');
 var google_ads_googleads_v1_resources_mobile_app_category_constant_pb = require('../../../../../google/ads/googleads/v1/resources/mobile_app_category_constant_pb.js');
 var google_ads_googleads_v1_resources_mobile_device_constant_pb = require('../../../../../google/ads/googleads/v1/resources/mobile_device_constant_pb.js');
+var google_ads_googleads_v1_resources_mutate_job_pb = require('../../../../../google/ads/googleads/v1/resources/mutate_job_pb.js');
 var google_ads_googleads_v1_resources_operating_system_version_constant_pb = require('../../../../../google/ads/googleads/v1/resources/operating_system_version_constant_pb.js');
+var google_ads_googleads_v1_resources_paid_organic_search_term_view_pb = require('../../../../../google/ads/googleads/v1/resources/paid_organic_search_term_view_pb.js');
 var google_ads_googleads_v1_resources_parental_status_view_pb = require('../../../../../google/ads/googleads/v1/resources/parental_status_view_pb.js');
 var google_ads_googleads_v1_resources_product_bidding_category_constant_pb = require('../../../../../google/ads/googleads/v1/resources/product_bidding_category_constant_pb.js');
 var google_ads_googleads_v1_resources_product_group_view_pb = require('../../../../../google/ads/googleads/v1/resources/product_group_view_pb.js');
@@ -717,9 +725,12 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     adGroupBidModifier: (f = msg.getAdGroupBidModifier()) && google_ads_googleads_v1_resources_ad_group_bid_modifier_pb.AdGroupBidModifier.toObject(includeInstance, f),
     adGroupCriterion: (f = msg.getAdGroupCriterion()) && google_ads_googleads_v1_resources_ad_group_criterion_pb.AdGroupCriterion.toObject(includeInstance, f),
     adGroupCriterionLabel: (f = msg.getAdGroupCriterionLabel()) && google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel.toObject(includeInstance, f),
+    adGroupCriterionSimulation: (f = msg.getAdGroupCriterionSimulation()) && google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation.toObject(includeInstance, f),
     adGroupExtensionSetting: (f = msg.getAdGroupExtensionSetting()) && google_ads_googleads_v1_resources_ad_group_extension_setting_pb.AdGroupExtensionSetting.toObject(includeInstance, f),
     adGroupFeed: (f = msg.getAdGroupFeed()) && google_ads_googleads_v1_resources_ad_group_feed_pb.AdGroupFeed.toObject(includeInstance, f),
     adGroupLabel: (f = msg.getAdGroupLabel()) && google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel.toObject(includeInstance, f),
+    adGroupSimulation: (f = msg.getAdGroupSimulation()) && google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation.toObject(includeInstance, f),
+    adParameter: (f = msg.getAdParameter()) && google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter.toObject(includeInstance, f),
     ageRangeView: (f = msg.getAgeRangeView()) && google_ads_googleads_v1_resources_age_range_view_pb.AgeRangeView.toObject(includeInstance, f),
     adScheduleView: (f = msg.getAdScheduleView()) && google_ads_googleads_v1_resources_ad_schedule_view_pb.AdScheduleView.toObject(includeInstance, f),
     domainCategory: (f = msg.getDomainCategory()) && google_ads_googleads_v1_resources_domain_category_pb.DomainCategory.toObject(includeInstance, f),
@@ -731,6 +742,7 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     campaignAudienceView: (f = msg.getCampaignAudienceView()) && google_ads_googleads_v1_resources_campaign_audience_view_pb.CampaignAudienceView.toObject(includeInstance, f),
     campaignBidModifier: (f = msg.getCampaignBidModifier()) && google_ads_googleads_v1_resources_campaign_bid_modifier_pb.CampaignBidModifier.toObject(includeInstance, f),
     campaignCriterion: (f = msg.getCampaignCriterion()) && google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.toObject(includeInstance, f),
+    campaignCriterionSimulation: (f = msg.getCampaignCriterionSimulation()) && google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.toObject(includeInstance, f),
     campaignExtensionSetting: (f = msg.getCampaignExtensionSetting()) && google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting.toObject(includeInstance, f),
     campaignFeed: (f = msg.getCampaignFeed()) && google_ads_googleads_v1_resources_campaign_feed_pb.CampaignFeed.toObject(includeInstance, f),
     campaignLabel: (f = msg.getCampaignLabel()) && google_ads_googleads_v1_resources_campaign_label_pb.CampaignLabel.toObject(includeInstance, f),
@@ -751,6 +763,7 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     detailPlacementView: (f = msg.getDetailPlacementView()) && google_ads_googleads_v1_resources_detail_placement_view_pb.DetailPlacementView.toObject(includeInstance, f),
     displayKeywordView: (f = msg.getDisplayKeywordView()) && google_ads_googleads_v1_resources_display_keyword_view_pb.DisplayKeywordView.toObject(includeInstance, f),
     dynamicSearchAdsSearchTermView: (f = msg.getDynamicSearchAdsSearchTermView()) && google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView.toObject(includeInstance, f),
+    expandedLandingPageView: (f = msg.getExpandedLandingPageView()) && google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView.toObject(includeInstance, f),
     extensionFeedItem: (f = msg.getExtensionFeedItem()) && google_ads_googleads_v1_resources_extension_feed_item_pb.ExtensionFeedItem.toObject(includeInstance, f),
     feed: (f = msg.getFeed()) && google_ads_googleads_v1_resources_feed_pb.Feed.toObject(includeInstance, f),
     feedItem: (f = msg.getFeedItem()) && google_ads_googleads_v1_resources_feed_item_pb.FeedItem.toObject(includeInstance, f),
@@ -770,13 +783,16 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     keywordPlanAdGroup: (f = msg.getKeywordPlanAdGroup()) && google_ads_googleads_v1_resources_keyword_plan_ad_group_pb.KeywordPlanAdGroup.toObject(includeInstance, f),
     keywordPlanKeyword: (f = msg.getKeywordPlanKeyword()) && google_ads_googleads_v1_resources_keyword_plan_keyword_pb.KeywordPlanKeyword.toObject(includeInstance, f),
     label: (f = msg.getLabel()) && google_ads_googleads_v1_resources_label_pb.Label.toObject(includeInstance, f),
+    landingPageView: (f = msg.getLandingPageView()) && google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView.toObject(includeInstance, f),
     languageConstant: (f = msg.getLanguageConstant()) && google_ads_googleads_v1_resources_language_constant_pb.LanguageConstant.toObject(includeInstance, f),
     locationView: (f = msg.getLocationView()) && google_ads_googleads_v1_resources_location_view_pb.LocationView.toObject(includeInstance, f),
     managedPlacementView: (f = msg.getManagedPlacementView()) && google_ads_googleads_v1_resources_managed_placement_view_pb.ManagedPlacementView.toObject(includeInstance, f),
     mediaFile: (f = msg.getMediaFile()) && google_ads_googleads_v1_resources_media_file_pb.MediaFile.toObject(includeInstance, f),
     mobileAppCategoryConstant: (f = msg.getMobileAppCategoryConstant()) && google_ads_googleads_v1_resources_mobile_app_category_constant_pb.MobileAppCategoryConstant.toObject(includeInstance, f),
     mobileDeviceConstant: (f = msg.getMobileDeviceConstant()) && google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant.toObject(includeInstance, f),
+    mutateJob: (f = msg.getMutateJob()) && google_ads_googleads_v1_resources_mutate_job_pb.MutateJob.toObject(includeInstance, f),
     operatingSystemVersionConstant: (f = msg.getOperatingSystemVersionConstant()) && google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant.toObject(includeInstance, f),
+    paidOrganicSearchTermView: (f = msg.getPaidOrganicSearchTermView()) && google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView.toObject(includeInstance, f),
     parentalStatusView: (f = msg.getParentalStatusView()) && google_ads_googleads_v1_resources_parental_status_view_pb.ParentalStatusView.toObject(includeInstance, f),
     productBiddingCategoryConstant: (f = msg.getProductBiddingCategoryConstant()) && google_ads_googleads_v1_resources_product_bidding_category_constant_pb.ProductBiddingCategoryConstant.toObject(includeInstance, f),
     productGroupView: (f = msg.getProductGroupView()) && google_ads_googleads_v1_resources_product_group_view_pb.ProductGroupView.toObject(includeInstance, f),
@@ -874,6 +890,11 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       reader.readMessage(value,google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel.deserializeBinaryFromReader);
       msg.setAdGroupCriterionLabel(value);
       break;
+    case 110:
+      var value = new google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation;
+      reader.readMessage(value,google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation.deserializeBinaryFromReader);
+      msg.setAdGroupCriterionSimulation(value);
+      break;
     case 112:
       var value = new google_ads_googleads_v1_resources_ad_group_extension_setting_pb.AdGroupExtensionSetting;
       reader.readMessage(value,google_ads_googleads_v1_resources_ad_group_extension_setting_pb.AdGroupExtensionSetting.deserializeBinaryFromReader);
@@ -888,6 +909,16 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       var value = new google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel;
       reader.readMessage(value,google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel.deserializeBinaryFromReader);
       msg.setAdGroupLabel(value);
+      break;
+    case 107:
+      var value = new google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation;
+      reader.readMessage(value,google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation.deserializeBinaryFromReader);
+      msg.setAdGroupSimulation(value);
+      break;
+    case 130:
+      var value = new google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter;
+      reader.readMessage(value,google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter.deserializeBinaryFromReader);
+      msg.setAdParameter(value);
       break;
     case 48:
       var value = new google_ads_googleads_v1_resources_age_range_view_pb.AgeRangeView;
@@ -943,6 +974,11 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       var value = new google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion;
       reader.readMessage(value,google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.deserializeBinaryFromReader);
       msg.setCampaignCriterion(value);
+      break;
+    case 111:
+      var value = new google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation;
+      reader.readMessage(value,google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.deserializeBinaryFromReader);
+      msg.setCampaignCriterionSimulation(value);
       break;
     case 113:
       var value = new google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting;
@@ -1044,6 +1080,11 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       reader.readMessage(value,google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView.deserializeBinaryFromReader);
       msg.setDynamicSearchAdsSearchTermView(value);
       break;
+    case 128:
+      var value = new google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView;
+      reader.readMessage(value,google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView.deserializeBinaryFromReader);
+      msg.setExpandedLandingPageView(value);
+      break;
     case 85:
       var value = new google_ads_googleads_v1_resources_extension_feed_item_pb.ExtensionFeedItem;
       reader.readMessage(value,google_ads_googleads_v1_resources_extension_feed_item_pb.ExtensionFeedItem.deserializeBinaryFromReader);
@@ -1139,6 +1180,11 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       reader.readMessage(value,google_ads_googleads_v1_resources_label_pb.Label.deserializeBinaryFromReader);
       msg.setLabel(value);
       break;
+    case 126:
+      var value = new google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView;
+      reader.readMessage(value,google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView.deserializeBinaryFromReader);
+      msg.setLandingPageView(value);
+      break;
     case 55:
       var value = new google_ads_googleads_v1_resources_language_constant_pb.LanguageConstant;
       reader.readMessage(value,google_ads_googleads_v1_resources_language_constant_pb.LanguageConstant.deserializeBinaryFromReader);
@@ -1169,10 +1215,20 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       reader.readMessage(value,google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant.deserializeBinaryFromReader);
       msg.setMobileDeviceConstant(value);
       break;
+    case 127:
+      var value = new google_ads_googleads_v1_resources_mutate_job_pb.MutateJob;
+      reader.readMessage(value,google_ads_googleads_v1_resources_mutate_job_pb.MutateJob.deserializeBinaryFromReader);
+      msg.setMutateJob(value);
+      break;
     case 86:
       var value = new google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant;
       reader.readMessage(value,google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant.deserializeBinaryFromReader);
       msg.setOperatingSystemVersionConstant(value);
+      break;
+    case 129:
+      var value = new google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView;
+      reader.readMessage(value,google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView.deserializeBinaryFromReader);
+      msg.setPaidOrganicSearchTermView(value);
       break;
     case 45:
       var value = new google_ads_googleads_v1_resources_parental_status_view_pb.ParentalStatusView;
@@ -1355,6 +1411,14 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       google_ads_googleads_v1_resources_ad_group_criterion_label_pb.AdGroupCriterionLabel.serializeBinaryToWriter
     );
   }
+  f = message.getAdGroupCriterionSimulation();
+  if (f != null) {
+    writer.writeMessage(
+      110,
+      f,
+      google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation.serializeBinaryToWriter
+    );
+  }
   f = message.getAdGroupExtensionSetting();
   if (f != null) {
     writer.writeMessage(
@@ -1377,6 +1441,22 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       115,
       f,
       google_ads_googleads_v1_resources_ad_group_label_pb.AdGroupLabel.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdGroupSimulation();
+  if (f != null) {
+    writer.writeMessage(
+      107,
+      f,
+      google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdParameter();
+  if (f != null) {
+    writer.writeMessage(
+      130,
+      f,
+      google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter.serializeBinaryToWriter
     );
   }
   f = message.getAgeRangeView();
@@ -1465,6 +1545,14 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       20,
       f,
       google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignCriterionSimulation();
+  if (f != null) {
+    writer.writeMessage(
+      111,
+      f,
+      google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.serializeBinaryToWriter
     );
   }
   f = message.getCampaignExtensionSetting();
@@ -1627,6 +1715,14 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       google_ads_googleads_v1_resources_dynamic_search_ads_search_term_view_pb.DynamicSearchAdsSearchTermView.serializeBinaryToWriter
     );
   }
+  f = message.getExpandedLandingPageView();
+  if (f != null) {
+    writer.writeMessage(
+      128,
+      f,
+      google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView.serializeBinaryToWriter
+    );
+  }
   f = message.getExtensionFeedItem();
   if (f != null) {
     writer.writeMessage(
@@ -1779,6 +1875,14 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       google_ads_googleads_v1_resources_label_pb.Label.serializeBinaryToWriter
     );
   }
+  f = message.getLandingPageView();
+  if (f != null) {
+    writer.writeMessage(
+      126,
+      f,
+      google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView.serializeBinaryToWriter
+    );
+  }
   f = message.getLanguageConstant();
   if (f != null) {
     writer.writeMessage(
@@ -1827,12 +1931,28 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       google_ads_googleads_v1_resources_mobile_device_constant_pb.MobileDeviceConstant.serializeBinaryToWriter
     );
   }
+  f = message.getMutateJob();
+  if (f != null) {
+    writer.writeMessage(
+      127,
+      f,
+      google_ads_googleads_v1_resources_mutate_job_pb.MutateJob.serializeBinaryToWriter
+    );
+  }
   f = message.getOperatingSystemVersionConstant();
   if (f != null) {
     writer.writeMessage(
       86,
       f,
       google_ads_googleads_v1_resources_operating_system_version_constant_pb.OperatingSystemVersionConstant.serializeBinaryToWriter
+    );
+  }
+  f = message.getPaidOrganicSearchTermView();
+  if (f != null) {
+    writer.writeMessage(
+      129,
+      f,
+      google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView.serializeBinaryToWriter
     );
   }
   f = message.getParentalStatusView();
@@ -2237,6 +2357,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAdGroupCriterio
 
 
 /**
+ * optional google.ads.googleads.v1.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;
+ * @return {?proto.google.ads.googleads.v1.resources.AdGroupCriterionSimulation}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getAdGroupCriterionSimulation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.AdGroupCriterionSimulation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_ad_group_criterion_simulation_pb.AdGroupCriterionSimulation, 110));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.AdGroupCriterionSimulation|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setAdGroupCriterionSimulation = function(value) {
+  jspb.Message.setWrapperField(this, 110, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearAdGroupCriterionSimulation = function() {
+  this.setAdGroupCriterionSimulation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAdGroupCriterionSimulation = function() {
+  return jspb.Message.getField(this, 110) != null;
+};
+
+
+/**
  * optional google.ads.googleads.v1.resources.AdGroupExtensionSetting ad_group_extension_setting = 112;
  * @return {?proto.google.ads.googleads.v1.resources.AdGroupExtensionSetting}
  */
@@ -2323,6 +2473,66 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearAdGroupLabel 
  */
 proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAdGroupLabel = function() {
   return jspb.Message.getField(this, 115) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.AdGroupSimulation ad_group_simulation = 107;
+ * @return {?proto.google.ads.googleads.v1.resources.AdGroupSimulation}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getAdGroupSimulation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.AdGroupSimulation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_ad_group_simulation_pb.AdGroupSimulation, 107));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.AdGroupSimulation|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setAdGroupSimulation = function(value) {
+  jspb.Message.setWrapperField(this, 107, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearAdGroupSimulation = function() {
+  this.setAdGroupSimulation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAdGroupSimulation = function() {
+  return jspb.Message.getField(this, 107) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.AdParameter ad_parameter = 130;
+ * @return {?proto.google.ads.googleads.v1.resources.AdParameter}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getAdParameter = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.AdParameter} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_ad_parameter_pb.AdParameter, 130));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.AdParameter|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setAdParameter = function(value) {
+  jspb.Message.setWrapperField(this, 130, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearAdParameter = function() {
+  this.setAdParameter(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasAdParameter = function() {
+  return jspb.Message.getField(this, 130) != null;
 };
 
 
@@ -2653,6 +2863,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearCampaignCrite
  */
 proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasCampaignCriterion = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;
+ * @return {?proto.google.ads.googleads.v1.resources.CampaignCriterionSimulation}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getCampaignCriterionSimulation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.CampaignCriterionSimulation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation, 111));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.CampaignCriterionSimulation|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setCampaignCriterionSimulation = function(value) {
+  jspb.Message.setWrapperField(this, 111, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearCampaignCriterionSimulation = function() {
+  this.setCampaignCriterionSimulation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasCampaignCriterionSimulation = function() {
+  return jspb.Message.getField(this, 111) != null;
 };
 
 
@@ -3257,6 +3497,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasDynamicSearchAd
 
 
 /**
+ * optional google.ads.googleads.v1.resources.ExpandedLandingPageView expanded_landing_page_view = 128;
+ * @return {?proto.google.ads.googleads.v1.resources.ExpandedLandingPageView}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getExpandedLandingPageView = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.ExpandedLandingPageView} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_expanded_landing_page_view_pb.ExpandedLandingPageView, 128));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.ExpandedLandingPageView|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setExpandedLandingPageView = function(value) {
+  jspb.Message.setWrapperField(this, 128, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearExpandedLandingPageView = function() {
+  this.setExpandedLandingPageView(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasExpandedLandingPageView = function() {
+  return jspb.Message.getField(this, 128) != null;
+};
+
+
+/**
  * optional google.ads.googleads.v1.resources.ExtensionFeedItem extension_feed_item = 85;
  * @return {?proto.google.ads.googleads.v1.resources.ExtensionFeedItem}
  */
@@ -3827,6 +4097,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasLabel = functio
 
 
 /**
+ * optional google.ads.googleads.v1.resources.LandingPageView landing_page_view = 126;
+ * @return {?proto.google.ads.googleads.v1.resources.LandingPageView}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getLandingPageView = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.LandingPageView} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_landing_page_view_pb.LandingPageView, 126));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.LandingPageView|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setLandingPageView = function(value) {
+  jspb.Message.setWrapperField(this, 126, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearLandingPageView = function() {
+  this.setLandingPageView(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasLandingPageView = function() {
+  return jspb.Message.getField(this, 126) != null;
+};
+
+
+/**
  * optional google.ads.googleads.v1.resources.LanguageConstant language_constant = 55;
  * @return {?proto.google.ads.googleads.v1.resources.LanguageConstant}
  */
@@ -4007,6 +4307,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasMobileDeviceCon
 
 
 /**
+ * optional google.ads.googleads.v1.resources.MutateJob mutate_job = 127;
+ * @return {?proto.google.ads.googleads.v1.resources.MutateJob}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getMutateJob = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.MutateJob} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_mutate_job_pb.MutateJob, 127));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.MutateJob|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setMutateJob = function(value) {
+  jspb.Message.setWrapperField(this, 127, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearMutateJob = function() {
+  this.setMutateJob(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasMutateJob = function() {
+  return jspb.Message.getField(this, 127) != null;
+};
+
+
+/**
  * optional google.ads.googleads.v1.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;
  * @return {?proto.google.ads.googleads.v1.resources.OperatingSystemVersionConstant}
  */
@@ -4033,6 +4363,36 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearOperatingSyst
  */
 proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasOperatingSystemVersionConstant = function() {
   return jspb.Message.getField(this, 86) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;
+ * @return {?proto.google.ads.googleads.v1.resources.PaidOrganicSearchTermView}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getPaidOrganicSearchTermView = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.PaidOrganicSearchTermView} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_paid_organic_search_term_view_pb.PaidOrganicSearchTermView, 129));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.PaidOrganicSearchTermView|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setPaidOrganicSearchTermView = function(value) {
+  jspb.Message.setWrapperField(this, 129, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearPaidOrganicSearchTermView = function() {
+  this.setPaidOrganicSearchTermView(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasPaidOrganicSearchTermView = function() {
+  return jspb.Message.getField(this, 129) != null;
 };
 
 

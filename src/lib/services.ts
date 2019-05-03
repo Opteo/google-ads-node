@@ -15,6 +15,8 @@ import { AdGroupCriterionLabelServiceClient } from "../protos/google/ads/googlea
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_criterion_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { AdGroupCriterionSimulationServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_criterion_simulation_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { AdGroupExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_extension_setting_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupFeedServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_feed_service_grpc_pb";
@@ -22,6 +24,8 @@ import { AdGroupFeedServiceClient } from "../protos/google/ads/googleads/v1/serv
 import { AdGroupLabelServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_label_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdGroupServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { AdGroupSimulationServiceClient } from "../protos/google/ads/googleads/v1/services/ad_group_simulation_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { AdParameterServiceClient } from "../protos/google/ads/googleads/v1/services/ad_parameter_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -42,6 +46,8 @@ import { CampaignBidModifierServiceClient } from "../protos/google/ads/googleads
 import { CampaignBudgetServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_budget_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignCriterionServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_criterion_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { CampaignCriterionSimulationServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_criterion_simulation_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_extension_setting_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
@@ -192,10 +198,12 @@ export {
   AdGroupBidModifierServiceClient,
   AdGroupCriterionLabelServiceClient,
   AdGroupCriterionServiceClient,
+  AdGroupCriterionSimulationServiceClient,
   AdGroupExtensionSettingServiceClient,
   AdGroupFeedServiceClient,
   AdGroupLabelServiceClient,
   AdGroupServiceClient,
+  AdGroupSimulationServiceClient,
   AdParameterServiceClient,
   AdScheduleViewServiceClient,
   AgeRangeViewServiceClient,
@@ -205,6 +213,7 @@ export {
   CampaignBidModifierServiceClient,
   CampaignBudgetServiceClient,
   CampaignCriterionServiceClient,
+  CampaignCriterionSimulationServiceClient,
   CampaignExtensionSettingServiceClient,
   CampaignFeedServiceClient,
   CampaignLabelServiceClient,

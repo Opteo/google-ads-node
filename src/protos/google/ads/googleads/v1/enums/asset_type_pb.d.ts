@@ -25,6 +25,7 @@ export namespace AssetTypeEnum {
     YOUTUBE_VIDEO = 2,
     MEDIA_BUNDLE = 3,
     IMAGE = 4,
+    TEXT = 5,
   }
 }
 

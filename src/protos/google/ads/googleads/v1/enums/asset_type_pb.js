@@ -138,7 +138,8 @@ proto.google.ads.googleads.v1.enums.AssetTypeEnum.AssetType = {
   UNKNOWN: 1,
   YOUTUBE_VIDEO: 2,
   MEDIA_BUNDLE: 3,
-  IMAGE: 4
+  IMAGE: 4,
+  TEXT: 5
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

@@ -28,6 +28,11 @@ export class MutateJob extends jspb.Message {
   getStatus(): google_ads_googleads_v1_enums_mutate_job_status_pb.MutateJobStatusEnum.MutateJobStatus;
   setStatus(value: google_ads_googleads_v1_enums_mutate_job_status_pb.MutateJobStatusEnum.MutateJobStatus): void;
 
+  hasLongRunningOperation(): boolean;
+  clearLongRunningOperation(): void;
+  getLongRunningOperation(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setLongRunningOperation(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MutateJob.AsObject;
   static toObject(includeInstance: boolean, msg: MutateJob): MutateJob.AsObject;
@@ -45,6 +50,7 @@ export namespace MutateJob {
     nextAddSequenceToken?: google_protobuf_wrappers_pb.StringValue.AsObject,
     metadata?: MutateJob.MutateJobMetadata.AsObject,
     status: google_ads_googleads_v1_enums_mutate_job_status_pb.MutateJobStatusEnum.MutateJobStatus,
+    longRunningOperation?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 
   export class MutateJobMetadata extends jspb.Message {

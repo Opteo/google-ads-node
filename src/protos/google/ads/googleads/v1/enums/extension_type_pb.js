@@ -145,7 +145,9 @@ proto.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType = {
   PROMOTION: 8,
   REVIEW: 9,
   SITELINK: 10,
-  STRUCTURED_SNIPPET: 11
+  STRUCTURED_SNIPPET: 11,
+  LOCATION: 12,
+  AFFILIATE_LOCATION: 13
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

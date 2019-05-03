@@ -24,6 +24,7 @@ export namespace BudgetTypeEnum {
     UNKNOWN = 1,
     STANDARD = 2,
     HOTEL_ADS_COMMISSION = 3,
+    FIXED_CPA = 4,
   }
 }
 

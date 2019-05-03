@@ -143,6 +143,8 @@ proto.google.ads.googleads.v1.errors.QueryErrorEnum.QueryError = {
   BAD_LIMIT_VALUE: 15,
   BAD_NUMBER: 5,
   BAD_OPERATOR: 3,
+  BAD_PARAMETER_NAME: 61,
+  BAD_PARAMETER_VALUE: 62,
   BAD_RESOURCE_TYPE_IN_FROM_CLAUSE: 45,
   BAD_SYMBOL: 2,
   BAD_VALUE: 4,

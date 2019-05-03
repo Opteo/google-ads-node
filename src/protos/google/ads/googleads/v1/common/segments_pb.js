@@ -27,6 +27,7 @@ var google_ads_googleads_v1_enums_placeholder_type_pb = require('../../../../../
 var google_ads_googleads_v1_enums_product_channel_pb = require('../../../../../google/ads/googleads/v1/enums/product_channel_pb.js');
 var google_ads_googleads_v1_enums_product_channel_exclusivity_pb = require('../../../../../google/ads/googleads/v1/enums/product_channel_exclusivity_pb.js');
 var google_ads_googleads_v1_enums_product_condition_pb = require('../../../../../google/ads/googleads/v1/enums/product_condition_pb.js');
+var google_ads_googleads_v1_enums_search_engine_results_page_type_pb = require('../../../../../google/ads/googleads/v1/enums/search_engine_results_page_type_pb.js');
 var google_ads_googleads_v1_enums_search_term_match_type_pb = require('../../../../../google/ads/googleads/v1/enums/search_term_match_type_pb.js');
 var google_ads_googleads_v1_enums_slot_pb = require('../../../../../google/ads/googleads/v1/enums/slot_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
@@ -95,8 +96,13 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     externalConversionSource: jspb.Message.getFieldWithDefault(msg, 55, 0),
     geoTargetAirport: (f = msg.getGeoTargetAirport()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetCity: (f = msg.getGeoTargetCity()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetCounty: (f = msg.getGeoTargetCounty()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetDistrict: (f = msg.getGeoTargetDistrict()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetMetro: (f = msg.getGeoTargetMetro()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetMostSpecificLocation: (f = msg.getGeoTargetMostSpecificLocation()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetPostalCode: (f = msg.getGeoTargetPostalCode()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetRegion: (f = msg.getGeoTargetRegion()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetState: (f = msg.getGeoTargetState()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     hotelBookingWindowDays: (f = msg.getHotelBookingWindowDays()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     hotelCenterId: (f = msg.getHotelCenterId()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     hotelCheckInDate: (f = msg.getHotelCheckInDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
@@ -141,6 +147,7 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     productTypeL4: (f = msg.getProductTypeL4()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     productTypeL5: (f = msg.getProductTypeL5()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     quarter: (f = msg.getQuarter()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    searchEngineResultsPageType: jspb.Message.getFieldWithDefault(msg, 70, 0),
     searchTermMatchType: jspb.Message.getFieldWithDefault(msg, 22, 0),
     slot: jspb.Message.getFieldWithDefault(msg, 23, 0),
     webpage: (f = msg.getWebpage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
@@ -248,15 +255,40 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setGeoTargetCity(value);
       break;
+    case 68:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetCounty(value);
+      break;
+    case 69:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetDistrict(value);
+      break;
     case 63:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setGeoTargetMetro(value);
       break;
+    case 72:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetMostSpecificLocation(value);
+      break;
+    case 71:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetPostalCode(value);
+      break;
     case 64:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setGeoTargetRegion(value);
+      break;
+    case 67:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetState(value);
       break;
     case 6:
       var value = new google_protobuf_wrappers_pb.Int64Value;
@@ -471,6 +503,10 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setQuarter(value);
       break;
+    case 70:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType} */ (reader.readEnum());
+      msg.setSearchEngineResultsPageType(value);
+      break;
     case 22:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.SearchTermMatchTypeEnum.SearchTermMatchType} */ (reader.readEnum());
       msg.setSearchTermMatchType(value);
@@ -634,6 +670,22 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
+  f = message.getGeoTargetCounty();
+  if (f != null) {
+    writer.writeMessage(
+      68,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getGeoTargetDistrict();
+  if (f != null) {
+    writer.writeMessage(
+      69,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
   f = message.getGeoTargetMetro();
   if (f != null) {
     writer.writeMessage(
@@ -642,10 +694,34 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
+  f = message.getGeoTargetMostSpecificLocation();
+  if (f != null) {
+    writer.writeMessage(
+      72,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getGeoTargetPostalCode();
+  if (f != null) {
+    writer.writeMessage(
+      71,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
   f = message.getGeoTargetRegion();
   if (f != null) {
     writer.writeMessage(
       64,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getGeoTargetState();
+  if (f != null) {
+    writer.writeMessage(
+      67,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
@@ -993,6 +1069,13 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       21,
       f,
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getSearchEngineResultsPageType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      70,
+      f
     );
   }
   f = message.getSearchTermMatchType();
@@ -1352,6 +1435,66 @@ proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetCity = funct
 
 
 /**
+ * optional google.protobuf.StringValue geo_target_county = 68;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetCounty = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 68));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetCounty = function(value) {
+  jspb.Message.setWrapperField(this, 68, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetCounty = function() {
+  this.setGeoTargetCounty(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetCounty = function() {
+  return jspb.Message.getField(this, 68) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue geo_target_district = 69;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetDistrict = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 69));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetDistrict = function(value) {
+  jspb.Message.setWrapperField(this, 69, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetDistrict = function() {
+  this.setGeoTargetDistrict(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetDistrict = function() {
+  return jspb.Message.getField(this, 69) != null;
+};
+
+
+/**
  * optional google.protobuf.StringValue geo_target_metro = 63;
  * @return {?proto.google.protobuf.StringValue}
  */
@@ -1382,6 +1525,66 @@ proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetMetro = func
 
 
 /**
+ * optional google.protobuf.StringValue geo_target_most_specific_location = 72;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetMostSpecificLocation = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 72));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetMostSpecificLocation = function(value) {
+  jspb.Message.setWrapperField(this, 72, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetMostSpecificLocation = function() {
+  this.setGeoTargetMostSpecificLocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetMostSpecificLocation = function() {
+  return jspb.Message.getField(this, 72) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue geo_target_postal_code = 71;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetPostalCode = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 71));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetPostalCode = function(value) {
+  jspb.Message.setWrapperField(this, 71, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetPostalCode = function() {
+  this.setGeoTargetPostalCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetPostalCode = function() {
+  return jspb.Message.getField(this, 71) != null;
+};
+
+
+/**
  * optional google.protobuf.StringValue geo_target_region = 64;
  * @return {?proto.google.protobuf.StringValue}
  */
@@ -1408,6 +1611,36 @@ proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetRegion = f
  */
 proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetRegion = function() {
   return jspb.Message.getField(this, 64) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue geo_target_state = 67;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetState = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 67));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetState = function(value) {
+  jspb.Message.setWrapperField(this, 67, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetState = function() {
+  this.setGeoTargetState(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetState = function() {
+  return jspb.Message.getField(this, 67) != null;
 };
 
 
@@ -2623,6 +2856,21 @@ proto.google.ads.googleads.v1.common.Segments.prototype.clearQuarter = function(
  */
 proto.google.ads.googleads.v1.common.Segments.prototype.hasQuarter = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType search_engine_results_page_type = 70;
+ * @return {!proto.google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getSearchEngineResultsPageType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType} */ (jspb.Message.getFieldWithDefault(this, 70, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setSearchEngineResultsPageType = function(value) {
+  jspb.Message.setProto3EnumField(this, 70, value);
 };
 
 

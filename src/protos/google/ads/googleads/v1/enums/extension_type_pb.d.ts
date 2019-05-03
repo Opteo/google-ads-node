@@ -32,6 +32,8 @@ export namespace ExtensionTypeEnum {
     REVIEW = 9,
     SITELINK = 10,
     STRUCTURED_SNIPPET = 11,
+    LOCATION = 12,
+    AFFILIATE_LOCATION = 13,
   }
 }
 

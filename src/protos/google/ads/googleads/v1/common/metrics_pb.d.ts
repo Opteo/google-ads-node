@@ -68,10 +68,45 @@ export class Metrics extends jspb.Message {
   getAllConversionsValuePerCost(): google_protobuf_wrappers_pb.DoubleValue | undefined;
   setAllConversionsValuePerCost(value?: google_protobuf_wrappers_pb.DoubleValue): void;
 
+  hasAllConversionsFromClickToCall(): boolean;
+  clearAllConversionsFromClickToCall(): void;
+  getAllConversionsFromClickToCall(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromClickToCall(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromDirections(): boolean;
+  clearAllConversionsFromDirections(): void;
+  getAllConversionsFromDirections(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromDirections(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
   hasAllConversionsFromInteractionsValuePerInteraction(): boolean;
   clearAllConversionsFromInteractionsValuePerInteraction(): void;
   getAllConversionsFromInteractionsValuePerInteraction(): google_protobuf_wrappers_pb.DoubleValue | undefined;
   setAllConversionsFromInteractionsValuePerInteraction(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromMenu(): boolean;
+  clearAllConversionsFromMenu(): void;
+  getAllConversionsFromMenu(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromMenu(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromOrder(): boolean;
+  clearAllConversionsFromOrder(): void;
+  getAllConversionsFromOrder(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromOrder(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromOtherEngagement(): boolean;
+  clearAllConversionsFromOtherEngagement(): void;
+  getAllConversionsFromOtherEngagement(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromOtherEngagement(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromStoreVisit(): boolean;
+  clearAllConversionsFromStoreVisit(): void;
+  getAllConversionsFromStoreVisit(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromStoreVisit(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasAllConversionsFromStoreWebsite(): boolean;
+  clearAllConversionsFromStoreWebsite(): void;
+  getAllConversionsFromStoreWebsite(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setAllConversionsFromStoreWebsite(value?: google_protobuf_wrappers_pb.DoubleValue): void;
 
   hasAverageCost(): boolean;
   clearAverageCost(): void;
@@ -137,6 +172,21 @@ export class Metrics extends jspb.Message {
   clearClicks(): void;
   getClicks(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setClicks(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasCombinedClicks(): boolean;
+  clearCombinedClicks(): void;
+  getCombinedClicks(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setCombinedClicks(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasCombinedClicksPerQuery(): boolean;
+  clearCombinedClicksPerQuery(): void;
+  getCombinedClicksPerQuery(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setCombinedClicksPerQuery(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasCombinedQueries(): boolean;
+  clearCombinedQueries(): void;
+  getCombinedQueries(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setCombinedQueries(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
   hasContentBudgetLostImpressionShare(): boolean;
   clearContentBudgetLostImpressionShare(): void;
@@ -292,6 +342,11 @@ export class Metrics extends jspb.Message {
   getImpressionReach(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setImpressionReach(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasImpressionsFromStoreReach(): boolean;
+  clearImpressionsFromStoreReach(): void;
+  getImpressionsFromStoreReach(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setImpressionsFromStoreReach(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   hasImpressions(): boolean;
   clearImpressions(): void;
   getImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
@@ -321,6 +376,36 @@ export class Metrics extends jspb.Message {
   clearInvalidClicks(): void;
   getInvalidClicks(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setInvalidClicks(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasMobileFriendlyClicksPercentage(): boolean;
+  clearMobileFriendlyClicksPercentage(): void;
+  getMobileFriendlyClicksPercentage(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setMobileFriendlyClicksPercentage(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasOrganicClicks(): boolean;
+  clearOrganicClicks(): void;
+  getOrganicClicks(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setOrganicClicks(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasOrganicClicksPerQuery(): boolean;
+  clearOrganicClicksPerQuery(): void;
+  getOrganicClicksPerQuery(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setOrganicClicksPerQuery(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasOrganicImpressions(): boolean;
+  clearOrganicImpressions(): void;
+  getOrganicImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setOrganicImpressions(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasOrganicImpressionsPerQuery(): boolean;
+  clearOrganicImpressionsPerQuery(): void;
+  getOrganicImpressionsPerQuery(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setOrganicImpressionsPerQuery(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasOrganicQueries(): boolean;
+  clearOrganicQueries(): void;
+  getOrganicQueries(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setOrganicQueries(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
   hasPercentNewVisitors(): boolean;
   clearPercentNewVisitors(): void;
@@ -402,10 +487,20 @@ export class Metrics extends jspb.Message {
   getSearchTopImpressionShare(): google_protobuf_wrappers_pb.DoubleValue | undefined;
   setSearchTopImpressionShare(value?: google_protobuf_wrappers_pb.DoubleValue): void;
 
+  hasSpeedScore(): boolean;
+  clearSpeedScore(): void;
+  getSpeedScore(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setSpeedScore(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   hasTopImpressionPercentage(): boolean;
   clearTopImpressionPercentage(): void;
   getTopImpressionPercentage(): google_protobuf_wrappers_pb.DoubleValue | undefined;
   setTopImpressionPercentage(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasValidAcceleratedMobilePagesClicksPercentage(): boolean;
+  clearValidAcceleratedMobilePagesClicksPercentage(): void;
+  getValidAcceleratedMobilePagesClicksPercentage(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setValidAcceleratedMobilePagesClicksPercentage(value?: google_protobuf_wrappers_pb.DoubleValue): void;
 
   hasValuePerAllConversions(): boolean;
   clearValuePerAllConversions(): void;
@@ -481,7 +576,14 @@ export namespace Metrics {
     allConversionsValue?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     allConversions?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     allConversionsValuePerCost?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromClickToCall?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromDirections?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     allConversionsFromInteractionsValuePerInteraction?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromMenu?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromOrder?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromOtherEngagement?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromStoreVisit?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    allConversionsFromStoreWebsite?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     averageCost?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     averageCpc?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     averageCpe?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
@@ -495,6 +597,9 @@ export namespace Metrics {
     benchmarkCtr?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     bounceRate?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     clicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    combinedClicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    combinedClicksPerQuery?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    combinedQueries?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     contentBudgetLostImpressionShare?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     contentImpressionShare?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     conversionLastReceivedRequestDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -527,12 +632,19 @@ export namespace Metrics {
     gmailSaves?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     gmailSecondaryClicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     impressionReach?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    impressionsFromStoreReach?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     impressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     interactionRate?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     interactions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     interactionEventTypesList: Array<google_ads_googleads_v1_enums_interaction_event_type_pb.InteractionEventTypeEnum.InteractionEventType>,
     invalidClickRate?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     invalidClicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    mobileFriendlyClicksPercentage?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    organicClicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    organicClicksPerQuery?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    organicImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    organicImpressionsPerQuery?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    organicQueries?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     percentNewVisitors?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     phoneCalls?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     phoneImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
@@ -549,7 +661,9 @@ export namespace Metrics {
     searchRankLostImpressionShare?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     searchRankLostTopImpressionShare?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     searchTopImpressionShare?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    speedScore?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     topImpressionPercentage?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    validAcceleratedMobilePagesClicksPercentage?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     valuePerAllConversions?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     valuePerConversion?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
     valuePerCurrentModelAttributedConversion?: google_protobuf_wrappers_pb.DoubleValue.AsObject,

@@ -42,7 +42,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.Asset.oneofGroups_ = [[5,6,7]];
+proto.google.ads.googleads.v1.resources.Asset.oneofGroups_ = [[5,6,7,8]];
 
 /**
  * @enum {number}
@@ -51,7 +51,8 @@ proto.google.ads.googleads.v1.resources.Asset.AssetDataCase = {
   ASSET_DATA_NOT_SET: 0,
   YOUTUBE_VIDEO_ASSET: 5,
   MEDIA_BUNDLE_ASSET: 6,
-  IMAGE_ASSET: 7
+  IMAGE_ASSET: 7,
+  TEXT_ASSET: 8
 };
 
 /**
@@ -96,7 +97,8 @@ proto.google.ads.googleads.v1.resources.Asset.toObject = function(includeInstanc
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     youtubeVideoAsset: (f = msg.getYoutubeVideoAsset()) && google_ads_googleads_v1_common_asset_types_pb.YoutubeVideoAsset.toObject(includeInstance, f),
     mediaBundleAsset: (f = msg.getMediaBundleAsset()) && google_ads_googleads_v1_common_asset_types_pb.MediaBundleAsset.toObject(includeInstance, f),
-    imageAsset: (f = msg.getImageAsset()) && google_ads_googleads_v1_common_asset_types_pb.ImageAsset.toObject(includeInstance, f)
+    imageAsset: (f = msg.getImageAsset()) && google_ads_googleads_v1_common_asset_types_pb.ImageAsset.toObject(includeInstance, f),
+    textAsset: (f = msg.getTextAsset()) && google_ads_googleads_v1_common_asset_types_pb.TextAsset.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -165,6 +167,11 @@ proto.google.ads.googleads.v1.resources.Asset.deserializeBinaryFromReader = func
       var value = new google_ads_googleads_v1_common_asset_types_pb.ImageAsset;
       reader.readMessage(value,google_ads_googleads_v1_common_asset_types_pb.ImageAsset.deserializeBinaryFromReader);
       msg.setImageAsset(value);
+      break;
+    case 8:
+      var value = new google_ads_googleads_v1_common_asset_types_pb.TextAsset;
+      reader.readMessage(value,google_ads_googleads_v1_common_asset_types_pb.TextAsset.deserializeBinaryFromReader);
+      msg.setTextAsset(value);
       break;
     default:
       reader.skipField();
@@ -247,6 +254,14 @@ proto.google.ads.googleads.v1.resources.Asset.serializeBinaryToWriter = function
       7,
       f,
       google_ads_googleads_v1_common_asset_types_pb.ImageAsset.serializeBinaryToWriter
+    );
+  }
+  f = message.getTextAsset();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_ads_googleads_v1_common_asset_types_pb.TextAsset.serializeBinaryToWriter
     );
   }
 };
@@ -429,6 +444,36 @@ proto.google.ads.googleads.v1.resources.Asset.prototype.clearImageAsset = functi
  */
 proto.google.ads.googleads.v1.resources.Asset.prototype.hasImageAsset = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.TextAsset text_asset = 8;
+ * @return {?proto.google.ads.googleads.v1.common.TextAsset}
+ */
+proto.google.ads.googleads.v1.resources.Asset.prototype.getTextAsset = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.TextAsset} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_asset_types_pb.TextAsset, 8));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.TextAsset|undefined} value */
+proto.google.ads.googleads.v1.resources.Asset.prototype.setTextAsset = function(value) {
+  jspb.Message.setOneofWrapperField(this, 8, proto.google.ads.googleads.v1.resources.Asset.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Asset.prototype.clearTextAsset = function() {
+  this.setTextAsset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Asset.prototype.hasTextAsset = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

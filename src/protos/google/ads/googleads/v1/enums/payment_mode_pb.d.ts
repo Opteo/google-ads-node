@@ -24,6 +24,7 @@ export namespace PaymentModeEnum {
     UNKNOWN = 1,
     CLICKS = 4,
     CONVERSION_VALUE = 5,
+    CONVERSIONS = 6,
   }
 }
 

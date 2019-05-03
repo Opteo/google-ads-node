@@ -37,6 +37,9 @@ export namespace AdTypeEnum {
     APP_AD = 17,
     LEGACY_APP_INSTALL_AD = 18,
     RESPONSIVE_DISPLAY_AD = 19,
+    HTML5_UPLOAD_AD = 21,
+    DYNAMIC_HTML5_AD = 22,
+    APP_ENGAGEMENT_AD = 23,
   }
 }
 

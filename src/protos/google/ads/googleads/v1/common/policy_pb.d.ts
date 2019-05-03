@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_ads_googleads_v1_enums_policy_topic_entry_type_pb from "../../../../../google/ads/googleads/v1/enums/policy_topic_entry_type_pb";
 import * as google_ads_googleads_v1_enums_policy_topic_evidence_destination_mismatch_url_type_pb from "../../../../../google/ads/googleads/v1/enums/policy_topic_evidence_destination_mismatch_url_type_pb";
+import * as google_ads_googleads_v1_enums_policy_topic_evidence_destination_not_working_device_pb from "../../../../../google/ads/googleads/v1/enums/policy_topic_evidence_destination_not_working_device_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
 
@@ -132,6 +133,11 @@ export class PolicyTopicEvidence extends jspb.Message {
   getDestinationMismatch(): PolicyTopicEvidence.DestinationMismatch | undefined;
   setDestinationMismatch(value?: PolicyTopicEvidence.DestinationMismatch): void;
 
+  hasDestinationNotWorking(): boolean;
+  clearDestinationNotWorking(): void;
+  getDestinationNotWorking(): PolicyTopicEvidence.DestinationNotWorking | undefined;
+  setDestinationNotWorking(value?: PolicyTopicEvidence.DestinationNotWorking): void;
+
   getValueCase(): PolicyTopicEvidence.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PolicyTopicEvidence.AsObject;
@@ -151,6 +157,7 @@ export namespace PolicyTopicEvidence {
     languageCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
     destinationTextList?: PolicyTopicEvidence.DestinationTextList.AsObject,
     destinationMismatch?: PolicyTopicEvidence.DestinationMismatch.AsObject,
+    destinationNotWorking?: PolicyTopicEvidence.DestinationNotWorking.AsObject,
   }
 
   export class TextList extends jspb.Message {
@@ -241,6 +248,38 @@ export namespace PolicyTopicEvidence {
     }
   }
 
+  export class DestinationNotWorking extends jspb.Message {
+    hasExpandedUrl(): boolean;
+    clearExpandedUrl(): void;
+    getExpandedUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setExpandedUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    getDevice(): google_ads_googleads_v1_enums_policy_topic_evidence_destination_not_working_device_pb.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice;
+    setDevice(value: google_ads_googleads_v1_enums_policy_topic_evidence_destination_not_working_device_pb.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice): void;
+
+    hasLastCheckedDateTime(): boolean;
+    clearLastCheckedDateTime(): void;
+    getLastCheckedDateTime(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setLastCheckedDateTime(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DestinationNotWorking.AsObject;
+    static toObject(includeInstance: boolean, msg: DestinationNotWorking): DestinationNotWorking.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DestinationNotWorking, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DestinationNotWorking;
+    static deserializeBinaryFromReader(message: DestinationNotWorking, reader: jspb.BinaryReader): DestinationNotWorking;
+  }
+
+  export namespace DestinationNotWorking {
+    export type AsObject = {
+      expandedUrl?: google_protobuf_wrappers_pb.StringValue.AsObject,
+      device: google_ads_googleads_v1_enums_policy_topic_evidence_destination_not_working_device_pb.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice,
+      lastCheckedDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    }
+  }
+
   export enum ValueCase {
     VALUE_NOT_SET = 0,
     HTTP_CODE = 2,
@@ -249,6 +288,7 @@ export namespace PolicyTopicEvidence {
     LANGUAGE_CODE = 5,
     DESTINATION_TEXT_LIST = 6,
     DESTINATION_MISMATCH = 7,
+    DESTINATION_NOT_WORKING = 8,
   }
 }
 

@@ -137,7 +137,8 @@ proto.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode = {
   UNSPECIFIED: 0,
   UNKNOWN: 1,
   CLICKS: 4,
-  CONVERSION_VALUE: 5
+  CONVERSION_VALUE: 5,
+  CONVERSIONS: 6
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

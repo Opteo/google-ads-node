@@ -122,3 +122,25 @@ export namespace ImageDimension {
   }
 }
 
+export class TextAsset extends jspb.Message {
+  hasText(): boolean;
+  clearText(): void;
+  getText(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setText(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TextAsset.AsObject;
+  static toObject(includeInstance: boolean, msg: TextAsset): TextAsset.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TextAsset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TextAsset;
+  static deserializeBinaryFromReader(message: TextAsset, reader: jspb.BinaryReader): TextAsset;
+}
+
+export namespace TextAsset {
+  export type AsObject = {
+    text?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+

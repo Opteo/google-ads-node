@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var google_ads_googleads_v1_enums_customer_pay_per_conversion_eligibility_failure_reason_pb = require('../../../../../google/ads/googleads/v1/enums/customer_pay_per_conversion_eligibility_failure_reason_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.resources.CallReportingSetting', null, global);
@@ -29,12 +30,19 @@ goog.exportSymbol('proto.google.ads.googleads.v1.resources.RemarketingSetting', 
  * @constructor
  */
 proto.google.ads.googleads.v1.resources.Customer = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.resources.Customer.repeatedFields_, null);
 };
 goog.inherits(proto.google.ads.googleads.v1.resources.Customer, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.google.ads.googleads.v1.resources.Customer.displayName = 'proto.google.ads.googleads.v1.resources.Customer';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.resources.Customer.repeatedFields_ = [16];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -77,7 +85,8 @@ proto.google.ads.googleads.v1.resources.Customer.toObject = function(includeInst
     testAccount: (f = msg.getTestAccount()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
     callReportingSetting: (f = msg.getCallReportingSetting()) && proto.google.ads.googleads.v1.resources.CallReportingSetting.toObject(includeInstance, f),
     conversionTrackingSetting: (f = msg.getConversionTrackingSetting()) && proto.google.ads.googleads.v1.resources.ConversionTrackingSetting.toObject(includeInstance, f),
-    remarketingSetting: (f = msg.getRemarketingSetting()) && proto.google.ads.googleads.v1.resources.RemarketingSetting.toObject(includeInstance, f)
+    remarketingSetting: (f = msg.getRemarketingSetting()) && proto.google.ads.googleads.v1.resources.RemarketingSetting.toObject(includeInstance, f),
+    payPerConversionEligibilityFailureReasonsList: jspb.Message.getRepeatedField(msg, 16)
   };
 
   if (includeInstance) {
@@ -182,6 +191,10 @@ proto.google.ads.googleads.v1.resources.Customer.deserializeBinaryFromReader = f
       var value = new proto.google.ads.googleads.v1.resources.RemarketingSetting;
       reader.readMessage(value,proto.google.ads.googleads.v1.resources.RemarketingSetting.deserializeBinaryFromReader);
       msg.setRemarketingSetting(value);
+      break;
+    case 16:
+      var value = /** @type {!Array<!proto.google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>} */ (reader.readPackedEnum());
+      msg.setPayPerConversionEligibilityFailureReasonsList(value);
       break;
     default:
       reader.skipField();
@@ -321,6 +334,13 @@ proto.google.ads.googleads.v1.resources.Customer.serializeBinaryToWriter = funct
       15,
       f,
       proto.google.ads.googleads.v1.resources.RemarketingSetting.serializeBinaryToWriter
+    );
+  }
+  f = message.getPayPerConversionEligibilityFailureReasonsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      16,
+      f
     );
   }
 };
@@ -728,6 +748,35 @@ proto.google.ads.googleads.v1.resources.Customer.prototype.clearRemarketingSetti
  */
 proto.google.ads.googleads.v1.resources.Customer.prototype.hasRemarketingSetting = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * repeated google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;
+ * @return {!Array<!proto.google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>}
+ */
+proto.google.ads.googleads.v1.resources.Customer.prototype.getPayPerConversionEligibilityFailureReasonsList = function() {
+  return /** @type {!Array<!proto.google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>} */ (jspb.Message.getRepeatedField(this, 16));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason>} value */
+proto.google.ads.googleads.v1.resources.Customer.prototype.setPayPerConversionEligibilityFailureReasonsList = function(value) {
+  jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason} value
+ * @param {number=} opt_index
+ */
+proto.google.ads.googleads.v1.resources.Customer.prototype.addPayPerConversionEligibilityFailureReasons = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.resources.Customer.prototype.clearPayPerConversionEligibilityFailureReasonsList = function() {
+  this.setPayPerConversionEligibilityFailureReasonsList([]);
 };
 
 

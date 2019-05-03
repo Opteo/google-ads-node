@@ -137,7 +137,8 @@ proto.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType = {
   UNSPECIFIED: 0,
   UNKNOWN: 1,
   STANDARD: 2,
-  HOTEL_ADS_COMMISSION: 3
+  HOTEL_ADS_COMMISSION: 3,
+  FIXED_CPA: 4
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

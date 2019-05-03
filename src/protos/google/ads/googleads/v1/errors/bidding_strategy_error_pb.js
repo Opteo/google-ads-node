@@ -139,7 +139,8 @@ proto.google.ads.googleads.v1.errors.BiddingStrategyErrorEnum.BiddingStrategyErr
   DUPLICATE_NAME: 2,
   CANNOT_CHANGE_BIDDING_STRATEGY_TYPE: 3,
   CANNOT_REMOVE_ASSOCIATED_STRATEGY: 4,
-  BIDDING_STRATEGY_NOT_SUPPORTED: 5
+  BIDDING_STRATEGY_NOT_SUPPORTED: 5,
+  INCOMPATIBLE_BIDDING_STRATEGY_AND_BIDDING_STRATEGY_GOAL_TYPE: 6
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

@@ -146,7 +146,8 @@ proto.google.ads.googleads.v1.enums.AdvertisingChannelSubTypeEnum.AdvertisingCha
   VIDEO_OUTSTREAM: 9,
   VIDEO_ACTION: 10,
   VIDEO_NON_SKIPPABLE: 11,
-  APP_CAMPAIGN: 12
+  APP_CAMPAIGN: 12,
+  APP_CAMPAIGN_FOR_ENGAGEMENT: 13
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

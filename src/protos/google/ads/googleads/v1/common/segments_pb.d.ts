@@ -18,6 +18,7 @@ import * as google_ads_googleads_v1_enums_placeholder_type_pb from "../../../../
 import * as google_ads_googleads_v1_enums_product_channel_pb from "../../../../../google/ads/googleads/v1/enums/product_channel_pb";
 import * as google_ads_googleads_v1_enums_product_channel_exclusivity_pb from "../../../../../google/ads/googleads/v1/enums/product_channel_exclusivity_pb";
 import * as google_ads_googleads_v1_enums_product_condition_pb from "../../../../../google/ads/googleads/v1/enums/product_condition_pb";
+import * as google_ads_googleads_v1_enums_search_engine_results_page_type_pb from "../../../../../google/ads/googleads/v1/enums/search_engine_results_page_type_pb";
 import * as google_ads_googleads_v1_enums_search_term_match_type_pb from "../../../../../google/ads/googleads/v1/enums/search_term_match_type_pb";
 import * as google_ads_googleads_v1_enums_slot_pb from "../../../../../google/ads/googleads/v1/enums/slot_pb";
 import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
@@ -81,15 +82,40 @@ export class Segments extends jspb.Message {
   getGeoTargetCity(): google_protobuf_wrappers_pb.StringValue | undefined;
   setGeoTargetCity(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasGeoTargetCounty(): boolean;
+  clearGeoTargetCounty(): void;
+  getGeoTargetCounty(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetCounty(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasGeoTargetDistrict(): boolean;
+  clearGeoTargetDistrict(): void;
+  getGeoTargetDistrict(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetDistrict(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasGeoTargetMetro(): boolean;
   clearGeoTargetMetro(): void;
   getGeoTargetMetro(): google_protobuf_wrappers_pb.StringValue | undefined;
   setGeoTargetMetro(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasGeoTargetMostSpecificLocation(): boolean;
+  clearGeoTargetMostSpecificLocation(): void;
+  getGeoTargetMostSpecificLocation(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetMostSpecificLocation(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasGeoTargetPostalCode(): boolean;
+  clearGeoTargetPostalCode(): void;
+  getGeoTargetPostalCode(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetPostalCode(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasGeoTargetRegion(): boolean;
   clearGeoTargetRegion(): void;
   getGeoTargetRegion(): google_protobuf_wrappers_pb.StringValue | undefined;
   setGeoTargetRegion(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasGeoTargetState(): boolean;
+  clearGeoTargetState(): void;
+  getGeoTargetState(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetState(value?: google_protobuf_wrappers_pb.StringValue): void;
 
   hasHotelBookingWindowDays(): boolean;
   clearHotelBookingWindowDays(): void;
@@ -297,6 +323,9 @@ export class Segments extends jspb.Message {
   getQuarter(): google_protobuf_wrappers_pb.StringValue | undefined;
   setQuarter(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  getSearchEngineResultsPageType(): google_ads_googleads_v1_enums_search_engine_results_page_type_pb.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType;
+  setSearchEngineResultsPageType(value: google_ads_googleads_v1_enums_search_engine_results_page_type_pb.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType): void;
+
   getSearchTermMatchType(): google_ads_googleads_v1_enums_search_term_match_type_pb.SearchTermMatchTypeEnum.SearchTermMatchType;
   setSearchTermMatchType(value: google_ads_googleads_v1_enums_search_term_match_type_pb.SearchTermMatchTypeEnum.SearchTermMatchType): void;
 
@@ -345,8 +374,13 @@ export namespace Segments {
     externalConversionSource: google_ads_googleads_v1_enums_external_conversion_source_pb.ExternalConversionSourceEnum.ExternalConversionSource,
     geoTargetAirport?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetCity?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetCounty?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetDistrict?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetMetro?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetMostSpecificLocation?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetPostalCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetRegion?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetState?: google_protobuf_wrappers_pb.StringValue.AsObject,
     hotelBookingWindowDays?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     hotelCenterId?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     hotelCheckInDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -391,6 +425,7 @@ export namespace Segments {
     productTypeL4?: google_protobuf_wrappers_pb.StringValue.AsObject,
     productTypeL5?: google_protobuf_wrappers_pb.StringValue.AsObject,
     quarter?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    searchEngineResultsPageType: google_ads_googleads_v1_enums_search_engine_results_page_type_pb.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType,
     searchTermMatchType: google_ads_googleads_v1_enums_search_term_match_type_pb.SearchTermMatchTypeEnum.SearchTermMatchType,
     slot: google_ads_googleads_v1_enums_slot_pb.SlotEnum.Slot,
     webpage?: google_protobuf_wrappers_pb.StringValue.AsObject,
