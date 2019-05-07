@@ -31,12 +31,15 @@ OUT_COMPILED_RESOURCES_JSON=compiled-resources.json
 OUT_STATIC_TS_ENUMS=src/lib/enums.ts
 OUT_STATIC_TS_RESOURCES=src/lib/resources.ts
 OUT_STATIC_TS_ENUM_MAPPING=src/lib/mapping.ts
+OUT_STATIC_TS_RESOURCE_NAMES=src/lib/resource-names.ts
 
 .SILENT: protos enums
 
 protos: clean compile-protos
 	$(MAKE) enums
 	$(MAKE) types
+	$(MAKE) resource-names
+	$(MAKE) fields
 	@echo "finished all"
 
 enums:
@@ -54,6 +57,9 @@ types:
 fields:
 	yarn build
 	node ./scripts/generate-fields.js
+
+resource-names:
+	node ./scripts/generate-resource-names.js $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCE_NAMES)
 
 # TODO: These proto compilation steps could be cleaned up and moved to a bash script
 compile-protos:
