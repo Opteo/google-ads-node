@@ -9,6 +9,7 @@ import {
   ResponseParsingInterceptor,
   InterceptorMethod,
 } from "./interceptor";
+import { ResourceUrlName } from "./resource-names";
 import * as services from "./services";
 import * as GrpcTypes from "./types";
 import { promisifyServiceClient, convertToProtoFormat } from "./utils";
@@ -18,6 +19,7 @@ import compiledResources from "../protos/compiled-resources.js";
 
 const DEFAULT_VERSION = "v1";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
+const RESOURCE_URL_DELIMITER = "~";
 
 const PROTO_ROOT = `google.ads.googleads.${DEFAULT_VERSION}`;
 const allProtos = get(compiledResources, PROTO_ROOT);
@@ -139,6 +141,22 @@ export class GoogleAdsClient {
 
     // return { protobuf, readable };
     return protobuf;
+  }
+
+  public buildResourceUrl(
+    resource: ResourceUrlName,
+    cid?: number | string | undefined,
+    ...ids: Array<number | string>
+  ): string {
+    if (typeof cid === "undefined") {
+      const resourceUrl = `${resource}/${ids.join(RESOURCE_URL_DELIMITER)}`;
+      return resourceUrl;
+    }
+    if (resource === "customers") {
+      return `customers/${cid}`;
+    }
+    const customerResourceUrl = `customers/${cid}/${resource}/${ids.join(RESOURCE_URL_DELIMITER)}`;
+    return customerResourceUrl;
   }
 
   private buildInterceptors(): InterceptorMethod[] {

@@ -15,7 +15,7 @@
     "test": "run-s build test:*",
     "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --debug-check",
     "test:unit": "nyc jest --coverage",
-    "watch": "run-s clean build && run-p \"build:main -- -w\" \"copy-protos\" \"test:unit -- --watch --runInBand\"",
+    "watch": "run-s clean build && run-p \"build:main -- -w\" \"copy-protos\" \"test:unit -- --watch --runInBand --verbose\"",
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",

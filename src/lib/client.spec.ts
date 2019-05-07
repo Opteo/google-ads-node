@@ -2,6 +2,7 @@ import grpc from "grpc";
 
 import { GoogleAdsClient } from "./client";
 import { AdvertisingChannelType, BiddingStrategyType, CampaignStatus } from "./enums";
+import { ResourceUrlName } from "./resource-names";
 import {
   SearchGoogleAdsRequest,
   SearchGoogleAdsResponse,
@@ -17,6 +18,9 @@ const CLIENT_ID = "CLIENT_ID";
 const CLIENT_SECRET = "CLIENT_ID";
 const DEVELOPER_TOKEN = "DEVELOPER_TOKEN";
 const LOGIN_CUSTOMER_ID = "LOGIN_CUSTOMER_ID";
+const CID = "CID";
+const CAMPAIGN_ID = "CAMPAIGN_ID";
+const AD_GROUP_ID = "AD_GROUP_ID";
 
 test("new client with access token", () => {
   const client = new GoogleAdsClient({
@@ -311,4 +315,47 @@ test("supports usage of an async access token getter function", async () => {
 
   expect(client).toBeInstanceOf(GoogleAdsClient);
   expect(tokenGetterCalled).toEqual("<access-token>");
+});
+
+test("correctly builds resource urls", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  const tests = [
+    {
+      // customers/{customer_id}/campaigns/{campaign_id}`
+      url: client.buildResourceUrl(ResourceUrlName.Campaign, CID, CAMPAIGN_ID),
+      expected: `customers/${CID}/campaigns/${CAMPAIGN_ID}`,
+    },
+    {
+      // customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64 search term}`
+      url: client.buildResourceUrl(
+        ResourceUrlName.SearchTermView,
+        CID,
+        CAMPAIGN_ID,
+        AD_GROUP_ID,
+        "b64="
+      ),
+      expected: `customers/${CID}/searchTermViews/${CAMPAIGN_ID}~${AD_GROUP_ID}~b64=`,
+    },
+    {
+      // geoTargetConstants/{geo_target_constant_id}`
+      url: client.buildResourceUrl(ResourceUrlName.GeoTargetConstant, undefined, "123"),
+      expected: `geoTargetConstants/123`,
+    },
+    {
+      // customers/{customer_id}`
+      url: client.buildResourceUrl(ResourceUrlName.Customer, CID),
+      expected: `customers/${CID}`,
+    },
+  ];
+
+  expect.assertions(tests.length);
+
+  for (const test of tests) {
+    expect(test.url).toEqual(test.expected);
+  }
 });
