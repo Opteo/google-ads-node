@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.11.1"></a>
+## [1.11.1](https://github.com/opteo/google-ads-node/compare/v1.11.0...v1.11.1) (2019-05-21)
+
+
+### Bug Fixes
+
+* compile enum structures at compile time for use in buildResource ([601235b](https://github.com/opteo/google-ads-node/commit/601235b))
+* **client:** unroll enums correctly with structure file in buildResource method ([267a417](https://github.com/opteo/google-ads-node/commit/267a417))
+* **grpc:** allow messages over 4MB ([baa8646](https://github.com/opteo/google-ads-node/commit/baa8646))
+
+
+
 <a name="1.11.0"></a>
 # [1.11.0](https://github.com/opteo/google-ads-node/compare/v1.10.1...v1.11.0) (2019-05-03)
 
