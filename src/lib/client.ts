@@ -83,11 +83,18 @@ export class GoogleAdsClient {
     const serviceClientConstructor = (services as any)[serviceClientName];
 
     const service = new serviceClientConstructor(
-      GOOGLE_ADS_ENDPOINT,
+      GOOGLE_ADS_ENDPOINT, 
       grpc.credentials.createSsl(),
       {
         interceptors,
-      }
+        /*
+          By default, the maximum size of a gRPC message is 4MB.
+          Google Ads results can sometimes be quite big, so 4MB can be insufficient.
+          Here, we set it to 1GB to essentially remove that limit.
+        */
+        'grpc.max_send_message_length': 1024 * 1024 * 1024,
+        'grpc.max_receive_message_length': 1024 * 1024 * 1024 
+      },
     );
 
     /* Promisify gRPC service methods (callbacks are kept as well) */
