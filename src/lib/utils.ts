@@ -2,7 +2,8 @@ import protobufHelpers from "google-protobuf/google/protobuf/field_mask_pb";
 import { Client } from "grpc";
 import camelCase from "lodash.camelcase";
 import get from "lodash.get";
-import set from "lodash.set";
+
+import * as structs from "./struct";
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -55,8 +56,20 @@ export function formatCallResults(resultsList: any[], fieldMask: FieldMask | und
   return parsedResults;
 }
 
-export function convertToProtoFormat(data: any, type: any): any {
+export function convertToProtoFormat(
+  data: any,
+  type: any,
+  resource_name: string,
+  nested_path: string = ""
+): any {
   const pb: any = {};
+
+  const struct = (structs as any)[resource_name];
+  if (!struct) {
+    throw new Error(
+      `Key "${nested_path.replace(".", "")}" not found in resource "${resource_name}"`
+    );
+  }
 
   for (const key of Object.keys(data)) {
     const displayKey = camelCase(key);
@@ -70,35 +83,34 @@ export function convertToProtoFormat(data: any, type: any): any {
 
     /* Build array of proto values */
     if (Array.isArray(value)) {
-      pb[displayKey] = value.map(v => {
-        return typeof v === "object" ? convertToProtoFormat(v, type) : toProtoValueFormat(v);
+      pb[displayKey] = value.map((v: any) => {
+        return unroll(v);
       });
       continue;
     }
 
-    pb[displayKey] =
-      typeof value === "object" ? convertToProtoFormat(value, type) : toProtoValueFormat(value);
-  }
+    pb[displayKey] = unroll(value);
 
-  /* Check if number values are enums (this is a bit of a hack) 
-      We have to run it for as many times as there are keys to ensure 
-      all possible enums are converted back to the correct format
-  */
-  Object.keys(pb).forEach(() => {
-    const err = type.verify(pb);
-    if (err && err.includes("enum value expected")) {
-      const key = err.split(":")[0];
-
-      const enum_value = get(pb, key).value;
-
-      set(pb, key, enum_value);
+    function unroll(v: any) {
+      return typeof v === "object"
+        ? convertToProtoFormat(v, type, resource_name, `${nested_path}.${key}`)
+        : toProtoValueFormat(v, struct, `${nested_path}.${key}`.replace(".", ""));
     }
-  });
+  }
 
   return pb;
 }
 
-function toProtoValueFormat(value: any): any {
+function toProtoValueFormat(value: any, struct: any, nested_path: string): any {
+  const valueType = get(struct, nested_path);
+  if (!valueType) {
+    throw new Error(
+      `Attempted to set value "${value}" on invalid path "${nested_path}" in resource`
+    );
+  }
+  if (valueType.startsWith("enum_")) {
+    return value;
+  }
   return {
     value,
   };

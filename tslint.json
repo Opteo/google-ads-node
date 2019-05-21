@@ -18,7 +18,8 @@
     "ban-types": false,
     "no-empty-interface": false,
     "array-type": false,
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "no-use-before-declare": false
   },
   "linterOptions": {
     "exclude": ["src/protos/**/*.ts", "src/protos/**/*.d.ts", "src/protos/**/*.js"]

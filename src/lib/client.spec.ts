@@ -9,6 +9,7 @@ import {
   SuggestGeoTargetConstantsRequest,
   AdGroupCriterion,
   AdGroupAd,
+  CustomInterest,
 } from "./types";
 
 const ACCESS_TOKEN = "ACCESS_TOKEN";
@@ -229,6 +230,41 @@ test("correctly builds a keyword request from an object", () => {
         },
         matchType: 2,
       },
+    })
+  );
+});
+
+test("correctly builds a custom interest resource from an object", () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  const custom_interest = {
+    type: 3,
+    name: "I like dogs",
+    description: "We love dogs, dogs are the best",
+    members: [{ member_type: 2, parameter: "dog" }],
+  };
+
+  const protobuf = client.buildResource("CustomInterest", custom_interest) as CustomInterest;
+
+  expect(protobuf.toObject()).toEqual(
+    expect.objectContaining({
+      type: 3,
+      name: {
+        value: "I like dogs",
+      },
+      description: {
+        value: "We love dogs, dogs are the best",
+      },
+      membersList: [
+        {
+          memberType: 2,
+          parameter: { value: "dog" },
+        },
+      ],
     })
   );
 });
