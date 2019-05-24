@@ -145,7 +145,8 @@ proto.google.ads.googleads.v1.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDat
   INT64: 8,
   MESSAGE: 9,
   RESOURCE_NAME: 10,
-  STRING: 11
+  STRING: 11,
+  UINT64: 12
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

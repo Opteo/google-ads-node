@@ -157,7 +157,8 @@ proto.google.ads.googleads.v1.errors.BiddingErrorEnum.BiddingError = {
   BID_TOO_MANY_FRACTIONAL_DIGITS: 32,
   INVALID_DOMAIN_NAME: 33,
   NOT_COMPATIBLE_WITH_PAYMENT_MODE: 34,
-  NOT_COMPATIBLE_WITH_BUDGET_TYPE: 35
+  NOT_COMPATIBLE_WITH_BUDGET_TYPE: 35,
+  NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE: 36
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

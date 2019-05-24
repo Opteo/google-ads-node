@@ -35,6 +35,11 @@ export class ExtensionFeedItem extends jspb.Message {
   getDevice(): google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice;
   setDevice(value: google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice): void;
 
+  hasTargetedGeoTargetConstant(): boolean;
+  clearTargetedGeoTargetConstant(): void;
+  getTargetedGeoTargetConstant(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTargetedGeoTargetConstant(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   getStatus(): google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus;
   setStatus(value: google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus): void;
 
@@ -88,7 +93,18 @@ export class ExtensionFeedItem extends jspb.Message {
   getAffiliateLocationFeedItem(): google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem | undefined;
   setAffiliateLocationFeedItem(value?: google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem): void;
 
+  hasTargetedCampaign(): boolean;
+  clearTargetedCampaign(): void;
+  getTargetedCampaign(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTargetedCampaign(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  hasTargetedAdGroup(): boolean;
+  clearTargetedAdGroup(): void;
+  getTargetedAdGroup(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setTargetedAdGroup(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   getExtensionCase(): ExtensionFeedItem.ExtensionCase;
+  getServingResourceTargetingCase(): ExtensionFeedItem.ServingResourceTargetingCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExtensionFeedItem.AsObject;
   static toObject(includeInstance: boolean, msg: ExtensionFeedItem): ExtensionFeedItem.AsObject;
@@ -107,6 +123,7 @@ export namespace ExtensionFeedItem {
     endDateTime?: google_protobuf_wrappers_pb.StringValue.AsObject,
     adSchedulesList: Array<google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.AsObject>,
     device: google_ads_googleads_v1_enums_feed_item_target_device_pb.FeedItemTargetDeviceEnum.FeedItemTargetDevice,
+    targetedGeoTargetConstant?: google_protobuf_wrappers_pb.StringValue.AsObject,
     status: google_ads_googleads_v1_enums_feed_item_status_pb.FeedItemStatusEnum.FeedItemStatus,
     sitelinkFeedItem?: google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.AsObject,
     structuredSnippetFeedItem?: google_ads_googleads_v1_common_extensions_pb.StructuredSnippetFeedItem.AsObject,
@@ -118,6 +135,8 @@ export namespace ExtensionFeedItem {
     promotionFeedItem?: google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.AsObject,
     locationFeedItem?: google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.AsObject,
     affiliateLocationFeedItem?: google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.AsObject,
+    targetedCampaign?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    targetedAdGroup?: google_protobuf_wrappers_pb.StringValue.AsObject,
   }
 
   export enum ExtensionCase {
@@ -132,6 +151,12 @@ export namespace ExtensionFeedItem {
     PROMOTION_FEED_ITEM = 12,
     LOCATION_FEED_ITEM = 14,
     AFFILIATE_LOCATION_FEED_ITEM = 15,
+  }
+
+  export enum ServingResourceTargetingCase {
+    SERVING_RESOURCE_TARGETING_NOT_SET = 0,
+    TARGETED_CAMPAIGN = 18,
+    TARGETED_AD_GROUP = 19,
   }
 }
 

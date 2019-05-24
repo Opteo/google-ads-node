@@ -34,6 +34,7 @@ export namespace AdvertisingChannelSubTypeEnum {
     VIDEO_NON_SKIPPABLE = 11,
     APP_CAMPAIGN = 12,
     APP_CAMPAIGN_FOR_ENGAGEMENT = 13,
+    SHOPPING_COMPARISON_LISTING_ADS = 15,
   }
 }
 

@@ -187,7 +187,8 @@ proto.google.ads.googleads.v1.enums.ClickTypeEnum.ClickType = {
   SWIPEABLE_GALLERY_AD_SITELINK_FIVE: 52,
   HOTEL_PRICE: 53,
   PRICE_EXTENSION: 54,
-  HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION: 55
+  HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION: 55,
+  SHOPPING_COMPARISON_LISTING: 56
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

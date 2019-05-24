@@ -32,6 +32,7 @@ export namespace GoogleAdsFieldDataTypeEnum {
     MESSAGE = 9,
     RESOURCE_NAME = 10,
     STRING = 11,
+    UINT64 = 12,
   }
 }
 

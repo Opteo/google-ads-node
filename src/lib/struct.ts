@@ -132,6 +132,13 @@ export const ShoppingSmartAdInfo = {};
 // @ts-ignore
 export const ShoppingProductAdInfo = {};
 
+/* .google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo */
+// @ts-ignore
+export const ShoppingComparisonListingAdInfo = {
+  // @ts-ignore
+  headline: string
+};
+
 /* .google.ads.googleads.v1.common.GmailAdInfo */
 // @ts-ignore
 export const GmailAdInfo = {
@@ -2133,6 +2140,9 @@ export const Segments = {
   geo_target_postal_code: string,
 
   // @ts-ignore
+  geo_target_province: string,
+
+  // @ts-ignore
   geo_target_region: string,
 
   // @ts-ignore
@@ -2164,6 +2174,12 @@ export const Segments = {
 
   // @ts-ignore
   hotel_length_of_stay: number,
+
+  // @ts-ignore
+  hotel_rate_rule_id: string,
+
+  // @ts-ignore
+  hotel_rate_type: "enum_HotelRateType",
 
   // @ts-ignore
   hotel_state: string,
@@ -2313,6 +2329,13 @@ export const CpcBidSimulationPointList = {
   points: CpcBidSimulationPoint
 };
 
+/* .google.ads.googleads.v1.common.CpvBidSimulationPointList */
+// @ts-ignore
+export const CpvBidSimulationPointList = {
+  // @ts-ignore
+  points: CpvBidSimulationPoint
+};
+
 /* .google.ads.googleads.v1.common.TargetCpaSimulationPointList */
 // @ts-ignore
 export const TargetCpaSimulationPointList = {
@@ -2342,7 +2365,25 @@ export const BidModifierSimulationPoint = {
   impressions: number,
 
   // @ts-ignore
-  top_slot_impressions: number
+  top_slot_impressions: number,
+
+  // @ts-ignore
+  parent_biddable_conversions: number,
+
+  // @ts-ignore
+  parent_biddable_conversions_value: number,
+
+  // @ts-ignore
+  parent_clicks: number,
+
+  // @ts-ignore
+  parent_cost_micros: number,
+
+  // @ts-ignore
+  parent_impressions: number,
+
+  // @ts-ignore
+  parent_top_slot_impressions: number
 };
 
 /* .google.ads.googleads.v1.common.CpcBidSimulationPoint */
@@ -2368,6 +2409,19 @@ export const CpcBidSimulationPoint = {
 
   // @ts-ignore
   top_slot_impressions: number
+};
+
+/* .google.ads.googleads.v1.common.CpvBidSimulationPoint */
+// @ts-ignore
+export const CpvBidSimulationPoint = {
+  // @ts-ignore
+  cpv_bid_micros: number,
+
+  // @ts-ignore
+  cost_micros: number,
+
+  // @ts-ignore
+  impressions: number
 };
 
 /* .google.ads.googleads.v1.common.TargetCpaSimulationPoint */
@@ -2906,7 +2960,10 @@ export const Ad = {
   display_upload_ad: DisplayUploadAdInfo,
 
   // @ts-ignore
-  app_engagement_ad: AppEngagementAdInfo
+  app_engagement_ad: AppEngagementAdInfo,
+
+  // @ts-ignore
+  shopping_comparison_listing_ad: ShoppingComparisonListingAdInfo
 };
 
 /* .google.ads.googleads.v1.resources.AdGroup */
@@ -2929,6 +2986,9 @@ export const AdGroup = {
 
   // @ts-ignore
   ad_rotation_mode: "enum_AdGroupAdRotationMode",
+
+  // @ts-ignore
+  base_ad_group: string,
 
   // @ts-ignore
   tracking_url_template: string,
@@ -3381,6 +3441,9 @@ export const AdGroupSimulation = {
   cpc_bid_point_list: CpcBidSimulationPointList,
 
   // @ts-ignore
+  cpv_bid_point_list: CpvBidSimulationPointList,
+
+  // @ts-ignore
   target_cpa_point_list: TargetCpaSimulationPointList
 };
 
@@ -3561,6 +3624,16 @@ export const HotelSettingInfo = {
   hotel_center_id: number
 };
 
+/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
+// @ts-ignore
+export const VanityPharma = {
+  // @ts-ignore
+  vanity_pharma_display_url_mode: "enum_VanityPharmaDisplayUrlMode",
+
+  // @ts-ignore
+  vanity_pharma_text: "enum_VanityPharmaText"
+};
+
 /* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
 // @ts-ignore
 export const DynamicSearchAdsSetting = {
@@ -3575,30 +3648,6 @@ export const DynamicSearchAdsSetting = {
 
   // @ts-ignore
   feeds: string
-};
-
-/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
-// @ts-ignore
-export const TrackingSetting = {
-  // @ts-ignore
-  tracking_url: string
-};
-
-/* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
-// @ts-ignore
-export const GeoTargetTypeSetting = {
-  // @ts-ignore
-  positive_geo_target_type: "enum_PositiveGeoTargetType",
-
-  // @ts-ignore
-  negative_geo_target_type: "enum_NegativeGeoTargetType"
-};
-
-/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
-// @ts-ignore
-export const SelectiveOptimization = {
-  // @ts-ignore
-  conversion_actions: string
 };
 
 /* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
@@ -3617,6 +3666,20 @@ export const ShoppingSetting = {
   enable_local: boolean
 };
 
+/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
+// @ts-ignore
+export const TrackingSetting = {
+  // @ts-ignore
+  tracking_url: string
+};
+
+/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
+// @ts-ignore
+export const SelectiveOptimization = {
+  // @ts-ignore
+  conversion_actions: string
+};
+
 /* .google.ads.googleads.v1.resources.Campaign.AppCampaignSetting */
 // @ts-ignore
 export const AppCampaignSetting = {
@@ -3630,14 +3693,14 @@ export const AppCampaignSetting = {
   app_store: "enum_AppCampaignAppStore"
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
+/* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
 // @ts-ignore
-export const VanityPharma = {
+export const GeoTargetTypeSetting = {
   // @ts-ignore
-  vanity_pharma_display_url_mode: "enum_VanityPharmaDisplayUrlMode",
+  positive_geo_target_type: "enum_PositiveGeoTargetType",
 
   // @ts-ignore
-  vanity_pharma_text: "enum_VanityPharmaText"
+  negative_geo_target_type: "enum_NegativeGeoTargetType"
 };
 
 /* .google.ads.googleads.v1.resources.Campaign */
@@ -3696,6 +3759,9 @@ export const Campaign = {
 
   // @ts-ignore
   app_campaign_setting: AppCampaignSetting,
+
+  // @ts-ignore
+  labels: string,
 
   // @ts-ignore
   experiment_type: "enum_CampaignExperimentType",
@@ -3879,6 +3945,9 @@ export const CampaignCriterion = {
   type: "enum_CriterionType",
 
   // @ts-ignore
+  status: "enum_CampaignCriterionStatus",
+
+  // @ts-ignore
   keyword: KeywordInfo,
 
   // @ts-ignore
@@ -3983,6 +4052,74 @@ export const CampaignCriterionSimulation = {
 
   // @ts-ignore
   bid_modifier_point_list: BidModifierSimulationPointList
+};
+
+/* .google.ads.googleads.v1.resources.CampaignDraft */
+// @ts-ignore
+export const CampaignDraft = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  draft_id: number,
+
+  // @ts-ignore
+  base_campaign: string,
+
+  // @ts-ignore
+  name: string,
+
+  // @ts-ignore
+  draft_campaign: string,
+
+  // @ts-ignore
+  status: "enum_CampaignDraftStatus",
+
+  // @ts-ignore
+  has_experiment_running: boolean,
+
+  // @ts-ignore
+  long_running_operation: string
+};
+
+/* .google.ads.googleads.v1.resources.CampaignExperiment */
+// @ts-ignore
+export const CampaignExperiment = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  id: number,
+
+  // @ts-ignore
+  campaign_draft: string,
+
+  // @ts-ignore
+  name: string,
+
+  // @ts-ignore
+  description: string,
+
+  // @ts-ignore
+  traffic_split_percent: number,
+
+  // @ts-ignore
+  traffic_split_type: "enum_CampaignExperimentTrafficSplitType",
+
+  // @ts-ignore
+  experiment_campaign: string,
+
+  // @ts-ignore
+  status: "enum_CampaignExperimentStatus",
+
+  // @ts-ignore
+  long_running_operation: string,
+
+  // @ts-ignore
+  start_date: string,
+
+  // @ts-ignore
+  end_date: string
 };
 
 /* .google.ads.googleads.v1.resources.CampaignExtensionSetting */
@@ -4574,6 +4711,9 @@ export const ExtensionFeedItem = {
   device: "enum_FeedItemTargetDevice",
 
   // @ts-ignore
+  targeted_geo_target_constant: string,
+
+  // @ts-ignore
   status: "enum_FeedItemStatus",
 
   // @ts-ignore
@@ -4604,7 +4744,13 @@ export const ExtensionFeedItem = {
   location_feed_item: LocationFeedItem,
 
   // @ts-ignore
-  affiliate_location_feed_item: AffiliateLocationFeedItem
+  affiliate_location_feed_item: AffiliateLocationFeedItem,
+
+  // @ts-ignore
+  targeted_campaign: string,
+
+  // @ts-ignore
+  targeted_ad_group: string
 };
 
 /* .google.ads.googleads.v1.resources.Feed.PlacesLocationFeedData.OAuthInfo */
@@ -5658,6 +5804,16 @@ export const KeywordRecommendation = {
   recommended_cpc_bid_micros: number
 };
 
+/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
+// @ts-ignore
+export const KeywordMatchTypeRecommendation = {
+  // @ts-ignore
+  keyword: KeywordInfo,
+
+  // @ts-ignore
+  recommended_match_type: "enum_KeywordMatchType"
+};
+
 /* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
 // @ts-ignore
 export const TextAdRecommendation = {
@@ -5669,6 +5825,24 @@ export const TextAdRecommendation = {
 
   // @ts-ignore
   auto_apply_date: string
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
+// @ts-ignore
+export const SearchPartnersOptInRecommendation = {};
+
+/* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
+// @ts-ignore
+export const MaximizeClicksOptInRecommendation = {
+  // @ts-ignore
+  recommended_budget_amount_micros: number
+};
+
+/* .google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation */
+// @ts-ignore
+export const CalloutExtensionRecommendation = {
+  // @ts-ignore
+  recommended_extensions: CalloutFeedItem
 };
 
 /* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
@@ -5697,16 +5871,6 @@ export const TargetCpaOptInRecommendation = {
   recommended_target_cpa_micros: number
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
-// @ts-ignore
-export const KeywordMatchTypeRecommendation = {
-  // @ts-ignore
-  keyword: KeywordInfo,
-
-  // @ts-ignore
-  recommended_match_type: "enum_KeywordMatchType"
-};
-
 /* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
 // @ts-ignore
 export const MaximizeConversionsOptInRecommendation = {
@@ -5718,27 +5882,23 @@ export const MaximizeConversionsOptInRecommendation = {
 // @ts-ignore
 export const EnhancedCpcOptInRecommendation = {};
 
+/* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
+// @ts-ignore
+export const OptimizeAdRotationRecommendation = {};
+
+/* .google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation */
+// @ts-ignore
+export const SitelinkExtensionRecommendation = {
+  // @ts-ignore
+  recommended_extensions: SitelinkFeedItem
+};
+
 /* .google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation */
 // @ts-ignore
 export const CallExtensionRecommendation = {
   // @ts-ignore
   recommended_extensions: CallFeedItem
 };
-
-/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
-// @ts-ignore
-export const SearchPartnersOptInRecommendation = {};
-
-/* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
-// @ts-ignore
-export const MaximizeClicksOptInRecommendation = {
-  // @ts-ignore
-  recommended_budget_amount_micros: number
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
-// @ts-ignore
-export const OptimizeAdRotationRecommendation = {};
 
 /* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
 // @ts-ignore
@@ -5748,20 +5908,6 @@ export const MoveUnusedBudgetRecommendation = {
 
   // @ts-ignore
   budget_recommendation: CampaignBudgetRecommendation
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation */
-// @ts-ignore
-export const CalloutExtensionRecommendation = {
-  // @ts-ignore
-  recommended_extensions: CalloutFeedItem
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation */
-// @ts-ignore
-export const SitelinkExtensionRecommendation = {
-  // @ts-ignore
-  recommended_extensions: SitelinkFeedItem
 };
 
 /* .google.ads.googleads.v1.resources.Recommendation */
@@ -7240,6 +7386,252 @@ export const GetCampaignCriterionSimulationRequest = {
   resource_name: string
 };
 
+/* .google.ads.googleads.v1.services.CampaignDraftService */
+// @ts-ignore
+export const CampaignDraftService = {};
+
+/* .google.ads.googleads.v1.services.GetCampaignDraftRequest */
+// @ts-ignore
+export const GetCampaignDraftRequest = {
+  // @ts-ignore
+  resource_name: string
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignDraftsRequest */
+// @ts-ignore
+export const MutateCampaignDraftsRequest = {
+  // @ts-ignore
+  customer_id: string,
+
+  // @ts-ignore
+  operations: {
+    update_mask: { paths: string },
+    create: CampaignDraft,
+    update: CampaignDraft,
+    remove: string
+  },
+
+  // @ts-ignore
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean
+};
+
+/* .google.ads.googleads.v1.services.PromoteCampaignDraftRequest */
+// @ts-ignore
+export const PromoteCampaignDraftRequest = {
+  // @ts-ignore
+  campaign_draft: string
+};
+
+/* .google.ads.googleads.v1.services.CampaignDraftOperation */
+// @ts-ignore
+export const CampaignDraftOperation = {
+  // @ts-ignore
+  update_mask: { paths: string },
+
+  // @ts-ignore
+  create: CampaignDraft,
+
+  // @ts-ignore
+  update: CampaignDraft,
+
+  // @ts-ignore
+  remove: string
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignDraftsResponse */
+// @ts-ignore
+export const MutateCampaignDraftsResponse = {
+  // @ts-ignore
+  partial_failure_error: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string }
+  },
+
+  // @ts-ignore
+  results: { resource_name: string }
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignDraftResult */
+// @ts-ignore
+export const MutateCampaignDraftResult = {
+  // @ts-ignore
+  resource_name: string
+};
+
+/* .google.ads.googleads.v1.services.ListCampaignDraftAsyncErrorsRequest */
+// @ts-ignore
+export const ListCampaignDraftAsyncErrorsRequest = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  page_token: string,
+
+  // @ts-ignore
+  page_size: number
+};
+
+/* .google.ads.googleads.v1.services.ListCampaignDraftAsyncErrorsResponse */
+// @ts-ignore
+export const ListCampaignDraftAsyncErrorsResponse = {
+  // @ts-ignore
+  errors: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string }
+  },
+
+  // @ts-ignore
+  next_page_token: string
+};
+
+/* .google.ads.googleads.v1.services.CampaignExperimentService */
+// @ts-ignore
+export const CampaignExperimentService = {};
+
+/* .google.ads.googleads.v1.services.GetCampaignExperimentRequest */
+// @ts-ignore
+export const GetCampaignExperimentRequest = {
+  // @ts-ignore
+  resource_name: string
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignExperimentsRequest */
+// @ts-ignore
+export const MutateCampaignExperimentsRequest = {
+  // @ts-ignore
+  customer_id: string,
+
+  // @ts-ignore
+  operations: {
+    update_mask: { paths: string },
+    update: CampaignExperiment,
+    remove: string
+  },
+
+  // @ts-ignore
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean
+};
+
+/* .google.ads.googleads.v1.services.CampaignExperimentOperation */
+// @ts-ignore
+export const CampaignExperimentOperation = {
+  // @ts-ignore
+  update_mask: { paths: string },
+
+  // @ts-ignore
+  update: CampaignExperiment,
+
+  // @ts-ignore
+  remove: string
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignExperimentsResponse */
+// @ts-ignore
+export const MutateCampaignExperimentsResponse = {
+  // @ts-ignore
+  partial_failure_error: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string }
+  },
+
+  // @ts-ignore
+  results: { resource_name: string }
+};
+
+/* .google.ads.googleads.v1.services.MutateCampaignExperimentResult */
+// @ts-ignore
+export const MutateCampaignExperimentResult = {
+  // @ts-ignore
+  resource_name: string
+};
+
+/* .google.ads.googleads.v1.services.CreateCampaignExperimentRequest */
+// @ts-ignore
+export const CreateCampaignExperimentRequest = {
+  // @ts-ignore
+  customer_id: string,
+
+  // @ts-ignore
+  campaign_experiment: CampaignExperiment,
+
+  // @ts-ignore
+  validate_only: boolean
+};
+
+/* .google.ads.googleads.v1.services.CreateCampaignExperimentMetadata */
+// @ts-ignore
+export const CreateCampaignExperimentMetadata = {
+  // @ts-ignore
+  campaign_experiment: string
+};
+
+/* .google.ads.googleads.v1.services.GraduateCampaignExperimentRequest */
+// @ts-ignore
+export const GraduateCampaignExperimentRequest = {
+  // @ts-ignore
+  campaign_experiment: string,
+
+  // @ts-ignore
+  campaign_budget: string
+};
+
+/* .google.ads.googleads.v1.services.GraduateCampaignExperimentResponse */
+// @ts-ignore
+export const GraduateCampaignExperimentResponse = {
+  // @ts-ignore
+  graduated_campaign: string
+};
+
+/* .google.ads.googleads.v1.services.PromoteCampaignExperimentRequest */
+// @ts-ignore
+export const PromoteCampaignExperimentRequest = {
+  // @ts-ignore
+  campaign_experiment: string
+};
+
+/* .google.ads.googleads.v1.services.EndCampaignExperimentRequest */
+// @ts-ignore
+export const EndCampaignExperimentRequest = {
+  // @ts-ignore
+  campaign_experiment: string
+};
+
+/* .google.ads.googleads.v1.services.ListCampaignExperimentAsyncErrorsRequest */
+// @ts-ignore
+export const ListCampaignExperimentAsyncErrorsRequest = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  page_token: string,
+
+  // @ts-ignore
+  page_size: number
+};
+
+/* .google.ads.googleads.v1.services.ListCampaignExperimentAsyncErrorsResponse */
+// @ts-ignore
+export const ListCampaignExperimentAsyncErrorsResponse = {
+  // @ts-ignore
+  errors: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string }
+  },
+
+  // @ts-ignore
+  next_page_token: string
+};
+
 /* .google.ads.googleads.v1.services.CampaignExtensionSettingService */
 // @ts-ignore
 export const CampaignExtensionSettingService = {};
@@ -7665,111 +8057,6 @@ export const MutateConversionActionResult = {
   resource_name: string
 };
 
-/* .google.ads.googleads.v1.services.ConversionAdjustmentUploadService */
-// @ts-ignore
-export const ConversionAdjustmentUploadService = {};
-
-/* .google.ads.googleads.v1.services.UploadConversionAdjustmentsRequest */
-// @ts-ignore
-export const UploadConversionAdjustmentsRequest = {
-  // @ts-ignore
-  customer_id: string,
-
-  // @ts-ignore
-  conversion_adjustments: {
-    conversion_action: string,
-    adjustment_date_time: string,
-    adjustment_type: "enum_ConversionAdjustmentType",
-    restatement_value: { adjusted_value: number, currency_code: string },
-    gclid_date_time_pair: { gclid: string, conversion_date_time: string },
-    order_id: string
-  },
-
-  // @ts-ignore
-  partial_failure: boolean
-};
-
-/* .google.ads.googleads.v1.services.UploadConversionAdjustmentsResponse */
-// @ts-ignore
-export const UploadConversionAdjustmentsResponse = {
-  // @ts-ignore
-  partial_failure_error: {
-    code: number,
-    message: string,
-    details: { type_url: string, value: string }
-  },
-
-  // @ts-ignore
-  results: {
-    conversion_action: string,
-    adjustment_date_time: string,
-    adjustment_type: "enum_ConversionAdjustmentType",
-    gclid_date_time_pair: { gclid: string, conversion_date_time: string },
-    order_id: string
-  }
-};
-
-/* .google.ads.googleads.v1.services.ConversionAdjustment */
-// @ts-ignore
-export const ConversionAdjustment = {
-  // @ts-ignore
-  conversion_action: string,
-
-  // @ts-ignore
-  adjustment_date_time: string,
-
-  // @ts-ignore
-  adjustment_type: "enum_ConversionAdjustmentType",
-
-  // @ts-ignore
-  restatement_value: { adjusted_value: number, currency_code: string },
-
-  // @ts-ignore
-  gclid_date_time_pair: { gclid: string, conversion_date_time: string },
-
-  // @ts-ignore
-  order_id: string
-};
-
-/* .google.ads.googleads.v1.services.RestatementValue */
-// @ts-ignore
-export const RestatementValue = {
-  // @ts-ignore
-  adjusted_value: number,
-
-  // @ts-ignore
-  currency_code: string
-};
-
-/* .google.ads.googleads.v1.services.GclidDateTimePair */
-// @ts-ignore
-export const GclidDateTimePair = {
-  // @ts-ignore
-  gclid: string,
-
-  // @ts-ignore
-  conversion_date_time: string
-};
-
-/* .google.ads.googleads.v1.services.ConversionAdjustmentResult */
-// @ts-ignore
-export const ConversionAdjustmentResult = {
-  // @ts-ignore
-  conversion_action: string,
-
-  // @ts-ignore
-  adjustment_date_time: string,
-
-  // @ts-ignore
-  adjustment_type: "enum_ConversionAdjustmentType",
-
-  // @ts-ignore
-  gclid_date_time_pair: GclidDateTimePair,
-
-  // @ts-ignore
-  order_id: string
-};
-
 /* .google.ads.googleads.v1.services.ConversionUploadService */
 // @ts-ignore
 export const ConversionUploadService = {};
@@ -7795,7 +8082,10 @@ export const UploadClickConversionsRequest = {
   },
 
   // @ts-ignore
-  partial_failure: boolean
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean
 };
 
 /* .google.ads.googleads.v1.services.UploadClickConversionsResponse */
@@ -7833,7 +8123,10 @@ export const UploadCallConversionsRequest = {
   },
 
   // @ts-ignore
-  partial_failure: boolean
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean
 };
 
 /* .google.ads.googleads.v1.services.UploadCallConversionsResponse */
@@ -8990,6 +9283,8 @@ export const SearchGoogleAdsResponse = {
     campaign_bid_modifier: CampaignBidModifier,
     campaign_criterion: CampaignCriterion,
     campaign_criterion_simulation: CampaignCriterionSimulation,
+    campaign_draft: CampaignDraft,
+    campaign_experiment: CampaignExperiment,
     campaign_extension_setting: CampaignExtensionSetting,
     campaign_feed: CampaignFeed,
     campaign_label: CampaignLabel,
@@ -9151,6 +9446,12 @@ export const GoogleAdsRow = {
 
   // @ts-ignore
   campaign_criterion_simulation: CampaignCriterionSimulation,
+
+  // @ts-ignore
+  campaign_draft: CampaignDraft,
+
+  // @ts-ignore
+  campaign_experiment: CampaignExperiment,
 
   // @ts-ignore
   campaign_extension_setting: CampaignExtensionSetting,
@@ -9374,6 +9675,8 @@ export const MutateGoogleAdsRequest = {
     campaign_bid_modifier_operation: CampaignBidModifierOperation,
     campaign_budget_operation: CampaignBudgetOperation,
     campaign_criterion_operation: CampaignCriterionOperation,
+    campaign_draft_operation: CampaignDraftOperation,
+    campaign_experiment_operation: CampaignExperimentOperation,
     campaign_extension_setting_operation: CampaignExtensionSettingOperation,
     campaign_feed_operation: CampaignFeedOperation,
     campaign_label_operation: CampaignLabelOperation,
@@ -9451,6 +9754,8 @@ export const MutateGoogleAdsResponse = {
     campaign_bid_modifier_result: MutateCampaignBidModifierResult,
     campaign_budget_result: MutateCampaignBudgetResult,
     campaign_criterion_result: MutateCampaignCriterionResult,
+    campaign_draft_result: MutateCampaignDraftResult,
+    campaign_experiment_result: MutateCampaignExperimentResult,
     campaign_extension_setting_result: MutateCampaignExtensionSettingResult,
     campaign_feed_result: MutateCampaignFeedResult,
     campaign_label_result: MutateCampaignLabelResult,
@@ -9523,6 +9828,12 @@ export const MutateOperation = {
 
   // @ts-ignore
   campaign_criterion_operation: CampaignCriterionOperation,
+
+  // @ts-ignore
+  campaign_draft_operation: CampaignDraftOperation,
+
+  // @ts-ignore
+  campaign_experiment_operation: CampaignExperimentOperation,
 
   // @ts-ignore
   campaign_extension_setting_operation: CampaignExtensionSettingOperation,
@@ -9657,6 +9968,12 @@ export const MutateOperationResponse = {
 
   // @ts-ignore
   campaign_criterion_result: MutateCampaignCriterionResult,
+
+  // @ts-ignore
+  campaign_draft_result: MutateCampaignDraftResult,
+
+  // @ts-ignore
+  campaign_experiment_result: MutateCampaignExperimentResult,
 
   // @ts-ignore
   campaign_extension_setting_result: MutateCampaignExtensionSettingResult,

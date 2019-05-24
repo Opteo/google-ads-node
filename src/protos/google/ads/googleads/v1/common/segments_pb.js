@@ -22,6 +22,7 @@ var google_ads_googleads_v1_enums_day_of_week_pb = require('../../../../../googl
 var google_ads_googleads_v1_enums_device_pb = require('../../../../../google/ads/googleads/v1/enums/device_pb.js');
 var google_ads_googleads_v1_enums_external_conversion_source_pb = require('../../../../../google/ads/googleads/v1/enums/external_conversion_source_pb.js');
 var google_ads_googleads_v1_enums_hotel_date_selection_type_pb = require('../../../../../google/ads/googleads/v1/enums/hotel_date_selection_type_pb.js');
+var google_ads_googleads_v1_enums_hotel_rate_type_pb = require('../../../../../google/ads/googleads/v1/enums/hotel_rate_type_pb.js');
 var google_ads_googleads_v1_enums_month_of_year_pb = require('../../../../../google/ads/googleads/v1/enums/month_of_year_pb.js');
 var google_ads_googleads_v1_enums_placeholder_type_pb = require('../../../../../google/ads/googleads/v1/enums/placeholder_type_pb.js');
 var google_ads_googleads_v1_enums_product_channel_pb = require('../../../../../google/ads/googleads/v1/enums/product_channel_pb.js');
@@ -101,6 +102,7 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     geoTargetMetro: (f = msg.getGeoTargetMetro()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetMostSpecificLocation: (f = msg.getGeoTargetMostSpecificLocation()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetPostalCode: (f = msg.getGeoTargetPostalCode()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    geoTargetProvince: (f = msg.getGeoTargetProvince()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetRegion: (f = msg.getGeoTargetRegion()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     geoTargetState: (f = msg.getGeoTargetState()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     hotelBookingWindowDays: (f = msg.getHotelBookingWindowDays()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
@@ -112,6 +114,8 @@ proto.google.ads.googleads.v1.common.Segments.toObject = function(includeInstanc
     hotelCountry: (f = msg.getHotelCountry()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     hotelDateSelectionType: jspb.Message.getFieldWithDefault(msg, 13, 0),
     hotelLengthOfStay: (f = msg.getHotelLengthOfStay()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
+    hotelRateRuleId: (f = msg.getHotelRateRuleId()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    hotelRateType: jspb.Message.getFieldWithDefault(msg, 74, 0),
     hotelState: (f = msg.getHotelState()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     hour: (f = msg.getHour()) && google_protobuf_wrappers_pb.Int32Value.toObject(includeInstance, f),
     interactionOnThisExtension: (f = msg.getInteractionOnThisExtension()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
@@ -280,6 +284,11 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
       msg.setGeoTargetPostalCode(value);
       break;
+    case 75:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setGeoTargetProvince(value);
+      break;
     case 64:
       var value = new google_protobuf_wrappers_pb.StringValue;
       reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
@@ -332,6 +341,15 @@ proto.google.ads.googleads.v1.common.Segments.deserializeBinaryFromReader = func
       var value = new google_protobuf_wrappers_pb.Int32Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int32Value.deserializeBinaryFromReader);
       msg.setHotelLengthOfStay(value);
+      break;
+    case 73:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setHotelRateRuleId(value);
+      break;
+    case 74:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType} */ (reader.readEnum());
+      msg.setHotelRateType(value);
       break;
     case 15:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -710,6 +728,14 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
+  f = message.getGeoTargetProvince();
+  if (f != null) {
+    writer.writeMessage(
+      75,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
   f = message.getGeoTargetRegion();
   if (f != null) {
     writer.writeMessage(
@@ -794,6 +820,21 @@ proto.google.ads.googleads.v1.common.Segments.serializeBinaryToWriter = function
       14,
       f,
       google_protobuf_wrappers_pb.Int32Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getHotelRateRuleId();
+  if (f != null) {
+    writer.writeMessage(
+      73,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getHotelRateType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      74,
+      f
     );
   }
   f = message.getHotelState();
@@ -1585,6 +1626,36 @@ proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetPostalCode =
 
 
 /**
+ * optional google.protobuf.StringValue geo_target_province = 75;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getGeoTargetProvince = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 75));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setGeoTargetProvince = function(value) {
+  jspb.Message.setWrapperField(this, 75, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearGeoTargetProvince = function() {
+  this.setGeoTargetProvince(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasGeoTargetProvince = function() {
+  return jspb.Message.getField(this, 75) != null;
+};
+
+
+/**
  * optional google.protobuf.StringValue geo_target_region = 64;
  * @return {?proto.google.protobuf.StringValue}
  */
@@ -1881,6 +1952,51 @@ proto.google.ads.googleads.v1.common.Segments.prototype.clearHotelLengthOfStay =
  */
 proto.google.ads.googleads.v1.common.Segments.prototype.hasHotelLengthOfStay = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue hotel_rate_rule_id = 73;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getHotelRateRuleId = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 73));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setHotelRateRuleId = function(value) {
+  jspb.Message.setWrapperField(this, 73, value);
+};
+
+
+proto.google.ads.googleads.v1.common.Segments.prototype.clearHotelRateRuleId = function() {
+  this.setHotelRateRuleId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.hasHotelRateRuleId = function() {
+  return jspb.Message.getField(this, 73) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType hotel_rate_type = 74;
+ * @return {!proto.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType}
+ */
+proto.google.ads.googleads.v1.common.Segments.prototype.getHotelRateType = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType} */ (jspb.Message.getFieldWithDefault(this, 74, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType} value */
+proto.google.ads.googleads.v1.common.Segments.prototype.setHotelRateType = function(value) {
+  jspb.Message.setProto3EnumField(this, 74, value);
 };
 
 

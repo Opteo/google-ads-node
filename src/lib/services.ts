@@ -49,6 +49,10 @@ import { CampaignCriterionServiceClient } from "../protos/google/ads/googleads/v
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignCriterionSimulationServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_criterion_simulation_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
+import { CampaignDraftServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_draft_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
+import { CampaignExperimentServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_experiment_service_grpc_pb";
+// @ts-ignore Avoid no module definition defined warnings
 import { CampaignExtensionSettingServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_extension_setting_service_grpc_pb";
 // @ts-ignore Avoid no module definition defined warnings
 import { CampaignFeedServiceClient } from "../protos/google/ads/googleads/v1/services/campaign_feed_service_grpc_pb";

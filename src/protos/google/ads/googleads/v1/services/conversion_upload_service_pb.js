@@ -80,7 +80,8 @@ proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.toObject = 
     customerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     conversionsList: jspb.Message.toObjectList(msg.getConversionsList(),
     proto.google.ads.googleads.v1.services.ClickConversion.toObject, includeInstance),
-    partialFailure: jspb.Message.getFieldWithDefault(msg, 3, false)
+    partialFailure: jspb.Message.getFieldWithDefault(msg, 3, false),
+    validateOnly: jspb.Message.getFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -130,6 +131,10 @@ proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.deserialize
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPartialFailure(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidateOnly(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -178,6 +183,13 @@ proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.serializeBi
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getValidateOnly();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -244,6 +256,23 @@ proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.prototype.g
 /** @param {boolean} value */
 proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.prototype.setPartialFailure = function(value) {
   jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool validate_only = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.prototype.getValidateOnly = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
+};
+
+
+/** @param {boolean} value */
+proto.google.ads.googleads.v1.services.UploadClickConversionsRequest.prototype.setValidateOnly = function(value) {
+  jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -516,7 +545,8 @@ proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.toObject = f
     customerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     conversionsList: jspb.Message.toObjectList(msg.getConversionsList(),
     proto.google.ads.googleads.v1.services.CallConversion.toObject, includeInstance),
-    partialFailure: jspb.Message.getFieldWithDefault(msg, 3, false)
+    partialFailure: jspb.Message.getFieldWithDefault(msg, 3, false),
+    validateOnly: jspb.Message.getFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -566,6 +596,10 @@ proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.deserializeB
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPartialFailure(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidateOnly(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -614,6 +648,13 @@ proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.serializeBin
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getValidateOnly();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -680,6 +721,23 @@ proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.ge
 /** @param {boolean} value */
 proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.setPartialFailure = function(value) {
   jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool validate_only = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.getValidateOnly = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
+};
+
+
+/** @param {boolean} value */
+proto.google.ads.googleads.v1.services.UploadCallConversionsRequest.prototype.setValidateOnly = function(value) {
+  jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

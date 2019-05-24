@@ -43,7 +43,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.AdGroupSimulation.oneofGroups_ = [[8,9]];
+proto.google.ads.googleads.v1.resources.AdGroupSimulation.oneofGroups_ = [[8,10,9]];
 
 /**
  * @enum {number}
@@ -51,6 +51,7 @@ proto.google.ads.googleads.v1.resources.AdGroupSimulation.oneofGroups_ = [[8,9]]
 proto.google.ads.googleads.v1.resources.AdGroupSimulation.PointListCase = {
   POINT_LIST_NOT_SET: 0,
   CPC_BID_POINT_LIST: 8,
+  CPV_BID_POINT_LIST: 10,
   TARGET_CPA_POINT_LIST: 9
 };
 
@@ -97,6 +98,7 @@ proto.google.ads.googleads.v1.resources.AdGroupSimulation.toObject = function(in
     startDate: (f = msg.getStartDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     endDate: (f = msg.getEndDate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     cpcBidPointList: (f = msg.getCpcBidPointList()) && google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList.toObject(includeInstance, f),
+    cpvBidPointList: (f = msg.getCpvBidPointList()) && google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList.toObject(includeInstance, f),
     targetCpaPointList: (f = msg.getTargetCpaPointList()) && google_ads_googleads_v1_common_simulation_pb.TargetCpaSimulationPointList.toObject(includeInstance, f)
   };
 
@@ -165,6 +167,11 @@ proto.google.ads.googleads.v1.resources.AdGroupSimulation.deserializeBinaryFromR
       var value = new google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList;
       reader.readMessage(value,google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList.deserializeBinaryFromReader);
       msg.setCpcBidPointList(value);
+      break;
+    case 10:
+      var value = new google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList;
+      reader.readMessage(value,google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList.deserializeBinaryFromReader);
+      msg.setCpvBidPointList(value);
       break;
     case 9:
       var value = new google_ads_googleads_v1_common_simulation_pb.TargetCpaSimulationPointList;
@@ -251,6 +258,14 @@ proto.google.ads.googleads.v1.resources.AdGroupSimulation.serializeBinaryToWrite
       8,
       f,
       google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList.serializeBinaryToWriter
+    );
+  }
+  f = message.getCpvBidPointList();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList.serializeBinaryToWriter
     );
   }
   f = message.getTargetCpaPointList();
@@ -426,6 +441,36 @@ proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.clearCpcBidP
  */
 proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.hasCpcBidPointList = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.CpvBidSimulationPointList cpv_bid_point_list = 10;
+ * @return {?proto.google.ads.googleads.v1.common.CpvBidSimulationPointList}
+ */
+proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.getCpvBidPointList = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.CpvBidSimulationPointList} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList, 10));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.CpvBidSimulationPointList|undefined} value */
+proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.setCpvBidPointList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 10, proto.google.ads.googleads.v1.resources.AdGroupSimulation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.clearCpvBidPointList = function() {
+  this.setCpvBidPointList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.AdGroupSimulation.prototype.hasCpvBidPointList = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

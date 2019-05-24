@@ -25,6 +25,7 @@ export namespace DeviceEnum {
     MOBILE = 2,
     TABLET = 3,
     DESKTOP = 4,
+    CONNECTED_TV = 6,
     OTHER = 5,
   }
 }

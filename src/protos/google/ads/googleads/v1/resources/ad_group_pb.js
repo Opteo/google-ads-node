@@ -82,6 +82,7 @@ proto.google.ads.googleads.v1.resources.AdGroup.toObject = function(includeInsta
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     adRotationMode: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    baseAdGroup: (f = msg.getBaseAdGroup()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     trackingUrlTemplate: (f = msg.getTrackingUrlTemplate()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     urlCustomParametersList: jspb.Message.toObjectList(msg.getUrlCustomParametersList(),
     google_ads_googleads_v1_common_custom_parameter_pb.CustomParameter.toObject, includeInstance),
@@ -162,6 +163,11 @@ proto.google.ads.googleads.v1.resources.AdGroup.deserializeBinaryFromReader = fu
     case 22:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode} */ (reader.readEnum());
       msg.setAdRotationMode(value);
+      break;
+    case 18:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setBaseAdGroup(value);
       break;
     case 13:
       var value = new google_protobuf_wrappers_pb.StringValue;
@@ -321,6 +327,14 @@ proto.google.ads.googleads.v1.resources.AdGroup.serializeBinaryToWriter = functi
     writer.writeEnum(
       22,
       f
+    );
+  }
+  f = message.getBaseAdGroup();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = message.getTrackingUrlTemplate();
@@ -584,6 +598,36 @@ proto.google.ads.googleads.v1.resources.AdGroup.prototype.getAdRotationMode = fu
 /** @param {!proto.google.ads.googleads.v1.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode} value */
 proto.google.ads.googleads.v1.resources.AdGroup.prototype.setAdRotationMode = function(value) {
   jspb.Message.setProto3EnumField(this, 22, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue base_ad_group = 18;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.AdGroup.prototype.getBaseAdGroup = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 18));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.AdGroup.prototype.setBaseAdGroup = function(value) {
+  jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.AdGroup.prototype.clearBaseAdGroup = function() {
+  this.setBaseAdGroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.AdGroup.prototype.hasBaseAdGroup = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 

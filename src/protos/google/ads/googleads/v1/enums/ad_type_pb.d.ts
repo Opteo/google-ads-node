@@ -40,6 +40,7 @@ export namespace AdTypeEnum {
     HTML5_UPLOAD_AD = 21,
     DYNAMIC_HTML5_AD = 22,
     APP_ENGAGEMENT_AD = 23,
+    SHOPPING_COMPARISON_LISTING_AD = 24,
   }
 }
 

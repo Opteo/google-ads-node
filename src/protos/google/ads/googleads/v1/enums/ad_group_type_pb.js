@@ -146,7 +146,8 @@ proto.google.ads.googleads.v1.enums.AdGroupTypeEnum.AdGroupType = {
   VIDEO_TRUE_VIEW_IN_DISPLAY: 10,
   VIDEO_NON_SKIPPABLE_IN_STREAM: 11,
   VIDEO_OUTSTREAM: 12,
-  SEARCH_DYNAMIC_ADS: 13
+  SEARCH_DYNAMIC_ADS: 13,
+  SHOPPING_COMPARISON_LISTING_ADS: 14
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

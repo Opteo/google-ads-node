@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 var google_api_auth_pb = require('../../google/api/auth_pb.js');
 var google_api_backend_pb = require('../../google/api/backend_pb.js');
 var google_api_billing_pb = require('../../google/api/billing_pb.js');
@@ -19,7 +18,6 @@ var google_api_context_pb = require('../../google/api/context_pb.js');
 var google_api_control_pb = require('../../google/api/control_pb.js');
 var google_api_documentation_pb = require('../../google/api/documentation_pb.js');
 var google_api_endpoint_pb = require('../../google/api/endpoint_pb.js');
-var google_api_experimental_experimental_pb = require('../../google/api/experimental/experimental_pb.js');
 var google_api_http_pb = require('../../google/api/http_pb.js');
 var google_api_label_pb = require('../../google/api/label_pb.js');
 var google_api_log_pb = require('../../google/api/log_pb.js');
@@ -28,6 +26,7 @@ var google_api_metric_pb = require('../../google/api/metric_pb.js');
 var google_api_monitored_resource_pb = require('../../google/api/monitored_resource_pb.js');
 var google_api_monitoring_pb = require('../../google/api/monitoring_pb.js');
 var google_api_quota_pb = require('../../google/api/quota_pb.js');
+var google_api_resource_pb = require('../../google/api/resource_pb.js');
 var google_api_source_info_pb = require('../../google/api/source_info_pb.js');
 var google_api_system_parameter_pb = require('../../google/api/system_parameter_pb.js');
 var google_api_usage_pb = require('../../google/api/usage_pb.js');
@@ -121,8 +120,7 @@ proto.google.api.Service.toObject = function(includeInstance, msg) {
     logging: (f = msg.getLogging()) && google_api_logging_pb.Logging.toObject(includeInstance, f),
     monitoring: (f = msg.getMonitoring()) && google_api_monitoring_pb.Monitoring.toObject(includeInstance, f),
     systemParameters: (f = msg.getSystemParameters()) && google_api_system_parameter_pb.SystemParameters.toObject(includeInstance, f),
-    sourceInfo: (f = msg.getSourceInfo()) && google_api_source_info_pb.SourceInfo.toObject(includeInstance, f),
-    experimental: (f = msg.getExperimental()) && google_api_experimental_experimental_pb.Experimental.toObject(includeInstance, f)
+    sourceInfo: (f = msg.getSourceInfo()) && google_api_source_info_pb.SourceInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -279,11 +277,6 @@ proto.google.api.Service.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_api_source_info_pb.SourceInfo;
       reader.readMessage(value,google_api_source_info_pb.SourceInfo.deserializeBinaryFromReader);
       msg.setSourceInfo(value);
-      break;
-    case 101:
-      var value = new google_api_experimental_experimental_pb.Experimental;
-      reader.readMessage(value,google_api_experimental_experimental_pb.Experimental.deserializeBinaryFromReader);
-      msg.setExperimental(value);
       break;
     default:
       reader.skipField();
@@ -508,14 +501,6 @@ proto.google.api.Service.serializeBinaryToWriter = function(message, writer) {
       37,
       f,
       google_api_source_info_pb.SourceInfo.serializeBinaryToWriter
-    );
-  }
-  f = message.getExperimental();
-  if (f != null) {
-    writer.writeMessage(
-      101,
-      f,
-      google_api_experimental_experimental_pb.Experimental.serializeBinaryToWriter
     );
   }
 };
@@ -1215,36 +1200,6 @@ proto.google.api.Service.prototype.clearSourceInfo = function() {
  */
 proto.google.api.Service.prototype.hasSourceInfo = function() {
   return jspb.Message.getField(this, 37) != null;
-};
-
-
-/**
- * optional Experimental experimental = 101;
- * @return {?proto.google.api.Experimental}
- */
-proto.google.api.Service.prototype.getExperimental = function() {
-  return /** @type{?proto.google.api.Experimental} */ (
-    jspb.Message.getWrapperField(this, google_api_experimental_experimental_pb.Experimental, 101));
-};
-
-
-/** @param {?proto.google.api.Experimental|undefined} value */
-proto.google.api.Service.prototype.setExperimental = function(value) {
-  jspb.Message.setWrapperField(this, 101, value);
-};
-
-
-proto.google.api.Service.prototype.clearExperimental = function() {
-  this.setExperimental(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.google.api.Service.prototype.hasExperimental = function() {
-  return jspb.Message.getField(this, 101) != null;
 };
 
 

@@ -104,6 +104,11 @@ export class Campaign extends jspb.Message {
   getAppCampaignSetting(): Campaign.AppCampaignSetting | undefined;
   setAppCampaignSetting(value?: Campaign.AppCampaignSetting): void;
 
+  clearLabelsList(): void;
+  getLabelsList(): Array<google_protobuf_wrappers_pb.StringValue>;
+  setLabelsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
+  addLabels(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
   getExperimentType(): google_ads_googleads_v1_enums_campaign_experiment_type_pb.CampaignExperimentTypeEnum.CampaignExperimentType;
   setExperimentType(value: google_ads_googleads_v1_enums_campaign_experiment_type_pb.CampaignExperimentTypeEnum.CampaignExperimentType): void;
 
@@ -257,6 +262,7 @@ export namespace Campaign {
     targetingSetting?: google_ads_googleads_v1_common_targeting_setting_pb.TargetingSetting.AsObject,
     geoTargetTypeSetting?: Campaign.GeoTargetTypeSetting.AsObject,
     appCampaignSetting?: Campaign.AppCampaignSetting.AsObject,
+    labelsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
     experimentType: google_ads_googleads_v1_enums_campaign_experiment_type_pb.CampaignExperimentTypeEnum.CampaignExperimentType,
     baseCampaign?: google_protobuf_wrappers_pb.StringValue.AsObject,
     campaignBudget?: google_protobuf_wrappers_pb.StringValue.AsObject,
@@ -347,6 +353,30 @@ export namespace Campaign {
     }
   }
 
+  export class VanityPharma extends jspb.Message {
+    getVanityPharmaDisplayUrlMode(): google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode;
+    setVanityPharmaDisplayUrlMode(value: google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode): void;
+
+    getVanityPharmaText(): google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText;
+    setVanityPharmaText(value: google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): VanityPharma.AsObject;
+    static toObject(includeInstance: boolean, msg: VanityPharma): VanityPharma.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: VanityPharma, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): VanityPharma;
+    static deserializeBinaryFromReader(message: VanityPharma, reader: jspb.BinaryReader): VanityPharma;
+  }
+
+  export namespace VanityPharma {
+    export type AsObject = {
+      vanityPharmaDisplayUrlMode: google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode,
+      vanityPharmaText: google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText,
+    }
+  }
+
   export class DynamicSearchAdsSetting extends jspb.Message {
     hasDomainName(): boolean;
     clearDomainName(): void;
@@ -384,74 +414,6 @@ export namespace Campaign {
       languageCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
       useSuppliedUrlsOnly?: google_protobuf_wrappers_pb.BoolValue.AsObject,
       feedsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
-    }
-  }
-
-  export class TrackingSetting extends jspb.Message {
-    hasTrackingUrl(): boolean;
-    clearTrackingUrl(): void;
-    getTrackingUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
-    setTrackingUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): TrackingSetting.AsObject;
-    static toObject(includeInstance: boolean, msg: TrackingSetting): TrackingSetting.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: TrackingSetting, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): TrackingSetting;
-    static deserializeBinaryFromReader(message: TrackingSetting, reader: jspb.BinaryReader): TrackingSetting;
-  }
-
-  export namespace TrackingSetting {
-    export type AsObject = {
-      trackingUrl?: google_protobuf_wrappers_pb.StringValue.AsObject,
-    }
-  }
-
-  export class GeoTargetTypeSetting extends jspb.Message {
-    getPositiveGeoTargetType(): google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType;
-    setPositiveGeoTargetType(value: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType): void;
-
-    getNegativeGeoTargetType(): google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType;
-    setNegativeGeoTargetType(value: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): GeoTargetTypeSetting.AsObject;
-    static toObject(includeInstance: boolean, msg: GeoTargetTypeSetting): GeoTargetTypeSetting.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: GeoTargetTypeSetting, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): GeoTargetTypeSetting;
-    static deserializeBinaryFromReader(message: GeoTargetTypeSetting, reader: jspb.BinaryReader): GeoTargetTypeSetting;
-  }
-
-  export namespace GeoTargetTypeSetting {
-    export type AsObject = {
-      positiveGeoTargetType: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType,
-      negativeGeoTargetType: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType,
-    }
-  }
-
-  export class SelectiveOptimization extends jspb.Message {
-    clearConversionActionsList(): void;
-    getConversionActionsList(): Array<google_protobuf_wrappers_pb.StringValue>;
-    setConversionActionsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
-    addConversionActions(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SelectiveOptimization.AsObject;
-    static toObject(includeInstance: boolean, msg: SelectiveOptimization): SelectiveOptimization.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: SelectiveOptimization, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SelectiveOptimization;
-    static deserializeBinaryFromReader(message: SelectiveOptimization, reader: jspb.BinaryReader): SelectiveOptimization;
-  }
-
-  export namespace SelectiveOptimization {
-    export type AsObject = {
-      conversionActionsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
     }
   }
 
@@ -495,6 +457,50 @@ export namespace Campaign {
     }
   }
 
+  export class TrackingSetting extends jspb.Message {
+    hasTrackingUrl(): boolean;
+    clearTrackingUrl(): void;
+    getTrackingUrl(): google_protobuf_wrappers_pb.StringValue | undefined;
+    setTrackingUrl(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TrackingSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: TrackingSetting): TrackingSetting.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TrackingSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TrackingSetting;
+    static deserializeBinaryFromReader(message: TrackingSetting, reader: jspb.BinaryReader): TrackingSetting;
+  }
+
+  export namespace TrackingSetting {
+    export type AsObject = {
+      trackingUrl?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    }
+  }
+
+  export class SelectiveOptimization extends jspb.Message {
+    clearConversionActionsList(): void;
+    getConversionActionsList(): Array<google_protobuf_wrappers_pb.StringValue>;
+    setConversionActionsList(value: Array<google_protobuf_wrappers_pb.StringValue>): void;
+    addConversionActions(value?: google_protobuf_wrappers_pb.StringValue, index?: number): google_protobuf_wrappers_pb.StringValue;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SelectiveOptimization.AsObject;
+    static toObject(includeInstance: boolean, msg: SelectiveOptimization): SelectiveOptimization.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SelectiveOptimization, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SelectiveOptimization;
+    static deserializeBinaryFromReader(message: SelectiveOptimization, reader: jspb.BinaryReader): SelectiveOptimization;
+  }
+
+  export namespace SelectiveOptimization {
+    export type AsObject = {
+      conversionActionsList: Array<google_protobuf_wrappers_pb.StringValue.AsObject>,
+    }
+  }
+
   export class AppCampaignSetting extends jspb.Message {
     getBiddingStrategyGoalType(): google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType;
     setBiddingStrategyGoalType(value: google_ads_googleads_v1_enums_app_campaign_bidding_strategy_goal_type_pb.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType): void;
@@ -525,27 +531,27 @@ export namespace Campaign {
     }
   }
 
-  export class VanityPharma extends jspb.Message {
-    getVanityPharmaDisplayUrlMode(): google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode;
-    setVanityPharmaDisplayUrlMode(value: google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode): void;
+  export class GeoTargetTypeSetting extends jspb.Message {
+    getPositiveGeoTargetType(): google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType;
+    setPositiveGeoTargetType(value: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType): void;
 
-    getVanityPharmaText(): google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText;
-    setVanityPharmaText(value: google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText): void;
+    getNegativeGeoTargetType(): google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType;
+    setNegativeGeoTargetType(value: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType): void;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): VanityPharma.AsObject;
-    static toObject(includeInstance: boolean, msg: VanityPharma): VanityPharma.AsObject;
+    toObject(includeInstance?: boolean): GeoTargetTypeSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: GeoTargetTypeSetting): GeoTargetTypeSetting.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: VanityPharma, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): VanityPharma;
-    static deserializeBinaryFromReader(message: VanityPharma, reader: jspb.BinaryReader): VanityPharma;
+    static serializeBinaryToWriter(message: GeoTargetTypeSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GeoTargetTypeSetting;
+    static deserializeBinaryFromReader(message: GeoTargetTypeSetting, reader: jspb.BinaryReader): GeoTargetTypeSetting;
   }
 
-  export namespace VanityPharma {
+  export namespace GeoTargetTypeSetting {
     export type AsObject = {
-      vanityPharmaDisplayUrlMode: google_ads_googleads_v1_enums_vanity_pharma_display_url_mode_pb.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode,
-      vanityPharmaText: google_ads_googleads_v1_enums_vanity_pharma_text_pb.VanityPharmaTextEnum.VanityPharmaText,
+      positiveGeoTargetType: google_ads_googleads_v1_enums_positive_geo_target_type_pb.PositiveGeoTargetTypeEnum.PositiveGeoTargetType,
+      negativeGeoTargetType: google_ads_googleads_v1_enums_negative_geo_target_type_pb.NegativeGeoTargetTypeEnum.NegativeGeoTargetType,
     }
   }
 

@@ -82,7 +82,8 @@ proto.google.api.MetricDescriptor.toObject = function(includeInstance, msg) {
     unit: jspb.Message.getFieldWithDefault(msg, 5, ""),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    metadata: (f = msg.getMetadata()) && proto.google.api.MetricDescriptor.MetricDescriptorMetadata.toObject(includeInstance, f)
+    metadata: (f = msg.getMetadata()) && proto.google.api.MetricDescriptor.MetricDescriptorMetadata.toObject(includeInstance, f),
+    launchStage: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -156,6 +157,10 @@ proto.google.api.MetricDescriptor.deserializeBinaryFromReader = function(msg, re
       var value = new proto.google.api.MetricDescriptor.MetricDescriptorMetadata;
       reader.readMessage(value,proto.google.api.MetricDescriptor.MetricDescriptorMetadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.google.api.LaunchStage} */ (reader.readEnum());
+      msg.setLaunchStage(value);
       break;
     default:
       reader.skipField();
@@ -249,6 +254,13 @@ proto.google.api.MetricDescriptor.serializeBinaryToWriter = function(message, wr
       10,
       f,
       proto.google.api.MetricDescriptor.MetricDescriptorMetadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getLaunchStage();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
+      f
     );
   }
 };
@@ -670,6 +682,21 @@ proto.google.api.MetricDescriptor.prototype.clearMetadata = function() {
  */
 proto.google.api.MetricDescriptor.prototype.hasMetadata = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional LaunchStage launch_stage = 12;
+ * @return {!proto.google.api.LaunchStage}
+ */
+proto.google.api.MetricDescriptor.prototype.getLaunchStage = function() {
+  return /** @type {!proto.google.api.LaunchStage} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/** @param {!proto.google.api.LaunchStage} value */
+proto.google.api.MetricDescriptor.prototype.setLaunchStage = function(value) {
+  jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

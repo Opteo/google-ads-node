@@ -2,7 +2,6 @@
 // file: google/api/service.proto
 
 import * as jspb from "google-protobuf";
-import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 import * as google_api_auth_pb from "../../google/api/auth_pb";
 import * as google_api_backend_pb from "../../google/api/backend_pb";
 import * as google_api_billing_pb from "../../google/api/billing_pb";
@@ -10,7 +9,6 @@ import * as google_api_context_pb from "../../google/api/context_pb";
 import * as google_api_control_pb from "../../google/api/control_pb";
 import * as google_api_documentation_pb from "../../google/api/documentation_pb";
 import * as google_api_endpoint_pb from "../../google/api/endpoint_pb";
-import * as google_api_experimental_experimental_pb from "../../google/api/experimental/experimental_pb";
 import * as google_api_http_pb from "../../google/api/http_pb";
 import * as google_api_label_pb from "../../google/api/label_pb";
 import * as google_api_log_pb from "../../google/api/log_pb";
@@ -19,6 +17,7 @@ import * as google_api_metric_pb from "../../google/api/metric_pb";
 import * as google_api_monitored_resource_pb from "../../google/api/monitored_resource_pb";
 import * as google_api_monitoring_pb from "../../google/api/monitoring_pb";
 import * as google_api_quota_pb from "../../google/api/quota_pb";
+import * as google_api_resource_pb from "../../google/api/resource_pb";
 import * as google_api_source_info_pb from "../../google/api/source_info_pb";
 import * as google_api_system_parameter_pb from "../../google/api/system_parameter_pb";
 import * as google_api_usage_pb from "../../google/api/usage_pb";
@@ -145,11 +144,6 @@ export class Service extends jspb.Message {
   getSourceInfo(): google_api_source_info_pb.SourceInfo | undefined;
   setSourceInfo(value?: google_api_source_info_pb.SourceInfo): void;
 
-  hasExperimental(): boolean;
-  clearExperimental(): void;
-  getExperimental(): google_api_experimental_experimental_pb.Experimental | undefined;
-  setExperimental(value?: google_api_experimental_experimental_pb.Experimental): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Service.AsObject;
   static toObject(includeInstance: boolean, msg: Service): Service.AsObject;
@@ -187,7 +181,6 @@ export namespace Service {
     monitoring?: google_api_monitoring_pb.Monitoring.AsObject,
     systemParameters?: google_api_system_parameter_pb.SystemParameters.AsObject,
     sourceInfo?: google_api_source_info_pb.SourceInfo.AsObject,
-    experimental?: google_api_experimental_experimental_pb.Experimental.AsObject,
   }
 }
 

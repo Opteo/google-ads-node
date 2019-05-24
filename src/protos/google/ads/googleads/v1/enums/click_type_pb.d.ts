@@ -74,6 +74,7 @@ export namespace ClickTypeEnum {
     HOTEL_PRICE = 53,
     PRICE_EXTENSION = 54,
     HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55,
+    SHOPPING_COMPARISON_LISTING = 56,
   }
 }
 

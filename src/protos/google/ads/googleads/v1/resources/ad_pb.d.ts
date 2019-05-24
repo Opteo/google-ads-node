@@ -157,6 +157,11 @@ export class Ad extends jspb.Message {
   getAppEngagementAd(): google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo | undefined;
   setAppEngagementAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo): void;
 
+  hasShoppingComparisonListingAd(): boolean;
+  clearShoppingComparisonListingAd(): void;
+  getShoppingComparisonListingAd(): google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo | undefined;
+  setShoppingComparisonListingAd(value?: google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo): void;
+
   getAdDataCase(): Ad.AdDataCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ad.AsObject;
@@ -200,6 +205,7 @@ export namespace Ad {
     responsiveDisplayAd?: google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.AsObject,
     displayUploadAd?: google_ads_googleads_v1_common_ad_type_infos_pb.DisplayUploadAdInfo.AsObject,
     appEngagementAd?: google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.AsObject,
+    shoppingComparisonListingAd?: google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo.AsObject,
   }
 
   export enum AdDataCase {
@@ -221,6 +227,7 @@ export namespace Ad {
     RESPONSIVE_DISPLAY_AD = 31,
     DISPLAY_UPLOAD_AD = 33,
     APP_ENGAGEMENT_AD = 34,
+    SHOPPING_COMPARISON_LISTING_AD = 36,
   }
 }
 

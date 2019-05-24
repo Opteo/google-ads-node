@@ -36,6 +36,11 @@ export class AdGroup extends jspb.Message {
   getAdRotationMode(): google_ads_googleads_v1_enums_ad_group_ad_rotation_mode_pb.AdGroupAdRotationModeEnum.AdGroupAdRotationMode;
   setAdRotationMode(value: google_ads_googleads_v1_enums_ad_group_ad_rotation_mode_pb.AdGroupAdRotationModeEnum.AdGroupAdRotationMode): void;
 
+  hasBaseAdGroup(): boolean;
+  clearBaseAdGroup(): void;
+  getBaseAdGroup(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setBaseAdGroup(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasTrackingUrlTemplate(): boolean;
   clearTrackingUrlTemplate(): void;
   getTrackingUrlTemplate(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -138,6 +143,7 @@ export namespace AdGroup {
     status: google_ads_googleads_v1_enums_ad_group_status_pb.AdGroupStatusEnum.AdGroupStatus,
     type: google_ads_googleads_v1_enums_ad_group_type_pb.AdGroupTypeEnum.AdGroupType,
     adRotationMode: google_ads_googleads_v1_enums_ad_group_ad_rotation_mode_pb.AdGroupAdRotationModeEnum.AdGroupAdRotationMode,
+    baseAdGroup?: google_protobuf_wrappers_pb.StringValue.AsObject,
     trackingUrlTemplate?: google_protobuf_wrappers_pb.StringValue.AsObject,
     urlCustomParametersList: Array<google_ads_googleads_v1_common_custom_parameter_pb.CustomParameter.AsObject>,
     campaign?: google_protobuf_wrappers_pb.StringValue.AsObject,

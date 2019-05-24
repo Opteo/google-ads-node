@@ -154,7 +154,8 @@ proto.google.ads.googleads.v1.errors.FeedErrorEnum.FeedError = {
   TOO_MANY_ATTRIBUTES: 17,
   INVALID_BUSINESS_ACCOUNT: 18,
   BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT: 19,
-  INVALID_AFFILIATE_CHAIN_ID: 20
+  INVALID_AFFILIATE_CHAIN_ID: 20,
+  DUPLICATE_SYSTEM_FEED: 21
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

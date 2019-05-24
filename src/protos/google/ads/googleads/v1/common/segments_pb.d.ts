@@ -13,6 +13,7 @@ import * as google_ads_googleads_v1_enums_day_of_week_pb from "../../../../../go
 import * as google_ads_googleads_v1_enums_device_pb from "../../../../../google/ads/googleads/v1/enums/device_pb";
 import * as google_ads_googleads_v1_enums_external_conversion_source_pb from "../../../../../google/ads/googleads/v1/enums/external_conversion_source_pb";
 import * as google_ads_googleads_v1_enums_hotel_date_selection_type_pb from "../../../../../google/ads/googleads/v1/enums/hotel_date_selection_type_pb";
+import * as google_ads_googleads_v1_enums_hotel_rate_type_pb from "../../../../../google/ads/googleads/v1/enums/hotel_rate_type_pb";
 import * as google_ads_googleads_v1_enums_month_of_year_pb from "../../../../../google/ads/googleads/v1/enums/month_of_year_pb";
 import * as google_ads_googleads_v1_enums_placeholder_type_pb from "../../../../../google/ads/googleads/v1/enums/placeholder_type_pb";
 import * as google_ads_googleads_v1_enums_product_channel_pb from "../../../../../google/ads/googleads/v1/enums/product_channel_pb";
@@ -107,6 +108,11 @@ export class Segments extends jspb.Message {
   getGeoTargetPostalCode(): google_protobuf_wrappers_pb.StringValue | undefined;
   setGeoTargetPostalCode(value?: google_protobuf_wrappers_pb.StringValue): void;
 
+  hasGeoTargetProvince(): boolean;
+  clearGeoTargetProvince(): void;
+  getGeoTargetProvince(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setGeoTargetProvince(value?: google_protobuf_wrappers_pb.StringValue): void;
+
   hasGeoTargetRegion(): boolean;
   clearGeoTargetRegion(): void;
   getGeoTargetRegion(): google_protobuf_wrappers_pb.StringValue | undefined;
@@ -157,6 +163,14 @@ export class Segments extends jspb.Message {
   clearHotelLengthOfStay(): void;
   getHotelLengthOfStay(): google_protobuf_wrappers_pb.Int32Value | undefined;
   setHotelLengthOfStay(value?: google_protobuf_wrappers_pb.Int32Value): void;
+
+  hasHotelRateRuleId(): boolean;
+  clearHotelRateRuleId(): void;
+  getHotelRateRuleId(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHotelRateRuleId(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  getHotelRateType(): google_ads_googleads_v1_enums_hotel_rate_type_pb.HotelRateTypeEnum.HotelRateType;
+  setHotelRateType(value: google_ads_googleads_v1_enums_hotel_rate_type_pb.HotelRateTypeEnum.HotelRateType): void;
 
   hasHotelState(): boolean;
   clearHotelState(): void;
@@ -379,6 +393,7 @@ export namespace Segments {
     geoTargetMetro?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetMostSpecificLocation?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetPostalCode?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    geoTargetProvince?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetRegion?: google_protobuf_wrappers_pb.StringValue.AsObject,
     geoTargetState?: google_protobuf_wrappers_pb.StringValue.AsObject,
     hotelBookingWindowDays?: google_protobuf_wrappers_pb.Int64Value.AsObject,
@@ -390,6 +405,8 @@ export namespace Segments {
     hotelCountry?: google_protobuf_wrappers_pb.StringValue.AsObject,
     hotelDateSelectionType: google_ads_googleads_v1_enums_hotel_date_selection_type_pb.HotelDateSelectionTypeEnum.HotelDateSelectionType,
     hotelLengthOfStay?: google_protobuf_wrappers_pb.Int32Value.AsObject,
+    hotelRateRuleId?: google_protobuf_wrappers_pb.StringValue.AsObject,
+    hotelRateType: google_ads_googleads_v1_enums_hotel_rate_type_pb.HotelRateTypeEnum.HotelRateType,
     hotelState?: google_protobuf_wrappers_pb.StringValue.AsObject,
     hour?: google_protobuf_wrappers_pb.Int32Value.AsObject,
     interactionOnThisExtension?: google_protobuf_wrappers_pb.BoolValue.AsObject,

@@ -153,7 +153,8 @@ proto.google.ads.googleads.v1.enums.AdTypeEnum.AdType = {
   RESPONSIVE_DISPLAY_AD: 19,
   HTML5_UPLOAD_AD: 21,
   DYNAMIC_HTML5_AD: 22,
-  APP_ENGAGEMENT_AD: 23
+  APP_ENGAGEMENT_AD: 23,
+  SHOPPING_COMPARISON_LISTING_AD: 24
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.enums);

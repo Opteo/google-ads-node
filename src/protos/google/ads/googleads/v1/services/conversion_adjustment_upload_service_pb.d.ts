@@ -19,6 +19,9 @@ export class UploadConversionAdjustmentsRequest extends jspb.Message {
   getPartialFailure(): boolean;
   setPartialFailure(value: boolean): void;
 
+  getValidateOnly(): boolean;
+  setValidateOnly(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadConversionAdjustmentsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UploadConversionAdjustmentsRequest): UploadConversionAdjustmentsRequest.AsObject;
@@ -34,6 +37,7 @@ export namespace UploadConversionAdjustmentsRequest {
     customerId: string,
     conversionAdjustmentsList: Array<ConversionAdjustment.AsObject>,
     partialFailure: boolean,
+    validateOnly: boolean,
   }
 }
 

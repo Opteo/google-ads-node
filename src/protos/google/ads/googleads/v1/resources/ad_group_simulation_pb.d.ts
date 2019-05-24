@@ -38,6 +38,11 @@ export class AdGroupSimulation extends jspb.Message {
   getCpcBidPointList(): google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList | undefined;
   setCpcBidPointList(value?: google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList): void;
 
+  hasCpvBidPointList(): boolean;
+  clearCpvBidPointList(): void;
+  getCpvBidPointList(): google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList | undefined;
+  setCpvBidPointList(value?: google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList): void;
+
   hasTargetCpaPointList(): boolean;
   clearTargetCpaPointList(): void;
   getTargetCpaPointList(): google_ads_googleads_v1_common_simulation_pb.TargetCpaSimulationPointList | undefined;
@@ -63,12 +68,14 @@ export namespace AdGroupSimulation {
     startDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
     endDate?: google_protobuf_wrappers_pb.StringValue.AsObject,
     cpcBidPointList?: google_ads_googleads_v1_common_simulation_pb.CpcBidSimulationPointList.AsObject,
+    cpvBidPointList?: google_ads_googleads_v1_common_simulation_pb.CpvBidSimulationPointList.AsObject,
     targetCpaPointList?: google_ads_googleads_v1_common_simulation_pb.TargetCpaSimulationPointList.AsObject,
   }
 
   export enum PointListCase {
     POINT_LIST_NOT_SET = 0,
     CPC_BID_POINT_LIST = 8,
+    CPV_BID_POINT_LIST = 10,
     TARGET_CPA_POINT_LIST = 9,
   }
 }

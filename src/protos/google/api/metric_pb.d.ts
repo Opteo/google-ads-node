@@ -38,6 +38,9 @@ export class MetricDescriptor extends jspb.Message {
   getMetadata(): MetricDescriptor.MetricDescriptorMetadata | undefined;
   setMetadata(value?: MetricDescriptor.MetricDescriptorMetadata): void;
 
+  getLaunchStage(): google_api_launch_stage_pb.LaunchStage;
+  setLaunchStage(value: google_api_launch_stage_pb.LaunchStage): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MetricDescriptor.AsObject;
   static toObject(includeInstance: boolean, msg: MetricDescriptor): MetricDescriptor.AsObject;
@@ -59,6 +62,7 @@ export namespace MetricDescriptor {
     description: string,
     displayName: string,
     metadata?: MetricDescriptor.MetricDescriptorMetadata.AsObject,
+    launchStage: google_api_launch_stage_pb.LaunchStage,
   }
 
   export class MetricDescriptorMetadata extends jspb.Message {

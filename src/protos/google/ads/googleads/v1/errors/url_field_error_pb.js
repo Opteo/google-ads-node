@@ -186,7 +186,8 @@ proto.google.ads.googleads.v1.errors.UrlFieldErrorEnum.UrlFieldError = {
   INVALID_TOP_LEVEL_DOMAIN: 53,
   MALFORMED_TOP_LEVEL_DOMAIN: 54,
   MALFORMED_URL: 55,
-  MISSING_HOST: 56
+  MISSING_HOST: 56,
+  NULL_CUSTOM_PARAMETER_VALUE: 57
 };
 
 goog.object.extend(exports, proto.google.ads.googleads.v1.errors);

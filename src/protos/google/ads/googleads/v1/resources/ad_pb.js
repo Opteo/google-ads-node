@@ -54,7 +54,7 @@ proto.google.ads.googleads.v1.resources.Ad.repeatedFields_ = [2,35,16,10,26];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.Ad.oneofGroups_ = [[6,7,13,14,15,17,18,21,22,24,25,28,29,30,31,33,34]];
+proto.google.ads.googleads.v1.resources.Ad.oneofGroups_ = [[6,7,13,14,15,17,18,21,22,24,25,28,29,30,31,33,34,36]];
 
 /**
  * @enum {number}
@@ -77,7 +77,8 @@ proto.google.ads.googleads.v1.resources.Ad.AdDataCase = {
   LEGACY_APP_INSTALL_AD: 30,
   RESPONSIVE_DISPLAY_AD: 31,
   DISPLAY_UPLOAD_AD: 33,
-  APP_ENGAGEMENT_AD: 34
+  APP_ENGAGEMENT_AD: 34,
+  SHOPPING_COMPARISON_LISTING_AD: 36
 };
 
 /**
@@ -150,7 +151,8 @@ proto.google.ads.googleads.v1.resources.Ad.toObject = function(includeInstance, 
     legacyAppInstallAd: (f = msg.getLegacyAppInstallAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.LegacyAppInstallAdInfo.toObject(includeInstance, f),
     responsiveDisplayAd: (f = msg.getResponsiveDisplayAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.ResponsiveDisplayAdInfo.toObject(includeInstance, f),
     displayUploadAd: (f = msg.getDisplayUploadAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.DisplayUploadAdInfo.toObject(includeInstance, f),
-    appEngagementAd: (f = msg.getAppEngagementAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.toObject(includeInstance, f)
+    appEngagementAd: (f = msg.getAppEngagementAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.toObject(includeInstance, f),
+    shoppingComparisonListingAd: (f = msg.getShoppingComparisonListingAd()) && google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -333,6 +335,11 @@ proto.google.ads.googleads.v1.resources.Ad.deserializeBinaryFromReader = functio
       var value = new google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo;
       reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.deserializeBinaryFromReader);
       msg.setAppEngagementAd(value);
+      break;
+    case 36:
+      var value = new google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo;
+      reader.readMessage(value,google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo.deserializeBinaryFromReader);
+      msg.setShoppingComparisonListingAd(value);
       break;
     default:
       reader.skipField();
@@ -598,6 +605,14 @@ proto.google.ads.googleads.v1.resources.Ad.serializeBinaryToWriter = function(me
       34,
       f,
       google_ads_googleads_v1_common_ad_type_infos_pb.AppEngagementAdInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getShoppingComparisonListingAd();
+  if (f != null) {
+    writer.writeMessage(
+      36,
+      f,
+      google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1460,6 +1475,36 @@ proto.google.ads.googleads.v1.resources.Ad.prototype.clearAppEngagementAd = func
  */
 proto.google.ads.googleads.v1.resources.Ad.prototype.hasAppEngagementAd = function() {
   return jspb.Message.getField(this, 34) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo shopping_comparison_listing_ad = 36;
+ * @return {?proto.google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.getShoppingComparisonListingAd = function() {
+  return /** @type{?proto.google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_common_ad_type_infos_pb.ShoppingComparisonListingAdInfo, 36));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo|undefined} value */
+proto.google.ads.googleads.v1.resources.Ad.prototype.setShoppingComparisonListingAd = function(value) {
+  jspb.Message.setOneofWrapperField(this, 36, proto.google.ads.googleads.v1.resources.Ad.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.Ad.prototype.clearShoppingComparisonListingAd = function() {
+  this.setShoppingComparisonListingAd(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.Ad.prototype.hasShoppingComparisonListingAd = function() {
+  return jspb.Message.getField(this, 36) != null;
 };
 
 

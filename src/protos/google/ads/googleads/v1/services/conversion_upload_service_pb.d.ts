@@ -18,6 +18,9 @@ export class UploadClickConversionsRequest extends jspb.Message {
   getPartialFailure(): boolean;
   setPartialFailure(value: boolean): void;
 
+  getValidateOnly(): boolean;
+  setValidateOnly(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadClickConversionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UploadClickConversionsRequest): UploadClickConversionsRequest.AsObject;
@@ -33,6 +36,7 @@ export namespace UploadClickConversionsRequest {
     customerId: string,
     conversionsList: Array<ClickConversion.AsObject>,
     partialFailure: boolean,
+    validateOnly: boolean,
   }
 }
 
@@ -76,6 +80,9 @@ export class UploadCallConversionsRequest extends jspb.Message {
   getPartialFailure(): boolean;
   setPartialFailure(value: boolean): void;
 
+  getValidateOnly(): boolean;
+  setValidateOnly(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadCallConversionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UploadCallConversionsRequest): UploadCallConversionsRequest.AsObject;
@@ -91,6 +98,7 @@ export namespace UploadCallConversionsRequest {
     customerId: string,
     conversionsList: Array<CallConversion.AsObject>,
     partialFailure: boolean,
+    validateOnly: boolean,
   }
 }
 

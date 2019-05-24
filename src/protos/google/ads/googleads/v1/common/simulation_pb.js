@@ -17,6 +17,8 @@ goog.exportSymbol('proto.google.ads.googleads.v1.common.BidModifierSimulationPoi
 goog.exportSymbol('proto.google.ads.googleads.v1.common.BidModifierSimulationPointList', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.CpcBidSimulationPoint', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.CpcBidSimulationPointList', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.common.CpvBidSimulationPoint', null, global);
+goog.exportSymbol('proto.google.ads.googleads.v1.common.CpvBidSimulationPointList', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.TargetCpaSimulationPoint', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.common.TargetCpaSimulationPointList', null, global);
 
@@ -366,6 +368,174 @@ proto.google.ads.googleads.v1.common.CpcBidSimulationPointList.prototype.clearPo
  * @extends {jspb.Message}
  * @constructor
  */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.repeatedFields_, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.CpvBidSimulationPointList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.displayName = 'proto.google.ads.googleads.v1.common.CpvBidSimulationPointList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPointList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    pointsList: jspb.Message.toObjectList(msg.getPointsList(),
+    proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.CpvBidSimulationPointList}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.CpvBidSimulationPointList;
+  return proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPointList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.CpvBidSimulationPointList}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.google.ads.googleads.v1.common.CpvBidSimulationPoint;
+      reader.readMessage(value,proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.deserializeBinaryFromReader);
+      msg.addPoints(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPointList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPointsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated CpvBidSimulationPoint points = 1;
+ * @return {!Array<!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint>}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.getPointsList = function() {
+  return /** @type{!Array<!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.google.ads.googleads.v1.common.CpvBidSimulationPoint, 1));
+};
+
+
+/** @param {!Array<!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint>} value */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.setPointsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.addPoints = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.google.ads.googleads.v1.common.CpvBidSimulationPoint, opt_index);
+};
+
+
+proto.google.ads.googleads.v1.common.CpvBidSimulationPointList.prototype.clearPointsList = function() {
+  this.setPointsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.google.ads.googleads.v1.common.TargetCpaSimulationPointList = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.google.ads.googleads.v1.common.TargetCpaSimulationPointList.repeatedFields_, null);
 };
@@ -576,7 +746,13 @@ proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.toObject = funct
     clicks: (f = msg.getClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     costMicros: (f = msg.getCostMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
     impressions: (f = msg.getImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    topSlotImpressions: (f = msg.getTopSlotImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+    topSlotImpressions: (f = msg.getTopSlotImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    parentBiddableConversions: (f = msg.getParentBiddableConversions()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    parentBiddableConversionsValue: (f = msg.getParentBiddableConversionsValue()) && google_protobuf_wrappers_pb.DoubleValue.toObject(includeInstance, f),
+    parentClicks: (f = msg.getParentClicks()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    parentCostMicros: (f = msg.getParentCostMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    parentImpressions: (f = msg.getParentImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    parentTopSlotImpressions: (f = msg.getParentTopSlotImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -647,6 +823,36 @@ proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.deserializeBinar
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setTopSlotImpressions(value);
+      break;
+    case 8:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setParentBiddableConversions(value);
+      break;
+    case 9:
+      var value = new google_protobuf_wrappers_pb.DoubleValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.DoubleValue.deserializeBinaryFromReader);
+      msg.setParentBiddableConversionsValue(value);
+      break;
+    case 10:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setParentClicks(value);
+      break;
+    case 11:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setParentCostMicros(value);
+      break;
+    case 12:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setParentImpressions(value);
+      break;
+    case 13:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setParentTopSlotImpressions(value);
       break;
     default:
       reader.skipField();
@@ -729,6 +935,54 @@ proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.serializeBinaryT
   if (f != null) {
     writer.writeMessage(
       7,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentBiddableConversions();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentBiddableConversionsValue();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_wrappers_pb.DoubleValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentClicks();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentCostMicros();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentImpressions();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParentTopSlotImpressions();
+  if (f != null) {
+    writer.writeMessage(
+      13,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -943,6 +1197,186 @@ proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearT
  */
 proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasTopSlotImpressions = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue parent_biddable_conversions = 8;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentBiddableConversions = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 8));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentBiddableConversions = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentBiddableConversions = function() {
+  this.setParentBiddableConversions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentBiddableConversions = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.DoubleValue parent_biddable_conversions_value = 9;
+ * @return {?proto.google.protobuf.DoubleValue}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentBiddableConversionsValue = function() {
+  return /** @type{?proto.google.protobuf.DoubleValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.DoubleValue, 9));
+};
+
+
+/** @param {?proto.google.protobuf.DoubleValue|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentBiddableConversionsValue = function(value) {
+  jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentBiddableConversionsValue = function() {
+  this.setParentBiddableConversionsValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentBiddableConversionsValue = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value parent_clicks = 10;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentClicks = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 10));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentClicks = function(value) {
+  jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentClicks = function() {
+  this.setParentClicks(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentClicks = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value parent_cost_micros = 11;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentCostMicros = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 11));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentCostMicros = function(value) {
+  jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentCostMicros = function() {
+  this.setParentCostMicros(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentCostMicros = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value parent_impressions = 12;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentImpressions = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 12));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentImpressions = function(value) {
+  jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentImpressions = function() {
+  this.setParentImpressions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentImpressions = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value parent_top_slot_impressions = 13;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.getParentTopSlotImpressions = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 13));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.setParentTopSlotImpressions = function(value) {
+  jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.clearParentTopSlotImpressions = function() {
+  this.setParentTopSlotImpressions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.BidModifierSimulationPoint.prototype.hasParentTopSlotImpressions = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -1366,6 +1800,253 @@ proto.google.ads.googleads.v1.common.CpcBidSimulationPoint.prototype.clearTopSlo
  */
 proto.google.ads.googleads.v1.common.CpcBidSimulationPoint.prototype.hasTopSlotImpressions = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.ads.googleads.v1.common.CpvBidSimulationPoint, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.displayName = 'proto.google.ads.googleads.v1.common.CpvBidSimulationPoint';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    cpvBidMicros: (f = msg.getCpvBidMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    costMicros: (f = msg.getCostMicros()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    impressions: (f = msg.getImpressions()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.ads.googleads.v1.common.CpvBidSimulationPoint;
+  return proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setCpvBidMicros(value);
+      break;
+    case 2:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setCostMicros(value);
+      break;
+    case 3:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setImpressions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.ads.googleads.v1.common.CpvBidSimulationPoint} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCpvBidMicros();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getCostMicros();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getImpressions();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Int64Value cpv_bid_micros = 1;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.getCpvBidMicros = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 1));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.setCpvBidMicros = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.clearCpvBidMicros = function() {
+  this.setCpvBidMicros(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.hasCpvBidMicros = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value cost_micros = 2;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.getCostMicros = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 2));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.setCostMicros = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.clearCostMicros = function() {
+  this.setCostMicros(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.hasCostMicros = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Int64Value impressions = 3;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.getImpressions = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 3));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.setImpressions = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.clearImpressions = function() {
+  this.setImpressions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.common.CpvBidSimulationPoint.prototype.hasImpressions = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -23,7 +23,9 @@ import * as google_ads_googleads_v1_errors_bidding_strategy_error_pb from "../..
 import * as google_ads_googleads_v1_errors_billing_setup_error_pb from "../../../../../google/ads/googleads/v1/errors/billing_setup_error_pb";
 import * as google_ads_googleads_v1_errors_campaign_budget_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_budget_error_pb";
 import * as google_ads_googleads_v1_errors_campaign_criterion_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_criterion_error_pb";
+import * as google_ads_googleads_v1_errors_campaign_draft_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_draft_error_pb";
 import * as google_ads_googleads_v1_errors_campaign_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_error_pb";
+import * as google_ads_googleads_v1_errors_campaign_experiment_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_experiment_error_pb";
 import * as google_ads_googleads_v1_errors_campaign_feed_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_feed_error_pb";
 import * as google_ads_googleads_v1_errors_campaign_shared_set_error_pb from "../../../../../google/ads/googleads/v1/errors/campaign_shared_set_error_pb";
 import * as google_ads_googleads_v1_errors_change_status_error_pb from "../../../../../google/ads/googleads/v1/errors/change_status_error_pb";
@@ -70,6 +72,7 @@ import * as google_ads_googleads_v1_errors_keyword_plan_negative_keyword_error_p
 import * as google_ads_googleads_v1_errors_label_error_pb from "../../../../../google/ads/googleads/v1/errors/label_error_pb";
 import * as google_ads_googleads_v1_errors_language_code_error_pb from "../../../../../google/ads/googleads/v1/errors/language_code_error_pb";
 import * as google_ads_googleads_v1_errors_list_operation_error_pb from "../../../../../google/ads/googleads/v1/errors/list_operation_error_pb";
+import * as google_ads_googleads_v1_errors_manager_link_error_pb from "../../../../../google/ads/googleads/v1/errors/manager_link_error_pb";
 import * as google_ads_googleads_v1_errors_media_bundle_error_pb from "../../../../../google/ads/googleads/v1/errors/media_bundle_error_pb";
 import * as google_ads_googleads_v1_errors_media_file_error_pb from "../../../../../google/ads/googleads/v1/errors/media_file_error_pb";
 import * as google_ads_googleads_v1_errors_media_upload_error_pb from "../../../../../google/ads/googleads/v1/errors/media_upload_error_pb";
@@ -78,6 +81,7 @@ import * as google_ads_googleads_v1_errors_mutate_error_pb from "../../../../../
 import * as google_ads_googleads_v1_errors_mutate_job_error_pb from "../../../../../google/ads/googleads/v1/errors/mutate_job_error_pb";
 import * as google_ads_googleads_v1_errors_new_resource_creation_error_pb from "../../../../../google/ads/googleads/v1/errors/new_resource_creation_error_pb";
 import * as google_ads_googleads_v1_errors_not_empty_error_pb from "../../../../../google/ads/googleads/v1/errors/not_empty_error_pb";
+import * as google_ads_googleads_v1_errors_not_whitelisted_error_pb from "../../../../../google/ads/googleads/v1/errors/not_whitelisted_error_pb";
 import * as google_ads_googleads_v1_errors_null_error_pb from "../../../../../google/ads/googleads/v1/errors/null_error_pb";
 import * as google_ads_googleads_v1_errors_operation_access_denied_error_pb from "../../../../../google/ads/googleads/v1/errors/operation_access_denied_error_pb";
 import * as google_ads_googleads_v1_errors_operator_error_pb from "../../../../../google/ads/googleads/v1/errors/operator_error_pb";
@@ -102,8 +106,8 @@ import * as google_ads_googleads_v1_errors_string_length_error_pb from "../../..
 import * as google_ads_googleads_v1_errors_url_field_error_pb from "../../../../../google/ads/googleads/v1/errors/url_field_error_pb";
 import * as google_ads_googleads_v1_errors_user_list_error_pb from "../../../../../google/ads/googleads/v1/errors/user_list_error_pb";
 import * as google_ads_googleads_v1_errors_youtube_video_registration_error_pb from "../../../../../google/ads/googleads/v1/errors/youtube_video_registration_error_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as google_api_annotations_pb from "../../../../../google/api/annotations_pb";
+import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 
 export class GoogleAdsFailure extends jspb.Message {
   clearErrorsList(): void;
@@ -562,6 +566,11 @@ export class ErrorCode extends jspb.Message {
   getGeoTargetConstantSuggestionError(): google_ads_googleads_v1_errors_geo_target_constant_suggestion_error_pb.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError;
   setGeoTargetConstantSuggestionError(value: google_ads_googleads_v1_errors_geo_target_constant_suggestion_error_pb.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError): void;
 
+  hasCampaignDraftError(): boolean;
+  clearCampaignDraftError(): void;
+  getCampaignDraftError(): google_ads_googleads_v1_errors_campaign_draft_error_pb.CampaignDraftErrorEnum.CampaignDraftError;
+  setCampaignDraftError(value: google_ads_googleads_v1_errors_campaign_draft_error_pb.CampaignDraftErrorEnum.CampaignDraftError): void;
+
   hasFeedItemError(): boolean;
   clearFeedItemError(): void;
   getFeedItemError(): google_ads_googleads_v1_errors_feed_item_error_pb.FeedItemErrorEnum.FeedItemError;
@@ -612,6 +621,11 @@ export class ErrorCode extends jspb.Message {
   getCustomInterestError(): google_ads_googleads_v1_errors_custom_interest_error_pb.CustomInterestErrorEnum.CustomInterestError;
   setCustomInterestError(value: google_ads_googleads_v1_errors_custom_interest_error_pb.CustomInterestErrorEnum.CustomInterestError): void;
 
+  hasCampaignExperimentError(): boolean;
+  clearCampaignExperimentError(): void;
+  getCampaignExperimentError(): google_ads_googleads_v1_errors_campaign_experiment_error_pb.CampaignExperimentErrorEnum.CampaignExperimentError;
+  setCampaignExperimentError(value: google_ads_googleads_v1_errors_campaign_experiment_error_pb.CampaignExperimentErrorEnum.CampaignExperimentError): void;
+
   hasExtensionFeedItemError(): boolean;
   clearExtensionFeedItemError(): void;
   getExtensionFeedItemError(): google_ads_googleads_v1_errors_extension_feed_item_error_pb.ExtensionFeedItemErrorEnum.ExtensionFeedItemError;
@@ -661,6 +675,16 @@ export class ErrorCode extends jspb.Message {
   clearSizeLimitError(): void;
   getSizeLimitError(): google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError;
   setSizeLimitError(value: google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError): void;
+
+  hasNotWhitelistedError(): boolean;
+  clearNotWhitelistedError(): void;
+  getNotWhitelistedError(): google_ads_googleads_v1_errors_not_whitelisted_error_pb.NotWhitelistedErrorEnum.NotWhitelistedError;
+  setNotWhitelistedError(value: google_ads_googleads_v1_errors_not_whitelisted_error_pb.NotWhitelistedErrorEnum.NotWhitelistedError): void;
+
+  hasManagerLinkError(): boolean;
+  clearManagerLinkError(): void;
+  getManagerLinkError(): google_ads_googleads_v1_errors_manager_link_error_pb.ManagerLinkErrorEnum.ManagerLinkError;
+  setManagerLinkError(value: google_ads_googleads_v1_errors_manager_link_error_pb.ManagerLinkErrorEnum.ManagerLinkError): void;
 
   getErrorCodeCase(): ErrorCode.ErrorCodeCase;
   serializeBinary(): Uint8Array;
@@ -753,6 +777,7 @@ export namespace ErrorCode {
     changeStatusError: google_ads_googleads_v1_errors_change_status_error_pb.ChangeStatusErrorEnum.ChangeStatusError,
     feedError: google_ads_googleads_v1_errors_feed_error_pb.FeedErrorEnum.FeedError,
     geoTargetConstantSuggestionError: google_ads_googleads_v1_errors_geo_target_constant_suggestion_error_pb.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError,
+    campaignDraftError: google_ads_googleads_v1_errors_campaign_draft_error_pb.CampaignDraftErrorEnum.CampaignDraftError,
     feedItemError: google_ads_googleads_v1_errors_feed_item_error_pb.FeedItemErrorEnum.FeedItemError,
     labelError: google_ads_googleads_v1_errors_label_error_pb.LabelErrorEnum.LabelError,
     billingSetupError: google_ads_googleads_v1_errors_billing_setup_error_pb.BillingSetupErrorEnum.BillingSetupError,
@@ -763,6 +788,7 @@ export namespace ErrorCode {
     adGroupFeedError: google_ads_googleads_v1_errors_ad_group_feed_error_pb.AdGroupFeedErrorEnum.AdGroupFeedError,
     campaignFeedError: google_ads_googleads_v1_errors_campaign_feed_error_pb.CampaignFeedErrorEnum.CampaignFeedError,
     customInterestError: google_ads_googleads_v1_errors_custom_interest_error_pb.CustomInterestErrorEnum.CustomInterestError,
+    campaignExperimentError: google_ads_googleads_v1_errors_campaign_experiment_error_pb.CampaignExperimentErrorEnum.CampaignExperimentError,
     extensionFeedItemError: google_ads_googleads_v1_errors_extension_feed_item_error_pb.ExtensionFeedItemErrorEnum.ExtensionFeedItemError,
     adParameterError: google_ads_googleads_v1_errors_ad_parameter_error_pb.AdParameterErrorEnum.AdParameterError,
     feedItemValidationError: google_ads_googleads_v1_errors_feed_item_validation_error_pb.FeedItemValidationErrorEnum.FeedItemValidationError,
@@ -773,6 +799,8 @@ export namespace ErrorCode {
     partialFailureError: google_ads_googleads_v1_errors_partial_failure_error_pb.PartialFailureErrorEnum.PartialFailureError,
     policyValidationParameterError: google_ads_googleads_v1_errors_policy_validation_parameter_error_pb.PolicyValidationParameterErrorEnum.PolicyValidationParameterError,
     sizeLimitError: google_ads_googleads_v1_errors_size_limit_error_pb.SizeLimitErrorEnum.SizeLimitError,
+    notWhitelistedError: google_ads_googleads_v1_errors_not_whitelisted_error_pb.NotWhitelistedErrorEnum.NotWhitelistedError,
+    managerLinkError: google_ads_googleads_v1_errors_manager_link_error_pb.ManagerLinkErrorEnum.ManagerLinkError,
   }
 
   export enum ErrorCodeCase {
@@ -855,6 +883,7 @@ export namespace ErrorCode {
     CHANGE_STATUS_ERROR = 79,
     FEED_ERROR = 80,
     GEO_TARGET_CONSTANT_SUGGESTION_ERROR = 81,
+    CAMPAIGN_DRAFT_ERROR = 82,
     FEED_ITEM_ERROR = 83,
     LABEL_ERROR = 84,
     BILLING_SETUP_ERROR = 87,
@@ -865,6 +894,7 @@ export namespace ErrorCode {
     AD_GROUP_FEED_ERROR = 94,
     CAMPAIGN_FEED_ERROR = 96,
     CUSTOM_INTEREST_ERROR = 97,
+    CAMPAIGN_EXPERIMENT_ERROR = 98,
     EXTENSION_FEED_ITEM_ERROR = 100,
     AD_PARAMETER_ERROR = 101,
     FEED_ITEM_VALIDATION_ERROR = 102,
@@ -875,6 +905,8 @@ export namespace ErrorCode {
     PARTIAL_FAILURE_ERROR = 112,
     POLICY_VALIDATION_PARAMETER_ERROR = 114,
     SIZE_LIMIT_ERROR = 118,
+    NOT_WHITELISTED_ERROR = 120,
+    MANAGER_LINK_ERROR = 121,
   }
 }
 

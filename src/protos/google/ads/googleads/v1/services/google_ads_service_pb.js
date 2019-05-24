@@ -39,6 +39,8 @@ var google_ads_googleads_v1_resources_campaign_bid_modifier_pb = require('../../
 var google_ads_googleads_v1_resources_campaign_budget_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_budget_pb.js');
 var google_ads_googleads_v1_resources_campaign_criterion_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_pb.js');
 var google_ads_googleads_v1_resources_campaign_criterion_simulation_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_criterion_simulation_pb.js');
+var google_ads_googleads_v1_resources_campaign_draft_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_draft_pb.js');
+var google_ads_googleads_v1_resources_campaign_experiment_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_experiment_pb.js');
 var google_ads_googleads_v1_resources_campaign_extension_setting_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_extension_setting_pb.js');
 var google_ads_googleads_v1_resources_campaign_feed_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_feed_pb.js');
 var google_ads_googleads_v1_resources_campaign_label_pb = require('../../../../../google/ads/googleads/v1/resources/campaign_label_pb.js');
@@ -119,6 +121,8 @@ var google_ads_googleads_v1_services_bidding_strategy_service_pb = require('../.
 var google_ads_googleads_v1_services_campaign_bid_modifier_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_bid_modifier_service_pb.js');
 var google_ads_googleads_v1_services_campaign_budget_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_budget_service_pb.js');
 var google_ads_googleads_v1_services_campaign_criterion_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_criterion_service_pb.js');
+var google_ads_googleads_v1_services_campaign_draft_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_draft_service_pb.js');
+var google_ads_googleads_v1_services_campaign_experiment_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_experiment_service_pb.js');
 var google_ads_googleads_v1_services_campaign_extension_setting_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_extension_setting_service_pb.js');
 var google_ads_googleads_v1_services_campaign_feed_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_feed_service_pb.js');
 var google_ads_googleads_v1_services_campaign_label_service_pb = require('../../../../../google/ads/googleads/v1/services/campaign_label_service_pb.js');
@@ -743,6 +747,8 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.toObject = function(includeI
     campaignBidModifier: (f = msg.getCampaignBidModifier()) && google_ads_googleads_v1_resources_campaign_bid_modifier_pb.CampaignBidModifier.toObject(includeInstance, f),
     campaignCriterion: (f = msg.getCampaignCriterion()) && google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.toObject(includeInstance, f),
     campaignCriterionSimulation: (f = msg.getCampaignCriterionSimulation()) && google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.toObject(includeInstance, f),
+    campaignDraft: (f = msg.getCampaignDraft()) && google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft.toObject(includeInstance, f),
+    campaignExperiment: (f = msg.getCampaignExperiment()) && google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment.toObject(includeInstance, f),
     campaignExtensionSetting: (f = msg.getCampaignExtensionSetting()) && google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting.toObject(includeInstance, f),
     campaignFeed: (f = msg.getCampaignFeed()) && google_ads_googleads_v1_resources_campaign_feed_pb.CampaignFeed.toObject(includeInstance, f),
     campaignLabel: (f = msg.getCampaignLabel()) && google_ads_googleads_v1_resources_campaign_label_pb.CampaignLabel.toObject(includeInstance, f),
@@ -979,6 +985,16 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.deserializeBinaryFromReader 
       var value = new google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation;
       reader.readMessage(value,google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.deserializeBinaryFromReader);
       msg.setCampaignCriterionSimulation(value);
+      break;
+    case 49:
+      var value = new google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft;
+      reader.readMessage(value,google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft.deserializeBinaryFromReader);
+      msg.setCampaignDraft(value);
+      break;
+    case 84:
+      var value = new google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment;
+      reader.readMessage(value,google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment.deserializeBinaryFromReader);
+      msg.setCampaignExperiment(value);
       break;
     case 113:
       var value = new google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting;
@@ -1553,6 +1569,22 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.serializeBinaryToWriter = fu
       111,
       f,
       google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignDraft();
+  if (f != null) {
+    writer.writeMessage(
+      49,
+      f,
+      google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignExperiment();
+  if (f != null) {
+    writer.writeMessage(
+      84,
+      f,
+      google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment.serializeBinaryToWriter
     );
   }
   f = message.getCampaignExtensionSetting();
@@ -2893,6 +2925,66 @@ proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearCampaignCrite
  */
 proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasCampaignCriterionSimulation = function() {
   return jspb.Message.getField(this, 111) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.CampaignDraft campaign_draft = 49;
+ * @return {?proto.google.ads.googleads.v1.resources.CampaignDraft}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getCampaignDraft = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.CampaignDraft} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft, 49));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.CampaignDraft|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setCampaignDraft = function(value) {
+  jspb.Message.setWrapperField(this, 49, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearCampaignDraft = function() {
+  this.setCampaignDraft(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasCampaignDraft = function() {
+  return jspb.Message.getField(this, 49) != null;
+};
+
+
+/**
+ * optional google.ads.googleads.v1.resources.CampaignExperiment campaign_experiment = 84;
+ * @return {?proto.google.ads.googleads.v1.resources.CampaignExperiment}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.getCampaignExperiment = function() {
+  return /** @type{?proto.google.ads.googleads.v1.resources.CampaignExperiment} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment, 84));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.resources.CampaignExperiment|undefined} value */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.setCampaignExperiment = function(value) {
+  jspb.Message.setWrapperField(this, 84, value);
+};
+
+
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.clearCampaignExperiment = function() {
+  this.setCampaignExperiment(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.GoogleAdsRow.prototype.hasCampaignExperiment = function() {
+  return jspb.Message.getField(this, 84) != null;
 };
 
 
@@ -5367,7 +5459,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
+proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,24,25,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
 
 /**
  * @enum {number}
@@ -5389,6 +5481,8 @@ proto.google.ads.googleads.v1.services.MutateOperation.OperationCase = {
   CAMPAIGN_BID_MODIFIER_OPERATION: 7,
   CAMPAIGN_BUDGET_OPERATION: 8,
   CAMPAIGN_CRITERION_OPERATION: 13,
+  CAMPAIGN_DRAFT_OPERATION: 24,
+  CAMPAIGN_EXPERIMENT_OPERATION: 25,
   CAMPAIGN_EXTENSION_SETTING_OPERATION: 26,
   CAMPAIGN_FEED_OPERATION: 27,
   CAMPAIGN_LABEL_OPERATION: 28,
@@ -5464,6 +5558,8 @@ proto.google.ads.googleads.v1.services.MutateOperation.toObject = function(inclu
     campaignBidModifierOperation: (f = msg.getCampaignBidModifierOperation()) && google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.CampaignBidModifierOperation.toObject(includeInstance, f),
     campaignBudgetOperation: (f = msg.getCampaignBudgetOperation()) && google_ads_googleads_v1_services_campaign_budget_service_pb.CampaignBudgetOperation.toObject(includeInstance, f),
     campaignCriterionOperation: (f = msg.getCampaignCriterionOperation()) && google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation.toObject(includeInstance, f),
+    campaignDraftOperation: (f = msg.getCampaignDraftOperation()) && google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation.toObject(includeInstance, f),
+    campaignExperimentOperation: (f = msg.getCampaignExperimentOperation()) && google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation.toObject(includeInstance, f),
     campaignExtensionSettingOperation: (f = msg.getCampaignExtensionSettingOperation()) && google_ads_googleads_v1_services_campaign_extension_setting_service_pb.CampaignExtensionSettingOperation.toObject(includeInstance, f),
     campaignFeedOperation: (f = msg.getCampaignFeedOperation()) && google_ads_googleads_v1_services_campaign_feed_service_pb.CampaignFeedOperation.toObject(includeInstance, f),
     campaignLabelOperation: (f = msg.getCampaignLabelOperation()) && google_ads_googleads_v1_services_campaign_label_service_pb.CampaignLabelOperation.toObject(includeInstance, f),
@@ -5596,6 +5692,16 @@ proto.google.ads.googleads.v1.services.MutateOperation.deserializeBinaryFromRead
       var value = new google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation;
       reader.readMessage(value,google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation.deserializeBinaryFromReader);
       msg.setCampaignCriterionOperation(value);
+      break;
+    case 24:
+      var value = new google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation;
+      reader.readMessage(value,google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation.deserializeBinaryFromReader);
+      msg.setCampaignDraftOperation(value);
+      break;
+    case 25:
+      var value = new google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation;
+      reader.readMessage(value,google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation.deserializeBinaryFromReader);
+      msg.setCampaignExperimentOperation(value);
       break;
     case 26:
       var value = new google_ads_googleads_v1_services_campaign_extension_setting_service_pb.CampaignExtensionSettingOperation;
@@ -5854,6 +5960,22 @@ proto.google.ads.googleads.v1.services.MutateOperation.serializeBinaryToWriter =
       13,
       f,
       google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignDraftOperation();
+  if (f != null) {
+    writer.writeMessage(
+      24,
+      f,
+      google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignExperimentOperation();
+  if (f != null) {
+    writer.writeMessage(
+      25,
+      f,
+      google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation.serializeBinaryToWriter
     );
   }
   f = message.getCampaignExtensionSettingOperation();
@@ -6482,6 +6604,66 @@ proto.google.ads.googleads.v1.services.MutateOperation.prototype.clearCampaignCr
  */
 proto.google.ads.googleads.v1.services.MutateOperation.prototype.hasCampaignCriterionOperation = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional CampaignDraftOperation campaign_draft_operation = 24;
+ * @return {?proto.google.ads.googleads.v1.services.CampaignDraftOperation}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.getCampaignDraftOperation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.CampaignDraftOperation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation, 24));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.CampaignDraftOperation|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.setCampaignDraftOperation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 24, proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.clearCampaignDraftOperation = function() {
+  this.setCampaignDraftOperation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.hasCampaignDraftOperation = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional CampaignExperimentOperation campaign_experiment_operation = 25;
+ * @return {?proto.google.ads.googleads.v1.services.CampaignExperimentOperation}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.getCampaignExperimentOperation = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.CampaignExperimentOperation} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation, 25));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.CampaignExperimentOperation|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.setCampaignExperimentOperation = function(value) {
+  jspb.Message.setOneofWrapperField(this, 25, proto.google.ads.googleads.v1.services.MutateOperation.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.clearCampaignExperimentOperation = function() {
+  this.setCampaignExperimentOperation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperation.prototype.hasCampaignExperimentOperation = function() {
+  return jspb.Message.getField(this, 25) != null;
 };
 
 
@@ -7171,7 +7353,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
+proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_ = [[17,1,2,18,3,19,20,21,5,22,23,6,7,8,13,24,25,26,27,28,10,11,12,30,31,32,34,35,36,37,38,39,40,41,42,43,14,15,16]];
 
 /**
  * @enum {number}
@@ -7193,6 +7375,8 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.ResponseCase = {
   CAMPAIGN_BID_MODIFIER_RESULT: 7,
   CAMPAIGN_BUDGET_RESULT: 8,
   CAMPAIGN_CRITERION_RESULT: 13,
+  CAMPAIGN_DRAFT_RESULT: 24,
+  CAMPAIGN_EXPERIMENT_RESULT: 25,
   CAMPAIGN_EXTENSION_SETTING_RESULT: 26,
   CAMPAIGN_FEED_RESULT: 27,
   CAMPAIGN_LABEL_RESULT: 28,
@@ -7268,6 +7452,8 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.toObject = functi
     campaignBidModifierResult: (f = msg.getCampaignBidModifierResult()) && google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifierResult.toObject(includeInstance, f),
     campaignBudgetResult: (f = msg.getCampaignBudgetResult()) && google_ads_googleads_v1_services_campaign_budget_service_pb.MutateCampaignBudgetResult.toObject(includeInstance, f),
     campaignCriterionResult: (f = msg.getCampaignCriterionResult()) && google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult.toObject(includeInstance, f),
+    campaignDraftResult: (f = msg.getCampaignDraftResult()) && google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult.toObject(includeInstance, f),
+    campaignExperimentResult: (f = msg.getCampaignExperimentResult()) && google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult.toObject(includeInstance, f),
     campaignExtensionSettingResult: (f = msg.getCampaignExtensionSettingResult()) && google_ads_googleads_v1_services_campaign_extension_setting_service_pb.MutateCampaignExtensionSettingResult.toObject(includeInstance, f),
     campaignFeedResult: (f = msg.getCampaignFeedResult()) && google_ads_googleads_v1_services_campaign_feed_service_pb.MutateCampaignFeedResult.toObject(includeInstance, f),
     campaignLabelResult: (f = msg.getCampaignLabelResult()) && google_ads_googleads_v1_services_campaign_label_service_pb.MutateCampaignLabelResult.toObject(includeInstance, f),
@@ -7400,6 +7586,16 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.deserializeBinary
       var value = new google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult;
       reader.readMessage(value,google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult.deserializeBinaryFromReader);
       msg.setCampaignCriterionResult(value);
+      break;
+    case 24:
+      var value = new google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult;
+      reader.readMessage(value,google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult.deserializeBinaryFromReader);
+      msg.setCampaignDraftResult(value);
+      break;
+    case 25:
+      var value = new google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult;
+      reader.readMessage(value,google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult.deserializeBinaryFromReader);
+      msg.setCampaignExperimentResult(value);
       break;
     case 26:
       var value = new google_ads_googleads_v1_services_campaign_extension_setting_service_pb.MutateCampaignExtensionSettingResult;
@@ -7658,6 +7854,22 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.serializeBinaryTo
       13,
       f,
       google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignDraftResult();
+  if (f != null) {
+    writer.writeMessage(
+      24,
+      f,
+      google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult.serializeBinaryToWriter
+    );
+  }
+  f = message.getCampaignExperimentResult();
+  if (f != null) {
+    writer.writeMessage(
+      25,
+      f,
+      google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult.serializeBinaryToWriter
     );
   }
   f = message.getCampaignExtensionSettingResult();
@@ -8286,6 +8498,66 @@ proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.clearCa
  */
 proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.hasCampaignCriterionResult = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional MutateCampaignDraftResult campaign_draft_result = 24;
+ * @return {?proto.google.ads.googleads.v1.services.MutateCampaignDraftResult}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.getCampaignDraftResult = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.MutateCampaignDraftResult} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult, 24));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.MutateCampaignDraftResult|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.setCampaignDraftResult = function(value) {
+  jspb.Message.setOneofWrapperField(this, 24, proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.clearCampaignDraftResult = function() {
+  this.setCampaignDraftResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.hasCampaignDraftResult = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional MutateCampaignExperimentResult campaign_experiment_result = 25;
+ * @return {?proto.google.ads.googleads.v1.services.MutateCampaignExperimentResult}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.getCampaignExperimentResult = function() {
+  return /** @type{?proto.google.ads.googleads.v1.services.MutateCampaignExperimentResult} */ (
+    jspb.Message.getWrapperField(this, google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult, 25));
+};
+
+
+/** @param {?proto.google.ads.googleads.v1.services.MutateCampaignExperimentResult|undefined} value */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.setCampaignExperimentResult = function(value) {
+  jspb.Message.setOneofWrapperField(this, 25, proto.google.ads.googleads.v1.services.MutateOperationResponse.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.clearCampaignExperimentResult = function() {
+  this.setCampaignExperimentResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.services.MutateOperationResponse.prototype.hasCampaignExperimentResult = function() {
+  return jspb.Message.getField(this, 25) != null;
 };
 
 

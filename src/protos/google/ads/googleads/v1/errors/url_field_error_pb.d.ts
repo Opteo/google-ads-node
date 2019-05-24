@@ -73,6 +73,7 @@ export namespace UrlFieldErrorEnum {
     MALFORMED_TOP_LEVEL_DOMAIN = 54,
     MALFORMED_URL = 55,
     MISSING_HOST = 56,
+    NULL_CUSTOM_PARAMETER_VALUE = 57,
   }
 }
 

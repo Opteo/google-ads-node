@@ -22,6 +22,7 @@ export namespace BiddingStrategyTypeEnum {
   export enum BiddingStrategyType {
     UNSPECIFIED = 0,
     UNKNOWN = 1,
+    COMMISSION = 16,
     ENHANCED_CPC = 2,
     MANUAL_CPC = 3,
     MANUAL_CPM = 4,

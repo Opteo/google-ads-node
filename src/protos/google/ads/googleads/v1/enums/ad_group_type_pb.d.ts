@@ -33,6 +33,7 @@ export namespace AdGroupTypeEnum {
     VIDEO_NON_SKIPPABLE_IN_STREAM = 11,
     VIDEO_OUTSTREAM = 12,
     SEARCH_DYNAMIC_ADS = 13,
+    SHOPPING_COMPARISON_LISTING_ADS = 14,
   }
 }
 

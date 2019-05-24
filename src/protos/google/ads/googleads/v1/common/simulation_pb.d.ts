@@ -49,6 +49,28 @@ export namespace CpcBidSimulationPointList {
   }
 }
 
+export class CpvBidSimulationPointList extends jspb.Message {
+  clearPointsList(): void;
+  getPointsList(): Array<CpvBidSimulationPoint>;
+  setPointsList(value: Array<CpvBidSimulationPoint>): void;
+  addPoints(value?: CpvBidSimulationPoint, index?: number): CpvBidSimulationPoint;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CpvBidSimulationPointList.AsObject;
+  static toObject(includeInstance: boolean, msg: CpvBidSimulationPointList): CpvBidSimulationPointList.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CpvBidSimulationPointList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CpvBidSimulationPointList;
+  static deserializeBinaryFromReader(message: CpvBidSimulationPointList, reader: jspb.BinaryReader): CpvBidSimulationPointList;
+}
+
+export namespace CpvBidSimulationPointList {
+  export type AsObject = {
+    pointsList: Array<CpvBidSimulationPoint.AsObject>,
+  }
+}
+
 export class TargetCpaSimulationPointList extends jspb.Message {
   clearPointsList(): void;
   getPointsList(): Array<TargetCpaSimulationPoint>;
@@ -107,6 +129,36 @@ export class BidModifierSimulationPoint extends jspb.Message {
   getTopSlotImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
   setTopSlotImpressions(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
+  hasParentBiddableConversions(): boolean;
+  clearParentBiddableConversions(): void;
+  getParentBiddableConversions(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setParentBiddableConversions(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasParentBiddableConversionsValue(): boolean;
+  clearParentBiddableConversionsValue(): void;
+  getParentBiddableConversionsValue(): google_protobuf_wrappers_pb.DoubleValue | undefined;
+  setParentBiddableConversionsValue(value?: google_protobuf_wrappers_pb.DoubleValue): void;
+
+  hasParentClicks(): boolean;
+  clearParentClicks(): void;
+  getParentClicks(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setParentClicks(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasParentCostMicros(): boolean;
+  clearParentCostMicros(): void;
+  getParentCostMicros(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setParentCostMicros(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasParentImpressions(): boolean;
+  clearParentImpressions(): void;
+  getParentImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setParentImpressions(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasParentTopSlotImpressions(): boolean;
+  clearParentTopSlotImpressions(): void;
+  getParentTopSlotImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setParentTopSlotImpressions(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BidModifierSimulationPoint.AsObject;
   static toObject(includeInstance: boolean, msg: BidModifierSimulationPoint): BidModifierSimulationPoint.AsObject;
@@ -126,6 +178,12 @@ export namespace BidModifierSimulationPoint {
     costMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     impressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     topSlotImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    parentBiddableConversions?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    parentBiddableConversionsValue?: google_protobuf_wrappers_pb.DoubleValue.AsObject,
+    parentClicks?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    parentCostMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    parentImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    parentTopSlotImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 
@@ -184,6 +242,40 @@ export namespace CpcBidSimulationPoint {
     costMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     impressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
     topSlotImpressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+  }
+}
+
+export class CpvBidSimulationPoint extends jspb.Message {
+  hasCpvBidMicros(): boolean;
+  clearCpvBidMicros(): void;
+  getCpvBidMicros(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setCpvBidMicros(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasCostMicros(): boolean;
+  clearCostMicros(): void;
+  getCostMicros(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setCostMicros(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  hasImpressions(): boolean;
+  clearImpressions(): void;
+  getImpressions(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setImpressions(value?: google_protobuf_wrappers_pb.Int64Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CpvBidSimulationPoint.AsObject;
+  static toObject(includeInstance: boolean, msg: CpvBidSimulationPoint): CpvBidSimulationPoint.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CpvBidSimulationPoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CpvBidSimulationPoint;
+  static deserializeBinaryFromReader(message: CpvBidSimulationPoint, reader: jspb.BinaryReader): CpvBidSimulationPoint;
+}
+
+export namespace CpvBidSimulationPoint {
+  export type AsObject = {
+    cpvBidMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    costMicros?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    impressions?: google_protobuf_wrappers_pb.Int64Value.AsObject,
   }
 }
 

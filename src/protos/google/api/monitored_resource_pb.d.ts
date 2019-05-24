@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_api_label_pb from "../../google/api/label_pb";
+import * as google_api_launch_stage_pb from "../../google/api/launch_stage_pb";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
 
 export class MonitoredResourceDescriptor extends jspb.Message {
@@ -23,6 +24,9 @@ export class MonitoredResourceDescriptor extends jspb.Message {
   setLabelsList(value: Array<google_api_label_pb.LabelDescriptor>): void;
   addLabels(value?: google_api_label_pb.LabelDescriptor, index?: number): google_api_label_pb.LabelDescriptor;
 
+  getLaunchStage(): google_api_launch_stage_pb.LaunchStage;
+  setLaunchStage(value: google_api_launch_stage_pb.LaunchStage): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitoredResourceDescriptor.AsObject;
   static toObject(includeInstance: boolean, msg: MonitoredResourceDescriptor): MonitoredResourceDescriptor.AsObject;
@@ -40,6 +44,7 @@ export namespace MonitoredResourceDescriptor {
     displayName: string,
     description: string,
     labelsList: Array<google_api_label_pb.LabelDescriptor.AsObject>,
+    launchStage: google_api_launch_stage_pb.LaunchStage,
   }
 }
 

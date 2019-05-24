@@ -32,7 +32,9 @@ var google_ads_googleads_v1_errors_bidding_strategy_error_pb = require('../../..
 var google_ads_googleads_v1_errors_billing_setup_error_pb = require('../../../../../google/ads/googleads/v1/errors/billing_setup_error_pb.js');
 var google_ads_googleads_v1_errors_campaign_budget_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_budget_error_pb.js');
 var google_ads_googleads_v1_errors_campaign_criterion_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_criterion_error_pb.js');
+var google_ads_googleads_v1_errors_campaign_draft_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_draft_error_pb.js');
 var google_ads_googleads_v1_errors_campaign_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_error_pb.js');
+var google_ads_googleads_v1_errors_campaign_experiment_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_experiment_error_pb.js');
 var google_ads_googleads_v1_errors_campaign_feed_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_feed_error_pb.js');
 var google_ads_googleads_v1_errors_campaign_shared_set_error_pb = require('../../../../../google/ads/googleads/v1/errors/campaign_shared_set_error_pb.js');
 var google_ads_googleads_v1_errors_change_status_error_pb = require('../../../../../google/ads/googleads/v1/errors/change_status_error_pb.js');
@@ -79,6 +81,7 @@ var google_ads_googleads_v1_errors_keyword_plan_negative_keyword_error_pb = requ
 var google_ads_googleads_v1_errors_label_error_pb = require('../../../../../google/ads/googleads/v1/errors/label_error_pb.js');
 var google_ads_googleads_v1_errors_language_code_error_pb = require('../../../../../google/ads/googleads/v1/errors/language_code_error_pb.js');
 var google_ads_googleads_v1_errors_list_operation_error_pb = require('../../../../../google/ads/googleads/v1/errors/list_operation_error_pb.js');
+var google_ads_googleads_v1_errors_manager_link_error_pb = require('../../../../../google/ads/googleads/v1/errors/manager_link_error_pb.js');
 var google_ads_googleads_v1_errors_media_bundle_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_bundle_error_pb.js');
 var google_ads_googleads_v1_errors_media_file_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_file_error_pb.js');
 var google_ads_googleads_v1_errors_media_upload_error_pb = require('../../../../../google/ads/googleads/v1/errors/media_upload_error_pb.js');
@@ -87,6 +90,7 @@ var google_ads_googleads_v1_errors_mutate_error_pb = require('../../../../../goo
 var google_ads_googleads_v1_errors_mutate_job_error_pb = require('../../../../../google/ads/googleads/v1/errors/mutate_job_error_pb.js');
 var google_ads_googleads_v1_errors_new_resource_creation_error_pb = require('../../../../../google/ads/googleads/v1/errors/new_resource_creation_error_pb.js');
 var google_ads_googleads_v1_errors_not_empty_error_pb = require('../../../../../google/ads/googleads/v1/errors/not_empty_error_pb.js');
+var google_ads_googleads_v1_errors_not_whitelisted_error_pb = require('../../../../../google/ads/googleads/v1/errors/not_whitelisted_error_pb.js');
 var google_ads_googleads_v1_errors_null_error_pb = require('../../../../../google/ads/googleads/v1/errors/null_error_pb.js');
 var google_ads_googleads_v1_errors_operation_access_denied_error_pb = require('../../../../../google/ads/googleads/v1/errors/operation_access_denied_error_pb.js');
 var google_ads_googleads_v1_errors_operator_error_pb = require('../../../../../google/ads/googleads/v1/errors/operator_error_pb.js');
@@ -111,8 +115,8 @@ var google_ads_googleads_v1_errors_string_length_error_pb = require('../../../..
 var google_ads_googleads_v1_errors_url_field_error_pb = require('../../../../../google/ads/googleads/v1/errors/url_field_error_pb.js');
 var google_ads_googleads_v1_errors_user_list_error_pb = require('../../../../../google/ads/googleads/v1/errors/user_list_error_pb.js');
 var google_ads_googleads_v1_errors_youtube_video_registration_error_pb = require('../../../../../google/ads/googleads/v1/errors/youtube_video_registration_error_pb.js');
-var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 goog.exportSymbol('proto.google.ads.googleads.v1.errors.ErrorCode', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.errors.ErrorDetails', null, global);
 goog.exportSymbol('proto.google.ads.googleads.v1.errors.ErrorLocation', null, global);
@@ -633,7 +637,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,107,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,116,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,117,59,60,61,62,63,64,65,115,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,83,84,87,88,91,92,93,94,96,97,100,101,102,103,104,105,108,112,114,118]];
+proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_ = [[1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,21,24,25,107,26,29,31,109,32,90,33,34,35,36,37,38,39,40,110,42,116,86,44,45,46,47,48,49,58,51,52,53,54,55,56,57,117,59,60,61,62,63,64,65,115,111,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,87,88,91,92,93,94,96,97,98,100,101,102,103,104,105,108,112,114,118,120,121]];
 
 /**
  * @enum {number}
@@ -718,6 +722,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   CHANGE_STATUS_ERROR: 79,
   FEED_ERROR: 80,
   GEO_TARGET_CONSTANT_SUGGESTION_ERROR: 81,
+  CAMPAIGN_DRAFT_ERROR: 82,
   FEED_ITEM_ERROR: 83,
   LABEL_ERROR: 84,
   BILLING_SETUP_ERROR: 87,
@@ -728,6 +733,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   AD_GROUP_FEED_ERROR: 94,
   CAMPAIGN_FEED_ERROR: 96,
   CUSTOM_INTEREST_ERROR: 97,
+  CAMPAIGN_EXPERIMENT_ERROR: 98,
   EXTENSION_FEED_ITEM_ERROR: 100,
   AD_PARAMETER_ERROR: 101,
   FEED_ITEM_VALIDATION_ERROR: 102,
@@ -737,7 +743,9 @@ proto.google.ads.googleads.v1.errors.ErrorCode.ErrorCodeCase = {
   MUTATE_JOB_ERROR: 108,
   PARTIAL_FAILURE_ERROR: 112,
   POLICY_VALIDATION_PARAMETER_ERROR: 114,
-  SIZE_LIMIT_ERROR: 118
+  SIZE_LIMIT_ERROR: 118,
+  NOT_WHITELISTED_ERROR: 120,
+  MANAGER_LINK_ERROR: 121
 };
 
 /**
@@ -854,6 +862,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     changeStatusError: jspb.Message.getFieldWithDefault(msg, 79, 0),
     feedError: jspb.Message.getFieldWithDefault(msg, 80, 0),
     geoTargetConstantSuggestionError: jspb.Message.getFieldWithDefault(msg, 81, 0),
+    campaignDraftError: jspb.Message.getFieldWithDefault(msg, 82, 0),
     feedItemError: jspb.Message.getFieldWithDefault(msg, 83, 0),
     labelError: jspb.Message.getFieldWithDefault(msg, 84, 0),
     billingSetupError: jspb.Message.getFieldWithDefault(msg, 87, 0),
@@ -864,6 +873,7 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     adGroupFeedError: jspb.Message.getFieldWithDefault(msg, 94, 0),
     campaignFeedError: jspb.Message.getFieldWithDefault(msg, 96, 0),
     customInterestError: jspb.Message.getFieldWithDefault(msg, 97, 0),
+    campaignExperimentError: jspb.Message.getFieldWithDefault(msg, 98, 0),
     extensionFeedItemError: jspb.Message.getFieldWithDefault(msg, 100, 0),
     adParameterError: jspb.Message.getFieldWithDefault(msg, 101, 0),
     feedItemValidationError: jspb.Message.getFieldWithDefault(msg, 102, 0),
@@ -873,7 +883,9 @@ proto.google.ads.googleads.v1.errors.ErrorCode.toObject = function(includeInstan
     mutateJobError: jspb.Message.getFieldWithDefault(msg, 108, 0),
     partialFailureError: jspb.Message.getFieldWithDefault(msg, 112, 0),
     policyValidationParameterError: jspb.Message.getFieldWithDefault(msg, 114, 0),
-    sizeLimitError: jspb.Message.getFieldWithDefault(msg, 118, 0)
+    sizeLimitError: jspb.Message.getFieldWithDefault(msg, 118, 0),
+    notWhitelistedError: jspb.Message.getFieldWithDefault(msg, 120, 0),
+    managerLinkError: jspb.Message.getFieldWithDefault(msg, 121, 0)
   };
 
   if (includeInstance) {
@@ -1222,6 +1234,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
       var value = /** @type {!proto.google.ads.googleads.v1.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError} */ (reader.readEnum());
       msg.setGeoTargetConstantSuggestionError(value);
       break;
+    case 82:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError} */ (reader.readEnum());
+      msg.setCampaignDraftError(value);
+      break;
     case 83:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.FeedItemErrorEnum.FeedItemError} */ (reader.readEnum());
       msg.setFeedItemError(value);
@@ -1262,6 +1278,10 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
       var value = /** @type {!proto.google.ads.googleads.v1.errors.CustomInterestErrorEnum.CustomInterestError} */ (reader.readEnum());
       msg.setCustomInterestError(value);
       break;
+    case 98:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError} */ (reader.readEnum());
+      msg.setCampaignExperimentError(value);
+      break;
     case 100:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError} */ (reader.readEnum());
       msg.setExtensionFeedItemError(value);
@@ -1301,6 +1321,14 @@ proto.google.ads.googleads.v1.errors.ErrorCode.deserializeBinaryFromReader = fun
     case 118:
       var value = /** @type {!proto.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError} */ (reader.readEnum());
       msg.setSizeLimitError(value);
+      break;
+    case 120:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError} */ (reader.readEnum());
+      msg.setNotWhitelistedError(value);
+      break;
+    case 121:
+      var value = /** @type {!proto.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError} */ (reader.readEnum());
+      msg.setManagerLinkError(value);
       break;
     default:
       reader.skipField();
@@ -1877,6 +1905,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
       f
     );
   }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError} */ (jspb.Message.getField(message, 82));
+  if (f != null) {
+    writer.writeEnum(
+      82,
+      f
+    );
+  }
   f = /** @type {!proto.google.ads.googleads.v1.errors.FeedItemErrorEnum.FeedItemError} */ (jspb.Message.getField(message, 83));
   if (f != null) {
     writer.writeEnum(
@@ -1947,6 +1982,13 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
       f
     );
   }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError} */ (jspb.Message.getField(message, 98));
+  if (f != null) {
+    writer.writeEnum(
+      98,
+      f
+    );
+  }
   f = /** @type {!proto.google.ads.googleads.v1.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError} */ (jspb.Message.getField(message, 100));
   if (f != null) {
     writer.writeEnum(
@@ -2014,6 +2056,20 @@ proto.google.ads.googleads.v1.errors.ErrorCode.serializeBinaryToWriter = functio
   if (f != null) {
     writer.writeEnum(
       118,
+      f
+    );
+  }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError} */ (jspb.Message.getField(message, 120));
+  if (f != null) {
+    writer.writeEnum(
+      120,
+      f
+    );
+  }
+  f = /** @type {!proto.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError} */ (jspb.Message.getField(message, 121));
+  if (f != null) {
+    writer.writeEnum(
+      121,
       f
     );
   }
@@ -4283,6 +4339,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasGeoTargetConstantSug
 
 
 /**
+ * optional CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;
+ * @return {!proto.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getCampaignDraftError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError} */ (jspb.Message.getFieldWithDefault(this, 82, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setCampaignDraftError = function(value) {
+  jspb.Message.setOneofField(this, 82, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearCampaignDraftError = function() {
+  jspb.Message.setOneofField(this, 82, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasCampaignDraftError = function() {
+  return jspb.Message.getField(this, 82) != null;
+};
+
+
+/**
  * optional FeedItemErrorEnum.FeedItemError feed_item_error = 83;
  * @return {!proto.google.ads.googleads.v1.errors.FeedItemErrorEnum.FeedItemError}
  */
@@ -4573,6 +4658,35 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasCustomInterestError 
 
 
 /**
+ * optional CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;
+ * @return {!proto.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getCampaignExperimentError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError} */ (jspb.Message.getFieldWithDefault(this, 98, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setCampaignExperimentError = function(value) {
+  jspb.Message.setOneofField(this, 98, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearCampaignExperimentError = function() {
+  jspb.Message.setOneofField(this, 98, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasCampaignExperimentError = function() {
+  return jspb.Message.getField(this, 98) != null;
+};
+
+
+/**
  * optional ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;
  * @return {!proto.google.ads.googleads.v1.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError}
  */
@@ -4859,6 +4973,64 @@ proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearSizeLimitError = f
  */
 proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasSizeLimitError = function() {
   return jspb.Message.getField(this, 118) != null;
+};
+
+
+/**
+ * optional NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;
+ * @return {!proto.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getNotWhitelistedError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError} */ (jspb.Message.getFieldWithDefault(this, 120, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setNotWhitelistedError = function(value) {
+  jspb.Message.setOneofField(this, 120, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearNotWhitelistedError = function() {
+  jspb.Message.setOneofField(this, 120, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasNotWhitelistedError = function() {
+  return jspb.Message.getField(this, 120) != null;
+};
+
+
+/**
+ * optional ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;
+ * @return {!proto.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.getManagerLinkError = function() {
+  return /** @type {!proto.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError} */ (jspb.Message.getFieldWithDefault(this, 121, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError} value */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.setManagerLinkError = function(value) {
+  jspb.Message.setOneofField(this, 121, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], value);
+};
+
+
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.clearManagerLinkError = function() {
+  jspb.Message.setOneofField(this, 121, proto.google.ads.googleads.v1.errors.ErrorCode.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.errors.ErrorCode.prototype.hasManagerLinkError = function() {
+  return jspb.Message.getField(this, 121) != null;
 };
 
 

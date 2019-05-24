@@ -30,6 +30,8 @@ import * as google_ads_googleads_v1_resources_campaign_bid_modifier_pb from "../
 import * as google_ads_googleads_v1_resources_campaign_budget_pb from "../../../../../google/ads/googleads/v1/resources/campaign_budget_pb";
 import * as google_ads_googleads_v1_resources_campaign_criterion_pb from "../../../../../google/ads/googleads/v1/resources/campaign_criterion_pb";
 import * as google_ads_googleads_v1_resources_campaign_criterion_simulation_pb from "../../../../../google/ads/googleads/v1/resources/campaign_criterion_simulation_pb";
+import * as google_ads_googleads_v1_resources_campaign_draft_pb from "../../../../../google/ads/googleads/v1/resources/campaign_draft_pb";
+import * as google_ads_googleads_v1_resources_campaign_experiment_pb from "../../../../../google/ads/googleads/v1/resources/campaign_experiment_pb";
 import * as google_ads_googleads_v1_resources_campaign_extension_setting_pb from "../../../../../google/ads/googleads/v1/resources/campaign_extension_setting_pb";
 import * as google_ads_googleads_v1_resources_campaign_feed_pb from "../../../../../google/ads/googleads/v1/resources/campaign_feed_pb";
 import * as google_ads_googleads_v1_resources_campaign_label_pb from "../../../../../google/ads/googleads/v1/resources/campaign_label_pb";
@@ -110,6 +112,8 @@ import * as google_ads_googleads_v1_services_bidding_strategy_service_pb from ".
 import * as google_ads_googleads_v1_services_campaign_bid_modifier_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_bid_modifier_service_pb";
 import * as google_ads_googleads_v1_services_campaign_budget_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_budget_service_pb";
 import * as google_ads_googleads_v1_services_campaign_criterion_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_criterion_service_pb";
+import * as google_ads_googleads_v1_services_campaign_draft_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_draft_service_pb";
+import * as google_ads_googleads_v1_services_campaign_experiment_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_experiment_service_pb";
 import * as google_ads_googleads_v1_services_campaign_extension_setting_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_extension_setting_service_pb";
 import * as google_ads_googleads_v1_services_campaign_feed_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_feed_service_pb";
 import * as google_ads_googleads_v1_services_campaign_label_service_pb from "../../../../../google/ads/googleads/v1/services/campaign_label_service_pb";
@@ -343,6 +347,16 @@ export class GoogleAdsRow extends jspb.Message {
   clearCampaignCriterionSimulation(): void;
   getCampaignCriterionSimulation(): google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation | undefined;
   setCampaignCriterionSimulation(value?: google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation): void;
+
+  hasCampaignDraft(): boolean;
+  clearCampaignDraft(): void;
+  getCampaignDraft(): google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft | undefined;
+  setCampaignDraft(value?: google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft): void;
+
+  hasCampaignExperiment(): boolean;
+  clearCampaignExperiment(): void;
+  getCampaignExperiment(): google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment | undefined;
+  setCampaignExperiment(value?: google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment): void;
 
   hasCampaignExtensionSetting(): boolean;
   clearCampaignExtensionSetting(): void;
@@ -713,6 +727,8 @@ export namespace GoogleAdsRow {
     campaignBidModifier?: google_ads_googleads_v1_resources_campaign_bid_modifier_pb.CampaignBidModifier.AsObject,
     campaignCriterion?: google_ads_googleads_v1_resources_campaign_criterion_pb.CampaignCriterion.AsObject,
     campaignCriterionSimulation?: google_ads_googleads_v1_resources_campaign_criterion_simulation_pb.CampaignCriterionSimulation.AsObject,
+    campaignDraft?: google_ads_googleads_v1_resources_campaign_draft_pb.CampaignDraft.AsObject,
+    campaignExperiment?: google_ads_googleads_v1_resources_campaign_experiment_pb.CampaignExperiment.AsObject,
     campaignExtensionSetting?: google_ads_googleads_v1_resources_campaign_extension_setting_pb.CampaignExtensionSetting.AsObject,
     campaignFeed?: google_ads_googleads_v1_resources_campaign_feed_pb.CampaignFeed.AsObject,
     campaignLabel?: google_ads_googleads_v1_resources_campaign_label_pb.CampaignLabel.AsObject,
@@ -920,6 +936,16 @@ export class MutateOperation extends jspb.Message {
   getCampaignCriterionOperation(): google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation | undefined;
   setCampaignCriterionOperation(value?: google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation): void;
 
+  hasCampaignDraftOperation(): boolean;
+  clearCampaignDraftOperation(): void;
+  getCampaignDraftOperation(): google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation | undefined;
+  setCampaignDraftOperation(value?: google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation): void;
+
+  hasCampaignExperimentOperation(): boolean;
+  clearCampaignExperimentOperation(): void;
+  getCampaignExperimentOperation(): google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation | undefined;
+  setCampaignExperimentOperation(value?: google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation): void;
+
   hasCampaignExtensionSettingOperation(): boolean;
   clearCampaignExtensionSettingOperation(): void;
   getCampaignExtensionSettingOperation(): google_ads_googleads_v1_services_campaign_extension_setting_service_pb.CampaignExtensionSettingOperation | undefined;
@@ -1058,6 +1084,8 @@ export namespace MutateOperation {
     campaignBidModifierOperation?: google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.CampaignBidModifierOperation.AsObject,
     campaignBudgetOperation?: google_ads_googleads_v1_services_campaign_budget_service_pb.CampaignBudgetOperation.AsObject,
     campaignCriterionOperation?: google_ads_googleads_v1_services_campaign_criterion_service_pb.CampaignCriterionOperation.AsObject,
+    campaignDraftOperation?: google_ads_googleads_v1_services_campaign_draft_service_pb.CampaignDraftOperation.AsObject,
+    campaignExperimentOperation?: google_ads_googleads_v1_services_campaign_experiment_service_pb.CampaignExperimentOperation.AsObject,
     campaignExtensionSettingOperation?: google_ads_googleads_v1_services_campaign_extension_setting_service_pb.CampaignExtensionSettingOperation.AsObject,
     campaignFeedOperation?: google_ads_googleads_v1_services_campaign_feed_service_pb.CampaignFeedOperation.AsObject,
     campaignLabelOperation?: google_ads_googleads_v1_services_campaign_label_service_pb.CampaignLabelOperation.AsObject,
@@ -1099,6 +1127,8 @@ export namespace MutateOperation {
     CAMPAIGN_BID_MODIFIER_OPERATION = 7,
     CAMPAIGN_BUDGET_OPERATION = 8,
     CAMPAIGN_CRITERION_OPERATION = 13,
+    CAMPAIGN_DRAFT_OPERATION = 24,
+    CAMPAIGN_EXPERIMENT_OPERATION = 25,
     CAMPAIGN_EXTENSION_SETTING_OPERATION = 26,
     CAMPAIGN_FEED_OPERATION = 27,
     CAMPAIGN_LABEL_OPERATION = 28,
@@ -1199,6 +1229,16 @@ export class MutateOperationResponse extends jspb.Message {
   clearCampaignCriterionResult(): void;
   getCampaignCriterionResult(): google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult | undefined;
   setCampaignCriterionResult(value?: google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult): void;
+
+  hasCampaignDraftResult(): boolean;
+  clearCampaignDraftResult(): void;
+  getCampaignDraftResult(): google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult | undefined;
+  setCampaignDraftResult(value?: google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult): void;
+
+  hasCampaignExperimentResult(): boolean;
+  clearCampaignExperimentResult(): void;
+  getCampaignExperimentResult(): google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult | undefined;
+  setCampaignExperimentResult(value?: google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult): void;
 
   hasCampaignExtensionSettingResult(): boolean;
   clearCampaignExtensionSettingResult(): void;
@@ -1338,6 +1378,8 @@ export namespace MutateOperationResponse {
     campaignBidModifierResult?: google_ads_googleads_v1_services_campaign_bid_modifier_service_pb.MutateCampaignBidModifierResult.AsObject,
     campaignBudgetResult?: google_ads_googleads_v1_services_campaign_budget_service_pb.MutateCampaignBudgetResult.AsObject,
     campaignCriterionResult?: google_ads_googleads_v1_services_campaign_criterion_service_pb.MutateCampaignCriterionResult.AsObject,
+    campaignDraftResult?: google_ads_googleads_v1_services_campaign_draft_service_pb.MutateCampaignDraftResult.AsObject,
+    campaignExperimentResult?: google_ads_googleads_v1_services_campaign_experiment_service_pb.MutateCampaignExperimentResult.AsObject,
     campaignExtensionSettingResult?: google_ads_googleads_v1_services_campaign_extension_setting_service_pb.MutateCampaignExtensionSettingResult.AsObject,
     campaignFeedResult?: google_ads_googleads_v1_services_campaign_feed_service_pb.MutateCampaignFeedResult.AsObject,
     campaignLabelResult?: google_ads_googleads_v1_services_campaign_label_service_pb.MutateCampaignLabelResult.AsObject,
@@ -1379,6 +1421,8 @@ export namespace MutateOperationResponse {
     CAMPAIGN_BID_MODIFIER_RESULT = 7,
     CAMPAIGN_BUDGET_RESULT = 8,
     CAMPAIGN_CRITERION_RESULT = 13,
+    CAMPAIGN_DRAFT_RESULT = 24,
+    CAMPAIGN_EXPERIMENT_RESULT = 25,
     CAMPAIGN_EXTENSION_SETTING_RESULT = 26,
     CAMPAIGN_FEED_RESULT = 27,
     CAMPAIGN_LABEL_RESULT = 28,

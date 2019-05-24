@@ -259,6 +259,28 @@ export namespace ShoppingProductAdInfo {
   }
 }
 
+export class ShoppingComparisonListingAdInfo extends jspb.Message {
+  hasHeadline(): boolean;
+  clearHeadline(): void;
+  getHeadline(): google_protobuf_wrappers_pb.StringValue | undefined;
+  setHeadline(value?: google_protobuf_wrappers_pb.StringValue): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShoppingComparisonListingAdInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ShoppingComparisonListingAdInfo): ShoppingComparisonListingAdInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ShoppingComparisonListingAdInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShoppingComparisonListingAdInfo;
+  static deserializeBinaryFromReader(message: ShoppingComparisonListingAdInfo, reader: jspb.BinaryReader): ShoppingComparisonListingAdInfo;
+}
+
+export namespace ShoppingComparisonListingAdInfo {
+  export type AsObject = {
+    headline?: google_protobuf_wrappers_pb.StringValue.AsObject,
+  }
+}
+
 export class GmailAdInfo extends jspb.Message {
   hasTeaser(): boolean;
   clearTeaser(): void;

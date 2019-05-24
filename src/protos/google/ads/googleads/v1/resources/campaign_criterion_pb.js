@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_ads_googleads_v1_common_criteria_pb = require('../../../../../google/ads/googleads/v1/common/criteria_pb.js');
+var google_ads_googleads_v1_enums_campaign_criterion_status_pb = require('../../../../../google/ads/googleads/v1/enums/campaign_criterion_status_pb.js');
 var google_ads_googleads_v1_enums_criterion_type_pb = require('../../../../../google/ads/googleads/v1/enums/criterion_type_pb.js');
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
@@ -119,6 +120,7 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.toObject = function(in
     bidModifier: (f = msg.getBidModifier()) && google_protobuf_wrappers_pb.FloatValue.toObject(includeInstance, f),
     negative: (f = msg.getNegative()) && google_protobuf_wrappers_pb.BoolValue.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    status: jspb.Message.getFieldWithDefault(msg, 35, 0),
     keyword: (f = msg.getKeyword()) && google_ads_googleads_v1_common_criteria_pb.KeywordInfo.toObject(includeInstance, f),
     placement: (f = msg.getPlacement()) && google_ads_googleads_v1_common_criteria_pb.PlacementInfo.toObject(includeInstance, f),
     mobileAppCategory: (f = msg.getMobileAppCategory()) && google_ads_googleads_v1_common_criteria_pb.MobileAppCategoryInfo.toObject(includeInstance, f),
@@ -208,6 +210,10 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.deserializeBinaryFromR
     case 6:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.CriterionTypeEnum.CriterionType} */ (reader.readEnum());
       msg.setType(value);
+      break;
+    case 35:
+      var value = /** @type {!proto.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     case 8:
       var value = new google_ads_googleads_v1_common_criteria_pb.KeywordInfo;
@@ -411,6 +417,13 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.serializeBinaryToWrite
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      35,
       f
     );
   }
@@ -772,6 +785,21 @@ proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.getType = fu
 /** @param {!proto.google.ads.googleads.v1.enums.CriterionTypeEnum.CriterionType} value */
 proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.setType = function(value) {
   jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;
+ * @return {!proto.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus}
+ */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.getStatus = function() {
+  return /** @type {!proto.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus} */ (jspb.Message.getFieldWithDefault(this, 35, 0));
+};
+
+
+/** @param {!proto.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus} value */
+proto.google.ads.googleads.v1.resources.CampaignCriterion.prototype.setStatus = function(value) {
+  jspb.Message.setProto3EnumField(this, 35, value);
 };
 
 

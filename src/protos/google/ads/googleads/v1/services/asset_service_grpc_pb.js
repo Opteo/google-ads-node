@@ -69,7 +69,9 @@ function deserialize_google_ads_googleads_v1_services_MutateAssetsResponse(buffe
 
 // Proto file describing the Asset service.
 //
-// Service to manage assets.
+// Service to manage assets. Asset types can be created with AssetService are
+// YoutubeVideoAsset, MediaBundleAsset and ImageAsset. TextAsset should be
+// created with Ad inline.
 var AssetServiceService = exports.AssetServiceService = {
   // Returns the requested asset in full detail.
   getAsset: {

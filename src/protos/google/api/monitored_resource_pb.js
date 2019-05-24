@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_api_label_pb = require('../../google/api/label_pb.js');
+var google_api_launch_stage_pb = require('../../google/api/launch_stage_pb.js');
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.exportSymbol('proto.google.api.MonitoredResource', null, global);
 goog.exportSymbol('proto.google.api.MonitoredResourceDescriptor', null, global);
@@ -75,7 +76,8 @@ proto.google.api.MonitoredResourceDescriptor.toObject = function(includeInstance
     displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     labelsList: jspb.Message.toObjectList(msg.getLabelsList(),
-    google_api_label_pb.LabelDescriptor.toObject, includeInstance)
+    google_api_label_pb.LabelDescriptor.toObject, includeInstance),
+    launchStage: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -132,6 +134,10 @@ proto.google.api.MonitoredResourceDescriptor.deserializeBinaryFromReader = funct
       var value = new google_api_label_pb.LabelDescriptor;
       reader.readMessage(value,google_api_label_pb.LabelDescriptor.deserializeBinaryFromReader);
       msg.addLabels(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.google.api.LaunchStage} */ (reader.readEnum());
+      msg.setLaunchStage(value);
       break;
     default:
       reader.skipField();
@@ -196,6 +202,13 @@ proto.google.api.MonitoredResourceDescriptor.serializeBinaryToWriter = function(
       4,
       f,
       google_api_label_pb.LabelDescriptor.serializeBinaryToWriter
+    );
+  }
+  f = message.getLaunchStage();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
     );
   }
 };
@@ -289,6 +302,21 @@ proto.google.api.MonitoredResourceDescriptor.prototype.addLabels = function(opt_
 
 proto.google.api.MonitoredResourceDescriptor.prototype.clearLabelsList = function() {
   this.setLabelsList([]);
+};
+
+
+/**
+ * optional LaunchStage launch_stage = 7;
+ * @return {!proto.google.api.LaunchStage}
+ */
+proto.google.api.MonitoredResourceDescriptor.prototype.getLaunchStage = function() {
+  return /** @type {!proto.google.api.LaunchStage} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/** @param {!proto.google.api.LaunchStage} value */
+proto.google.api.MonitoredResourceDescriptor.prototype.setLaunchStage = function(value) {
+  jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 

@@ -52,7 +52,7 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.repeatedFields_ = [16]
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_ = [[2,3,7,8,9,10,11,12,14,15]];
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_ = [[2,3,7,8,9,10,11,12,14,15],[18,19]];
 
 /**
  * @enum {number}
@@ -76,6 +76,22 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ExtensionCase = {
  */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getExtensionCase = function() {
   return /** @type {proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ExtensionCase} */(jspb.Message.computeOneofCase(this, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ServingResourceTargetingCase = {
+  SERVING_RESOURCE_TARGETING_NOT_SET: 0,
+  TARGETED_CAMPAIGN: 18,
+  TARGETED_AD_GROUP: 19
+};
+
+/**
+ * @return {proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ServingResourceTargetingCase}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getServingResourceTargetingCase = function() {
+  return /** @type {proto.google.ads.googleads.v1.resources.ExtensionFeedItem.ServingResourceTargetingCase} */(jspb.Message.computeOneofCase(this, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[1]));
 };
 
 
@@ -114,6 +130,7 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.toObject = function(in
     adSchedulesList: jspb.Message.toObjectList(msg.getAdSchedulesList(),
     google_ads_googleads_v1_common_criteria_pb.AdScheduleInfo.toObject, includeInstance),
     device: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    targetedGeoTargetConstant: (f = msg.getTargetedGeoTargetConstant()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 4, 0),
     sitelinkFeedItem: (f = msg.getSitelinkFeedItem()) && google_ads_googleads_v1_common_extensions_pb.SitelinkFeedItem.toObject(includeInstance, f),
     structuredSnippetFeedItem: (f = msg.getStructuredSnippetFeedItem()) && google_ads_googleads_v1_common_extensions_pb.StructuredSnippetFeedItem.toObject(includeInstance, f),
@@ -124,7 +141,9 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.toObject = function(in
     priceFeedItem: (f = msg.getPriceFeedItem()) && google_ads_googleads_v1_common_extensions_pb.PriceFeedItem.toObject(includeInstance, f),
     promotionFeedItem: (f = msg.getPromotionFeedItem()) && google_ads_googleads_v1_common_extensions_pb.PromotionFeedItem.toObject(includeInstance, f),
     locationFeedItem: (f = msg.getLocationFeedItem()) && google_ads_googleads_v1_common_extensions_pb.LocationFeedItem.toObject(includeInstance, f),
-    affiliateLocationFeedItem: (f = msg.getAffiliateLocationFeedItem()) && google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.toObject(includeInstance, f)
+    affiliateLocationFeedItem: (f = msg.getAffiliateLocationFeedItem()) && google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.toObject(includeInstance, f),
+    targetedCampaign: (f = msg.getTargetedCampaign()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
+    targetedAdGroup: (f = msg.getTargetedAdGroup()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -188,6 +207,11 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.deserializeBinaryFromR
       var value = /** @type {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice} */ (reader.readEnum());
       msg.setDevice(value);
       break;
+    case 20:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setTargetedGeoTargetConstant(value);
+      break;
     case 4:
       var value = /** @type {!proto.google.ads.googleads.v1.enums.FeedItemStatusEnum.FeedItemStatus} */ (reader.readEnum());
       msg.setStatus(value);
@@ -241,6 +265,16 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.deserializeBinaryFromR
       var value = new google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem;
       reader.readMessage(value,google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.deserializeBinaryFromReader);
       msg.setAffiliateLocationFeedItem(value);
+      break;
+    case 18:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setTargetedCampaign(value);
+      break;
+    case 19:
+      var value = new google_protobuf_wrappers_pb.StringValue;
+      reader.readMessage(value,google_protobuf_wrappers_pb.StringValue.deserializeBinaryFromReader);
+      msg.setTargetedAdGroup(value);
       break;
     default:
       reader.skipField();
@@ -314,6 +348,14 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.serializeBinaryToWrite
     writer.writeEnum(
       17,
       f
+    );
+  }
+  f = message.getTargetedGeoTargetConstant();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -401,6 +443,22 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.serializeBinaryToWrite
       15,
       f,
       google_ads_googleads_v1_common_extensions_pb.AffiliateLocationFeedItem.serializeBinaryToWriter
+    );
+  }
+  f = message.getTargetedCampaign();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getTargetedAdGroup();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      google_protobuf_wrappers_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
@@ -539,6 +597,36 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getDevice = 
 /** @param {!proto.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice} value */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setDevice = function(value) {
   jspb.Message.setProto3EnumField(this, 17, value);
+};
+
+
+/**
+ * optional google.protobuf.StringValue targeted_geo_target_constant = 20;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getTargetedGeoTargetConstant = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 20));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setTargetedGeoTargetConstant = function(value) {
+  jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearTargetedGeoTargetConstant = function() {
+  this.setTargetedGeoTargetConstant(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasTargetedGeoTargetConstant = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
@@ -854,6 +942,66 @@ proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearAffilia
  */
 proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasAffiliateLocationFeedItem = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue targeted_campaign = 18;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getTargetedCampaign = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 18));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setTargetedCampaign = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[1], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearTargetedCampaign = function() {
+  this.setTargetedCampaign(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasTargetedCampaign = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional google.protobuf.StringValue targeted_ad_group = 19;
+ * @return {?proto.google.protobuf.StringValue}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.getTargetedAdGroup = function() {
+  return /** @type{?proto.google.protobuf.StringValue} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.StringValue, 19));
+};
+
+
+/** @param {?proto.google.protobuf.StringValue|undefined} value */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.setTargetedAdGroup = function(value) {
+  jspb.Message.setOneofWrapperField(this, 19, proto.google.ads.googleads.v1.resources.ExtensionFeedItem.oneofGroups_[1], value);
+};
+
+
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.clearTargetedAdGroup = function() {
+  this.setTargetedAdGroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.google.ads.googleads.v1.resources.ExtensionFeedItem.prototype.hasTargetedAdGroup = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
