@@ -19,7 +19,7 @@
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",
-    "all": "run-s reset protos test",
+    "all": "run-s reset test",
     "prepare-release": "run-s all version",
     "protos": "make protos",
     "copy-protos": "cp -rf src/protos build/"
