@@ -83,7 +83,7 @@ export class GoogleAdsClient {
     const serviceClientConstructor = (services as any)[serviceClientName];
 
     const service = new serviceClientConstructor(
-      GOOGLE_ADS_ENDPOINT, 
+      GOOGLE_ADS_ENDPOINT,
       grpc.credentials.createSsl(),
       {
         interceptors,
@@ -93,7 +93,7 @@ export class GoogleAdsClient {
           Here, we set it to 1GB to essentially remove that limit.
         */
         'grpc.max_send_message_length': 1024 * 1024 * 1024,
-        'grpc.max_receive_message_length': 1024 * 1024 * 1024 
+        'grpc.max_receive_message_length': 1024 * 1024 * 1024
       },
     );
 
@@ -117,7 +117,7 @@ export class GoogleAdsClient {
     const type = allProtos.resources[resource] || allProtos.services[resource];
     const grpcType = (GrpcTypes as any)[resource];
 
-    /* 
+    /*
       This translates ts values, such as string, to the protobuf format
       e.g. {some_name: "campaign"} -> {someName: { value: "campaign" }}
     */
@@ -212,7 +212,7 @@ export class GoogleAdsClient {
         !(options as ClientOptionsNoToken).refresh_token
       ) {
         throw new Error(
-          `Missing required keys in options, expected "client_id", "client_secret", "client_secret"`
+          `Missing required keys in options, expected "client_id", "client_secret", "refresh_token"`
         );
       }
     }
