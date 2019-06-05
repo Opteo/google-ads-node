@@ -101,4 +101,28 @@ clean:
 	rm -rf $(OUT_DIR)/*
 	mkdir -p $(OUT_DIR)
 
-.PHONY: protos enums
+minify:
+	echo "compressing protobufjs definitions";
+	uglifyjs src/protos/compiled-resources.js -o src/protos/compiled-resources.js --compress
+
+	for file in $(OUT_DIR)/google/ads/googleads/$(ADS_VERSION)/**/*.js; do \
+		echo "compressing $$(basename $$file)"; \
+		uglifyjs $$file -o $$file --compress; \
+	done; \
+
+	for file in $(OUT_DIR)/google/**/*.js; do \
+		echo "compressing $$(basename $$file)"; \
+		uglifyjs $$file -o $$file --compress; \
+	done; \
+
+	for file in $(OUT_DIR)/google/api/experimental/*.js; do \
+		echo "compressing $$(basename $$file)"; \
+		uglifyjs $$file -o $$file --compress; \
+	done; \
+
+	echo "removing empty files";
+	find src/protos/ -size 0 -delete
+
+	echo "finished compressing protos";
+
+.PHONY: protos enums minify
