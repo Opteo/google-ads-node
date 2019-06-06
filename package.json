@@ -1,6 +1,6 @@
 {
   "name": "google-ads-node",
-  "version": "1.12.0",
+  "version": "1.12.1",
   "description": "Google Ads gRPC Client Library for Node",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
@@ -13,7 +13,7 @@
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
     "test": "run-s build test:*",
-    "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --debug-check",
+    "testwasd:lint": "tslint --project . && prettier \"src/**/*.ts\" --debug-check",
     "test:unit": "nyc jest --coverage",
     "watch": "run-s clean build && run-p \"build:main -- -w\" \"copy-protos\" \"test:unit -- --watch --runInBand\"",
     "version": "standard-version",
