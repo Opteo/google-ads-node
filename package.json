@@ -13,7 +13,7 @@
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
     "test": "run-s build test:*",
-    "testwasd:lint": "tslint --project . && prettier \"src/**/*.ts\" --debug-check",
+    "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --debug-check",
     "test:unit": "nyc jest --coverage",
     "watch": "run-s clean build && run-p \"build:main -- -w\" \"copy-protos\" \"test:unit -- --watch --runInBand\"",
     "version": "standard-version",
