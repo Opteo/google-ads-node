@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.12.2"></a>
+## [1.12.2](https://github.com/opteo/google-ads-node/compare/v1.12.1...v1.12.2) (2019-06-14)
+
+
+### Bug Fixes
+
+* **types:** Fixed fields with numbers such as headline_part1 ([515eb6b](https://github.com/opteo/google-ads-node/commit/515eb6b))
+
+
+
 <a name="1.12.1"></a>
 ## [1.12.1](https://github.com/opteo/google-ads-node/compare/v1.12.0...v1.12.1) (2019-06-06)
 
