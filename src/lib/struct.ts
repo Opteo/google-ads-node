@@ -42,35 +42,35 @@ export const TextAdInfo = {
   headline: string,
 
   // @ts-ignore
-  description_1: string,
+  description1: string,
 
   // @ts-ignore
-  description_2: string
+  description2: string
 };
 
 /* .google.ads.googleads.v1.common.ExpandedTextAdInfo */
 // @ts-ignore
 export const ExpandedTextAdInfo = {
   // @ts-ignore
-  headline_part_1: string,
+  headline_part1: string,
 
   // @ts-ignore
-  headline_part_2: string,
+  headline_part2: string,
 
   // @ts-ignore
-  headline_part_3: string,
+  headline_part3: string,
 
   // @ts-ignore
   description: string,
 
   // @ts-ignore
-  description_2: string,
+  description2: string,
 
   // @ts-ignore
-  path_1: string,
+  path1: string,
 
   // @ts-ignore
-  path_2: string
+  path2: string
 };
 
 /* .google.ads.googleads.v1.common.CallOnlyAdInfo */
@@ -86,16 +86,16 @@ export const CallOnlyAdInfo = {
   business_name: string,
 
   // @ts-ignore
-  headline_1: string,
+  headline1: string,
 
   // @ts-ignore
-  headline_2: string,
+  headline2: string,
 
   // @ts-ignore
-  description_1: string,
+  description1: string,
 
   // @ts-ignore
-  description_2: string,
+  description2: string,
 
   // @ts-ignore
   call_tracked: boolean,
@@ -313,10 +313,10 @@ export const ResponsiveSearchAdInfo = {
   descriptions: AdTextAsset,
 
   // @ts-ignore
-  path_1: string,
+  path1: string,
 
   // @ts-ignore
-  path_2: string
+  path2: string
 };
 
 /* .google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo */
@@ -419,10 +419,10 @@ export const LegacyAppInstallAdInfo = {
   headline: string,
 
   // @ts-ignore
-  description_1: string,
+  description1: string,
 
   // @ts-ignore
-  description_2: string
+  description2: string
 };
 
 /* .google.ads.googleads.v1.common.ResponsiveDisplayAdInfo */
@@ -1079,7 +1079,7 @@ export const AddressInfo = {
   street_address: string,
 
   // @ts-ignore
-  street_address_2: string,
+  street_address2: string,
 
   // @ts-ignore
   city_name: string
@@ -1334,10 +1334,10 @@ export const LocationFeedItem = {
   business_name: string,
 
   // @ts-ignore
-  address_line_1: string,
+  address_line1: string,
 
   // @ts-ignore
-  address_line_2: string,
+  address_line2: string,
 
   // @ts-ignore
   city: string,
@@ -1362,10 +1362,10 @@ export const AffiliateLocationFeedItem = {
   business_name: string,
 
   // @ts-ignore
-  address_line_1: string,
+  address_line1: string,
 
   // @ts-ignore
-  address_line_2: string,
+  address_line2: string,
 
   // @ts-ignore
   city: string,
@@ -1518,10 +1518,10 @@ export const SitelinkFeedItem = {
   link_text: string,
 
   // @ts-ignore
-  line_1: string,
+  line1: string,
 
   // @ts-ignore
-  line_2: string,
+  line2: string,
 
   // @ts-ignore
   final_urls: string,
@@ -2209,19 +2209,19 @@ export const Segments = {
   product_aggregator_id: number,
 
   // @ts-ignore
-  product_bidding_category_level_1: string,
+  product_bidding_category_level1: string,
 
   // @ts-ignore
-  product_bidding_category_level_2: string,
+  product_bidding_category_level2: string,
 
   // @ts-ignore
-  product_bidding_category_level_3: string,
+  product_bidding_category_level3: string,
 
   // @ts-ignore
-  product_bidding_category_level_4: string,
+  product_bidding_category_level4: string,
 
   // @ts-ignore
-  product_bidding_category_level_5: string,
+  product_bidding_category_level5: string,
 
   // @ts-ignore
   product_brand: string,
@@ -2239,19 +2239,19 @@ export const Segments = {
   product_country: string,
 
   // @ts-ignore
-  product_custom_attribute_0: string,
+  product_custom_attribute0: string,
 
   // @ts-ignore
-  product_custom_attribute_1: string,
+  product_custom_attribute1: string,
 
   // @ts-ignore
-  product_custom_attribute_2: string,
+  product_custom_attribute2: string,
 
   // @ts-ignore
-  product_custom_attribute_3: string,
+  product_custom_attribute3: string,
 
   // @ts-ignore
-  product_custom_attribute_4: string,
+  product_custom_attribute4: string,
 
   // @ts-ignore
   product_item_id: string,
@@ -2269,19 +2269,19 @@ export const Segments = {
   product_title: string,
 
   // @ts-ignore
-  product_type_l_1: string,
+  product_type_l1: string,
 
   // @ts-ignore
-  product_type_l_2: string,
+  product_type_l2: string,
 
   // @ts-ignore
-  product_type_l_3: string,
+  product_type_l3: string,
 
   // @ts-ignore
-  product_type_l_4: string,
+  product_type_l4: string,
 
   // @ts-ignore
-  product_type_l_5: string,
+  product_type_l5: string,
 
   // @ts-ignore
   quarter: string,

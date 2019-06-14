@@ -52,6 +52,10 @@ types:
 	node ./scripts/generate-structs.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_ENUM_STRUCT)
 	cp ./scripts/$(OUT_COMPILED_RESOURCES) ./src/protos/$(OUT_COMPILED_RESOURCES)
 	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
+	prettier --write $(OUT_STATIC_TS_ENUMS)
+	prettier --write $(OUT_STATIC_TS_RESOURCES)
+	prettier --write $(OUT_STATIC_TS_ENUM_MAPPING)
+	prettier --write $(OUT_STATIC_TS_ENUM_STRUCT)
 
 fields:
 	yarn build

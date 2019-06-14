@@ -24,19 +24,19 @@ export interface AdMediaBundleAsset {
 /* .google.ads.googleads.v1.common.TextAdInfo */
 export interface TextAdInfo {
   headline?: string;
-  description_1?: string;
-  description_2?: string;
+  description1?: string;
+  description2?: string;
 }
 
 /* .google.ads.googleads.v1.common.ExpandedTextAdInfo */
 export interface ExpandedTextAdInfo {
-  headline_part_1?: string;
-  headline_part_2?: string;
-  headline_part_3?: string;
+  headline_part1?: string;
+  headline_part2?: string;
+  headline_part3?: string;
   description?: string;
-  description_2?: string;
-  path_1?: string;
-  path_2?: string;
+  description2?: string;
+  path1?: string;
+  path2?: string;
 }
 
 /* .google.ads.googleads.v1.common.CallOnlyAdInfo */
@@ -44,10 +44,10 @@ export interface CallOnlyAdInfo {
   country_code?: string;
   phone_number?: string;
   business_name?: string;
-  headline_1?: string;
-  headline_2?: string;
-  description_1?: string;
-  description_2?: string;
+  headline1?: string;
+  headline2?: string;
+  description1?: string;
+  description2?: string;
   call_tracked?: boolean;
   disable_call_conversion?: boolean;
   phone_number_verification_url?: string;
@@ -160,8 +160,8 @@ export interface VideoAdInfo {
 export interface ResponsiveSearchAdInfo {
   headlines?: AdTextAsset[];
   descriptions?: AdTextAsset[];
-  path_1?: string;
-  path_2?: string;
+  path1?: string;
+  path2?: string;
 }
 
 /* .google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo */
@@ -206,8 +206,8 @@ export interface LegacyAppInstallAdInfo {
   app_id?: string;
   app_store?: LegacyAppInstallAdAppStore;
   headline?: string;
-  description_1?: string;
-  description_2?: string;
+  description1?: string;
+  description2?: string;
 }
 
 /* .google.ads.googleads.v1.common.ResponsiveDisplayAdInfo */
@@ -588,7 +588,7 @@ export interface AddressInfo {
   country_code?: string;
   province_name?: string;
   street_address?: string;
-  street_address_2?: string;
+  street_address2?: string;
   city_name?: string;
 }
 
@@ -737,8 +737,8 @@ export interface CalloutFeedItem {
 /* .google.ads.googleads.v1.common.LocationFeedItem */
 export interface LocationFeedItem {
   business_name?: string;
-  address_line_1?: string;
-  address_line_2?: string;
+  address_line1?: string;
+  address_line2?: string;
   city?: string;
   province?: string;
   postal_code?: string;
@@ -749,8 +749,8 @@ export interface LocationFeedItem {
 /* .google.ads.googleads.v1.common.AffiliateLocationFeedItem */
 export interface AffiliateLocationFeedItem {
   business_name?: string;
-  address_line_1?: string;
-  address_line_2?: string;
+  address_line1?: string;
+  address_line2?: string;
   city?: string;
   province?: string;
   postal_code?: string;
@@ -817,8 +817,8 @@ export interface StructuredSnippetFeedItem {
 /* .google.ads.googleads.v1.common.SitelinkFeedItem */
 export interface SitelinkFeedItem {
   link_text?: string;
-  line_1?: string;
-  line_2?: string;
+  line1?: string;
+  line2?: string;
   final_urls?: string[];
   final_mobile_urls?: string[];
   tracking_url_template?: string;
@@ -1120,31 +1120,31 @@ export interface Segments {
   partner_hotel_id?: string;
   placeholder_type?: PlaceholderType;
   product_aggregator_id?: number;
-  product_bidding_category_level_1?: string;
-  product_bidding_category_level_2?: string;
-  product_bidding_category_level_3?: string;
-  product_bidding_category_level_4?: string;
-  product_bidding_category_level_5?: string;
+  product_bidding_category_level1?: string;
+  product_bidding_category_level2?: string;
+  product_bidding_category_level3?: string;
+  product_bidding_category_level4?: string;
+  product_bidding_category_level5?: string;
   product_brand?: string;
   product_channel?: ProductChannel;
   product_channel_exclusivity?: ProductChannelExclusivity;
   product_condition?: ProductCondition;
   product_country?: string;
-  product_custom_attribute_0?: string;
-  product_custom_attribute_1?: string;
-  product_custom_attribute_2?: string;
-  product_custom_attribute_3?: string;
-  product_custom_attribute_4?: string;
+  product_custom_attribute0?: string;
+  product_custom_attribute1?: string;
+  product_custom_attribute2?: string;
+  product_custom_attribute3?: string;
+  product_custom_attribute4?: string;
   product_item_id?: string;
   product_language?: string;
   product_merchant_id?: number;
   product_store_id?: string;
   product_title?: string;
-  product_type_l_1?: string;
-  product_type_l_2?: string;
-  product_type_l_3?: string;
-  product_type_l_4?: string;
-  product_type_l_5?: string;
+  product_type_l1?: string;
+  product_type_l2?: string;
+  product_type_l3?: string;
+  product_type_l4?: string;
+  product_type_l5?: string;
   quarter?: string;
   search_engine_results_page_type?: SearchEngineResultsPageType;
   search_term_match_type?: SearchTermMatchType;

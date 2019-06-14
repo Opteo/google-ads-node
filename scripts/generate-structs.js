@@ -3,6 +3,15 @@ const get = require("lodash.get");
 const pb = require("protobufjs");
 const snakeCase = require("lodash.snakecase");
 
+function snakeCaseGads(str) {
+  const snaked = snakeCase(str);
+  const last_character = snaked[snaked.length - 1];
+  if (!isNaN(+last_character)) {
+    return snaked.slice(0, snaked.length - 2) + last_character;
+  }
+  return snaked;
+}
+
 const COMPILED_ENUMS_FILEPATH = process.argv[2];
 const API_VERSION = process.argv[3];
 const OUT_FILE = process.argv[4];
@@ -32,7 +41,7 @@ const pbToTsMapping = {
   bytes: "string",
   string: "string",
   "google.protobuf.StringValue": "string",
-  "google.protobuf.BytesValue": "string",
+  "google.protobuf.BytesValue": "string"
 };
 
 const enumImports = new Set();
@@ -90,7 +99,7 @@ function buildUnionType(entity) {
     const field = entity.fieldsArray[i];
     const isFinalField = i === entity.fieldsArray.length - 1;
 
-    const key = `${snakeCase(field.name)}`;
+    const key = `${snakeCaseGads(field.name)}`;
     const translated = translateType(field, field.name, entity.parent);
 
     if (translated.isEnum) {
@@ -116,7 +125,7 @@ function buildInterfaceType(entity) {
   for (const f in entity.fields) {
     const field = entity.fields[f];
 
-    let key = snakeCase(field.name);
+    let key = snakeCaseGads(field.name);
     let translated = translateType(field, f, entity.parent);
     let type = translated.type;
 
@@ -138,22 +147,22 @@ function buildEntityWithEnumsOnly(entity) {
     return;
   }
 
-  let entityWithEnumsOnly = `\n/* ${entity.fullName} */\nexport const ${snakeCase(
-    entity.name
-  )} = {\n`;
+  let entityWithEnumsOnly = `\n/* ${
+    entity.fullName
+  } */\nexport const ${snakeCaseGads(entity.name)} = {\n`;
 
   for (const f in entity.fields) {
     const field = entity.fields[f];
 
-    let key = snakeCase(field.name);
+    let key = snakeCaseGads(field.name);
     let translated = translateType(field, f, entity.parent);
     let type = translated.type;
 
     if (scopedInterfaces.includes(type)) {
-      if (key === snakeCase(type)) {
+      if (key === snakeCaseGads(type)) {
         entityWithEnumsOnly += `${key},\n`;
       } else {
-        entityWithEnumsOnly += `${key}: ${snakeCase(type)},\n`;
+        entityWithEnumsOnly += `${key}: ${snakeCaseGads(type)},\n`;
       }
       continue;
     }
@@ -211,8 +220,10 @@ function translateType(field, key, parent) {
       const translated = translateType({ type: item.type }, key, parent);
       type = translated.type;
       //   }
-      let itemKey = snakeCase(item.name);
-      objType += `${itemKey}: ${translated.isEnum ? `"enum_${type}"` : type},\n`;
+      let itemKey = snakeCaseGads(item.name);
+      objType += `${itemKey}: ${
+        translated.isEnum ? `"enum_${type}"` : type
+      },\n`;
     }
     return { type: `{${objType}}`, isEnum: false };
   }

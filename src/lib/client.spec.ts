@@ -133,17 +133,17 @@ test("correctly builds a complex and deeply nested grpc resource", () => {
       type: 3,
       name: "best ad ever",
       expanded_text_ad: {
-        headline_part_1: "Cruise to Mars #%d",
-        headline_part_2: "Best Space Cruise Line",
+        headline_part1: "Cruise to Mars #%d",
+        headline_part2: "Best Space Cruise Line",
         description: "Buy your tickets now!",
-        path_1: "all-inclusive",
-        path_2: "deals",
+        path1: "all-inclusive",
+        path2: "deals"
       },
       url_custom_parameters: [
         { key: "season", value: "easter123" },
-        { key: "promocode", value: "nj123" },
-      ],
-    },
+        { key: "promocode", value: "nj123" }
+      ]
+    }
   };
 
   const protobuf = client.buildResource("AdGroupAd", ad) as AdGroupAd;
