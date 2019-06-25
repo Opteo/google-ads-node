@@ -98,7 +98,7 @@ async function example() {
     });
 
   // 5. Inspect the data!
-  for (const row of res.getResultsList()) {
+  for (const row of result.getResultsList()) {
     const campaign: Campaign = row.getCampaign() as Campaign;
     const metrics: Metrics = row.getMetrics() as Metrics;
 
