@@ -111,6 +111,58 @@ test("proto object result can be parsed for deeply nested entities", () => {
   ]);
 });
 
+// const log = (obj: any) => {
+//   console.log(require("util").inspect(obj, false, null));
+// };
+
+test.only("proto object result can be parsed for nested entities with arrays", async () => {
+  const fieldMask = {
+    pathsList: [
+      "ad_group_ad.ad.final_urls",
+      "ad_group.targeting_setting.target_restrictions",
+      "ad_group.name",
+    ],
+  };
+
+  // const parsedResultsWithFieldMask = formatCallResults(
+  //   fakeAdGroupResponse,
+  //   fieldMask
+  // );
+  const parsedResultsWithoutFieldMask = formatCallResults(fakeAdGroupResponse, undefined);
+
+  console.log(require("util").inspect(parsedResultsWithoutFieldMask, false, null));
+  console.log("====================");
+  console.log("====================");
+  console.log("====================");
+  console.log("====================");
+
+  const expected = [
+    {
+      adGroupAd: {
+        resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+        ad: { finalUrls: ["http://opteo.co/lp/ad-words-tool"] },
+      },
+      adGroup: {
+        resourceName: "customers/3827277046/adGroups/37706041185",
+        targetingSetting: {
+          targetRestrictions: [
+            { targetingDimension: 3, bidOnly: false },
+            { targetingDimension: 4, bidOnly: false },
+            { targetingDimension: 5, bidOnly: true },
+            { targetingDimension: 6, bidOnly: true },
+            { targetingDimension: 7, bidOnly: false },
+            { targetingDimension: 8, bidOnly: false },
+          ],
+        },
+        name: "ad words tool [MB]",
+      },
+    },
+  ];
+
+  // expect(parsedResultsWithFieldMask).toEqual(expected);
+  expect(parsedResultsWithoutFieldMask).toEqual(expected);
+});
+
 test("proto object result can be parsed when field mask is not present", () => {
   const parsedResults = formatCallResults([JSON.parse(fakeCampaignResponse)], undefined);
 
@@ -482,3 +534,177 @@ const fakeKeywordResponse = `
       }
     }
   ]`;
+
+const fakeAdGroupResponse = [
+  {
+    accountBudget: undefined,
+    accountBudgetProposal: undefined,
+    adGroup: {
+      resourceName: "customers/3827277046/adGroups/37706041185",
+      id: undefined,
+      name: { value: "ad words tool [MB]" },
+      status: 0,
+      type: 0,
+      adRotationMode: 0,
+      baseAdGroup: undefined,
+      trackingUrlTemplate: undefined,
+      urlCustomParametersList: [],
+      campaign: undefined,
+      cpcBidMicros: undefined,
+      cpmBidMicros: undefined,
+      targetCpaMicros: undefined,
+      cpvBidMicros: undefined,
+      targetCpmMicros: undefined,
+      targetRoas: undefined,
+      percentCpcBidMicros: undefined,
+      explorerAutoOptimizerSetting: undefined,
+      displayCustomBidDimension: 0,
+      finalUrlSuffix: undefined,
+      targetingSetting: {
+        targetRestrictionsList: [
+          { targetingDimension: 3, bidOnly: { value: false } },
+          { targetingDimension: 4, bidOnly: { value: false } },
+          { targetingDimension: 5, bidOnly: { value: true } },
+          { targetingDimension: 6, bidOnly: { value: true } },
+          { targetingDimension: 7, bidOnly: { value: false } },
+          { targetingDimension: 8, bidOnly: { value: false } },
+        ],
+      },
+      effectiveTargetCpaMicros: undefined,
+      effectiveTargetCpaSource: 0,
+      effectiveTargetRoas: undefined,
+      effectiveTargetRoasSource: 0,
+    },
+    adGroupAd: {
+      resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+      status: 0,
+      adGroup: undefined,
+      ad: {
+        id: undefined,
+        finalUrlsList: [{ value: "http://opteo.co/lp/ad-words-tool" }],
+        finalAppUrlsList: [],
+        finalMobileUrlsList: [],
+        trackingUrlTemplate: undefined,
+        urlCustomParametersList: [],
+        displayUrl: undefined,
+        type: 0,
+        addedByGoogleAds: undefined,
+        devicePreference: 0,
+        urlCollectionsList: [],
+        name: undefined,
+        systemManagedResourceSource: 0,
+        textAd: undefined,
+        expandedTextAd: undefined,
+        callOnlyAd: undefined,
+        expandedDynamicSearchAd: undefined,
+        hotelAd: undefined,
+        shoppingSmartAd: undefined,
+        shoppingProductAd: undefined,
+        gmailAd: undefined,
+        imageAd: undefined,
+        videoAd: undefined,
+        responsiveSearchAd: undefined,
+        legacyResponsiveDisplayAd: undefined,
+        appAd: undefined,
+        legacyAppInstallAd: undefined,
+        responsiveDisplayAd: undefined,
+        displayUploadAd: undefined,
+        appEngagementAd: undefined,
+        shoppingComparisonListingAd: undefined,
+      },
+      policySummary: undefined,
+      adStrength: 0,
+    },
+    adGroupAdLabel: undefined,
+    adGroupAudienceView: undefined,
+    adGroupBidModifier: undefined,
+    adGroupCriterion: undefined,
+    adGroupCriterionLabel: undefined,
+    adGroupCriterionSimulation: undefined,
+    adGroupExtensionSetting: undefined,
+    adGroupFeed: undefined,
+    adGroupLabel: undefined,
+    adGroupSimulation: undefined,
+    adParameter: undefined,
+    ageRangeView: undefined,
+    adScheduleView: undefined,
+    domainCategory: undefined,
+    asset: undefined,
+    biddingStrategy: undefined,
+    billingSetup: undefined,
+    campaignBudget: undefined,
+    campaign: undefined,
+    campaignAudienceView: undefined,
+    campaignBidModifier: undefined,
+    campaignCriterion: undefined,
+    campaignCriterionSimulation: undefined,
+    campaignDraft: undefined,
+    campaignExperiment: undefined,
+    campaignExtensionSetting: undefined,
+    campaignFeed: undefined,
+    campaignLabel: undefined,
+    campaignSharedSet: undefined,
+    carrierConstant: undefined,
+    changeStatus: undefined,
+    conversionAction: undefined,
+    clickView: undefined,
+    customInterest: undefined,
+    customer: undefined,
+    customerManagerLink: undefined,
+    customerClientLink: undefined,
+    customerClient: undefined,
+    customerExtensionSetting: undefined,
+    customerFeed: undefined,
+    customerLabel: undefined,
+    customerNegativeCriterion: undefined,
+    detailPlacementView: undefined,
+    displayKeywordView: undefined,
+    dynamicSearchAdsSearchTermView: undefined,
+    expandedLandingPageView: undefined,
+    extensionFeedItem: undefined,
+    feed: undefined,
+    feedItem: undefined,
+    feedItemTarget: undefined,
+    feedMapping: undefined,
+    feedPlaceholderView: undefined,
+    genderView: undefined,
+    geoTargetConstant: undefined,
+    geographicView: undefined,
+    groupPlacementView: undefined,
+    hotelGroupView: undefined,
+    hotelPerformanceView: undefined,
+    keywordView: undefined,
+    keywordPlan: undefined,
+    keywordPlanCampaign: undefined,
+    keywordPlanNegativeKeyword: undefined,
+    keywordPlanAdGroup: undefined,
+    keywordPlanKeyword: undefined,
+    label: undefined,
+    landingPageView: undefined,
+    languageConstant: undefined,
+    locationView: undefined,
+    managedPlacementView: undefined,
+    mediaFile: undefined,
+    mobileAppCategoryConstant: undefined,
+    mobileDeviceConstant: undefined,
+    mutateJob: undefined,
+    operatingSystemVersionConstant: undefined,
+    paidOrganicSearchTermView: undefined,
+    parentalStatusView: undefined,
+    productBiddingCategoryConstant: undefined,
+    productGroupView: undefined,
+    recommendation: undefined,
+    searchTermView: undefined,
+    sharedCriterion: undefined,
+    sharedSet: undefined,
+    shoppingPerformanceView: undefined,
+    topicView: undefined,
+    userInterest: undefined,
+    userList: undefined,
+    remarketingAction: undefined,
+    topicConstant: undefined,
+    video: undefined,
+    metrics: undefined,
+    segments: undefined,
+  },
+];

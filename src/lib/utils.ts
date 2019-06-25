@@ -4,6 +4,7 @@ import camelCase from "lodash.camelcase";
 import get from "lodash.get";
 
 import * as structs from "./struct";
+import { parse } from "protobufjs";
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -39,7 +40,8 @@ interface FieldMask {
 
 export function formatCallResults(resultsList: any[], fieldMask: FieldMask | undefined) {
   const parsedResults: any[] = [];
-
+  // console.log(require("util").inspect(resultsList, false, null));
+  // console.log(resultsList);
   if (fieldMask) {
     const { pathsList } = fieldMask;
     for (const result of resultsList) {
@@ -133,8 +135,9 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
       displayKey = key.split("List")[0];
     }
 
-    const entity = data[key];
+    let entity = data[key];
     const isObject = typeof entity === "object";
+    const isArray = Array.isArray(entity);
     const entityExists = parent.hasOwnProperty(key);
     const isValue = isObject ? entity.hasOwnProperty("value") : false;
     const keys = isObject ? Object.keys(entity) : [];
@@ -146,7 +149,16 @@ function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
       }
     }
 
+    if (isArray) {
+      console.log(displayKey, "is an array and its value is ", entity);
+      for (const item of entity) {
+        parseNestedEntitiesNoPath(item, {});
+      }
+      entity = Object.values(entity);
+      console.log("sometig", entity);
+    }
     if (isObject && !isValue && keys.length > 0) {
+      console.log("parseNestedEntitiesNoPath", entity, parent[displayKey]);
       parseNestedEntitiesNoPath(entity, parent[displayKey]);
     } else {
       const value = isValue ? entity.value : entity;
@@ -200,6 +212,12 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
         } else {
           continue;
         }
+      }
+
+      if (Array.isArray(value)) {
+        value = value.map((item: any) => {
+          return parseNestedEntitiesNoPath({ item }).item;
+        });
       }
 
       parent[displayKey] = isObject ? value.value : value;
