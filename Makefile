@@ -1,5 +1,5 @@
 # Google Ads API version
-ADS_VERSION=v1
+ADS_VERSION=v2
 
 # Proto plugin paths
 PROTOC_GEN_TS_PATH=./node_modules/.bin/protoc-gen-ts
@@ -60,6 +60,7 @@ types:
 fields:
 	yarn build
 	node ./scripts/generate-fields.js
+	prettier --write ./src/lib/fields.ts
 
 # TODO: These proto compilation steps could be cleaned up and moved to a bash script
 compile-protos:
@@ -128,5 +129,14 @@ minify:
 	find src/protos/ -size 0 -delete
 
 	echo "finished compressing protos";
+
+api-diff:
+	# Make sure to specify the previous version here
+	rm -rf diff/ && mkdir diff/
+	# Previous version
+	cd $(PROTO_ROOT_DIR)google/ads/googleads/v1/ && ls **/*.proto > ../../../../../diff/prev-protos.txt
+	# Current version
+	cd $(PROTO_ROOT_DIR)google/ads/googleads/$(ADS_VERSION)/ && ls **/*.proto > ../../../../../diff/current-protos.txt
+	echo "Generated API version diffs"
 
 .PHONY: protos enums minify

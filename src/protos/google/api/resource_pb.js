@@ -1,1 +1,492 @@
-var jspb=require("google-protobuf"),goog=jspb,global=Function("return this")(),google_protobuf_descriptor_pb=require("google-protobuf/google/protobuf/descriptor_pb.js");goog.exportSymbol("proto.google.api.ResourceDescriptor",null,global),goog.exportSymbol("proto.google.api.ResourceDescriptor.History",null,global),goog.exportSymbol("proto.google.api.ResourceReference",null,global),goog.exportSymbol("proto.google.api.resource",null,global),goog.exportSymbol("proto.google.api.resourceReference",null,global),proto.google.api.ResourceDescriptor=function(opt_data){jspb.Message.initialize(this,opt_data,0,-1,proto.google.api.ResourceDescriptor.repeatedFields_,null)},goog.inherits(proto.google.api.ResourceDescriptor,jspb.Message),goog.DEBUG&&!COMPILED&&(proto.google.api.ResourceDescriptor.displayName="proto.google.api.ResourceDescriptor"),proto.google.api.ResourceDescriptor.repeatedFields_=[2],jspb.Message.GENERATE_TO_OBJECT&&(proto.google.api.ResourceDescriptor.prototype.toObject=function(opt_includeInstance){return proto.google.api.ResourceDescriptor.toObject(opt_includeInstance,this)},proto.google.api.ResourceDescriptor.toObject=function(includeInstance,msg){var obj={type:jspb.Message.getFieldWithDefault(msg,1,""),patternList:jspb.Message.getRepeatedField(msg,2),nameField:jspb.Message.getFieldWithDefault(msg,3,""),history:jspb.Message.getFieldWithDefault(msg,4,0)};return includeInstance&&(obj.$jspbMessageInstance=msg),obj}),proto.google.api.ResourceDescriptor.deserializeBinary=function(bytes){var reader=new jspb.BinaryReader(bytes),msg=new proto.google.api.ResourceDescriptor;return proto.google.api.ResourceDescriptor.deserializeBinaryFromReader(msg,reader)},proto.google.api.ResourceDescriptor.deserializeBinaryFromReader=function(msg,reader){for(;reader.nextField()&&!reader.isEndGroup();)switch(reader.getFieldNumber()){case 1:var value=reader.readString();msg.setType(value);break;case 2:value=reader.readString(),msg.addPattern(value);break;case 3:value=reader.readString(),msg.setNameField(value);break;case 4:value=reader.readEnum(),msg.setHistory(value);break;default:reader.skipField()}return msg},proto.google.api.ResourceDescriptor.prototype.serializeBinary=function(){var writer=new jspb.BinaryWriter;return proto.google.api.ResourceDescriptor.serializeBinaryToWriter(this,writer),writer.getResultBuffer()},proto.google.api.ResourceDescriptor.serializeBinaryToWriter=function(message,writer){var f=void 0;0<(f=message.getType()).length&&writer.writeString(1,f),0<(f=message.getPatternList()).length&&writer.writeRepeatedString(2,f),0<(f=message.getNameField()).length&&writer.writeString(3,f),0!==(f=message.getHistory())&&writer.writeEnum(4,f)},proto.google.api.ResourceDescriptor.History={HISTORY_UNSPECIFIED:0,ORIGINALLY_SINGLE_PATTERN:1,FUTURE_MULTI_PATTERN:2},proto.google.api.ResourceDescriptor.prototype.getType=function(){return jspb.Message.getFieldWithDefault(this,1,"")},proto.google.api.ResourceDescriptor.prototype.setType=function(value){jspb.Message.setProto3StringField(this,1,value)},proto.google.api.ResourceDescriptor.prototype.getPatternList=function(){return jspb.Message.getRepeatedField(this,2)},proto.google.api.ResourceDescriptor.prototype.setPatternList=function(value){jspb.Message.setField(this,2,value||[])},proto.google.api.ResourceDescriptor.prototype.addPattern=function(value,opt_index){jspb.Message.addToRepeatedField(this,2,value,opt_index)},proto.google.api.ResourceDescriptor.prototype.clearPatternList=function(){this.setPatternList([])},proto.google.api.ResourceDescriptor.prototype.getNameField=function(){return jspb.Message.getFieldWithDefault(this,3,"")},proto.google.api.ResourceDescriptor.prototype.setNameField=function(value){jspb.Message.setProto3StringField(this,3,value)},proto.google.api.ResourceDescriptor.prototype.getHistory=function(){return jspb.Message.getFieldWithDefault(this,4,0)},proto.google.api.ResourceDescriptor.prototype.setHistory=function(value){jspb.Message.setProto3EnumField(this,4,value)},proto.google.api.ResourceReference=function(opt_data){jspb.Message.initialize(this,opt_data,0,-1,null,null)},goog.inherits(proto.google.api.ResourceReference,jspb.Message),goog.DEBUG&&!COMPILED&&(proto.google.api.ResourceReference.displayName="proto.google.api.ResourceReference"),jspb.Message.GENERATE_TO_OBJECT&&(proto.google.api.ResourceReference.prototype.toObject=function(opt_includeInstance){return proto.google.api.ResourceReference.toObject(opt_includeInstance,this)},proto.google.api.ResourceReference.toObject=function(includeInstance,msg){var obj={type:jspb.Message.getFieldWithDefault(msg,1,""),childType:jspb.Message.getFieldWithDefault(msg,2,"")};return includeInstance&&(obj.$jspbMessageInstance=msg),obj}),proto.google.api.ResourceReference.deserializeBinary=function(bytes){var reader=new jspb.BinaryReader(bytes),msg=new proto.google.api.ResourceReference;return proto.google.api.ResourceReference.deserializeBinaryFromReader(msg,reader)},proto.google.api.ResourceReference.deserializeBinaryFromReader=function(msg,reader){for(;reader.nextField()&&!reader.isEndGroup();)switch(reader.getFieldNumber()){case 1:var value=reader.readString();msg.setType(value);break;case 2:value=reader.readString(),msg.setChildType(value);break;default:reader.skipField()}return msg},proto.google.api.ResourceReference.prototype.serializeBinary=function(){var writer=new jspb.BinaryWriter;return proto.google.api.ResourceReference.serializeBinaryToWriter(this,writer),writer.getResultBuffer()},proto.google.api.ResourceReference.serializeBinaryToWriter=function(message,writer){var f=void 0;0<(f=message.getType()).length&&writer.writeString(1,f),0<(f=message.getChildType()).length&&writer.writeString(2,f)},proto.google.api.ResourceReference.prototype.getType=function(){return jspb.Message.getFieldWithDefault(this,1,"")},proto.google.api.ResourceReference.prototype.setType=function(value){jspb.Message.setProto3StringField(this,1,value)},proto.google.api.ResourceReference.prototype.getChildType=function(){return jspb.Message.getFieldWithDefault(this,2,"")},proto.google.api.ResourceReference.prototype.setChildType=function(value){jspb.Message.setProto3StringField(this,2,value)},proto.google.api.resourceReference=new jspb.ExtensionFieldInfo(1055,{resourceReference:0},proto.google.api.ResourceReference,proto.google.api.ResourceReference.toObject,0),google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[1055]=new jspb.ExtensionFieldBinaryInfo(proto.google.api.resourceReference,jspb.BinaryReader.prototype.readMessage,jspb.BinaryWriter.prototype.writeMessage,proto.google.api.ResourceReference.serializeBinaryToWriter,proto.google.api.ResourceReference.deserializeBinaryFromReader,!1),google_protobuf_descriptor_pb.FieldOptions.extensions[1055]=proto.google.api.resourceReference,proto.google.api.resource=new jspb.ExtensionFieldInfo(1053,{resource:0},proto.google.api.ResourceDescriptor,proto.google.api.ResourceDescriptor.toObject,0),google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[1053]=new jspb.ExtensionFieldBinaryInfo(proto.google.api.resource,jspb.BinaryReader.prototype.readMessage,jspb.BinaryWriter.prototype.writeMessage,proto.google.api.ResourceDescriptor.serializeBinaryToWriter,proto.google.api.ResourceDescriptor.deserializeBinaryFromReader,!1),google_protobuf_descriptor_pb.MessageOptions.extensions[1053]=proto.google.api.resource,goog.object.extend(exports,proto.google.api);
+/**
+ * @fileoverview
+ * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
+ * @public
+ */
+// GENERATED CODE -- DO NOT EDIT!
+
+var jspb = require('google-protobuf');
+var goog = jspb;
+var global = Function('return this')();
+
+var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
+goog.exportSymbol('proto.google.api.ResourceDescriptor', null, global);
+goog.exportSymbol('proto.google.api.ResourceDescriptor.History', null, global);
+goog.exportSymbol('proto.google.api.ResourceReference', null, global);
+goog.exportSymbol('proto.google.api.resource', null, global);
+goog.exportSymbol('proto.google.api.resourceReference', null, global);
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.api.ResourceDescriptor = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.google.api.ResourceDescriptor.repeatedFields_, null);
+};
+goog.inherits(proto.google.api.ResourceDescriptor, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.api.ResourceDescriptor.displayName = 'proto.google.api.ResourceDescriptor';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.google.api.ResourceDescriptor.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.api.ResourceDescriptor.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.api.ResourceDescriptor.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.api.ResourceDescriptor} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.api.ResourceDescriptor.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    patternList: jspb.Message.getRepeatedField(msg, 2),
+    nameField: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    history: jspb.Message.getFieldWithDefault(msg, 4, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.api.ResourceDescriptor}
+ */
+proto.google.api.ResourceDescriptor.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.api.ResourceDescriptor;
+  return proto.google.api.ResourceDescriptor.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.api.ResourceDescriptor} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.api.ResourceDescriptor}
+ */
+proto.google.api.ResourceDescriptor.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPattern(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNameField(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.google.api.ResourceDescriptor.History} */ (reader.readEnum());
+      msg.setHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.api.ResourceDescriptor.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.api.ResourceDescriptor.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.api.ResourceDescriptor} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.api.ResourceDescriptor.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getType();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPatternList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+  f = message.getNameField();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getHistory();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.google.api.ResourceDescriptor.History = {
+  HISTORY_UNSPECIFIED: 0,
+  ORIGINALLY_SINGLE_PATTERN: 1,
+  FUTURE_MULTI_PATTERN: 2
+};
+
+/**
+ * optional string type = 1;
+ * @return {string}
+ */
+proto.google.api.ResourceDescriptor.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.google.api.ResourceDescriptor.prototype.setType = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated string pattern = 2;
+ * @return {!Array<string>}
+ */
+proto.google.api.ResourceDescriptor.prototype.getPatternList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/** @param {!Array<string>} value */
+proto.google.api.ResourceDescriptor.prototype.setPatternList = function(value) {
+  jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.google.api.ResourceDescriptor.prototype.addPattern = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+proto.google.api.ResourceDescriptor.prototype.clearPatternList = function() {
+  this.setPatternList([]);
+};
+
+
+/**
+ * optional string name_field = 3;
+ * @return {string}
+ */
+proto.google.api.ResourceDescriptor.prototype.getNameField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.google.api.ResourceDescriptor.prototype.setNameField = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional History history = 4;
+ * @return {!proto.google.api.ResourceDescriptor.History}
+ */
+proto.google.api.ResourceDescriptor.prototype.getHistory = function() {
+  return /** @type {!proto.google.api.ResourceDescriptor.History} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/** @param {!proto.google.api.ResourceDescriptor.History} value */
+proto.google.api.ResourceDescriptor.prototype.setHistory = function(value) {
+  jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.google.api.ResourceReference = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.google.api.ResourceReference, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.google.api.ResourceReference.displayName = 'proto.google.api.ResourceReference';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.google.api.ResourceReference.prototype.toObject = function(opt_includeInstance) {
+  return proto.google.api.ResourceReference.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.google.api.ResourceReference} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.api.ResourceReference.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    childType: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.google.api.ResourceReference}
+ */
+proto.google.api.ResourceReference.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.google.api.ResourceReference;
+  return proto.google.api.ResourceReference.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.google.api.ResourceReference} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.google.api.ResourceReference}
+ */
+proto.google.api.ResourceReference.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setChildType(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.google.api.ResourceReference.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.google.api.ResourceReference.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.google.api.ResourceReference} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.google.api.ResourceReference.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getType();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getChildType();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string type = 1;
+ * @return {string}
+ */
+proto.google.api.ResourceReference.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.google.api.ResourceReference.prototype.setType = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string child_type = 2;
+ * @return {string}
+ */
+proto.google.api.ResourceReference.prototype.getChildType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.google.api.ResourceReference.prototype.setChildType = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * A tuple of {field number, class constructor} for the extension
+ * field named `resourceReference`.
+ * @type {!jspb.ExtensionFieldInfo<!proto.google.api.ResourceReference>}
+ */
+proto.google.api.resourceReference = new jspb.ExtensionFieldInfo(
+    1055,
+    {resourceReference: 0},
+    proto.google.api.ResourceReference,
+     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
+         proto.google.api.ResourceReference.toObject),
+    0);
+
+google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[1055] = new jspb.ExtensionFieldBinaryInfo(
+    proto.google.api.resourceReference,
+    jspb.BinaryReader.prototype.readMessage,
+    jspb.BinaryWriter.prototype.writeMessage,
+    proto.google.api.ResourceReference.serializeBinaryToWriter,
+    proto.google.api.ResourceReference.deserializeBinaryFromReader,
+    false);
+// This registers the extension field with the extended class, so that
+// toObject() will function correctly.
+google_protobuf_descriptor_pb.FieldOptions.extensions[1055] = proto.google.api.resourceReference;
+
+
+/**
+ * A tuple of {field number, class constructor} for the extension
+ * field named `resource`.
+ * @type {!jspb.ExtensionFieldInfo<!proto.google.api.ResourceDescriptor>}
+ */
+proto.google.api.resource = new jspb.ExtensionFieldInfo(
+    1053,
+    {resource: 0},
+    proto.google.api.ResourceDescriptor,
+     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
+         proto.google.api.ResourceDescriptor.toObject),
+    0);
+
+google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[1053] = new jspb.ExtensionFieldBinaryInfo(
+    proto.google.api.resource,
+    jspb.BinaryReader.prototype.readMessage,
+    jspb.BinaryWriter.prototype.writeMessage,
+    proto.google.api.ResourceDescriptor.serializeBinaryToWriter,
+    proto.google.api.ResourceDescriptor.deserializeBinaryFromReader,
+    false);
+// This registers the extension field with the extended class, so that
+// toObject() will function correctly.
+google_protobuf_descriptor_pb.MessageOptions.extensions[1053] = proto.google.api.resource;
+
+goog.object.extend(exports, proto.google.api);

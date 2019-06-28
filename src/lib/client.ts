@@ -16,7 +16,7 @@ import { promisifyServiceClient, convertToProtoFormat } from "./utils";
 // @ts-ignore
 import compiledResources from "../protos/compiled-resources.js";
 
-const DEFAULT_VERSION = "v1";
+const DEFAULT_VERSION = "v2";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 
 const PROTO_ROOT = `google.ads.googleads.${DEFAULT_VERSION}`;
@@ -92,9 +92,9 @@ export class GoogleAdsClient {
           Google Ads results can sometimes be quite big, so 4MB can be insufficient.
           Here, we set it to 1GB to essentially remove that limit.
         */
-        'grpc.max_send_message_length': 1024 * 1024 * 1024,
-        'grpc.max_receive_message_length': 1024 * 1024 * 1024
-      },
+        "grpc.max_send_message_length": 1024 * 1024 * 1024,
+        "grpc.max_receive_message_length": 1024 * 1024 * 1024,
+      }
     );
 
     /* Promisify gRPC service methods (callbacks are kept as well) */
