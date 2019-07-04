@@ -39,8 +39,7 @@ interface FieldMask {
 
 export function formatCallResults(resultsList: any[], fieldMask: FieldMask | undefined) {
   const parsedResults: any[] = [];
-  // console.log(require("util").inspect(resultsList, false, null));
-  // console.log(resultsList);
+
   if (fieldMask) {
     const { pathsList } = fieldMask;
     for (const result of resultsList) {

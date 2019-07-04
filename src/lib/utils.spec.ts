@@ -111,10 +111,6 @@ test("proto object result can be parsed for deeply nested entities", () => {
   ]);
 });
 
-// const log = (obj: any) => {
-//   console.log(require("util").inspect(obj, false, null));
-// };
-
 test("proto object result can be parsed for nested entities with arrays", async () => {
   const fieldMask = {
     pathsList: [
