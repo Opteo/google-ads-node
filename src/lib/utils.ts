@@ -138,7 +138,7 @@ function parseNestedEntitiesNoPath(data: any) {
       displayKey = key.split("List")[0];
     }
 
-    let entity = data[key];
+    const entity = data[key];
 
     const isObject = typeof entity === "object";
     const isUndefined = typeof entity === "undefined";
