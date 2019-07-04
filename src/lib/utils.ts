@@ -4,7 +4,6 @@ import camelCase from "lodash.camelcase";
 import get from "lodash.get";
 
 import * as structs from "./struct";
-import { parse } from "protobufjs";
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -128,47 +127,45 @@ function convertPathToCamelCase(str: string) {
   });
 }
 
-function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
-  for (const key of Object.keys(data)) {
+function parseNestedEntitiesNoPath(data: any) {
+  if (typeof data === "string" || typeof data === "number" || typeof data === "boolean") {
+    return data;
+  }
+
+  const final_object = {} as any;
+  Object.keys(data).map(key => {
     let displayKey = key;
     if (key.endsWith("List")) {
       displayKey = key.split("List")[0];
     }
 
     let entity = data[key];
-    const isObject = typeof entity === "object";
-    const isArray = Array.isArray(entity);
-    const entityExists = parent.hasOwnProperty(key);
-    const isValue = isObject ? entity.hasOwnProperty("value") : false;
-    const keys = isObject ? Object.keys(entity) : [];
 
-    if (!entityExists && isObject) {
-      parent[displayKey] = {};
-      if (entity.hasOwnProperty("resourceName")) {
-        parent[displayKey].resourceName = entity.resourceName;
-      }
+    const isObject = typeof entity === "object";
+    const isUndefined = typeof entity === "undefined";
+    const isArray = Array.isArray(entity);
+    const isValue = isObject ? entity.hasOwnProperty("value") : false;
+
+    if (isUndefined) {
+      return;
     }
 
     if (isArray) {
-      console.log(displayKey, "is an array and its value is ", entity);
-      for (const item of entity) {
-        parseNestedEntitiesNoPath(item, {});
-      }
-      entity = Object.values(entity);
-      console.log("sometig", entity);
-    }
-    if (isObject && !isValue && keys.length > 0) {
-      console.log("parseNestedEntitiesNoPath", entity, parent[displayKey]);
-      parseNestedEntitiesNoPath(entity, parent[displayKey]);
-    } else {
-      const value = isValue ? entity.value : entity;
-      if (typeof value !== "undefined") {
-        parent[displayKey] = value;
-      }
-    }
-  }
+      final_object[displayKey] = entity.map((item: any) => {
+        const parsed = parseNestedEntitiesNoPath({ item });
 
-  return parent;
+        return parsed.item;
+      });
+    } else if (isValue) {
+      final_object[displayKey] = entity.value;
+    } else if (isObject) {
+      final_object[displayKey] = parseNestedEntitiesNoPath(entity);
+    } else {
+      final_object[displayKey] = entity;
+    }
+  });
+
+  return final_object;
 }
 
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {
