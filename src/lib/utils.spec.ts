@@ -130,7 +130,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
         ad: {
           finalUrls: ["http://opteo.co/lp/ad-words-tool"],
 
-          // Note that these will be removed by the field mask.
+          // Note that these will have been removed by the field mask.
           // someDirectArray: [3, 4, 5],
           // finalAppUrls: [],
         },
@@ -148,7 +148,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
           ],
         },
         name: "ad words tool [MB]",
-        // Note that this will be removed by the field mask.
+        // Note that this will have been removed by the field mask.
         // status: 0,
       },
     },
@@ -161,7 +161,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
         ad: {
           finalUrls: ["http://opteo.co/lp/ad-words-tool"],
           someDirectArray: [3, 4, 5],
-          // Note that this will be returned even through it is empty.
+          // Note that have been returned even through it is empty.
           finalAppUrls: [],
         },
       },
