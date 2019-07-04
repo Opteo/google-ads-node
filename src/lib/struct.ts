@@ -4,38 +4,38 @@ const string = "string";
 const boolean = "boolean";
 const number = "number";
 
-/* .google.ads.googleads.v1.common.AdTextAsset */
+/* .google.ads.googleads.v2.common.AdTextAsset */
 // @ts-ignore
 export const AdTextAsset = {
   // @ts-ignore
   text: string,
 
   // @ts-ignore
-  pinned_field: "enum_ServedAssetFieldType"
+  pinned_field: "enum_ServedAssetFieldType",
 };
 
-/* .google.ads.googleads.v1.common.AdImageAsset */
+/* .google.ads.googleads.v2.common.AdImageAsset */
 // @ts-ignore
 export const AdImageAsset = {
   // @ts-ignore
-  asset: string
+  asset: string,
 };
 
-/* .google.ads.googleads.v1.common.AdVideoAsset */
+/* .google.ads.googleads.v2.common.AdVideoAsset */
 // @ts-ignore
 export const AdVideoAsset = {
   // @ts-ignore
-  asset: string
+  asset: string,
 };
 
-/* .google.ads.googleads.v1.common.AdMediaBundleAsset */
+/* .google.ads.googleads.v2.common.AdMediaBundleAsset */
 // @ts-ignore
 export const AdMediaBundleAsset = {
   // @ts-ignore
-  asset: string
+  asset: string,
 };
 
-/* .google.ads.googleads.v1.common.TextAdInfo */
+/* .google.ads.googleads.v2.common.TextAdInfo */
 // @ts-ignore
 export const TextAdInfo = {
   // @ts-ignore
@@ -45,10 +45,10 @@ export const TextAdInfo = {
   description1: string,
 
   // @ts-ignore
-  description2: string
+  description2: string,
 };
 
-/* .google.ads.googleads.v1.common.ExpandedTextAdInfo */
+/* .google.ads.googleads.v2.common.ExpandedTextAdInfo */
 // @ts-ignore
 export const ExpandedTextAdInfo = {
   // @ts-ignore
@@ -70,10 +70,10 @@ export const ExpandedTextAdInfo = {
   path1: string,
 
   // @ts-ignore
-  path2: string
+  path2: string,
 };
 
-/* .google.ads.googleads.v1.common.CallOnlyAdInfo */
+/* .google.ads.googleads.v2.common.CallOnlyAdInfo */
 // @ts-ignore
 export const CallOnlyAdInfo = {
   // @ts-ignore
@@ -110,36 +110,36 @@ export const CallOnlyAdInfo = {
   conversion_action: string,
 
   // @ts-ignore
-  conversion_reporting_state: "enum_CallConversionReportingState"
+  conversion_reporting_state: "enum_CallConversionReportingState",
 };
 
-/* .google.ads.googleads.v1.common.ExpandedDynamicSearchAdInfo */
+/* .google.ads.googleads.v2.common.ExpandedDynamicSearchAdInfo */
 // @ts-ignore
 export const ExpandedDynamicSearchAdInfo = {
   // @ts-ignore
-  description: string
+  description: string,
 };
 
-/* .google.ads.googleads.v1.common.HotelAdInfo */
+/* .google.ads.googleads.v2.common.HotelAdInfo */
 // @ts-ignore
 export const HotelAdInfo = {};
 
-/* .google.ads.googleads.v1.common.ShoppingSmartAdInfo */
+/* .google.ads.googleads.v2.common.ShoppingSmartAdInfo */
 // @ts-ignore
 export const ShoppingSmartAdInfo = {};
 
-/* .google.ads.googleads.v1.common.ShoppingProductAdInfo */
+/* .google.ads.googleads.v2.common.ShoppingProductAdInfo */
 // @ts-ignore
 export const ShoppingProductAdInfo = {};
 
-/* .google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo */
+/* .google.ads.googleads.v2.common.ShoppingComparisonListingAdInfo */
 // @ts-ignore
 export const ShoppingComparisonListingAdInfo = {
   // @ts-ignore
-  headline: string
+  headline: string,
 };
 
-/* .google.ads.googleads.v1.common.GmailAdInfo */
+/* .google.ads.googleads.v2.common.GmailAdInfo */
 // @ts-ignore
 export const GmailAdInfo = {
   // @ts-ignore
@@ -164,10 +164,10 @@ export const GmailAdInfo = {
   product_images: ProductImage,
 
   // @ts-ignore
-  product_videos: ProductVideo
+  product_videos: ProductVideo,
 };
 
-/* .google.ads.googleads.v1.common.GmailTeaser */
+/* .google.ads.googleads.v2.common.GmailTeaser */
 // @ts-ignore
 export const GmailTeaser = {
   // @ts-ignore
@@ -180,10 +180,10 @@ export const GmailTeaser = {
   business_name: string,
 
   // @ts-ignore
-  logo_image: string
+  logo_image: string,
 };
 
-/* .google.ads.googleads.v1.common.DisplayCallToAction */
+/* .google.ads.googleads.v2.common.DisplayCallToAction */
 // @ts-ignore
 export const DisplayCallToAction = {
   // @ts-ignore
@@ -193,10 +193,10 @@ export const DisplayCallToAction = {
   text_color: string,
 
   // @ts-ignore
-  url_collection_id: string
+  url_collection_id: string,
 };
 
-/* .google.ads.googleads.v1.common.ProductImage */
+/* .google.ads.googleads.v2.common.ProductImage */
 // @ts-ignore
 export const ProductImage = {
   // @ts-ignore
@@ -206,17 +206,17 @@ export const ProductImage = {
   description: string,
 
   // @ts-ignore
-  display_call_to_action: DisplayCallToAction
+  display_call_to_action: DisplayCallToAction,
 };
 
-/* .google.ads.googleads.v1.common.ProductVideo */
+/* .google.ads.googleads.v2.common.ProductVideo */
 // @ts-ignore
 export const ProductVideo = {
   // @ts-ignore
-  product_video: string
+  product_video: string,
 };
 
-/* .google.ads.googleads.v1.common.ImageAdInfo */
+/* .google.ads.googleads.v2.common.ImageAdInfo */
 // @ts-ignore
 export const ImageAdInfo = {
   // @ts-ignore
@@ -250,18 +250,24 @@ export const ImageAdInfo = {
   data: string,
 
   // @ts-ignore
-  ad_id_to_copy_image_from: number
+  ad_id_to_copy_image_from: number,
 };
 
-/* .google.ads.googleads.v1.common.VideoBumperInStreamAdInfo */
+/* .google.ads.googleads.v2.common.VideoBumperInStreamAdInfo */
 // @ts-ignore
-export const VideoBumperInStreamAdInfo = {};
+export const VideoBumperInStreamAdInfo = {
+  // @ts-ignore
+  companion_banner: string,
+};
 
-/* .google.ads.googleads.v1.common.VideoNonSkippableInStreamAdInfo */
+/* .google.ads.googleads.v2.common.VideoNonSkippableInStreamAdInfo */
 // @ts-ignore
-export const VideoNonSkippableInStreamAdInfo = {};
+export const VideoNonSkippableInStreamAdInfo = {
+  // @ts-ignore
+  companion_banner: string,
+};
 
-/* .google.ads.googleads.v1.common.VideoTrueViewInStreamAdInfo */
+/* .google.ads.googleads.v2.common.VideoTrueViewInStreamAdInfo */
 // @ts-ignore
 export const VideoTrueViewInStreamAdInfo = {
   // @ts-ignore
@@ -271,20 +277,20 @@ export const VideoTrueViewInStreamAdInfo = {
   action_headline: string,
 
   // @ts-ignore
-  companion_banner: string
+  companion_banner: string,
 };
 
-/* .google.ads.googleads.v1.common.VideoOutstreamAdInfo */
+/* .google.ads.googleads.v2.common.VideoOutstreamAdInfo */
 // @ts-ignore
 export const VideoOutstreamAdInfo = {
   // @ts-ignore
   headline: string,
 
   // @ts-ignore
-  description: string
+  description: string,
 };
 
-/* .google.ads.googleads.v1.common.VideoAdInfo */
+/* .google.ads.googleads.v2.common.VideoAdInfo */
 // @ts-ignore
 export const VideoAdInfo = {
   // @ts-ignore
@@ -300,10 +306,10 @@ export const VideoAdInfo = {
   out_stream: VideoOutstreamAdInfo,
 
   // @ts-ignore
-  non_skippable: VideoNonSkippableInStreamAdInfo
+  non_skippable: VideoNonSkippableInStreamAdInfo,
 };
 
-/* .google.ads.googleads.v1.common.ResponsiveSearchAdInfo */
+/* .google.ads.googleads.v2.common.ResponsiveSearchAdInfo */
 // @ts-ignore
 export const ResponsiveSearchAdInfo = {
   // @ts-ignore
@@ -316,10 +322,10 @@ export const ResponsiveSearchAdInfo = {
   path1: string,
 
   // @ts-ignore
-  path2: string
+  path2: string,
 };
 
-/* .google.ads.googleads.v1.common.LegacyResponsiveDisplayAdInfo */
+/* .google.ads.googleads.v2.common.LegacyResponsiveDisplayAdInfo */
 // @ts-ignore
 export const LegacyResponsiveDisplayAdInfo = {
   // @ts-ignore
@@ -365,10 +371,10 @@ export const LegacyResponsiveDisplayAdInfo = {
   price_prefix: string,
 
   // @ts-ignore
-  promo_text: string
+  promo_text: string,
 };
 
-/* .google.ads.googleads.v1.common.AppAdInfo */
+/* .google.ads.googleads.v2.common.AppAdInfo */
 // @ts-ignore
 export const AppAdInfo = {
   // @ts-ignore
@@ -387,10 +393,10 @@ export const AppAdInfo = {
   youtube_videos: AdVideoAsset,
 
   // @ts-ignore
-  html_5_media_bundles: AdMediaBundleAsset
+  html_5_media_bundles: AdMediaBundleAsset,
 };
 
-/* .google.ads.googleads.v1.common.AppEngagementAdInfo */
+/* .google.ads.googleads.v2.common.AppEngagementAdInfo */
 // @ts-ignore
 export const AppEngagementAdInfo = {
   // @ts-ignore
@@ -403,10 +409,10 @@ export const AppEngagementAdInfo = {
   images: AdImageAsset,
 
   // @ts-ignore
-  videos: AdVideoAsset
+  videos: AdVideoAsset,
 };
 
-/* .google.ads.googleads.v1.common.LegacyAppInstallAdInfo */
+/* .google.ads.googleads.v2.common.LegacyAppInstallAdInfo */
 // @ts-ignore
 export const LegacyAppInstallAdInfo = {
   // @ts-ignore
@@ -422,10 +428,10 @@ export const LegacyAppInstallAdInfo = {
   description1: string,
 
   // @ts-ignore
-  description2: string
+  description2: string,
 };
 
-/* .google.ads.googleads.v1.common.ResponsiveDisplayAdInfo */
+/* .google.ads.googleads.v2.common.ResponsiveDisplayAdInfo */
 // @ts-ignore
 export const ResponsiveDisplayAdInfo = {
   // @ts-ignore
@@ -474,34 +480,34 @@ export const ResponsiveDisplayAdInfo = {
   promo_text: string,
 
   // @ts-ignore
-  format_setting: "enum_DisplayAdFormatSetting"
+  format_setting: "enum_DisplayAdFormatSetting",
 };
 
-/* .google.ads.googleads.v1.common.DisplayUploadAdInfo */
+/* .google.ads.googleads.v2.common.DisplayUploadAdInfo */
 // @ts-ignore
 export const DisplayUploadAdInfo = {
   // @ts-ignore
   display_upload_product_type: "enum_DisplayUploadProductType",
 
   // @ts-ignore
-  media_bundle: AdMediaBundleAsset
+  media_bundle: AdMediaBundleAsset,
 };
 
-/* .google.ads.googleads.v1.common.YoutubeVideoAsset */
+/* .google.ads.googleads.v2.common.YoutubeVideoAsset */
 // @ts-ignore
 export const YoutubeVideoAsset = {
   // @ts-ignore
-  youtube_video_id: string
+  youtube_video_id: string,
 };
 
-/* .google.ads.googleads.v1.common.MediaBundleAsset */
+/* .google.ads.googleads.v2.common.MediaBundleAsset */
 // @ts-ignore
 export const MediaBundleAsset = {
   // @ts-ignore
-  data: string
+  data: string,
 };
 
-/* .google.ads.googleads.v1.common.ImageAsset */
+/* .google.ads.googleads.v2.common.ImageAsset */
 // @ts-ignore
 export const ImageAsset = {
   // @ts-ignore
@@ -514,10 +520,10 @@ export const ImageAsset = {
   mime_type: "enum_MimeType",
 
   // @ts-ignore
-  full_size: ImageDimension
+  full_size: ImageDimension,
 };
 
-/* .google.ads.googleads.v1.common.ImageDimension */
+/* .google.ads.googleads.v2.common.ImageDimension */
 // @ts-ignore
 export const ImageDimension = {
   // @ts-ignore
@@ -527,54 +533,54 @@ export const ImageDimension = {
   width_pixels: number,
 
   // @ts-ignore
-  url: string
+  url: string,
 };
 
-/* .google.ads.googleads.v1.common.TextAsset */
+/* .google.ads.googleads.v2.common.TextAsset */
 // @ts-ignore
 export const TextAsset = {
   // @ts-ignore
-  text: string
+  text: string,
 };
 
-/* .google.ads.googleads.v1.common.Commission */
+/* .google.ads.googleads.v2.common.Commission */
 // @ts-ignore
 export const Commission = {
   // @ts-ignore
-  commission_rate_micros: number
+  commission_rate_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.EnhancedCpc */
+/* .google.ads.googleads.v2.common.EnhancedCpc */
 // @ts-ignore
 export const EnhancedCpc = {};
 
-/* .google.ads.googleads.v1.common.ManualCpc */
+/* .google.ads.googleads.v2.common.ManualCpc */
 // @ts-ignore
 export const ManualCpc = {
   // @ts-ignore
-  enhanced_cpc_enabled: boolean
+  enhanced_cpc_enabled: boolean,
 };
 
-/* .google.ads.googleads.v1.common.ManualCpm */
+/* .google.ads.googleads.v2.common.ManualCpm */
 // @ts-ignore
 export const ManualCpm = {};
 
-/* .google.ads.googleads.v1.common.ManualCpv */
+/* .google.ads.googleads.v2.common.ManualCpv */
 // @ts-ignore
 export const ManualCpv = {};
 
-/* .google.ads.googleads.v1.common.MaximizeConversions */
+/* .google.ads.googleads.v2.common.MaximizeConversions */
 // @ts-ignore
 export const MaximizeConversions = {};
 
-/* .google.ads.googleads.v1.common.MaximizeConversionValue */
+/* .google.ads.googleads.v2.common.MaximizeConversionValue */
 // @ts-ignore
 export const MaximizeConversionValue = {
   // @ts-ignore
-  target_roas: number
+  target_roas: number,
 };
 
-/* .google.ads.googleads.v1.common.PageOnePromoted */
+/* .google.ads.googleads.v2.common.PageOnePromoted */
 // @ts-ignore
 export const PageOnePromoted = {
   // @ts-ignore
@@ -593,10 +599,10 @@ export const PageOnePromoted = {
   raise_cpc_bid_when_budget_constrained: boolean,
 
   // @ts-ignore
-  raise_cpc_bid_when_quality_score_is_low: boolean
+  raise_cpc_bid_when_quality_score_is_low: boolean,
 };
 
-/* .google.ads.googleads.v1.common.TargetCpa */
+/* .google.ads.googleads.v2.common.TargetCpa */
 // @ts-ignore
 export const TargetCpa = {
   // @ts-ignore
@@ -606,14 +612,14 @@ export const TargetCpa = {
   cpc_bid_ceiling_micros: number,
 
   // @ts-ignore
-  cpc_bid_floor_micros: number
+  cpc_bid_floor_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.TargetCpm */
+/* .google.ads.googleads.v2.common.TargetCpm */
 // @ts-ignore
 export const TargetCpm = {};
 
-/* .google.ads.googleads.v1.common.TargetImpressionShare */
+/* .google.ads.googleads.v2.common.TargetImpressionShare */
 // @ts-ignore
 export const TargetImpressionShare = {
   // @ts-ignore
@@ -623,10 +629,10 @@ export const TargetImpressionShare = {
   location_fraction_micros: number,
 
   // @ts-ignore
-  cpc_bid_ceiling_micros: number
+  cpc_bid_ceiling_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.TargetOutrankShare */
+/* .google.ads.googleads.v2.common.TargetOutrankShare */
 // @ts-ignore
 export const TargetOutrankShare = {
   // @ts-ignore
@@ -642,10 +648,10 @@ export const TargetOutrankShare = {
   only_raise_cpc_bids: boolean,
 
   // @ts-ignore
-  raise_cpc_bid_when_quality_score_is_low: boolean
+  raise_cpc_bid_when_quality_score_is_low: boolean,
 };
 
-/* .google.ads.googleads.v1.common.TargetRoas */
+/* .google.ads.googleads.v2.common.TargetRoas */
 // @ts-ignore
 export const TargetRoas = {
   // @ts-ignore
@@ -655,30 +661,30 @@ export const TargetRoas = {
   cpc_bid_ceiling_micros: number,
 
   // @ts-ignore
-  cpc_bid_floor_micros: number
+  cpc_bid_floor_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.TargetSpend */
+/* .google.ads.googleads.v2.common.TargetSpend */
 // @ts-ignore
 export const TargetSpend = {
   // @ts-ignore
   target_spend_micros: number,
 
   // @ts-ignore
-  cpc_bid_ceiling_micros: number
+  cpc_bid_ceiling_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.PercentCpc */
+/* .google.ads.googleads.v2.common.PercentCpc */
 // @ts-ignore
 export const PercentCpc = {
   // @ts-ignore
   cpc_bid_ceiling_micros: number,
 
   // @ts-ignore
-  enhanced_cpc_enabled: boolean
+  enhanced_cpc_enabled: boolean,
 };
 
-/* .google.ads.googleads.v1.common.ClickLocation */
+/* .google.ads.googleads.v2.common.ClickLocation */
 // @ts-ignore
 export const ClickLocation = {
   // @ts-ignore
@@ -694,65 +700,65 @@ export const ClickLocation = {
   most_specific: string,
 
   // @ts-ignore
-  region: string
+  region: string,
 };
 
-/* .google.ads.googleads.v1.common.KeywordInfo */
+/* .google.ads.googleads.v2.common.KeywordInfo */
 // @ts-ignore
 export const KeywordInfo = {
   // @ts-ignore
   text: string,
 
   // @ts-ignore
-  match_type: "enum_KeywordMatchType"
+  match_type: "enum_KeywordMatchType",
 };
 
-/* .google.ads.googleads.v1.common.PlacementInfo */
+/* .google.ads.googleads.v2.common.PlacementInfo */
 // @ts-ignore
 export const PlacementInfo = {
   // @ts-ignore
-  url: string
+  url: string,
 };
 
-/* .google.ads.googleads.v1.common.MobileAppCategoryInfo */
+/* .google.ads.googleads.v2.common.MobileAppCategoryInfo */
 // @ts-ignore
 export const MobileAppCategoryInfo = {
   // @ts-ignore
-  mobile_app_category_constant: string
+  mobile_app_category_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.MobileApplicationInfo */
+/* .google.ads.googleads.v2.common.MobileApplicationInfo */
 // @ts-ignore
 export const MobileApplicationInfo = {
   // @ts-ignore
   app_id: string,
 
   // @ts-ignore
-  name: string
+  name: string,
 };
 
-/* .google.ads.googleads.v1.common.LocationInfo */
+/* .google.ads.googleads.v2.common.LocationInfo */
 // @ts-ignore
 export const LocationInfo = {
   // @ts-ignore
-  geo_target_constant: string
+  geo_target_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.DeviceInfo */
+/* .google.ads.googleads.v2.common.DeviceInfo */
 // @ts-ignore
 export const DeviceInfo = {
   // @ts-ignore
-  type: "enum_Device"
+  type: "enum_Device",
 };
 
-/* .google.ads.googleads.v1.common.PreferredContentInfo */
+/* .google.ads.googleads.v2.common.PreferredContentInfo */
 // @ts-ignore
 export const PreferredContentInfo = {
   // @ts-ignore
-  type: "enum_PreferredContentType"
+  type: "enum_PreferredContentType",
 };
 
-/* .google.ads.googleads.v1.common.ListingGroupInfo */
+/* .google.ads.googleads.v2.common.ListingGroupInfo */
 // @ts-ignore
 export const ListingGroupInfo = {
   // @ts-ignore
@@ -762,17 +768,17 @@ export const ListingGroupInfo = {
   case_value: ListingDimensionInfo,
 
   // @ts-ignore
-  parent_ad_group_criterion: string
+  parent_ad_group_criterion: string,
 };
 
-/* .google.ads.googleads.v1.common.ListingScopeInfo */
+/* .google.ads.googleads.v2.common.ListingScopeInfo */
 // @ts-ignore
 export const ListingScopeInfo = {
   // @ts-ignore
-  dimensions: ListingDimensionInfo
+  dimensions: ListingDimensionInfo,
 };
 
-/* .google.ads.googleads.v1.common.ListingDimensionInfo */
+/* .google.ads.googleads.v2.common.ListingDimensionInfo */
 // @ts-ignore
 export const ListingDimensionInfo = {
   // @ts-ignore
@@ -815,62 +821,62 @@ export const ListingDimensionInfo = {
   product_type: ProductTypeInfo,
 
   // @ts-ignore
-  unknown_listing_dimension: UnknownListingDimensionInfo
+  unknown_listing_dimension: UnknownListingDimensionInfo,
 };
 
-/* .google.ads.googleads.v1.common.ListingBrandInfo */
+/* .google.ads.googleads.v2.common.ListingBrandInfo */
 // @ts-ignore
 export const ListingBrandInfo = {
   // @ts-ignore
-  value: string
+  value: string,
 };
 
-/* .google.ads.googleads.v1.common.HotelIdInfo */
+/* .google.ads.googleads.v2.common.HotelIdInfo */
 // @ts-ignore
 export const HotelIdInfo = {
   // @ts-ignore
-  value: string
+  value: string,
 };
 
-/* .google.ads.googleads.v1.common.HotelClassInfo */
+/* .google.ads.googleads.v2.common.HotelClassInfo */
 // @ts-ignore
 export const HotelClassInfo = {
   // @ts-ignore
-  value: number
+  value: number,
 };
 
-/* .google.ads.googleads.v1.common.HotelCountryRegionInfo */
+/* .google.ads.googleads.v2.common.HotelCountryRegionInfo */
 // @ts-ignore
 export const HotelCountryRegionInfo = {
   // @ts-ignore
-  country_region_criterion: string
+  country_region_criterion: string,
 };
 
-/* .google.ads.googleads.v1.common.HotelStateInfo */
+/* .google.ads.googleads.v2.common.HotelStateInfo */
 // @ts-ignore
 export const HotelStateInfo = {
   // @ts-ignore
-  state_criterion: string
+  state_criterion: string,
 };
 
-/* .google.ads.googleads.v1.common.HotelCityInfo */
+/* .google.ads.googleads.v2.common.HotelCityInfo */
 // @ts-ignore
 export const HotelCityInfo = {
   // @ts-ignore
-  city_criterion: string
+  city_criterion: string,
 };
 
-/* .google.ads.googleads.v1.common.ListingCustomAttributeInfo */
+/* .google.ads.googleads.v2.common.ListingCustomAttributeInfo */
 // @ts-ignore
 export const ListingCustomAttributeInfo = {
   // @ts-ignore
   value: string,
 
   // @ts-ignore
-  index: "enum_ListingCustomAttributeIndex"
+  index: "enum_ListingCustomAttributeIndex",
 };
 
-/* .google.ads.googleads.v1.common.ProductBiddingCategoryInfo */
+/* .google.ads.googleads.v2.common.ProductBiddingCategoryInfo */
 // @ts-ignore
 export const ProductBiddingCategoryInfo = {
   // @ts-ignore
@@ -880,93 +886,93 @@ export const ProductBiddingCategoryInfo = {
   country_code: string,
 
   // @ts-ignore
-  level: "enum_ProductBiddingCategoryLevel"
+  level: "enum_ProductBiddingCategoryLevel",
 };
 
-/* .google.ads.googleads.v1.common.ProductChannelInfo */
+/* .google.ads.googleads.v2.common.ProductChannelInfo */
 // @ts-ignore
 export const ProductChannelInfo = {
   // @ts-ignore
-  channel: "enum_ProductChannel"
+  channel: "enum_ProductChannel",
 };
 
-/* .google.ads.googleads.v1.common.ProductChannelExclusivityInfo */
+/* .google.ads.googleads.v2.common.ProductChannelExclusivityInfo */
 // @ts-ignore
 export const ProductChannelExclusivityInfo = {
   // @ts-ignore
-  channel_exclusivity: "enum_ProductChannelExclusivity"
+  channel_exclusivity: "enum_ProductChannelExclusivity",
 };
 
-/* .google.ads.googleads.v1.common.ProductConditionInfo */
+/* .google.ads.googleads.v2.common.ProductConditionInfo */
 // @ts-ignore
 export const ProductConditionInfo = {
   // @ts-ignore
-  condition: "enum_ProductCondition"
+  condition: "enum_ProductCondition",
 };
 
-/* .google.ads.googleads.v1.common.ProductItemIdInfo */
+/* .google.ads.googleads.v2.common.ProductItemIdInfo */
 // @ts-ignore
 export const ProductItemIdInfo = {
   // @ts-ignore
-  value: string
+  value: string,
 };
 
-/* .google.ads.googleads.v1.common.ProductTypeInfo */
+/* .google.ads.googleads.v2.common.ProductTypeInfo */
 // @ts-ignore
 export const ProductTypeInfo = {
   // @ts-ignore
   value: string,
 
   // @ts-ignore
-  level: "enum_ProductTypeLevel"
+  level: "enum_ProductTypeLevel",
 };
 
-/* .google.ads.googleads.v1.common.UnknownListingDimensionInfo */
+/* .google.ads.googleads.v2.common.UnknownListingDimensionInfo */
 // @ts-ignore
 export const UnknownListingDimensionInfo = {};
 
-/* .google.ads.googleads.v1.common.HotelDateSelectionTypeInfo */
+/* .google.ads.googleads.v2.common.HotelDateSelectionTypeInfo */
 // @ts-ignore
 export const HotelDateSelectionTypeInfo = {
   // @ts-ignore
-  type: "enum_HotelDateSelectionType"
+  type: "enum_HotelDateSelectionType",
 };
 
-/* .google.ads.googleads.v1.common.HotelAdvanceBookingWindowInfo */
+/* .google.ads.googleads.v2.common.HotelAdvanceBookingWindowInfo */
 // @ts-ignore
 export const HotelAdvanceBookingWindowInfo = {
   // @ts-ignore
   min_days: number,
 
   // @ts-ignore
-  max_days: number
+  max_days: number,
 };
 
-/* .google.ads.googleads.v1.common.HotelLengthOfStayInfo */
+/* .google.ads.googleads.v2.common.HotelLengthOfStayInfo */
 // @ts-ignore
 export const HotelLengthOfStayInfo = {
   // @ts-ignore
   min_nights: number,
 
   // @ts-ignore
-  max_nights: number
+  max_nights: number,
 };
 
-/* .google.ads.googleads.v1.common.HotelCheckInDayInfo */
+/* .google.ads.googleads.v2.common.HotelCheckInDayInfo */
 // @ts-ignore
 export const HotelCheckInDayInfo = {
   // @ts-ignore
-  day_of_week: "enum_DayOfWeek"
+  day_of_week: "enum_DayOfWeek",
 };
 
-/* .google.ads.googleads.v1.common.InteractionTypeInfo */
+/* .google.ads.googleads.v2.common.InteractionTypeInfo */
 // @ts-ignore
 export const InteractionTypeInfo = {
   // @ts-ignore
-  type: "enum_InteractionType"
+  type: "enum_InteractionType",
 };
 
-/* .google.ads.googleads.v1.common.AdScheduleInfo */
+/* .google.ads.googleads.v2.common.AdScheduleInfo */
 // @ts-ignore
 export const AdScheduleInfo = {
   // @ts-ignore
@@ -982,59 +988,59 @@ export const AdScheduleInfo = {
   end_hour: number,
 
   // @ts-ignore
-  day_of_week: "enum_DayOfWeek"
+  day_of_week: "enum_DayOfWeek",
 };
 
-/* .google.ads.googleads.v1.common.AgeRangeInfo */
+/* .google.ads.googleads.v2.common.AgeRangeInfo */
 // @ts-ignore
 export const AgeRangeInfo = {
   // @ts-ignore
-  type: "enum_AgeRangeType"
+  type: "enum_AgeRangeType",
 };
 
-/* .google.ads.googleads.v1.common.GenderInfo */
+/* .google.ads.googleads.v2.common.GenderInfo */
 // @ts-ignore
 export const GenderInfo = {
   // @ts-ignore
-  type: "enum_GenderType"
+  type: "enum_GenderType",
 };
 
-/* .google.ads.googleads.v1.common.IncomeRangeInfo */
+/* .google.ads.googleads.v2.common.IncomeRangeInfo */
 // @ts-ignore
 export const IncomeRangeInfo = {
   // @ts-ignore
-  type: "enum_IncomeRangeType"
+  type: "enum_IncomeRangeType",
 };
 
-/* .google.ads.googleads.v1.common.ParentalStatusInfo */
+/* .google.ads.googleads.v2.common.ParentalStatusInfo */
 // @ts-ignore
 export const ParentalStatusInfo = {
   // @ts-ignore
-  type: "enum_ParentalStatusType"
+  type: "enum_ParentalStatusType",
 };
 
-/* .google.ads.googleads.v1.common.YouTubeVideoInfo */
+/* .google.ads.googleads.v2.common.YouTubeVideoInfo */
 // @ts-ignore
 export const YouTubeVideoInfo = {
   // @ts-ignore
-  video_id: string
+  video_id: string,
 };
 
-/* .google.ads.googleads.v1.common.YouTubeChannelInfo */
+/* .google.ads.googleads.v2.common.YouTubeChannelInfo */
 // @ts-ignore
 export const YouTubeChannelInfo = {
   // @ts-ignore
-  channel_id: string
+  channel_id: string,
 };
 
-/* .google.ads.googleads.v1.common.UserListInfo */
+/* .google.ads.googleads.v2.common.UserListInfo */
 // @ts-ignore
 export const UserListInfo = {
   // @ts-ignore
-  user_list: string
+  user_list: string,
 };
 
-/* .google.ads.googleads.v1.common.ProximityInfo */
+/* .google.ads.googleads.v2.common.ProximityInfo */
 // @ts-ignore
 export const ProximityInfo = {
   // @ts-ignore
@@ -1047,20 +1053,20 @@ export const ProximityInfo = {
   radius_units: "enum_ProximityRadiusUnits",
 
   // @ts-ignore
-  address: AddressInfo
+  address: AddressInfo,
 };
 
-/* .google.ads.googleads.v1.common.GeoPointInfo */
+/* .google.ads.googleads.v2.common.GeoPointInfo */
 // @ts-ignore
 export const GeoPointInfo = {
   // @ts-ignore
   longitude_in_micro_degrees: number,
 
   // @ts-ignore
-  latitude_in_micro_degrees: number
+  latitude_in_micro_degrees: number,
 };
 
-/* .google.ads.googleads.v1.common.AddressInfo */
+/* .google.ads.googleads.v2.common.AddressInfo */
 // @ts-ignore
 export const AddressInfo = {
   // @ts-ignore
@@ -1082,65 +1088,65 @@ export const AddressInfo = {
   street_address2: string,
 
   // @ts-ignore
-  city_name: string
+  city_name: string,
 };
 
-/* .google.ads.googleads.v1.common.TopicInfo */
+/* .google.ads.googleads.v2.common.TopicInfo */
 // @ts-ignore
 export const TopicInfo = {
   // @ts-ignore
   topic_constant: string,
 
   // @ts-ignore
-  path: string
+  path: string,
 };
 
-/* .google.ads.googleads.v1.common.LanguageInfo */
+/* .google.ads.googleads.v2.common.LanguageInfo */
 // @ts-ignore
 export const LanguageInfo = {
   // @ts-ignore
-  language_constant: string
+  language_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.IpBlockInfo */
+/* .google.ads.googleads.v2.common.IpBlockInfo */
 // @ts-ignore
 export const IpBlockInfo = {
   // @ts-ignore
-  ip_address: string
+  ip_address: string,
 };
 
-/* .google.ads.googleads.v1.common.ContentLabelInfo */
+/* .google.ads.googleads.v2.common.ContentLabelInfo */
 // @ts-ignore
 export const ContentLabelInfo = {
   // @ts-ignore
-  type: "enum_ContentLabelType"
+  type: "enum_ContentLabelType",
 };
 
-/* .google.ads.googleads.v1.common.CarrierInfo */
+/* .google.ads.googleads.v2.common.CarrierInfo */
 // @ts-ignore
 export const CarrierInfo = {
   // @ts-ignore
-  carrier_constant: string
+  carrier_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.UserInterestInfo */
+/* .google.ads.googleads.v2.common.UserInterestInfo */
 // @ts-ignore
 export const UserInterestInfo = {
   // @ts-ignore
-  user_interest_category: string
+  user_interest_category: string,
 };
 
-/* .google.ads.googleads.v1.common.WebpageInfo */
+/* .google.ads.googleads.v2.common.WebpageInfo */
 // @ts-ignore
 export const WebpageInfo = {
   // @ts-ignore
   criterion_name: string,
 
   // @ts-ignore
-  conditions: WebpageConditionInfo
+  conditions: WebpageConditionInfo,
 };
 
-/* .google.ads.googleads.v1.common.WebpageConditionInfo */
+/* .google.ads.googleads.v2.common.WebpageConditionInfo */
 // @ts-ignore
 export const WebpageConditionInfo = {
   // @ts-ignore
@@ -1150,45 +1156,45 @@ export const WebpageConditionInfo = {
   operator: "enum_WebpageConditionOperator",
 
   // @ts-ignore
-  argument: string
+  argument: string,
 };
 
-/* .google.ads.googleads.v1.common.OperatingSystemVersionInfo */
+/* .google.ads.googleads.v2.common.OperatingSystemVersionInfo */
 // @ts-ignore
 export const OperatingSystemVersionInfo = {
   // @ts-ignore
-  operating_system_version_constant: string
+  operating_system_version_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.AppPaymentModelInfo */
+/* .google.ads.googleads.v2.common.AppPaymentModelInfo */
 // @ts-ignore
 export const AppPaymentModelInfo = {
   // @ts-ignore
-  type: "enum_AppPaymentModelType"
+  type: "enum_AppPaymentModelType",
 };
 
-/* .google.ads.googleads.v1.common.MobileDeviceInfo */
+/* .google.ads.googleads.v2.common.MobileDeviceInfo */
 // @ts-ignore
 export const MobileDeviceInfo = {
   // @ts-ignore
-  mobile_device_constant: string
+  mobile_device_constant: string,
 };
 
-/* .google.ads.googleads.v1.common.CustomAffinityInfo */
+/* .google.ads.googleads.v2.common.CustomAffinityInfo */
 // @ts-ignore
 export const CustomAffinityInfo = {
   // @ts-ignore
-  custom_affinity: string
+  custom_affinity: string,
 };
 
-/* .google.ads.googleads.v1.common.CustomIntentInfo */
+/* .google.ads.googleads.v2.common.CustomIntentInfo */
 // @ts-ignore
 export const CustomIntentInfo = {
   // @ts-ignore
-  custom_intent: string
+  custom_intent: string,
 };
 
-/* .google.ads.googleads.v1.common.LocationGroupInfo */
+/* .google.ads.googleads.v2.common.LocationGroupInfo */
 // @ts-ignore
 export const LocationGroupInfo = {
   // @ts-ignore
@@ -1201,20 +1207,20 @@ export const LocationGroupInfo = {
   radius: number,
 
   // @ts-ignore
-  radius_units: "enum_LocationGroupRadiusUnits"
+  radius_units: "enum_LocationGroupRadiusUnits",
 };
 
-/* .google.ads.googleads.v1.common.CriterionCategoryAvailability */
+/* .google.ads.googleads.v2.common.CriterionCategoryAvailability */
 // @ts-ignore
 export const CriterionCategoryAvailability = {
   // @ts-ignore
   channel: CriterionCategoryChannelAvailability,
 
   // @ts-ignore
-  locale: CriterionCategoryLocaleAvailability
+  locale: CriterionCategoryLocaleAvailability,
 };
 
-/* .google.ads.googleads.v1.common.CriterionCategoryChannelAvailability */
+/* .google.ads.googleads.v2.common.CriterionCategoryChannelAvailability */
 // @ts-ignore
 export const CriterionCategoryChannelAvailability = {
   // @ts-ignore
@@ -1227,10 +1233,10 @@ export const CriterionCategoryChannelAvailability = {
   advertising_channel_sub_type: "enum_AdvertisingChannelSubType",
 
   // @ts-ignore
-  include_default_channel_sub_type: boolean
+  include_default_channel_sub_type: boolean,
 };
 
-/* .google.ads.googleads.v1.common.CriterionCategoryLocaleAvailability */
+/* .google.ads.googleads.v2.common.CriterionCategoryLocaleAvailability */
 // @ts-ignore
 export const CriterionCategoryLocaleAvailability = {
   // @ts-ignore
@@ -1240,37 +1246,37 @@ export const CriterionCategoryLocaleAvailability = {
   country_code: string,
 
   // @ts-ignore
-  language_code: string
+  language_code: string,
 };
 
-/* .google.ads.googleads.v1.common.CustomParameter */
+/* .google.ads.googleads.v2.common.CustomParameter */
 // @ts-ignore
 export const CustomParameter = {
   // @ts-ignore
   key: string,
 
   // @ts-ignore
-  value: string
+  value: string,
 };
 
-/* .google.ads.googleads.v1.common.DateRange */
+/* .google.ads.googleads.v2.common.DateRange */
 // @ts-ignore
 export const DateRange = {
   // @ts-ignore
   start_date: string,
 
   // @ts-ignore
-  end_date: string
+  end_date: string,
 };
 
-/* .google.ads.googleads.v1.common.ExplorerAutoOptimizerSetting */
+/* .google.ads.googleads.v2.common.ExplorerAutoOptimizerSetting */
 // @ts-ignore
 export const ExplorerAutoOptimizerSetting = {
   // @ts-ignore
-  opt_in: boolean
+  opt_in: boolean,
 };
 
-/* .google.ads.googleads.v1.common.AppFeedItem */
+/* .google.ads.googleads.v2.common.AppFeedItem */
 // @ts-ignore
 export const AppFeedItem = {
   // @ts-ignore
@@ -1295,10 +1301,10 @@ export const AppFeedItem = {
   url_custom_parameters: CustomParameter,
 
   // @ts-ignore
-  final_url_suffix: string
+  final_url_suffix: string,
 };
 
-/* .google.ads.googleads.v1.common.CallFeedItem */
+/* .google.ads.googleads.v2.common.CallFeedItem */
 // @ts-ignore
 export const CallFeedItem = {
   // @ts-ignore
@@ -1317,17 +1323,17 @@ export const CallFeedItem = {
   call_conversion_tracking_disabled: boolean,
 
   // @ts-ignore
-  call_conversion_reporting_state: "enum_CallConversionReportingState"
+  call_conversion_reporting_state: "enum_CallConversionReportingState",
 };
 
-/* .google.ads.googleads.v1.common.CalloutFeedItem */
+/* .google.ads.googleads.v2.common.CalloutFeedItem */
 // @ts-ignore
 export const CalloutFeedItem = {
   // @ts-ignore
-  callout_text: string
+  callout_text: string,
 };
 
-/* .google.ads.googleads.v1.common.LocationFeedItem */
+/* .google.ads.googleads.v2.common.LocationFeedItem */
 // @ts-ignore
 export const LocationFeedItem = {
   // @ts-ignore
@@ -1352,10 +1358,10 @@ export const LocationFeedItem = {
   country_code: string,
 
   // @ts-ignore
-  phone_number: string
+  phone_number: string,
 };
 
-/* .google.ads.googleads.v1.common.AffiliateLocationFeedItem */
+/* .google.ads.googleads.v2.common.AffiliateLocationFeedItem */
 // @ts-ignore
 export const AffiliateLocationFeedItem = {
   // @ts-ignore
@@ -1386,10 +1392,10 @@ export const AffiliateLocationFeedItem = {
   chain_id: number,
 
   // @ts-ignore
-  chain_name: string
+  chain_name: string,
 };
 
-/* .google.ads.googleads.v1.common.TextMessageFeedItem */
+/* .google.ads.googleads.v2.common.TextMessageFeedItem */
 // @ts-ignore
 export const TextMessageFeedItem = {
   // @ts-ignore
@@ -1405,10 +1411,10 @@ export const TextMessageFeedItem = {
   text: string,
 
   // @ts-ignore
-  extension_text: string
+  extension_text: string,
 };
 
-/* .google.ads.googleads.v1.common.PriceFeedItem */
+/* .google.ads.googleads.v2.common.PriceFeedItem */
 // @ts-ignore
 export const PriceFeedItem = {
   // @ts-ignore
@@ -1427,10 +1433,10 @@ export const PriceFeedItem = {
   price_offerings: PriceOffer,
 
   // @ts-ignore
-  final_url_suffix: string
+  final_url_suffix: string,
 };
 
-/* .google.ads.googleads.v1.common.PriceOffer */
+/* .google.ads.googleads.v2.common.PriceOffer */
 // @ts-ignore
 export const PriceOffer = {
   // @ts-ignore
@@ -1449,10 +1455,10 @@ export const PriceOffer = {
   final_urls: string,
 
   // @ts-ignore
-  final_mobile_urls: string
+  final_mobile_urls: string,
 };
 
-/* .google.ads.googleads.v1.common.PromotionFeedItem */
+/* .google.ads.googleads.v2.common.PromotionFeedItem */
 // @ts-ignore
 export const PromotionFeedItem = {
   // @ts-ignore
@@ -1498,20 +1504,20 @@ export const PromotionFeedItem = {
   promotion_code: string,
 
   // @ts-ignore
-  orders_over_amount: Money
+  orders_over_amount: Money,
 };
 
-/* .google.ads.googleads.v1.common.StructuredSnippetFeedItem */
+/* .google.ads.googleads.v2.common.StructuredSnippetFeedItem */
 // @ts-ignore
 export const StructuredSnippetFeedItem = {
   // @ts-ignore
   header: string,
 
   // @ts-ignore
-  values: string
+  values: string,
 };
 
-/* .google.ads.googleads.v1.common.SitelinkFeedItem */
+/* .google.ads.googleads.v2.common.SitelinkFeedItem */
 // @ts-ignore
 export const SitelinkFeedItem = {
   // @ts-ignore
@@ -1536,40 +1542,40 @@ export const SitelinkFeedItem = {
   url_custom_parameters: CustomParameter,
 
   // @ts-ignore
-  final_url_suffix: string
+  final_url_suffix: string,
 };
 
-/* .google.ads.googleads.v1.common.Money */
+/* .google.ads.googleads.v2.common.Money */
 // @ts-ignore
 export const Money = {
   // @ts-ignore
   currency_code: string,
 
   // @ts-ignore
-  amount_micros: number
+  amount_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.FinalAppUrl */
+/* .google.ads.googleads.v2.common.FinalAppUrl */
 // @ts-ignore
 export const FinalAppUrl = {
   // @ts-ignore
   os_type: "enum_AppUrlOperatingSystemType",
 
   // @ts-ignore
-  url: string
+  url: string,
 };
 
-/* .google.ads.googleads.v1.common.FrequencyCapEntry */
+/* .google.ads.googleads.v2.common.FrequencyCapEntry */
 // @ts-ignore
 export const FrequencyCapEntry = {
   // @ts-ignore
   key: FrequencyCapKey,
 
   // @ts-ignore
-  cap: number
+  cap: number,
 };
 
-/* .google.ads.googleads.v1.common.FrequencyCapKey */
+/* .google.ads.googleads.v2.common.FrequencyCapKey */
 // @ts-ignore
 export const FrequencyCapKey = {
   // @ts-ignore
@@ -1582,20 +1588,20 @@ export const FrequencyCapKey = {
   time_unit: "enum_FrequencyCapTimeUnit",
 
   // @ts-ignore
-  time_length: number
+  time_length: number,
 };
 
-/* .google.ads.googleads.v1.common.KeywordPlanHistoricalMetrics */
+/* .google.ads.googleads.v2.common.KeywordPlanHistoricalMetrics */
 // @ts-ignore
 export const KeywordPlanHistoricalMetrics = {
   // @ts-ignore
   avg_monthly_searches: number,
 
   // @ts-ignore
-  competition: "enum_KeywordPlanCompetitionLevel"
+  competition: "enum_KeywordPlanCompetitionLevel",
 };
 
-/* .google.ads.googleads.v1.common.MatchingFunction */
+/* .google.ads.googleads.v2.common.MatchingFunction */
 // @ts-ignore
 export const MatchingFunction = {
   // @ts-ignore
@@ -1608,10 +1614,10 @@ export const MatchingFunction = {
   left_operands: Operand,
 
   // @ts-ignore
-  right_operands: Operand
+  right_operands: Operand,
 };
 
-/* .google.ads.googleads.v1.common.Operand.ConstantOperand */
+/* .google.ads.googleads.v2.common.Operand.ConstantOperand */
 // @ts-ignore
 export const ConstantOperand = {
   // @ts-ignore
@@ -1624,34 +1630,34 @@ export const ConstantOperand = {
   boolean_value: boolean,
 
   // @ts-ignore
-  double_value: number
+  double_value: number,
 };
 
-/* .google.ads.googleads.v1.common.Operand.FeedAttributeOperand */
+/* .google.ads.googleads.v2.common.Operand.FeedAttributeOperand */
 // @ts-ignore
 export const FeedAttributeOperand = {
   // @ts-ignore
   feed_id: number,
 
   // @ts-ignore
-  feed_attribute_id: number
+  feed_attribute_id: number,
 };
 
-/* .google.ads.googleads.v1.common.Operand.FunctionOperand */
+/* .google.ads.googleads.v2.common.Operand.FunctionOperand */
 // @ts-ignore
 export const FunctionOperand = {
   // @ts-ignore
-  matching_function: MatchingFunction
+  matching_function: MatchingFunction,
 };
 
-/* .google.ads.googleads.v1.common.Operand.RequestContextOperand */
+/* .google.ads.googleads.v2.common.Operand.RequestContextOperand */
 // @ts-ignore
 export const RequestContextOperand = {
   // @ts-ignore
-  context_type: "enum_MatchingFunctionContextType"
+  context_type: "enum_MatchingFunctionContextType",
 };
 
-/* .google.ads.googleads.v1.common.Operand */
+/* .google.ads.googleads.v2.common.Operand */
 // @ts-ignore
 export const Operand = {
   // @ts-ignore
@@ -1664,10 +1670,10 @@ export const Operand = {
   function_operand: FunctionOperand,
 
   // @ts-ignore
-  request_context_operand: RequestContextOperand
+  request_context_operand: RequestContextOperand,
 };
 
-/* .google.ads.googleads.v1.common.Metrics */
+/* .google.ads.googleads.v2.common.Metrics */
 // @ts-ignore
 export const Metrics = {
   // @ts-ignore
@@ -1746,13 +1752,7 @@ export const Metrics = {
   average_cpv: number,
 
   // @ts-ignore
-  average_frequency: number,
-
-  // @ts-ignore
   average_page_views: number,
-
-  // @ts-ignore
-  average_position: number,
 
   // @ts-ignore
   average_time_on_site: number,
@@ -1872,9 +1872,6 @@ export const Metrics = {
   gmail_secondary_clicks: number,
 
   // @ts-ignore
-  impression_reach: number,
-
-  // @ts-ignore
   impressions_from_store_reach: number,
 
   // @ts-ignore
@@ -1894,6 +1891,15 @@ export const Metrics = {
 
   // @ts-ignore
   invalid_clicks: number,
+
+  // @ts-ignore
+  message_chats: number,
+
+  // @ts-ignore
+  message_impressions: number,
+
+  // @ts-ignore
+  message_chat_rate: number,
 
   // @ts-ignore
   mobile_friendly_clicks_percentage: number,
@@ -1998,30 +2004,30 @@ export const Metrics = {
   video_views: number,
 
   // @ts-ignore
-  view_through_conversions: number
+  view_through_conversions: number,
 };
 
-/* .google.ads.googleads.v1.common.PolicyViolationKey */
+/* .google.ads.googleads.v2.common.PolicyViolationKey */
 // @ts-ignore
 export const PolicyViolationKey = {
   // @ts-ignore
   policy_name: string,
 
   // @ts-ignore
-  violating_text: string
+  violating_text: string,
 };
 
-/* .google.ads.googleads.v1.common.PolicyValidationParameter */
+/* .google.ads.googleads.v2.common.PolicyValidationParameter */
 // @ts-ignore
 export const PolicyValidationParameter = {
   // @ts-ignore
   ignorable_policy_topics: string,
 
   // @ts-ignore
-  exempt_policy_violation_keys: PolicyViolationKey
+  exempt_policy_violation_keys: PolicyViolationKey,
 };
 
-/* .google.ads.googleads.v1.common.PolicyTopicEntry */
+/* .google.ads.googleads.v2.common.PolicyTopicEntry */
 // @ts-ignore
 export const PolicyTopicEntry = {
   // @ts-ignore
@@ -2034,49 +2040,48 @@ export const PolicyTopicEntry = {
   evidences: PolicyTopicEvidence,
 
   // @ts-ignore
-  constraints: PolicyTopicConstraint
+  constraints: PolicyTopicConstraint,
 };
 
 export const PolicyTopicEvidence = {
-  http_code: number,
   website_list: { websites: string },
   text_list: { texts: string },
   language_code: string,
   destination_text_list: { destination_texts: string },
-  destination_mismatch: {
-    url_types: "enum_PolicyTopicEvidenceDestinationMismatchUrlType"
-  },
+  destination_mismatch: { url_types: "enum_PolicyTopicEvidenceDestinationMismatchUrlType" },
   destination_not_working: {
     expanded_url: string,
     device: "enum_PolicyTopicEvidenceDestinationNotWorkingDevice",
-    last_checked_date_time: string
-  }
+    last_checked_date_time: string,
+    dns_error_type: "enum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType",
+    http_error_code: number,
+  },
 };
 
 export const PolicyTopicConstraint = {
   country_constraint_list: {
     total_targeted_countries: number,
-    countries: { country_criterion: string }
+    countries: { country_criterion: string },
   },
   reseller_constraint: {},
   certificate_missing_in_country_list: {
     total_targeted_countries: number,
-    countries: { country_criterion: string }
+    countries: { country_criterion: string },
   },
   certificate_domain_mismatch_in_country_list: {
     total_targeted_countries: number,
-    countries: { country_criterion: string }
-  }
+    countries: { country_criterion: string },
+  },
 };
 
-/* .google.ads.googleads.v1.common.RealTimeBiddingSetting */
+/* .google.ads.googleads.v2.common.RealTimeBiddingSetting */
 // @ts-ignore
 export const RealTimeBiddingSetting = {
   // @ts-ignore
-  opt_in: boolean
+  opt_in: boolean,
 };
 
-/* .google.ads.googleads.v1.common.Segments */
+/* .google.ads.googleads.v2.common.Segments */
 // @ts-ignore
 export const Segments = {
   // @ts-ignore
@@ -2122,7 +2127,13 @@ export const Segments = {
   geo_target_airport: string,
 
   // @ts-ignore
+  geo_target_canton: string,
+
+  // @ts-ignore
   geo_target_city: string,
+
+  // @ts-ignore
+  geo_target_country: string,
 
   // @ts-ignore
   geo_target_county: string,
@@ -2302,48 +2313,48 @@ export const Segments = {
   week: string,
 
   // @ts-ignore
-  year: number
+  year: number,
 };
 
-/* .google.ads.googleads.v1.common.Keyword */
+/* .google.ads.googleads.v2.common.Keyword */
 // @ts-ignore
 export const Keyword = {
   // @ts-ignore
   ad_group_criterion: string,
 
   // @ts-ignore
-  info: KeywordInfo
+  info: KeywordInfo,
 };
 
-/* .google.ads.googleads.v1.common.BidModifierSimulationPointList */
+/* .google.ads.googleads.v2.common.BidModifierSimulationPointList */
 // @ts-ignore
 export const BidModifierSimulationPointList = {
   // @ts-ignore
-  points: BidModifierSimulationPoint
+  points: BidModifierSimulationPoint,
 };
 
-/* .google.ads.googleads.v1.common.CpcBidSimulationPointList */
+/* .google.ads.googleads.v2.common.CpcBidSimulationPointList */
 // @ts-ignore
 export const CpcBidSimulationPointList = {
   // @ts-ignore
-  points: CpcBidSimulationPoint
+  points: CpcBidSimulationPoint,
 };
 
-/* .google.ads.googleads.v1.common.CpvBidSimulationPointList */
+/* .google.ads.googleads.v2.common.CpvBidSimulationPointList */
 // @ts-ignore
 export const CpvBidSimulationPointList = {
   // @ts-ignore
-  points: CpvBidSimulationPoint
+  points: CpvBidSimulationPoint,
 };
 
-/* .google.ads.googleads.v1.common.TargetCpaSimulationPointList */
+/* .google.ads.googleads.v2.common.TargetCpaSimulationPointList */
 // @ts-ignore
 export const TargetCpaSimulationPointList = {
   // @ts-ignore
-  points: TargetCpaSimulationPoint
+  points: TargetCpaSimulationPoint,
 };
 
-/* .google.ads.googleads.v1.common.BidModifierSimulationPoint */
+/* .google.ads.googleads.v2.common.BidModifierSimulationPoint */
 // @ts-ignore
 export const BidModifierSimulationPoint = {
   // @ts-ignore
@@ -2383,10 +2394,13 @@ export const BidModifierSimulationPoint = {
   parent_impressions: number,
 
   // @ts-ignore
-  parent_top_slot_impressions: number
+  parent_top_slot_impressions: number,
+
+  // @ts-ignore
+  parent_required_budget_micros: number,
 };
 
-/* .google.ads.googleads.v1.common.CpcBidSimulationPoint */
+/* .google.ads.googleads.v2.common.CpcBidSimulationPoint */
 // @ts-ignore
 export const CpcBidSimulationPoint = {
   // @ts-ignore
@@ -2408,10 +2422,10 @@ export const CpcBidSimulationPoint = {
   impressions: number,
 
   // @ts-ignore
-  top_slot_impressions: number
+  top_slot_impressions: number,
 };
 
-/* .google.ads.googleads.v1.common.CpvBidSimulationPoint */
+/* .google.ads.googleads.v2.common.CpvBidSimulationPoint */
 // @ts-ignore
 export const CpvBidSimulationPoint = {
   // @ts-ignore
@@ -2421,10 +2435,13 @@ export const CpvBidSimulationPoint = {
   cost_micros: number,
 
   // @ts-ignore
-  impressions: number
+  impressions: number,
+
+  // @ts-ignore
+  views: number,
 };
 
-/* .google.ads.googleads.v1.common.TargetCpaSimulationPoint */
+/* .google.ads.googleads.v2.common.TargetCpaSimulationPoint */
 // @ts-ignore
 export const TargetCpaSimulationPoint = {
   // @ts-ignore
@@ -2446,10 +2463,10 @@ export const TargetCpaSimulationPoint = {
   impressions: number,
 
   // @ts-ignore
-  top_slot_impressions: number
+  top_slot_impressions: number,
 };
 
-/* .google.ads.googleads.v1.common.TagSnippet */
+/* .google.ads.googleads.v2.common.TagSnippet */
 // @ts-ignore
 export const TagSnippet = {
   // @ts-ignore
@@ -2462,37 +2479,37 @@ export const TagSnippet = {
   global_site_tag: string,
 
   // @ts-ignore
-  event_snippet: string
+  event_snippet: string,
 };
 
-/* .google.ads.googleads.v1.common.TargetingSetting */
+/* .google.ads.googleads.v2.common.TargetingSetting */
 // @ts-ignore
 export const TargetingSetting = {
   // @ts-ignore
-  target_restrictions: TargetRestriction
+  target_restrictions: TargetRestriction,
 };
 
-/* .google.ads.googleads.v1.common.TargetRestriction */
+/* .google.ads.googleads.v2.common.TargetRestriction */
 // @ts-ignore
 export const TargetRestriction = {
   // @ts-ignore
   targeting_dimension: "enum_TargetingDimension",
 
   // @ts-ignore
-  bid_only: boolean
+  bid_only: boolean,
 };
 
-/* .google.ads.googleads.v1.common.TextLabel */
+/* .google.ads.googleads.v2.common.TextLabel */
 // @ts-ignore
 export const TextLabel = {
   // @ts-ignore
   background_color: string,
 
   // @ts-ignore
-  description: string
+  description: string,
 };
 
-/* .google.ads.googleads.v1.common.UrlCollection */
+/* .google.ads.googleads.v2.common.UrlCollection */
 // @ts-ignore
 export const UrlCollection = {
   // @ts-ignore
@@ -2505,17 +2522,17 @@ export const UrlCollection = {
   final_mobile_urls: string,
 
   // @ts-ignore
-  tracking_url_template: string
+  tracking_url_template: string,
 };
 
-/* .google.ads.googleads.v1.common.SimilarUserListInfo */
+/* .google.ads.googleads.v2.common.SimilarUserListInfo */
 // @ts-ignore
 export const SimilarUserListInfo = {
   // @ts-ignore
-  seed_user_list: string
+  seed_user_list: string,
 };
 
-/* .google.ads.googleads.v1.common.CrmBasedUserListInfo */
+/* .google.ads.googleads.v2.common.CrmBasedUserListInfo */
 // @ts-ignore
 export const CrmBasedUserListInfo = {
   // @ts-ignore
@@ -2525,27 +2542,27 @@ export const CrmBasedUserListInfo = {
   upload_key_type: "enum_CustomerMatchUploadKeyType",
 
   // @ts-ignore
-  data_source_type: "enum_UserListCrmDataSourceType"
+  data_source_type: "enum_UserListCrmDataSourceType",
 };
 
-/* .google.ads.googleads.v1.common.UserListRuleInfo */
+/* .google.ads.googleads.v2.common.UserListRuleInfo */
 // @ts-ignore
 export const UserListRuleInfo = {
   // @ts-ignore
   rule_type: "enum_UserListRuleType",
 
   // @ts-ignore
-  rule_item_groups: UserListRuleItemGroupInfo
+  rule_item_groups: UserListRuleItemGroupInfo,
 };
 
-/* .google.ads.googleads.v1.common.UserListRuleItemGroupInfo */
+/* .google.ads.googleads.v2.common.UserListRuleItemGroupInfo */
 // @ts-ignore
 export const UserListRuleItemGroupInfo = {
   // @ts-ignore
-  rule_items: UserListRuleItemInfo
+  rule_items: UserListRuleItemInfo,
 };
 
-/* .google.ads.googleads.v1.common.UserListRuleItemInfo */
+/* .google.ads.googleads.v2.common.UserListRuleItemInfo */
 // @ts-ignore
 export const UserListRuleItemInfo = {
   // @ts-ignore
@@ -2558,10 +2575,10 @@ export const UserListRuleItemInfo = {
   string_rule_item: UserListStringRuleItemInfo,
 
   // @ts-ignore
-  date_rule_item: UserListDateRuleItemInfo
+  date_rule_item: UserListDateRuleItemInfo,
 };
 
-/* .google.ads.googleads.v1.common.UserListDateRuleItemInfo */
+/* .google.ads.googleads.v2.common.UserListDateRuleItemInfo */
 // @ts-ignore
 export const UserListDateRuleItemInfo = {
   // @ts-ignore
@@ -2571,30 +2588,30 @@ export const UserListDateRuleItemInfo = {
   value: string,
 
   // @ts-ignore
-  offset_in_days: number
+  offset_in_days: number,
 };
 
-/* .google.ads.googleads.v1.common.UserListNumberRuleItemInfo */
+/* .google.ads.googleads.v2.common.UserListNumberRuleItemInfo */
 // @ts-ignore
 export const UserListNumberRuleItemInfo = {
   // @ts-ignore
   operator: "enum_UserListNumberRuleItemOperator",
 
   // @ts-ignore
-  value: number
+  value: number,
 };
 
-/* .google.ads.googleads.v1.common.UserListStringRuleItemInfo */
+/* .google.ads.googleads.v2.common.UserListStringRuleItemInfo */
 // @ts-ignore
 export const UserListStringRuleItemInfo = {
   // @ts-ignore
   operator: "enum_UserListStringRuleItemOperator",
 
   // @ts-ignore
-  value: string
+  value: string,
 };
 
-/* .google.ads.googleads.v1.common.CombinedRuleUserListInfo */
+/* .google.ads.googleads.v2.common.CombinedRuleUserListInfo */
 // @ts-ignore
 export const CombinedRuleUserListInfo = {
   // @ts-ignore
@@ -2604,10 +2621,10 @@ export const CombinedRuleUserListInfo = {
   right_operand: UserListRuleInfo,
 
   // @ts-ignore
-  rule_operator: "enum_UserListCombinedRuleOperator"
+  rule_operator: "enum_UserListCombinedRuleOperator",
 };
 
-/* .google.ads.googleads.v1.common.DateSpecificRuleUserListInfo */
+/* .google.ads.googleads.v2.common.DateSpecificRuleUserListInfo */
 // @ts-ignore
 export const DateSpecificRuleUserListInfo = {
   // @ts-ignore
@@ -2617,17 +2634,17 @@ export const DateSpecificRuleUserListInfo = {
   start_date: string,
 
   // @ts-ignore
-  end_date: string
+  end_date: string,
 };
 
-/* .google.ads.googleads.v1.common.ExpressionRuleUserListInfo */
+/* .google.ads.googleads.v2.common.ExpressionRuleUserListInfo */
 // @ts-ignore
 export const ExpressionRuleUserListInfo = {
   // @ts-ignore
-  rule: UserListRuleInfo
+  rule: UserListRuleInfo,
 };
 
-/* .google.ads.googleads.v1.common.RuleBasedUserListInfo */
+/* .google.ads.googleads.v2.common.RuleBasedUserListInfo */
 // @ts-ignore
 export const RuleBasedUserListInfo = {
   // @ts-ignore
@@ -2640,48 +2657,48 @@ export const RuleBasedUserListInfo = {
   date_specific_rule_user_list: DateSpecificRuleUserListInfo,
 
   // @ts-ignore
-  expression_rule_user_list: ExpressionRuleUserListInfo
+  expression_rule_user_list: ExpressionRuleUserListInfo,
 };
 
-/* .google.ads.googleads.v1.common.LogicalUserListInfo */
+/* .google.ads.googleads.v2.common.LogicalUserListInfo */
 // @ts-ignore
 export const LogicalUserListInfo = {
   // @ts-ignore
-  rules: UserListLogicalRuleInfo
+  rules: UserListLogicalRuleInfo,
 };
 
-/* .google.ads.googleads.v1.common.UserListLogicalRuleInfo */
+/* .google.ads.googleads.v2.common.UserListLogicalRuleInfo */
 // @ts-ignore
 export const UserListLogicalRuleInfo = {
   // @ts-ignore
   operator: "enum_UserListLogicalRuleOperator",
 
   // @ts-ignore
-  rule_operands: LogicalUserListOperandInfo
+  rule_operands: LogicalUserListOperandInfo,
 };
 
-/* .google.ads.googleads.v1.common.LogicalUserListOperandInfo */
+/* .google.ads.googleads.v2.common.LogicalUserListOperandInfo */
 // @ts-ignore
 export const LogicalUserListOperandInfo = {
   // @ts-ignore
-  user_list: string
+  user_list: string,
 };
 
-/* .google.ads.googleads.v1.common.BasicUserListInfo */
+/* .google.ads.googleads.v2.common.BasicUserListInfo */
 // @ts-ignore
 export const BasicUserListInfo = {
   // @ts-ignore
-  actions: UserListActionInfo
+  actions: UserListActionInfo,
 };
 
-/* .google.ads.googleads.v1.common.UserListActionInfo */
+/* .google.ads.googleads.v2.common.UserListActionInfo */
 // @ts-ignore
 export const UserListActionInfo = {
   // @ts-ignore
   conversion_action: string,
 
   // @ts-ignore
-  remarketing_action: string
+  remarketing_action: string,
 };
 
 export const Value = {
@@ -2689,10 +2706,10 @@ export const Value = {
   int_64_value: number,
   float_value: number,
   double_value: number,
-  string_value: string
+  string_value: string,
 };
 
-/* .google.ads.googleads.v1.resources.AccountBudget.PendingAccountBudgetProposal */
+/* .google.ads.googleads.v2.resources.AccountBudget.PendingAccountBudgetProposal */
 // @ts-ignore
 export const PendingAccountBudgetProposal = {
   // @ts-ignore
@@ -2726,10 +2743,10 @@ export const PendingAccountBudgetProposal = {
   spending_limit_micros: number,
 
   // @ts-ignore
-  spending_limit_type: "enum_SpendingLimitType"
+  spending_limit_type: "enum_SpendingLimitType",
 };
 
-/* .google.ads.googleads.v1.resources.AccountBudget */
+/* .google.ads.googleads.v2.resources.AccountBudget */
 // @ts-ignore
 export const AccountBudget = {
   // @ts-ignore
@@ -2796,10 +2813,10 @@ export const AccountBudget = {
   adjusted_spending_limit_micros: number,
 
   // @ts-ignore
-  adjusted_spending_limit_type: "enum_SpendingLimitType"
+  adjusted_spending_limit_type: "enum_SpendingLimitType",
 };
 
-/* .google.ads.googleads.v1.resources.AccountBudgetProposal */
+/* .google.ads.googleads.v2.resources.AccountBudgetProposal */
 // @ts-ignore
 export const AccountBudgetProposal = {
   // @ts-ignore
@@ -2866,12 +2883,15 @@ export const AccountBudgetProposal = {
   approved_spending_limit_micros: number,
 
   // @ts-ignore
-  approved_spending_limit_type: "enum_SpendingLimitType"
+  approved_spending_limit_type: "enum_SpendingLimitType",
 };
 
-/* .google.ads.googleads.v1.resources.Ad */
+/* .google.ads.googleads.v2.resources.Ad */
 // @ts-ignore
 export const Ad = {
+  // @ts-ignore
+  resource_name: string,
+
   // @ts-ignore
   id: number,
 
@@ -2963,10 +2983,10 @@ export const Ad = {
   app_engagement_ad: AppEngagementAdInfo,
 
   // @ts-ignore
-  shopping_comparison_listing_ad: ShoppingComparisonListingAdInfo
+  shopping_comparison_listing_ad: ShoppingComparisonListingAdInfo,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroup */
+/* .google.ads.googleads.v2.resources.AdGroup */
 // @ts-ignore
 export const AdGroup = {
   // @ts-ignore
@@ -3042,10 +3062,13 @@ export const AdGroup = {
   effective_target_roas: number,
 
   // @ts-ignore
-  effective_target_roas_source: "enum_BiddingSource"
+  effective_target_roas_source: "enum_BiddingSource",
+
+  // @ts-ignore
+  labels: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupAd */
+/* .google.ads.googleads.v2.resources.AdGroupAd */
 // @ts-ignore
 export const AdGroupAd = {
   // @ts-ignore
@@ -3064,14 +3087,14 @@ export const AdGroupAd = {
   policy_summary: {
     policy_topic_entries: PolicyTopicEntry,
     review_status: "enum_PolicyReviewStatus",
-    approval_status: "enum_PolicyApprovalStatus"
+    approval_status: "enum_PolicyApprovalStatus",
   },
 
   // @ts-ignore
-  ad_strength: "enum_AdStrength"
+  ad_strength: "enum_AdStrength",
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupAdPolicySummary */
+/* .google.ads.googleads.v2.resources.AdGroupAdPolicySummary */
 // @ts-ignore
 export const AdGroupAdPolicySummary = {
   // @ts-ignore
@@ -3081,10 +3104,49 @@ export const AdGroupAdPolicySummary = {
   review_status: "enum_PolicyReviewStatus",
 
   // @ts-ignore
-  approval_status: "enum_PolicyApprovalStatus"
+  approval_status: "enum_PolicyApprovalStatus",
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupAdLabel */
+/* .google.ads.googleads.v2.resources.AdGroupAdAssetView */
+// @ts-ignore
+export const AdGroupAdAssetView = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  ad_group_ad: string,
+
+  // @ts-ignore
+  asset: string,
+
+  // @ts-ignore
+  field_type: "enum_AssetFieldType",
+
+  // @ts-ignore
+  policy_summary: {
+    policy_topic_entries: PolicyTopicEntry,
+    review_status: "enum_PolicyReviewStatus",
+    approval_status: "enum_PolicyApprovalStatus",
+  },
+
+  // @ts-ignore
+  performance_label: "enum_AssetPerformanceLabel",
+};
+
+/* .google.ads.googleads.v2.resources.AdGroupAdAssetPolicySummary */
+// @ts-ignore
+export const AdGroupAdAssetPolicySummary = {
+  // @ts-ignore
+  policy_topic_entries: PolicyTopicEntry,
+
+  // @ts-ignore
+  review_status: "enum_PolicyReviewStatus",
+
+  // @ts-ignore
+  approval_status: "enum_PolicyApprovalStatus",
+};
+
+/* .google.ads.googleads.v2.resources.AdGroupAdLabel */
 // @ts-ignore
 export const AdGroupAdLabel = {
   // @ts-ignore
@@ -3094,17 +3156,17 @@ export const AdGroupAdLabel = {
   ad_group_ad: string,
 
   // @ts-ignore
-  label: string
+  label: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupAudienceView */
+/* .google.ads.googleads.v2.resources.AdGroupAudienceView */
 // @ts-ignore
 export const AdGroupAudienceView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupBidModifier */
+/* .google.ads.googleads.v2.resources.AdGroupBidModifier */
 // @ts-ignore
 export const AdGroupBidModifier = {
   // @ts-ignore
@@ -3141,10 +3203,10 @@ export const AdGroupBidModifier = {
   device: DeviceInfo,
 
   // @ts-ignore
-  preferred_content: PreferredContentInfo
+  preferred_content: PreferredContentInfo,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupCriterion.QualityInfo */
+/* .google.ads.googleads.v2.resources.AdGroupCriterion.QualityInfo */
 // @ts-ignore
 export const QualityInfo = {
   // @ts-ignore
@@ -3157,10 +3219,10 @@ export const QualityInfo = {
   post_click_quality_score: "enum_QualityScoreBucket",
 
   // @ts-ignore
-  search_predicted_ctr: "enum_QualityScoreBucket"
+  search_predicted_ctr: "enum_QualityScoreBucket",
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupCriterion.PositionEstimates */
+/* .google.ads.googleads.v2.resources.AdGroupCriterion.PositionEstimates */
 // @ts-ignore
 export const PositionEstimates = {
   // @ts-ignore
@@ -3176,10 +3238,10 @@ export const PositionEstimates = {
   estimated_add_clicks_at_first_position_cpc: number,
 
   // @ts-ignore
-  estimated_add_cost_at_first_position_cpc: number
+  estimated_add_cost_at_first_position_cpc: number,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupCriterion */
+/* .google.ads.googleads.v2.resources.AdGroupCriterion */
 // @ts-ignore
 export const AdGroupCriterion = {
   // @ts-ignore
@@ -3318,10 +3380,10 @@ export const AdGroupCriterion = {
   custom_affinity: CustomAffinityInfo,
 
   // @ts-ignore
-  custom_intent: CustomIntentInfo
+  custom_intent: CustomIntentInfo,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupCriterionLabel */
+/* .google.ads.googleads.v2.resources.AdGroupCriterionLabel */
 // @ts-ignore
 export const AdGroupCriterionLabel = {
   // @ts-ignore
@@ -3331,10 +3393,10 @@ export const AdGroupCriterionLabel = {
   ad_group_criterion: string,
 
   // @ts-ignore
-  label: string
+  label: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupCriterionSimulation */
+/* .google.ads.googleads.v2.resources.AdGroupCriterionSimulation */
 // @ts-ignore
 export const AdGroupCriterionSimulation = {
   // @ts-ignore
@@ -3359,10 +3421,10 @@ export const AdGroupCriterionSimulation = {
   end_date: string,
 
   // @ts-ignore
-  cpc_bid_point_list: CpcBidSimulationPointList
+  cpc_bid_point_list: CpcBidSimulationPointList,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupExtensionSetting */
+/* .google.ads.googleads.v2.resources.AdGroupExtensionSetting */
 // @ts-ignore
 export const AdGroupExtensionSetting = {
   // @ts-ignore
@@ -3378,10 +3440,10 @@ export const AdGroupExtensionSetting = {
   extension_feed_items: string,
 
   // @ts-ignore
-  device: "enum_ExtensionSettingDevice"
+  device: "enum_ExtensionSettingDevice",
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupFeed */
+/* .google.ads.googleads.v2.resources.AdGroupFeed */
 // @ts-ignore
 export const AdGroupFeed = {
   // @ts-ignore
@@ -3400,10 +3462,10 @@ export const AdGroupFeed = {
   matching_function: MatchingFunction,
 
   // @ts-ignore
-  status: "enum_FeedLinkStatus"
+  status: "enum_FeedLinkStatus",
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupLabel */
+/* .google.ads.googleads.v2.resources.AdGroupLabel */
 // @ts-ignore
 export const AdGroupLabel = {
   // @ts-ignore
@@ -3413,10 +3475,10 @@ export const AdGroupLabel = {
   ad_group: string,
 
   // @ts-ignore
-  label: string
+  label: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdGroupSimulation */
+/* .google.ads.googleads.v2.resources.AdGroupSimulation */
 // @ts-ignore
 export const AdGroupSimulation = {
   // @ts-ignore
@@ -3444,10 +3506,10 @@ export const AdGroupSimulation = {
   cpv_bid_point_list: CpvBidSimulationPointList,
 
   // @ts-ignore
-  target_cpa_point_list: TargetCpaSimulationPointList
+  target_cpa_point_list: TargetCpaSimulationPointList,
 };
 
-/* .google.ads.googleads.v1.resources.AdParameter */
+/* .google.ads.googleads.v2.resources.AdParameter */
 // @ts-ignore
 export const AdParameter = {
   // @ts-ignore
@@ -3460,24 +3522,24 @@ export const AdParameter = {
   parameter_index: number,
 
   // @ts-ignore
-  insertion_text: string
+  insertion_text: string,
 };
 
-/* .google.ads.googleads.v1.resources.AdScheduleView */
+/* .google.ads.googleads.v2.resources.AdScheduleView */
 // @ts-ignore
 export const AdScheduleView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.AgeRangeView */
+/* .google.ads.googleads.v2.resources.AgeRangeView */
 // @ts-ignore
 export const AgeRangeView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.Asset */
+/* .google.ads.googleads.v2.resources.Asset */
 // @ts-ignore
 export const Asset = {
   // @ts-ignore
@@ -3502,10 +3564,10 @@ export const Asset = {
   image_asset: ImageAsset,
 
   // @ts-ignore
-  text_asset: TextAsset
+  text_asset: TextAsset,
 };
 
-/* .google.ads.googleads.v1.resources.BiddingStrategy */
+/* .google.ads.googleads.v2.resources.BiddingStrategy */
 // @ts-ignore
 export const BiddingStrategy = {
   // @ts-ignore
@@ -3548,10 +3610,10 @@ export const BiddingStrategy = {
   target_roas: TargetRoas,
 
   // @ts-ignore
-  target_spend: TargetSpend
+  target_spend: TargetSpend,
 };
 
-/* .google.ads.googleads.v1.resources.BillingSetup.PaymentsAccountInfo */
+/* .google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo */
 // @ts-ignore
 export const PaymentsAccountInfo = {
   // @ts-ignore
@@ -3567,10 +3629,10 @@ export const PaymentsAccountInfo = {
   payments_profile_name: string,
 
   // @ts-ignore
-  secondary_payments_profile_id: string
+  secondary_payments_profile_id: string,
 };
 
-/* .google.ads.googleads.v1.resources.BillingSetup */
+/* .google.ads.googleads.v2.resources.BillingSetup */
 // @ts-ignore
 export const BillingSetup = {
   // @ts-ignore
@@ -3598,10 +3660,10 @@ export const BillingSetup = {
   end_date_time: string,
 
   // @ts-ignore
-  end_time_type: "enum_TimeType"
+  end_time_type: "enum_TimeType",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.NetworkSettings */
+/* .google.ads.googleads.v2.resources.Campaign.NetworkSettings */
 // @ts-ignore
 export const NetworkSettings = {
   // @ts-ignore
@@ -3614,27 +3676,17 @@ export const NetworkSettings = {
   target_content_network: boolean,
 
   // @ts-ignore
-  target_partner_search_network: boolean
+  target_partner_search_network: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.HotelSettingInfo */
+/* .google.ads.googleads.v2.resources.Campaign.HotelSettingInfo */
 // @ts-ignore
 export const HotelSettingInfo = {
   // @ts-ignore
-  hotel_center_id: number
+  hotel_center_id: number,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.VanityPharma */
-// @ts-ignore
-export const VanityPharma = {
-  // @ts-ignore
-  vanity_pharma_display_url_mode: "enum_VanityPharmaDisplayUrlMode",
-
-  // @ts-ignore
-  vanity_pharma_text: "enum_VanityPharmaText"
-};
-
-/* .google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting */
+/* .google.ads.googleads.v2.resources.Campaign.DynamicSearchAdsSetting */
 // @ts-ignore
 export const DynamicSearchAdsSetting = {
   // @ts-ignore
@@ -3647,10 +3699,10 @@ export const DynamicSearchAdsSetting = {
   use_supplied_urls_only: boolean,
 
   // @ts-ignore
-  feeds: string
+  feeds: string,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.ShoppingSetting */
+/* .google.ads.googleads.v2.resources.Campaign.ShoppingSetting */
 // @ts-ignore
 export const ShoppingSetting = {
   // @ts-ignore
@@ -3663,24 +3715,34 @@ export const ShoppingSetting = {
   campaign_priority: number,
 
   // @ts-ignore
-  enable_local: boolean
+  enable_local: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.TrackingSetting */
+/* .google.ads.googleads.v2.resources.Campaign.TrackingSetting */
 // @ts-ignore
 export const TrackingSetting = {
   // @ts-ignore
-  tracking_url: string
+  tracking_url: string,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.SelectiveOptimization */
+/* .google.ads.googleads.v2.resources.Campaign.GeoTargetTypeSetting */
+// @ts-ignore
+export const GeoTargetTypeSetting = {
+  // @ts-ignore
+  positive_geo_target_type: "enum_PositiveGeoTargetType",
+
+  // @ts-ignore
+  negative_geo_target_type: "enum_NegativeGeoTargetType",
+};
+
+/* .google.ads.googleads.v2.resources.Campaign.SelectiveOptimization */
 // @ts-ignore
 export const SelectiveOptimization = {
   // @ts-ignore
-  conversion_actions: string
+  conversion_actions: string,
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.AppCampaignSetting */
+/* .google.ads.googleads.v2.resources.Campaign.AppCampaignSetting */
 // @ts-ignore
 export const AppCampaignSetting = {
   // @ts-ignore
@@ -3690,20 +3752,20 @@ export const AppCampaignSetting = {
   app_id: string,
 
   // @ts-ignore
-  app_store: "enum_AppCampaignAppStore"
+  app_store: "enum_AppCampaignAppStore",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting */
+/* .google.ads.googleads.v2.resources.Campaign.VanityPharma */
 // @ts-ignore
-export const GeoTargetTypeSetting = {
+export const VanityPharma = {
   // @ts-ignore
-  positive_geo_target_type: "enum_PositiveGeoTargetType",
+  vanity_pharma_display_url_mode: "enum_VanityPharmaDisplayUrlMode",
 
   // @ts-ignore
-  negative_geo_target_type: "enum_NegativeGeoTargetType"
+  vanity_pharma_text: "enum_VanityPharmaText",
 };
 
-/* .google.ads.googleads.v1.resources.Campaign */
+/* .google.ads.googleads.v2.resources.Campaign */
 // @ts-ignore
 export const Campaign = {
   // @ts-ignore
@@ -3839,17 +3901,17 @@ export const Campaign = {
   percent_cpc: PercentCpc,
 
   // @ts-ignore
-  target_cpm: TargetCpm
+  target_cpm: TargetCpm,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignAudienceView */
+/* .google.ads.googleads.v2.resources.CampaignAudienceView */
 // @ts-ignore
 export const CampaignAudienceView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignBidModifier */
+/* .google.ads.googleads.v2.resources.CampaignBidModifier */
 // @ts-ignore
 export const CampaignBidModifier = {
   // @ts-ignore
@@ -3865,10 +3927,10 @@ export const CampaignBidModifier = {
   bid_modifier: number,
 
   // @ts-ignore
-  interaction_type: InteractionTypeInfo
+  interaction_type: InteractionTypeInfo,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignBudget */
+/* .google.ads.googleads.v2.resources.CampaignBudget */
 // @ts-ignore
 export const CampaignBudget = {
   // @ts-ignore
@@ -3920,10 +3982,10 @@ export const CampaignBudget = {
   recommended_budget_estimated_change_weekly_views: number,
 
   // @ts-ignore
-  type: "enum_BudgetType"
+  type: "enum_BudgetType",
 };
 
-/* .google.ads.googleads.v1.resources.CampaignCriterion */
+/* .google.ads.googleads.v2.resources.CampaignCriterion */
 // @ts-ignore
 export const CampaignCriterion = {
   // @ts-ignore
@@ -4023,10 +4085,10 @@ export const CampaignCriterion = {
   mobile_device: MobileDeviceInfo,
 
   // @ts-ignore
-  location_group: LocationGroupInfo
+  location_group: LocationGroupInfo,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignCriterionSimulation */
+/* .google.ads.googleads.v2.resources.CampaignCriterionSimulation */
 // @ts-ignore
 export const CampaignCriterionSimulation = {
   // @ts-ignore
@@ -4051,10 +4113,10 @@ export const CampaignCriterionSimulation = {
   end_date: string,
 
   // @ts-ignore
-  bid_modifier_point_list: BidModifierSimulationPointList
+  bid_modifier_point_list: BidModifierSimulationPointList,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignDraft */
+/* .google.ads.googleads.v2.resources.CampaignDraft */
 // @ts-ignore
 export const CampaignDraft = {
   // @ts-ignore
@@ -4079,10 +4141,10 @@ export const CampaignDraft = {
   has_experiment_running: boolean,
 
   // @ts-ignore
-  long_running_operation: string
+  long_running_operation: string,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignExperiment */
+/* .google.ads.googleads.v2.resources.CampaignExperiment */
 // @ts-ignore
 export const CampaignExperiment = {
   // @ts-ignore
@@ -4119,10 +4181,10 @@ export const CampaignExperiment = {
   start_date: string,
 
   // @ts-ignore
-  end_date: string
+  end_date: string,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignExtensionSetting */
+/* .google.ads.googleads.v2.resources.CampaignExtensionSetting */
 // @ts-ignore
 export const CampaignExtensionSetting = {
   // @ts-ignore
@@ -4138,10 +4200,10 @@ export const CampaignExtensionSetting = {
   extension_feed_items: string,
 
   // @ts-ignore
-  device: "enum_ExtensionSettingDevice"
+  device: "enum_ExtensionSettingDevice",
 };
 
-/* .google.ads.googleads.v1.resources.CampaignFeed */
+/* .google.ads.googleads.v2.resources.CampaignFeed */
 // @ts-ignore
 export const CampaignFeed = {
   // @ts-ignore
@@ -4160,10 +4222,10 @@ export const CampaignFeed = {
   matching_function: MatchingFunction,
 
   // @ts-ignore
-  status: "enum_FeedLinkStatus"
+  status: "enum_FeedLinkStatus",
 };
 
-/* .google.ads.googleads.v1.resources.CampaignLabel */
+/* .google.ads.googleads.v2.resources.CampaignLabel */
 // @ts-ignore
 export const CampaignLabel = {
   // @ts-ignore
@@ -4173,10 +4235,10 @@ export const CampaignLabel = {
   campaign: string,
 
   // @ts-ignore
-  label: string
+  label: string,
 };
 
-/* .google.ads.googleads.v1.resources.CampaignSharedSet */
+/* .google.ads.googleads.v2.resources.CampaignSharedSet */
 // @ts-ignore
 export const CampaignSharedSet = {
   // @ts-ignore
@@ -4189,10 +4251,10 @@ export const CampaignSharedSet = {
   shared_set: string,
 
   // @ts-ignore
-  status: "enum_CampaignSharedSetStatus"
+  status: "enum_CampaignSharedSetStatus",
 };
 
-/* .google.ads.googleads.v1.resources.CarrierConstant */
+/* .google.ads.googleads.v2.resources.CarrierConstant */
 // @ts-ignore
 export const CarrierConstant = {
   // @ts-ignore
@@ -4205,10 +4267,10 @@ export const CarrierConstant = {
   name: string,
 
   // @ts-ignore
-  country_code: string
+  country_code: string,
 };
 
-/* .google.ads.googleads.v1.resources.ChangeStatus */
+/* .google.ads.googleads.v2.resources.ChangeStatus */
 // @ts-ignore
 export const ChangeStatus = {
   // @ts-ignore
@@ -4251,10 +4313,10 @@ export const ChangeStatus = {
   campaign_feed: string,
 
   // @ts-ignore
-  ad_group_bid_modifier: string
+  ad_group_bid_modifier: string,
 };
 
-/* .google.ads.googleads.v1.resources.ClickView */
+/* .google.ads.googleads.v2.resources.ClickView */
 // @ts-ignore
 export const ClickView = {
   // @ts-ignore
@@ -4270,20 +4332,23 @@ export const ClickView = {
   location_of_presence: ClickLocation,
 
   // @ts-ignore
-  page_number: number
+  page_number: number,
+
+  // @ts-ignore
+  ad_group_ad: string,
 };
 
-/* .google.ads.googleads.v1.resources.ConversionAction.AttributionModelSettings */
+/* .google.ads.googleads.v2.resources.ConversionAction.AttributionModelSettings */
 // @ts-ignore
 export const AttributionModelSettings = {
   // @ts-ignore
   attribution_model: "enum_AttributionModel",
 
   // @ts-ignore
-  data_driven_model_status: "enum_DataDrivenModelStatus"
+  data_driven_model_status: "enum_DataDrivenModelStatus",
 };
 
-/* .google.ads.googleads.v1.resources.ConversionAction.ValueSettings */
+/* .google.ads.googleads.v2.resources.ConversionAction.ValueSettings */
 // @ts-ignore
 export const ValueSettings = {
   // @ts-ignore
@@ -4293,10 +4358,10 @@ export const ValueSettings = {
   default_currency_code: string,
 
   // @ts-ignore
-  always_use_default_value: boolean
+  always_use_default_value: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.ConversionAction */
+/* .google.ads.googleads.v2.resources.ConversionAction */
 // @ts-ignore
 export const ConversionAction = {
   // @ts-ignore
@@ -4345,10 +4410,10 @@ export const ConversionAction = {
   phone_call_duration_seconds: number,
 
   // @ts-ignore
-  app_id: string
+  app_id: string,
 };
 
-/* .google.ads.googleads.v1.resources.CustomInterest */
+/* .google.ads.googleads.v2.resources.CustomInterest */
 // @ts-ignore
 export const CustomInterest = {
   // @ts-ignore
@@ -4370,20 +4435,20 @@ export const CustomInterest = {
   description: string,
 
   // @ts-ignore
-  members: { member_type: "enum_CustomInterestMemberType", parameter: string }
+  members: { member_type: "enum_CustomInterestMemberType", parameter: string },
 };
 
-/* .google.ads.googleads.v1.resources.CustomInterestMember */
+/* .google.ads.googleads.v2.resources.CustomInterestMember */
 // @ts-ignore
 export const CustomInterestMember = {
   // @ts-ignore
   member_type: "enum_CustomInterestMemberType",
 
   // @ts-ignore
-  parameter: string
+  parameter: string,
 };
 
-/* .google.ads.googleads.v1.resources.Customer */
+/* .google.ads.googleads.v2.resources.Customer */
 // @ts-ignore
 export const Customer = {
   // @ts-ignore
@@ -4423,13 +4488,13 @@ export const Customer = {
   call_reporting_setting: {
     call_reporting_enabled: boolean,
     call_conversion_reporting_enabled: boolean,
-    call_conversion_action: string
+    call_conversion_action: string,
   },
 
   // @ts-ignore
   conversion_tracking_setting: {
     conversion_tracking_id: number,
-    cross_account_conversion_tracking_id: number
+    cross_account_conversion_tracking_id: number,
   },
 
   // @ts-ignore
@@ -4437,10 +4502,10 @@ export const Customer = {
 
   // @ts-ignore
   pay_per_conversion_eligibility_failure_reasons:
-    "enum_CustomerPayPerConversionEligibilityFailureReason"
+    "enum_CustomerPayPerConversionEligibilityFailureReason",
 };
 
-/* .google.ads.googleads.v1.resources.CallReportingSetting */
+/* .google.ads.googleads.v2.resources.CallReportingSetting */
 // @ts-ignore
 export const CallReportingSetting = {
   // @ts-ignore
@@ -4450,27 +4515,27 @@ export const CallReportingSetting = {
   call_conversion_reporting_enabled: boolean,
 
   // @ts-ignore
-  call_conversion_action: string
+  call_conversion_action: string,
 };
 
-/* .google.ads.googleads.v1.resources.ConversionTrackingSetting */
+/* .google.ads.googleads.v2.resources.ConversionTrackingSetting */
 // @ts-ignore
 export const ConversionTrackingSetting = {
   // @ts-ignore
   conversion_tracking_id: number,
 
   // @ts-ignore
-  cross_account_conversion_tracking_id: number
+  cross_account_conversion_tracking_id: number,
 };
 
-/* .google.ads.googleads.v1.resources.RemarketingSetting */
+/* .google.ads.googleads.v2.resources.RemarketingSetting */
 // @ts-ignore
 export const RemarketingSetting = {
   // @ts-ignore
-  google_global_site_tag: string
+  google_global_site_tag: string,
 };
 
-/* .google.ads.googleads.v1.resources.CustomerClient */
+/* .google.ads.googleads.v2.resources.CustomerClient */
 // @ts-ignore
 export const CustomerClient = {
   // @ts-ignore
@@ -4483,10 +4548,10 @@ export const CustomerClient = {
   hidden: boolean,
 
   // @ts-ignore
-  level: number
+  level: number,
 };
 
-/* .google.ads.googleads.v1.resources.CustomerClientLink */
+/* .google.ads.googleads.v2.resources.CustomerClientLink */
 // @ts-ignore
 export const CustomerClientLink = {
   // @ts-ignore
@@ -4502,10 +4567,10 @@ export const CustomerClientLink = {
   status: "enum_ManagerLinkStatus",
 
   // @ts-ignore
-  hidden: boolean
+  hidden: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.CustomerExtensionSetting */
+/* .google.ads.googleads.v2.resources.CustomerExtensionSetting */
 // @ts-ignore
 export const CustomerExtensionSetting = {
   // @ts-ignore
@@ -4518,10 +4583,10 @@ export const CustomerExtensionSetting = {
   extension_feed_items: string,
 
   // @ts-ignore
-  device: "enum_ExtensionSettingDevice"
+  device: "enum_ExtensionSettingDevice",
 };
 
-/* .google.ads.googleads.v1.resources.CustomerFeed */
+/* .google.ads.googleads.v2.resources.CustomerFeed */
 // @ts-ignore
 export const CustomerFeed = {
   // @ts-ignore
@@ -4537,10 +4602,10 @@ export const CustomerFeed = {
   matching_function: MatchingFunction,
 
   // @ts-ignore
-  status: "enum_FeedLinkStatus"
+  status: "enum_FeedLinkStatus",
 };
 
-/* .google.ads.googleads.v1.resources.CustomerLabel */
+/* .google.ads.googleads.v2.resources.CustomerLabel */
 // @ts-ignore
 export const CustomerLabel = {
   // @ts-ignore
@@ -4550,10 +4615,10 @@ export const CustomerLabel = {
   customer: string,
 
   // @ts-ignore
-  label: string
+  label: string,
 };
 
-/* .google.ads.googleads.v1.resources.CustomerManagerLink */
+/* .google.ads.googleads.v2.resources.CustomerManagerLink */
 // @ts-ignore
 export const CustomerManagerLink = {
   // @ts-ignore
@@ -4566,10 +4631,10 @@ export const CustomerManagerLink = {
   manager_link_id: number,
 
   // @ts-ignore
-  status: "enum_ManagerLinkStatus"
+  status: "enum_ManagerLinkStatus",
 };
 
-/* .google.ads.googleads.v1.resources.CustomerNegativeCriterion */
+/* .google.ads.googleads.v2.resources.CustomerNegativeCriterion */
 // @ts-ignore
 export const CustomerNegativeCriterion = {
   // @ts-ignore
@@ -4597,10 +4662,10 @@ export const CustomerNegativeCriterion = {
   youtube_video: YouTubeVideoInfo,
 
   // @ts-ignore
-  youtube_channel: YouTubeChannelInfo
+  youtube_channel: YouTubeChannelInfo,
 };
 
-/* .google.ads.googleads.v1.resources.DetailPlacementView */
+/* .google.ads.googleads.v2.resources.DetailPlacementView */
 // @ts-ignore
 export const DetailPlacementView = {
   // @ts-ignore
@@ -4619,17 +4684,30 @@ export const DetailPlacementView = {
   target_url: string,
 
   // @ts-ignore
-  placement_type: "enum_PlacementType"
+  placement_type: "enum_PlacementType",
 };
 
-/* .google.ads.googleads.v1.resources.DisplayKeywordView */
+/* .google.ads.googleads.v2.resources.DisplayKeywordView */
 // @ts-ignore
 export const DisplayKeywordView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.DomainCategory */
+/* .google.ads.googleads.v2.resources.DistanceView */
+// @ts-ignore
+export const DistanceView = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  distance_bucket: "enum_DistanceBucket",
+
+  // @ts-ignore
+  metric_system: boolean,
+};
+
+/* .google.ads.googleads.v2.resources.DomainCategory */
 // @ts-ignore
 export const DomainCategory = {
   // @ts-ignore
@@ -4657,10 +4735,10 @@ export const DomainCategory = {
   has_children: boolean,
 
   // @ts-ignore
-  recommended_cpc_bid_micros: number
+  recommended_cpc_bid_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.DynamicSearchAdsSearchTermView */
+/* .google.ads.googleads.v2.resources.DynamicSearchAdsSearchTermView */
 // @ts-ignore
 export const DynamicSearchAdsSearchTermView = {
   // @ts-ignore
@@ -4676,20 +4754,20 @@ export const DynamicSearchAdsSearchTermView = {
   landing_page: string,
 
   // @ts-ignore
-  page_url: string
+  page_url: string,
 };
 
-/* .google.ads.googleads.v1.resources.ExpandedLandingPageView */
+/* .google.ads.googleads.v2.resources.ExpandedLandingPageView */
 // @ts-ignore
 export const ExpandedLandingPageView = {
   // @ts-ignore
   resource_name: string,
 
   // @ts-ignore
-  expanded_final_url: string
+  expanded_final_url: string,
 };
 
-/* .google.ads.googleads.v1.resources.ExtensionFeedItem */
+/* .google.ads.googleads.v2.resources.ExtensionFeedItem */
 // @ts-ignore
 export const ExtensionFeedItem = {
   // @ts-ignore
@@ -4712,6 +4790,9 @@ export const ExtensionFeedItem = {
 
   // @ts-ignore
   targeted_geo_target_constant: string,
+
+  // @ts-ignore
+  targeted_keyword: KeywordInfo,
 
   // @ts-ignore
   status: "enum_FeedItemStatus",
@@ -4750,10 +4831,10 @@ export const ExtensionFeedItem = {
   targeted_campaign: string,
 
   // @ts-ignore
-  targeted_ad_group: string
+  targeted_ad_group: string,
 };
 
-/* .google.ads.googleads.v1.resources.Feed.PlacesLocationFeedData.OAuthInfo */
+/* .google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo */
 // @ts-ignore
 export const OAuthInfo = {
   // @ts-ignore
@@ -4763,10 +4844,10 @@ export const OAuthInfo = {
   http_request_url: string,
 
   // @ts-ignore
-  http_authorization_header: string
+  http_authorization_header: string,
 };
 
-/* .google.ads.googleads.v1.resources.Feed.PlacesLocationFeedData */
+/* .google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData */
 // @ts-ignore
 export const PlacesLocationFeedData = {
   // @ts-ignore
@@ -4785,20 +4866,20 @@ export const PlacesLocationFeedData = {
   category_filters: string,
 
   // @ts-ignore
-  label_filters: string
+  label_filters: string,
 };
 
-/* .google.ads.googleads.v1.resources.Feed.AffiliateLocationFeedData */
+/* .google.ads.googleads.v2.resources.Feed.AffiliateLocationFeedData */
 // @ts-ignore
 export const AffiliateLocationFeedData = {
   // @ts-ignore
   chain_ids: number,
 
   // @ts-ignore
-  relationship_type: "enum_AffiliateLocationFeedRelationshipType"
+  relationship_type: "enum_AffiliateLocationFeedRelationshipType",
 };
 
-/* .google.ads.googleads.v1.resources.Feed */
+/* .google.ads.googleads.v2.resources.Feed */
 // @ts-ignore
 export const Feed = {
   // @ts-ignore
@@ -4811,22 +4892,12 @@ export const Feed = {
   name: string,
 
   // @ts-ignore
-  attributes: {
-    id: number,
-    name: string,
-    type: "enum_FeedAttributeType",
-    is_part_of_key: boolean
-  },
+  attributes: { id: number, name: string, type: "enum_FeedAttributeType", is_part_of_key: boolean },
 
   // @ts-ignore
   attribute_operations: {
     operator: undefined,
-    value: {
-      id: number,
-      name: string,
-      type: "enum_FeedAttributeType",
-      is_part_of_key: boolean
-    }
+    value: { id: number, name: string, type: "enum_FeedAttributeType", is_part_of_key: boolean },
   },
 
   // @ts-ignore
@@ -4839,10 +4910,10 @@ export const Feed = {
   places_location_feed_data: PlacesLocationFeedData,
 
   // @ts-ignore
-  affiliate_location_feed_data: AffiliateLocationFeedData
+  affiliate_location_feed_data: AffiliateLocationFeedData,
 };
 
-/* .google.ads.googleads.v1.resources.FeedAttribute */
+/* .google.ads.googleads.v2.resources.FeedAttribute */
 // @ts-ignore
 export const FeedAttribute = {
   // @ts-ignore
@@ -4855,24 +4926,24 @@ export const FeedAttribute = {
   type: "enum_FeedAttributeType",
 
   // @ts-ignore
-  is_part_of_key: boolean
+  is_part_of_key: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.FeedAttributeOperation.Operator */
+/* .google.ads.googleads.v2.resources.FeedAttributeOperation.Operator */
 // @ts-ignore
 export const Operator = {};
 
-/* .google.ads.googleads.v1.resources.FeedAttributeOperation */
+/* .google.ads.googleads.v2.resources.FeedAttributeOperation */
 // @ts-ignore
 export const FeedAttributeOperation = {
   // @ts-ignore
   operator: Operator,
 
   // @ts-ignore
-  value: FeedAttribute
+  value: FeedAttribute,
 };
 
-/* .google.ads.googleads.v1.resources.FeedItem */
+/* .google.ads.googleads.v2.resources.FeedItem */
 // @ts-ignore
 export const FeedItem = {
   // @ts-ignore
@@ -4901,7 +4972,7 @@ export const FeedItem = {
     integer_values: number,
     boolean_values: boolean,
     string_values: string,
-    double_values: number
+    double_values: number,
   },
 
   // @ts-ignore
@@ -4915,7 +4986,7 @@ export const FeedItem = {
 
   // @ts-ignore
   policy_infos: {
-    placeholder_type: number,
+    placeholder_type_enum: "enum_PlaceholderType",
     feed_mapping_resource_name: string,
     review_status: "enum_PolicyReviewStatus",
     approval_status: "enum_PolicyApprovalStatus",
@@ -4923,11 +4994,11 @@ export const FeedItem = {
     validation_status: "enum_FeedItemValidationStatus",
     validation_errors: undefined,
     quality_approval_status: "enum_FeedItemQualityApprovalStatus",
-    quality_disapproval_reasons: "enum_FeedItemQualityDisapprovalReason"
-  }
+    quality_disapproval_reasons: "enum_FeedItemQualityDisapprovalReason",
+  },
 };
 
-/* .google.ads.googleads.v1.resources.FeedItemAttributeValue */
+/* .google.ads.googleads.v2.resources.FeedItemAttributeValue */
 // @ts-ignore
 export const FeedItemAttributeValue = {
   // @ts-ignore
@@ -4958,14 +5029,14 @@ export const FeedItemAttributeValue = {
   string_values: string,
 
   // @ts-ignore
-  double_values: number
+  double_values: number,
 };
 
-/* .google.ads.googleads.v1.resources.FeedItemPlaceholderPolicyInfo */
+/* .google.ads.googleads.v2.resources.FeedItemPlaceholderPolicyInfo */
 // @ts-ignore
 export const FeedItemPlaceholderPolicyInfo = {
   // @ts-ignore
-  placeholder_type: number,
+  placeholder_type_enum: "enum_PlaceholderType",
 
   // @ts-ignore
   feed_mapping_resource_name: string,
@@ -4989,14 +5060,14 @@ export const FeedItemPlaceholderPolicyInfo = {
   quality_approval_status: "enum_FeedItemQualityApprovalStatus",
 
   // @ts-ignore
-  quality_disapproval_reasons: "enum_FeedItemQualityDisapprovalReason"
+  quality_disapproval_reasons: "enum_FeedItemQualityDisapprovalReason",
 };
 
-/* .google.ads.googleads.v1.errors.FeedItemValidationErrorEnum.FeedItemValidationError */
+/* .google.ads.googleads.v2.errors.FeedItemValidationErrorEnum.FeedItemValidationError */
 // @ts-ignore
 export const FeedItemValidationError = {};
 
-/* .google.ads.googleads.v1.resources.FeedItemTarget */
+/* .google.ads.googleads.v2.resources.FeedItemTarget */
 // @ts-ignore
 export const FeedItemTarget = {
   // @ts-ignore
@@ -5027,10 +5098,10 @@ export const FeedItemTarget = {
   device: "enum_FeedItemTargetDevice",
 
   // @ts-ignore
-  ad_schedule: AdScheduleInfo
+  ad_schedule: AdScheduleInfo,
 };
 
-/* .google.ads.googleads.v1.resources.FeedMapping */
+/* .google.ads.googleads.v2.resources.FeedMapping */
 // @ts-ignore
 export const FeedMapping = {
   // @ts-ignore
@@ -5055,8 +5126,7 @@ export const FeedMapping = {
     promotion_field: "enum_PromotionPlaceholderField",
     ad_customizer_field: "enum_AdCustomizerPlaceholderField",
     dsa_page_feed_field: "enum_DsaPageFeedCriterionField",
-    location_extension_targeting_field:
-      "enum_LocationExtensionTargetingCriterionField",
+    location_extension_targeting_field: "enum_LocationExtensionTargetingCriterionField",
     education_field: "enum_EducationPlaceholderField",
     flight_field: "enum_FlightPlaceholderField",
     custom_field: "enum_CustomPlaceholderField",
@@ -5064,7 +5134,7 @@ export const FeedMapping = {
     real_estate_field: "enum_RealEstatePlaceholderField",
     travel_field: "enum_TravelPlaceholderField",
     local_field: "enum_LocalPlaceholderField",
-    job_field: "enum_JobPlaceholderField"
+    job_field: "enum_JobPlaceholderField",
   },
 
   // @ts-ignore
@@ -5074,10 +5144,10 @@ export const FeedMapping = {
   placeholder_type: "enum_PlaceholderType",
 
   // @ts-ignore
-  criterion_type: "enum_FeedMappingCriterionType"
+  criterion_type: "enum_FeedMappingCriterionType",
 };
 
-/* .google.ads.googleads.v1.resources.AttributeFieldMapping */
+/* .google.ads.googleads.v2.resources.AttributeFieldMapping */
 // @ts-ignore
 export const AttributeFieldMapping = {
   // @ts-ignore
@@ -5123,8 +5193,7 @@ export const AttributeFieldMapping = {
   dsa_page_feed_field: "enum_DsaPageFeedCriterionField",
 
   // @ts-ignore
-  location_extension_targeting_field:
-    "enum_LocationExtensionTargetingCriterionField",
+  location_extension_targeting_field: "enum_LocationExtensionTargetingCriterionField",
 
   // @ts-ignore
   education_field: "enum_EducationPlaceholderField",
@@ -5148,27 +5217,27 @@ export const AttributeFieldMapping = {
   local_field: "enum_LocalPlaceholderField",
 
   // @ts-ignore
-  job_field: "enum_JobPlaceholderField"
+  job_field: "enum_JobPlaceholderField",
 };
 
-/* .google.ads.googleads.v1.resources.FeedPlaceholderView */
+/* .google.ads.googleads.v2.resources.FeedPlaceholderView */
 // @ts-ignore
 export const FeedPlaceholderView = {
   // @ts-ignore
   resource_name: string,
 
   // @ts-ignore
-  placeholder_type: "enum_PlaceholderType"
+  placeholder_type: "enum_PlaceholderType",
 };
 
-/* .google.ads.googleads.v1.resources.GenderView */
+/* .google.ads.googleads.v2.resources.GenderView */
 // @ts-ignore
 export const GenderView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.GeoTargetConstant */
+/* .google.ads.googleads.v2.resources.GeoTargetConstant */
 // @ts-ignore
 export const GeoTargetConstant = {
   // @ts-ignore
@@ -5190,23 +5259,23 @@ export const GeoTargetConstant = {
   status: "enum_GeoTargetConstantStatus",
 
   // @ts-ignore
-  canonical_name: string
+  canonical_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.GeographicView */
+/* .google.ads.googleads.v2.resources.GeographicView */
 // @ts-ignore
 export const GeographicView = {
   // @ts-ignore
   resource_name: string,
 
   // @ts-ignore
-  country_geo_target_constant: string,
+  location_type: "enum_GeoTargetingType",
 
   // @ts-ignore
-  location_type: "enum_GeoTargetingType"
+  country_criterion_id: number,
 };
 
-/* .google.ads.googleads.v1.resources.GoogleAdsField */
+/* .google.ads.googleads.v2.resources.GoogleAdsField */
 // @ts-ignore
 export const GoogleAdsField = {
   // @ts-ignore
@@ -5249,10 +5318,10 @@ export const GoogleAdsField = {
   type_url: string,
 
   // @ts-ignore
-  is_repeated: boolean
+  is_repeated: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.GroupPlacementView */
+/* .google.ads.googleads.v2.resources.GroupPlacementView */
 // @ts-ignore
 export const GroupPlacementView = {
   // @ts-ignore
@@ -5268,24 +5337,24 @@ export const GroupPlacementView = {
   target_url: string,
 
   // @ts-ignore
-  placement_type: "enum_PlacementType"
+  placement_type: "enum_PlacementType",
 };
 
-/* .google.ads.googleads.v1.resources.HotelGroupView */
+/* .google.ads.googleads.v2.resources.HotelGroupView */
 // @ts-ignore
 export const HotelGroupView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.HotelPerformanceView */
+/* .google.ads.googleads.v2.resources.HotelPerformanceView */
 // @ts-ignore
 export const HotelPerformanceView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlan */
+/* .google.ads.googleads.v2.resources.KeywordPlan */
 // @ts-ignore
 export const KeywordPlan = {
   // @ts-ignore
@@ -5298,23 +5367,20 @@ export const KeywordPlan = {
   name: string,
 
   // @ts-ignore
-  forecast_period: {
-    date_interval: "enum_KeywordPlanForecastInterval",
-    date_range: DateRange
-  }
+  forecast_period: { date_interval: "enum_KeywordPlanForecastInterval", date_range: DateRange },
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanForecastPeriod */
+/* .google.ads.googleads.v2.resources.KeywordPlanForecastPeriod */
 // @ts-ignore
 export const KeywordPlanForecastPeriod = {
   // @ts-ignore
   date_interval: "enum_KeywordPlanForecastInterval",
 
   // @ts-ignore
-  date_range: DateRange
+  date_range: DateRange,
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanAdGroup */
+/* .google.ads.googleads.v2.resources.KeywordPlanAdGroup */
 // @ts-ignore
 export const KeywordPlanAdGroup = {
   // @ts-ignore
@@ -5330,10 +5396,10 @@ export const KeywordPlanAdGroup = {
   name: string,
 
   // @ts-ignore
-  cpc_bid_micros: number
+  cpc_bid_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanCampaign */
+/* .google.ads.googleads.v2.resources.KeywordPlanCampaign */
 // @ts-ignore
 export const KeywordPlanCampaign = {
   // @ts-ignore
@@ -5358,17 +5424,17 @@ export const KeywordPlanCampaign = {
   cpc_bid_micros: number,
 
   // @ts-ignore
-  geo_targets: { geo_target_constant: string }
+  geo_targets: { geo_target_constant: string },
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanGeoTarget */
+/* .google.ads.googleads.v2.resources.KeywordPlanGeoTarget */
 // @ts-ignore
 export const KeywordPlanGeoTarget = {
   // @ts-ignore
-  geo_target_constant: string
+  geo_target_constant: string,
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanKeyword */
+/* .google.ads.googleads.v2.resources.KeywordPlanKeyword */
 // @ts-ignore
 export const KeywordPlanKeyword = {
   // @ts-ignore
@@ -5387,10 +5453,10 @@ export const KeywordPlanKeyword = {
   match_type: "enum_KeywordMatchType",
 
   // @ts-ignore
-  cpc_bid_micros: number
+  cpc_bid_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.KeywordPlanNegativeKeyword */
+/* .google.ads.googleads.v2.resources.KeywordPlanNegativeKeyword */
 // @ts-ignore
 export const KeywordPlanNegativeKeyword = {
   // @ts-ignore
@@ -5406,31 +5472,31 @@ export const KeywordPlanNegativeKeyword = {
   text: string,
 
   // @ts-ignore
-  match_type: "enum_KeywordMatchType"
+  match_type: "enum_KeywordMatchType",
 };
 
-/* .google.ads.googleads.v1.resources.KeywordView */
+/* .google.ads.googleads.v2.resources.KeywordView */
 // @ts-ignore
 export const KeywordView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
 /* .google.protobuf.FieldDescriptorProto.Label */
 // @ts-ignore
 export const Label = {};
 
-/* .google.ads.googleads.v1.resources.LandingPageView */
+/* .google.ads.googleads.v2.resources.LandingPageView */
 // @ts-ignore
 export const LandingPageView = {
   // @ts-ignore
   resource_name: string,
 
   // @ts-ignore
-  unexpanded_final_url: string
+  unexpanded_final_url: string,
 };
 
-/* .google.ads.googleads.v1.resources.LanguageConstant */
+/* .google.ads.googleads.v2.resources.LanguageConstant */
 // @ts-ignore
 export const LanguageConstant = {
   // @ts-ignore
@@ -5446,24 +5512,24 @@ export const LanguageConstant = {
   name: string,
 
   // @ts-ignore
-  targetable: boolean
+  targetable: boolean,
 };
 
-/* .google.ads.googleads.v1.resources.LocationView */
+/* .google.ads.googleads.v2.resources.LocationView */
 // @ts-ignore
 export const LocationView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.ManagedPlacementView */
+/* .google.ads.googleads.v2.resources.ManagedPlacementView */
 // @ts-ignore
 export const ManagedPlacementView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.MediaFile */
+/* .google.ads.googleads.v2.resources.MediaFile */
 // @ts-ignore
 export const MediaFile = {
   // @ts-ignore
@@ -5501,32 +5567,32 @@ export const MediaFile = {
     ad_duration_millis: number,
     youtube_video_id: string,
     advertising_id_code: string,
-    isci_code: string
-  }
+    isci_code: string,
+  },
 };
 
-/* .google.ads.googleads.v1.resources.MediaImage */
+/* .google.ads.googleads.v2.resources.MediaImage */
 // @ts-ignore
 export const MediaImage = {
   // @ts-ignore
-  data: string
+  data: string,
 };
 
-/* .google.ads.googleads.v1.resources.MediaBundle */
+/* .google.ads.googleads.v2.resources.MediaBundle */
 // @ts-ignore
 export const MediaBundle = {
   // @ts-ignore
-  data: string
+  data: string,
 };
 
-/* .google.ads.googleads.v1.resources.MediaAudio */
+/* .google.ads.googleads.v2.resources.MediaAudio */
 // @ts-ignore
 export const MediaAudio = {
   // @ts-ignore
-  ad_duration_millis: number
+  ad_duration_millis: number,
 };
 
-/* .google.ads.googleads.v1.resources.MediaVideo */
+/* .google.ads.googleads.v2.resources.MediaVideo */
 // @ts-ignore
 export const MediaVideo = {
   // @ts-ignore
@@ -5539,10 +5605,10 @@ export const MediaVideo = {
   advertising_id_code: string,
 
   // @ts-ignore
-  isci_code: string
+  isci_code: string,
 };
 
-/* .google.ads.googleads.v1.resources.MerchantCenterLink */
+/* .google.ads.googleads.v2.resources.MerchantCenterLink */
 // @ts-ignore
 export const MerchantCenterLink = {
   // @ts-ignore
@@ -5555,10 +5621,10 @@ export const MerchantCenterLink = {
   merchant_center_account_name: string,
 
   // @ts-ignore
-  status: "enum_MerchantCenterLinkStatus"
+  status: "enum_MerchantCenterLinkStatus",
 };
 
-/* .google.ads.googleads.v1.resources.MobileAppCategoryConstant */
+/* .google.ads.googleads.v2.resources.MobileAppCategoryConstant */
 // @ts-ignore
 export const MobileAppCategoryConstant = {
   // @ts-ignore
@@ -5568,10 +5634,10 @@ export const MobileAppCategoryConstant = {
   id: number,
 
   // @ts-ignore
-  name: string
+  name: string,
 };
 
-/* .google.ads.googleads.v1.resources.MobileDeviceConstant */
+/* .google.ads.googleads.v2.resources.MobileDeviceConstant */
 // @ts-ignore
 export const MobileDeviceConstant = {
   // @ts-ignore
@@ -5590,10 +5656,10 @@ export const MobileDeviceConstant = {
   operating_system_name: string,
 
   // @ts-ignore
-  type: "enum_MobileDeviceType"
+  type: "enum_MobileDeviceType",
 };
 
-/* .google.ads.googleads.v1.resources.MutateJob.MutateJobMetadata */
+/* .google.ads.googleads.v2.resources.MutateJob.MutateJobMetadata */
 // @ts-ignore
 export const MutateJobMetadata = {
   // @ts-ignore
@@ -5609,10 +5675,10 @@ export const MutateJobMetadata = {
   operation_count: number,
 
   // @ts-ignore
-  executed_operation_count: number
+  executed_operation_count: number,
 };
 
-/* .google.ads.googleads.v1.resources.MutateJob */
+/* .google.ads.googleads.v2.resources.MutateJob */
 // @ts-ignore
 export const MutateJob = {
   // @ts-ignore
@@ -5631,10 +5697,10 @@ export const MutateJob = {
   status: "enum_MutateJobStatus",
 
   // @ts-ignore
-  long_running_operation: string
+  long_running_operation: string,
 };
 
-/* .google.ads.googleads.v1.resources.OperatingSystemVersionConstant */
+/* .google.ads.googleads.v2.resources.OperatingSystemVersionConstant */
 // @ts-ignore
 export const OperatingSystemVersionConstant = {
   // @ts-ignore
@@ -5653,27 +5719,27 @@ export const OperatingSystemVersionConstant = {
   os_minor_version: number,
 
   // @ts-ignore
-  operator_type: "enum_OperatingSystemVersionOperatorType"
+  operator_type: "enum_OperatingSystemVersionOperatorType",
 };
 
-/* .google.ads.googleads.v1.resources.PaidOrganicSearchTermView */
+/* .google.ads.googleads.v2.resources.PaidOrganicSearchTermView */
 // @ts-ignore
 export const PaidOrganicSearchTermView = {
   // @ts-ignore
   resource_name: string,
 
   // @ts-ignore
-  search_term: string
+  search_term: string,
 };
 
-/* .google.ads.googleads.v1.resources.ParentalStatusView */
+/* .google.ads.googleads.v2.resources.ParentalStatusView */
 // @ts-ignore
 export const ParentalStatusView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.PaymentsAccount */
+/* .google.ads.googleads.v2.resources.PaymentsAccount */
 // @ts-ignore
 export const PaymentsAccount = {
   // @ts-ignore
@@ -5692,10 +5758,10 @@ export const PaymentsAccount = {
   payments_profile_id: string,
 
   // @ts-ignore
-  secondary_payments_profile_id: string
+  secondary_payments_profile_id: string,
 };
 
-/* .google.ads.googleads.v1.resources.ProductBiddingCategoryConstant */
+/* .google.ads.googleads.v2.resources.ProductBiddingCategoryConstant */
 // @ts-ignore
 export const ProductBiddingCategoryConstant = {
   // @ts-ignore
@@ -5720,17 +5786,17 @@ export const ProductBiddingCategoryConstant = {
   language_code: string,
 
   // @ts-ignore
-  localized_name: string
+  localized_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.ProductGroupView */
+/* .google.ads.googleads.v2.resources.ProductGroupView */
 // @ts-ignore
 export const ProductGroupView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.RecommendationImpact */
+/* .google.ads.googleads.v2.resources.Recommendation.RecommendationImpact */
 // @ts-ignore
 export const RecommendationImpact = {
   // @ts-ignore
@@ -5739,7 +5805,7 @@ export const RecommendationImpact = {
     clicks: number,
     cost_micros: number,
     conversions: number,
-    video_views: number
+    video_views: number,
   },
 
   // @ts-ignore
@@ -5748,11 +5814,11 @@ export const RecommendationImpact = {
     clicks: number,
     cost_micros: number,
     conversions: number,
-    video_views: number
-  }
+    video_views: number,
+  },
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.RecommendationMetrics */
+/* .google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics */
 // @ts-ignore
 export const RecommendationMetrics = {
   // @ts-ignore
@@ -5768,20 +5834,20 @@ export const RecommendationMetrics = {
   conversions: number,
 
   // @ts-ignore
-  video_views: number
+  video_views: number,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption */
+/* .google.ads.googleads.v2.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption */
 // @ts-ignore
 export const CampaignBudgetRecommendationOption = {
   // @ts-ignore
   budget_amount_micros: number,
 
   // @ts-ignore
-  impact: RecommendationImpact
+  impact: RecommendationImpact,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.CampaignBudgetRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.CampaignBudgetRecommendation */
 // @ts-ignore
 export const CampaignBudgetRecommendation = {
   // @ts-ignore
@@ -5791,30 +5857,34 @@ export const CampaignBudgetRecommendation = {
   recommended_budget_amount_micros: number,
 
   // @ts-ignore
-  budget_options: CampaignBudgetRecommendationOption
+  budget_options: CampaignBudgetRecommendationOption,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.KeywordRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.KeywordRecommendation */
 // @ts-ignore
 export const KeywordRecommendation = {
   // @ts-ignore
   keyword: KeywordInfo,
 
   // @ts-ignore
-  recommended_cpc_bid_micros: number
+  recommended_cpc_bid_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.OptimizeAdRotationRecommendation */
 // @ts-ignore
-export const KeywordMatchTypeRecommendation = {
+export const OptimizeAdRotationRecommendation = {};
+
+/* .google.ads.googleads.v2.resources.Recommendation.MoveUnusedBudgetRecommendation */
+// @ts-ignore
+export const MoveUnusedBudgetRecommendation = {
   // @ts-ignore
-  keyword: KeywordInfo,
+  excess_campaign_budget: string,
 
   // @ts-ignore
-  recommended_match_type: "enum_KeywordMatchType"
+  budget_recommendation: CampaignBudgetRecommendation,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.TextAdRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.TextAdRecommendation */
 // @ts-ignore
 export const TextAdRecommendation = {
   // @ts-ignore
@@ -5824,28 +5894,10 @@ export const TextAdRecommendation = {
   creation_date: string,
 
   // @ts-ignore
-  auto_apply_date: string
+  auto_apply_date: string,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.SearchPartnersOptInRecommendation */
-// @ts-ignore
-export const SearchPartnersOptInRecommendation = {};
-
-/* .google.ads.googleads.v1.resources.Recommendation.MaximizeClicksOptInRecommendation */
-// @ts-ignore
-export const MaximizeClicksOptInRecommendation = {
-  // @ts-ignore
-  recommended_budget_amount_micros: number
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.CalloutExtensionRecommendation */
-// @ts-ignore
-export const CalloutExtensionRecommendation = {
-  // @ts-ignore
-  recommended_extensions: CalloutFeedItem
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
+/* .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption */
 // @ts-ignore
 export const TargetCpaOptInRecommendationOption = {
   // @ts-ignore
@@ -5858,59 +5910,73 @@ export const TargetCpaOptInRecommendationOption = {
   required_campaign_budget_amount_micros: number,
 
   // @ts-ignore
-  impact: RecommendationImpact
+  impact: RecommendationImpact,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.TargetCpaOptInRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation */
 // @ts-ignore
 export const TargetCpaOptInRecommendation = {
   // @ts-ignore
   options: TargetCpaOptInRecommendationOption,
 
   // @ts-ignore
-  recommended_target_cpa_micros: number
+  recommended_target_cpa_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.MaximizeConversionsOptInRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.MaximizeConversionsOptInRecommendation */
 // @ts-ignore
 export const MaximizeConversionsOptInRecommendation = {
   // @ts-ignore
-  recommended_budget_amount_micros: number
+  recommended_budget_amount_micros: number,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.EnhancedCpcOptInRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.EnhancedCpcOptInRecommendation */
 // @ts-ignore
 export const EnhancedCpcOptInRecommendation = {};
 
-/* .google.ads.googleads.v1.resources.Recommendation.OptimizeAdRotationRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.CalloutExtensionRecommendation */
 // @ts-ignore
-export const OptimizeAdRotationRecommendation = {};
+export const CalloutExtensionRecommendation = {
+  // @ts-ignore
+  recommended_extensions: CalloutFeedItem,
+};
 
-/* .google.ads.googleads.v1.resources.Recommendation.SitelinkExtensionRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.KeywordMatchTypeRecommendation */
+// @ts-ignore
+export const KeywordMatchTypeRecommendation = {
+  // @ts-ignore
+  keyword: KeywordInfo,
+
+  // @ts-ignore
+  recommended_match_type: "enum_KeywordMatchType",
+};
+
+/* .google.ads.googleads.v2.resources.Recommendation.SearchPartnersOptInRecommendation */
+// @ts-ignore
+export const SearchPartnersOptInRecommendation = {};
+
+/* .google.ads.googleads.v2.resources.Recommendation.MaximizeClicksOptInRecommendation */
+// @ts-ignore
+export const MaximizeClicksOptInRecommendation = {
+  // @ts-ignore
+  recommended_budget_amount_micros: number,
+};
+
+/* .google.ads.googleads.v2.resources.Recommendation.SitelinkExtensionRecommendation */
 // @ts-ignore
 export const SitelinkExtensionRecommendation = {
   // @ts-ignore
-  recommended_extensions: SitelinkFeedItem
+  recommended_extensions: SitelinkFeedItem,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.CallExtensionRecommendation */
+/* .google.ads.googleads.v2.resources.Recommendation.CallExtensionRecommendation */
 // @ts-ignore
 export const CallExtensionRecommendation = {
   // @ts-ignore
-  recommended_extensions: CallFeedItem
+  recommended_extensions: CallFeedItem,
 };
 
-/* .google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation */
-// @ts-ignore
-export const MoveUnusedBudgetRecommendation = {
-  // @ts-ignore
-  excess_campaign_budget: string,
-
-  // @ts-ignore
-  budget_recommendation: CampaignBudgetRecommendation
-};
-
-/* .google.ads.googleads.v1.resources.Recommendation */
+/* .google.ads.googleads.v2.resources.Recommendation */
 // @ts-ignore
 export const Recommendation = {
   // @ts-ignore
@@ -5974,10 +6040,10 @@ export const Recommendation = {
   keyword_match_type_recommendation: KeywordMatchTypeRecommendation,
 
   // @ts-ignore
-  move_unused_budget_recommendation: MoveUnusedBudgetRecommendation
+  move_unused_budget_recommendation: MoveUnusedBudgetRecommendation,
 };
 
-/* .google.ads.googleads.v1.resources.RemarketingAction */
+/* .google.ads.googleads.v2.resources.RemarketingAction */
 // @ts-ignore
 export const RemarketingAction = {
   // @ts-ignore
@@ -5990,10 +6056,10 @@ export const RemarketingAction = {
   name: string,
 
   // @ts-ignore
-  tag_snippets: TagSnippet
+  tag_snippets: TagSnippet,
 };
 
-/* .google.ads.googleads.v1.resources.SearchTermView */
+/* .google.ads.googleads.v2.resources.SearchTermView */
 // @ts-ignore
 export const SearchTermView = {
   // @ts-ignore
@@ -6006,10 +6072,10 @@ export const SearchTermView = {
   ad_group: string,
 
   // @ts-ignore
-  status: "enum_SearchTermTargetingStatus"
+  status: "enum_SearchTermTargetingStatus",
 };
 
-/* .google.ads.googleads.v1.resources.SharedCriterion */
+/* .google.ads.googleads.v2.resources.SharedCriterion */
 // @ts-ignore
 export const SharedCriterion = {
   // @ts-ignore
@@ -6040,10 +6106,10 @@ export const SharedCriterion = {
   mobile_app_category: MobileAppCategoryInfo,
 
   // @ts-ignore
-  mobile_application: MobileApplicationInfo
+  mobile_application: MobileApplicationInfo,
 };
 
-/* .google.ads.googleads.v1.resources.SharedSet */
+/* .google.ads.googleads.v2.resources.SharedSet */
 // @ts-ignore
 export const SharedSet = {
   // @ts-ignore
@@ -6065,17 +6131,17 @@ export const SharedSet = {
   member_count: number,
 
   // @ts-ignore
-  reference_count: number
+  reference_count: number,
 };
 
-/* .google.ads.googleads.v1.resources.ShoppingPerformanceView */
+/* .google.ads.googleads.v2.resources.ShoppingPerformanceView */
 // @ts-ignore
 export const ShoppingPerformanceView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.TopicConstant */
+/* .google.ads.googleads.v2.resources.TopicConstant */
 // @ts-ignore
 export const TopicConstant = {
   // @ts-ignore
@@ -6088,17 +6154,17 @@ export const TopicConstant = {
   topic_constant_parent: string,
 
   // @ts-ignore
-  path: string
+  path: string,
 };
 
-/* .google.ads.googleads.v1.resources.TopicView */
+/* .google.ads.googleads.v2.resources.TopicView */
 // @ts-ignore
 export const TopicView = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.resources.UserInterest */
+/* .google.ads.googleads.v2.resources.UserInterest */
 // @ts-ignore
 export const UserInterest = {
   // @ts-ignore
@@ -6120,10 +6186,10 @@ export const UserInterest = {
   launched_to_all: boolean,
 
   // @ts-ignore
-  availabilities: CriterionCategoryAvailability
+  availabilities: CriterionCategoryAvailability,
 };
 
-/* .google.ads.googleads.v1.resources.UserList */
+/* .google.ads.googleads.v2.resources.UserList */
 // @ts-ignore
 export const UserList = {
   // @ts-ignore
@@ -6193,10 +6259,23 @@ export const UserList = {
   logical_user_list: LogicalUserListInfo,
 
   // @ts-ignore
-  basic_user_list: BasicUserListInfo
+  basic_user_list: BasicUserListInfo,
 };
 
-/* .google.ads.googleads.v1.resources.Video */
+/* .google.ads.googleads.v2.resources.UserLocationView */
+// @ts-ignore
+export const UserLocationView = {
+  // @ts-ignore
+  resource_name: string,
+
+  // @ts-ignore
+  country_criterion_id: number,
+
+  // @ts-ignore
+  targeting_location: boolean,
+};
+
+/* .google.ads.googleads.v2.resources.Video */
 // @ts-ignore
 export const Video = {
   // @ts-ignore
@@ -6212,38 +6291,34 @@ export const Video = {
   duration_millis: number,
 
   // @ts-ignore
-  title: string
+  title: string,
 };
 
-/* .google.ads.googleads.v1.services.AccountBudgetProposalService */
+/* .google.ads.googleads.v2.services.AccountBudgetProposalService */
 // @ts-ignore
 export const AccountBudgetProposalService = {};
 
-/* .google.ads.googleads.v1.services.GetAccountBudgetProposalRequest */
+/* .google.ads.googleads.v2.services.GetAccountBudgetProposalRequest */
 // @ts-ignore
 export const GetAccountBudgetProposalRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalRequest */
+/* .google.ads.googleads.v2.services.MutateAccountBudgetProposalRequest */
 // @ts-ignore
 export const MutateAccountBudgetProposalRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operation: {
-    update_mask: { paths: string },
-    create: AccountBudgetProposal,
-    remove: string
-  },
+  operation: { update_mask: { paths: string }, create: AccountBudgetProposal, remove: string },
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AccountBudgetProposalOperation */
+/* .google.ads.googleads.v2.services.AccountBudgetProposalOperation */
 // @ts-ignore
 export const AccountBudgetProposalOperation = {
   // @ts-ignore
@@ -6253,46 +6328,57 @@ export const AccountBudgetProposalOperation = {
   create: AccountBudgetProposal,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalResponse */
+/* .google.ads.googleads.v2.services.MutateAccountBudgetProposalResponse */
 // @ts-ignore
 export const MutateAccountBudgetProposalResponse = {
   // @ts-ignore
-  result: { resource_name: string }
+  result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAccountBudgetProposalResult */
+/* .google.ads.googleads.v2.services.MutateAccountBudgetProposalResult */
 // @ts-ignore
 export const MutateAccountBudgetProposalResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AccountBudgetService */
+/* .google.ads.googleads.v2.services.AccountBudgetService */
 // @ts-ignore
 export const AccountBudgetService = {};
 
-/* .google.ads.googleads.v1.services.GetAccountBudgetRequest */
+/* .google.ads.googleads.v2.services.GetAccountBudgetRequest */
 // @ts-ignore
 export const GetAccountBudgetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupAdLabelService */
+/* .google.ads.googleads.v2.services.AdGroupAdAssetViewService */
+// @ts-ignore
+export const AdGroupAdAssetViewService = {};
+
+/* .google.ads.googleads.v2.services.GetAdGroupAdAssetViewRequest */
+// @ts-ignore
+export const GetAdGroupAdAssetViewRequest = {
+  // @ts-ignore
+  resource_name: string,
+};
+
+/* .google.ads.googleads.v2.services.AdGroupAdLabelService */
 // @ts-ignore
 export const AdGroupAdLabelService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupAdLabelRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupAdLabelRequest */
 // @ts-ignore
 export const GetAdGroupAdLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdLabelsRequest */
 // @ts-ignore
 export const MutateAdGroupAdLabelsRequest = {
   // @ts-ignore
@@ -6305,52 +6391,52 @@ export const MutateAdGroupAdLabelsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupAdLabelOperation */
+/* .google.ads.googleads.v2.services.AdGroupAdLabelOperation */
 // @ts-ignore
 export const AdGroupAdLabelOperation = {
   // @ts-ignore
   create: AdGroupAdLabel,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdLabelsResponse */
 // @ts-ignore
 export const MutateAdGroupAdLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdLabelResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdLabelResult */
 // @ts-ignore
 export const MutateAdGroupAdLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupAdService */
+/* .google.ads.googleads.v2.services.AdGroupAdService */
 // @ts-ignore
 export const AdGroupAdService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupAdRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupAdRequest */
 // @ts-ignore
 export const GetAdGroupAdRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdsRequest */
 // @ts-ignore
 export const MutateAdGroupAdsRequest = {
   // @ts-ignore
@@ -6362,17 +6448,17 @@ export const MutateAdGroupAdsRequest = {
     policy_validation_parameter: PolicyValidationParameter,
     create: AdGroupAd,
     update: AdGroupAd,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupAdOperation */
+/* .google.ads.googleads.v2.services.AdGroupAdOperation */
 // @ts-ignore
 export const AdGroupAdOperation = {
   // @ts-ignore
@@ -6388,53 +6474,53 @@ export const AdGroupAdOperation = {
   update: AdGroupAd,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdsResponse */
 // @ts-ignore
 export const MutateAdGroupAdsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupAdResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupAdResult */
 // @ts-ignore
 export const MutateAdGroupAdResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupAudienceViewService */
+/* .google.ads.googleads.v2.services.AdGroupAudienceViewService */
 // @ts-ignore
 export const AdGroupAudienceViewService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupAudienceViewRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupAudienceViewRequest */
 // @ts-ignore
 export const GetAdGroupAudienceViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupBidModifierService */
+/* .google.ads.googleads.v2.services.AdGroupBidModifierService */
 // @ts-ignore
 export const AdGroupBidModifierService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupBidModifierRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupBidModifierRequest */
 // @ts-ignore
 export const GetAdGroupBidModifierRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupBidModifiersRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupBidModifiersRequest */
 // @ts-ignore
 export const MutateAdGroupBidModifiersRequest = {
   // @ts-ignore
@@ -6445,17 +6531,17 @@ export const MutateAdGroupBidModifiersRequest = {
     update_mask: { paths: string },
     create: AdGroupBidModifier,
     update: AdGroupBidModifier,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupBidModifierOperation */
+/* .google.ads.googleads.v2.services.AdGroupBidModifierOperation */
 // @ts-ignore
 export const AdGroupBidModifierOperation = {
   // @ts-ignore
@@ -6468,42 +6554,42 @@ export const AdGroupBidModifierOperation = {
   update: AdGroupBidModifier,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupBidModifiersResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupBidModifiersResponse */
 // @ts-ignore
 export const MutateAdGroupBidModifiersResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupBidModifierResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupBidModifierResult */
 // @ts-ignore
 export const MutateAdGroupBidModifierResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupCriterionLabelService */
+/* .google.ads.googleads.v2.services.AdGroupCriterionLabelService */
 // @ts-ignore
 export const AdGroupCriterionLabelService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupCriterionLabelRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupCriterionLabelRequest */
 // @ts-ignore
 export const GetAdGroupCriterionLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriterionLabelsRequest */
 // @ts-ignore
 export const MutateAdGroupCriterionLabelsRequest = {
   // @ts-ignore
@@ -6516,52 +6602,52 @@ export const MutateAdGroupCriterionLabelsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupCriterionLabelOperation */
+/* .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation */
 // @ts-ignore
 export const AdGroupCriterionLabelOperation = {
   // @ts-ignore
   create: AdGroupCriterionLabel,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriterionLabelsResponse */
 // @ts-ignore
 export const MutateAdGroupCriterionLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriterionLabelResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriterionLabelResult */
 // @ts-ignore
 export const MutateAdGroupCriterionLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupCriterionService */
+/* .google.ads.googleads.v2.services.AdGroupCriterionService */
 // @ts-ignore
 export const AdGroupCriterionService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupCriterionRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupCriterionRequest */
 // @ts-ignore
 export const GetAdGroupCriterionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriteriaRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriteriaRequest */
 // @ts-ignore
 export const MutateAdGroupCriteriaRequest = {
   // @ts-ignore
@@ -6573,17 +6659,17 @@ export const MutateAdGroupCriteriaRequest = {
     exempt_policy_violation_keys: PolicyViolationKey,
     create: AdGroupCriterion,
     update: AdGroupCriterion,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupCriterionOperation */
+/* .google.ads.googleads.v2.services.AdGroupCriterionOperation */
 // @ts-ignore
 export const AdGroupCriterionOperation = {
   // @ts-ignore
@@ -6599,53 +6685,53 @@ export const AdGroupCriterionOperation = {
   update: AdGroupCriterion,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriteriaResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriteriaResponse */
 // @ts-ignore
 export const MutateAdGroupCriteriaResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupCriterionResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupCriterionResult */
 // @ts-ignore
 export const MutateAdGroupCriterionResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupCriterionSimulationService */
+/* .google.ads.googleads.v2.services.AdGroupCriterionSimulationService */
 // @ts-ignore
 export const AdGroupCriterionSimulationService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupCriterionSimulationRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupCriterionSimulationRequest */
 // @ts-ignore
 export const GetAdGroupCriterionSimulationRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupExtensionSettingService */
+/* .google.ads.googleads.v2.services.AdGroupExtensionSettingService */
 // @ts-ignore
 export const AdGroupExtensionSettingService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupExtensionSettingRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupExtensionSettingRequest */
 // @ts-ignore
 export const GetAdGroupExtensionSettingRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupExtensionSettingsRequest */
 // @ts-ignore
 export const MutateAdGroupExtensionSettingsRequest = {
   // @ts-ignore
@@ -6656,17 +6742,17 @@ export const MutateAdGroupExtensionSettingsRequest = {
     update_mask: { paths: string },
     create: AdGroupExtensionSetting,
     update: AdGroupExtensionSetting,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupExtensionSettingOperation */
+/* .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation */
 // @ts-ignore
 export const AdGroupExtensionSettingOperation = {
   // @ts-ignore
@@ -6679,42 +6765,42 @@ export const AdGroupExtensionSettingOperation = {
   update: AdGroupExtensionSetting,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupExtensionSettingsResponse */
 // @ts-ignore
 export const MutateAdGroupExtensionSettingsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupExtensionSettingResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupExtensionSettingResult */
 // @ts-ignore
 export const MutateAdGroupExtensionSettingResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupFeedService */
+/* .google.ads.googleads.v2.services.AdGroupFeedService */
 // @ts-ignore
 export const AdGroupFeedService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupFeedRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupFeedRequest */
 // @ts-ignore
 export const GetAdGroupFeedRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupFeedsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupFeedsRequest */
 // @ts-ignore
 export const MutateAdGroupFeedsRequest = {
   // @ts-ignore
@@ -6725,17 +6811,17 @@ export const MutateAdGroupFeedsRequest = {
     update_mask: { paths: string },
     create: AdGroupFeed,
     update: AdGroupFeed,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupFeedOperation */
+/* .google.ads.googleads.v2.services.AdGroupFeedOperation */
 // @ts-ignore
 export const AdGroupFeedOperation = {
   // @ts-ignore
@@ -6748,42 +6834,42 @@ export const AdGroupFeedOperation = {
   update: AdGroupFeed,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupFeedsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupFeedsResponse */
 // @ts-ignore
 export const MutateAdGroupFeedsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupFeedResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupFeedResult */
 // @ts-ignore
 export const MutateAdGroupFeedResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupLabelService */
+/* .google.ads.googleads.v2.services.AdGroupLabelService */
 // @ts-ignore
 export const AdGroupLabelService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupLabelRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupLabelRequest */
 // @ts-ignore
 export const GetAdGroupLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupLabelsRequest */
 // @ts-ignore
 export const MutateAdGroupLabelsRequest = {
   // @ts-ignore
@@ -6796,73 +6882,68 @@ export const MutateAdGroupLabelsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupLabelOperation */
+/* .google.ads.googleads.v2.services.AdGroupLabelOperation */
 // @ts-ignore
 export const AdGroupLabelOperation = {
   // @ts-ignore
   create: AdGroupLabel,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupLabelsResponse */
 // @ts-ignore
 export const MutateAdGroupLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupLabelResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupLabelResult */
 // @ts-ignore
 export const MutateAdGroupLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupService */
+/* .google.ads.googleads.v2.services.AdGroupService */
 // @ts-ignore
 export const AdGroupService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupRequest */
 // @ts-ignore
 export const GetAdGroupRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupsRequest */
+/* .google.ads.googleads.v2.services.MutateAdGroupsRequest */
 // @ts-ignore
 export const MutateAdGroupsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: {
-    update_mask: { paths: string },
-    create: AdGroup,
-    update: AdGroup,
-    remove: string
-  },
+  operations: { update_mask: { paths: string }, create: AdGroup, update: AdGroup, remove: string },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupOperation */
+/* .google.ads.googleads.v2.services.AdGroupOperation */
 // @ts-ignore
 export const AdGroupOperation = {
   // @ts-ignore
@@ -6875,53 +6956,53 @@ export const AdGroupOperation = {
   update: AdGroup,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupsResponse */
+/* .google.ads.googleads.v2.services.MutateAdGroupsResponse */
 // @ts-ignore
 export const MutateAdGroupsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdGroupResult */
+/* .google.ads.googleads.v2.services.MutateAdGroupResult */
 // @ts-ignore
 export const MutateAdGroupResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdGroupSimulationService */
+/* .google.ads.googleads.v2.services.AdGroupSimulationService */
 // @ts-ignore
 export const AdGroupSimulationService = {};
 
-/* .google.ads.googleads.v1.services.GetAdGroupSimulationRequest */
+/* .google.ads.googleads.v2.services.GetAdGroupSimulationRequest */
 // @ts-ignore
 export const GetAdGroupSimulationRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdParameterService */
+/* .google.ads.googleads.v2.services.AdParameterService */
 // @ts-ignore
 export const AdParameterService = {};
 
-/* .google.ads.googleads.v1.services.GetAdParameterRequest */
+/* .google.ads.googleads.v2.services.GetAdParameterRequest */
 // @ts-ignore
 export const GetAdParameterRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdParametersRequest */
+/* .google.ads.googleads.v2.services.MutateAdParametersRequest */
 // @ts-ignore
 export const MutateAdParametersRequest = {
   // @ts-ignore
@@ -6932,17 +7013,17 @@ export const MutateAdParametersRequest = {
     update_mask: { paths: string },
     create: AdParameter,
     update: AdParameter,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.AdParameterOperation */
+/* .google.ads.googleads.v2.services.AdParameterOperation */
 // @ts-ignore
 export const AdParameterOperation = {
   // @ts-ignore
@@ -6955,106 +7036,151 @@ export const AdParameterOperation = {
   update: AdParameter,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAdParametersResponse */
+/* .google.ads.googleads.v2.services.MutateAdParametersResponse */
 // @ts-ignore
 export const MutateAdParametersResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAdParameterResult */
+/* .google.ads.googleads.v2.services.MutateAdParameterResult */
 // @ts-ignore
 export const MutateAdParameterResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AdScheduleViewService */
+/* .google.ads.googleads.v2.services.AdScheduleViewService */
 // @ts-ignore
 export const AdScheduleViewService = {};
 
-/* .google.ads.googleads.v1.services.GetAdScheduleViewRequest */
+/* .google.ads.googleads.v2.services.GetAdScheduleViewRequest */
 // @ts-ignore
 export const GetAdScheduleViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AgeRangeViewService */
+/* .google.ads.googleads.v2.services.AdService */
+// @ts-ignore
+export const AdService = {};
+
+/* .google.ads.googleads.v2.services.GetAdRequest */
+// @ts-ignore
+export const GetAdRequest = {
+  // @ts-ignore
+  resource_name: string,
+};
+
+/* .google.ads.googleads.v2.services.MutateAdsRequest */
+// @ts-ignore
+export const MutateAdsRequest = {
+  // @ts-ignore
+  customer_id: string,
+
+  // @ts-ignore
+  operations: { update_mask: { paths: string }, update: Ad },
+};
+
+/* .google.ads.googleads.v2.services.AdOperation */
+// @ts-ignore
+export const AdOperation = {
+  // @ts-ignore
+  update_mask: { paths: string },
+
+  // @ts-ignore
+  update: Ad,
+};
+
+/* .google.ads.googleads.v2.services.MutateAdsResponse */
+// @ts-ignore
+export const MutateAdsResponse = {
+  // @ts-ignore
+  results: { resource_name: string },
+};
+
+/* .google.ads.googleads.v2.services.MutateAdResult */
+// @ts-ignore
+export const MutateAdResult = {
+  // @ts-ignore
+  resource_name: string,
+};
+
+/* .google.ads.googleads.v2.services.AgeRangeViewService */
 // @ts-ignore
 export const AgeRangeViewService = {};
 
-/* .google.ads.googleads.v1.services.GetAgeRangeViewRequest */
+/* .google.ads.googleads.v2.services.GetAgeRangeViewRequest */
 // @ts-ignore
 export const GetAgeRangeViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AssetService */
+/* .google.ads.googleads.v2.services.AssetService */
 // @ts-ignore
 export const AssetService = {};
 
-/* .google.ads.googleads.v1.services.GetAssetRequest */
+/* .google.ads.googleads.v2.services.GetAssetRequest */
 // @ts-ignore
 export const GetAssetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateAssetsRequest */
+/* .google.ads.googleads.v2.services.MutateAssetsRequest */
 // @ts-ignore
 export const MutateAssetsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: { create: Asset }
+  operations: { create: Asset },
 };
 
-/* .google.ads.googleads.v1.services.AssetOperation */
+/* .google.ads.googleads.v2.services.AssetOperation */
 // @ts-ignore
 export const AssetOperation = {
   // @ts-ignore
-  create: Asset
+  create: Asset,
 };
 
-/* .google.ads.googleads.v1.services.MutateAssetsResponse */
+/* .google.ads.googleads.v2.services.MutateAssetsResponse */
 // @ts-ignore
 export const MutateAssetsResponse = {
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateAssetResult */
+/* .google.ads.googleads.v2.services.MutateAssetResult */
 // @ts-ignore
 export const MutateAssetResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.BiddingStrategyService */
+/* .google.ads.googleads.v2.services.BiddingStrategyService */
 // @ts-ignore
 export const BiddingStrategyService = {};
 
-/* .google.ads.googleads.v1.services.GetBiddingStrategyRequest */
+/* .google.ads.googleads.v2.services.GetBiddingStrategyRequest */
 // @ts-ignore
 export const GetBiddingStrategyRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateBiddingStrategiesRequest */
+/* .google.ads.googleads.v2.services.MutateBiddingStrategiesRequest */
 // @ts-ignore
 export const MutateBiddingStrategiesRequest = {
   // @ts-ignore
@@ -7065,17 +7191,17 @@ export const MutateBiddingStrategiesRequest = {
     update_mask: { paths: string },
     create: BiddingStrategy,
     update: BiddingStrategy,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.BiddingStrategyOperation */
+/* .google.ads.googleads.v2.services.BiddingStrategyOperation */
 // @ts-ignore
 export const BiddingStrategyOperation = {
   // @ts-ignore
@@ -7088,98 +7214,98 @@ export const BiddingStrategyOperation = {
   update: BiddingStrategy,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateBiddingStrategiesResponse */
+/* .google.ads.googleads.v2.services.MutateBiddingStrategiesResponse */
 // @ts-ignore
 export const MutateBiddingStrategiesResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateBiddingStrategyResult */
+/* .google.ads.googleads.v2.services.MutateBiddingStrategyResult */
 // @ts-ignore
 export const MutateBiddingStrategyResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.BillingSetupService */
+/* .google.ads.googleads.v2.services.BillingSetupService */
 // @ts-ignore
 export const BillingSetupService = {};
 
-/* .google.ads.googleads.v1.services.GetBillingSetupRequest */
+/* .google.ads.googleads.v2.services.GetBillingSetupRequest */
 // @ts-ignore
 export const GetBillingSetupRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateBillingSetupRequest */
+/* .google.ads.googleads.v2.services.MutateBillingSetupRequest */
 // @ts-ignore
 export const MutateBillingSetupRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operation: { create: BillingSetup, remove: string }
+  operation: { create: BillingSetup, remove: string },
 };
 
-/* .google.ads.googleads.v1.services.BillingSetupOperation */
+/* .google.ads.googleads.v2.services.BillingSetupOperation */
 // @ts-ignore
 export const BillingSetupOperation = {
   // @ts-ignore
   create: BillingSetup,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateBillingSetupResponse */
+/* .google.ads.googleads.v2.services.MutateBillingSetupResponse */
 // @ts-ignore
 export const MutateBillingSetupResponse = {
   // @ts-ignore
-  result: { resource_name: string }
+  result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateBillingSetupResult */
+/* .google.ads.googleads.v2.services.MutateBillingSetupResult */
 // @ts-ignore
 export const MutateBillingSetupResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignAudienceViewService */
+/* .google.ads.googleads.v2.services.CampaignAudienceViewService */
 // @ts-ignore
 export const CampaignAudienceViewService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignAudienceViewRequest */
+/* .google.ads.googleads.v2.services.GetCampaignAudienceViewRequest */
 // @ts-ignore
 export const GetCampaignAudienceViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignBidModifierService */
+/* .google.ads.googleads.v2.services.CampaignBidModifierService */
 // @ts-ignore
 export const CampaignBidModifierService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignBidModifierRequest */
+/* .google.ads.googleads.v2.services.GetCampaignBidModifierRequest */
 // @ts-ignore
 export const GetCampaignBidModifierRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBidModifiersRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignBidModifiersRequest */
 // @ts-ignore
 export const MutateCampaignBidModifiersRequest = {
   // @ts-ignore
@@ -7190,17 +7316,17 @@ export const MutateCampaignBidModifiersRequest = {
     update_mask: { paths: string },
     create: CampaignBidModifier,
     update: CampaignBidModifier,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignBidModifierOperation */
+/* .google.ads.googleads.v2.services.CampaignBidModifierOperation */
 // @ts-ignore
 export const CampaignBidModifierOperation = {
   // @ts-ignore
@@ -7213,42 +7339,42 @@ export const CampaignBidModifierOperation = {
   update: CampaignBidModifier,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBidModifiersResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignBidModifiersResponse */
 // @ts-ignore
 export const MutateCampaignBidModifiersResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBidModifierResult */
+/* .google.ads.googleads.v2.services.MutateCampaignBidModifierResult */
 // @ts-ignore
 export const MutateCampaignBidModifierResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignBudgetService */
+/* .google.ads.googleads.v2.services.CampaignBudgetService */
 // @ts-ignore
 export const CampaignBudgetService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignBudgetRequest */
+/* .google.ads.googleads.v2.services.GetCampaignBudgetRequest */
 // @ts-ignore
 export const GetCampaignBudgetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBudgetsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignBudgetsRequest */
 // @ts-ignore
 export const MutateCampaignBudgetsRequest = {
   // @ts-ignore
@@ -7259,17 +7385,17 @@ export const MutateCampaignBudgetsRequest = {
     update_mask: { paths: string },
     create: CampaignBudget,
     update: CampaignBudget,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignBudgetOperation */
+/* .google.ads.googleads.v2.services.CampaignBudgetOperation */
 // @ts-ignore
 export const CampaignBudgetOperation = {
   // @ts-ignore
@@ -7282,42 +7408,42 @@ export const CampaignBudgetOperation = {
   update: CampaignBudget,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBudgetsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignBudgetsResponse */
 // @ts-ignore
 export const MutateCampaignBudgetsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignBudgetResult */
+/* .google.ads.googleads.v2.services.MutateCampaignBudgetResult */
 // @ts-ignore
 export const MutateCampaignBudgetResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignCriterionService */
+/* .google.ads.googleads.v2.services.CampaignCriterionService */
 // @ts-ignore
 export const CampaignCriterionService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignCriterionRequest */
+/* .google.ads.googleads.v2.services.GetCampaignCriterionRequest */
 // @ts-ignore
 export const GetCampaignCriterionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignCriteriaRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignCriteriaRequest */
 // @ts-ignore
 export const MutateCampaignCriteriaRequest = {
   // @ts-ignore
@@ -7328,17 +7454,17 @@ export const MutateCampaignCriteriaRequest = {
     update_mask: { paths: string },
     create: CampaignCriterion,
     update: CampaignCriterion,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignCriterionOperation */
+/* .google.ads.googleads.v2.services.CampaignCriterionOperation */
 // @ts-ignore
 export const CampaignCriterionOperation = {
   // @ts-ignore
@@ -7351,53 +7477,53 @@ export const CampaignCriterionOperation = {
   update: CampaignCriterion,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignCriteriaResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignCriteriaResponse */
 // @ts-ignore
 export const MutateCampaignCriteriaResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignCriterionResult */
+/* .google.ads.googleads.v2.services.MutateCampaignCriterionResult */
 // @ts-ignore
 export const MutateCampaignCriterionResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignCriterionSimulationService */
+/* .google.ads.googleads.v2.services.CampaignCriterionSimulationService */
 // @ts-ignore
 export const CampaignCriterionSimulationService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignCriterionSimulationRequest */
+/* .google.ads.googleads.v2.services.GetCampaignCriterionSimulationRequest */
 // @ts-ignore
 export const GetCampaignCriterionSimulationRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignDraftService */
+/* .google.ads.googleads.v2.services.CampaignDraftService */
 // @ts-ignore
 export const CampaignDraftService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignDraftRequest */
+/* .google.ads.googleads.v2.services.GetCampaignDraftRequest */
 // @ts-ignore
 export const GetCampaignDraftRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignDraftsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignDraftsRequest */
 // @ts-ignore
 export const MutateCampaignDraftsRequest = {
   // @ts-ignore
@@ -7408,24 +7534,24 @@ export const MutateCampaignDraftsRequest = {
     update_mask: { paths: string },
     create: CampaignDraft,
     update: CampaignDraft,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.PromoteCampaignDraftRequest */
+/* .google.ads.googleads.v2.services.PromoteCampaignDraftRequest */
 // @ts-ignore
 export const PromoteCampaignDraftRequest = {
   // @ts-ignore
-  campaign_draft: string
+  campaign_draft: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignDraftOperation */
+/* .google.ads.googleads.v2.services.CampaignDraftOperation */
 // @ts-ignore
 export const CampaignDraftOperation = {
   // @ts-ignore
@@ -7438,31 +7564,31 @@ export const CampaignDraftOperation = {
   update: CampaignDraft,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignDraftsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignDraftsResponse */
 // @ts-ignore
 export const MutateCampaignDraftsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignDraftResult */
+/* .google.ads.googleads.v2.services.MutateCampaignDraftResult */
 // @ts-ignore
 export const MutateCampaignDraftResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ListCampaignDraftAsyncErrorsRequest */
+/* .google.ads.googleads.v2.services.ListCampaignDraftAsyncErrorsRequest */
 // @ts-ignore
 export const ListCampaignDraftAsyncErrorsRequest = {
   // @ts-ignore
@@ -7472,55 +7598,47 @@ export const ListCampaignDraftAsyncErrorsRequest = {
   page_token: string,
 
   // @ts-ignore
-  page_size: number
+  page_size: number,
 };
 
-/* .google.ads.googleads.v1.services.ListCampaignDraftAsyncErrorsResponse */
+/* .google.ads.googleads.v2.services.ListCampaignDraftAsyncErrorsResponse */
 // @ts-ignore
 export const ListCampaignDraftAsyncErrorsResponse = {
   // @ts-ignore
-  errors: {
-    code: number,
-    message: string,
-    details: { type_url: string, value: string }
-  },
+  errors: { code: number, message: string, details: { type_url: string, value: string } },
 
   // @ts-ignore
-  next_page_token: string
+  next_page_token: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignExperimentService */
+/* .google.ads.googleads.v2.services.CampaignExperimentService */
 // @ts-ignore
 export const CampaignExperimentService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignExperimentRequest */
+/* .google.ads.googleads.v2.services.GetCampaignExperimentRequest */
 // @ts-ignore
 export const GetCampaignExperimentRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExperimentsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignExperimentsRequest */
 // @ts-ignore
 export const MutateCampaignExperimentsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: {
-    update_mask: { paths: string },
-    update: CampaignExperiment,
-    remove: string
-  },
+  operations: { update_mask: { paths: string }, update: CampaignExperiment, remove: string },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignExperimentOperation */
+/* .google.ads.googleads.v2.services.CampaignExperimentOperation */
 // @ts-ignore
 export const CampaignExperimentOperation = {
   // @ts-ignore
@@ -7530,31 +7648,31 @@ export const CampaignExperimentOperation = {
   update: CampaignExperiment,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExperimentsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignExperimentsResponse */
 // @ts-ignore
 export const MutateCampaignExperimentsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExperimentResult */
+/* .google.ads.googleads.v2.services.MutateCampaignExperimentResult */
 // @ts-ignore
 export const MutateCampaignExperimentResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CreateCampaignExperimentRequest */
+/* .google.ads.googleads.v2.services.CreateCampaignExperimentRequest */
 // @ts-ignore
 export const CreateCampaignExperimentRequest = {
   // @ts-ignore
@@ -7564,48 +7682,48 @@ export const CreateCampaignExperimentRequest = {
   campaign_experiment: CampaignExperiment,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CreateCampaignExperimentMetadata */
+/* .google.ads.googleads.v2.services.CreateCampaignExperimentMetadata */
 // @ts-ignore
 export const CreateCampaignExperimentMetadata = {
   // @ts-ignore
-  campaign_experiment: string
+  campaign_experiment: string,
 };
 
-/* .google.ads.googleads.v1.services.GraduateCampaignExperimentRequest */
+/* .google.ads.googleads.v2.services.GraduateCampaignExperimentRequest */
 // @ts-ignore
 export const GraduateCampaignExperimentRequest = {
   // @ts-ignore
   campaign_experiment: string,
 
   // @ts-ignore
-  campaign_budget: string
+  campaign_budget: string,
 };
 
-/* .google.ads.googleads.v1.services.GraduateCampaignExperimentResponse */
+/* .google.ads.googleads.v2.services.GraduateCampaignExperimentResponse */
 // @ts-ignore
 export const GraduateCampaignExperimentResponse = {
   // @ts-ignore
-  graduated_campaign: string
+  graduated_campaign: string,
 };
 
-/* .google.ads.googleads.v1.services.PromoteCampaignExperimentRequest */
+/* .google.ads.googleads.v2.services.PromoteCampaignExperimentRequest */
 // @ts-ignore
 export const PromoteCampaignExperimentRequest = {
   // @ts-ignore
-  campaign_experiment: string
+  campaign_experiment: string,
 };
 
-/* .google.ads.googleads.v1.services.EndCampaignExperimentRequest */
+/* .google.ads.googleads.v2.services.EndCampaignExperimentRequest */
 // @ts-ignore
 export const EndCampaignExperimentRequest = {
   // @ts-ignore
-  campaign_experiment: string
+  campaign_experiment: string,
 };
 
-/* .google.ads.googleads.v1.services.ListCampaignExperimentAsyncErrorsRequest */
+/* .google.ads.googleads.v2.services.ListCampaignExperimentAsyncErrorsRequest */
 // @ts-ignore
 export const ListCampaignExperimentAsyncErrorsRequest = {
   // @ts-ignore
@@ -7615,35 +7733,31 @@ export const ListCampaignExperimentAsyncErrorsRequest = {
   page_token: string,
 
   // @ts-ignore
-  page_size: number
+  page_size: number,
 };
 
-/* .google.ads.googleads.v1.services.ListCampaignExperimentAsyncErrorsResponse */
+/* .google.ads.googleads.v2.services.ListCampaignExperimentAsyncErrorsResponse */
 // @ts-ignore
 export const ListCampaignExperimentAsyncErrorsResponse = {
   // @ts-ignore
-  errors: {
-    code: number,
-    message: string,
-    details: { type_url: string, value: string }
-  },
+  errors: { code: number, message: string, details: { type_url: string, value: string } },
 
   // @ts-ignore
-  next_page_token: string
+  next_page_token: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignExtensionSettingService */
+/* .google.ads.googleads.v2.services.CampaignExtensionSettingService */
 // @ts-ignore
 export const CampaignExtensionSettingService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignExtensionSettingRequest */
+/* .google.ads.googleads.v2.services.GetCampaignExtensionSettingRequest */
 // @ts-ignore
 export const GetCampaignExtensionSettingRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignExtensionSettingsRequest */
 // @ts-ignore
 export const MutateCampaignExtensionSettingsRequest = {
   // @ts-ignore
@@ -7654,17 +7768,17 @@ export const MutateCampaignExtensionSettingsRequest = {
     update_mask: { paths: string },
     create: CampaignExtensionSetting,
     update: CampaignExtensionSetting,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignExtensionSettingOperation */
+/* .google.ads.googleads.v2.services.CampaignExtensionSettingOperation */
 // @ts-ignore
 export const CampaignExtensionSettingOperation = {
   // @ts-ignore
@@ -7677,42 +7791,42 @@ export const CampaignExtensionSettingOperation = {
   update: CampaignExtensionSetting,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignExtensionSettingsResponse */
 // @ts-ignore
 export const MutateCampaignExtensionSettingsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignExtensionSettingResult */
+/* .google.ads.googleads.v2.services.MutateCampaignExtensionSettingResult */
 // @ts-ignore
 export const MutateCampaignExtensionSettingResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignFeedService */
+/* .google.ads.googleads.v2.services.CampaignFeedService */
 // @ts-ignore
 export const CampaignFeedService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignFeedRequest */
+/* .google.ads.googleads.v2.services.GetCampaignFeedRequest */
 // @ts-ignore
 export const GetCampaignFeedRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignFeedsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignFeedsRequest */
 // @ts-ignore
 export const MutateCampaignFeedsRequest = {
   // @ts-ignore
@@ -7723,17 +7837,17 @@ export const MutateCampaignFeedsRequest = {
     update_mask: { paths: string },
     create: CampaignFeed,
     update: CampaignFeed,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignFeedOperation */
+/* .google.ads.googleads.v2.services.CampaignFeedOperation */
 // @ts-ignore
 export const CampaignFeedOperation = {
   // @ts-ignore
@@ -7746,42 +7860,42 @@ export const CampaignFeedOperation = {
   update: CampaignFeed,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignFeedsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignFeedsResponse */
 // @ts-ignore
 export const MutateCampaignFeedsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignFeedResult */
+/* .google.ads.googleads.v2.services.MutateCampaignFeedResult */
 // @ts-ignore
 export const MutateCampaignFeedResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignLabelService */
+/* .google.ads.googleads.v2.services.CampaignLabelService */
 // @ts-ignore
 export const CampaignLabelService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignLabelRequest */
+/* .google.ads.googleads.v2.services.GetCampaignLabelRequest */
 // @ts-ignore
 export const GetCampaignLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignLabelsRequest */
 // @ts-ignore
 export const MutateCampaignLabelsRequest = {
   // @ts-ignore
@@ -7794,52 +7908,52 @@ export const MutateCampaignLabelsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignLabelOperation */
+/* .google.ads.googleads.v2.services.CampaignLabelOperation */
 // @ts-ignore
 export const CampaignLabelOperation = {
   // @ts-ignore
   create: CampaignLabel,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignLabelsResponse */
 // @ts-ignore
 export const MutateCampaignLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignLabelResult */
+/* .google.ads.googleads.v2.services.MutateCampaignLabelResult */
 // @ts-ignore
 export const MutateCampaignLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignService */
+/* .google.ads.googleads.v2.services.CampaignService */
 // @ts-ignore
 export const CampaignService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignRequest */
+/* .google.ads.googleads.v2.services.GetCampaignRequest */
 // @ts-ignore
 export const GetCampaignRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignsRequest */
 // @ts-ignore
 export const MutateCampaignsRequest = {
   // @ts-ignore
@@ -7850,17 +7964,17 @@ export const MutateCampaignsRequest = {
     update_mask: { paths: string },
     create: Campaign,
     update: Campaign,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignOperation */
+/* .google.ads.googleads.v2.services.CampaignOperation */
 // @ts-ignore
 export const CampaignOperation = {
   // @ts-ignore
@@ -7873,42 +7987,42 @@ export const CampaignOperation = {
   update: Campaign,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignsResponse */
 // @ts-ignore
 export const MutateCampaignsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignResult */
+/* .google.ads.googleads.v2.services.MutateCampaignResult */
 // @ts-ignore
 export const MutateCampaignResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CampaignSharedSetService */
+/* .google.ads.googleads.v2.services.CampaignSharedSetService */
 // @ts-ignore
 export const CampaignSharedSetService = {};
 
-/* .google.ads.googleads.v1.services.GetCampaignSharedSetRequest */
+/* .google.ads.googleads.v2.services.GetCampaignSharedSetRequest */
 // @ts-ignore
 export const GetCampaignSharedSetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignSharedSetsRequest */
+/* .google.ads.googleads.v2.services.MutateCampaignSharedSetsRequest */
 // @ts-ignore
 export const MutateCampaignSharedSetsRequest = {
   // @ts-ignore
@@ -7921,85 +8035,85 @@ export const MutateCampaignSharedSetsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CampaignSharedSetOperation */
+/* .google.ads.googleads.v2.services.CampaignSharedSetOperation */
 // @ts-ignore
 export const CampaignSharedSetOperation = {
   // @ts-ignore
   create: CampaignSharedSet,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignSharedSetsResponse */
+/* .google.ads.googleads.v2.services.MutateCampaignSharedSetsResponse */
 // @ts-ignore
 export const MutateCampaignSharedSetsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCampaignSharedSetResult */
+/* .google.ads.googleads.v2.services.MutateCampaignSharedSetResult */
 // @ts-ignore
 export const MutateCampaignSharedSetResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CarrierConstantService */
+/* .google.ads.googleads.v2.services.CarrierConstantService */
 // @ts-ignore
 export const CarrierConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetCarrierConstantRequest */
+/* .google.ads.googleads.v2.services.GetCarrierConstantRequest */
 // @ts-ignore
 export const GetCarrierConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ChangeStatusService */
+/* .google.ads.googleads.v2.services.ChangeStatusService */
 // @ts-ignore
 export const ChangeStatusService = {};
 
-/* .google.ads.googleads.v1.services.GetChangeStatusRequest */
+/* .google.ads.googleads.v2.services.GetChangeStatusRequest */
 // @ts-ignore
 export const GetChangeStatusRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ClickViewService */
+/* .google.ads.googleads.v2.services.ClickViewService */
 // @ts-ignore
 export const ClickViewService = {};
 
-/* .google.ads.googleads.v1.services.GetClickViewRequest */
+/* .google.ads.googleads.v2.services.GetClickViewRequest */
 // @ts-ignore
 export const GetClickViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ConversionActionService */
+/* .google.ads.googleads.v2.services.ConversionActionService */
 // @ts-ignore
 export const ConversionActionService = {};
 
-/* .google.ads.googleads.v1.services.GetConversionActionRequest */
+/* .google.ads.googleads.v2.services.GetConversionActionRequest */
 // @ts-ignore
 export const GetConversionActionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateConversionActionsRequest */
+/* .google.ads.googleads.v2.services.MutateConversionActionsRequest */
 // @ts-ignore
 export const MutateConversionActionsRequest = {
   // @ts-ignore
@@ -8010,17 +8124,17 @@ export const MutateConversionActionsRequest = {
     update_mask: { paths: string },
     create: ConversionAction,
     update: ConversionAction,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.ConversionActionOperation */
+/* .google.ads.googleads.v2.services.ConversionActionOperation */
 // @ts-ignore
 export const ConversionActionOperation = {
   // @ts-ignore
@@ -8033,35 +8147,143 @@ export const ConversionActionOperation = {
   update: ConversionAction,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateConversionActionsResponse */
+/* .google.ads.googleads.v2.services.MutateConversionActionsResponse */
 // @ts-ignore
 export const MutateConversionActionsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateConversionActionResult */
+/* .google.ads.googleads.v2.services.MutateConversionActionResult */
 // @ts-ignore
 export const MutateConversionActionResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ConversionUploadService */
+/* .google.ads.googleads.v2.services.ConversionAdjustmentUploadService */
+// @ts-ignore
+export const ConversionAdjustmentUploadService = {};
+
+/* .google.ads.googleads.v2.services.UploadConversionAdjustmentsRequest */
+// @ts-ignore
+export const UploadConversionAdjustmentsRequest = {
+  // @ts-ignore
+  customer_id: string,
+
+  // @ts-ignore
+  conversion_adjustments: {
+    conversion_action: string,
+    adjustment_date_time: string,
+    adjustment_type: "enum_ConversionAdjustmentType",
+    restatement_value: { adjusted_value: number, currency_code: string },
+    gclid_date_time_pair: { gclid: string, conversion_date_time: string },
+    order_id: string,
+  },
+
+  // @ts-ignore
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean,
+};
+
+/* .google.ads.googleads.v2.services.UploadConversionAdjustmentsResponse */
+// @ts-ignore
+export const UploadConversionAdjustmentsResponse = {
+  // @ts-ignore
+  partial_failure_error: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string },
+  },
+
+  // @ts-ignore
+  results: {
+    conversion_action: string,
+    adjustment_date_time: string,
+    adjustment_type: "enum_ConversionAdjustmentType",
+    gclid_date_time_pair: { gclid: string, conversion_date_time: string },
+    order_id: string,
+  },
+};
+
+/* .google.ads.googleads.v2.services.ConversionAdjustment */
+// @ts-ignore
+export const ConversionAdjustment = {
+  // @ts-ignore
+  conversion_action: string,
+
+  // @ts-ignore
+  adjustment_date_time: string,
+
+  // @ts-ignore
+  adjustment_type: "enum_ConversionAdjustmentType",
+
+  // @ts-ignore
+  restatement_value: { adjusted_value: number, currency_code: string },
+
+  // @ts-ignore
+  gclid_date_time_pair: { gclid: string, conversion_date_time: string },
+
+  // @ts-ignore
+  order_id: string,
+};
+
+/* .google.ads.googleads.v2.services.RestatementValue */
+// @ts-ignore
+export const RestatementValue = {
+  // @ts-ignore
+  adjusted_value: number,
+
+  // @ts-ignore
+  currency_code: string,
+};
+
+/* .google.ads.googleads.v2.services.GclidDateTimePair */
+// @ts-ignore
+export const GclidDateTimePair = {
+  // @ts-ignore
+  gclid: string,
+
+  // @ts-ignore
+  conversion_date_time: string,
+};
+
+/* .google.ads.googleads.v2.services.ConversionAdjustmentResult */
+// @ts-ignore
+export const ConversionAdjustmentResult = {
+  // @ts-ignore
+  conversion_action: string,
+
+  // @ts-ignore
+  adjustment_date_time: string,
+
+  // @ts-ignore
+  adjustment_type: "enum_ConversionAdjustmentType",
+
+  // @ts-ignore
+  gclid_date_time_pair: GclidDateTimePair,
+
+  // @ts-ignore
+  order_id: string,
+};
+
+/* .google.ads.googleads.v2.services.ConversionUploadService */
 // @ts-ignore
 export const ConversionUploadService = {};
 
-/* .google.ads.googleads.v1.services.UploadClickConversionsRequest */
+/* .google.ads.googleads.v2.services.UploadClickConversionsRequest */
 // @ts-ignore
 export const UploadClickConversionsRequest = {
   // @ts-ignore
@@ -8077,36 +8299,32 @@ export const UploadClickConversionsRequest = {
     order_id: string,
     external_attribution_data: {
       external_attribution_credit: number,
-      external_attribution_model: string
-    }
+      external_attribution_model: string,
+    },
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.UploadClickConversionsResponse */
+/* .google.ads.googleads.v2.services.UploadClickConversionsResponse */
 // @ts-ignore
 export const UploadClickConversionsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: {
-    gclid: string,
-    conversion_action: string,
-    conversion_date_time: string
-  }
+  results: { gclid: string, conversion_action: string, conversion_date_time: string },
 };
 
-/* .google.ads.googleads.v1.services.UploadCallConversionsRequest */
+/* .google.ads.googleads.v2.services.UploadCallConversionsRequest */
 // @ts-ignore
 export const UploadCallConversionsRequest = {
   // @ts-ignore
@@ -8119,24 +8337,24 @@ export const UploadCallConversionsRequest = {
     conversion_action: string,
     conversion_date_time: string,
     conversion_value: number,
-    currency_code: string
+    currency_code: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.UploadCallConversionsResponse */
+/* .google.ads.googleads.v2.services.UploadCallConversionsResponse */
 // @ts-ignore
 export const UploadCallConversionsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
@@ -8144,11 +8362,11 @@ export const UploadCallConversionsResponse = {
     caller_id: string,
     call_start_date_time: string,
     conversion_action: string,
-    conversion_date_time: string
-  }
+    conversion_date_time: string,
+  },
 };
 
-/* .google.ads.googleads.v1.services.ClickConversion */
+/* .google.ads.googleads.v2.services.ClickConversion */
 // @ts-ignore
 export const ClickConversion = {
   // @ts-ignore
@@ -8172,11 +8390,11 @@ export const ClickConversion = {
   // @ts-ignore
   external_attribution_data: {
     external_attribution_credit: number,
-    external_attribution_model: string
-  }
+    external_attribution_model: string,
+  },
 };
 
-/* .google.ads.googleads.v1.services.CallConversion */
+/* .google.ads.googleads.v2.services.CallConversion */
 // @ts-ignore
 export const CallConversion = {
   // @ts-ignore
@@ -8195,20 +8413,20 @@ export const CallConversion = {
   conversion_value: number,
 
   // @ts-ignore
-  currency_code: string
+  currency_code: string,
 };
 
-/* .google.ads.googleads.v1.services.ExternalAttributionData */
+/* .google.ads.googleads.v2.services.ExternalAttributionData */
 // @ts-ignore
 export const ExternalAttributionData = {
   // @ts-ignore
   external_attribution_credit: number,
 
   // @ts-ignore
-  external_attribution_model: string
+  external_attribution_model: string,
 };
 
-/* .google.ads.googleads.v1.services.ClickConversionResult */
+/* .google.ads.googleads.v2.services.ClickConversionResult */
 // @ts-ignore
 export const ClickConversionResult = {
   // @ts-ignore
@@ -8218,10 +8436,10 @@ export const ClickConversionResult = {
   conversion_action: string,
 
   // @ts-ignore
-  conversion_date_time: string
+  conversion_date_time: string,
 };
 
-/* .google.ads.googleads.v1.services.CallConversionResult */
+/* .google.ads.googleads.v2.services.CallConversionResult */
 // @ts-ignore
 export const CallConversionResult = {
   // @ts-ignore
@@ -8234,38 +8452,34 @@ export const CallConversionResult = {
   conversion_action: string,
 
   // @ts-ignore
-  conversion_date_time: string
+  conversion_date_time: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomInterestService */
+/* .google.ads.googleads.v2.services.CustomInterestService */
 // @ts-ignore
 export const CustomInterestService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomInterestRequest */
+/* .google.ads.googleads.v2.services.GetCustomInterestRequest */
 // @ts-ignore
 export const GetCustomInterestRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomInterestsRequest */
+/* .google.ads.googleads.v2.services.MutateCustomInterestsRequest */
 // @ts-ignore
 export const MutateCustomInterestsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: {
-    update_mask: { paths: string },
-    create: CustomInterest,
-    update: CustomInterest
-  },
+  operations: { update_mask: { paths: string }, create: CustomInterest, update: CustomInterest },
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CustomInterestOperation */
+/* .google.ads.googleads.v2.services.CustomInterestOperation */
 // @ts-ignore
 export const CustomInterestOperation = {
   // @ts-ignore
@@ -8275,35 +8489,35 @@ export const CustomInterestOperation = {
   create: CustomInterest,
 
   // @ts-ignore
-  update: CustomInterest
+  update: CustomInterest,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomInterestsResponse */
+/* .google.ads.googleads.v2.services.MutateCustomInterestsResponse */
 // @ts-ignore
 export const MutateCustomInterestsResponse = {
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomInterestResult */
+/* .google.ads.googleads.v2.services.MutateCustomInterestResult */
 // @ts-ignore
 export const MutateCustomInterestResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerClientLinkService */
+/* .google.ads.googleads.v2.services.CustomerClientLinkService */
 // @ts-ignore
 export const CustomerClientLinkService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerClientLinkRequest */
+/* .google.ads.googleads.v2.services.GetCustomerClientLinkRequest */
 // @ts-ignore
 export const GetCustomerClientLinkRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerClientLinkRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerClientLinkRequest */
 // @ts-ignore
 export const MutateCustomerClientLinkRequest = {
   // @ts-ignore
@@ -8313,11 +8527,11 @@ export const MutateCustomerClientLinkRequest = {
   operation: {
     update_mask: { paths: string },
     create: CustomerClientLink,
-    update: CustomerClientLink
-  }
+    update: CustomerClientLink,
+  },
 };
 
-/* .google.ads.googleads.v1.services.CustomerClientLinkOperation */
+/* .google.ads.googleads.v2.services.CustomerClientLinkOperation */
 // @ts-ignore
 export const CustomerClientLinkOperation = {
   // @ts-ignore
@@ -8327,46 +8541,46 @@ export const CustomerClientLinkOperation = {
   create: CustomerClientLink,
 
   // @ts-ignore
-  update: CustomerClientLink
+  update: CustomerClientLink,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerClientLinkResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerClientLinkResponse */
 // @ts-ignore
 export const MutateCustomerClientLinkResponse = {
   // @ts-ignore
-  result: { resource_name: string }
+  result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerClientLinkResult */
+/* .google.ads.googleads.v2.services.MutateCustomerClientLinkResult */
 // @ts-ignore
 export const MutateCustomerClientLinkResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerClientService */
+/* .google.ads.googleads.v2.services.CustomerClientService */
 // @ts-ignore
 export const CustomerClientService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerClientRequest */
+/* .google.ads.googleads.v2.services.GetCustomerClientRequest */
 // @ts-ignore
 export const GetCustomerClientRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerExtensionSettingService */
+/* .google.ads.googleads.v2.services.CustomerExtensionSettingService */
 // @ts-ignore
 export const CustomerExtensionSettingService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerExtensionSettingRequest */
+/* .google.ads.googleads.v2.services.GetCustomerExtensionSettingRequest */
 // @ts-ignore
 export const GetCustomerExtensionSettingRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingsRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerExtensionSettingsRequest */
 // @ts-ignore
 export const MutateCustomerExtensionSettingsRequest = {
   // @ts-ignore
@@ -8377,17 +8591,17 @@ export const MutateCustomerExtensionSettingsRequest = {
     update_mask: { paths: string },
     create: CustomerExtensionSetting,
     update: CustomerExtensionSetting,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CustomerExtensionSettingOperation */
+/* .google.ads.googleads.v2.services.CustomerExtensionSettingOperation */
 // @ts-ignore
 export const CustomerExtensionSettingOperation = {
   // @ts-ignore
@@ -8400,42 +8614,42 @@ export const CustomerExtensionSettingOperation = {
   update: CustomerExtensionSetting,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingsResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerExtensionSettingsResponse */
 // @ts-ignore
 export const MutateCustomerExtensionSettingsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerExtensionSettingResult */
+/* .google.ads.googleads.v2.services.MutateCustomerExtensionSettingResult */
 // @ts-ignore
 export const MutateCustomerExtensionSettingResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerFeedService */
+/* .google.ads.googleads.v2.services.CustomerFeedService */
 // @ts-ignore
 export const CustomerFeedService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerFeedRequest */
+/* .google.ads.googleads.v2.services.GetCustomerFeedRequest */
 // @ts-ignore
 export const GetCustomerFeedRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerFeedsRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerFeedsRequest */
 // @ts-ignore
 export const MutateCustomerFeedsRequest = {
   // @ts-ignore
@@ -8446,17 +8660,17 @@ export const MutateCustomerFeedsRequest = {
     update_mask: { paths: string },
     create: CustomerFeed,
     update: CustomerFeed,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CustomerFeedOperation */
+/* .google.ads.googleads.v2.services.CustomerFeedOperation */
 // @ts-ignore
 export const CustomerFeedOperation = {
   // @ts-ignore
@@ -8469,42 +8683,42 @@ export const CustomerFeedOperation = {
   update: CustomerFeed,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerFeedsResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerFeedsResponse */
 // @ts-ignore
 export const MutateCustomerFeedsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerFeedResult */
+/* .google.ads.googleads.v2.services.MutateCustomerFeedResult */
 // @ts-ignore
 export const MutateCustomerFeedResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerLabelService */
+/* .google.ads.googleads.v2.services.CustomerLabelService */
 // @ts-ignore
 export const CustomerLabelService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerLabelRequest */
+/* .google.ads.googleads.v2.services.GetCustomerLabelRequest */
 // @ts-ignore
 export const GetCustomerLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerLabelsRequest */
 // @ts-ignore
 export const MutateCustomerLabelsRequest = {
   // @ts-ignore
@@ -8517,97 +8731,97 @@ export const MutateCustomerLabelsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CustomerLabelOperation */
+/* .google.ads.googleads.v2.services.CustomerLabelOperation */
 // @ts-ignore
 export const CustomerLabelOperation = {
   // @ts-ignore
   create: CustomerLabel,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerLabelsResponse */
 // @ts-ignore
 export const MutateCustomerLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerLabelResult */
+/* .google.ads.googleads.v2.services.MutateCustomerLabelResult */
 // @ts-ignore
 export const MutateCustomerLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerManagerLinkService */
+/* .google.ads.googleads.v2.services.CustomerManagerLinkService */
 // @ts-ignore
 export const CustomerManagerLinkService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerManagerLinkRequest */
+/* .google.ads.googleads.v2.services.GetCustomerManagerLinkRequest */
 // @ts-ignore
 export const GetCustomerManagerLinkRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerManagerLinkRequest */
 // @ts-ignore
 export const MutateCustomerManagerLinkRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: { update_mask: { paths: string }, update: CustomerManagerLink }
+  operations: { update_mask: { paths: string }, update: CustomerManagerLink },
 };
 
-/* .google.ads.googleads.v1.services.CustomerManagerLinkOperation */
+/* .google.ads.googleads.v2.services.CustomerManagerLinkOperation */
 // @ts-ignore
 export const CustomerManagerLinkOperation = {
   // @ts-ignore
   update_mask: { paths: string },
 
   // @ts-ignore
-  update: CustomerManagerLink
+  update: CustomerManagerLink,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerManagerLinkResponse */
 // @ts-ignore
 export const MutateCustomerManagerLinkResponse = {
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerManagerLinkResult */
+/* .google.ads.googleads.v2.services.MutateCustomerManagerLinkResult */
 // @ts-ignore
 export const MutateCustomerManagerLinkResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerNegativeCriterionService */
+/* .google.ads.googleads.v2.services.CustomerNegativeCriterionService */
 // @ts-ignore
 export const CustomerNegativeCriterionService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerNegativeCriterionRequest */
+/* .google.ads.googleads.v2.services.GetCustomerNegativeCriterionRequest */
 // @ts-ignore
 export const GetCustomerNegativeCriterionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerNegativeCriteriaRequest */
 // @ts-ignore
 export const MutateCustomerNegativeCriteriaRequest = {
   // @ts-ignore
@@ -8620,52 +8834,52 @@ export const MutateCustomerNegativeCriteriaRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CustomerNegativeCriterionOperation */
+/* .google.ads.googleads.v2.services.CustomerNegativeCriterionOperation */
 // @ts-ignore
 export const CustomerNegativeCriterionOperation = {
   // @ts-ignore
   create: CustomerNegativeCriterion,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerNegativeCriteriaResponse */
 // @ts-ignore
 export const MutateCustomerNegativeCriteriaResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResult */
+/* .google.ads.googleads.v2.services.MutateCustomerNegativeCriteriaResult */
 // @ts-ignore
 export const MutateCustomerNegativeCriteriaResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.CustomerService */
+/* .google.ads.googleads.v2.services.CustomerService */
 // @ts-ignore
 export const CustomerService = {};
 
-/* .google.ads.googleads.v1.services.GetCustomerRequest */
+/* .google.ads.googleads.v2.services.GetCustomerRequest */
 // @ts-ignore
 export const GetCustomerRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerRequest */
+/* .google.ads.googleads.v2.services.MutateCustomerRequest */
 // @ts-ignore
 export const MutateCustomerRequest = {
   // @ts-ignore
@@ -8675,128 +8889,145 @@ export const MutateCustomerRequest = {
   operation: { update: Customer, update_mask: { paths: string } },
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.CreateCustomerClientRequest */
+/* .google.ads.googleads.v2.services.CreateCustomerClientRequest */
 // @ts-ignore
 export const CreateCustomerClientRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  customer_client: Customer
+  customer_client: Customer,
+
+  // @ts-ignore
+  email_address: string,
+
+  // @ts-ignore
+  access_role: "enum_AccessRole",
 };
 
-/* .google.ads.googleads.v1.services.CustomerOperation */
+/* .google.ads.googleads.v2.services.CustomerOperation */
 // @ts-ignore
 export const CustomerOperation = {
   // @ts-ignore
   update: Customer,
 
   // @ts-ignore
-  update_mask: { paths: string }
+  update_mask: { paths: string },
 };
 
-/* .google.ads.googleads.v1.services.CreateCustomerClientResponse */
+/* .google.ads.googleads.v2.services.CreateCustomerClientResponse */
 // @ts-ignore
 export const CreateCustomerClientResponse = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerResponse */
+/* .google.ads.googleads.v2.services.MutateCustomerResponse */
 // @ts-ignore
 export const MutateCustomerResponse = {
   // @ts-ignore
-  result: { resource_name: string }
+  result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateCustomerResult */
+/* .google.ads.googleads.v2.services.MutateCustomerResult */
 // @ts-ignore
 export const MutateCustomerResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ListAccessibleCustomersRequest */
+/* .google.ads.googleads.v2.services.ListAccessibleCustomersRequest */
 // @ts-ignore
 export const ListAccessibleCustomersRequest = {};
 
-/* .google.ads.googleads.v1.services.ListAccessibleCustomersResponse */
+/* .google.ads.googleads.v2.services.ListAccessibleCustomersResponse */
 // @ts-ignore
 export const ListAccessibleCustomersResponse = {
   // @ts-ignore
-  resource_names: string
+  resource_names: string,
 };
 
-/* .google.ads.googleads.v1.services.DetailPlacementViewService */
+/* .google.ads.googleads.v2.services.DetailPlacementViewService */
 // @ts-ignore
 export const DetailPlacementViewService = {};
 
-/* .google.ads.googleads.v1.services.GetDetailPlacementViewRequest */
+/* .google.ads.googleads.v2.services.GetDetailPlacementViewRequest */
 // @ts-ignore
 export const GetDetailPlacementViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DisplayKeywordViewService */
+/* .google.ads.googleads.v2.services.DisplayKeywordViewService */
 // @ts-ignore
 export const DisplayKeywordViewService = {};
 
-/* .google.ads.googleads.v1.services.GetDisplayKeywordViewRequest */
+/* .google.ads.googleads.v2.services.GetDisplayKeywordViewRequest */
 // @ts-ignore
 export const GetDisplayKeywordViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DomainCategoryService */
+/* .google.ads.googleads.v2.services.DistanceViewService */
+// @ts-ignore
+export const DistanceViewService = {};
+
+/* .google.ads.googleads.v2.services.GetDistanceViewRequest */
+// @ts-ignore
+export const GetDistanceViewRequest = {
+  // @ts-ignore
+  resource_name: string,
+};
+
+/* .google.ads.googleads.v2.services.DomainCategoryService */
 // @ts-ignore
 export const DomainCategoryService = {};
 
-/* .google.ads.googleads.v1.services.GetDomainCategoryRequest */
+/* .google.ads.googleads.v2.services.GetDomainCategoryRequest */
 // @ts-ignore
 export const GetDomainCategoryRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DynamicSearchAdsSearchTermViewService */
+/* .google.ads.googleads.v2.services.DynamicSearchAdsSearchTermViewService */
 // @ts-ignore
 export const DynamicSearchAdsSearchTermViewService = {};
 
-/* .google.ads.googleads.v1.services.GetDynamicSearchAdsSearchTermViewRequest */
+/* .google.ads.googleads.v2.services.GetDynamicSearchAdsSearchTermViewRequest */
 // @ts-ignore
 export const GetDynamicSearchAdsSearchTermViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ExpandedLandingPageViewService */
+/* .google.ads.googleads.v2.services.ExpandedLandingPageViewService */
 // @ts-ignore
 export const ExpandedLandingPageViewService = {};
 
-/* .google.ads.googleads.v1.services.GetExpandedLandingPageViewRequest */
+/* .google.ads.googleads.v2.services.GetExpandedLandingPageViewRequest */
 // @ts-ignore
 export const GetExpandedLandingPageViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ExtensionFeedItemService */
+/* .google.ads.googleads.v2.services.ExtensionFeedItemService */
 // @ts-ignore
 export const ExtensionFeedItemService = {};
 
-/* .google.ads.googleads.v1.services.GetExtensionFeedItemRequest */
+/* .google.ads.googleads.v2.services.GetExtensionFeedItemRequest */
 // @ts-ignore
 export const GetExtensionFeedItemRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateExtensionFeedItemsRequest */
+/* .google.ads.googleads.v2.services.MutateExtensionFeedItemsRequest */
 // @ts-ignore
 export const MutateExtensionFeedItemsRequest = {
   // @ts-ignore
@@ -8807,14 +9038,17 @@ export const MutateExtensionFeedItemsRequest = {
     update_mask: { paths: string },
     create: ExtensionFeedItem,
     update: ExtensionFeedItem,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
-  validate_only: boolean
+  partial_failure: boolean,
+
+  // @ts-ignore
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.ExtensionFeedItemOperation */
+/* .google.ads.googleads.v2.services.ExtensionFeedItemOperation */
 // @ts-ignore
 export const ExtensionFeedItemOperation = {
   // @ts-ignore
@@ -8827,35 +9061,42 @@ export const ExtensionFeedItemOperation = {
   update: ExtensionFeedItem,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateExtensionFeedItemsResponse */
+/* .google.ads.googleads.v2.services.MutateExtensionFeedItemsResponse */
 // @ts-ignore
 export const MutateExtensionFeedItemsResponse = {
   // @ts-ignore
-  results: { resource_name: string }
+  partial_failure_error: {
+    code: number,
+    message: string,
+    details: { type_url: string, value: string },
+  },
+
+  // @ts-ignore
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateExtensionFeedItemResult */
+/* .google.ads.googleads.v2.services.MutateExtensionFeedItemResult */
 // @ts-ignore
 export const MutateExtensionFeedItemResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.FeedItemService */
+/* .google.ads.googleads.v2.services.FeedItemService */
 // @ts-ignore
 export const FeedItemService = {};
 
-/* .google.ads.googleads.v1.services.GetFeedItemRequest */
+/* .google.ads.googleads.v2.services.GetFeedItemRequest */
 // @ts-ignore
 export const GetFeedItemRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemsRequest */
+/* .google.ads.googleads.v2.services.MutateFeedItemsRequest */
 // @ts-ignore
 export const MutateFeedItemsRequest = {
   // @ts-ignore
@@ -8866,17 +9107,17 @@ export const MutateFeedItemsRequest = {
     update_mask: { paths: string },
     create: FeedItem,
     update: FeedItem,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.FeedItemOperation */
+/* .google.ads.googleads.v2.services.FeedItemOperation */
 // @ts-ignore
 export const FeedItemOperation = {
   // @ts-ignore
@@ -8889,87 +9130,87 @@ export const FeedItemOperation = {
   update: FeedItem,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemsResponse */
+/* .google.ads.googleads.v2.services.MutateFeedItemsResponse */
 // @ts-ignore
 export const MutateFeedItemsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemResult */
+/* .google.ads.googleads.v2.services.MutateFeedItemResult */
 // @ts-ignore
 export const MutateFeedItemResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.FeedItemTargetService */
+/* .google.ads.googleads.v2.services.FeedItemTargetService */
 // @ts-ignore
 export const FeedItemTargetService = {};
 
-/* .google.ads.googleads.v1.services.GetFeedItemTargetRequest */
+/* .google.ads.googleads.v2.services.GetFeedItemTargetRequest */
 // @ts-ignore
 export const GetFeedItemTargetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemTargetsRequest */
+/* .google.ads.googleads.v2.services.MutateFeedItemTargetsRequest */
 // @ts-ignore
 export const MutateFeedItemTargetsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: { create: FeedItemTarget, remove: string }
+  operations: { create: FeedItemTarget, remove: string },
 };
 
-/* .google.ads.googleads.v1.services.FeedItemTargetOperation */
+/* .google.ads.googleads.v2.services.FeedItemTargetOperation */
 // @ts-ignore
 export const FeedItemTargetOperation = {
   // @ts-ignore
   create: FeedItemTarget,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemTargetsResponse */
+/* .google.ads.googleads.v2.services.MutateFeedItemTargetsResponse */
 // @ts-ignore
 export const MutateFeedItemTargetsResponse = {
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedItemTargetResult */
+/* .google.ads.googleads.v2.services.MutateFeedItemTargetResult */
 // @ts-ignore
 export const MutateFeedItemTargetResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.FeedMappingService */
+/* .google.ads.googleads.v2.services.FeedMappingService */
 // @ts-ignore
 export const FeedMappingService = {};
 
-/* .google.ads.googleads.v1.services.GetFeedMappingRequest */
+/* .google.ads.googleads.v2.services.GetFeedMappingRequest */
 // @ts-ignore
 export const GetFeedMappingRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedMappingsRequest */
+/* .google.ads.googleads.v2.services.MutateFeedMappingsRequest */
 // @ts-ignore
 export const MutateFeedMappingsRequest = {
   // @ts-ignore
@@ -8982,84 +9223,79 @@ export const MutateFeedMappingsRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.FeedMappingOperation */
+/* .google.ads.googleads.v2.services.FeedMappingOperation */
 // @ts-ignore
 export const FeedMappingOperation = {
   // @ts-ignore
   create: FeedMapping,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedMappingsResponse */
+/* .google.ads.googleads.v2.services.MutateFeedMappingsResponse */
 // @ts-ignore
 export const MutateFeedMappingsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedMappingResult */
+/* .google.ads.googleads.v2.services.MutateFeedMappingResult */
 // @ts-ignore
 export const MutateFeedMappingResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.FeedPlaceholderViewService */
+/* .google.ads.googleads.v2.services.FeedPlaceholderViewService */
 // @ts-ignore
 export const FeedPlaceholderViewService = {};
 
-/* .google.ads.googleads.v1.services.GetFeedPlaceholderViewRequest */
+/* .google.ads.googleads.v2.services.GetFeedPlaceholderViewRequest */
 // @ts-ignore
 export const GetFeedPlaceholderViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.FeedService */
+/* .google.ads.googleads.v2.services.FeedService */
 // @ts-ignore
 export const FeedService = {};
 
-/* .google.ads.googleads.v1.services.GetFeedRequest */
+/* .google.ads.googleads.v2.services.GetFeedRequest */
 // @ts-ignore
 export const GetFeedRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedsRequest */
+/* .google.ads.googleads.v2.services.MutateFeedsRequest */
 // @ts-ignore
 export const MutateFeedsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: {
-    update_mask: { paths: string },
-    create: Feed,
-    update: Feed,
-    remove: string
-  },
+  operations: { update_mask: { paths: string }, create: Feed, update: Feed, remove: string },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.FeedOperation */
+/* .google.ads.googleads.v2.services.FeedOperation */
 // @ts-ignore
 export const FeedOperation = {
   // @ts-ignore
@@ -9072,67 +9308,67 @@ export const FeedOperation = {
   update: Feed,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedsResponse */
+/* .google.ads.googleads.v2.services.MutateFeedsResponse */
 // @ts-ignore
 export const MutateFeedsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateFeedResult */
+/* .google.ads.googleads.v2.services.MutateFeedResult */
 // @ts-ignore
 export const MutateFeedResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.GenderViewService */
+/* .google.ads.googleads.v2.services.GenderViewService */
 // @ts-ignore
 export const GenderViewService = {};
 
-/* .google.ads.googleads.v1.services.GetGenderViewRequest */
+/* .google.ads.googleads.v2.services.GetGenderViewRequest */
 // @ts-ignore
 export const GetGenderViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.GeoTargetConstantService */
+/* .google.ads.googleads.v2.services.GeoTargetConstantService */
 // @ts-ignore
 export const GeoTargetConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetGeoTargetConstantRequest */
+/* .google.ads.googleads.v2.services.GetGeoTargetConstantRequest */
 // @ts-ignore
 export const GetGeoTargetConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest.LocationNames */
+/* .google.ads.googleads.v2.services.SuggestGeoTargetConstantsRequest.LocationNames */
 // @ts-ignore
 export const LocationNames = {
   // @ts-ignore
-  names: string
+  names: string,
 };
 
-/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest.GeoTargets */
+/* .google.ads.googleads.v2.services.SuggestGeoTargetConstantsRequest.GeoTargets */
 // @ts-ignore
 export const GeoTargets = {
   // @ts-ignore
-  geo_target_constants: string
+  geo_target_constants: string,
 };
 
-/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsRequest */
+/* .google.ads.googleads.v2.services.SuggestGeoTargetConstantsRequest */
 // @ts-ignore
 export const SuggestGeoTargetConstantsRequest = {
   // @ts-ignore
@@ -9145,10 +9381,10 @@ export const SuggestGeoTargetConstantsRequest = {
   location_names: LocationNames,
 
   // @ts-ignore
-  geo_targets: GeoTargets
+  geo_targets: GeoTargets,
 };
 
-/* .google.ads.googleads.v1.services.SuggestGeoTargetConstantsResponse */
+/* .google.ads.googleads.v2.services.SuggestGeoTargetConstantsResponse */
 // @ts-ignore
 export const SuggestGeoTargetConstantsResponse = {
   // @ts-ignore
@@ -9157,11 +9393,11 @@ export const SuggestGeoTargetConstantsResponse = {
     reach: number,
     search_term: string,
     geo_target_constant: GeoTargetConstant,
-    geo_target_constant_parents: GeoTargetConstant
-  }
+    geo_target_constant_parents: GeoTargetConstant,
+  },
 };
 
-/* .google.ads.googleads.v1.services.GeoTargetConstantSuggestion */
+/* .google.ads.googleads.v2.services.GeoTargetConstantSuggestion */
 // @ts-ignore
 export const GeoTargetConstantSuggestion = {
   // @ts-ignore
@@ -9177,32 +9413,32 @@ export const GeoTargetConstantSuggestion = {
   geo_target_constant: GeoTargetConstant,
 
   // @ts-ignore
-  geo_target_constant_parents: GeoTargetConstant
+  geo_target_constant_parents: GeoTargetConstant,
 };
 
-/* .google.ads.googleads.v1.services.GeographicViewService */
+/* .google.ads.googleads.v2.services.GeographicViewService */
 // @ts-ignore
 export const GeographicViewService = {};
 
-/* .google.ads.googleads.v1.services.GetGeographicViewRequest */
+/* .google.ads.googleads.v2.services.GetGeographicViewRequest */
 // @ts-ignore
 export const GetGeographicViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.GoogleAdsFieldService */
+/* .google.ads.googleads.v2.services.GoogleAdsFieldService */
 // @ts-ignore
 export const GoogleAdsFieldService = {};
 
-/* .google.ads.googleads.v1.services.GetGoogleAdsFieldRequest */
+/* .google.ads.googleads.v2.services.GetGoogleAdsFieldRequest */
 // @ts-ignore
 export const GetGoogleAdsFieldRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.SearchGoogleAdsFieldsRequest */
+/* .google.ads.googleads.v2.services.SearchGoogleAdsFieldsRequest */
 // @ts-ignore
 export const SearchGoogleAdsFieldsRequest = {
   // @ts-ignore
@@ -9212,10 +9448,10 @@ export const SearchGoogleAdsFieldsRequest = {
   page_token: string,
 
   // @ts-ignore
-  page_size: number
+  page_size: number,
 };
 
-/* .google.ads.googleads.v1.services.SearchGoogleAdsFieldsResponse */
+/* .google.ads.googleads.v2.services.SearchGoogleAdsFieldsResponse */
 // @ts-ignore
 export const SearchGoogleAdsFieldsResponse = {
   // @ts-ignore
@@ -9225,14 +9461,14 @@ export const SearchGoogleAdsFieldsResponse = {
   next_page_token: string,
 
   // @ts-ignore
-  total_results_count: number
+  total_results_count: number,
 };
 
-/* .google.ads.googleads.v1.services.GoogleAdsService */
+/* .google.ads.googleads.v2.services.GoogleAdsService */
 // @ts-ignore
 export const GoogleAdsService = {};
 
-/* .google.ads.googleads.v1.services.SearchGoogleAdsRequest */
+/* .google.ads.googleads.v2.services.SearchGoogleAdsRequest */
 // @ts-ignore
 export const SearchGoogleAdsRequest = {
   // @ts-ignore
@@ -9248,10 +9484,13 @@ export const SearchGoogleAdsRequest = {
   page_size: number,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
+
+  // @ts-ignore
+  return_summary_row: boolean,
 };
 
-/* .google.ads.googleads.v1.services.SearchGoogleAdsResponse */
+/* .google.ads.googleads.v2.services.SearchGoogleAdsResponse */
 // @ts-ignore
 export const SearchGoogleAdsResponse = {
   // @ts-ignore
@@ -9260,6 +9499,7 @@ export const SearchGoogleAdsResponse = {
     account_budget_proposal: AccountBudgetProposal,
     ad_group: AdGroup,
     ad_group_ad: AdGroupAd,
+    ad_group_ad_asset_view: AdGroupAdAssetView,
     ad_group_ad_label: AdGroupAdLabel,
     ad_group_audience_view: AdGroupAudienceView,
     ad_group_bid_modifier: AdGroupBidModifier,
@@ -9304,6 +9544,7 @@ export const SearchGoogleAdsResponse = {
     customer_negative_criterion: CustomerNegativeCriterion,
     detail_placement_view: DetailPlacementView,
     display_keyword_view: DisplayKeywordView,
+    distance_view: DistanceView,
     dynamic_search_ads_search_term_view: DynamicSearchAdsSearchTermView,
     expanded_landing_page_view: ExpandedLandingPageView,
     extension_feed_item: ExtensionFeedItem,
@@ -9346,11 +9587,12 @@ export const SearchGoogleAdsResponse = {
     topic_view: TopicView,
     user_interest: UserInterest,
     user_list: UserList,
+    user_location_view: UserLocationView,
     remarketing_action: RemarketingAction,
     topic_constant: TopicConstant,
     video: Video,
     metrics: Metrics,
-    segments: Segments
+    segments: Segments,
   },
 
   // @ts-ignore
@@ -9360,10 +9602,112 @@ export const SearchGoogleAdsResponse = {
   total_results_count: number,
 
   // @ts-ignore
-  field_mask: { paths: string }
+  field_mask: { paths: string },
+
+  // @ts-ignore
+  summary_row: {
+    account_budget: AccountBudget,
+    account_budget_proposal: AccountBudgetProposal,
+    ad_group: AdGroup,
+    ad_group_ad: AdGroupAd,
+    ad_group_ad_asset_view: AdGroupAdAssetView,
+    ad_group_ad_label: AdGroupAdLabel,
+    ad_group_audience_view: AdGroupAudienceView,
+    ad_group_bid_modifier: AdGroupBidModifier,
+    ad_group_criterion: AdGroupCriterion,
+    ad_group_criterion_label: AdGroupCriterionLabel,
+    ad_group_criterion_simulation: AdGroupCriterionSimulation,
+    ad_group_extension_setting: AdGroupExtensionSetting,
+    ad_group_feed: AdGroupFeed,
+    ad_group_label: AdGroupLabel,
+    ad_group_simulation: AdGroupSimulation,
+    ad_parameter: AdParameter,
+    age_range_view: AgeRangeView,
+    ad_schedule_view: AdScheduleView,
+    domain_category: DomainCategory,
+    asset: Asset,
+    bidding_strategy: BiddingStrategy,
+    billing_setup: BillingSetup,
+    campaign_budget: CampaignBudget,
+    campaign: Campaign,
+    campaign_audience_view: CampaignAudienceView,
+    campaign_bid_modifier: CampaignBidModifier,
+    campaign_criterion: CampaignCriterion,
+    campaign_criterion_simulation: CampaignCriterionSimulation,
+    campaign_draft: CampaignDraft,
+    campaign_experiment: CampaignExperiment,
+    campaign_extension_setting: CampaignExtensionSetting,
+    campaign_feed: CampaignFeed,
+    campaign_label: CampaignLabel,
+    campaign_shared_set: CampaignSharedSet,
+    carrier_constant: CarrierConstant,
+    change_status: ChangeStatus,
+    conversion_action: ConversionAction,
+    click_view: ClickView,
+    custom_interest: CustomInterest,
+    customer: Customer,
+    customer_manager_link: CustomerManagerLink,
+    customer_client_link: CustomerClientLink,
+    customer_client: CustomerClient,
+    customer_extension_setting: CustomerExtensionSetting,
+    customer_feed: CustomerFeed,
+    customer_label: CustomerLabel,
+    customer_negative_criterion: CustomerNegativeCriterion,
+    detail_placement_view: DetailPlacementView,
+    display_keyword_view: DisplayKeywordView,
+    distance_view: DistanceView,
+    dynamic_search_ads_search_term_view: DynamicSearchAdsSearchTermView,
+    expanded_landing_page_view: ExpandedLandingPageView,
+    extension_feed_item: ExtensionFeedItem,
+    feed: Feed,
+    feed_item: FeedItem,
+    feed_item_target: FeedItemTarget,
+    feed_mapping: FeedMapping,
+    feed_placeholder_view: FeedPlaceholderView,
+    gender_view: GenderView,
+    geo_target_constant: GeoTargetConstant,
+    geographic_view: GeographicView,
+    group_placement_view: GroupPlacementView,
+    hotel_group_view: HotelGroupView,
+    hotel_performance_view: HotelPerformanceView,
+    keyword_view: KeywordView,
+    keyword_plan: KeywordPlan,
+    keyword_plan_campaign: KeywordPlanCampaign,
+    keyword_plan_negative_keyword: KeywordPlanNegativeKeyword,
+    keyword_plan_ad_group: KeywordPlanAdGroup,
+    keyword_plan_keyword: KeywordPlanKeyword,
+    label: Label,
+    landing_page_view: LandingPageView,
+    language_constant: LanguageConstant,
+    location_view: LocationView,
+    managed_placement_view: ManagedPlacementView,
+    media_file: MediaFile,
+    mobile_app_category_constant: MobileAppCategoryConstant,
+    mobile_device_constant: MobileDeviceConstant,
+    mutate_job: MutateJob,
+    operating_system_version_constant: OperatingSystemVersionConstant,
+    paid_organic_search_term_view: PaidOrganicSearchTermView,
+    parental_status_view: ParentalStatusView,
+    product_bidding_category_constant: ProductBiddingCategoryConstant,
+    product_group_view: ProductGroupView,
+    recommendation: Recommendation,
+    search_term_view: SearchTermView,
+    shared_criterion: SharedCriterion,
+    shared_set: SharedSet,
+    shopping_performance_view: ShoppingPerformanceView,
+    topic_view: TopicView,
+    user_interest: UserInterest,
+    user_list: UserList,
+    user_location_view: UserLocationView,
+    remarketing_action: RemarketingAction,
+    topic_constant: TopicConstant,
+    video: Video,
+    metrics: Metrics,
+    segments: Segments,
+  },
 };
 
-/* .google.ads.googleads.v1.services.GoogleAdsRow */
+/* .google.ads.googleads.v2.services.GoogleAdsRow */
 // @ts-ignore
 export const GoogleAdsRow = {
   // @ts-ignore
@@ -9377,6 +9721,9 @@ export const GoogleAdsRow = {
 
   // @ts-ignore
   ad_group_ad: AdGroupAd,
+
+  // @ts-ignore
+  ad_group_ad_asset_view: AdGroupAdAssetView,
 
   // @ts-ignore
   ad_group_ad_label: AdGroupAdLabel,
@@ -9511,6 +9858,9 @@ export const GoogleAdsRow = {
   display_keyword_view: DisplayKeywordView,
 
   // @ts-ignore
+  distance_view: DistanceView,
+
+  // @ts-ignore
   dynamic_search_ads_search_term_view: DynamicSearchAdsSearchTermView,
 
   // @ts-ignore
@@ -9637,6 +9987,9 @@ export const GoogleAdsRow = {
   user_list: UserList,
 
   // @ts-ignore
+  user_location_view: UserLocationView,
+
+  // @ts-ignore
   remarketing_action: RemarketingAction,
 
   // @ts-ignore
@@ -9649,10 +10002,10 @@ export const GoogleAdsRow = {
   metrics: Metrics,
 
   // @ts-ignore
-  segments: Segments
+  segments: Segments,
 };
 
-/* .google.ads.googleads.v1.services.MutateGoogleAdsRequest */
+/* .google.ads.googleads.v2.services.MutateGoogleAdsRequest */
 // @ts-ignore
 export const MutateGoogleAdsRequest = {
   // @ts-ignore
@@ -9697,44 +10050,44 @@ export const MutateGoogleAdsRequest = {
       update_mask: { paths: string },
       create: Label,
       update: Label,
-      remove: string
+      remove: string,
     },
     media_file_operation: { create: MediaFile },
     remarketing_action_operation: {
       update_mask: { paths: string },
       create: RemarketingAction,
-      update: RemarketingAction
+      update: RemarketingAction,
     },
     shared_criterion_operation: { create: SharedCriterion, remove: string },
     shared_set_operation: {
       update_mask: { paths: string },
       create: SharedSet,
       update: SharedSet,
-      remove: string
+      remove: string,
     },
     user_list_operation: {
       update_mask: { paths: string },
       create: UserList,
       update: UserList,
-      remove: string
-    }
+      remove: string,
+    },
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.MutateGoogleAdsResponse */
+/* .google.ads.googleads.v2.services.MutateGoogleAdsResponse */
 // @ts-ignore
 export const MutateGoogleAdsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
@@ -9777,11 +10130,11 @@ export const MutateGoogleAdsResponse = {
     remarketing_action_result: { resource_name: string },
     shared_criterion_result: { resource_name: string },
     shared_set_result: { resource_name: string },
-    user_list_result: { resource_name: string }
-  }
+    user_list_result: { resource_name: string },
+  },
 };
 
-/* .google.ads.googleads.v1.services.MutateOperation */
+/* .google.ads.googleads.v2.services.MutateOperation */
 // @ts-ignore
 export const MutateOperation = {
   // @ts-ignore
@@ -9884,12 +10237,7 @@ export const MutateOperation = {
   feed_operation: FeedOperation,
 
   // @ts-ignore
-  label_operation: {
-    update_mask: { paths: string },
-    create: Label,
-    update: Label,
-    remove: string
-  },
+  label_operation: { update_mask: { paths: string }, create: Label, update: Label, remove: string },
 
   // @ts-ignore
   media_file_operation: { create: MediaFile },
@@ -9898,7 +10246,7 @@ export const MutateOperation = {
   remarketing_action_operation: {
     update_mask: { paths: string },
     create: RemarketingAction,
-    update: RemarketingAction
+    update: RemarketingAction,
   },
 
   // @ts-ignore
@@ -9909,7 +10257,7 @@ export const MutateOperation = {
     update_mask: { paths: string },
     create: SharedSet,
     update: SharedSet,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
@@ -9917,11 +10265,11 @@ export const MutateOperation = {
     update_mask: { paths: string },
     create: UserList,
     update: UserList,
-    remove: string
-  }
+    remove: string,
+  },
 };
 
-/* .google.ads.googleads.v1.services.MutateOperationResponse */
+/* .google.ads.googleads.v2.services.MutateOperationResponse */
 // @ts-ignore
 export const MutateOperationResponse = {
   // @ts-ignore
@@ -10039,54 +10387,54 @@ export const MutateOperationResponse = {
   shared_set_result: { resource_name: string },
 
   // @ts-ignore
-  user_list_result: { resource_name: string }
+  user_list_result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.GroupPlacementViewService */
+/* .google.ads.googleads.v2.services.GroupPlacementViewService */
 // @ts-ignore
 export const GroupPlacementViewService = {};
 
-/* .google.ads.googleads.v1.services.GetGroupPlacementViewRequest */
+/* .google.ads.googleads.v2.services.GetGroupPlacementViewRequest */
 // @ts-ignore
 export const GetGroupPlacementViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.HotelGroupViewService */
+/* .google.ads.googleads.v2.services.HotelGroupViewService */
 // @ts-ignore
 export const HotelGroupViewService = {};
 
-/* .google.ads.googleads.v1.services.GetHotelGroupViewRequest */
+/* .google.ads.googleads.v2.services.GetHotelGroupViewRequest */
 // @ts-ignore
 export const GetHotelGroupViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.HotelPerformanceViewService */
+/* .google.ads.googleads.v2.services.HotelPerformanceViewService */
 // @ts-ignore
 export const HotelPerformanceViewService = {};
 
-/* .google.ads.googleads.v1.services.GetHotelPerformanceViewRequest */
+/* .google.ads.googleads.v2.services.GetHotelPerformanceViewRequest */
 // @ts-ignore
 export const GetHotelPerformanceViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanAdGroupService */
+/* .google.ads.googleads.v2.services.KeywordPlanAdGroupService */
 // @ts-ignore
 export const KeywordPlanAdGroupService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordPlanAdGroupRequest */
+/* .google.ads.googleads.v2.services.GetKeywordPlanAdGroupRequest */
 // @ts-ignore
 export const GetKeywordPlanAdGroupRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupsRequest */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanAdGroupsRequest */
 // @ts-ignore
 export const MutateKeywordPlanAdGroupsRequest = {
   // @ts-ignore
@@ -10097,17 +10445,17 @@ export const MutateKeywordPlanAdGroupsRequest = {
     update_mask: { paths: string },
     create: KeywordPlanAdGroup,
     update: KeywordPlanAdGroup,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanAdGroupOperation */
+/* .google.ads.googleads.v2.services.KeywordPlanAdGroupOperation */
 // @ts-ignore
 export const KeywordPlanAdGroupOperation = {
   // @ts-ignore
@@ -10120,42 +10468,42 @@ export const KeywordPlanAdGroupOperation = {
   update: KeywordPlanAdGroup,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupsResponse */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanAdGroupsResponse */
 // @ts-ignore
 export const MutateKeywordPlanAdGroupsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanAdGroupResult */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanAdGroupResult */
 // @ts-ignore
 export const MutateKeywordPlanAdGroupResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanCampaignService */
+/* .google.ads.googleads.v2.services.KeywordPlanCampaignService */
 // @ts-ignore
 export const KeywordPlanCampaignService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordPlanCampaignRequest */
+/* .google.ads.googleads.v2.services.GetKeywordPlanCampaignRequest */
 // @ts-ignore
 export const GetKeywordPlanCampaignRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignsRequest */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanCampaignsRequest */
 // @ts-ignore
 export const MutateKeywordPlanCampaignsRequest = {
   // @ts-ignore
@@ -10166,17 +10514,17 @@ export const MutateKeywordPlanCampaignsRequest = {
     update_mask: { paths: string },
     create: KeywordPlanCampaign,
     update: KeywordPlanCampaign,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanCampaignOperation */
+/* .google.ads.googleads.v2.services.KeywordPlanCampaignOperation */
 // @ts-ignore
 export const KeywordPlanCampaignOperation = {
   // @ts-ignore
@@ -10189,35 +10537,35 @@ export const KeywordPlanCampaignOperation = {
   update: KeywordPlanCampaign,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignsResponse */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanCampaignsResponse */
 // @ts-ignore
 export const MutateKeywordPlanCampaignsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanCampaignResult */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanCampaignResult */
 // @ts-ignore
 export const MutateKeywordPlanCampaignResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanIdeaService */
+/* .google.ads.googleads.v2.services.KeywordPlanIdeaService */
 // @ts-ignore
 export const KeywordPlanIdeaService = {};
 
-/* .google.ads.googleads.v1.services.GenerateKeywordIdeasRequest */
+/* .google.ads.googleads.v2.services.GenerateKeywordIdeasRequest */
 // @ts-ignore
 export const GenerateKeywordIdeasRequest = {
   // @ts-ignore
@@ -10239,62 +10587,62 @@ export const GenerateKeywordIdeasRequest = {
   keyword_seed: { keywords: string },
 
   // @ts-ignore
-  url_seed: { url: string }
+  url_seed: { url: string },
 };
 
-/* .google.ads.googleads.v1.services.KeywordAndUrlSeed */
+/* .google.ads.googleads.v2.services.KeywordAndUrlSeed */
 // @ts-ignore
 export const KeywordAndUrlSeed = {
   // @ts-ignore
   url: string,
 
   // @ts-ignore
-  keywords: string
+  keywords: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordSeed */
+/* .google.ads.googleads.v2.services.KeywordSeed */
 // @ts-ignore
 export const KeywordSeed = {
   // @ts-ignore
-  keywords: string
+  keywords: string,
 };
 
-/* .google.ads.googleads.v1.services.UrlSeed */
+/* .google.ads.googleads.v2.services.UrlSeed */
 // @ts-ignore
 export const UrlSeed = {
   // @ts-ignore
-  url: string
+  url: string,
 };
 
-/* .google.ads.googleads.v1.services.GenerateKeywordIdeaResponse */
+/* .google.ads.googleads.v2.services.GenerateKeywordIdeaResponse */
 // @ts-ignore
 export const GenerateKeywordIdeaResponse = {
   // @ts-ignore
-  results: { text: string, keyword_idea_metrics: KeywordPlanHistoricalMetrics }
+  results: { text: string, keyword_idea_metrics: KeywordPlanHistoricalMetrics },
 };
 
-/* .google.ads.googleads.v1.services.GenerateKeywordIdeaResult */
+/* .google.ads.googleads.v2.services.GenerateKeywordIdeaResult */
 // @ts-ignore
 export const GenerateKeywordIdeaResult = {
   // @ts-ignore
   text: string,
 
   // @ts-ignore
-  keyword_idea_metrics: KeywordPlanHistoricalMetrics
+  keyword_idea_metrics: KeywordPlanHistoricalMetrics,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanKeywordService */
+/* .google.ads.googleads.v2.services.KeywordPlanKeywordService */
 // @ts-ignore
 export const KeywordPlanKeywordService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordPlanKeywordRequest */
+/* .google.ads.googleads.v2.services.GetKeywordPlanKeywordRequest */
 // @ts-ignore
 export const GetKeywordPlanKeywordRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordsRequest */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanKeywordsRequest */
 // @ts-ignore
 export const MutateKeywordPlanKeywordsRequest = {
   // @ts-ignore
@@ -10305,17 +10653,17 @@ export const MutateKeywordPlanKeywordsRequest = {
     update_mask: { paths: string },
     create: KeywordPlanKeyword,
     update: KeywordPlanKeyword,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanKeywordOperation */
+/* .google.ads.googleads.v2.services.KeywordPlanKeywordOperation */
 // @ts-ignore
 export const KeywordPlanKeywordOperation = {
   // @ts-ignore
@@ -10328,42 +10676,42 @@ export const KeywordPlanKeywordOperation = {
   update: KeywordPlanKeyword,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordsResponse */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanKeywordsResponse */
 // @ts-ignore
 export const MutateKeywordPlanKeywordsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanKeywordResult */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanKeywordResult */
 // @ts-ignore
 export const MutateKeywordPlanKeywordResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanNegativeKeywordService */
+/* .google.ads.googleads.v2.services.KeywordPlanNegativeKeywordService */
 // @ts-ignore
 export const KeywordPlanNegativeKeywordService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordPlanNegativeKeywordRequest */
+/* .google.ads.googleads.v2.services.GetKeywordPlanNegativeKeywordRequest */
 // @ts-ignore
 export const GetKeywordPlanNegativeKeywordRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordsRequest */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanNegativeKeywordsRequest */
 // @ts-ignore
 export const MutateKeywordPlanNegativeKeywordsRequest = {
   // @ts-ignore
@@ -10374,17 +10722,17 @@ export const MutateKeywordPlanNegativeKeywordsRequest = {
     update_mask: { paths: string },
     create: KeywordPlanNegativeKeyword,
     update: KeywordPlanNegativeKeyword,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanNegativeKeywordOperation */
+/* .google.ads.googleads.v2.services.KeywordPlanNegativeKeywordOperation */
 // @ts-ignore
 export const KeywordPlanNegativeKeywordOperation = {
   // @ts-ignore
@@ -10397,42 +10745,42 @@ export const KeywordPlanNegativeKeywordOperation = {
   update: KeywordPlanNegativeKeyword,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordsResponse */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanNegativeKeywordsResponse */
 // @ts-ignore
 export const MutateKeywordPlanNegativeKeywordsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlanNegativeKeywordResult */
+/* .google.ads.googleads.v2.services.MutateKeywordPlanNegativeKeywordResult */
 // @ts-ignore
 export const MutateKeywordPlanNegativeKeywordResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanService */
+/* .google.ads.googleads.v2.services.KeywordPlanService */
 // @ts-ignore
 export const KeywordPlanService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordPlanRequest */
+/* .google.ads.googleads.v2.services.GetKeywordPlanRequest */
 // @ts-ignore
 export const GetKeywordPlanRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlansRequest */
+/* .google.ads.googleads.v2.services.MutateKeywordPlansRequest */
 // @ts-ignore
 export const MutateKeywordPlansRequest = {
   // @ts-ignore
@@ -10443,17 +10791,17 @@ export const MutateKeywordPlansRequest = {
     update_mask: { paths: string },
     create: KeywordPlan,
     update: KeywordPlan,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanOperation */
+/* .google.ads.googleads.v2.services.KeywordPlanOperation */
 // @ts-ignore
 export const KeywordPlanOperation = {
   // @ts-ignore
@@ -10466,38 +10814,38 @@ export const KeywordPlanOperation = {
   update: KeywordPlan,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlansResponse */
+/* .google.ads.googleads.v2.services.MutateKeywordPlansResponse */
 // @ts-ignore
 export const MutateKeywordPlansResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateKeywordPlansResult */
+/* .google.ads.googleads.v2.services.MutateKeywordPlansResult */
 // @ts-ignore
 export const MutateKeywordPlansResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.GenerateForecastMetricsRequest */
+/* .google.ads.googleads.v2.services.GenerateForecastMetricsRequest */
 // @ts-ignore
 export const GenerateForecastMetricsRequest = {
   // @ts-ignore
-  keyword_plan: string
+  keyword_plan: string,
 };
 
-/* .google.ads.googleads.v1.services.GenerateForecastMetricsResponse */
+/* .google.ads.googleads.v2.services.GenerateForecastMetricsResponse */
 // @ts-ignore
 export const GenerateForecastMetricsResponse = {
   // @ts-ignore
@@ -10508,8 +10856,8 @@ export const GenerateForecastMetricsResponse = {
       ctr: number,
       average_cpc: number,
       clicks: number,
-      cost_micros: number
-    }
+      cost_micros: number,
+    },
   },
 
   // @ts-ignore
@@ -10520,8 +10868,8 @@ export const GenerateForecastMetricsResponse = {
       ctr: number,
       average_cpc: number,
       clicks: number,
-      cost_micros: number
-    }
+      cost_micros: number,
+    },
   },
 
   // @ts-ignore
@@ -10532,12 +10880,12 @@ export const GenerateForecastMetricsResponse = {
       ctr: number,
       average_cpc: number,
       clicks: number,
-      cost_micros: number
-    }
-  }
+      cost_micros: number,
+    },
+  },
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanCampaignForecast */
+/* .google.ads.googleads.v2.services.KeywordPlanCampaignForecast */
 // @ts-ignore
 export const KeywordPlanCampaignForecast = {
   // @ts-ignore
@@ -10549,11 +10897,11 @@ export const KeywordPlanCampaignForecast = {
     ctr: number,
     average_cpc: number,
     clicks: number,
-    cost_micros: number
-  }
+    cost_micros: number,
+  },
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanAdGroupForecast */
+/* .google.ads.googleads.v2.services.KeywordPlanAdGroupForecast */
 // @ts-ignore
 export const KeywordPlanAdGroupForecast = {
   // @ts-ignore
@@ -10565,11 +10913,11 @@ export const KeywordPlanAdGroupForecast = {
     ctr: number,
     average_cpc: number,
     clicks: number,
-    cost_micros: number
-  }
+    cost_micros: number,
+  },
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanKeywordForecast */
+/* .google.ads.googleads.v2.services.KeywordPlanKeywordForecast */
 // @ts-ignore
 export const KeywordPlanKeywordForecast = {
   // @ts-ignore
@@ -10581,11 +10929,11 @@ export const KeywordPlanKeywordForecast = {
     ctr: number,
     average_cpc: number,
     clicks: number,
-    cost_micros: number
-  }
+    cost_micros: number,
+  },
 };
 
-/* .google.ads.googleads.v1.services.ForecastMetrics */
+/* .google.ads.googleads.v2.services.ForecastMetrics */
 // @ts-ignore
 export const ForecastMetrics = {
   // @ts-ignore
@@ -10601,80 +10949,72 @@ export const ForecastMetrics = {
   clicks: number,
 
   // @ts-ignore
-  cost_micros: number
+  cost_micros: number,
 };
 
-/* .google.ads.googleads.v1.services.GenerateHistoricalMetricsRequest */
+/* .google.ads.googleads.v2.services.GenerateHistoricalMetricsRequest */
 // @ts-ignore
 export const GenerateHistoricalMetricsRequest = {
   // @ts-ignore
-  keyword_plan: string
+  keyword_plan: string,
 };
 
-/* .google.ads.googleads.v1.services.GenerateHistoricalMetricsResponse */
+/* .google.ads.googleads.v2.services.GenerateHistoricalMetricsResponse */
 // @ts-ignore
 export const GenerateHistoricalMetricsResponse = {
   // @ts-ignore
-  metrics: {
-    search_query: string,
-    keyword_metrics: KeywordPlanHistoricalMetrics
-  }
+  metrics: { search_query: string, keyword_metrics: KeywordPlanHistoricalMetrics },
 };
 
-/* .google.ads.googleads.v1.services.KeywordPlanKeywordHistoricalMetrics */
+/* .google.ads.googleads.v2.services.KeywordPlanKeywordHistoricalMetrics */
 // @ts-ignore
 export const KeywordPlanKeywordHistoricalMetrics = {
   // @ts-ignore
   search_query: string,
 
   // @ts-ignore
-  keyword_metrics: KeywordPlanHistoricalMetrics
+  keyword_metrics: KeywordPlanHistoricalMetrics,
 };
 
-/* .google.ads.googleads.v1.services.KeywordViewService */
+/* .google.ads.googleads.v2.services.KeywordViewService */
 // @ts-ignore
 export const KeywordViewService = {};
 
-/* .google.ads.googleads.v1.services.GetKeywordViewRequest */
+/* .google.ads.googleads.v2.services.GetKeywordViewRequest */
 // @ts-ignore
 export const GetKeywordViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.LabelService */
+/* .google.ads.googleads.v2.services.LabelService */
 // @ts-ignore
 export const LabelService = {};
 
-/* .google.ads.googleads.v1.services.GetLabelRequest */
+/* .google.ads.googleads.v2.services.GetLabelRequest */
 // @ts-ignore
 export const GetLabelRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateLabelsRequest */
+/* .google.ads.googleads.v2.services.MutateLabelsRequest */
 // @ts-ignore
 export const MutateLabelsRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operations: {
-    update_mask: { paths: string },
-    create: Label,
-    update: Label,
-    remove: string
-  },
+  operations: { update_mask: { paths: string }, create: Label, update: Label, remove: string },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.LabelOperation */
+/* .google.ads.googleads.v2.services.LabelOperation */
 // @ts-ignore
 export const LabelOperation = {
   // @ts-ignore
@@ -10687,86 +11027,86 @@ export const LabelOperation = {
   update: Label,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateLabelsResponse */
+/* .google.ads.googleads.v2.services.MutateLabelsResponse */
 // @ts-ignore
 export const MutateLabelsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateLabelResult */
+/* .google.ads.googleads.v2.services.MutateLabelResult */
 // @ts-ignore
 export const MutateLabelResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.LandingPageViewService */
+/* .google.ads.googleads.v2.services.LandingPageViewService */
 // @ts-ignore
 export const LandingPageViewService = {};
 
-/* .google.ads.googleads.v1.services.GetLandingPageViewRequest */
+/* .google.ads.googleads.v2.services.GetLandingPageViewRequest */
 // @ts-ignore
 export const GetLandingPageViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.LanguageConstantService */
+/* .google.ads.googleads.v2.services.LanguageConstantService */
 // @ts-ignore
 export const LanguageConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetLanguageConstantRequest */
+/* .google.ads.googleads.v2.services.GetLanguageConstantRequest */
 // @ts-ignore
 export const GetLanguageConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.LocationViewService */
+/* .google.ads.googleads.v2.services.LocationViewService */
 // @ts-ignore
 export const LocationViewService = {};
 
-/* .google.ads.googleads.v1.services.GetLocationViewRequest */
+/* .google.ads.googleads.v2.services.GetLocationViewRequest */
 // @ts-ignore
 export const GetLocationViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ManagedPlacementViewService */
+/* .google.ads.googleads.v2.services.ManagedPlacementViewService */
 // @ts-ignore
 export const ManagedPlacementViewService = {};
 
-/* .google.ads.googleads.v1.services.GetManagedPlacementViewRequest */
+/* .google.ads.googleads.v2.services.GetManagedPlacementViewRequest */
 // @ts-ignore
 export const GetManagedPlacementViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MediaFileService */
+/* .google.ads.googleads.v2.services.MediaFileService */
 // @ts-ignore
 export const MediaFileService = {};
 
-/* .google.ads.googleads.v1.services.GetMediaFileRequest */
+/* .google.ads.googleads.v2.services.GetMediaFileRequest */
 // @ts-ignore
 export const GetMediaFileRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateMediaFilesRequest */
+/* .google.ads.googleads.v2.services.MutateMediaFilesRequest */
 // @ts-ignore
 export const MutateMediaFilesRequest = {
   // @ts-ignore
@@ -10779,77 +11119,73 @@ export const MutateMediaFilesRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.MediaFileOperation */
+/* .google.ads.googleads.v2.services.MediaFileOperation */
 // @ts-ignore
 export const MediaFileOperation = {
   // @ts-ignore
-  create: MediaFile
+  create: MediaFile,
 };
 
-/* .google.ads.googleads.v1.services.MutateMediaFilesResponse */
+/* .google.ads.googleads.v2.services.MutateMediaFilesResponse */
 // @ts-ignore
 export const MutateMediaFilesResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateMediaFileResult */
+/* .google.ads.googleads.v2.services.MutateMediaFileResult */
 // @ts-ignore
 export const MutateMediaFileResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MerchantCenterLinkService */
+/* .google.ads.googleads.v2.services.MerchantCenterLinkService */
 // @ts-ignore
 export const MerchantCenterLinkService = {};
 
-/* .google.ads.googleads.v1.services.ListMerchantCenterLinksRequest */
+/* .google.ads.googleads.v2.services.ListMerchantCenterLinksRequest */
 // @ts-ignore
 export const ListMerchantCenterLinksRequest = {
   // @ts-ignore
-  customer_id: string
+  customer_id: string,
 };
 
-/* .google.ads.googleads.v1.services.ListMerchantCenterLinksResponse */
+/* .google.ads.googleads.v2.services.ListMerchantCenterLinksResponse */
 // @ts-ignore
 export const ListMerchantCenterLinksResponse = {
   // @ts-ignore
-  merchant_center_links: MerchantCenterLink
+  merchant_center_links: MerchantCenterLink,
 };
 
-/* .google.ads.googleads.v1.services.GetMerchantCenterLinkRequest */
+/* .google.ads.googleads.v2.services.GetMerchantCenterLinkRequest */
 // @ts-ignore
 export const GetMerchantCenterLinkRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkRequest */
+/* .google.ads.googleads.v2.services.MutateMerchantCenterLinkRequest */
 // @ts-ignore
 export const MutateMerchantCenterLinkRequest = {
   // @ts-ignore
   customer_id: string,
 
   // @ts-ignore
-  operation: {
-    update_mask: { paths: string },
-    update: MerchantCenterLink,
-    remove: string
-  }
+  operation: { update_mask: { paths: string }, update: MerchantCenterLink, remove: string },
 };
 
-/* .google.ads.googleads.v1.services.MerchantCenterLinkOperation */
+/* .google.ads.googleads.v2.services.MerchantCenterLinkOperation */
 // @ts-ignore
 export const MerchantCenterLinkOperation = {
   // @ts-ignore
@@ -10859,78 +11195,78 @@ export const MerchantCenterLinkOperation = {
   update: MerchantCenterLink,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkResponse */
+/* .google.ads.googleads.v2.services.MutateMerchantCenterLinkResponse */
 // @ts-ignore
 export const MutateMerchantCenterLinkResponse = {
   // @ts-ignore
-  result: { resource_name: string }
+  result: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateMerchantCenterLinkResult */
+/* .google.ads.googleads.v2.services.MutateMerchantCenterLinkResult */
 // @ts-ignore
 export const MutateMerchantCenterLinkResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MobileAppCategoryConstantService */
+/* .google.ads.googleads.v2.services.MobileAppCategoryConstantService */
 // @ts-ignore
 export const MobileAppCategoryConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetMobileAppCategoryConstantRequest */
+/* .google.ads.googleads.v2.services.GetMobileAppCategoryConstantRequest */
 // @ts-ignore
 export const GetMobileAppCategoryConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MobileDeviceConstantService */
+/* .google.ads.googleads.v2.services.MobileDeviceConstantService */
 // @ts-ignore
 export const MobileDeviceConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetMobileDeviceConstantRequest */
+/* .google.ads.googleads.v2.services.GetMobileDeviceConstantRequest */
 // @ts-ignore
 export const GetMobileDeviceConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateJobService */
+/* .google.ads.googleads.v2.services.MutateJobService */
 // @ts-ignore
 export const MutateJobService = {};
 
-/* .google.ads.googleads.v1.services.CreateMutateJobRequest */
+/* .google.ads.googleads.v2.services.CreateMutateJobRequest */
 // @ts-ignore
 export const CreateMutateJobRequest = {
   // @ts-ignore
-  customer_id: string
+  customer_id: string,
 };
 
-/* .google.ads.googleads.v1.services.CreateMutateJobResponse */
+/* .google.ads.googleads.v2.services.CreateMutateJobResponse */
 // @ts-ignore
 export const CreateMutateJobResponse = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.GetMutateJobRequest */
+/* .google.ads.googleads.v2.services.GetMutateJobRequest */
 // @ts-ignore
 export const GetMutateJobRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.RunMutateJobRequest */
+/* .google.ads.googleads.v2.services.RunMutateJobRequest */
 // @ts-ignore
 export const RunMutateJobRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.AddMutateJobOperationsRequest */
+/* .google.ads.googleads.v2.services.AddMutateJobOperationsRequest */
 // @ts-ignore
 export const AddMutateJobOperationsRequest = {
   // @ts-ignore
@@ -10940,20 +11276,20 @@ export const AddMutateJobOperationsRequest = {
   sequence_token: string,
 
   // @ts-ignore
-  mutate_operations: MutateOperation
+  mutate_operations: MutateOperation,
 };
 
-/* .google.ads.googleads.v1.services.AddMutateJobOperationsResponse */
+/* .google.ads.googleads.v2.services.AddMutateJobOperationsResponse */
 // @ts-ignore
 export const AddMutateJobOperationsResponse = {
   // @ts-ignore
   total_operations: number,
 
   // @ts-ignore
-  next_sequence_token: string
+  next_sequence_token: string,
 };
 
-/* .google.ads.googleads.v1.services.ListMutateJobResultsRequest */
+/* .google.ads.googleads.v2.services.ListMutateJobResultsRequest */
 // @ts-ignore
 export const ListMutateJobResultsRequest = {
   // @ts-ignore
@@ -10963,28 +11299,24 @@ export const ListMutateJobResultsRequest = {
   page_token: string,
 
   // @ts-ignore
-  page_size: number
+  page_size: number,
 };
 
-/* .google.ads.googleads.v1.services.ListMutateJobResultsResponse */
+/* .google.ads.googleads.v2.services.ListMutateJobResultsResponse */
 // @ts-ignore
 export const ListMutateJobResultsResponse = {
   // @ts-ignore
   results: {
     operation_index: number,
     mutate_operation_response: MutateOperationResponse,
-    status: {
-      code: number,
-      message: string,
-      details: { type_url: string, value: string }
-    }
+    status: { code: number, message: string, details: { type_url: string, value: string } },
   },
 
   // @ts-ignore
-  next_page_token: string
+  next_page_token: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateJobResult */
+/* .google.ads.googleads.v2.services.MutateJobResult */
 // @ts-ignore
 export const MutateJobResult = {
   // @ts-ignore
@@ -10994,98 +11326,94 @@ export const MutateJobResult = {
   mutate_operation_response: MutateOperationResponse,
 
   // @ts-ignore
-  status: {
-    code: number,
-    message: string,
-    details: { type_url: string, value: string }
-  }
+  status: { code: number, message: string, details: { type_url: string, value: string } },
 };
 
-/* .google.ads.googleads.v1.services.OperatingSystemVersionConstantService */
+/* .google.ads.googleads.v2.services.OperatingSystemVersionConstantService */
 // @ts-ignore
 export const OperatingSystemVersionConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetOperatingSystemVersionConstantRequest */
+/* .google.ads.googleads.v2.services.GetOperatingSystemVersionConstantRequest */
 // @ts-ignore
 export const GetOperatingSystemVersionConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.PaidOrganicSearchTermViewService */
+/* .google.ads.googleads.v2.services.PaidOrganicSearchTermViewService */
 // @ts-ignore
 export const PaidOrganicSearchTermViewService = {};
 
-/* .google.ads.googleads.v1.services.GetPaidOrganicSearchTermViewRequest */
+/* .google.ads.googleads.v2.services.GetPaidOrganicSearchTermViewRequest */
 // @ts-ignore
 export const GetPaidOrganicSearchTermViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ParentalStatusViewService */
+/* .google.ads.googleads.v2.services.ParentalStatusViewService */
 // @ts-ignore
 export const ParentalStatusViewService = {};
 
-/* .google.ads.googleads.v1.services.GetParentalStatusViewRequest */
+/* .google.ads.googleads.v2.services.GetParentalStatusViewRequest */
 // @ts-ignore
 export const GetParentalStatusViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.PaymentsAccountService */
+/* .google.ads.googleads.v2.services.PaymentsAccountService */
 // @ts-ignore
 export const PaymentsAccountService = {};
 
-/* .google.ads.googleads.v1.services.ListPaymentsAccountsRequest */
+/* .google.ads.googleads.v2.services.ListPaymentsAccountsRequest */
 // @ts-ignore
 export const ListPaymentsAccountsRequest = {
   // @ts-ignore
-  customer_id: string
+  customer_id: string,
 };
 
-/* .google.ads.googleads.v1.services.ListPaymentsAccountsResponse */
+/* .google.ads.googleads.v2.services.ListPaymentsAccountsResponse */
 // @ts-ignore
 export const ListPaymentsAccountsResponse = {
   // @ts-ignore
-  payments_accounts: PaymentsAccount
+  payments_accounts: PaymentsAccount,
 };
 
-/* .google.ads.googleads.v1.services.ProductBiddingCategoryConstantService */
+/* .google.ads.googleads.v2.services.ProductBiddingCategoryConstantService */
 // @ts-ignore
 export const ProductBiddingCategoryConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetProductBiddingCategoryConstantRequest */
+/* .google.ads.googleads.v2.services.GetProductBiddingCategoryConstantRequest */
 // @ts-ignore
 export const GetProductBiddingCategoryConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ProductGroupViewService */
+/* .google.ads.googleads.v2.services.ProductGroupViewService */
 // @ts-ignore
 export const ProductGroupViewService = {};
 
-/* .google.ads.googleads.v1.services.GetProductGroupViewRequest */
+/* .google.ads.googleads.v2.services.GetProductGroupViewRequest */
 // @ts-ignore
 export const GetProductGroupViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.RecommendationService */
+/* .google.ads.googleads.v2.services.RecommendationService */
 // @ts-ignore
 export const RecommendationService = {};
 
-/* .google.ads.googleads.v1.services.GetRecommendationRequest */
+/* .google.ads.googleads.v2.services.GetRecommendationRequest */
 // @ts-ignore
 export const GetRecommendationRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationRequest */
+/* .google.ads.googleads.v2.services.ApplyRecommendationRequest */
 // @ts-ignore
 export const ApplyRecommendationRequest = {
   // @ts-ignore
@@ -11096,40 +11424,33 @@ export const ApplyRecommendationRequest = {
     resource_name: string,
     campaign_budget: { new_budget_amount_micros: number },
     text_ad: { ad: Ad },
-    keyword: {
-      ad_group: string,
-      match_type: "enum_KeywordMatchType",
-      cpc_bid_micros: number
-    },
-    target_cpa_opt_in: {
-      target_cpa_micros: number,
-      new_campaign_budget_amount_micros: number
-    },
+    keyword: { ad_group: string, match_type: "enum_KeywordMatchType", cpc_bid_micros: number },
+    target_cpa_opt_in: { target_cpa_micros: number, new_campaign_budget_amount_micros: number },
     callout_extension: { callout_extensions: CalloutFeedItem },
     call_extension: { call_extensions: CallFeedItem },
     sitelink_extension: { sitelink_extensions: SitelinkFeedItem },
-    move_unused_budget: { budget_micros_to_move: number }
+    move_unused_budget: { budget_micros_to_move: number },
   },
 
   // @ts-ignore
-  partial_failure: boolean
+  partial_failure: boolean,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CampaignBudgetParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.CampaignBudgetParameters */
 // @ts-ignore
 export const CampaignBudgetParameters = {
   // @ts-ignore
-  new_budget_amount_micros: number
+  new_budget_amount_micros: number,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.TextAdParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.TextAdParameters */
 // @ts-ignore
 export const TextAdParameters = {
   // @ts-ignore
-  ad: Ad
+  ad: Ad,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.KeywordParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.KeywordParameters */
 // @ts-ignore
 export const KeywordParameters = {
   // @ts-ignore
@@ -11139,48 +11460,48 @@ export const KeywordParameters = {
   match_type: "enum_KeywordMatchType",
 
   // @ts-ignore
-  cpc_bid_micros: number
+  cpc_bid_micros: number,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.TargetCpaOptInParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.TargetCpaOptInParameters */
 // @ts-ignore
 export const TargetCpaOptInParameters = {
   // @ts-ignore
   target_cpa_micros: number,
 
   // @ts-ignore
-  new_campaign_budget_amount_micros: number
+  new_campaign_budget_amount_micros: number,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CalloutExtensionParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.CalloutExtensionParameters */
 // @ts-ignore
 export const CalloutExtensionParameters = {
   // @ts-ignore
-  callout_extensions: CalloutFeedItem
+  callout_extensions: CalloutFeedItem,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.CallExtensionParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.CallExtensionParameters */
 // @ts-ignore
 export const CallExtensionParameters = {
   // @ts-ignore
-  call_extensions: CallFeedItem
+  call_extensions: CallFeedItem,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.SitelinkExtensionParameters */
 // @ts-ignore
 export const SitelinkExtensionParameters = {
   // @ts-ignore
-  sitelink_extensions: SitelinkFeedItem
+  sitelink_extensions: SitelinkFeedItem,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters */
 // @ts-ignore
 export const MoveUnusedBudgetParameters = {
   // @ts-ignore
-  budget_micros_to_move: number
+  budget_micros_to_move: number,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationOperation */
+/* .google.ads.googleads.v2.services.ApplyRecommendationOperation */
 // @ts-ignore
 export const ApplyRecommendationOperation = {
   // @ts-ignore
@@ -11208,10 +11529,10 @@ export const ApplyRecommendationOperation = {
   sitelink_extension: SitelinkExtensionParameters,
 
   // @ts-ignore
-  move_unused_budget: MoveUnusedBudgetParameters
+  move_unused_budget: MoveUnusedBudgetParameters,
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationResponse */
+/* .google.ads.googleads.v2.services.ApplyRecommendationResponse */
 // @ts-ignore
 export const ApplyRecommendationResponse = {
   // @ts-ignore
@@ -11221,25 +11542,25 @@ export const ApplyRecommendationResponse = {
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
-  }
+    details: { type_url: string, value: string },
+  },
 };
 
-/* .google.ads.googleads.v1.services.ApplyRecommendationResult */
+/* .google.ads.googleads.v2.services.ApplyRecommendationResult */
 // @ts-ignore
 export const ApplyRecommendationResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DismissRecommendationRequest.DismissRecommendationOperation */
+/* .google.ads.googleads.v2.services.DismissRecommendationRequest.DismissRecommendationOperation */
 // @ts-ignore
 export const DismissRecommendationOperation = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DismissRecommendationRequest */
+/* .google.ads.googleads.v2.services.DismissRecommendationRequest */
 // @ts-ignore
 export const DismissRecommendationRequest = {
   // @ts-ignore
@@ -11249,17 +11570,17 @@ export const DismissRecommendationRequest = {
   operations: DismissRecommendationOperation,
 
   // @ts-ignore
-  partial_failure: boolean
+  partial_failure: boolean,
 };
 
-/* .google.ads.googleads.v1.services.DismissRecommendationResponse.DismissRecommendationResult */
+/* .google.ads.googleads.v2.services.DismissRecommendationResponse.DismissRecommendationResult */
 // @ts-ignore
 export const DismissRecommendationResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.DismissRecommendationResponse */
+/* .google.ads.googleads.v2.services.DismissRecommendationResponse */
 // @ts-ignore
 export const DismissRecommendationResponse = {
   // @ts-ignore
@@ -11269,22 +11590,22 @@ export const DismissRecommendationResponse = {
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
-  }
+    details: { type_url: string, value: string },
+  },
 };
 
-/* .google.ads.googleads.v1.services.RemarketingActionService */
+/* .google.ads.googleads.v2.services.RemarketingActionService */
 // @ts-ignore
 export const RemarketingActionService = {};
 
-/* .google.ads.googleads.v1.services.GetRemarketingActionRequest */
+/* .google.ads.googleads.v2.services.GetRemarketingActionRequest */
 // @ts-ignore
 export const GetRemarketingActionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateRemarketingActionsRequest */
+/* .google.ads.googleads.v2.services.MutateRemarketingActionsRequest */
 // @ts-ignore
 export const MutateRemarketingActionsRequest = {
   // @ts-ignore
@@ -11294,17 +11615,17 @@ export const MutateRemarketingActionsRequest = {
   operations: {
     update_mask: { paths: string },
     create: RemarketingAction,
-    update: RemarketingAction
+    update: RemarketingAction,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.RemarketingActionOperation */
+/* .google.ads.googleads.v2.services.RemarketingActionOperation */
 // @ts-ignore
 export const RemarketingActionOperation = {
   // @ts-ignore
@@ -11314,53 +11635,53 @@ export const RemarketingActionOperation = {
   create: RemarketingAction,
 
   // @ts-ignore
-  update: RemarketingAction
+  update: RemarketingAction,
 };
 
-/* .google.ads.googleads.v1.services.MutateRemarketingActionsResponse */
+/* .google.ads.googleads.v2.services.MutateRemarketingActionsResponse */
 // @ts-ignore
 export const MutateRemarketingActionsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateRemarketingActionResult */
+/* .google.ads.googleads.v2.services.MutateRemarketingActionResult */
 // @ts-ignore
 export const MutateRemarketingActionResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.SearchTermViewService */
+/* .google.ads.googleads.v2.services.SearchTermViewService */
 // @ts-ignore
 export const SearchTermViewService = {};
 
-/* .google.ads.googleads.v1.services.GetSearchTermViewRequest */
+/* .google.ads.googleads.v2.services.GetSearchTermViewRequest */
 // @ts-ignore
 export const GetSearchTermViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.SharedCriterionService */
+/* .google.ads.googleads.v2.services.SharedCriterionService */
 // @ts-ignore
 export const SharedCriterionService = {};
 
-/* .google.ads.googleads.v1.services.GetSharedCriterionRequest */
+/* .google.ads.googleads.v2.services.GetSharedCriterionRequest */
 // @ts-ignore
 export const GetSharedCriterionRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedCriteriaRequest */
+/* .google.ads.googleads.v2.services.MutateSharedCriteriaRequest */
 // @ts-ignore
 export const MutateSharedCriteriaRequest = {
   // @ts-ignore
@@ -11373,52 +11694,52 @@ export const MutateSharedCriteriaRequest = {
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.SharedCriterionOperation */
+/* .google.ads.googleads.v2.services.SharedCriterionOperation */
 // @ts-ignore
 export const SharedCriterionOperation = {
   // @ts-ignore
   create: SharedCriterion,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedCriteriaResponse */
+/* .google.ads.googleads.v2.services.MutateSharedCriteriaResponse */
 // @ts-ignore
 export const MutateSharedCriteriaResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedCriterionResult */
+/* .google.ads.googleads.v2.services.MutateSharedCriterionResult */
 // @ts-ignore
 export const MutateSharedCriterionResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.SharedSetService */
+/* .google.ads.googleads.v2.services.SharedSetService */
 // @ts-ignore
 export const SharedSetService = {};
 
-/* .google.ads.googleads.v1.services.GetSharedSetRequest */
+/* .google.ads.googleads.v2.services.GetSharedSetRequest */
 // @ts-ignore
 export const GetSharedSetRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedSetsRequest */
+/* .google.ads.googleads.v2.services.MutateSharedSetsRequest */
 // @ts-ignore
 export const MutateSharedSetsRequest = {
   // @ts-ignore
@@ -11429,17 +11750,17 @@ export const MutateSharedSetsRequest = {
     update_mask: { paths: string },
     create: SharedSet,
     update: SharedSet,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.SharedSetOperation */
+/* .google.ads.googleads.v2.services.SharedSetOperation */
 // @ts-ignore
 export const SharedSetOperation = {
   // @ts-ignore
@@ -11452,86 +11773,86 @@ export const SharedSetOperation = {
   update: SharedSet,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedSetsResponse */
+/* .google.ads.googleads.v2.services.MutateSharedSetsResponse */
 // @ts-ignore
 export const MutateSharedSetsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateSharedSetResult */
+/* .google.ads.googleads.v2.services.MutateSharedSetResult */
 // @ts-ignore
 export const MutateSharedSetResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.ShoppingPerformanceViewService */
+/* .google.ads.googleads.v2.services.ShoppingPerformanceViewService */
 // @ts-ignore
 export const ShoppingPerformanceViewService = {};
 
-/* .google.ads.googleads.v1.services.GetShoppingPerformanceViewRequest */
+/* .google.ads.googleads.v2.services.GetShoppingPerformanceViewRequest */
 // @ts-ignore
 export const GetShoppingPerformanceViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.TopicConstantService */
+/* .google.ads.googleads.v2.services.TopicConstantService */
 // @ts-ignore
 export const TopicConstantService = {};
 
-/* .google.ads.googleads.v1.services.GetTopicConstantRequest */
+/* .google.ads.googleads.v2.services.GetTopicConstantRequest */
 // @ts-ignore
 export const GetTopicConstantRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.TopicViewService */
+/* .google.ads.googleads.v2.services.TopicViewService */
 // @ts-ignore
 export const TopicViewService = {};
 
-/* .google.ads.googleads.v1.services.GetTopicViewRequest */
+/* .google.ads.googleads.v2.services.GetTopicViewRequest */
 // @ts-ignore
 export const GetTopicViewRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.UserInterestService */
+/* .google.ads.googleads.v2.services.UserInterestService */
 // @ts-ignore
 export const UserInterestService = {};
 
-/* .google.ads.googleads.v1.services.GetUserInterestRequest */
+/* .google.ads.googleads.v2.services.GetUserInterestRequest */
 // @ts-ignore
 export const GetUserInterestRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.UserListService */
+/* .google.ads.googleads.v2.services.UserListService */
 // @ts-ignore
 export const UserListService = {};
 
-/* .google.ads.googleads.v1.services.GetUserListRequest */
+/* .google.ads.googleads.v2.services.GetUserListRequest */
 // @ts-ignore
 export const GetUserListRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateUserListsRequest */
+/* .google.ads.googleads.v2.services.MutateUserListsRequest */
 // @ts-ignore
 export const MutateUserListsRequest = {
   // @ts-ignore
@@ -11542,17 +11863,17 @@ export const MutateUserListsRequest = {
     update_mask: { paths: string },
     create: UserList,
     update: UserList,
-    remove: string
+    remove: string,
   },
 
   // @ts-ignore
   partial_failure: boolean,
 
   // @ts-ignore
-  validate_only: boolean
+  validate_only: boolean,
 };
 
-/* .google.ads.googleads.v1.services.UserListOperation */
+/* .google.ads.googleads.v2.services.UserListOperation */
 // @ts-ignore
 export const UserListOperation = {
   // @ts-ignore
@@ -11565,37 +11886,48 @@ export const UserListOperation = {
   update: UserList,
 
   // @ts-ignore
-  remove: string
+  remove: string,
 };
 
-/* .google.ads.googleads.v1.services.MutateUserListsResponse */
+/* .google.ads.googleads.v2.services.MutateUserListsResponse */
 // @ts-ignore
 export const MutateUserListsResponse = {
   // @ts-ignore
   partial_failure_error: {
     code: number,
     message: string,
-    details: { type_url: string, value: string }
+    details: { type_url: string, value: string },
   },
 
   // @ts-ignore
-  results: { resource_name: string }
+  results: { resource_name: string },
 };
 
-/* .google.ads.googleads.v1.services.MutateUserListResult */
+/* .google.ads.googleads.v2.services.MutateUserListResult */
 // @ts-ignore
 export const MutateUserListResult = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };
 
-/* .google.ads.googleads.v1.services.VideoService */
+/* .google.ads.googleads.v2.services.UserLocationViewService */
+// @ts-ignore
+export const UserLocationViewService = {};
+
+/* .google.ads.googleads.v2.services.GetUserLocationViewRequest */
+// @ts-ignore
+export const GetUserLocationViewRequest = {
+  // @ts-ignore
+  resource_name: string,
+};
+
+/* .google.ads.googleads.v2.services.VideoService */
 // @ts-ignore
 export const VideoService = {};
 
-/* .google.ads.googleads.v1.services.GetVideoRequest */
+/* .google.ads.googleads.v2.services.GetVideoRequest */
 // @ts-ignore
 export const GetVideoRequest = {
   // @ts-ignore
-  resource_name: string
+  resource_name: string,
 };

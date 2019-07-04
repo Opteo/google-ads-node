@@ -9,6 +9,7 @@ export type ResourceName =
   | "account_budget_proposal"
   | "ad_group"
   | "ad_group_ad"
+  | "ad_group_ad_asset_view"
   | "ad_group_ad_label"
   | "ad_group_audience_view"
   | "ad_group_bid_modifier"
@@ -52,6 +53,7 @@ export type ResourceName =
   | "customer_negative_criterion"
   | "detail_placement_view"
   | "display_keyword_view"
+  | "distance_view"
   | "domain_category"
   | "dynamic_search_ads_search_term_view"
   | "expanded_landing_page_view"
@@ -97,6 +99,7 @@ export type ResourceName =
   | "topic_view"
   | "user_interest"
   | "user_list"
+  | "user_location_view"
   | "video";
 
 export type ResourceNames = Array<ResourceName>;
@@ -167,7 +170,7 @@ export const account_budget = [
   "account_budget.purchase_order_number",
   "account_budget.resource_name",
   "account_budget.status",
-  "account_budget.total_adjustments_micros"
+  "account_budget.total_adjustments_micros",
 ];
 
 export type AccountBudgetField =
@@ -295,7 +298,7 @@ export const account_budget_proposal = [
   "account_budget_proposal.proposed_spending_limit_type",
   "account_budget_proposal.proposed_start_date_time",
   "account_budget_proposal.resource_name",
-  "account_budget_proposal.status"
+  "account_budget_proposal.status",
 ];
 
 export type AccountBudgetProposalField =
@@ -385,7 +388,7 @@ export const ad_group = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -460,6 +463,7 @@ export const ad_group = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -470,7 +474,7 @@ export const ad_group = [
   "ad_group.targeting_setting.target_restrictions",
   "ad_group.tracking_url_template",
   "ad_group.type",
-  "ad_group.url_custom_parameters"
+  "ad_group.url_custom_parameters",
 ];
 
 export type AdGroupField =
@@ -497,7 +501,7 @@ export type AdGroupField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -572,6 +576,7 @@ export type AdGroupField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -604,7 +609,6 @@ export type AdGroupMetric =
   | "metrics.average_cpm"
   | "metrics.average_cpv"
   | "metrics.average_page_views"
-  | "metrics.average_position"
   | "metrics.average_time_on_site"
   | "metrics.bounce_rate"
   | "metrics.clicks"
@@ -704,6 +708,7 @@ export const ad_group_ad = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -738,7 +743,7 @@ export const ad_group_ad = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -877,6 +882,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -908,19 +914,19 @@ export const ad_group_ad = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
   "ad_group_ad.ad_strength",
   "ad_group_ad.policy_summary",
   "ad_group_ad.resource_name",
-  "ad_group_ad.status"
+  "ad_group_ad.status",
 ];
 
 export type AdGroupAdField =
@@ -938,6 +944,7 @@ export type AdGroupAdField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -972,7 +979,7 @@ export type AdGroupAdField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -1111,6 +1118,7 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -1142,12 +1150,12 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -1176,7 +1184,6 @@ export type AdGroupAdMetric =
   | "metrics.average_cpm"
   | "metrics.average_cpv"
   | "metrics.average_page_views"
-  | "metrics.average_position"
   | "metrics.average_time_on_site"
   | "metrics.bounce_rate"
   | "metrics.clicks"
@@ -1244,10 +1251,10 @@ export type AdGroupAdSegments = Array<AdGroupAdSegment>;
 */
 
 /*
- --- Start of AdGroupAdLabel ---
+ --- Start of AdGroupAdAssetView ---
 */
 // @ts-ignore
-export const ad_group_ad_label = [
+export const ad_group_ad_asset_view = [
   "ad_group.ad_rotation_mode",
   "ad_group.base_ad_group",
   "ad_group.campaign",
@@ -1262,6 +1269,7 @@ export const ad_group_ad_label = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -1351,6 +1359,7 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -1382,12 +1391,12 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
@@ -1395,6 +1404,17 @@ export const ad_group_ad_label = [
   "ad_group_ad.policy_summary",
   "ad_group_ad.resource_name",
   "ad_group_ad.status",
+  "asset.id",
+  "asset.image_asset.file_size",
+  "asset.image_asset.full_size.height_pixels",
+  "asset.image_asset.full_size.url",
+  "asset.image_asset.full_size.width_pixels",
+  "asset.image_asset.mime_type",
+  "asset.name",
+  "asset.resource_name",
+  "asset.text_asset.text",
+  "asset.type",
+  "asset.youtube_video_asset.youtube_video_id",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -1418,7 +1438,7 @@ export const ad_group_ad_label = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -1479,18 +1499,15 @@ export const ad_group_ad_label = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "label.id",
-  "label.name",
-  "label.resource_name",
-  "label.status",
-  "label.text_label.background_color",
-  "label.text_label.description",
-  "ad_group_ad_label.ad_group_ad",
-  "ad_group_ad_label.label",
-  "ad_group_ad_label.resource_name"
+  "ad_group_ad_asset_view.ad_group_ad",
+  "ad_group_ad_asset_view.asset",
+  "ad_group_ad_asset_view.field_type",
+  "ad_group_ad_asset_view.performance_label",
+  "ad_group_ad_asset_view.policy_summary",
+  "ad_group_ad_asset_view.resource_name",
 ];
 
-export type AdGroupAdLabelField =
+export type AdGroupAdAssetViewField =
   | "ad_group.ad_rotation_mode"
   | "ad_group.base_ad_group"
   | "ad_group.campaign"
@@ -1505,6 +1522,7 @@ export type AdGroupAdLabelField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -1594,6 +1612,7 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -1625,12 +1644,551 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
+  | "ad_group_ad.ad.video_ad.out_stream.description"
+  | "ad_group_ad.ad.video_ad.out_stream.headline"
+  | "ad_group_ad.ad_group"
+  | "ad_group_ad.ad_strength"
+  | "ad_group_ad.policy_summary"
+  | "ad_group_ad.resource_name"
+  | "ad_group_ad.status"
+  | "asset.id"
+  | "asset.image_asset.file_size"
+  | "asset.image_asset.full_size.height_pixels"
+  | "asset.image_asset.full_size.url"
+  | "asset.image_asset.full_size.width_pixels"
+  | "asset.image_asset.mime_type"
+  | "asset.name"
+  | "asset.resource_name"
+  | "asset.text_asset.text"
+  | "asset.type"
+  | "asset.youtube_video_asset.youtube_video_id"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
+  | "campaign.base_campaign"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.experiment_type"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.labels"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "ad_group_ad_asset_view.ad_group_ad"
+  | "ad_group_ad_asset_view.asset"
+  | "ad_group_ad_asset_view.field_type"
+  | "ad_group_ad_asset_view.performance_label"
+  | "ad_group_ad_asset_view.policy_summary"
+  | "ad_group_ad_asset_view.resource_name";
+
+export type AdGroupAdAssetViewFields = Array<AdGroupAdAssetViewField>;
+
+export type AdGroupAdAssetViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cpc"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_value"
+  | "metrics.conversions_value_per_cost"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.view_through_conversions";
+
+export type AdGroupAdAssetViewMetrics = Array<AdGroupAdAssetViewMetric>;
+
+export type AdGroupAdAssetViewSegment =
+  | "segments.ad_network_type"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.month"
+  | "segments.quarter"
+  | "segments.slot"
+  | "segments.week"
+  | "segments.year";
+
+export type AdGroupAdAssetViewSegments = Array<AdGroupAdAssetViewSegment>;
+
+/*
+ --- End of AdGroupAdAssetView ---
+*/
+
+/*
+ --- Start of AdGroupAdLabel ---
+*/
+// @ts-ignore
+export const ad_group_ad_label = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.base_ad_group",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.labels",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_ad.ad.added_by_google_ads",
+  "ad_group_ad.ad.app_ad.descriptions",
+  "ad_group_ad.ad.app_ad.headlines",
+  "ad_group_ad.ad.app_ad.html5_media_bundles",
+  "ad_group_ad.ad.app_ad.images",
+  "ad_group_ad.ad.app_ad.mandatory_ad_text",
+  "ad_group_ad.ad.app_ad.youtube_videos",
+  "ad_group_ad.ad.app_engagement_ad.descriptions",
+  "ad_group_ad.ad.app_engagement_ad.headlines",
+  "ad_group_ad.ad.app_engagement_ad.images",
+  "ad_group_ad.ad.app_engagement_ad.videos",
+  "ad_group_ad.ad.call_only_ad.business_name",
+  "ad_group_ad.ad.call_only_ad.call_tracked",
+  "ad_group_ad.ad.call_only_ad.conversion_action",
+  "ad_group_ad.ad.call_only_ad.conversion_reporting_state",
+  "ad_group_ad.ad.call_only_ad.country_code",
+  "ad_group_ad.ad.call_only_ad.description1",
+  "ad_group_ad.ad.call_only_ad.description2",
+  "ad_group_ad.ad.call_only_ad.disable_call_conversion",
+  "ad_group_ad.ad.call_only_ad.headline1",
+  "ad_group_ad.ad.call_only_ad.headline2",
+  "ad_group_ad.ad.call_only_ad.phone_number",
+  "ad_group_ad.ad.call_only_ad.phone_number_verification_url",
+  "ad_group_ad.ad.device_preference",
+  "ad_group_ad.ad.display_upload_ad.display_upload_product_type",
+  "ad_group_ad.ad.display_upload_ad.media_bundle",
+  "ad_group_ad.ad.display_url",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description",
+  "ad_group_ad.ad.expanded_text_ad.description2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part1",
+  "ad_group_ad.ad.expanded_text_ad.headline_part2",
+  "ad_group_ad.ad.expanded_text_ad.headline_part3",
+  "ad_group_ad.ad.expanded_text_ad.path1",
+  "ad_group_ad.ad.expanded_text_ad.path2",
+  "ad_group_ad.ad.final_app_urls",
+  "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_urls",
+  "ad_group_ad.ad.gmail_ad.header_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image",
+  "ad_group_ad.ad.gmail_ad.marketing_image_description",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color",
+  "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id",
+  "ad_group_ad.ad.gmail_ad.marketing_image_headline",
+  "ad_group_ad.ad.gmail_ad.product_images",
+  "ad_group_ad.ad.gmail_ad.product_videos",
+  "ad_group_ad.ad.gmail_ad.teaser.business_name",
+  "ad_group_ad.ad.gmail_ad.teaser.description",
+  "ad_group_ad.ad.gmail_ad.teaser.headline",
+  "ad_group_ad.ad.gmail_ad.teaser.logo_image",
+  "ad_group_ad.ad.hotel_ad",
+  "ad_group_ad.ad.id",
+  "ad_group_ad.ad.image_ad.image_url",
+  "ad_group_ad.ad.image_ad.mime_type",
+  "ad_group_ad.ad.image_ad.name",
+  "ad_group_ad.ad.image_ad.pixel_height",
+  "ad_group_ad.ad.image_ad.pixel_width",
+  "ad_group_ad.ad.image_ad.preview_image_url",
+  "ad_group_ad.ad.image_ad.preview_pixel_height",
+  "ad_group_ad.ad.image_ad.preview_pixel_width",
+  "ad_group_ad.ad.legacy_app_install_ad",
+  "ad_group_ad.ad.legacy_responsive_display_ad.accent_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.business_name",
+  "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.description",
+  "ad_group_ad.ad.legacy_responsive_display_ad.format_setting",
+  "ad_group_ad.ad.legacy_responsive_display_ad.logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.long_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.main_color",
+  "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.legacy_responsive_display_ad.promo_text",
+  "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
+  "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
+  "ad_group_ad.ad.responsive_display_ad.accent_color",
+  "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
+  "ad_group_ad.ad.responsive_display_ad.business_name",
+  "ad_group_ad.ad.responsive_display_ad.call_to_action_text",
+  "ad_group_ad.ad.responsive_display_ad.descriptions",
+  "ad_group_ad.ad.responsive_display_ad.format_setting",
+  "ad_group_ad.ad.responsive_display_ad.headlines",
+  "ad_group_ad.ad.responsive_display_ad.logo_images",
+  "ad_group_ad.ad.responsive_display_ad.long_headline",
+  "ad_group_ad.ad.responsive_display_ad.main_color",
+  "ad_group_ad.ad.responsive_display_ad.marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.price_prefix",
+  "ad_group_ad.ad.responsive_display_ad.promo_text",
+  "ad_group_ad.ad.responsive_display_ad.square_logo_images",
+  "ad_group_ad.ad.responsive_display_ad.square_marketing_images",
+  "ad_group_ad.ad.responsive_display_ad.youtube_videos",
+  "ad_group_ad.ad.responsive_search_ad.descriptions",
+  "ad_group_ad.ad.responsive_search_ad.headlines",
+  "ad_group_ad.ad.responsive_search_ad.path1",
+  "ad_group_ad.ad.responsive_search_ad.path2",
+  "ad_group_ad.ad.shopping_comparison_listing_ad.headline",
+  "ad_group_ad.ad.shopping_product_ad",
+  "ad_group_ad.ad.shopping_smart_ad",
+  "ad_group_ad.ad.system_managed_resource_source",
+  "ad_group_ad.ad.text_ad.description1",
+  "ad_group_ad.ad.text_ad.description2",
+  "ad_group_ad.ad.text_ad.headline",
+  "ad_group_ad.ad.tracking_url_template",
+  "ad_group_ad.ad.type",
+  "ad_group_ad.ad.url_collections",
+  "ad_group_ad.ad.url_custom_parameters",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.in_stream.action_button_label",
+  "ad_group_ad.ad.video_ad.in_stream.action_headline",
+  "ad_group_ad.ad.video_ad.in_stream.companion_banner",
+  "ad_group_ad.ad.video_ad.media_file",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
+  "ad_group_ad.ad.video_ad.out_stream.description",
+  "ad_group_ad.ad.video_ad.out_stream.headline",
+  "ad_group_ad.ad_group",
+  "ad_group_ad.ad_strength",
+  "ad_group_ad.policy_summary",
+  "ad_group_ad.resource_name",
+  "ad_group_ad.status",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
+  "campaign.base_campaign",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.experiment_type",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.labels",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "label.id",
+  "label.name",
+  "label.resource_name",
+  "label.status",
+  "label.text_label.background_color",
+  "label.text_label.description",
+  "ad_group_ad_label.ad_group_ad",
+  "ad_group_ad_label.label",
+  "ad_group_ad_label.resource_name",
+];
+
+export type AdGroupAdLabelField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.base_ad_group"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.labels"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_ad.ad.added_by_google_ads"
+  | "ad_group_ad.ad.app_ad.descriptions"
+  | "ad_group_ad.ad.app_ad.headlines"
+  | "ad_group_ad.ad.app_ad.html5_media_bundles"
+  | "ad_group_ad.ad.app_ad.images"
+  | "ad_group_ad.ad.app_ad.mandatory_ad_text"
+  | "ad_group_ad.ad.app_ad.youtube_videos"
+  | "ad_group_ad.ad.app_engagement_ad.descriptions"
+  | "ad_group_ad.ad.app_engagement_ad.headlines"
+  | "ad_group_ad.ad.app_engagement_ad.images"
+  | "ad_group_ad.ad.app_engagement_ad.videos"
+  | "ad_group_ad.ad.call_only_ad.business_name"
+  | "ad_group_ad.ad.call_only_ad.call_tracked"
+  | "ad_group_ad.ad.call_only_ad.conversion_action"
+  | "ad_group_ad.ad.call_only_ad.conversion_reporting_state"
+  | "ad_group_ad.ad.call_only_ad.country_code"
+  | "ad_group_ad.ad.call_only_ad.description1"
+  | "ad_group_ad.ad.call_only_ad.description2"
+  | "ad_group_ad.ad.call_only_ad.disable_call_conversion"
+  | "ad_group_ad.ad.call_only_ad.headline1"
+  | "ad_group_ad.ad.call_only_ad.headline2"
+  | "ad_group_ad.ad.call_only_ad.phone_number"
+  | "ad_group_ad.ad.call_only_ad.phone_number_verification_url"
+  | "ad_group_ad.ad.device_preference"
+  | "ad_group_ad.ad.display_upload_ad.display_upload_product_type"
+  | "ad_group_ad.ad.display_upload_ad.media_bundle"
+  | "ad_group_ad.ad.display_url"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description"
+  | "ad_group_ad.ad.expanded_text_ad.description2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part1"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part2"
+  | "ad_group_ad.ad.expanded_text_ad.headline_part3"
+  | "ad_group_ad.ad.expanded_text_ad.path1"
+  | "ad_group_ad.ad.expanded_text_ad.path2"
+  | "ad_group_ad.ad.final_app_urls"
+  | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_urls"
+  | "ad_group_ad.ad.gmail_ad.header_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_description"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.text_color"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_display_call_to_action.url_collection_id"
+  | "ad_group_ad.ad.gmail_ad.marketing_image_headline"
+  | "ad_group_ad.ad.gmail_ad.product_images"
+  | "ad_group_ad.ad.gmail_ad.product_videos"
+  | "ad_group_ad.ad.gmail_ad.teaser.business_name"
+  | "ad_group_ad.ad.gmail_ad.teaser.description"
+  | "ad_group_ad.ad.gmail_ad.teaser.headline"
+  | "ad_group_ad.ad.gmail_ad.teaser.logo_image"
+  | "ad_group_ad.ad.hotel_ad"
+  | "ad_group_ad.ad.id"
+  | "ad_group_ad.ad.image_ad.image_url"
+  | "ad_group_ad.ad.image_ad.mime_type"
+  | "ad_group_ad.ad.image_ad.name"
+  | "ad_group_ad.ad.image_ad.pixel_height"
+  | "ad_group_ad.ad.image_ad.pixel_width"
+  | "ad_group_ad.ad.image_ad.preview_image_url"
+  | "ad_group_ad.ad.image_ad.preview_pixel_height"
+  | "ad_group_ad.ad.image_ad.preview_pixel_width"
+  | "ad_group_ad.ad.legacy_app_install_ad"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.business_name"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.description"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.main_color"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.marketing_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
+  | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
+  | "ad_group_ad.ad.responsive_display_ad.accent_color"
+  | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
+  | "ad_group_ad.ad.responsive_display_ad.business_name"
+  | "ad_group_ad.ad.responsive_display_ad.call_to_action_text"
+  | "ad_group_ad.ad.responsive_display_ad.descriptions"
+  | "ad_group_ad.ad.responsive_display_ad.format_setting"
+  | "ad_group_ad.ad.responsive_display_ad.headlines"
+  | "ad_group_ad.ad.responsive_display_ad.logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.long_headline"
+  | "ad_group_ad.ad.responsive_display_ad.main_color"
+  | "ad_group_ad.ad.responsive_display_ad.marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.price_prefix"
+  | "ad_group_ad.ad.responsive_display_ad.promo_text"
+  | "ad_group_ad.ad.responsive_display_ad.square_logo_images"
+  | "ad_group_ad.ad.responsive_display_ad.square_marketing_images"
+  | "ad_group_ad.ad.responsive_display_ad.youtube_videos"
+  | "ad_group_ad.ad.responsive_search_ad.descriptions"
+  | "ad_group_ad.ad.responsive_search_ad.headlines"
+  | "ad_group_ad.ad.responsive_search_ad.path1"
+  | "ad_group_ad.ad.responsive_search_ad.path2"
+  | "ad_group_ad.ad.shopping_comparison_listing_ad.headline"
+  | "ad_group_ad.ad.shopping_product_ad"
+  | "ad_group_ad.ad.shopping_smart_ad"
+  | "ad_group_ad.ad.system_managed_resource_source"
+  | "ad_group_ad.ad.text_ad.description1"
+  | "ad_group_ad.ad.text_ad.description2"
+  | "ad_group_ad.ad.text_ad.headline"
+  | "ad_group_ad.ad.tracking_url_template"
+  | "ad_group_ad.ad.type"
+  | "ad_group_ad.ad.url_collections"
+  | "ad_group_ad.ad.url_custom_parameters"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
+  | "ad_group_ad.ad.video_ad.in_stream.action_headline"
+  | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
+  | "ad_group_ad.ad.video_ad.media_file"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -1661,7 +2219,7 @@ export type AdGroupAdLabelField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -1757,6 +2315,7 @@ export const ad_group_audience_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -1866,7 +2425,7 @@ export const ad_group_audience_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -1927,7 +2486,7 @@ export const ad_group_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "ad_group_audience_view.resource_name"
+  "ad_group_audience_view.resource_name",
 ];
 
 export type AdGroupAudienceViewField =
@@ -1945,6 +2504,7 @@ export type AdGroupAudienceViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -2054,7 +2614,7 @@ export type AdGroupAudienceViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -2137,7 +2697,6 @@ export type AdGroupAudienceViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -2211,6 +2770,7 @@ export const ad_group_bid_modifier = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -2245,7 +2805,7 @@ export const ad_group_bid_modifier = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -2319,7 +2879,7 @@ export const ad_group_bid_modifier = [
   "ad_group_bid_modifier.hotel_length_of_stay.max_nights",
   "ad_group_bid_modifier.hotel_length_of_stay.min_nights",
   "ad_group_bid_modifier.preferred_content.type",
-  "ad_group_bid_modifier.resource_name"
+  "ad_group_bid_modifier.resource_name",
 ];
 
 export type AdGroupBidModifierField =
@@ -2337,6 +2897,7 @@ export type AdGroupBidModifierField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -2371,7 +2932,7 @@ export type AdGroupBidModifierField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -2472,6 +3033,7 @@ export const ad_group_criterion = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -2506,7 +3068,7 @@ export const ad_group_criterion = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -2691,7 +3253,7 @@ export const ad_group_criterion = [
   "ad_group_criterion.webpage.conditions",
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
-  "ad_group_criterion.youtube_video.video_id"
+  "ad_group_criterion.youtube_video.video_id",
 ];
 
 export type AdGroupCriterionField =
@@ -2709,6 +3271,7 @@ export type AdGroupCriterionField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -2743,7 +3306,7 @@ export type AdGroupCriterionField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -2955,6 +3518,7 @@ export const ad_group_criterion_label = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -3064,7 +3628,7 @@ export const ad_group_criterion_label = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -3133,7 +3697,7 @@ export const ad_group_criterion_label = [
   "label.text_label.description",
   "ad_group_criterion_label.ad_group_criterion",
   "ad_group_criterion_label.label",
-  "ad_group_criterion_label.resource_name"
+  "ad_group_criterion_label.resource_name",
 ];
 
 export type AdGroupCriterionLabelField =
@@ -3151,6 +3715,7 @@ export type AdGroupCriterionLabelField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -3260,7 +3825,7 @@ export type AdGroupCriterionLabelField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -3356,6 +3921,7 @@ export const ad_group_criterion_simulation = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -3465,7 +4031,7 @@ export const ad_group_criterion_simulation = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -3533,7 +4099,7 @@ export const ad_group_criterion_simulation = [
   "ad_group_criterion_simulation.modification_method",
   "ad_group_criterion_simulation.resource_name",
   "ad_group_criterion_simulation.start_date",
-  "ad_group_criterion_simulation.type"
+  "ad_group_criterion_simulation.type",
 ];
 
 export type AdGroupCriterionSimulationField =
@@ -3551,6 +4117,7 @@ export type AdGroupCriterionSimulationField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -3660,7 +4227,7 @@ export type AdGroupCriterionSimulationField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -3730,9 +4297,7 @@ export type AdGroupCriterionSimulationField =
   | "ad_group_criterion_simulation.start_date"
   | "ad_group_criterion_simulation.type";
 
-export type AdGroupCriterionSimulationFields = Array<
-  AdGroupCriterionSimulationField
->;
+export type AdGroupCriterionSimulationFields = Array<AdGroupCriterionSimulationField>;
 
 /*
  --- End of AdGroupCriterionSimulation ---
@@ -3757,6 +4322,7 @@ export const ad_group_extension_setting = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -3791,7 +4357,7 @@ export const ad_group_extension_setting = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -3856,7 +4422,7 @@ export const ad_group_extension_setting = [
   "ad_group_extension_setting.device",
   "ad_group_extension_setting.extension_feed_items",
   "ad_group_extension_setting.extension_type",
-  "ad_group_extension_setting.resource_name"
+  "ad_group_extension_setting.resource_name",
 ];
 
 export type AdGroupExtensionSettingField =
@@ -3874,6 +4440,7 @@ export type AdGroupExtensionSettingField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -3908,7 +4475,7 @@ export type AdGroupExtensionSettingField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4000,6 +4567,7 @@ export const ad_group_feed = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -4034,7 +4602,7 @@ export const ad_group_feed = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4115,7 +4683,7 @@ export const ad_group_feed = [
   "ad_group_feed.matching_function.right_operands",
   "ad_group_feed.placeholder_types",
   "ad_group_feed.resource_name",
-  "ad_group_feed.status"
+  "ad_group_feed.status",
 ];
 
 export type AdGroupFeedField =
@@ -4133,6 +4701,7 @@ export type AdGroupFeedField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -4167,7 +4736,7 @@ export type AdGroupFeedField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4275,6 +4844,7 @@ export const ad_group_label = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -4309,7 +4879,7 @@ export const ad_group_label = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4378,7 +4948,7 @@ export const ad_group_label = [
   "label.text_label.description",
   "ad_group_label.ad_group",
   "ad_group_label.label",
-  "ad_group_label.resource_name"
+  "ad_group_label.resource_name",
 ];
 
 export type AdGroupLabelField =
@@ -4396,6 +4966,7 @@ export type AdGroupLabelField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -4430,7 +5001,7 @@ export type AdGroupLabelField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4526,6 +5097,7 @@ export const ad_group_simulation = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -4560,7 +5132,7 @@ export const ad_group_simulation = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4629,7 +5201,7 @@ export const ad_group_simulation = [
   "ad_group_simulation.resource_name",
   "ad_group_simulation.start_date",
   "ad_group_simulation.target_cpa_point_list.points",
-  "ad_group_simulation.type"
+  "ad_group_simulation.type",
 ];
 
 export type AdGroupSimulationField =
@@ -4647,6 +5219,7 @@ export type AdGroupSimulationField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -4681,7 +5254,7 @@ export type AdGroupSimulationField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4777,6 +5350,7 @@ export const ad_parameter = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -4886,7 +5460,7 @@ export const ad_parameter = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4950,7 +5524,7 @@ export const ad_parameter = [
   "ad_parameter.ad_group_criterion",
   "ad_parameter.insertion_text",
   "ad_parameter.parameter_index",
-  "ad_parameter.resource_name"
+  "ad_parameter.resource_name",
 ];
 
 export type AdParameterField =
@@ -4968,6 +5542,7 @@ export type AdParameterField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -5077,7 +5652,7 @@ export type AdParameterField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5177,7 +5752,7 @@ export const ad_schedule_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5289,7 +5864,7 @@ export const ad_schedule_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "ad_schedule_view.resource_name"
+  "ad_schedule_view.resource_name",
 ];
 
 export type AdScheduleViewField =
@@ -5316,7 +5891,7 @@ export type AdScheduleViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5441,7 +6016,6 @@ export type AdScheduleViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -5506,6 +6080,7 @@ export const age_range_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -5615,7 +6190,7 @@ export const age_range_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5676,7 +6251,7 @@ export const age_range_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "age_range_view.resource_name"
+  "age_range_view.resource_name",
 ];
 
 export type AgeRangeViewField =
@@ -5694,6 +6269,7 @@ export type AgeRangeViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -5803,7 +6379,7 @@ export type AgeRangeViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5971,7 +6547,7 @@ export const asset = [
   "asset.resource_name",
   "asset.text_asset.text",
   "asset.type",
-  "asset.youtube_video_asset.youtube_video_id"
+  "asset.youtube_video_asset.youtube_video_id",
 ];
 
 export type AssetField =
@@ -6078,7 +6654,7 @@ export const bidding_strategy = [
   "bidding_strategy.target_roas.target_roas",
   "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
   "bidding_strategy.target_spend.target_spend_micros",
-  "bidding_strategy.type"
+  "bidding_strategy.type",
 ];
 
 export type BiddingStrategyField =
@@ -6139,7 +6715,6 @@ export type BiddingStrategyMetric =
   | "metrics.all_conversions_value"
   | "metrics.average_cpc"
   | "metrics.average_cpm"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -6211,7 +6786,7 @@ export const billing_setup = [
   "billing_setup.payments_account_info.secondary_payments_profile_id",
   "billing_setup.resource_name",
   "billing_setup.start_date_time",
-  "billing_setup.status"
+  "billing_setup.status",
 ];
 
 export type BillingSetupField =
@@ -6345,7 +6920,7 @@ export const campaign = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -6387,7 +6962,7 @@ export const campaign = [
   "campaign.url_custom_parameters",
   "campaign.vanity_pharma.vanity_pharma_display_url_mode",
   "campaign.vanity_pharma.vanity_pharma_text",
-  "campaign.video_brand_safety_suitability"
+  "campaign.video_brand_safety_suitability",
 ];
 
 export type CampaignField =
@@ -6479,7 +7054,7 @@ export type CampaignField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -6542,9 +7117,7 @@ export type CampaignMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_frequency"
   | "metrics.average_page_views"
-  | "metrics.average_position"
   | "metrics.average_time_on_site"
   | "metrics.bounce_rate"
   | "metrics.clicks"
@@ -6570,7 +7143,6 @@ export type CampaignMetric =
   | "metrics.gmail_forwards"
   | "metrics.gmail_saves"
   | "metrics.gmail_secondary_clicks"
-  | "metrics.impression_reach"
   | "metrics.impressions"
   | "metrics.interaction_event_types"
   | "metrics.interaction_rate"
@@ -6663,7 +7235,7 @@ export const campaign_audience_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -6775,7 +7347,7 @@ export const campaign_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "campaign_audience_view.resource_name"
+  "campaign_audience_view.resource_name",
 ];
 
 export type CampaignAudienceViewField =
@@ -6802,7 +7374,7 @@ export type CampaignAudienceViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -6936,7 +7508,6 @@ export type CampaignAudienceViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -7016,7 +7587,7 @@ export const campaign_bid_modifier = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7081,7 +7652,7 @@ export const campaign_bid_modifier = [
   "campaign_bid_modifier.campaign",
   "campaign_bid_modifier.criterion_id",
   "campaign_bid_modifier.interaction_type.type",
-  "campaign_bid_modifier.resource_name"
+  "campaign_bid_modifier.resource_name",
 ];
 
 export type CampaignBidModifierField =
@@ -7108,7 +7679,7 @@ export type CampaignBidModifierField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7213,7 +7784,7 @@ export const campaign_budget = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7290,7 +7861,7 @@ export const campaign_budget = [
   "campaign_budget.resource_name",
   "campaign_budget.status",
   "campaign_budget.total_amount_micros",
-  "campaign_budget.type"
+  "campaign_budget.type",
 ];
 
 export type CampaignBudgetField =
@@ -7317,7 +7888,7 @@ export type CampaignBudgetField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7407,7 +7978,6 @@ export type CampaignBudgetMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -7472,7 +8042,7 @@ export const campaign_criterion = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7666,7 +8236,7 @@ export const campaign_criterion = [
   "campaign_criterion.webpage.conditions",
   "campaign_criterion.webpage.criterion_name",
   "campaign_criterion.youtube_channel.channel_id",
-  "campaign_criterion.youtube_video.video_id"
+  "campaign_criterion.youtube_video.video_id",
 ];
 
 export type CampaignCriterionField =
@@ -7693,7 +8263,7 @@ export type CampaignCriterionField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7923,7 +8493,7 @@ export const campaign_criterion_simulation = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8042,7 +8612,7 @@ export const campaign_criterion_simulation = [
   "campaign_criterion_simulation.modification_method",
   "campaign_criterion_simulation.resource_name",
   "campaign_criterion_simulation.start_date",
-  "campaign_criterion_simulation.type"
+  "campaign_criterion_simulation.type",
 ];
 
 export type CampaignCriterionSimulationField =
@@ -8069,7 +8639,7 @@ export type CampaignCriterionSimulationField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8190,9 +8760,7 @@ export type CampaignCriterionSimulationField =
   | "campaign_criterion_simulation.start_date"
   | "campaign_criterion_simulation.type";
 
-export type CampaignCriterionSimulationFields = Array<
-  CampaignCriterionSimulationField
->;
+export type CampaignCriterionSimulationFields = Array<CampaignCriterionSimulationField>;
 
 /*
  --- End of CampaignCriterionSimulation ---
@@ -8226,7 +8794,7 @@ export const campaign_draft = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8294,7 +8862,7 @@ export const campaign_draft = [
   "campaign_draft.long_running_operation",
   "campaign_draft.name",
   "campaign_draft.resource_name",
-  "campaign_draft.status"
+  "campaign_draft.status",
 ];
 
 export type CampaignDraftField =
@@ -8321,7 +8889,7 @@ export type CampaignDraftField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8425,7 +8993,7 @@ export const campaign_experiment = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8505,7 +9073,7 @@ export const campaign_experiment = [
   "campaign_experiment.start_date",
   "campaign_experiment.status",
   "campaign_experiment.traffic_split_percent",
-  "campaign_experiment.traffic_split_type"
+  "campaign_experiment.traffic_split_type",
 ];
 
 export type CampaignExperimentField =
@@ -8532,7 +9100,7 @@ export type CampaignExperimentField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8648,7 +9216,7 @@ export const campaign_extension_setting = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8713,7 +9281,7 @@ export const campaign_extension_setting = [
   "campaign_extension_setting.device",
   "campaign_extension_setting.extension_feed_items",
   "campaign_extension_setting.extension_type",
-  "campaign_extension_setting.resource_name"
+  "campaign_extension_setting.resource_name",
 ];
 
 export type CampaignExtensionSettingField =
@@ -8740,7 +9308,7 @@ export type CampaignExtensionSettingField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8807,9 +9375,7 @@ export type CampaignExtensionSettingField =
   | "campaign_extension_setting.extension_type"
   | "campaign_extension_setting.resource_name";
 
-export type CampaignExtensionSettingFields = Array<
-  CampaignExtensionSettingField
->;
+export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField>;
 
 /*
  --- End of CampaignExtensionSetting ---
@@ -8843,7 +9409,7 @@ export const campaign_feed = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8924,7 +9490,7 @@ export const campaign_feed = [
   "campaign_feed.matching_function.right_operands",
   "campaign_feed.placeholder_types",
   "campaign_feed.resource_name",
-  "campaign_feed.status"
+  "campaign_feed.status",
 ];
 
 export type CampaignFeedField =
@@ -8951,7 +9517,7 @@ export type CampaignFeedField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9068,7 +9634,7 @@ export const campaign_label = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9137,7 +9703,7 @@ export const campaign_label = [
   "label.text_label.description",
   "campaign_label.campaign",
   "campaign_label.label",
-  "campaign_label.resource_name"
+  "campaign_label.resource_name",
 ];
 
 export type CampaignLabelField =
@@ -9164,7 +9730,7 @@ export type CampaignLabelField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9269,7 +9835,7 @@ export const campaign_shared_set = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9340,7 +9906,7 @@ export const campaign_shared_set = [
   "campaign_shared_set.campaign",
   "campaign_shared_set.resource_name",
   "campaign_shared_set.shared_set",
-  "campaign_shared_set.status"
+  "campaign_shared_set.status",
 ];
 
 export type CampaignSharedSetField =
@@ -9367,7 +9933,7 @@ export type CampaignSharedSetField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9454,7 +10020,7 @@ export const carrier_constant = [
   "carrier_constant.country_code",
   "carrier_constant.id",
   "carrier_constant.name",
-  "carrier_constant.resource_name"
+  "carrier_constant.resource_name",
 ];
 
 export type CarrierConstantField =
@@ -9488,6 +10054,7 @@ export const change_status = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -9522,7 +10089,7 @@ export const change_status = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9618,7 +10185,7 @@ export const change_status = [
   "change_status.last_change_date_time",
   "change_status.resource_name",
   "change_status.resource_status",
-  "change_status.resource_type"
+  "change_status.resource_type",
 ];
 
 export type ChangeStatusField =
@@ -9636,6 +10203,7 @@ export type ChangeStatusField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -9670,7 +10238,7 @@ export type ChangeStatusField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9793,6 +10361,7 @@ export const click_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -9827,7 +10396,7 @@ export const click_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9888,6 +10457,7 @@ export const click_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
+  "click_view.ad_group_ad",
   "click_view.area_of_interest.city",
   "click_view.area_of_interest.country",
   "click_view.area_of_interest.metro",
@@ -9900,7 +10470,7 @@ export const click_view = [
   "click_view.location_of_presence.most_specific",
   "click_view.location_of_presence.region",
   "click_view.page_number",
-  "click_view.resource_name"
+  "click_view.resource_name",
 ];
 
 export type ClickViewField =
@@ -9918,6 +10488,7 @@ export type ClickViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -9952,7 +10523,7 @@ export type ClickViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -10013,6 +10584,7 @@ export type ClickViewField =
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
+  | "click_view.ad_group_ad"
   | "click_view.area_of_interest.city"
   | "click_view.area_of_interest.country"
   | "click_view.area_of_interest.metro"
@@ -10090,7 +10662,7 @@ export const conversion_action = [
   "conversion_action.value_settings.always_use_default_value",
   "conversion_action.value_settings.default_currency_code",
   "conversion_action.value_settings.default_value",
-  "conversion_action.view_through_lookback_window_days"
+  "conversion_action.view_through_lookback_window_days",
 ];
 
 export type ConversionActionField =
@@ -10167,7 +10739,7 @@ export const custom_interest = [
   "custom_interest.name",
   "custom_interest.resource_name",
   "custom_interest.status",
-  "custom_interest.type"
+  "custom_interest.type",
 ];
 
 export type CustomInterestField =
@@ -10225,7 +10797,7 @@ export const customer = [
   "customer.resource_name",
   "customer.test_account",
   "customer.time_zone",
-  "customer.tracking_url_template"
+  "customer.tracking_url_template",
 ];
 
 export type CustomerField =
@@ -10266,7 +10838,6 @@ export type CustomerMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.content_budget_lost_impression_share"
   | "metrics.content_impression_share"
@@ -10352,7 +10923,7 @@ export const customer_client = [
   "customer_client.client_customer",
   "customer_client.hidden",
   "customer_client.level",
-  "customer_client.resource_name"
+  "customer_client.resource_name",
 ];
 
 export type CustomerClientField =
@@ -10412,7 +10983,7 @@ export const customer_client_link = [
   "customer_client_link.hidden",
   "customer_client_link.manager_link_id",
   "customer_client_link.resource_name",
-  "customer_client_link.status"
+  "customer_client_link.status",
 ];
 
 export type CustomerClientLinkField =
@@ -10472,7 +11043,7 @@ export const customer_extension_setting = [
   "customer_extension_setting.device",
   "customer_extension_setting.extension_feed_items",
   "customer_extension_setting.extension_type",
-  "customer_extension_setting.resource_name"
+  "customer_extension_setting.resource_name",
 ];
 
 export type CustomerExtensionSettingField =
@@ -10499,9 +11070,7 @@ export type CustomerExtensionSettingField =
   | "customer_extension_setting.extension_type"
   | "customer_extension_setting.resource_name";
 
-export type CustomerExtensionSettingFields = Array<
-  CustomerExtensionSettingField
->;
+export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField>;
 
 /*
  --- End of CustomerExtensionSetting ---
@@ -10549,7 +11118,7 @@ export const customer_feed = [
   "customer_feed.matching_function.right_operands",
   "customer_feed.placeholder_types",
   "customer_feed.resource_name",
-  "customer_feed.status"
+  "customer_feed.status",
 ];
 
 export type CustomerFeedField =
@@ -10623,7 +11192,7 @@ export const customer_label = [
   "customer.tracking_url_template",
   "customer_label.customer",
   "customer_label.label",
-  "customer_label.resource_name"
+  "customer_label.resource_name",
 ];
 
 export type CustomerLabelField =
@@ -10681,7 +11250,7 @@ export const customer_manager_link = [
   "customer_manager_link.manager_customer",
   "customer_manager_link.manager_link_id",
   "customer_manager_link.resource_name",
-  "customer_manager_link.status"
+  "customer_manager_link.status",
 ];
 
 export type CustomerManagerLinkField =
@@ -10749,7 +11318,7 @@ export const customer_negative_criterion = [
   "customer_negative_criterion.resource_name",
   "customer_negative_criterion.type",
   "customer_negative_criterion.youtube_channel.channel_id",
-  "customer_negative_criterion.youtube_video.video_id"
+  "customer_negative_criterion.youtube_video.video_id",
 ];
 
 export type CustomerNegativeCriterionField =
@@ -10785,9 +11354,7 @@ export type CustomerNegativeCriterionField =
   | "customer_negative_criterion.youtube_channel.channel_id"
   | "customer_negative_criterion.youtube_video.video_id";
 
-export type CustomerNegativeCriterionFields = Array<
-  CustomerNegativeCriterionField
->;
+export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionField>;
 
 /*
  --- End of CustomerNegativeCriterion ---
@@ -10812,6 +11379,7 @@ export const detail_placement_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -10846,7 +11414,7 @@ export const detail_placement_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -10912,7 +11480,7 @@ export const detail_placement_view = [
   "detail_placement_view.placement",
   "detail_placement_view.placement_type",
   "detail_placement_view.resource_name",
-  "detail_placement_view.target_url"
+  "detail_placement_view.target_url",
 ];
 
 export type DetailPlacementViewField =
@@ -10930,6 +11498,7 @@ export type DetailPlacementViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -10964,7 +11533,7 @@ export type DetailPlacementViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -11035,16 +11604,58 @@ export type DetailPlacementViewField =
 export type DetailPlacementViewFields = Array<DetailPlacementViewField>;
 
 export type DetailPlacementViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
   | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
   | "metrics.impressions"
-  | "metrics.video_views";
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
 
 export type DetailPlacementViewMetrics = Array<DetailPlacementViewMetric>;
 
 export type DetailPlacementViewSegment =
+  | "segments.ad_network_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
   | "segments.date"
+  | "segments.day_of_week"
   | "segments.device"
+  | "segments.external_conversion_source"
   | "segments.month"
+  | "segments.month_of_year"
   | "segments.quarter"
   | "segments.week"
   | "segments.year";
@@ -11074,6 +11685,7 @@ export const display_keyword_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -11183,7 +11795,7 @@ export const display_keyword_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -11244,7 +11856,7 @@ export const display_keyword_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "display_keyword_view.resource_name"
+  "display_keyword_view.resource_name",
 ];
 
 export type DisplayKeywordViewField =
@@ -11262,6 +11874,7 @@ export type DisplayKeywordViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -11371,7 +11984,7 @@ export type DisplayKeywordViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -11507,6 +12120,235 @@ export type DisplayKeywordViewSegments = Array<DisplayKeywordViewSegment>;
 */
 
 /*
+ --- Start of DistanceView ---
+*/
+// @ts-ignore
+export const distance_view = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
+  "campaign.base_campaign",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.experiment_type",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.labels",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "distance_view.distance_bucket",
+  "distance_view.metric_system",
+  "distance_view.resource_name",
+];
+
+export type DistanceViewField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
+  | "campaign.base_campaign"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.experiment_type"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.labels"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "distance_view.distance_bucket"
+  | "distance_view.metric_system"
+  | "distance_view.resource_name";
+
+export type DistanceViewFields = Array<DistanceViewField>;
+
+export type DistanceViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.view_through_conversions";
+
+export type DistanceViewMetrics = Array<DistanceViewMetric>;
+
+export type DistanceViewSegment =
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type DistanceViewSegments = Array<DistanceViewSegment>;
+
+/*
+ --- End of DistanceView ---
+*/
+
+/*
  --- Start of DomainCategory ---
 */
 // @ts-ignore
@@ -11534,7 +12376,7 @@ export const domain_category = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -11603,7 +12445,7 @@ export const domain_category = [
   "domain_category.has_children",
   "domain_category.language_code",
   "domain_category.recommended_cpc_bid_micros",
-  "domain_category.resource_name"
+  "domain_category.resource_name",
 ];
 
 export type DomainCategoryField =
@@ -11630,7 +12472,7 @@ export type DomainCategoryField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -11726,6 +12568,7 @@ export const dynamic_search_ads_search_term_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -11760,7 +12603,7 @@ export const dynamic_search_ads_search_term_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -11825,7 +12668,7 @@ export const dynamic_search_ads_search_term_view = [
   "dynamic_search_ads_search_term_view.landing_page",
   "dynamic_search_ads_search_term_view.page_url",
   "dynamic_search_ads_search_term_view.resource_name",
-  "dynamic_search_ads_search_term_view.search_term"
+  "dynamic_search_ads_search_term_view.search_term",
 ];
 
 export type DynamicSearchAdsSearchTermViewField =
@@ -11843,6 +12686,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -11877,7 +12721,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -11944,9 +12788,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "dynamic_search_ads_search_term_view.resource_name"
   | "dynamic_search_ads_search_term_view.search_term";
 
-export type DynamicSearchAdsSearchTermViewFields = Array<
-  DynamicSearchAdsSearchTermViewField
->;
+export type DynamicSearchAdsSearchTermViewFields = Array<DynamicSearchAdsSearchTermViewField>;
 
 export type DynamicSearchAdsSearchTermViewMetric =
   | "metrics.all_conversions"
@@ -11967,9 +12809,7 @@ export type DynamicSearchAdsSearchTermViewMetric =
   | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion";
 
-export type DynamicSearchAdsSearchTermViewMetrics = Array<
-  DynamicSearchAdsSearchTermViewMetric
->;
+export type DynamicSearchAdsSearchTermViewMetrics = Array<DynamicSearchAdsSearchTermViewMetric>;
 
 export type DynamicSearchAdsSearchTermViewSegment =
   | "segments.conversion_action"
@@ -11985,9 +12825,7 @@ export type DynamicSearchAdsSearchTermViewSegment =
   | "segments.week"
   | "segments.year";
 
-export type DynamicSearchAdsSearchTermViewSegments = Array<
-  DynamicSearchAdsSearchTermViewSegment
->;
+export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearchTermViewSegment>;
 
 /*
  --- End of DynamicSearchAdsSearchTermView ---
@@ -12012,6 +12850,7 @@ export const expanded_landing_page_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -12046,7 +12885,7 @@ export const expanded_landing_page_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12110,7 +12949,7 @@ export const expanded_landing_page_view = [
   "landing_page_view.resource_name",
   "landing_page_view.unexpanded_final_url",
   "expanded_landing_page_view.expanded_final_url",
-  "expanded_landing_page_view.resource_name"
+  "expanded_landing_page_view.resource_name",
 ];
 
 export type ExpandedLandingPageViewField =
@@ -12128,6 +12967,7 @@ export type ExpandedLandingPageViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -12162,7 +13002,7 @@ export type ExpandedLandingPageViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -12248,7 +13088,6 @@ export type ExpandedLandingPageViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -12274,9 +13113,7 @@ export type ExpandedLandingPageViewMetric =
   | "metrics.video_view_rate"
   | "metrics.video_views";
 
-export type ExpandedLandingPageViewMetrics = Array<
-  ExpandedLandingPageViewMetric
->;
+export type ExpandedLandingPageViewMetrics = Array<ExpandedLandingPageViewMetric>;
 
 export type ExpandedLandingPageViewSegment =
   | "ad_group"
@@ -12298,9 +13135,7 @@ export type ExpandedLandingPageViewSegment =
   | "segments.week"
   | "segments.year";
 
-export type ExpandedLandingPageViewSegments = Array<
-  ExpandedLandingPageViewSegment
->;
+export type ExpandedLandingPageViewSegments = Array<ExpandedLandingPageViewSegment>;
 
 /*
  --- End of ExpandedLandingPageView ---
@@ -12325,6 +13160,7 @@ export const extension_feed_item = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -12359,7 +13195,7 @@ export const extension_feed_item = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12493,11 +13329,13 @@ export const extension_feed_item = [
   "extension_feed_item.targeted_ad_group",
   "extension_feed_item.targeted_campaign",
   "extension_feed_item.targeted_geo_target_constant",
+  "extension_feed_item.targeted_keyword.match_type",
+  "extension_feed_item.targeted_keyword.text",
   "extension_feed_item.text_message_feed_item.business_name",
   "extension_feed_item.text_message_feed_item.country_code",
   "extension_feed_item.text_message_feed_item.extension_text",
   "extension_feed_item.text_message_feed_item.phone_number",
-  "extension_feed_item.text_message_feed_item.text"
+  "extension_feed_item.text_message_feed_item.text",
 ];
 
 export type ExtensionFeedItemField =
@@ -12515,6 +13353,7 @@ export type ExtensionFeedItemField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -12549,7 +13388,7 @@ export type ExtensionFeedItemField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -12683,6 +13522,8 @@ export type ExtensionFeedItemField =
   | "extension_feed_item.targeted_ad_group"
   | "extension_feed_item.targeted_campaign"
   | "extension_feed_item.targeted_geo_target_constant"
+  | "extension_feed_item.targeted_keyword.match_type"
+  | "extension_feed_item.targeted_keyword.text"
   | "extension_feed_item.text_message_feed_item.business_name"
   | "extension_feed_item.text_message_feed_item.country_code"
   | "extension_feed_item.text_message_feed_item.extension_text"
@@ -12706,7 +13547,6 @@ export type ExtensionFeedItemMetric =
   | "metrics.average_cpc"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -12717,6 +13557,12 @@ export type ExtensionFeedItemMetric =
   | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.impressions"
+  | "metrics.message_chat_rate"
+  | "metrics.message_chats"
+  | "metrics.message_impressions"
+  | "metrics.phone_calls"
+  | "metrics.phone_impressions"
+  | "metrics.phone_through_rate"
   | "metrics.top_impression_percentage"
   | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion"
@@ -12785,7 +13631,7 @@ export const feed = [
   "feed.places_location_feed_data.email_address",
   "feed.places_location_feed_data.label_filters",
   "feed.resource_name",
-  "feed.status"
+  "feed.status",
 ];
 
 export type FeedField =
@@ -12845,6 +13691,7 @@ export const feed_item = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -12934,6 +13781,7 @@ export const feed_item = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -12965,12 +13813,12 @@ export const feed_item = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
@@ -13001,7 +13849,7 @@ export const feed_item = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -13083,7 +13931,7 @@ export const feed_item = [
   "feed_item.resource_name",
   "feed_item.start_date_time",
   "feed_item.status",
-  "feed_item.url_custom_parameters"
+  "feed_item.url_custom_parameters",
 ];
 
 export type FeedItemField =
@@ -13101,6 +13949,7 @@ export type FeedItemField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -13190,6 +14039,7 @@ export type FeedItemField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -13221,12 +14071,12 @@ export type FeedItemField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -13257,7 +14107,7 @@ export type FeedItemField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -13353,7 +14203,6 @@ export type FeedItemMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -13424,6 +14273,7 @@ export const feed_item_target = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -13458,7 +14308,7 @@ export const feed_item_target = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -13552,7 +14402,7 @@ export const feed_item_target = [
   "feed_item_target.geo_target_constant",
   "feed_item_target.keyword.match_type",
   "feed_item_target.keyword.text",
-  "feed_item_target.resource_name"
+  "feed_item_target.resource_name",
 ];
 
 export type FeedItemTargetField =
@@ -13570,6 +14420,7 @@ export type FeedItemTargetField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -13604,7 +14455,7 @@ export type FeedItemTargetField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -13746,7 +14597,7 @@ export const feed_mapping = [
   "feed_mapping.feed",
   "feed_mapping.placeholder_type",
   "feed_mapping.resource_name",
-  "feed_mapping.status"
+  "feed_mapping.status",
 ];
 
 export type FeedMappingField =
@@ -13812,6 +14663,7 @@ export const feed_placeholder_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -13901,6 +14753,7 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -13932,12 +14785,12 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
@@ -13968,7 +14821,7 @@ export const feed_placeholder_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -14030,7 +14883,7 @@ export const feed_placeholder_view = [
   "customer.time_zone",
   "customer.tracking_url_template",
   "feed_placeholder_view.placeholder_type",
-  "feed_placeholder_view.resource_name"
+  "feed_placeholder_view.resource_name",
 ];
 
 export type FeedPlaceholderViewField =
@@ -14048,6 +14901,7 @@ export type FeedPlaceholderViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -14137,6 +14991,7 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -14168,12 +15023,12 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -14204,7 +15059,7 @@ export type FeedPlaceholderViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -14279,7 +15134,6 @@ export type FeedPlaceholderViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -14348,6 +15202,7 @@ export const gender_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -14457,7 +15312,7 @@ export const gender_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -14518,7 +15373,7 @@ export const gender_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "gender_view.resource_name"
+  "gender_view.resource_name",
 ];
 
 export type GenderViewField =
@@ -14536,6 +15391,7 @@ export type GenderViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -14645,7 +15501,7 @@ export type GenderViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -14790,7 +15646,7 @@ export const geo_target_constant = [
   "geo_target_constant.name",
   "geo_target_constant.resource_name",
   "geo_target_constant.status",
-  "geo_target_constant.target_type"
+  "geo_target_constant.target_type",
 ];
 
 export type GeoTargetConstantField =
@@ -14827,6 +15683,7 @@ export const geographic_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -14861,7 +15718,7 @@ export const geographic_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -14922,9 +15779,9 @@ export const geographic_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "geographic_view.country_geo_target_constant",
+  "geographic_view.country_criterion_id",
   "geographic_view.location_type",
-  "geographic_view.resource_name"
+  "geographic_view.resource_name",
 ];
 
 export type GeographicViewField =
@@ -14942,6 +15799,7 @@ export type GeographicViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -14976,7 +15834,7 @@ export type GeographicViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -15037,7 +15895,7 @@ export type GeographicViewField =
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
-  | "geographic_view.country_geo_target_constant"
+  | "geographic_view.country_criterion_id"
   | "geographic_view.location_type"
   | "geographic_view.resource_name";
 
@@ -15051,7 +15909,6 @@ export type GeographicViewMetric =
   | "metrics.average_cpc"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -15085,6 +15942,7 @@ export type GeographicViewSegment =
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.geo_target_airport"
+  | "segments.geo_target_canton"
   | "segments.geo_target_city"
   | "segments.geo_target_county"
   | "segments.geo_target_district"
@@ -15125,6 +15983,7 @@ export const group_placement_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -15159,7 +16018,7 @@ export const group_placement_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -15224,7 +16083,7 @@ export const group_placement_view = [
   "group_placement_view.placement",
   "group_placement_view.placement_type",
   "group_placement_view.resource_name",
-  "group_placement_view.target_url"
+  "group_placement_view.target_url",
 ];
 
 export type GroupPlacementViewField =
@@ -15242,6 +16101,7 @@ export type GroupPlacementViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -15276,7 +16136,7 @@ export type GroupPlacementViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -15426,6 +16286,7 @@ export const hotel_group_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -15535,7 +16396,7 @@ export const hotel_group_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -15596,7 +16457,7 @@ export const hotel_group_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "hotel_group_view.resource_name"
+  "hotel_group_view.resource_name",
 ];
 
 export type HotelGroupViewField =
@@ -15614,6 +16475,7 @@ export type HotelGroupViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -15723,7 +16585,7 @@ export type HotelGroupViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -15796,7 +16658,6 @@ export type HotelGroupViewMetric =
   | "metrics.all_conversions_value_per_cost"
   | "metrics.average_cpc"
   | "metrics.average_cpm"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -15858,6 +16719,7 @@ export const hotel_performance_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -15892,7 +16754,7 @@ export const hotel_performance_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -15935,7 +16797,7 @@ export const hotel_performance_view = [
   "campaign.vanity_pharma.vanity_pharma_display_url_mode",
   "campaign.vanity_pharma.vanity_pharma_text",
   "campaign.video_brand_safety_suitability",
-  "hotel_performance_view.resource_name"
+  "hotel_performance_view.resource_name",
 ];
 
 export type HotelPerformanceViewField =
@@ -15953,6 +16815,7 @@ export type HotelPerformanceViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -15987,7 +16850,7 @@ export type HotelPerformanceViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -16042,7 +16905,6 @@ export type HotelPerformanceViewMetric =
   | "metrics.all_conversions_value_per_cost"
   | "metrics.average_cpc"
   | "metrics.average_cpm"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -16078,6 +16940,7 @@ export type HotelPerformanceViewSegment =
   | "segments.date"
   | "segments.day_of_week"
   | "segments.device"
+  | "segments.geo_target_country"
   | "segments.hotel_booking_window_days"
   | "segments.hotel_center_id"
   | "segments.hotel_check_in_date"
@@ -16129,7 +16992,7 @@ export const keyword_plan = [
   "keyword_plan.forecast_period",
   "keyword_plan.id",
   "keyword_plan.name",
-  "keyword_plan.resource_name"
+  "keyword_plan.resource_name",
 ];
 
 export type KeywordPlanField =
@@ -16201,7 +17064,7 @@ export const keyword_plan_ad_group = [
   "keyword_plan_ad_group.id",
   "keyword_plan_ad_group.keyword_plan_campaign",
   "keyword_plan_ad_group.name",
-  "keyword_plan_ad_group.resource_name"
+  "keyword_plan_ad_group.resource_name",
 ];
 
 export type KeywordPlanAdGroupField =
@@ -16281,7 +17144,7 @@ export const keyword_plan_campaign = [
   "keyword_plan_campaign.keyword_plan_network",
   "keyword_plan_campaign.language_constants",
   "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name"
+  "keyword_plan_campaign.resource_name",
 ];
 
 export type KeywordPlanCampaignField =
@@ -16367,7 +17230,7 @@ export const keyword_plan_keyword = [
   "keyword_plan_keyword.keyword_plan_ad_group",
   "keyword_plan_keyword.match_type",
   "keyword_plan_keyword.resource_name",
-  "keyword_plan_keyword.text"
+  "keyword_plan_keyword.text",
 ];
 
 export type KeywordPlanKeywordField =
@@ -16458,7 +17321,7 @@ export const keyword_plan_negative_keyword = [
   "keyword_plan_negative_keyword.keyword_plan_campaign",
   "keyword_plan_negative_keyword.match_type",
   "keyword_plan_negative_keyword.resource_name",
-  "keyword_plan_negative_keyword.text"
+  "keyword_plan_negative_keyword.text",
 ];
 
 export type KeywordPlanNegativeKeywordField =
@@ -16498,9 +17361,7 @@ export type KeywordPlanNegativeKeywordField =
   | "keyword_plan_negative_keyword.resource_name"
   | "keyword_plan_negative_keyword.text";
 
-export type KeywordPlanNegativeKeywordFields = Array<
-  KeywordPlanNegativeKeywordField
->;
+export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordField>;
 
 /*
  --- End of KeywordPlanNegativeKeyword ---
@@ -16525,6 +17386,7 @@ export const keyword_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -16634,7 +17496,7 @@ export const keyword_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -16695,7 +17557,7 @@ export const keyword_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "keyword_view.resource_name"
+  "keyword_view.resource_name",
 ];
 
 export type KeywordViewField =
@@ -16713,6 +17575,7 @@ export type KeywordViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -16822,7 +17685,7 @@ export type KeywordViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -16907,7 +17770,6 @@ export type KeywordViewMetric =
   | "metrics.average_cpm"
   | "metrics.average_cpv"
   | "metrics.average_page_views"
-  | "metrics.average_position"
   | "metrics.average_time_on_site"
   | "metrics.bounce_rate"
   | "metrics.clicks"
@@ -17014,7 +17876,7 @@ export const label = [
   "label.resource_name",
   "label.status",
   "label.text_label.background_color",
-  "label.text_label.description"
+  "label.text_label.description",
 ];
 
 export type LabelField =
@@ -17068,6 +17930,7 @@ export const landing_page_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -17102,7 +17965,7 @@ export const landing_page_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -17166,7 +18029,7 @@ export const landing_page_view = [
   "expanded_landing_page_view.expanded_final_url",
   "expanded_landing_page_view.resource_name",
   "landing_page_view.resource_name",
-  "landing_page_view.unexpanded_final_url"
+  "landing_page_view.unexpanded_final_url",
 ];
 
 export type LandingPageViewField =
@@ -17184,6 +18047,7 @@ export type LandingPageViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -17218,7 +18082,7 @@ export type LandingPageViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -17304,7 +18168,6 @@ export type LandingPageViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -17367,7 +18230,7 @@ export const language_constant = [
   "language_constant.id",
   "language_constant.name",
   "language_constant.resource_name",
-  "language_constant.targetable"
+  "language_constant.targetable",
 ];
 
 export type LanguageConstantField =
@@ -17411,7 +18274,7 @@ export const location_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -17523,7 +18386,7 @@ export const location_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "location_view.resource_name"
+  "location_view.resource_name",
 ];
 
 export type LocationViewField =
@@ -17550,7 +18413,7 @@ export type LocationViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -17675,7 +18538,6 @@ export type LocationViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -17736,6 +18598,7 @@ export const managed_placement_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -17845,7 +18708,7 @@ export const managed_placement_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -17906,7 +18769,7 @@ export const managed_placement_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "managed_placement_view.resource_name"
+  "managed_placement_view.resource_name",
 ];
 
 export type ManagedPlacementViewField =
@@ -17924,6 +18787,7 @@ export type ManagedPlacementViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -18033,7 +18897,7 @@ export type ManagedPlacementViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -18202,7 +19066,7 @@ export const media_file = [
   "media_file.video.ad_duration_millis",
   "media_file.video.advertising_id_code",
   "media_file.video.isci_code",
-  "media_file.video.youtube_video_id"
+  "media_file.video.youtube_video_id",
 ];
 
 export type MediaFileField =
@@ -18250,7 +19114,7 @@ export type MediaFileFields = Array<MediaFileField>;
 export const mobile_app_category_constant = [
   "mobile_app_category_constant.id",
   "mobile_app_category_constant.name",
-  "mobile_app_category_constant.resource_name"
+  "mobile_app_category_constant.resource_name",
 ];
 
 export type MobileAppCategoryConstantField =
@@ -18258,9 +19122,7 @@ export type MobileAppCategoryConstantField =
   | "mobile_app_category_constant.name"
   | "mobile_app_category_constant.resource_name";
 
-export type MobileAppCategoryConstantFields = Array<
-  MobileAppCategoryConstantField
->;
+export type MobileAppCategoryConstantFields = Array<MobileAppCategoryConstantField>;
 
 /*
  --- End of MobileAppCategoryConstant ---
@@ -18276,7 +19138,7 @@ export const mobile_device_constant = [
   "mobile_device_constant.name",
   "mobile_device_constant.operating_system_name",
   "mobile_device_constant.resource_name",
-  "mobile_device_constant.type"
+  "mobile_device_constant.type",
 ];
 
 export type MobileDeviceConstantField =
@@ -18325,7 +19187,7 @@ export const mutate_job = [
   "mutate_job.metadata.operation_count",
   "mutate_job.next_add_sequence_token",
   "mutate_job.resource_name",
-  "mutate_job.status"
+  "mutate_job.status",
 ];
 
 export type MutateJobField =
@@ -18374,7 +19236,7 @@ export const operating_system_version_constant = [
   "operating_system_version_constant.operator_type",
   "operating_system_version_constant.os_major_version",
   "operating_system_version_constant.os_minor_version",
-  "operating_system_version_constant.resource_name"
+  "operating_system_version_constant.resource_name",
 ];
 
 export type OperatingSystemVersionConstantField =
@@ -18385,9 +19247,7 @@ export type OperatingSystemVersionConstantField =
   | "operating_system_version_constant.os_minor_version"
   | "operating_system_version_constant.resource_name";
 
-export type OperatingSystemVersionConstantFields = Array<
-  OperatingSystemVersionConstantField
->;
+export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionConstantField>;
 
 /*
  --- End of OperatingSystemVersionConstant ---
@@ -18412,6 +19272,7 @@ export const paid_organic_search_term_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -18446,7 +19307,7 @@ export const paid_organic_search_term_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -18508,7 +19369,7 @@ export const paid_organic_search_term_view = [
   "customer.time_zone",
   "customer.tracking_url_template",
   "paid_organic_search_term_view.resource_name",
-  "paid_organic_search_term_view.search_term"
+  "paid_organic_search_term_view.search_term",
 ];
 
 export type PaidOrganicSearchTermViewField =
@@ -18526,6 +19387,7 @@ export type PaidOrganicSearchTermViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -18560,7 +19422,7 @@ export type PaidOrganicSearchTermViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -18624,9 +19486,7 @@ export type PaidOrganicSearchTermViewField =
   | "paid_organic_search_term_view.resource_name"
   | "paid_organic_search_term_view.search_term";
 
-export type PaidOrganicSearchTermViewFields = Array<
-  PaidOrganicSearchTermViewField
->;
+export type PaidOrganicSearchTermViewFields = Array<PaidOrganicSearchTermViewField>;
 
 export type PaidOrganicSearchTermViewMetric =
   | "metrics.average_cpc"
@@ -18642,9 +19502,7 @@ export type PaidOrganicSearchTermViewMetric =
   | "metrics.organic_impressions_per_query"
   | "metrics.organic_queries";
 
-export type PaidOrganicSearchTermViewMetrics = Array<
-  PaidOrganicSearchTermViewMetric
->;
+export type PaidOrganicSearchTermViewMetrics = Array<PaidOrganicSearchTermViewMetric>;
 
 export type PaidOrganicSearchTermViewSegment =
   | "segments.date"
@@ -18660,9 +19518,7 @@ export type PaidOrganicSearchTermViewSegment =
   | "segments.week"
   | "segments.year";
 
-export type PaidOrganicSearchTermViewSegments = Array<
-  PaidOrganicSearchTermViewSegment
->;
+export type PaidOrganicSearchTermViewSegments = Array<PaidOrganicSearchTermViewSegment>;
 
 /*
  --- End of PaidOrganicSearchTermView ---
@@ -18687,6 +19543,7 @@ export const parental_status_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -18796,7 +19653,7 @@ export const parental_status_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -18857,7 +19714,7 @@ export const parental_status_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "parental_status_view.resource_name"
+  "parental_status_view.resource_name",
 ];
 
 export type ParentalStatusViewField =
@@ -18875,6 +19732,7 @@ export type ParentalStatusViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -18984,7 +19842,7 @@ export type ParentalStatusViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -19131,7 +19989,7 @@ export const product_bidding_category_constant = [
   "product_bidding_category_constant.localized_name",
   "product_bidding_category_constant.product_bidding_category_constant_parent",
   "product_bidding_category_constant.resource_name",
-  "product_bidding_category_constant.status"
+  "product_bidding_category_constant.status",
 ];
 
 export type ProductBiddingCategoryConstantField =
@@ -19144,9 +20002,7 @@ export type ProductBiddingCategoryConstantField =
   | "product_bidding_category_constant.resource_name"
   | "product_bidding_category_constant.status";
 
-export type ProductBiddingCategoryConstantFields = Array<
-  ProductBiddingCategoryConstantField
->;
+export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryConstantField>;
 
 /*
  --- End of ProductBiddingCategoryConstant ---
@@ -19171,6 +20027,7 @@ export const product_group_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -19280,7 +20137,7 @@ export const product_group_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -19341,7 +20198,7 @@ export const product_group_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "product_group_view.resource_name"
+  "product_group_view.resource_name",
 ];
 
 export type ProductGroupViewField =
@@ -19359,6 +20216,7 @@ export type ProductGroupViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -19468,7 +20326,7 @@ export type ProductGroupViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -19601,6 +20459,7 @@ export const recommendation = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -19635,7 +20494,7 @@ export const recommendation = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -19733,7 +20592,7 @@ export const recommendation = [
   "recommendation.sitelink_extension_recommendation",
   "recommendation.target_cpa_opt_in_recommendation",
   "recommendation.text_ad_recommendation",
-  "recommendation.type"
+  "recommendation.type",
 ];
 
 export type RecommendationField =
@@ -19751,6 +20610,7 @@ export type RecommendationField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -19785,7 +20645,7 @@ export type RecommendationField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -19917,7 +20777,7 @@ export const remarketing_action = [
   "remarketing_action.id",
   "remarketing_action.name",
   "remarketing_action.resource_name",
-  "remarketing_action.tag_snippets"
+  "remarketing_action.tag_snippets",
 ];
 
 export type RemarketingActionField =
@@ -19969,6 +20829,7 @@ export const search_term_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -20058,6 +20919,7 @@ export const search_term_view = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -20089,12 +20951,12 @@ export const search_term_view = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
@@ -20125,7 +20987,7 @@ export const search_term_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -20189,7 +21051,7 @@ export const search_term_view = [
   "search_term_view.ad_group",
   "search_term_view.resource_name",
   "search_term_view.search_term",
-  "search_term_view.status"
+  "search_term_view.status",
 ];
 
 export type SearchTermViewField =
@@ -20207,6 +21069,7 @@ export type SearchTermViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -20296,6 +21159,7 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -20327,12 +21191,12 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -20363,7 +21227,7 @@ export type SearchTermViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -20443,7 +21307,6 @@ export type SearchTermViewMetric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_position"
   | "metrics.clicks"
   | "metrics.conversions"
   | "metrics.conversions_from_interactions_rate"
@@ -20544,7 +21407,7 @@ export const shared_criterion = [
   "shared_criterion.shared_set",
   "shared_criterion.type",
   "shared_criterion.youtube_channel.channel_id",
-  "shared_criterion.youtube_video.video_id"
+  "shared_criterion.youtube_video.video_id",
 ];
 
 export type SharedCriterionField =
@@ -20624,7 +21487,7 @@ export const shared_set = [
   "shared_set.reference_count",
   "shared_set.resource_name",
   "shared_set.status",
-  "shared_set.type"
+  "shared_set.type",
 ];
 
 export type SharedSetField =
@@ -20679,6 +21542,7 @@ export const shopping_performance_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -20713,7 +21577,7 @@ export const shopping_performance_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -20774,7 +21638,7 @@ export const shopping_performance_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "shopping_performance_view.resource_name"
+  "shopping_performance_view.resource_name",
 ];
 
 export type ShoppingPerformanceViewField =
@@ -20792,6 +21656,7 @@ export type ShoppingPerformanceViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -20826,7 +21691,7 @@ export type ShoppingPerformanceViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -20912,9 +21777,7 @@ export type ShoppingPerformanceViewMetric =
   | "metrics.value_per_all_conversions"
   | "metrics.value_per_conversion";
 
-export type ShoppingPerformanceViewMetrics = Array<
-  ShoppingPerformanceViewMetric
->;
+export type ShoppingPerformanceViewMetrics = Array<ShoppingPerformanceViewMetric>;
 
 export type ShoppingPerformanceViewSegment =
   | "ad_group"
@@ -20959,9 +21822,7 @@ export type ShoppingPerformanceViewSegment =
   | "segments.week"
   | "segments.year";
 
-export type ShoppingPerformanceViewSegments = Array<
-  ShoppingPerformanceViewSegment
->;
+export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegment>;
 
 /*
  --- End of ShoppingPerformanceView ---
@@ -20975,7 +21836,7 @@ export const topic_constant = [
   "topic_constant.id",
   "topic_constant.path",
   "topic_constant.resource_name",
-  "topic_constant.topic_constant_parent"
+  "topic_constant.topic_constant_parent",
 ];
 
 export type TopicConstantField =
@@ -21009,6 +21870,7 @@ export const topic_view = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -21118,7 +21980,7 @@ export const topic_view = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -21179,7 +22041,7 @@ export const topic_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "topic_view.resource_name"
+  "topic_view.resource_name",
 ];
 
 export type TopicViewField =
@@ -21197,6 +22059,7 @@ export type TopicViewField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -21306,7 +22169,7 @@ export type TopicViewField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -21452,7 +22315,7 @@ export const user_interest = [
   "user_interest.resource_name",
   "user_interest.taxonomy_type",
   "user_interest.user_interest_id",
-  "user_interest.user_interest_parent"
+  "user_interest.user_interest_parent",
 ];
 
 export type UserInterestField =
@@ -21528,7 +22391,7 @@ export const user_list = [
   "user_list.size_for_search",
   "user_list.size_range_for_display",
   "user_list.size_range_for_search",
-  "user_list.type"
+  "user_list.type",
 ];
 
 export type UserListField =
@@ -21594,6 +22457,306 @@ export type UserListFields = Array<UserListField>;
 */
 
 /*
+ --- Start of UserLocationView ---
+*/
+// @ts-ignore
+export const user_location_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.base_ad_group",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.labels",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
+  "campaign.base_campaign",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.experiment_type",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.labels",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "user_location_view.country_criterion_id",
+  "user_location_view.resource_name",
+  "user_location_view.targeting_location",
+];
+
+export type UserLocationViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.base_ad_group"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.labels"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
+  | "campaign.base_campaign"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.experiment_type"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.labels"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "user_location_view.country_criterion_id"
+  | "user_location_view.resource_name"
+  | "user_location_view.targeting_location";
+
+export type UserLocationViewFields = Array<UserLocationViewField>;
+
+export type UserLocationViewMetric =
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_value"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type UserLocationViewMetrics = Array<UserLocationViewMetric>;
+
+export type UserLocationViewSegment =
+  | "ad_group"
+  | "campaign"
+  | "segments.ad_network_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.geo_target_airport"
+  | "segments.geo_target_canton"
+  | "segments.geo_target_city"
+  | "segments.geo_target_county"
+  | "segments.geo_target_district"
+  | "segments.geo_target_metro"
+  | "segments.geo_target_most_specific_location"
+  | "segments.geo_target_postal_code"
+  | "segments.geo_target_province"
+  | "segments.geo_target_region"
+  | "segments.geo_target_state"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type UserLocationViewSegments = Array<UserLocationViewSegment>;
+
+/*
+ --- End of UserLocationView ---
+*/
+
+/*
  --- Start of Video ---
 */
 // @ts-ignore
@@ -21612,6 +22775,7 @@ export const video = [
   "ad_group.explorer_auto_optimizer_setting.opt_in",
   "ad_group.final_url_suffix",
   "ad_group.id",
+  "ad_group.labels",
   "ad_group.name",
   "ad_group.percent_cpc_bid_micros",
   "ad_group.resource_name",
@@ -21701,6 +22865,7 @@ export const video = [
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
   "ad_group_ad.ad.name",
+  "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
   "ad_group_ad.ad.responsive_display_ad.allow_flexible_color",
   "ad_group_ad.ad.responsive_display_ad.business_name",
@@ -21732,12 +22897,12 @@ export const video = [
   "ad_group_ad.ad.type",
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
-  "ad_group_ad.ad.video_ad.bumper",
+  "ad_group_ad.ad.video_ad.bumper.companion_banner",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
   "ad_group_ad.ad.video_ad.media_file",
-  "ad_group_ad.ad.video_ad.non_skippable",
+  "ad_group_ad.ad.video_ad.non_skippable.companion_banner",
   "ad_group_ad.ad.video_ad.out_stream.description",
   "ad_group_ad.ad.video_ad.out_stream.headline",
   "ad_group_ad.ad_group",
@@ -21768,7 +22933,7 @@ export const video = [
   "campaign.geo_target_type_setting.positive_geo_target_type",
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
-  // "campaign.labels",
+  "campaign.labels",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -21833,7 +22998,7 @@ export const video = [
   "video.duration_millis",
   "video.id",
   "video.resource_name",
-  "video.title"
+  "video.title",
 ];
 
 export type VideoField =
@@ -21851,6 +23016,7 @@ export type VideoField =
   | "ad_group.explorer_auto_optimizer_setting.opt_in"
   | "ad_group.final_url_suffix"
   | "ad_group.id"
+  | "ad_group.labels"
   | "ad_group.name"
   | "ad_group.percent_cpc_bid_micros"
   | "ad_group.resource_name"
@@ -21940,6 +23106,7 @@ export type VideoField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
   | "ad_group_ad.ad.name"
+  | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
   | "ad_group_ad.ad.responsive_display_ad.allow_flexible_color"
   | "ad_group_ad.ad.responsive_display_ad.business_name"
@@ -21971,12 +23138,12 @@ export type VideoField =
   | "ad_group_ad.ad.type"
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
-  | "ad_group_ad.ad.video_ad.bumper"
+  | "ad_group_ad.ad.video_ad.bumper.companion_banner"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
   | "ad_group_ad.ad.video_ad.media_file"
-  | "ad_group_ad.ad.video_ad.non_skippable"
+  | "ad_group_ad.ad.video_ad.non_skippable.companion_banner"
   | "ad_group_ad.ad.video_ad.out_stream.description"
   | "ad_group_ad.ad.video_ad.out_stream.headline"
   | "ad_group_ad.ad_group"
@@ -22007,7 +23174,7 @@ export type VideoField =
   | "campaign.geo_target_type_setting.positive_geo_target_type"
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
-  // | "campaign.labels"
+  | "campaign.labels"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -22152,7 +23319,9 @@ export type Segment =
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.geo_target_airport"
+  | "segments.geo_target_canton"
   | "segments.geo_target_city"
+  | "segments.geo_target_country"
   | "segments.geo_target_county"
   | "segments.geo_target_district"
   | "segments.geo_target_metro"
@@ -22247,9 +23416,7 @@ export type Metric =
   | "metrics.average_cpe"
   | "metrics.average_cpm"
   | "metrics.average_cpv"
-  | "metrics.average_frequency"
   | "metrics.average_page_views"
-  | "metrics.average_position"
   | "metrics.average_time_on_site"
   | "metrics.benchmark_average_max_cpc"
   | "metrics.benchmark_ctr"
@@ -22289,7 +23456,6 @@ export type Metric =
   | "metrics.historical_quality_score"
   | "metrics.historical_search_predicted_ctr"
   | "metrics.hotel_average_lead_value_micros"
-  | "metrics.impression_reach"
   | "metrics.impressions"
   | "metrics.impressions_from_store_reach"
   | "metrics.interaction_event_types"
@@ -22297,6 +23463,9 @@ export type Metric =
   | "metrics.interactions"
   | "metrics.invalid_click_rate"
   | "metrics.invalid_clicks"
+  | "metrics.message_chat_rate"
+  | "metrics.message_chats"
+  | "metrics.message_impressions"
   | "metrics.mobile_friendly_clicks_percentage"
   | "metrics.organic_clicks"
   | "metrics.organic_clicks_per_query"
