@@ -111,6 +111,83 @@ test("proto object result can be parsed for deeply nested entities", () => {
   ]);
 });
 
+test("proto object result can be parsed for nested entities with arrays", async () => {
+  const fieldMask = {
+    pathsList: [
+      "ad_group_ad.ad.final_urls",
+      "ad_group.targeting_setting.target_restrictions",
+      "ad_group.name",
+    ],
+  };
+
+  const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupResponse, fieldMask);
+  const parsedResultsWithoutFieldMask = formatCallResults(fakeAdGroupResponse, undefined);
+
+  const expected_with_field_mask = [
+    {
+      adGroupAd: {
+        resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+        ad: {
+          finalUrls: ["http://opteo.co/lp/ad-words-tool"],
+
+          // Note that these will have been removed by the field mask.
+          // someDirectArray: [3, 4, 5],
+          // finalAppUrls: [],
+        },
+      },
+      adGroup: {
+        resourceName: "customers/3827277046/adGroups/37706041185",
+        targetingSetting: {
+          targetRestrictions: [
+            { targetingDimension: 3, bidOnly: false },
+            { targetingDimension: 4, bidOnly: false },
+            { targetingDimension: 5, bidOnly: true },
+            { targetingDimension: 6, bidOnly: true },
+            { targetingDimension: 7, bidOnly: false },
+            { targetingDimension: 8, bidOnly: false },
+          ],
+        },
+        name: "ad words tool [MB]",
+        // Note that this will have been removed by the field mask.
+        // status: 0,
+      },
+    },
+  ];
+
+  const expected_without_field_mask = [
+    {
+      adGroupAd: {
+        resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+        ad: {
+          finalUrls: ["http://opteo.co/lp/ad-words-tool"],
+          someDirectArray: [3, 4, 5],
+          // Note that have been returned even through it is empty.
+          finalAppUrls: [],
+        },
+      },
+      adGroup: {
+        resourceName: "customers/3827277046/adGroups/37706041185",
+        targetingSetting: {
+          targetRestrictions: [
+            { targetingDimension: 3, bidOnly: false },
+            { targetingDimension: 4, bidOnly: false },
+            { targetingDimension: 5, bidOnly: true },
+            { targetingDimension: 6, bidOnly: true },
+            { targetingDimension: 7, bidOnly: false },
+            { targetingDimension: 8, bidOnly: false },
+          ],
+        },
+        name: "ad words tool [MB]",
+        // Note that `status` will be returned by the parsing function even through it is of the "UNSPECIFIED" enum type.
+        status: 0,
+      },
+    },
+  ];
+
+  expect(parsedResultsWithFieldMask).toEqual(expected_with_field_mask);
+  expect(parsedResultsWithoutFieldMask).toEqual(expected_without_field_mask);
+});
+
 test("proto object result can be parsed when field mask is not present", () => {
   const parsedResults = formatCallResults([JSON.parse(fakeCampaignResponse)], undefined);
 
@@ -482,3 +559,43 @@ const fakeKeywordResponse = `
       }
     }
   ]`;
+
+const fakeAdGroupResponse = [
+  {
+    accountBudget: undefined,
+    accountBudgetProposal: undefined,
+    adGroup: {
+      resourceName: "customers/3827277046/adGroups/37706041185",
+      id: undefined,
+      name: { value: "ad words tool [MB]" },
+      status: 0,
+      finalUrlSuffix: undefined,
+      targetingSetting: {
+        targetRestrictionsList: [
+          { targetingDimension: 3, bidOnly: { value: false } },
+          { targetingDimension: 4, bidOnly: { value: false } },
+          { targetingDimension: 5, bidOnly: { value: true } },
+          { targetingDimension: 6, bidOnly: { value: true } },
+          { targetingDimension: 7, bidOnly: { value: false } },
+          { targetingDimension: 8, bidOnly: { value: false } },
+        ],
+      },
+      effectiveTargetCpaMicros: undefined,
+      effectiveTargetRoas: undefined,
+    },
+    adGroupAd: {
+      resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+      adGroup: undefined,
+      ad: {
+        id: undefined,
+        someDirectArray: [3, 4, 5],
+        finalUrlsList: [{ value: "http://opteo.co/lp/ad-words-tool" }],
+        finalAppUrlsList: [],
+      },
+      policySummary: undefined,
+    },
+    adGroupAdLabel: undefined,
+    adGroupAudienceView: undefined,
+    adGroupBidModifier: undefined,
+  },
+];

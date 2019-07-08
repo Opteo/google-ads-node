@@ -126,37 +126,46 @@ function convertPathToCamelCase(str: string) {
   });
 }
 
-function parseNestedEntitiesNoPath(data: any, parent: any = {}) {
-  for (const key of Object.keys(data)) {
+function parseNestedEntitiesNoPath(data: any) {
+  if (typeof data === "string" || typeof data === "number" || typeof data === "boolean") {
+    return data;
+  }
+
+  const finalObject: any = {};
+
+  Object.keys(data).map(key => {
     let displayKey = key;
+
     if (key.endsWith("List")) {
       displayKey = key.split("List")[0];
     }
 
     const entity = data[key];
+
     const isObject = typeof entity === "object";
-    const entityExists = parent.hasOwnProperty(key);
+    const isUndefined = typeof entity === "undefined";
+    const isArray = Array.isArray(entity);
     const isValue = isObject ? entity.hasOwnProperty("value") : false;
-    const keys = isObject ? Object.keys(entity) : [];
 
-    if (!entityExists && isObject) {
-      parent[displayKey] = {};
-      if (entity.hasOwnProperty("resourceName")) {
-        parent[displayKey].resourceName = entity.resourceName;
-      }
+    if (isUndefined) {
+      return;
     }
 
-    if (isObject && !isValue && keys.length > 0) {
-      parseNestedEntitiesNoPath(entity, parent[displayKey]);
+    if (isArray) {
+      finalObject[displayKey] = entity.map((item: any) => {
+        const parsed = parseNestedEntitiesNoPath({ item });
+        return parsed.item;
+      });
+    } else if (isValue) {
+      finalObject[displayKey] = entity.value;
+    } else if (isObject) {
+      finalObject[displayKey] = parseNestedEntitiesNoPath(entity);
     } else {
-      const value = isValue ? entity.value : entity;
-      if (typeof value !== "undefined") {
-        parent[displayKey] = value;
-      }
+      finalObject[displayKey] = entity;
     }
-  }
+  });
 
-  return parent;
+  return finalObject;
 }
 
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {
@@ -200,6 +209,12 @@ function parseNestedEntities(data: any, props: string[], parent: any = {}) {
         } else {
           continue;
         }
+      }
+
+      if (Array.isArray(value)) {
+        value = value.map((item: any) => {
+          return parseNestedEntitiesNoPath({ item }).item;
+        });
       }
 
       parent[displayKey] = isObject ? value.value : value;
