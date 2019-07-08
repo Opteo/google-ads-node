@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.1"></a>
+## [1.13.1](https://github.com/opteo/google-ads-node/compare/v1.13.0...v1.13.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **utils:** correctly parse deeply nested array values ([db4ce46](https://github.com/opteo/google-ads-node/commit/db4ce46))
+
+
+
 <a name="1.13.0"></a>
 # [1.13.0](https://github.com/opteo/google-ads-node/compare/v1.12.3...v1.13.0) (2019-06-28)
 
