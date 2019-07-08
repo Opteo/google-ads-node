@@ -131,9 +131,11 @@ function parseNestedEntitiesNoPath(data: any) {
     return data;
   }
 
-  const final_object = {} as any;
+  const finalObject: any = {};
+
   Object.keys(data).map(key => {
     let displayKey = key;
+
     if (key.endsWith("List")) {
       displayKey = key.split("List")[0];
     }
@@ -150,21 +152,20 @@ function parseNestedEntitiesNoPath(data: any) {
     }
 
     if (isArray) {
-      final_object[displayKey] = entity.map((item: any) => {
+      finalObject[displayKey] = entity.map((item: any) => {
         const parsed = parseNestedEntitiesNoPath({ item });
-
         return parsed.item;
       });
     } else if (isValue) {
-      final_object[displayKey] = entity.value;
+      finalObject[displayKey] = entity.value;
     } else if (isObject) {
-      final_object[displayKey] = parseNestedEntitiesNoPath(entity);
+      finalObject[displayKey] = parseNestedEntitiesNoPath(entity);
     } else {
-      final_object[displayKey] = entity;
+      finalObject[displayKey] = entity;
     }
   });
 
-  return final_object;
+  return finalObject;
 }
 
 function parseNestedEntities(data: any, props: string[], parent: any = {}) {
