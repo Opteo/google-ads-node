@@ -200,6 +200,22 @@ export class ResponseParsingInterceptor {
       .withOnReceiveMessage((message: any, next: Function) => {
         if (message && message.toObject) {
           let results = message.toObject();
+
+          if (results.partialFailureError && results.partialFailureError.detailsList) {
+            const errors = [];
+
+            const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(results
+              .partialFailureError.detailsList[0].value as Uint8Array);
+
+            const errorsList: GoogleAdsError[] = failure.getErrorsList();
+
+            for (const error of errorsList) {
+              errors.push(error.toObject());
+            }
+
+            results.partialFailureError.errors = formatCallResults(errors, undefined);
+          }
+
           const parsedResults = formatCallResults(
             /* 
               When retrieving a single entity via a service (e.g. CampaignService), the API
