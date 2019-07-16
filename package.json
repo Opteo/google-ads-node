@@ -63,7 +63,8 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-immutable": "^5.0.0",
     "typescript": "^3.1.6",
-    "uglify-js": "^3.6.0"
+    "uglify-js": "^3.6.0",
+    "dependency-graph": "^0.8.0"
   },
   "config": {
     "commitizen": {
