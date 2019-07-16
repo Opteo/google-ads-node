@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.3"></a>
+## [1.13.3](https://github.com/opteo/google-ads-node/compare/v1.13.2...v1.13.3) (2019-07-16)
+
+
+### Bug Fixes
+
+* **scripts:** structures initialisation ordering fix ([#20](https://github.com/opteo/google-ads-node/issues/20)) ([f688780](https://github.com/opteo/google-ads-node/commit/f688780))
+* **struct:** recompiled with order fixes from [#20](https://github.com/opteo/google-ads-node/issues/20) ([60da418](https://github.com/opteo/google-ads-node/commit/60da418))
+
+
+
 <a name="1.13.2"></a>
 ## [1.13.2](https://github.com/opteo/google-ads-node/compare/v1.13.1...v1.13.2) (2019-07-11)
 
