@@ -188,6 +188,34 @@ test("proto object result can be parsed for nested entities with arrays", async 
   expect(parsedResultsWithoutFieldMask).toEqual(expected_without_field_mask);
 });
 
+test("proto object result can be parsed when fieldmask ends in unspecified object", () => {
+  // This can happen for fields such as ad_group_ad.policy_summary, which returns an object.
+  // It is not possible to select individual fields of this object -- the whole object is always returned.
+
+  const fieldMask = {
+    pathsList: ["ad_group_ad.policy_summary"],
+  };
+
+  const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupAdResponse, fieldMask);
+  const parsedResultsWithoutFieldMask = formatCallResults(fakeAdGroupAdResponse, undefined);
+
+  const expected = [
+    {
+      adGroupAd: {
+        resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+        policySummary: {
+          approvalStatus: 0,
+          policyTopicEntries: [],
+          reviewStatus: 2,
+        },
+      },
+    },
+  ];
+
+  expect(parsedResultsWithFieldMask).toEqual(expected);
+  expect(parsedResultsWithoutFieldMask).toEqual(expected);
+});
+
 test("proto object result can be parsed when field mask is not present", () => {
   const parsedResults = formatCallResults([JSON.parse(fakeCampaignResponse)], undefined);
 
@@ -592,7 +620,19 @@ const fakeAdGroupResponse = [
         finalUrlsList: [{ value: "http://opteo.co/lp/ad-words-tool" }],
         finalAppUrlsList: [],
       },
-      policySummary: undefined,
+    },
+    adGroupAdLabel: undefined,
+    adGroupAudienceView: undefined,
+    adGroupBidModifier: undefined,
+  },
+];
+
+const fakeAdGroupAdResponse = [
+  {
+    adGroupAd: {
+      resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
+      adGroup: undefined,
+      policySummary: { policyTopicEntriesList: [], reviewStatus: 2, approvalStatus: 0 },
     },
     adGroupAdLabel: undefined,
     adGroupAudienceView: undefined,

@@ -2,6 +2,7 @@ import protobufHelpers from "google-protobuf/google/protobuf/field_mask_pb";
 import { Client } from "grpc";
 import camelCase from "lodash.camelcase";
 import get from "lodash.get";
+import set from "lodash.set";
 
 import * as structs from "./struct";
 
@@ -168,60 +169,32 @@ function parseNestedEntitiesNoPath(data: any) {
   return finalObject;
 }
 
-function parseNestedEntities(data: any, props: string[], parent: any = {}) {
+// This function first parses the data without regard for the passed props,
+// then plucks out the props that it actually cares about.
+function parseNestedEntities(data: any, props: string[]) {
+  const parsed_data = parseNestedEntitiesNoPath(data);
+
+  const final_object = {};
+
   for (let path of props) {
     path = convertPathToCamelCase(path);
 
-    let displayKey = path;
-    if (path.endsWith("List")) {
-      displayKey = path.split("List")[0];
+    // Pluck resource name if available
+    const path_elements_trimmed = path.split(".");
+    while (path_elements_trimmed.pop()) {
+      path_elements_trimmed.push("resourceName");
+      const rn_path = path_elements_trimmed.join(".");
+      path_elements_trimmed.pop();
+      if (get(parsed_data, rn_path)) {
+        set(final_object, rn_path, get(parsed_data, rn_path));
+      }
     }
 
-    if (path.includes(".")) {
-      const splitPath = path.split(".");
-      const firstProp = splitPath[0];
-      const firstPropExists = parent.hasOwnProperty(firstProp);
-
-      const remainingProps = splitPath.slice(1).join(".");
-      const child = data[firstProp];
-
-      if (!child) {
-        continue;
-      }
-
-      if (!firstPropExists) {
-        parent[firstProp] = {};
-      }
-
-      if (!parent[firstProp].resourceName && child.hasOwnProperty("resourceName")) {
-        parent[firstProp].resourceName = child.resourceName;
-      }
-
-      parseNestedEntities(child, [remainingProps], parent[firstProp]);
-    } else {
-      let value = data[path];
-      const isObject = typeof value === "object" && !Array.isArray(value);
-
-      /* Case for array types where gRPC types append "List" (for some reason) */
-      if (!value || typeof value === "undefined") {
-        if (data[`${path}List`]) {
-          value = data[`${path}List`];
-        } else {
-          continue;
-        }
-      }
-
-      if (Array.isArray(value)) {
-        value = value.map((item: any) => {
-          return parseNestedEntitiesNoPath({ item }).item;
-        });
-      }
-
-      parent[displayKey] = isObject ? value.value : value;
-    }
+    // And pluck the field specified in path
+    set(final_object, path, get(parsed_data, path));
   }
 
-  return parent;
+  return final_object;
 }
 
 function recursiveFieldMaskSearch(data: any) {
