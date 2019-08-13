@@ -47,6 +47,7 @@
     "@types/jest": "^24.0.1",
     "@types/node": "^11.9.0",
     "cz-conventional-changelog": "^2.1.0",
+    "dependency-graph": "^0.8.0",
     "grpc-tools": "^1.7.1",
     "grpc-ts-protoc-gen": "^0.1.1",
     "jest": "23.x",
@@ -63,8 +64,7 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-immutable": "^5.0.0",
     "typescript": "^3.1.6",
-    "uglify-js": "^3.6.0",
-    "dependency-graph": "^0.8.0"
+    "uglify-js": "^3.6.0"
   },
   "config": {
     "commitizen": {
