@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.4"></a>
+## [1.13.4](https://github.com/opteo/google-ads-node/compare/v1.13.3...v1.13.4) (2019-08-14)
+
+
+### Bug Fixes
+
+* **parsing:** parse reporting objects correctly even when fields not specified in fieldMask (such as ad_group_ad.policy_summary) ([ebad895](https://github.com/opteo/google-ads-node/commit/ebad895))
+
+
+
 <a name="1.13.3"></a>
 ## [1.13.3](https://github.com/opteo/google-ads-node/compare/v1.13.2...v1.13.3) (2019-07-16)
 
