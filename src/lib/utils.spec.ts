@@ -256,6 +256,21 @@ test("proto object result can be parsed when field mask is not present", () => {
   ]);
 });
 
+test("parsing results with field mask correctly removes undefined properties", () => {
+  // Sometimes, the api will not return a field at all if it is unset on the google servers.
+  // We need to make sure we follow that behavior by not returning that field.
+
+  const fieldMask = {
+    // Asking for a name that will not be returned in API response
+    pathsList: ["ad_group_ad.name", "ad_group_ad.policy_summary"],
+  };
+
+  const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupAdResponse, fieldMask);
+
+  // We should not have 'name' in the parsed result
+  expect(Object.keys(parsedResultsWithFieldMask[0].adGroupAd).includes("name")).toBeFalsy();
+});
+
 test("parsing results with no field mask correctly removes undefined properties", () => {
   const result = [
     {

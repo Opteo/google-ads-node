@@ -191,7 +191,11 @@ function parseNestedEntities(data: any, props: string[]) {
     }
 
     // And pluck the field specified in path
-    set(final_object, path, get(parsed_data, path));
+    const plucked_value = get(parsed_data, path);
+
+    if (typeof plucked_value !== "undefined") {
+      set(final_object, path, plucked_value);
+    }
   }
 
   return final_object;
