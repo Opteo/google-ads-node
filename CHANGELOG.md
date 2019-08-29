@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.5"></a>
+## [1.13.5](https://github.com/opteo/google-ads-node/compare/v1.13.4...v1.13.5) (2019-08-29)
+
+
+### Bug Fixes
+
+* **build:** allow usage in projects with { esModuleInterop: false } in tsconfig ([5ec5d6e](https://github.com/opteo/google-ads-node/commit/5ec5d6e))
+* **parsing:** avoid returning undefined values when field are unset in response ([0794bbf](https://github.com/opteo/google-ads-node/commit/0794bbf))
+
+
+
 <a name="1.13.4"></a>
 ## [1.13.4](https://github.com/opteo/google-ads-node/compare/v1.13.3...v1.13.4) (2019-08-14)
 
