@@ -288,9 +288,10 @@ test("parsing results fields ending in 'List' works correctly", () => {
         resourceName:
           "customers/2867339011/adGroupSimulations/58185498151~CPC_BID~DEFAULT~20190910~20190916",
         adGroupId: 58185498151,
+        // This should end in "List" because that's how it is defined in the docs
         cpcBidPointList: {
+          // This should NOT end in "List" (even though it comes in as pointsList)
           points: [
-            // This should NOT have "List" at the end of it
             {
               cpcBidMicros: 6520000,
               biddableConversions: 5.348322868347168,
@@ -305,7 +306,7 @@ test("parsing results fields ending in 'List' works correctly", () => {
       },
       adGroup: {
         resourceName: "customers/2867339011/adGroups/58185498151",
-        urlCustomParameters: [], // This should have "List" at the end of it
+        urlCustomParameters: [],
       },
     },
   ]);
