@@ -271,6 +271,47 @@ test("parsing results with field mask correctly removes undefined properties", (
   expect(Object.keys(parsedResultsWithFieldMask[0].adGroupAd).includes("name")).toBeFalsy();
 });
 
+test("parsing results fields ending in 'List' works correctly", () => {
+  const fieldMask = {
+    pathsList: [
+      "ad_group_simulation.ad_group_id",
+      "ad_group_simulation.cpc_bid_point_list.points",
+      "ad_group.url_custom_parameters",
+    ],
+  };
+
+  const parsedResultsWithFieldMask = formatCallResults(fakeSimulationResponse, fieldMask);
+
+  expect(parsedResultsWithFieldMask).toEqual([
+    {
+      adGroupSimulation: {
+        resourceName:
+          "customers/2867339011/adGroupSimulations/58185498151~CPC_BID~DEFAULT~20190910~20190916",
+        adGroupId: 58185498151,
+        cpcBidPointList: {
+          points: [
+            {
+              cpcBidMicros: 6520000,
+              biddableConversions: 5.348322868347168,
+              biddableConversionsValue: 374.3826599121094,
+              clicks: 41,
+              costMicros: 149090000,
+              impressions: 696,
+              topSlotImpressions: 542,
+            },
+          ],
+        },
+      },
+      adGroup: {
+        resourceName: "customers/2867339011/adGroups/58185498151",
+        urlCustomParameters: [],
+      },
+    },
+  ]);
+  // We should not have 'name' in the parsed result
+  // expect(Object.keys(parsedResultsWithFieldMask[0].adGroupAd).includes("name")).toBeFalsy();
+});
+
 test("parsing results with no field mask correctly removes undefined properties", () => {
   const result = [
     {
@@ -652,5 +693,32 @@ const fakeAdGroupAdResponse = [
     adGroupAdLabel: undefined,
     adGroupAudienceView: undefined,
     adGroupBidModifier: undefined,
+  },
+];
+
+const fakeSimulationResponse = [
+  {
+    adGroup: {
+      resourceName: "customers/2867339011/adGroups/58185498151",
+      urlCustomParametersList: [],
+    },
+    adGroupSimulation: {
+      resourceName:
+        "customers/2867339011/adGroupSimulations/58185498151~CPC_BID~DEFAULT~20190910~20190916",
+      adGroupId: { value: 58185498151 },
+      cpcBidPointList: {
+        pointsList: [
+          {
+            cpcBidMicros: { value: 6520000 },
+            biddableConversions: { value: 5.348322868347168 },
+            biddableConversionsValue: { value: 374.3826599121094 },
+            clicks: { value: 41 },
+            costMicros: { value: 149090000 },
+            impressions: { value: 696 },
+            topSlotImpressions: { value: 542 },
+          },
+        ],
+      },
+    },
   },
 ];

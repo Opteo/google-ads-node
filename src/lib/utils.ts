@@ -3,6 +3,7 @@ import { Client } from "grpc";
 import camelCase from "lodash.camelcase";
 import get from "lodash.get";
 import set from "lodash.set";
+import snakeCase from "lodash.snakecase";
 
 import * as structs from "./struct";
 
@@ -127,18 +128,42 @@ function convertPathToCamelCase(str: string) {
   });
 }
 
-function parseNestedEntitiesNoPath(data: any) {
+function parseNestedEntitiesNoPath(data: any, _structs = structs) {
   if (typeof data === "string" || typeof data === "number" || typeof data === "boolean") {
     return data;
   }
+
+  const findMatchingStruct = (key: string) => {
+    let capitalcase_key = key.charAt(0).toUpperCase() + key.slice(1);
+    let snakecase_key = snakeCase(key);
+
+    // We need both cases because the structs.ts file exports resources in CapitalCase,
+    // but the keys inside each resource are in snake_case. parseNestedEntitiesNoPath() is
+    // recursive, so we're not sure which one we'll need.
+
+    // @ts-ignore
+    return _structs[capitalcase_key] || _structs[snakecase_key];
+  };
 
   const finalObject: any = {};
 
   Object.keys(data).map(key => {
     let displayKey = key;
 
-    if (key.endsWith("List")) {
+    /*  
+      This section regarding "matching structs" is designed to correctly
+      trim keys that end in "List". Some of those keys are legit (such as userList)
+      while others are bogus (such as pointsList). The bogus ones need trimming so
+      that the final result returned to the user matches the format specified in the docs.
+
+      This adds other layer of recusive complexity to this function, and I'm open to improvements.
+    */
+    let matching_struct = findMatchingStruct(displayKey);
+
+    if (!matching_struct && key.endsWith("List")) {
+      // Trim "List" only if bogus key
       displayKey = key.split("List")[0];
+      matching_struct = findMatchingStruct(displayKey);
     }
 
     const entity = data[key];
@@ -154,13 +179,14 @@ function parseNestedEntitiesNoPath(data: any) {
 
     if (isArray) {
       finalObject[displayKey] = entity.map((item: any) => {
-        const parsed = parseNestedEntitiesNoPath({ item });
+        // @ts-ignore
+        const parsed = parseNestedEntitiesNoPath({ item }, { item: matching_struct });
         return parsed.item;
       });
     } else if (isValue) {
       finalObject[displayKey] = entity.value;
     } else if (isObject) {
-      finalObject[displayKey] = parseNestedEntitiesNoPath(entity);
+      finalObject[displayKey] = parseNestedEntitiesNoPath(entity, matching_struct);
     } else {
       finalObject[displayKey] = entity;
     }
