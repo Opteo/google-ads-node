@@ -134,8 +134,8 @@ function parseNestedEntitiesNoPath(data: any, _structs = structs) {
   }
 
   const findMatchingStruct = (key: string) => {
-    let capitalcase_key = key.charAt(0).toUpperCase() + key.slice(1);
-    let snakecase_key = snakeCase(key);
+    const capitalcase_key = key.charAt(0).toUpperCase() + key.slice(1);
+    const snakecase_key = snakeCase(key);
 
     // We need both cases because the structs.ts file exports resources in CapitalCase,
     // but the keys inside each resource are in snake_case. parseNestedEntitiesNoPath() is
