@@ -290,6 +290,7 @@ test("parsing results fields ending in 'List' works correctly", () => {
         adGroupId: 58185498151,
         cpcBidPointList: {
           points: [
+            // This should NOT have "List" at the end of it
             {
               cpcBidMicros: 6520000,
               biddableConversions: 5.348322868347168,
@@ -304,12 +305,10 @@ test("parsing results fields ending in 'List' works correctly", () => {
       },
       adGroup: {
         resourceName: "customers/2867339011/adGroups/58185498151",
-        urlCustomParameters: [],
+        urlCustomParameters: [], // This should have "List" at the end of it
       },
     },
   ]);
-  // We should not have 'name' in the parsed result
-  // expect(Object.keys(parsedResultsWithFieldMask[0].adGroupAd).includes("name")).toBeFalsy();
 });
 
 test("parsing results with no field mask correctly removes undefined properties", () => {
