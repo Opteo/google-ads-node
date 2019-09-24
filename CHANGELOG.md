@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.7"></a>
+## [1.13.7](https://github.com/opteo/google-ads-node/compare/v1.13.5...v1.13.7) (2019-09-24)
+
+
+### Bug Fixes
+
+* **utils:** parse fields such as userList correctly ([#23](https://github.com/opteo/google-ads-node/issues/23)) ([6510dca](https://github.com/opteo/google-ads-node/commit/6510dca))
+
+
+
 <a name="1.13.5"></a>
 ## [1.13.5](https://github.com/opteo/google-ads-node/compare/v1.13.4...v1.13.5) (2019-08-29)
 
