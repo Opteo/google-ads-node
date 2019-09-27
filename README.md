@@ -195,7 +195,7 @@ const service = client.getService("AdGroupAdService");
 From here, you can then use all the available methods for the service e.g. `getAdGroupAd()` and `mutateAdGroupAds()`. The parameters and return value match the format specified in the Google Ads documentation.
 
 ```javascript
-import { GetAdGroupAdRequest } from "google-ads-node";
+import { GetAdGroupRequest } from "google-ads-node";
 
 const request = new GetAdGroupAdRequest();
 const ad = await service.getAdGroupAd(request);
