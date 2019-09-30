@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.8"></a>
+## [1.13.8](https://github.com/opteo/google-ads-node/compare/v1.13.7...v1.13.8) (2019-09-30)
+
+
+### Bug Fixes
+
+* **deps:** moved lodash.snakecase to a prod dependency ([aea8e19](https://github.com/opteo/google-ads-node/commit/aea8e19))
+
+
+
 <a name="1.13.7"></a>
 ## [1.13.7](https://github.com/opteo/google-ads-node/compare/v1.13.5...v1.13.7) (2019-09-24)
 
