@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.13.9"></a>
+## [1.13.9](https://github.com/opteo/google-ads-node/compare/v1.13.8...v1.13.9) (2019-10-22)
+
+
+### Bug Fixes
+
+* **parsing:** parse key/value fields such as url_custom_parameters correctly ([#29](https://github.com/opteo/google-ads-node/issues/29)) ([f5349d9](https://github.com/opteo/google-ads-node/commit/f5349d9))
+
+
+
 <a name="1.13.8"></a>
 ## [1.13.8](https://github.com/opteo/google-ads-node/compare/v1.13.7...v1.13.8) (2019-09-30)
 
