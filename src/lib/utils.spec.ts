@@ -117,6 +117,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
       "ad_group_ad.ad.final_urls",
       "ad_group.targeting_setting.target_restrictions",
       "ad_group.name",
+      "ad_group.url_custom_parameters",
     ],
   };
 
@@ -137,6 +138,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
       },
       adGroup: {
         resourceName: "customers/3827277046/adGroups/37706041185",
+        urlCustomParameters: [{ key: "yy", value: "1" }],
         targetingSetting: {
           targetRestrictions: [
             { targetingDimension: 3, bidOnly: false },
@@ -167,6 +169,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
       },
       adGroup: {
         resourceName: "customers/3827277046/adGroups/37706041185",
+        urlCustomParameters: [{ key: "yy", value: "1" }],
         targetingSetting: {
           targetRestrictions: [
             { targetingDimension: 3, bidOnly: false },
@@ -666,6 +669,7 @@ const fakeAdGroupResponse = [
       },
       effectiveTargetCpaMicros: undefined,
       effectiveTargetRoas: undefined,
+      urlCustomParametersList: [{ key: { value: "yy" }, value: { value: "1" } }],
     },
     adGroupAd: {
       resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",

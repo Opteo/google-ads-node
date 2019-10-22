@@ -171,7 +171,10 @@ function parseNestedEntitiesNoPath(data: any, _structs = structs) {
     const isObject = typeof entity === "object";
     const isUndefined = typeof entity === "undefined";
     const isArray = Array.isArray(entity);
-    const isValue = isObject ? entity.hasOwnProperty("value") : false;
+    // It needs its "value" unwrapped if it is an object and has "value" as its only key.
+    const isValue = isObject
+      ? entity.hasOwnProperty("value") && Object.keys(entity).length === 1
+      : false;
 
     if (isUndefined) {
       return;
