@@ -4279,7 +4279,7 @@ export const CampaignCriterion = {
   criterion_id: number,
 
   // @ts-ignore
-  bid_modifier: { value: number },
+  bid_modifier: number,
 
   // @ts-ignore
   negative: boolean,
