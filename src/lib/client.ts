@@ -7,6 +7,7 @@ import {
   MetadataInterceptor,
   ExceptionInterceptor,
   ResponseParsingInterceptor,
+  PreventMutationsInterceptor,
   InterceptorMethod,
 } from "./interceptor";
 import * as services from "./services";
@@ -26,6 +27,7 @@ interface CommonClientOptions {
   developer_token: string;
   login_customer_id?: string;
   parseResults?: boolean;
+  preventMutations?: boolean;
 }
 
 interface ClientOptionsWithToken extends CommonClientOptions {
@@ -157,6 +159,7 @@ export class GoogleAdsClient {
     );
     const exceptionInterceptor = new ExceptionInterceptor();
     const responseParsingInterceptor = new ResponseParsingInterceptor();
+    const preventMutationsInterceptor = new PreventMutationsInterceptor();
 
     const interceptors: InterceptorMethod[] = [
       (
@@ -175,6 +178,15 @@ export class GoogleAdsClient {
           options: grpc.CallOptions,
           nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
         ) => responseParsingInterceptor.intercept(options, nextCall)
+      );
+    }
+
+    if (this.options.preventMutations) {
+      interceptors.push(
+        (
+          options: grpc.CallOptions,
+          nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+        ) => preventMutationsInterceptor.intercept(options, nextCall)
       );
     }
 

@@ -8,7 +8,7 @@
     "no-console": false,
     "object-literal-sort-keys": false,
     "variable-name": false,
-    "max-classes-per-file": [true, 4],
+    "max-classes-per-file": [true, 6],
     "ordered-imports": [
       true,
       {

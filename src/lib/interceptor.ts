@@ -7,6 +7,12 @@ import { formatCallResults, getErrorLocationPath } from "./utils";
 const FAILURE_KEY = "google.ads.googleads.v2.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
+const NON_MUTABLE_METHOD_PREFIXES = [
+  "Get",
+  "List",
+  "Generate",
+  "Search"
+]
 
 type NextCall = (options: grpc.CallOptions) => grpc.InterceptingCall | null;
 export type InterceptorMethod = (options: grpc.CallOptions, nextCall: NextCall) => any;
@@ -240,6 +246,54 @@ export class ResponseParsingInterceptor {
   }
 }
 
+export class PreventMutationsInterceptor {
+  private requestInterceptor: grpc.Requester;
+  private blankInterceptor: grpc.Requester;
+
+  constructor() {
+    this.requestInterceptor = this.buildRequester();
+    this.blankInterceptor = buildBlankInterceptor();
+  }
+
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
+    let isMutationRequest = true;
+
+    if(options?.method_definition?.path) {
+      const { path } = options.method_definition;
+      for(const prefix of NON_MUTABLE_METHOD_PREFIXES) {
+        if(path.includes(prefix)) {
+          isMutationRequest = false;
+          break;
+        }
+      }
+    }
+
+    if(isMutationRequest) {
+      return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
+    }
+    return new grpc.InterceptingCall(nextCall(options), this.blankInterceptor);
+  }
+
+  private buildRequester(): grpc.Requester {
+    return new grpc.RequesterBuilder()
+      .withSendMessage((message: any, next: Function) => {
+        // Force validation only for requests if the setValidateOnly method exists
+        if (message?.setValidateOnly) {
+          message.setValidateOnly(true);
+          next(message);
+        // If the request doesn't support validateOnly, we attempt to clear the operations list
+        } else if (message?.clearOperationsList) {
+          message.clearOperationsList();
+          next(message);
+        } else {
+          // Otherwise, we just give up to prevent any unwanted mutations (this throws an error)
+          next();
+        }
+      })
+      .build();
+  }
+}
+
 class ClientError extends Error {
   public readonly request_id: string | undefined;
   public readonly failure: GoogleAdsFailure;
@@ -265,4 +319,8 @@ class ClientError extends Error {
       this.error_code = {};
     }
   }
+}
+
+function buildBlankInterceptor(): grpc.Requester {
+  return new grpc.RequesterBuilder().build()
 }
