@@ -256,8 +256,7 @@ export class PreventMutationsInterceptor {
   }
 
   public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
-    const isMutation = isMutationRequest(options);
-    if (isMutation) {
+    if (isMutationRequest(options)) {
       return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
     }
     return new grpc.InterceptingCall(nextCall(options), this.blankInterceptor);
