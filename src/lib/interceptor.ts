@@ -7,12 +7,7 @@ import { formatCallResults, getErrorLocationPath } from "./utils";
 const FAILURE_KEY = "google.ads.googleads.v2.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
-const NON_MUTABLE_METHOD_PREFIXES = [
-  "Get",
-  "List",
-  "Generate",
-  "Search"
-]
+const NON_MUTABLE_METHOD_PREFIXES = ["Get", "List", "Generate", "Search"];
 
 type NextCall = (options: grpc.CallOptions) => grpc.InterceptingCall | null;
 export type InterceptorMethod = (options: grpc.CallOptions, nextCall: NextCall) => any;
@@ -210,8 +205,9 @@ export class ResponseParsingInterceptor {
           if (results.partialFailureError && results.partialFailureError.detailsList) {
             const errors = [];
 
-            const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(results
-              .partialFailureError.detailsList[0].value as Uint8Array);
+            const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(
+              results.partialFailureError.detailsList[0].value as Uint8Array
+            );
 
             const errorsList: GoogleAdsError[] = failure.getErrorsList();
 
@@ -258,17 +254,17 @@ export class PreventMutationsInterceptor {
   public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
     let isMutationRequest = true;
 
-    if(options?.method_definition?.path) {
+    if (options?.method_definition?.path) {
       const { path } = options.method_definition;
-      for(const prefix of NON_MUTABLE_METHOD_PREFIXES) {
-        if(path.includes(prefix)) {
+      for (const prefix of NON_MUTABLE_METHOD_PREFIXES) {
+        if (path.includes(prefix)) {
           isMutationRequest = false;
           break;
         }
       }
     }
 
-    if(isMutationRequest) {
+    if (isMutationRequest) {
       return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
     }
     return new grpc.InterceptingCall(nextCall(options), this.blankInterceptor);
@@ -281,13 +277,19 @@ export class PreventMutationsInterceptor {
         if (message?.setValidateOnly) {
           message.setValidateOnly(true);
           next(message);
-        // If the request doesn't support validateOnly, we attempt to clear the operations list
+          // If the request doesn't support validateOnly, we attempt to clear the operations list
         } else if (message?.clearOperationsList) {
           message.clearOperationsList();
           next(message);
+          // Some request operations are called mutate_operations
+        } else if (message?.clearMutateOperationsList) {
+          message.clearMutateOperationsList();
+          next(message);
         } else {
-          // Otherwise, we just give up to prevent any unwanted mutations (this throws an error)
-          next();
+          // Otherwise, we just give up to prevent any unwanted mutations (this throws an error, shouldn't happen)
+          throw new Error(
+            `Prevent mutations mode is enabled, but the request couldn't be safeguarded, giving up.`
+          );
         }
       })
       .build();
@@ -322,5 +324,5 @@ class ClientError extends Error {
 }
 
 function buildBlankInterceptor(): grpc.Requester {
-  return new grpc.RequesterBuilder().build()
+  return new grpc.RequesterBuilder().build();
 }
