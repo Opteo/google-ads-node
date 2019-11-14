@@ -43,10 +43,7 @@
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",
     "lodash.snakecase": "^4.1.1",
-    "protobufjs": "^6.8.8",
-    "ts-jest": "^24.1.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.2"
+    "protobufjs": "^6.8.8"
   },
   "devDependencies": {
     "@types/jest": "^24.0.1",
@@ -65,7 +62,10 @@
     "ts-protoc-gen": "^0.9.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-immutable": "^5.0.0",
-    "uglify-js": "^3.6.0"
+    "uglify-js": "^3.6.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
   },
   "config": {
     "commitizen": {
