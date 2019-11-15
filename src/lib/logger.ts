@@ -1,6 +1,7 @@
 export interface LogOptions {
   output?: "stderr" | "stdout" | "none"; // "stderr"
   verbosity?: "debug" | "info" | "warning"; // "info"
+  callback?: (message: RequestLog) => void;
 }
 
 export interface RequestLog {
@@ -24,6 +25,7 @@ export class Logger {
     this.options = {
       output: options.output || "stderr",
       verbosity: options.verbosity || "info",
+      callback: options.callback || undefined,
     };
     this.resetLog();
   }
@@ -68,6 +70,10 @@ export class Logger {
     }
     if (this.options.output === "stderr") {
       process.stderr.write(output);
+    }
+
+    if (this.options.callback) {
+      this.options.callback(this.request as RequestLog);
     }
 
     this.resetLog();
