@@ -1,6 +1,7 @@
 import grpc from "grpc";
 
 import Auth from "./auth";
+import { Logger, LogOptions } from "./logger";
 import { GoogleAdsFailure, GoogleAdsError, ErrorCode } from "./types";
 import {
   formatCallResults,
@@ -68,6 +69,49 @@ export class ExceptionInterceptor {
     return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
   }
 
+  public handleGrpcFailure(status: grpc.StatusObject): Error {
+    const { code, metadata } = status;
+
+    if (RETRY_STATUS_CODES.includes(code)) {
+      /* Throw error if code one of INTERNAL or RESOURCE_EXHAUSTED */
+      return new Error(status.details);
+    }
+
+    const gaFailure = this.getGoogleAdsFailure(metadata);
+
+    if (!gaFailure) {
+      /* Throw error with status details if not a Google Ads API error */
+      return new Error(status.details);
+    }
+
+    const requestId = this.getRequestId(metadata);
+    let error: ClientError;
+
+    const errorsList: GoogleAdsError[] = gaFailure.getErrorsList();
+
+    if (errorsList && errorsList.length > 0) {
+      const firstError = errorsList[0] as GoogleAdsError;
+      const firstErrorObj = firstError.toObject();
+      let path = "";
+      if (firstErrorObj.hasOwnProperty("location")) {
+        path = getErrorLocationPath(firstErrorObj.location as object);
+      }
+      return new ClientError(firstErrorObj.message, requestId, gaFailure, path);
+    }
+
+    try {
+      /* Try to parse the error */
+      const errorPieces = gaFailure.toString().split(",");
+      const errorMessage = errorPieces[errorPieces.length - 1];
+      error = new ClientError(errorMessage, requestId, gaFailure);
+    } catch (err) {
+      /* Use the original error message if parsing fails */
+      error = new ClientError(status.details, requestId, gaFailure);
+    }
+
+    return error;
+  }
+
   private buildRequester(): grpc.Requester {
     return new grpc.RequesterBuilder()
       .withStart((metadata: grpc.Metadata, _listener: grpc.Listener, next: Function) => {
@@ -131,49 +175,6 @@ export class ExceptionInterceptor {
       return metadata.get(REQUEST_ID_KEY)[0] as string;
     }
     return "";
-  }
-
-  private handleGrpcFailure(status: grpc.StatusObject): Error {
-    const { code, metadata } = status;
-
-    if (RETRY_STATUS_CODES.includes(code)) {
-      /* Throw error if code one of INTERNAL or RESOURCE_EXHAUSTED */
-      return new Error(status.details);
-    }
-
-    const gaFailure = this.getGoogleAdsFailure(metadata);
-
-    if (!gaFailure) {
-      /* Throw error with status details if not a Google Ads API error */
-      return new Error(status.details);
-    }
-
-    const requestId = this.getRequestId(metadata);
-    let error: ClientError;
-
-    const errorsList: GoogleAdsError[] = gaFailure.getErrorsList();
-
-    if (errorsList && errorsList.length > 0) {
-      const firstError = errorsList[0] as GoogleAdsError;
-      const firstErrorObj = firstError.toObject();
-      let path = "";
-      if (firstErrorObj.hasOwnProperty("location")) {
-        path = getErrorLocationPath(firstErrorObj.location as object);
-      }
-      return new ClientError(firstErrorObj.message, requestId, gaFailure, path);
-    }
-
-    try {
-      /* Try to parse the error */
-      const errorPieces = gaFailure.toString().split(",");
-      const errorMessage = errorPieces[errorPieces.length - 1];
-      error = new ClientError(errorMessage, requestId, gaFailure);
-    } catch (err) {
-      /* Use the original error message if parsing fails */
-      error = new ClientError(status.details, requestId, gaFailure);
-    }
-
-    return error;
   }
 }
 
@@ -266,6 +267,67 @@ export class PreventMutationsInterceptor {
     return new grpc.RequesterBuilder()
       .withSendMessage((message: any, next: Function) => {
         safeguardMutationProtobufRequest(message, next);
+      })
+      .build();
+  }
+}
+
+export class LoggingInterceptor {
+  private requestInterceptor: grpc.Requester;
+  private responseListener: grpc.Listener;
+  private logger: Logger;
+
+  constructor(options: LogOptions) {
+    this.requestInterceptor = this.buildRequester();
+    this.responseListener = this.buildListener();
+    this.logger = new Logger(options);
+  }
+
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
+    const method = options.method_definition.path;
+    this.logger.setRequestMethod(method);
+    return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
+  }
+
+  private buildRequester(): grpc.Requester {
+    return new grpc.RequesterBuilder()
+      .withStart((metadata: grpc.Metadata, _listener: grpc.Listener, next: Function) => {
+        const md = metadata.getMap();
+        this.logger.setRequestHeaders(md);
+        next(metadata, this.responseListener);
+      })
+      .withSendMessage((message: any, next: Function) => {
+        const request = message.toObject();
+        this.logger.setRequestBody(request);
+        next(message);
+      })
+      .build();
+  }
+
+  private buildListener(): grpc.Listener {
+    return new grpc.ListenerBuilder()
+      .withOnReceiveMetadata((metadata: grpc.Metadata, next: Function) => {
+        const md = metadata.getMap();
+        this.logger.setResponseHeaders(md);
+        next(metadata);
+      })
+      .withOnReceiveMessage((message: any, next: Function) => {
+        if (message?.toObject) {
+          const response = message.toObject();
+          this.logger.setResponseBody(response);
+        }
+        next(message);
+      })
+      .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
+        if (status?.code !== grpc.status.OK) {
+          const errorInterceptor = new ExceptionInterceptor();
+          const error = errorInterceptor.handleGrpcFailure(status);
+          this.logger.setResponseStatus(error.stack);
+        } else {
+          this.logger.setResponseStatus(status);
+        }
+        this.logger.log();
+        next(status);
       })
       .build();
   }

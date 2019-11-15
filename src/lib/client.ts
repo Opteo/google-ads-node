@@ -9,7 +9,9 @@ import {
   ResponseParsingInterceptor,
   PreventMutationsInterceptor,
   InterceptorMethod,
+  LoggingInterceptor,
 } from "./interceptor";
+import { LogOptions } from "./logger";
 import * as services from "./services";
 import * as GrpcTypes from "./types";
 import { promisifyServiceClient, convertToProtoFormat } from "./utils";
@@ -28,6 +30,7 @@ interface CommonClientOptions {
   login_customer_id?: string;
   parseResults?: boolean;
   preventMutations?: boolean;
+  logging?: LogOptions;
 }
 
 interface ClientOptionsWithToken extends CommonClientOptions {
@@ -187,6 +190,16 @@ export class GoogleAdsClient {
           options: grpc.CallOptions,
           nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
         ) => preventMutationsInterceptor.intercept(options, nextCall)
+      );
+    }
+
+    if (this.options.logging) {
+      const loggingInterceptor = new LoggingInterceptor(this.options.logging);
+      interceptors.push(
+        (
+          options: grpc.CallOptions,
+          nextCall: (options: grpc.CallOptions) => grpc.InterceptingCall | null
+        ) => loggingInterceptor.intercept(options, nextCall)
       );
     }
 
