@@ -2,7 +2,12 @@ import grpc from "grpc";
 
 import Auth from "./auth";
 import { GoogleAdsFailure, GoogleAdsError, ErrorCode } from "./types";
-import { formatCallResults, getErrorLocationPath } from "./utils";
+import {
+  formatCallResults,
+  getErrorLocationPath,
+  isMutationRequest,
+  safeguardMutationProtobufRequest,
+} from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v2.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
@@ -204,8 +209,9 @@ export class ResponseParsingInterceptor {
           if (results.partialFailureError && results.partialFailureError.detailsList) {
             const errors = [];
 
-            const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(results
-              .partialFailureError.detailsList[0].value as Uint8Array);
+            const failure: GoogleAdsFailure = GoogleAdsFailure.deserializeBinary(
+              results.partialFailureError.detailsList[0].value as Uint8Array
+            );
 
             const errorsList: GoogleAdsError[] = failure.getErrorsList();
 
@@ -240,6 +246,31 @@ export class ResponseParsingInterceptor {
   }
 }
 
+export class PreventMutationsInterceptor {
+  private requestInterceptor: grpc.Requester;
+  private blankInterceptor: grpc.Requester;
+
+  constructor() {
+    this.requestInterceptor = this.buildRequester();
+    this.blankInterceptor = buildBlankInterceptor();
+  }
+
+  public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
+    if (isMutationRequest(options)) {
+      return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
+    }
+    return new grpc.InterceptingCall(nextCall(options), this.blankInterceptor);
+  }
+
+  private buildRequester(): grpc.Requester {
+    return new grpc.RequesterBuilder()
+      .withSendMessage((message: any, next: Function) => {
+        safeguardMutationProtobufRequest(message, next);
+      })
+      .build();
+  }
+}
+
 class ClientError extends Error {
   public readonly request_id: string | undefined;
   public readonly failure: GoogleAdsFailure;
@@ -265,4 +296,8 @@ class ClientError extends Error {
       this.error_code = {};
     }
   }
+}
+
+function buildBlankInterceptor(): grpc.Requester {
+  return new grpc.RequesterBuilder().build();
 }

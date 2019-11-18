@@ -116,6 +116,19 @@ example();
 
 ## Usage
 
+### Client Options
+
+| Field                 | Type              | Required | Notes                                                                                                                                                                                                                                                |
+| --------------------- | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `developer_token`     | `string`          | ✅       | Google Ads developer token. Obtained from [API Center](https://developers.google.com/google-ads/api/docs/first-call/dev-token).                                                                                                                      |
+| `access_token`        | `string`          | ➖       | Obtained after completing Google Ads [Auth Flow](https://developers.google.com/google-ads/api/docs/oauth/cloud-project). Only required if using [No Internal Authentication](https://github.com/Opteo/google-ads-node#1-no-internal-authentication). |
+| `client_id`           | `string`          | ➖       | Obtained from Google Developer console. Required if using library [Token Generation & Refresh Handling](https://github.com/Opteo/google-ads-node#2-token-generation-and-refresh-handling).                                                           |
+| `client_secret`       | `string`          | ➖       | Same as above. Obtained from Google Developer console.                                                                                                                                                                                               |
+| `refresh_token`       | `string`          | ➖       | Same as above. Obtained from [OAuth2 flow](https://developers.google.com/google-ads/api/docs/first-call/refresh-token).                                                                                                                              |
+| `accessTokenGetter()` | `Promise<string>` | ❌       | Function to retrieve access token per request. See [Access Token Getter](https://github.com/Opteo/google-ads-node#3-access-token-getter).                                                                                                            |
+| `parseResults`        | `boolean`         | ❌       | Formats Protobuf responses as objects. See [Results](https://github.com/Opteo/google-ads-node#results).                                                                                                                                              |
+| `preventMutations`    | `boolean`         | ❌       | Safe mode to prevent accidental mutations. See [Safe Mode]().                                                                                                                                                                                        |
+
 ### Authentication
 
 #### 1. No internal authentication
@@ -229,6 +242,12 @@ const campaign = {
 const pb = client.buildResource("Campaign", campaign);
 console.log(pb.getName()); // "Interplanetary Cruises"
 ```
+
+### Safe Mode
+
+To prevent accidental mutations, particularly in the case of working with the library in a development or test environment, we provide a `preventMutations` client option. This essentially intercepts all requests, and sets the `validateOnly` field to `true`. This means **no mutations** will be performed when the request is recieved by the Google Ads API. Any mutation requests will simply return an empty response, but importantly, are still validated by the API, meaning you will still be aware of any errors in the request body.
+
+Any read only API methods, such as get/list/generate, are unaffected. For example, `GoogleAdsService.search` will still function as expected, whilst `GoogleAdsService.mutate` will only validate the request. Mutations will also be prevented for more unusual services, e.g. `MutateJobService` or `RecommendationService`.
 
 ### Results
 

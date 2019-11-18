@@ -1,4 +1,19 @@
-import { formatCallResults, getFieldMask, getErrorLocationPath } from "./utils";
+import grpc from "grpc";
+
+import { GoogleAdsClient } from "./client";
+import {
+  MutateCampaignBudgetsRequest,
+  CampaignBudgetOperation,
+  ApplyRecommendationRequest,
+  ApplyRecommendationOperation,
+} from "./types";
+import {
+  formatCallResults,
+  getFieldMask,
+  getErrorLocationPath,
+  isMutationRequest,
+  safeguardMutationProtobufRequest,
+} from "./utils";
 
 test("proto object result is parsed from field mask", () => {
   const fakeResponse = [
@@ -439,6 +454,58 @@ test("field location error can be generated from errors list object", () => {
   expect(getErrorLocationPath(undefined)).toEqual("");
 });
 
+test("mutation requests can be detected correctly", () => {
+  const searchRequestCallOptions: grpc.CallOptions = {
+    method_definition: {
+      path: "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+      requestStream: false,
+      responseStream: false,
+      // Not required for test
+      requestSerialize: undefined,
+      responseDeserialize: undefined,
+    },
+  };
+
+  const mutateCampaignBudgetCallOptions: grpc.CallOptions = {
+    method_definition: {
+      path: "/google.ads.googleads.v2.services.CampaignBudgetService/MutateCampaignBudgets",
+      requestStream: false,
+      responseStream: false,
+      // Not required for test
+      requestSerialize: undefined,
+      responseDeserialize: undefined,
+    },
+  };
+
+  const applyRecommendationRequestCallOptions: grpc.CallOptions = {
+    method_definition: {
+      path: "/google.ads.googleads.v2.services.RecommendationService/ApplyRecommendation",
+    },
+  };
+
+  expect(isMutationRequest(searchRequestCallOptions)).toEqual(false);
+  expect(isMutationRequest(mutateCampaignBudgetCallOptions)).toEqual(true);
+  expect(isMutationRequest(applyRecommendationRequestCallOptions)).toEqual(true);
+});
+
+test("mutation requests can be safeguarded i.e. set to validate only or operation list cleared", () => {
+  const campaignBudgetRequest = buildCampaignBudgetRequest();
+  const nonValidateOnlyRequest = buildRecommendationRequest();
+
+  // Uses validate only if it exists
+  safeguardMutationProtobufRequest(campaignBudgetRequest, (message: any) => {
+    expect(message.getValidateOnly()).toEqual(true);
+  });
+
+  expect(nonValidateOnlyRequest.toObject().operationsList.length).toEqual(1);
+
+  // Clears operation list when validate only doesn't exist
+  safeguardMutationProtobufRequest(nonValidateOnlyRequest, (message: any) => {
+    expect(message.getValidateOnly).toEqual(undefined);
+    expect(message.getOperationsList()).toEqual([]);
+  });
+});
+
 const fakeCampaignResponse = `
   {
    "resourceName": "customers/9262111890/campaigns/1485014801",
@@ -726,3 +793,46 @@ const fakeSimulationResponse = [
     },
   },
 ];
+
+function buildCampaignBudgetRequest(): MutateCampaignBudgetsRequest {
+  // @ts-ignore Auth not required here
+  const client = new GoogleAdsClient({
+    developer_token: "DEVELOPER_TOKEN",
+    client_id: "CLIENT_ID",
+    client_secret: "CLIENT_SECRET",
+    refresh_token: "REFRESH_TOKEN",
+  });
+
+  const budgetRequest = new MutateCampaignBudgetsRequest();
+  const operation = new CampaignBudgetOperation();
+
+  const budget = client.buildResource("CampaignBudget", {
+    name: "test-budget",
+    amount_micros: 30000,
+  });
+
+  // @ts-ignore Type doesn't matter here
+  operation.setCreate(budget);
+  budgetRequest.setOperationsList([operation]);
+  budgetRequest.setCustomerId("0123456789");
+
+  return budgetRequest;
+}
+
+function buildRecommendationRequest(): ApplyRecommendationRequest {
+  // @ts-ignore Auth not required here
+  const client = new GoogleAdsClient({
+    developer_token: "DEVELOPER_TOKEN",
+    client_id: "CLIENT_ID",
+    client_secret: "CLIENT_SECRET",
+    refresh_token: "REFRESH_TOKEN",
+  });
+
+  const recommendationRequest = new ApplyRecommendationRequest();
+  const operation = new ApplyRecommendationOperation();
+
+  recommendationRequest.setOperationsList([operation]);
+  recommendationRequest.setCustomerId("0123456789");
+
+  return recommendationRequest;
+}
