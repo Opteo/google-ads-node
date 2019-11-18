@@ -9,6 +9,7 @@ export interface RequestLog {
     method?: string;
     headers?: any;
     body?: any;
+    is_mutation?: boolean;
   };
   response?: {
     headers?: any;
@@ -54,6 +55,10 @@ export class Logger {
     this.request!.response!.status = status;
   }
 
+  public setRequestIsMutation() {
+    this.request!.request!.is_mutation = true;
+  }
+
   public log(): void {
     let output = "";
 
@@ -93,7 +98,7 @@ export class Logger {
 
   private resetLog() {
     this.request = {
-      request: { method: undefined, headers: undefined, body: undefined },
+      request: { method: undefined, headers: undefined, body: undefined, is_mutation: false },
       response: { headers: undefined, body: undefined, status: undefined },
     };
   }

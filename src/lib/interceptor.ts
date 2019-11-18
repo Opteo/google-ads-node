@@ -286,6 +286,9 @@ export class LoggingInterceptor {
   public intercept(options: grpc.CallOptions, nextCall: NextCall): grpc.InterceptingCall {
     const method = options.method_definition.path;
     this.logger.setRequestMethod(method);
+    if (isMutationRequest(options)) {
+      this.logger.setRequestIsMutation();
+    }
     return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
   }
 
