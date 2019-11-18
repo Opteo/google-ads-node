@@ -9,18 +9,23 @@ export interface RequestLog {
     method?: string;
     headers?: any;
     body?: any;
-    is_mutation?: boolean;
   };
   response?: {
     headers?: any;
     body?: any;
     status?: any;
   };
+  meta?: {
+    is_mutation?: boolean;
+    elapsed_ms?: number;
+  };
 }
 
 export class Logger {
   private request!: RequestLog | undefined;
   private options: LogOptions;
+  private start_ts!: Date | undefined;
+  private end_ts!: Date | undefined;
 
   constructor(options: LogOptions) {
     this.options = {
@@ -56,11 +61,29 @@ export class Logger {
   }
 
   public setRequestIsMutation() {
-    this.request!.request!.is_mutation = true;
+    this.request!.meta!.is_mutation = true;
+  }
+
+  public setStartTs() {
+    this.start_ts = new Date();
+  }
+
+  public setEndTs() {
+    this.end_ts = new Date();
+  }
+
+  public calculateElapsedMs() {
+    if (!this.end_ts || !this.start_ts) {
+      return;
+    }
+    // @ts-ignore This is okay
+    const ms = this.end_ts - this.start_ts;
+    this.request!.meta!.elapsed_ms = ms;
   }
 
   public log(): void {
     let output = "";
+    this.calculateElapsedMs();
 
     if (this.options.verbosity === "warning") {
       output = this.getWarningMessage();
@@ -97,9 +120,16 @@ export class Logger {
   }
 
   private resetLog() {
-    this.request = {
-      request: { method: undefined, headers: undefined, body: undefined, is_mutation: false },
-      response: { headers: undefined, body: undefined, status: undefined },
+    const default_meta = {
+      is_mutation: false,
+      elapsed_ms: undefined,
     };
+    this.request = {
+      request: { method: undefined, headers: undefined, body: undefined },
+      response: { headers: undefined, body: undefined, status: undefined },
+      meta: default_meta,
+    };
+    this.start_ts = undefined;
+    this.end_ts = undefined;
   }
 }

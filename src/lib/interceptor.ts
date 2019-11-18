@@ -302,6 +302,7 @@ export class LoggingInterceptor {
       .withSendMessage((message: any, next: Function) => {
         const request = message.toObject();
         this.logger.setRequestBody(request);
+        this.logger.setStartTs();
         next(message);
       })
       .build();
@@ -322,6 +323,8 @@ export class LoggingInterceptor {
         next(message);
       })
       .withOnReceiveStatus((status: grpc.StatusObject, next: Function) => {
+        this.logger.setEndTs();
+
         if (status?.code !== grpc.status.OK) {
           const errorInterceptor = new ExceptionInterceptor();
           const error = errorInterceptor.handleGrpcFailure(status);
@@ -329,6 +332,7 @@ export class LoggingInterceptor {
         } else {
           this.logger.setResponseStatus(status);
         }
+
         this.logger.log();
         next(status);
       })
