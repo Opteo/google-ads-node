@@ -128,6 +128,7 @@ example();
 | `accessTokenGetter()` | `Promise<string>` | ❌       | Function to retrieve access token per request. See [Access Token Getter](https://github.com/Opteo/google-ads-node#3-access-token-getter).                                                                                                            |
 | `parseResults`        | `boolean`         | ❌       | Formats Protobuf responses as objects. See [Results](https://github.com/Opteo/google-ads-node#results).                                                                                                                                              |
 | `preventMutations`    | `boolean`         | ❌       | Safe mode to prevent accidental mutations. See [Safe Mode]().                                                                                                                                                                                        |
+| `logging`             | `object`          | ❌       | See [Logging]().                                                                                                                                                                                                                                     |
 
 ### Authentication
 
@@ -283,6 +284,133 @@ const client = new GoogleAdsClient({
 
 const { resultsList } = await service.search(request);
 console.log(resultsList[0].campaign.id); // 123
+```
+
+### Logging
+
+This library also includes support for logging all requests made to the Google Ads API. The logging functionality was directly inspired by the official client libraries, namely [google-ads-python](https://github.com/googleads/google-ads-python#enabling-and-configuring-logging). The `logging` field of the client constructor has the following configurable settings:
+
+```typescript
+// src/logger.ts
+export interface LogOptions {
+  output?: "stderr" | "stdout" | "none";
+  verbosity?: "debug" | "info" | "warning";
+  callback?: (message: RequestLog) => void;
+}
+```
+
+The default `output` is `stderr`, and verbosity level `info`. We also provide a `callback` function if you don't want to log to stdout or stderr, which is fired on every single request. In here, you could pipe the logs to your own database, or other logging solution. Log messages follow this interface definition:
+
+```typescript
+// src/logger.ts
+export interface RequestLog {
+  request?: {
+    method?: string;
+    headers?: any;
+    body?: any;
+  };
+  response?: {
+    headers?: any;
+    body?: any;
+    status?: any;
+  };
+  meta?: {
+    is_mutation?: boolean;
+    elapsed_ms?: number;
+  };
+}
+```
+
+#### Request
+
+The `request` field contains details of the request made to the Google Ads API, including the service `method` called, the `headers` passed (which includes your authentication tokens), and the `body` of the gRPC request (converted to a standard object, from the raw binary stream).
+
+#### Response
+
+The `response` field contains everything recieved from the API after the call was made, regardless if it was successful or not. The `headers` field contains the response headers, notably including the `request-id`. This value is useful when sending a bug report to the Google Ads API support team. The `body` contains the raw results from the query, and `status` contains details of whether the gRPC service call was successful or not. If an error did occur in the request, `response.status` will be a descriptive error message.
+
+An example of a successful log message as JSON (with authentication tokens removed) is shown below:
+
+```json
+{
+  "request": {
+    "method": "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+    "headers": {
+      "authorization": "[REMOVED]",
+      "developer-token": "[REMOVED]",
+      "login-customer-id": "[REMOVED]"
+    },
+    "body": {
+      "customerId": "123",
+      "query": "SELECT campaign.id, campaign.name FROM campaign LIMIT 1",
+      "pageToken": "",
+      "pageSize": 0,
+      "validateOnly": false,
+      "returnSummaryRow": false
+    }
+  },
+  "response": {
+    "headers": {
+      "content-disposition": "attachment",
+      "request-id": "zRvYunvw1zXMcAi0b1rx-A",
+      "date": "Fri, 15 Nov 2019 11:47:14 GMT",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000"
+    },
+    "body": {
+      "resultsList": [
+        {
+          "campaign": {
+            "resourceName": "customers/123/campaigns/708736728",
+            "id": {
+              "value": 123
+            },
+            "name": {
+              "value": "Campaign #1"
+            },
+            "status": 0,
+            "servingStatus": 0,
+            "adServingOptimizationStatus": 0,
+            "advertisingChannelType": 0,
+            "advertisingChannelSubType": 0,
+            "urlCustomParametersList": [],
+            "labelsList": [],
+            "experimentType": 0,
+            "biddingStrategyType": 0,
+            "frequencyCapsList": [],
+            "videoBrandSafetySuitability": 0,
+            "paymentMode": 0
+          }
+        }
+      ],
+      "nextPageToken": "",
+      "totalResultsCount": 154,
+      "fieldMask": {
+        "pathsList": ["campaign.id", "campaign.name"]
+      }
+    },
+    "status": {
+      "code": 0,
+      "details": "",
+      "metadata": {
+        "_internal_repr": {
+          "content-disposition": ["attachment"],
+          "request-id": ["zRvYunvw1zXMcAi0b1rx-A"]
+        },
+        "flags": 0
+      }
+    }
+  },
+  "meta": {
+    "is_mutation": false,
+    "elapsed_ms": 502
+  }
+}
+```
+
+If logging to stdout, or stderr (which is the default), you can pipe messages via the command line to a log file, or any other data dump.
+
+```bash
+node google-ads-node-example.js 2> example.log
 ```
 
 ## Changelog
