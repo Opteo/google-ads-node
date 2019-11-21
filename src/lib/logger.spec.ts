@@ -50,7 +50,6 @@ test("log message can be constructed via set methods", async done => {
     output: "none",
     verbosity: "info",
     callback(message) {
-      //   expect(message).toEqual(mockMessage);
       expect(message.request).toEqual(mockMessage.request);
       expect(message.response).toEqual(mockMessage.response);
       expect(message.meta!.is_mutation).toEqual(true);
