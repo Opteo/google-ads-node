@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.14.0"></a>
+# [1.14.0](https://github.com/opteo/google-ads-node/compare/v1.13.9...v1.14.0) (2019-11-21)
+
+
+### Bug Fixes
+
+* **types:** Fixed bid_modifier field definition for Campaing Criterion ([2047a2a](https://github.com/opteo/google-ads-node/commit/2047a2a))
+* include new log interfaces in default exports ([6bc732c](https://github.com/opteo/google-ads-node/commit/6bc732c))
+
+
+### Features
+
+* **client:** added preventMutations option to prevent mutable requests ([#32](https://github.com/opteo/google-ads-node/issues/32)) ([d62dfa5](https://github.com/opteo/google-ads-node/commit/d62dfa5))
+* **logging:** added logging interceptor and module ([#33](https://github.com/opteo/google-ads-node/issues/33)) ([18babe2](https://github.com/opteo/google-ads-node/commit/18babe2))
+
+
+
 <a name="1.13.9"></a>
 ## [1.13.9](https://github.com/opteo/google-ads-node/compare/v1.13.8...v1.13.9) (2019-10-22)
 
