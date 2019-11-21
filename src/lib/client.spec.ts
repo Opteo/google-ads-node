@@ -137,13 +137,13 @@ test("correctly builds a complex and deeply nested grpc resource", () => {
         headline_part2: "Best Space Cruise Line",
         description: "Buy your tickets now!",
         path1: "all-inclusive",
-        path2: "deals"
+        path2: "deals",
       },
       url_custom_parameters: [
         { key: "season", value: "easter123" },
-        { key: "promocode", value: "nj123" }
-      ]
-    }
+        { key: "promocode", value: "nj123" },
+      ],
+    },
   };
 
   const protobuf = client.buildResource("AdGroupAd", ad) as AdGroupAd;
@@ -347,4 +347,39 @@ test("supports usage of an async access token getter function", async () => {
 
   expect(client).toBeInstanceOf(GoogleAdsClient);
   expect(tokenGetterCalled).toEqual("<access-token>");
+});
+
+test("correctly uses logging options", async () => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+    logging: {
+      output: "none",
+      verbosity: "info",
+      callback(message) {
+        expect(message.request).toEqual({
+          body: {
+            customerId: "",
+            pageSize: 0,
+            pageToken: "",
+            query: "",
+            returnSummaryRow: false,
+            validateOnly: false,
+          },
+          headers: {
+            authorization: "Bearer ACCESS_TOKEN",
+            "developer-token": "DEVELOPER_TOKEN",
+            "login-customer-id": "LOGIN_CUSTOMER_ID",
+          },
+          method: "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+        });
+      },
+    },
+  });
+
+  const service = client.getService("GoogleAdsService");
+  const request = new SearchGoogleAdsRequest();
+  // It should also throw since we have no auth
+  await expect(service.search(request)).rejects.toThrow();
 });
