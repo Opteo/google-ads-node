@@ -127,8 +127,8 @@ example();
 | `refresh_token`       | `string`          | ➖       | Same as above. Obtained from [OAuth2 flow](https://developers.google.com/google-ads/api/docs/first-call/refresh-token).                                                                                                                              |
 | `accessTokenGetter()` | `Promise<string>` | ❌       | Function to retrieve access token per request. See [Access Token Getter](https://github.com/Opteo/google-ads-node#3-access-token-getter).                                                                                                            |
 | `parseResults`        | `boolean`         | ❌       | Formats Protobuf responses as objects. See [Results](https://github.com/Opteo/google-ads-node#results).                                                                                                                                              |
-| `preventMutations`    | `boolean`         | ❌       | Safe mode to prevent accidental mutations. See [Safe Mode]().                                                                                                                                                                                        |
-| `logging`             | `object`          | ❌       | See [Logging]().                                                                                                                                                                                                                                     |
+| `preventMutations`    | `boolean`         | ❌       | Safe mode to prevent accidental mutations. See [Safe Mode](https://github.com/Opteo/google-ads-node#safe-mode).                                                                                                                                      |
+| `logging`             | `object`          | ❌       | See [Logging](https://github.com/Opteo/google-ads-node#logging).                                                                                                                                                                                     |
 
 ### Authentication
 
