@@ -49,6 +49,14 @@ export class BackendRule extends jspb.Message {
   getJwtAudience(): string;
   setJwtAudience(value: string): void;
 
+  hasDisableAuth(): boolean;
+  clearDisableAuth(): void;
+  getDisableAuth(): boolean;
+  setDisableAuth(value: boolean): void;
+
+  getProtocol(): string;
+  setProtocol(value: string): void;
+
   getAuthenticationCase(): BackendRule.AuthenticationCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BackendRule.AsObject;
@@ -69,6 +77,8 @@ export namespace BackendRule {
     operationDeadline: number,
     pathTranslation: BackendRule.PathTranslation,
     jwtAudience: string,
+    disableAuth: boolean,
+    protocol: string,
   }
 
   export enum PathTranslation {
@@ -80,6 +90,7 @@ export namespace BackendRule {
   export enum AuthenticationCase {
     AUTHENTICATION_NOT_SET = 0,
     JWT_AUDIENCE = 7,
+    DISABLE_AUTH = 8,
   }
 }
 

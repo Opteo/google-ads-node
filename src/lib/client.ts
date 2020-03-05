@@ -19,7 +19,7 @@ import { promisifyServiceClient, convertToProtoFormat } from "./utils";
 // @ts-ignore
 import compiledResources from "../protos/compiled-resources.js";
 
-const DEFAULT_VERSION = "v2";
+const DEFAULT_VERSION = "v3";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 
 const PROTO_ROOT = `google.ads.googleads.${DEFAULT_VERSION}`;

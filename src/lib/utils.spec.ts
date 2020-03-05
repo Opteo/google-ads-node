@@ -457,7 +457,7 @@ test("field location error can be generated from errors list object", () => {
 test("mutation requests can be detected correctly", () => {
   const searchRequestCallOptions: grpc.CallOptions = {
     method_definition: {
-      path: "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+      path: "/google.ads.googleads.v3.services.GoogleAdsService/Search",
       requestStream: false,
       responseStream: false,
       // Not required for test
@@ -468,7 +468,7 @@ test("mutation requests can be detected correctly", () => {
 
   const mutateCampaignBudgetCallOptions: grpc.CallOptions = {
     method_definition: {
-      path: "/google.ads.googleads.v2.services.CampaignBudgetService/MutateCampaignBudgets",
+      path: "/google.ads.googleads.v3.services.CampaignBudgetService/MutateCampaignBudgets",
       requestStream: false,
       responseStream: false,
       // Not required for test
@@ -479,7 +479,7 @@ test("mutation requests can be detected correctly", () => {
 
   const applyRecommendationRequestCallOptions: grpc.CallOptions = {
     method_definition: {
-      path: "/google.ads.googleads.v2.services.RecommendationService/ApplyRecommendation",
+      path: "/google.ads.googleads.v3.services.RecommendationService/ApplyRecommendation",
     },
   };
 

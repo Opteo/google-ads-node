@@ -67,6 +67,45 @@ export namespace AuthenticationRule {
   }
 }
 
+export class JwtLocation extends jspb.Message {
+  hasHeader(): boolean;
+  clearHeader(): void;
+  getHeader(): string;
+  setHeader(value: string): void;
+
+  hasQuery(): boolean;
+  clearQuery(): void;
+  getQuery(): string;
+  setQuery(value: string): void;
+
+  getValuePrefix(): string;
+  setValuePrefix(value: string): void;
+
+  getInCase(): JwtLocation.InCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): JwtLocation.AsObject;
+  static toObject(includeInstance: boolean, msg: JwtLocation): JwtLocation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: JwtLocation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): JwtLocation;
+  static deserializeBinaryFromReader(message: JwtLocation, reader: jspb.BinaryReader): JwtLocation;
+}
+
+export namespace JwtLocation {
+  export type AsObject = {
+    header: string,
+    query: string,
+    valuePrefix: string,
+  }
+
+  export enum InCase {
+    IN_NOT_SET = 0,
+    HEADER = 1,
+    QUERY = 2,
+  }
+}
+
 export class AuthProvider extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -82,6 +121,11 @@ export class AuthProvider extends jspb.Message {
 
   getAuthorizationUrl(): string;
   setAuthorizationUrl(value: string): void;
+
+  clearJwtLocationsList(): void;
+  getJwtLocationsList(): Array<JwtLocation>;
+  setJwtLocationsList(value: Array<JwtLocation>): void;
+  addJwtLocations(value?: JwtLocation, index?: number): JwtLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthProvider.AsObject;
@@ -100,6 +144,7 @@ export namespace AuthProvider {
     jwksUri: string,
     audiences: string,
     authorizationUrl: string,
+    jwtLocationsList: Array<JwtLocation.AsObject>,
   }
 }
 

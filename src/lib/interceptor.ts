@@ -10,7 +10,7 @@ import {
   safeguardMutationProtobufRequest,
 } from "./utils";
 
-const FAILURE_KEY = "google.ads.googleads.v2.errors.googleadsfailure-bin";
+const FAILURE_KEY = "google.ads.googleads.v3.errors.googleadsfailure-bin";
 const REQUEST_ID_KEY = "request-id";
 const RETRY_STATUS_CODES = [grpc.status.INTERNAL, grpc.status.RESOURCE_EXHAUSTED];
 

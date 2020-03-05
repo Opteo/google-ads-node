@@ -364,7 +364,8 @@ test("correctly uses logging options", async () => {
             pageSize: 0,
             pageToken: "",
             query: "",
-            returnSummaryRow: false,
+            returnTotalResultsCount: false,
+            summaryRowSetting: 0,
             validateOnly: false,
           },
           headers: {
@@ -372,7 +373,7 @@ test("correctly uses logging options", async () => {
             "developer-token": "DEVELOPER_TOKEN",
             "login-customer-id": "LOGIN_CUSTOMER_ID",
           },
-          method: "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+          method: "/google.ads.googleads.v3.services.GoogleAdsService/Search",
         });
       },
     },
