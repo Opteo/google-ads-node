@@ -19,6 +19,12 @@ export class ResourceDescriptor extends jspb.Message {
   getHistory(): ResourceDescriptor.History;
   setHistory(value: ResourceDescriptor.History): void;
 
+  getPlural(): string;
+  setPlural(value: string): void;
+
+  getSingular(): string;
+  setSingular(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceDescriptor.AsObject;
   static toObject(includeInstance: boolean, msg: ResourceDescriptor): ResourceDescriptor.AsObject;
@@ -35,6 +41,8 @@ export namespace ResourceDescriptor {
     patternList: Array<string>,
     nameField: string,
     history: ResourceDescriptor.History,
+    plural: string,
+    singular: string,
   }
 
   export enum History {
@@ -69,6 +77,8 @@ export namespace ResourceReference {
 }
 
   export const resourceReference: jspb.ExtensionFieldInfo<ResourceReference>;
+
+  export const resourceDefinition: jspb.ExtensionFieldInfo<ResourceDescriptor>;
 
   export const resource: jspb.ExtensionFieldInfo<ResourceDescriptor>;
 

@@ -42,6 +42,7 @@ export type ResourceName =
   | "change_status"
   | "click_view"
   | "conversion_action"
+  | "currency_constant"
   | "custom_interest"
   | "customer"
   | "customer_client"
@@ -832,6 +833,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -841,6 +843,7 @@ export const ad_group_ad = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -915,6 +918,9 @@ export const ad_group_ad = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -1068,6 +1074,7 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -1077,6 +1084,7 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -1151,6 +1159,9 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -1239,6 +1250,7 @@ export type AdGroupAdSegment =
   | "segments.keyword.info.match_type"
   | "segments.keyword.info.text"
   | "segments.month"
+  | "segments.month_of_year"
   | "segments.quarter"
   | "segments.slot"
   | "segments.week"
@@ -1309,6 +1321,7 @@ export const ad_group_ad_asset_view = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -1318,6 +1331,7 @@ export const ad_group_ad_asset_view = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -1392,6 +1406,9 @@ export const ad_group_ad_asset_view = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -1562,6 +1579,7 @@ export type AdGroupAdAssetViewField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -1571,6 +1589,7 @@ export type AdGroupAdAssetViewField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -1645,6 +1664,9 @@ export type AdGroupAdAssetViewField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -1856,6 +1878,7 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -1865,6 +1888,7 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -1939,6 +1963,9 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -2101,6 +2128,7 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -2110,6 +2138,7 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -2184,6 +2213,9 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -2358,15 +2390,15 @@ export const ad_group_audience_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -2402,6 +2434,25 @@ export const ad_group_audience_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -2486,6 +2537,42 @@ export const ad_group_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
+  "user_list.access_reason",
+  "user_list.account_user_list_status",
+  "user_list.basic_user_list.actions",
+  "user_list.closing_reason",
+  "user_list.crm_based_user_list.app_id",
+  "user_list.crm_based_user_list.data_source_type",
+  "user_list.crm_based_user_list.upload_key_type",
+  "user_list.description",
+  "user_list.eligible_for_display",
+  "user_list.eligible_for_search",
+  "user_list.id",
+  "user_list.integration_code",
+  "user_list.logical_user_list.rules",
+  "user_list.membership_life_span",
+  "user_list.membership_status",
+  "user_list.name",
+  "user_list.read_only",
+  "user_list.resource_name",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.prepopulation_status",
+  "user_list.similar_user_list.seed_user_list",
+  "user_list.size_for_display",
+  "user_list.size_for_search",
+  "user_list.size_range_for_display",
+  "user_list.size_range_for_search",
+  "user_list.type",
   "ad_group_audience_view.resource_name",
 ];
 
@@ -2547,15 +2634,15 @@ export type AdGroupAudienceViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -2591,6 +2678,25 @@ export type AdGroupAudienceViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -2675,6 +2781,42 @@ export type AdGroupAudienceViewField =
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type"
   | "ad_group_audience_view.resource_name";
 
 export type AdGroupAudienceViewFields = Array<AdGroupAudienceViewField>;
@@ -2728,6 +2870,7 @@ export type AdGroupAudienceViewMetric =
 export type AdGroupAudienceViewMetrics = Array<AdGroupAudienceViewMetric>;
 
 export type AdGroupAudienceViewSegment =
+  | "bidding_strategy"
   | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
@@ -2743,7 +2886,8 @@ export type AdGroupAudienceViewSegment =
   | "segments.quarter"
   | "segments.slot"
   | "segments.week"
-  | "segments.year";
+  | "segments.year"
+  | "user_list";
 
 export type AdGroupAudienceViewSegments = Array<AdGroupAudienceViewSegment>;
 
@@ -3210,15 +3354,15 @@ export const ad_group_criterion = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -3448,15 +3592,15 @@ export type AdGroupCriterionField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -3561,15 +3705,15 @@ export const ad_group_criterion_label = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -3758,15 +3902,15 @@ export type AdGroupCriterionLabelField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -3964,15 +4108,15 @@ export const ad_group_criterion_simulation = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -4160,15 +4304,15 @@ export type AdGroupCriterionSimulationField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -5393,15 +5537,15 @@ export const ad_parameter = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -5585,15 +5729,15 @@ export type AdParameterField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -5806,6 +5950,7 @@ export const ad_schedule_view = [
   "campaign_criterion.carrier.carrier_constant",
   "campaign_criterion.content_label.type",
   "campaign_criterion.criterion_id",
+  "campaign_criterion.custom_affinity.custom_affinity",
   "campaign_criterion.device.type",
   "campaign_criterion.gender.type",
   "campaign_criterion.income_range.type",
@@ -5945,6 +6090,7 @@ export type AdScheduleViewField =
   | "campaign_criterion.carrier.carrier_constant"
   | "campaign_criterion.content_label.type"
   | "campaign_criterion.criterion_id"
+  | "campaign_criterion.custom_affinity.custom_affinity"
   | "campaign_criterion.device.type"
   | "campaign_criterion.gender.type"
   | "campaign_criterion.income_range.type"
@@ -6123,15 +6269,15 @@ export const age_range_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -6312,15 +6458,15 @@ export type AgeRangeViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -6630,12 +6776,6 @@ export const bidding_strategy = [
   "bidding_strategy.id",
   "bidding_strategy.name",
   "bidding_strategy.non_removed_campaign_count",
-  "bidding_strategy.page_one_promoted.bid_modifier",
-  "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros",
-  "bidding_strategy.page_one_promoted.only_raise_cpc_bids",
-  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained",
-  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low",
-  "bidding_strategy.page_one_promoted.strategy_goal",
   "bidding_strategy.resource_name",
   "bidding_strategy.status",
   "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
@@ -6644,11 +6784,6 @@ export const bidding_strategy = [
   "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
   "bidding_strategy.target_impression_share.location",
   "bidding_strategy.target_impression_share.location_fraction_micros",
-  "bidding_strategy.target_outrank_share.competitor_domain",
-  "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros",
-  "bidding_strategy.target_outrank_share.only_raise_cpc_bids",
-  "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low",
-  "bidding_strategy.target_outrank_share.target_outrank_share_micros",
   "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
   "bidding_strategy.target_roas.cpc_bid_floor_micros",
   "bidding_strategy.target_roas.target_roas",
@@ -6681,12 +6816,6 @@ export type BiddingStrategyField =
   | "bidding_strategy.id"
   | "bidding_strategy.name"
   | "bidding_strategy.non_removed_campaign_count"
-  | "bidding_strategy.page_one_promoted.bid_modifier"
-  | "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros"
-  | "bidding_strategy.page_one_promoted.only_raise_cpc_bids"
-  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained"
-  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low"
-  | "bidding_strategy.page_one_promoted.strategy_goal"
   | "bidding_strategy.resource_name"
   | "bidding_strategy.status"
   | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
@@ -6695,11 +6824,6 @@ export type BiddingStrategyField =
   | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
   | "bidding_strategy.target_impression_share.location"
   | "bidding_strategy.target_impression_share.location_fraction_micros"
-  | "bidding_strategy.target_outrank_share.competitor_domain"
-  | "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros"
-  | "bidding_strategy.target_outrank_share.only_raise_cpc_bids"
-  | "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low"
-  | "bidding_strategy.target_outrank_share.target_outrank_share_micros"
   | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
   | "bidding_strategy.target_roas.cpc_bid_floor_micros"
   | "bidding_strategy.target_roas.target_roas"
@@ -6837,12 +6961,6 @@ export const campaign = [
   "bidding_strategy.id",
   "bidding_strategy.name",
   "bidding_strategy.non_removed_campaign_count",
-  "bidding_strategy.page_one_promoted.bid_modifier",
-  "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros",
-  "bidding_strategy.page_one_promoted.only_raise_cpc_bids",
-  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained",
-  "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low",
-  "bidding_strategy.page_one_promoted.strategy_goal",
   "bidding_strategy.resource_name",
   "bidding_strategy.status",
   "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
@@ -6851,11 +6969,6 @@ export const campaign = [
   "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
   "bidding_strategy.target_impression_share.location",
   "bidding_strategy.target_impression_share.location_fraction_micros",
-  "bidding_strategy.target_outrank_share.competitor_domain",
-  "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros",
-  "bidding_strategy.target_outrank_share.only_raise_cpc_bids",
-  "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low",
-  "bidding_strategy.target_outrank_share.target_outrank_share_micros",
   "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
   "bidding_strategy.target_roas.cpc_bid_floor_micros",
   "bidding_strategy.target_roas.target_roas",
@@ -6971,12 +7084,6 @@ export type CampaignField =
   | "bidding_strategy.id"
   | "bidding_strategy.name"
   | "bidding_strategy.non_removed_campaign_count"
-  | "bidding_strategy.page_one_promoted.bid_modifier"
-  | "bidding_strategy.page_one_promoted.cpc_bid_ceiling_micros"
-  | "bidding_strategy.page_one_promoted.only_raise_cpc_bids"
-  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_budget_constrained"
-  | "bidding_strategy.page_one_promoted.raise_cpc_bid_when_quality_score_is_low"
-  | "bidding_strategy.page_one_promoted.strategy_goal"
   | "bidding_strategy.resource_name"
   | "bidding_strategy.status"
   | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
@@ -6985,11 +7092,6 @@ export type CampaignField =
   | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
   | "bidding_strategy.target_impression_share.location"
   | "bidding_strategy.target_impression_share.location_fraction_micros"
-  | "bidding_strategy.target_outrank_share.competitor_domain"
-  | "bidding_strategy.target_outrank_share.cpc_bid_ceiling_micros"
-  | "bidding_strategy.target_outrank_share.only_raise_cpc_bids"
-  | "bidding_strategy.target_outrank_share.raise_cpc_bid_when_quality_score_is_low"
-  | "bidding_strategy.target_outrank_share.target_outrank_share_micros"
   | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
   | "bidding_strategy.target_roas.cpc_bid_floor_micros"
   | "bidding_strategy.target_roas.target_roas"
@@ -7212,6 +7314,25 @@ export type CampaignSegments = Array<CampaignSegment>;
 */
 // @ts-ignore
 export const campaign_audience_view = [
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -7289,6 +7410,7 @@ export const campaign_audience_view = [
   "campaign_criterion.carrier.carrier_constant",
   "campaign_criterion.content_label.type",
   "campaign_criterion.criterion_id",
+  "campaign_criterion.custom_affinity.custom_affinity",
   "campaign_criterion.device.type",
   "campaign_criterion.gender.type",
   "campaign_criterion.income_range.type",
@@ -7347,10 +7469,65 @@ export const campaign_audience_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
+  "user_list.access_reason",
+  "user_list.account_user_list_status",
+  "user_list.basic_user_list.actions",
+  "user_list.closing_reason",
+  "user_list.crm_based_user_list.app_id",
+  "user_list.crm_based_user_list.data_source_type",
+  "user_list.crm_based_user_list.upload_key_type",
+  "user_list.description",
+  "user_list.eligible_for_display",
+  "user_list.eligible_for_search",
+  "user_list.id",
+  "user_list.integration_code",
+  "user_list.logical_user_list.rules",
+  "user_list.membership_life_span",
+  "user_list.membership_status",
+  "user_list.name",
+  "user_list.read_only",
+  "user_list.resource_name",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.prepopulation_status",
+  "user_list.similar_user_list.seed_user_list",
+  "user_list.size_for_display",
+  "user_list.size_for_search",
+  "user_list.size_range_for_display",
+  "user_list.size_range_for_search",
+  "user_list.type",
   "campaign_audience_view.resource_name",
 ];
 
 export type CampaignAudienceViewField =
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -7428,6 +7605,7 @@ export type CampaignAudienceViewField =
   | "campaign_criterion.carrier.carrier_constant"
   | "campaign_criterion.content_label.type"
   | "campaign_criterion.criterion_id"
+  | "campaign_criterion.custom_affinity.custom_affinity"
   | "campaign_criterion.device.type"
   | "campaign_criterion.gender.type"
   | "campaign_criterion.income_range.type"
@@ -7486,6 +7664,42 @@ export type CampaignAudienceViewField =
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type"
   | "campaign_audience_view.resource_name";
 
 export type CampaignAudienceViewFields = Array<CampaignAudienceViewField>;
@@ -7539,10 +7753,12 @@ export type CampaignAudienceViewMetric =
 export type CampaignAudienceViewMetrics = Array<CampaignAudienceViewMetric>;
 
 export type CampaignAudienceViewSegment =
+  | "bidding_strategy"
   | "segments.click_type"
   | "segments.conversion_action"
   | "segments.conversion_action_category"
   | "segments.conversion_action_name"
+  | "segments.date"
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.hotel_date_selection_type"
@@ -7551,7 +7767,8 @@ export type CampaignAudienceViewSegment =
   | "segments.quarter"
   | "segments.slot"
   | "segments.week"
-  | "segments.year";
+  | "segments.year"
+  | "user_list";
 
 export type CampaignAudienceViewSegments = Array<CampaignAudienceViewSegment>;
 
@@ -8006,6 +8223,7 @@ export type CampaignBudgetSegment =
   | "segments.conversion_action"
   | "segments.conversion_action_category"
   | "segments.conversion_action_name"
+  | "segments.date"
   | "segments.external_conversion_source";
 
 export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
@@ -8197,6 +8415,7 @@ export const campaign_criterion = [
   "campaign_criterion.carrier.carrier_constant",
   "campaign_criterion.content_label.type",
   "campaign_criterion.criterion_id",
+  "campaign_criterion.custom_affinity.custom_affinity",
   "campaign_criterion.device.type",
   "campaign_criterion.gender.type",
   "campaign_criterion.income_range.type",
@@ -8418,6 +8637,7 @@ export type CampaignCriterionField =
   | "campaign_criterion.carrier.carrier_constant"
   | "campaign_criterion.content_label.type"
   | "campaign_criterion.criterion_id"
+  | "campaign_criterion.custom_affinity.custom_affinity"
   | "campaign_criterion.device.type"
   | "campaign_criterion.gender.type"
   | "campaign_criterion.income_range.type"
@@ -8547,6 +8767,7 @@ export const campaign_criterion_simulation = [
   "campaign_criterion.carrier.carrier_constant",
   "campaign_criterion.content_label.type",
   "campaign_criterion.criterion_id",
+  "campaign_criterion.custom_affinity.custom_affinity",
   "campaign_criterion.device.type",
   "campaign_criterion.gender.type",
   "campaign_criterion.income_range.type",
@@ -8693,6 +8914,7 @@ export type CampaignCriterionSimulationField =
   | "campaign_criterion.carrier.carrier_constant"
   | "campaign_criterion.content_label.type"
   | "campaign_criterion.criterion_id"
+  | "campaign_criterion.custom_affinity.custom_affinity"
   | "campaign_criterion.device.type"
   | "campaign_criterion.gender.type"
   | "campaign_criterion.income_range.type"
@@ -10706,8 +10928,39 @@ export type ConversionActionField =
 
 export type ConversionActionFields = Array<ConversionActionField>;
 
+export type ConversionActionMetric =
+  | "metrics.conversion_last_conversion_date"
+  | "metrics.conversion_last_received_request_date_time";
+
+export type ConversionActionMetrics = Array<ConversionActionMetric>;
+
 /*
  --- End of ConversionAction ---
+*/
+
+/*
+ --- Start of CurrencyConstant ---
+*/
+// @ts-ignore
+export const currency_constant = [
+  "currency_constant.billable_unit_micros",
+  "currency_constant.code",
+  "currency_constant.name",
+  "currency_constant.resource_name",
+  "currency_constant.symbol",
+];
+
+export type CurrencyConstantField =
+  | "currency_constant.billable_unit_micros"
+  | "currency_constant.code"
+  | "currency_constant.name"
+  | "currency_constant.resource_name"
+  | "currency_constant.symbol";
+
+export type CurrencyConstantFields = Array<CurrencyConstantField>;
+
+/*
+ --- End of CurrencyConstant ---
 */
 
 /*
@@ -10921,9 +11174,15 @@ export const customer_client = [
   "customer.time_zone",
   "customer.tracking_url_template",
   "customer_client.client_customer",
+  "customer_client.currency_code",
+  "customer_client.descriptive_name",
   "customer_client.hidden",
+  "customer_client.id",
   "customer_client.level",
+  "customer_client.manager",
   "customer_client.resource_name",
+  "customer_client.test_account",
+  "customer_client.time_zone",
 ];
 
 export type CustomerClientField =
@@ -10946,9 +11205,15 @@ export type CustomerClientField =
   | "customer.time_zone"
   | "customer.tracking_url_template"
   | "customer_client.client_customer"
+  | "customer_client.currency_code"
+  | "customer_client.descriptive_name"
   | "customer_client.hidden"
+  | "customer_client.id"
   | "customer_client.level"
-  | "customer_client.resource_name";
+  | "customer_client.manager"
+  | "customer_client.resource_name"
+  | "customer_client.test_account"
+  | "customer_client.time_zone";
 
 export type CustomerClientFields = Array<CustomerClientField>;
 
@@ -11728,15 +11993,15 @@ export const display_keyword_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -11772,6 +12037,25 @@ export const display_keyword_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -11917,15 +12201,15 @@ export type DisplayKeywordViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -11961,6 +12245,25 @@ export type DisplayKeywordViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -12098,6 +12401,7 @@ export type DisplayKeywordViewMetric =
 export type DisplayKeywordViewMetrics = Array<DisplayKeywordViewMetric>;
 
 export type DisplayKeywordViewSegment =
+  | "bidding_strategy"
   | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
@@ -12664,6 +12968,9 @@ export const dynamic_search_ads_search_term_view = [
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
+  "dynamic_search_ads_search_term_view.has_matching_keyword",
+  "dynamic_search_ads_search_term_view.has_negative_keyword",
+  "dynamic_search_ads_search_term_view.has_negative_url",
   "dynamic_search_ads_search_term_view.headline",
   "dynamic_search_ads_search_term_view.landing_page",
   "dynamic_search_ads_search_term_view.page_url",
@@ -12782,6 +13089,9 @@ export type DynamicSearchAdsSearchTermViewField =
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
+  | "dynamic_search_ads_search_term_view.has_matching_keyword"
+  | "dynamic_search_ads_search_term_view.has_negative_keyword"
+  | "dynamic_search_ads_search_term_view.has_negative_url"
   | "dynamic_search_ads_search_term_view.headline"
   | "dynamic_search_ads_search_term_view.landing_page"
   | "dynamic_search_ads_search_term_view.page_url"
@@ -13284,6 +13594,9 @@ export const extension_feed_item = [
   "extension_feed_item.device",
   "extension_feed_item.end_date_time",
   "extension_feed_item.extension_type",
+  "extension_feed_item.hotel_callout_feed_item.language_code",
+  "extension_feed_item.hotel_callout_feed_item.text",
+  "extension_feed_item.id",
   "extension_feed_item.location_feed_item.address_line_1",
   "extension_feed_item.location_feed_item.address_line_2",
   "extension_feed_item.location_feed_item.business_name",
@@ -13477,6 +13790,9 @@ export type ExtensionFeedItemField =
   | "extension_feed_item.device"
   | "extension_feed_item.end_date_time"
   | "extension_feed_item.extension_type"
+  | "extension_feed_item.hotel_callout_feed_item.language_code"
+  | "extension_feed_item.hotel_callout_feed_item.text"
+  | "extension_feed_item.id"
   | "extension_feed_item.location_feed_item.address_line_1"
   | "extension_feed_item.location_feed_item.address_line_2"
   | "extension_feed_item.location_feed_item.business_name"
@@ -13731,6 +14047,7 @@ export const feed_item = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -13740,6 +14057,7 @@ export const feed_item = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -13814,6 +14132,9 @@ export const feed_item = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -13989,6 +14310,7 @@ export type FeedItemField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -13998,6 +14320,7 @@ export type FeedItemField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -14072,6 +14395,9 @@ export type FeedItemField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -14403,6 +14729,7 @@ export const feed_item_target = [
   "feed_item_target.keyword.match_type",
   "feed_item_target.keyword.text",
   "feed_item_target.resource_name",
+  "feed_item_target.status",
 ];
 
 export type FeedItemTargetField =
@@ -14549,7 +14876,8 @@ export type FeedItemTargetField =
   | "feed_item_target.geo_target_constant"
   | "feed_item_target.keyword.match_type"
   | "feed_item_target.keyword.text"
-  | "feed_item_target.resource_name";
+  | "feed_item_target.resource_name"
+  | "feed_item_target.status";
 
 export type FeedItemTargetFields = Array<FeedItemTargetField>;
 
@@ -14703,6 +15031,7 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -14712,6 +15041,7 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -14786,6 +15116,9 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -14941,6 +15274,7 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -14950,6 +15284,7 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -15024,6 +15359,9 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -15245,15 +15583,15 @@ export const gender_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -15289,6 +15627,25 @@ export const gender_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -15434,15 +15791,15 @@ export type GenderViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -15478,6 +15835,25 @@ export type GenderViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -15615,6 +15991,7 @@ export type GenderViewMetric =
 export type GenderViewMetrics = Array<GenderViewMetric>;
 
 export type GenderViewSegment =
+  | "bidding_strategy"
   | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
@@ -15625,6 +16002,7 @@ export type GenderViewSegment =
   | "segments.device"
   | "segments.external_conversion_source"
   | "segments.month"
+  | "segments.month_of_year"
   | "segments.quarter"
   | "segments.week"
   | "segments.year";
@@ -16329,15 +16707,15 @@ export const hotel_group_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -16518,15 +16896,15 @@ export type HotelGroupViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -16675,6 +17053,7 @@ export type HotelGroupViewMetric =
   | "metrics.search_budget_lost_absolute_top_impression_share"
   | "metrics.search_budget_lost_impression_share"
   | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_click_share"
   | "metrics.search_impression_share"
   | "metrics.search_rank_lost_absolute_top_impression_share"
   | "metrics.search_rank_lost_impression_share"
@@ -16917,11 +17296,13 @@ export type HotelPerformanceViewMetric =
   | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.hotel_average_lead_value_micros"
+  | "metrics.hotel_price_difference_percentage"
   | "metrics.impressions"
   | "metrics.search_absolute_top_impression_share"
   | "metrics.search_budget_lost_absolute_top_impression_share"
   | "metrics.search_budget_lost_impression_share"
   | "metrics.search_budget_lost_top_impression_share"
+  | "metrics.search_click_share"
   | "metrics.search_impression_share"
   | "metrics.search_rank_lost_absolute_top_impression_share"
   | "metrics.search_rank_lost_impression_share"
@@ -16950,6 +17331,7 @@ export type HotelPerformanceViewSegment =
   | "segments.hotel_country"
   | "segments.hotel_date_selection_type"
   | "segments.hotel_length_of_stay"
+  | "segments.hotel_price_bucket"
   | "segments.hotel_rate_rule_id"
   | "segments.hotel_rate_type"
   | "segments.hotel_state"
@@ -17429,15 +17811,15 @@ export const keyword_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -17618,15 +18000,15 @@ export type KeywordViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -18328,6 +18710,7 @@ export const location_view = [
   "campaign_criterion.carrier.carrier_constant",
   "campaign_criterion.content_label.type",
   "campaign_criterion.criterion_id",
+  "campaign_criterion.custom_affinity.custom_affinity",
   "campaign_criterion.device.type",
   "campaign_criterion.gender.type",
   "campaign_criterion.income_range.type",
@@ -18467,6 +18850,7 @@ export type LocationViewField =
   | "campaign_criterion.carrier.carrier_constant"
   | "campaign_criterion.content_label.type"
   | "campaign_criterion.criterion_id"
+  | "campaign_criterion.custom_affinity.custom_affinity"
   | "campaign_criterion.device.type"
   | "campaign_criterion.gender.type"
   | "campaign_criterion.income_range.type"
@@ -18641,15 +19025,15 @@ export const managed_placement_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -18685,6 +19069,25 @@ export const managed_placement_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -18830,15 +19233,15 @@ export type ManagedPlacementViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -18874,6 +19277,25 @@ export type ManagedPlacementViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -19011,6 +19433,7 @@ export type ManagedPlacementViewMetric =
 export type ManagedPlacementViewMetrics = Array<ManagedPlacementViewMetric>;
 
 export type ManagedPlacementViewSegment =
+  | "bidding_strategy"
   | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
@@ -19586,15 +20009,15 @@ export const parental_status_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -19775,15 +20198,15 @@ export type ParentalStatusViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -20070,15 +20493,15 @@ export const product_group_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -20259,15 +20682,15 @@ export type ProductGroupViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -20869,6 +21292,7 @@ export const search_term_view = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -20878,6 +21302,7 @@ export const search_term_view = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -20952,6 +21377,9 @@ export const search_term_view = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -21109,6 +21537,7 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -21118,6 +21547,7 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -21192,6 +21622,9 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -21463,6 +21896,76 @@ export type SharedCriterionFields = Array<SharedCriterionField>;
 */
 // @ts-ignore
 export const shared_set = [
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
+  "campaign.base_campaign",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.experiment_type",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.labels",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.payment_mode",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "campaign_shared_set.campaign",
+  "campaign_shared_set.resource_name",
+  "campaign_shared_set.shared_set",
+  "campaign_shared_set.status",
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
   "customer.call_reporting_setting.call_conversion_reporting_enabled",
@@ -21491,6 +21994,76 @@ export const shared_set = [
 ];
 
 export type SharedSetField =
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
+  | "campaign.base_campaign"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.experiment_type"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.labels"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.payment_mode"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "campaign_shared_set.campaign"
+  | "campaign_shared_set.resource_name"
+  | "campaign_shared_set.shared_set"
+  | "campaign_shared_set.status"
   | "customer.auto_tagging_enabled"
   | "customer.call_reporting_setting.call_conversion_action"
   | "customer.call_reporting_setting.call_conversion_reporting_enabled"
@@ -21518,6 +22091,10 @@ export type SharedSetField =
   | "shared_set.type";
 
 export type SharedSetFields = Array<SharedSetField>;
+
+export type SharedSetSegment = "campaign" | "campaign_shared_set";
+
+export type SharedSetSegments = Array<SharedSetSegment>;
 
 /*
  --- End of SharedSet ---
@@ -21913,15 +22490,15 @@ export const topic_view = [
   "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
   "ad_group_criterion.listing_group.case_value.hotel_id.value",
   "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
-  "ad_group_criterion.listing_group.case_value.listing_brand.value",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index",
-  "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
   "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
   "ad_group_criterion.listing_group.case_value.product_channel.channel",
   "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
   "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
   "ad_group_criterion.listing_group.case_value.product_item_id.value",
   "ad_group_criterion.listing_group.case_value.product_type.level",
   "ad_group_criterion.listing_group.case_value.product_type.value",
@@ -21957,6 +22534,25 @@ export const topic_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -22102,15 +22698,15 @@ export type TopicViewField =
   | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
   | "ad_group_criterion.listing_group.case_value.hotel_id.value"
   | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
-  | "ad_group_criterion.listing_group.case_value.listing_brand.value"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.index"
-  | "ad_group_criterion.listing_group.case_value.listing_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
   | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
   | "ad_group_criterion.listing_group.case_value.product_channel.channel"
   | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
   | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
   | "ad_group_criterion.listing_group.case_value.product_item_id.value"
   | "ad_group_criterion.listing_group.case_value.product_type.level"
   | "ad_group_criterion.listing_group.case_value.product_type.value"
@@ -22146,6 +22742,25 @@ export type TopicViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -22283,6 +22898,7 @@ export type TopicViewMetric =
 export type TopicViewMetrics = Array<TopicViewMetric>;
 
 export type TopicViewSegment =
+  | "bidding_strategy"
   | "segments.ad_network_type"
   | "segments.click_type"
   | "segments.conversion_action"
@@ -22815,6 +23431,7 @@ export const video = [
   "ad_group_ad.ad.display_upload_ad.media_bundle",
   "ad_group_ad.ad.display_url",
   "ad_group_ad.ad.expanded_dynamic_search_ad.description",
+  "ad_group_ad.ad.expanded_dynamic_search_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.description",
   "ad_group_ad.ad.expanded_text_ad.description2",
   "ad_group_ad.ad.expanded_text_ad.headline_part1",
@@ -22824,6 +23441,7 @@ export const video = [
   "ad_group_ad.ad.expanded_text_ad.path2",
   "ad_group_ad.ad.final_app_urls",
   "ad_group_ad.ad.final_mobile_urls",
+  "ad_group_ad.ad.final_url_suffix",
   "ad_group_ad.ad.final_urls",
   "ad_group_ad.ad.gmail_ad.header_image",
   "ad_group_ad.ad.gmail_ad.marketing_image",
@@ -22898,6 +23516,9 @@ export const video = [
   "ad_group_ad.ad.url_collections",
   "ad_group_ad.ad.url_custom_parameters",
   "ad_group_ad.ad.video_ad.bumper.companion_banner",
+  "ad_group_ad.ad.video_ad.discovery.description1",
+  "ad_group_ad.ad.video_ad.discovery.description2",
+  "ad_group_ad.ad.video_ad.discovery.headline",
   "ad_group_ad.ad.video_ad.in_stream.action_button_label",
   "ad_group_ad.ad.video_ad.in_stream.action_headline",
   "ad_group_ad.ad.video_ad.in_stream.companion_banner",
@@ -23056,6 +23677,7 @@ export type VideoField =
   | "ad_group_ad.ad.display_upload_ad.media_bundle"
   | "ad_group_ad.ad.display_url"
   | "ad_group_ad.ad.expanded_dynamic_search_ad.description"
+  | "ad_group_ad.ad.expanded_dynamic_search_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.description"
   | "ad_group_ad.ad.expanded_text_ad.description2"
   | "ad_group_ad.ad.expanded_text_ad.headline_part1"
@@ -23065,6 +23687,7 @@ export type VideoField =
   | "ad_group_ad.ad.expanded_text_ad.path2"
   | "ad_group_ad.ad.final_app_urls"
   | "ad_group_ad.ad.final_mobile_urls"
+  | "ad_group_ad.ad.final_url_suffix"
   | "ad_group_ad.ad.final_urls"
   | "ad_group_ad.ad.gmail_ad.header_image"
   | "ad_group_ad.ad.gmail_ad.marketing_image"
@@ -23139,6 +23762,9 @@ export type VideoField =
   | "ad_group_ad.ad.url_collections"
   | "ad_group_ad.ad.url_custom_parameters"
   | "ad_group_ad.ad.video_ad.bumper.companion_banner"
+  | "ad_group_ad.ad.video_ad.discovery.description1"
+  | "ad_group_ad.ad.video_ad.discovery.description2"
+  | "ad_group_ad.ad.video_ad.discovery.headline"
   | "ad_group_ad.ad.video_ad.in_stream.action_button_label"
   | "ad_group_ad.ad.video_ad.in_stream.action_headline"
   | "ad_group_ad.ad.video_ad.in_stream.companion_banner"
@@ -23339,6 +23965,7 @@ export type Segment =
   | "segments.hotel_country"
   | "segments.hotel_date_selection_type"
   | "segments.hotel_length_of_stay"
+  | "segments.hotel_price_bucket"
   | "segments.hotel_rate_rule_id"
   | "segments.hotel_rate_type"
   | "segments.hotel_state"
@@ -23456,6 +24083,7 @@ export type Metric =
   | "metrics.historical_quality_score"
   | "metrics.historical_search_predicted_ctr"
   | "metrics.hotel_average_lead_value_micros"
+  | "metrics.hotel_price_difference_percentage"
   | "metrics.impressions"
   | "metrics.impressions_from_store_reach"
   | "metrics.interaction_event_types"

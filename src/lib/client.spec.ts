@@ -4,6 +4,7 @@ import { GoogleAdsClient } from "./client";
 import { AdvertisingChannelType, BiddingStrategyType, CampaignStatus } from "./enums";
 import {
   SearchGoogleAdsRequest,
+  SearchGoogleAdsStreamRequest,
   SearchGoogleAdsResponse,
   Campaign,
   SuggestGeoTargetConstantsRequest,
@@ -86,6 +87,34 @@ test("loading api services", () => {
 
   const service = client.getService("GoogleAdsService");
   expect(service).toBeInstanceOf(grpc.Client);
+});
+
+test("client can support streaming for GoogleAdsService.searchStream", async done => {
+  const client = new GoogleAdsClient({
+    access_token: ACCESS_TOKEN,
+    developer_token: DEVELOPER_TOKEN,
+    login_customer_id: LOGIN_CUSTOMER_ID,
+  });
+
+  const service = client.getService("GoogleAdsService", { useStreaming: true });
+
+  const request = new SearchGoogleAdsStreamRequest();
+  request.setQuery(`SELECT campaign.id FROM campaign`);
+
+  try {
+    await new Promise((resolve, reject) => {
+      const call = service.searchStream(request);
+      const chunks: any[] = [];
+
+      call.on("data", (chunk: any) => chunks.push(chunk));
+      call.on("error", (err: Error) => reject(err));
+      call.on("end", () => resolve(chunks));
+    });
+  } catch (err) {
+    expect(err.message).toContain("UNAUTHENTICATED");
+  }
+
+  done();
 });
 
 test("correctly builds a grpc resource from an object", () => {
@@ -364,7 +393,8 @@ test("correctly uses logging options", async () => {
             pageSize: 0,
             pageToken: "",
             query: "",
-            returnSummaryRow: false,
+            returnTotalResultsCount: false,
+            summaryRowSetting: 0,
             validateOnly: false,
           },
           headers: {
@@ -372,7 +402,7 @@ test("correctly uses logging options", async () => {
             "developer-token": "DEVELOPER_TOKEN",
             "login-customer-id": "LOGIN_CUSTOMER_ID",
           },
-          method: "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+          method: "/google.ads.googleads.v3.services.GoogleAdsService/Search",
         });
       },
     },

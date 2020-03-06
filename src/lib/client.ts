@@ -19,8 +19,9 @@ import { promisifyServiceClient, convertToProtoFormat } from "./utils";
 // @ts-ignore
 import compiledResources from "../protos/compiled-resources.js";
 
-const DEFAULT_VERSION = "v2";
+const DEFAULT_VERSION = "v3";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
+const STREAMING_SUPPORTED_SERVICES = ["GoogleAdsService"];
 
 const PROTO_ROOT = `google.ads.googleads.${DEFAULT_VERSION}`;
 const allProtos = get(compiledResources, PROTO_ROOT);
@@ -46,6 +47,10 @@ interface ClientOptionsNoToken extends CommonClientOptions {
     clientSecret?: string,
     refreshToken?: string
   ): Promise<string>;
+}
+
+interface GetServiceOptions {
+  useStreaming: boolean;
 }
 
 export class GoogleAdsClient {
@@ -75,7 +80,7 @@ export class GoogleAdsClient {
     }
   }
 
-  public getService(serviceName: string): any {
+  public getService(serviceName: string, serviceOptions?: GetServiceOptions): any {
     const serviceClientName = `${serviceName}Client`;
 
     if (!services.hasOwnProperty(serviceClientName)) {
@@ -103,7 +108,10 @@ export class GoogleAdsClient {
     );
 
     /* Promisify gRPC service methods (callbacks are kept as well) */
-    promisifyServiceClient(service);
+    // This doesn't work with the GoogleAdsService.searchStream method, so optional use is required
+    if (!serviceOptions?.useStreaming && STREAMING_SUPPORTED_SERVICES.includes(serviceName)) {
+      promisifyServiceClient(service);
+    }
 
     return service;
   }
