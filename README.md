@@ -336,7 +336,7 @@ const call: ClientReadableStream<SearchGoogleAdsStreamResponse> = service.search
 // Listen for errors
 call.on("error", err => console.error(err));
 
-// Listen for data (max 1000 rows per chunk)
+// Listen for data (max 10,000 rows per chunk)
 call.on("data", (chunk: SearchGoogleAdsStreamResponse.AsObject) => {
   console.log(chunk.resultsList);
 });
