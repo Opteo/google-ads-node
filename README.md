@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://developers.google.com/google-ads/api/docs/release-notes">
-    <img src="https://img.shields.io/badge/google%20ads-v2.0.0-009688.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/google%20ads-v3.0.0-009688.svg?style=flat-square">
   </a>
   <a href="https://www.npmjs.com/package/google-ads-node">
     <img src="https://img.shields.io/npm/v/google-ads-node.svg?style=flat-square">
@@ -286,6 +286,90 @@ const { resultsList } = await service.search(request);
 console.log(resultsList[0].campaign.id); // 123
 ```
 
+### Streaming Results
+
+The Google Ads API v3 supports streaming results via the `GoogleAdsService.searchStream` method. Importantly, you must enable the `useStreaming` option when calling `getService`, as this configures gRPC correctly.
+
+```typescript
+const service = client.getService("GoogleAdsService", { useStreaming: true });
+```
+
+**Note:** Streaming is only supported for `GoogleAdsService`, see the [official docs for more information](https://developers.google.com/google-ads/api/docs/reporting/streaming).
+
+A full example of using streaming to retrieve search terms for an account is shown below:
+
+```typescript
+import {
+  GoogleAdsClient,
+  SearchGoogleAdsStreamRequest,
+  SearchGoogleAdsStreamResponse,
+  ClientReadableStream,
+} from "google-ads-node";
+
+const client = new GoogleAdsClient({
+  access_token: "ACCESS_TOKEN",
+  developer_token: "DEVELOPER_TOKEN",
+  parseResults: true,
+});
+
+// The useStreaming setting must be enableds
+const service = client.getService("GoogleAdsService", { useStreaming: true });
+
+// Requests are built with SearchGoogleAdsStreamRequest
+// Not the usual SearchGoogleAdsRequest
+const request = new SearchGoogleAdsStreamRequest();
+request.setQuery(`
+    SELECT
+      campaign.resource_name,
+      metrics.impressions,
+      segments.date
+    FROM 
+      campaign
+    WHERE 
+      segments.date BETWEEN "2019-01-01" AND "2020-01-01"
+  `);
+request.setCustomerId("CUSTOMER_ID");
+
+// Start the stream (of type grpc.ClientReadableStream)
+const call: ClientReadableStream<SearchGoogleAdsStreamResponse> = service.searchStream(request);
+
+// Listen for errors
+call.on("error", err => console.error(err));
+
+// Listen for data (max 1000 rows per chunk)
+call.on("data", (chunk: SearchGoogleAdsStreamResponse.AsObject) => {
+  console.log(chunk.resultsList);
+});
+
+// Called when the stream has finished
+call.on("end", () => {
+  console.log("Finished streaming data");
+});
+```
+
+If you don't want to work with callbacks, a helper method can easily be constructed to allow the use of `await` with streaming data:
+
+```typescript
+async function getStreamedResults(
+  request: SearchGoogleAdsStreamRequest
+): Promise<SearchGoogleAdsStreamResponse[]> {
+  return new Promise(async (resolve, reject) => {
+    const call: ClientReadableStream<SearchGoogleAdsStreamResponse> = service.searchStream(request);
+    const chunks: SearchGoogleAdsStreamResponse[] = [];
+
+    call.on("error", err => reject(err));
+    call.on("data", (chunk: SearchGoogleAdsStreamResponse) => chunks.push(chunk));
+    call.on("end", () => resolve(chunks));
+  });
+}
+
+// This starts the stream, and resolves when all data is recieved
+const allResults = await getStreamedResults(streamRequest);
+console.log(allResults);
+```
+
+For more information on streaming, check out the [official documentation for more information](https://developers.google.com/google-ads/api/docs/reporting/streaming).
+
 ### Logging
 
 This library also includes support for logging all requests made to the Google Ads API. The logging functionality was directly inspired by the official client libraries, namely [google-ads-python](https://github.com/googleads/google-ads-python#enabling-and-configuring-logging). The `logging` field of the client constructor has the following configurable settings:
@@ -334,7 +418,7 @@ An example of a successful log message as JSON (with authentication tokens remov
 ```json
 {
   "request": {
-    "method": "/google.ads.googleads.v2.services.GoogleAdsService/Search",
+    "method": "/google.ads.googleads.v3.services.GoogleAdsService/Search",
     "headers": {
       "authorization": "[REMOVED]",
       "developer-token": "[REMOVED]",
