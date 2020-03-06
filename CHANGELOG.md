@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.0"></a>
+# [1.15.0](https://github.com/opteo/google-ads-node/compare/v1.14.0...v1.15.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* **docs:** minor typo in max rows per chunk num ([5df45d6](https://github.com/opteo/google-ads-node/commit/5df45d6))
+
+
+### Features
+
+* **api:** upgraded google ads api to v3.0.0 ([#34](https://github.com/opteo/google-ads-node/issues/34)) ([18695a6](https://github.com/opteo/google-ads-node/commit/18695a6))
+
+
+
 <a name="1.14.0"></a>
 # [1.14.0](https://github.com/opteo/google-ads-node/compare/v1.13.9...v1.14.0) (2019-11-21)
 
