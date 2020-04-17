@@ -37,13 +37,14 @@ const pbToTsMapping = {
   "google.protobuf.Int32Value": "number",
   "google.protobuf.UInt64Value": "number",
   float: "number",
+  "google.protobuf.FloatValue": "number",
   double: "number",
   "google.protobuf.DoubleValue": "number",
 
   bytes: "string",
   string: "string",
   "google.protobuf.StringValue": "string",
-  "google.protobuf.BytesValue": "string"
+  "google.protobuf.BytesValue": "string",
 };
 
 const enumImports = new Set();
@@ -175,9 +176,9 @@ function buildEntityWithEnumsOnly(entity) {
     return;
   }
 
-  let entityWithEnumsOnly = `\n/* ${
-    entity.fullName
-  } */\nexport const ${snakeCaseGads(entity.name)} = {\n`;
+  let entityWithEnumsOnly = `\n/* ${entity.fullName} */\nexport const ${snakeCaseGads(
+    entity.name
+  )} = {\n`;
 
   for (const f in entity.fields) {
     const field = entity.fields[f];

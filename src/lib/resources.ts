@@ -1926,7 +1926,7 @@ export interface CampaignCriterion {
   resource_name?: string;
   campaign?: string;
   criterion_id?: number;
-  bid_modifier?: { value?: number };
+  bid_modifier?: number;
   negative?: boolean;
   type?: CriterionType;
   status?: CampaignCriterionStatus;
