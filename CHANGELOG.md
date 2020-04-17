@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.2"></a>
+## [1.15.2](https://github.com/opteo/google-ads-node/compare/v1.15.1...v1.15.2) (2020-04-17)
+
+
+### Bug Fixes
+
+* **compiler:** ensure google.protobuf.FloatValue compiles to number in types ([f75f719](https://github.com/opteo/google-ads-node/commit/f75f719))
+
+
+
 <a name="1.15.1"></a>
 ## [1.15.1](https://github.com/opteo/google-ads-node/compare/v1.15.0...v1.15.1) (2020-04-17)
 
