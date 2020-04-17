@@ -653,6 +653,13 @@ export const FunctionOperand = {
   matching_function: MatchingFunction,
 };
 
+/* .google.ads.googleads.v3.common.Operand.RequestContextOperand */
+// @ts-ignore
+export const RequestContextOperand = {
+  // @ts-ignore
+  context_type: "enum_MatchingFunctionContextType",
+};
+
 /* .google.ads.googleads.v3.common.Operand */
 // @ts-ignore
 export const Operand = {
@@ -672,13 +679,6 @@ export const Operand = {
 // @ts-ignore
 Operand.function_operand = FunctionOperand;
 
-/* .google.ads.googleads.v3.common.Operand.RequestContextOperand */
-// @ts-ignore
-export const RequestContextOperand = {
-  // @ts-ignore
-  context_type: "enum_MatchingFunctionContextType",
-};
-
 /* .google.ads.googleads.v3.common.MatchingFunction */
 // @ts-ignore
 export const MatchingFunction = {
@@ -694,16 +694,6 @@ export const MatchingFunction = {
   // @ts-ignore
   right_operands: Operand,
 };
-
-/* .google.ads.googleads.v3.common.Operand.FunctionOperand */
-// @ts-ignore
-export const FunctionOperand = {
-  // @ts-ignore
-  matching_function: MatchingFunction,
-};
-
-// @ts-ignore
-Operand.function_operand = FunctionOperand;
 
 /* .google.ads.googleads.v3.common.GenderInfo */
 // @ts-ignore
@@ -4294,7 +4284,7 @@ export const CampaignCriterion = {
   criterion_id: number,
 
   // @ts-ignore
-  bid_modifier: { value: number },
+  bid_modifier: number,
 
   // @ts-ignore
   negative: boolean,

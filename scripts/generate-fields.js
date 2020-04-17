@@ -107,7 +107,10 @@ async function main() {
     stream.write(`]\n\n`);
 
     /* Field types */
-    buildUnionArray(fields.filter(f => f.selectable), `${toTypeCase(resource)}Field`);
+    buildUnionArray(
+      fields.filter(f => f.selectable),
+      `${toTypeCase(resource)}Field`
+    );
 
     /* Per resource metrics */
     const metrics = resourceMetrics[resource];
@@ -185,7 +188,11 @@ async function getAllFields() {
   // metrics,
   // segments
 
-  const response = await service.searchGoogleAdsFields(request);
+  const response = await new Promise(resolve => {
+    service.searchGoogleAdsFields(request, (_error, results) => {
+      resolve(results);
+    });
+  });
   return response;
 }
 

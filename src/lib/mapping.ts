@@ -632,11 +632,11 @@ export const target_restriction = {
 };
 
 /* .google.ads.googleads.v3.common.TargetRestrictionOperation.Operator */
-export const target_restriction_operation_operator = {};
+export const target_restriction_operator = {};
 
 /* .google.ads.googleads.v3.common.TargetRestrictionOperation */
 export const target_restriction_operation = {
-  operator: target_restriction_operation_operator,
+  operator: target_restriction_operator,
   value: target_restriction,
 };
 
@@ -1290,11 +1290,11 @@ export const feed_attribute = {
 };
 
 /* .google.ads.googleads.v3.resources.FeedAttributeOperation.Operator */
-export const feed_attribution_operation_operator = {};
+export const operator = {};
 
 /* .google.ads.googleads.v3.resources.FeedAttributeOperation */
 export const feed_attribute_operation = {
-  operator: feed_attribution_operation_operator,
+  operator,
   value: feed_attribute,
 };
 

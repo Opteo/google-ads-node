@@ -2,8 +2,7 @@ const fs = require("fs");
 const get = require("lodash.get");
 const pb = require("protobufjs");
 const snakeCase = require("lodash.snakecase");
-const DepGraph = require('dependency-graph').DepGraph;
-
+const DepGraph = require("dependency-graph").DepGraph;
 
 function snakeCaseGads(str) {
   const snaked = snakeCase(str);
@@ -37,13 +36,14 @@ const pbToTsMapping = {
   "google.protobuf.Int32Value": "number",
   "google.protobuf.UInt64Value": "number",
   float: "number",
+  "google.protobuf.FloatValue": "number",
   double: "number",
   "google.protobuf.DoubleValue": "number",
 
   bytes: "string",
   string: "string",
   "google.protobuf.StringValue": "string",
-  "google.protobuf.BytesValue": "string"
+  "google.protobuf.BytesValue": "string",
 };
 
 const enumImports = new Set();
@@ -77,7 +77,7 @@ function resolveNestedNodes(entity, set) {
       resolveNestedNodes(entity.nested[i], set);
     }
   }
-  return set
+  return set;
 }
 
 function resolveNestedDependencies(entity, parentEntity, graph) {
@@ -113,7 +113,7 @@ function resolveCircularDependencies(graph) {
       graph.removeDependency(from.name, to.name);
 
       if (!circularDependencies[to.name]) {
-        circularDependencies[to.name] = {}
+        circularDependencies[to.name] = {};
       }
       circularDependencies[to.name][from.name] = from;
     }
@@ -125,23 +125,23 @@ function getOrderedKeys(entities) {
 
   const nodesSet = new Set();
   for (const i in entities) {
-    resolveNestedNodes(root.lookup(i), nodesSet)
+    resolveNestedNodes(root.lookup(i), nodesSet);
   }
-  Array.from(nodesSet).sort().forEach(node => graph.addNode(node))
+  Array.from(nodesSet)
+    .sort()
+    .forEach(node => graph.addNode(node));
 
   for (const i in entities) {
-    resolveNestedDependencies(root.lookup(i), null, graph)
+    resolveNestedDependencies(root.lookup(i), null, graph);
   }
 
-  resolveCircularDependencies(graph)
+  resolveCircularDependencies(graph);
 
   return graph.overallOrder();
 }
 
 function findFieldNamesByType(entity, fieldType) {
-  return Object.keys(entity.fields).filter(key =>
-    entity.fields[key].type === fieldType
-  )
+  return Object.keys(entity.fields).filter(key => entity.fields[key].type === fieldType);
 }
 
 function buildNestedInterfaces(entity) {
@@ -225,11 +225,13 @@ function buildInterfaceType(entity) {
   /* Finalize delayed initialization  */
   if (circularDependencies[entity.name]) {
     for (const i in circularDependencies[entity.name]) {
-      const dependant = circularDependencies[entity.name][i]
-      const fields = findFieldNamesByType(dependant, entity.name)
-      fields.forEach((fieldName) => {
-        stream.write(`\n// @ts-ignore\n${dependant.name}.${snakeCaseGads(fieldName)} = ${entity.name};\n`)
-      })
+      const dependant = circularDependencies[entity.name][i];
+      const fields = findFieldNamesByType(dependant, entity.name);
+      fields.forEach(fieldName => {
+        stream.write(
+          `\n// @ts-ignore\n${dependant.name}.${snakeCaseGads(fieldName)} = ${entity.name};\n`
+        );
+      });
     }
   }
 
@@ -242,9 +244,9 @@ function buildEntityWithEnumsOnly(entity) {
     return;
   }
 
-  let entityWithEnumsOnly = `\n/* ${
-    entity.fullName
-  } */\nexport const ${snakeCaseGads(entity.name)} = {\n`;
+  let entityWithEnumsOnly = `\n/* ${entity.fullName} */\nexport const ${snakeCaseGads(
+    entity.name
+  )} = {\n`;
 
   for (const f in entity.fields) {
     const field = entity.fields[f];
@@ -316,9 +318,7 @@ function translateType(field, key, parent) {
       type = translated.type;
       //   }
       let itemKey = snakeCaseGads(item.name);
-      objType += `${itemKey}: ${
-        translated.isEnum ? `"enum_${type}"` : type
-      },\n`;
+      objType += `${itemKey}: ${translated.isEnum ? `"enum_${type}"` : type},\n`;
     }
     return { type: `{${objType}}`, isEnum: false };
   }
