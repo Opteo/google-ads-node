@@ -4,7 +4,7 @@ const COMPILED_ENUMS_FILEPATH = process.argv[2];
 const API_VERSION = process.argv[3];
 const OUT_FILE = process.argv[4];
 
-const file = require(__dirname + `/${COMPILED_ENUMS_FILEPATH}`);
+const file = require(COMPILED_ENUMS_FILEPATH);
 const enums =
   file.nested.google.nested.ads.nested.googleads.nested[API_VERSION].nested.enums.nested;
 const errors =

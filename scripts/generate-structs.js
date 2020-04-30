@@ -18,13 +18,13 @@ const API_VERSION = process.argv[3];
 const OUT_FILE = process.argv[4];
 const BASE_PATH = `google.ads.googleads.${API_VERSION}`;
 
-const file = require(__dirname + `/${COMPILED_ENUMS_FILEPATH}`);
+const file = require(COMPILED_ENUMS_FILEPATH);
 const resources = getProtobufRoot(`${BASE_PATH}.resources`);
 const common = getProtobufRoot(`${BASE_PATH}.common`);
 const services = getProtobufRoot(`${BASE_PATH}.services`);
 
 const stream = fs.createWriteStream(OUT_FILE);
-const root = pb.loadSync(__dirname + `/${COMPILED_ENUMS_FILEPATH}`);
+const root = pb.loadSync(COMPILED_ENUMS_FILEPATH);
 
 const pbToTsMapping = {
   bool: "boolean",
