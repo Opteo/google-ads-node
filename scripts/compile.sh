@@ -104,17 +104,17 @@ prettier --write $OUT_STATIC_TS_ENUM_STRUCT
 echo "Finished generating types"
 
 # Compress generated protobuf files
-echo "Compressing generated protobuf files.."
-uglifyjs $OUT_COMPILED_RESOURCES -o $OUT_COMPILED_RESOURCES --compress
+echo "Compressing generated protobuf files.. (this may take a few minutes)"
+uglifyjs $OUT_COMPILED_RESOURCES -o $OUT_COMPILED_RESOURCES --compress --mangle
 
-for file in $OUT_DIR/google/ads/googleads/$ADS_VERSION/**/*.js; do
+for file in $OUT_DIR/google/ads/googleads/$GOOGLE_ADS_VERSION/**/*.js; do
     echo "compressing $(basename $file)";
-    uglifyjs $file -o $file --compress;
+    uglifyjs $file -o $file --compress --mangle;
 done
 
 for file in $OUT_DIR/google/**/*.js; do
     echo "compressing $(basename $file)";
-    uglifyjs $file -o $file --compress;
+    uglifyjs $file -o $file --compress --mangle;
 done
 
 echo "Removing empty files.."
