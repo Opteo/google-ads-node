@@ -506,17 +506,24 @@ node google-ads-node-example.js 2> example.log
 
 ### Protocol Buffers
 
-To update the Google Ads API version, the latest proto files (in the `googleapis` submodule) must be compiled.
+To update the Google Ads API version, the latest proto files (from the [googleapis](https://github.com/googleapis/googleapis) repo) must be compiled.
 
 #### Requirements:
 
-- [Protoc compiler](https://github.com/protocolbuffers/protobuf) installed on your machine and added to your `$PATH`
-- Latest dependencies installed – make sure to use `yarn install` since some dependencies require a C++ compilation step
+- [Docker](https://docs.docker.com/engine/install/)
 
 #### Steps:
 
-1. Navigate into the `googleapis/` submodule and update with `git pull`.
+1. If it's major version update, change `ADS_VERSION` in `Makefile`, e.g. `ADS_VERSION=v4`
+2. Run `make protos` within the `google-ads-node/` directory
+3. Update any README instances of the Google Ads API version number, e.g. the NPM badge URL
 
-2. Run `make protos` to compile the `*.proto` files
+Note: there may be some errors in the newly generated `src/lib/struct.ts` which require manual fixes.
 
-3. The new compiled proto files should now be in `src/protos/`, under the `google/ads/googleads/v0/` path.
+There should now be a bunch of changes in the `src/protos` folder. Package these changes up into a single commit, using the following template commit message:
+
+```
+git commit -m "feat(api): upgraded google ads api to v3.0.0"
+```
+
+If there are any upgrade issues, the `make debug-protos` command may be useful.
