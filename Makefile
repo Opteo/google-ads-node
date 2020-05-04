@@ -1,130 +1,50 @@
 # Google Ads API version
 ADS_VERSION=v3
-
-# Proto plugin paths
-PROTOC_GEN_TS_PATH=./node_modules/.bin/protoc-gen-ts
-PROTOC_GEN_GRPC_PATH=./node_modules/grpc-tools/bin/grpc_node_plugin
-
-# Proto directories
 PROTO_ROOT_DIR=googleapis/
-PROTO_SRC_DIR=google/ads/googleads/$(ADS_VERSION)/**/*.proto
-PROTO_SRC_DEPENDENCIES=google/**/*.proto
 
-PROTO_COMMON_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/common/*.proto
-PROTO_ERRORS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/errors/*.proto
-PROTO_ENUMS_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/enums/*.proto
-PROTO_RESOURCES_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/resources/*.proto
-PROTO_SERVICES_ONLY=$(PROTO_ROOT_DIR)/google/ads/googleads/$(ADS_VERSION)/services/*.proto
+DOCKER_IMAGE=opteo/google-ads-node
+DOCKER_CONTAINER=gads-node-temp
 
-PROTO_GOOGLE_DEPENDENCIES=$(PROTO_ROOT_DIR)google/rpc/*.proto $(PROTO_ROOT_DIR)google/longrunning/*.proto
-ALL_PROTOBUFS=$(PROTO_GOOGLE_DEPENDENCIES) $(PROTO_COMMON_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_ENUMS_ONLY) $(PROTO_RESOURCES_ONLY) $(PROTO_SERVICES_ONLY)
+protos: docker-build docker-run clean copy-ts-files copy-protos docker-kill-container fields
 
-# Directory to write generated code to (.js and .d.ts files)
-OUT_DIR=src/protos
+# If you want to inspect all content from the container, use this command
+debug-protos: docker-build docker-run copy-all
 
-# Proto compiled enum filepath
-OUT_COMPILED_ENUMS=compiled-enums.json
-OUT_COMPILED_RESOURCES=compiled-resources.js
-OUT_COMPILED_RESOURCES_JSON=compiled-resources.json
+docker-build:
+	docker build . -t $(DOCKER_IMAGE)
 
-# Static enum filepath (ts)
-OUT_STATIC_TS_ENUMS=src/lib/enums.ts
-OUT_STATIC_TS_RESOURCES=src/lib/resources.ts
-OUT_STATIC_TS_ENUM_MAPPING=src/lib/mapping.ts
-OUT_STATIC_TS_ENUM_STRUCT=src/lib/struct.ts
+docker-run:
+	docker rm -f $(DOCKER_CONTAINER) || true
+	docker run \
+		--name $(DOCKER_CONTAINER) \
+		-e GOOGLE_ADS_VERSION=$(ADS_VERSION) \
+		$(DOCKER_IMAGE)
 
-.SILENT: protos enums
+docker-kill-container:
+	docker rm -f $(DOCKER_CONTAINER)
 
-protos: clean compile-protos
-	$(MAKE) enums
-	$(MAKE) types
-	@echo "finished all"
+clean:
+	rm -rf src/lib/protos
+	mkdir -p src/lib/protos
 
-enums:
-	pbjs -t json $(PROTO_ENUMS_ONLY) $(PROTO_ERRORS_ONLY) $(PROTO_COMMON_ONLY) > ./scripts/$(OUT_COMPILED_ENUMS)
-	node ./scripts/generate-enums.js $(OUT_COMPILED_ENUMS) $(ADS_VERSION) $(OUT_STATIC_TS_ENUMS)
-	rm ./scripts/$(OUT_COMPILED_ENUMS)
+copy-ts-files:
+	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-ts-files ./src/lib/
+	mv ./src/lib/compiled-ts-files/* ./src/lib/
 
-types:
-	pbjs -t json $(ALL_PROTOBUFS) > ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
-	pbjs -t static-module -w commonjs -o ./scripts/$(OUT_COMPILED_RESOURCES) $(ALL_PROTOBUFS)
-	node ./scripts/generate-interfaces.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_RESOURCES) $(OUT_STATIC_TS_ENUM_MAPPING)
-	node ./scripts/generate-structs.js $(OUT_COMPILED_RESOURCES_JSON) $(ADS_VERSION) $(OUT_STATIC_TS_ENUM_STRUCT)
-	cp ./scripts/$(OUT_COMPILED_RESOURCES) ./src/protos/$(OUT_COMPILED_RESOURCES)
-	rm ./scripts/$(OUT_COMPILED_RESOURCES) ./scripts/$(OUT_COMPILED_RESOURCES_JSON)
-	prettier --write $(OUT_STATIC_TS_ENUMS)
-	prettier --write $(OUT_STATIC_TS_RESOURCES)
-	prettier --write $(OUT_STATIC_TS_ENUM_MAPPING)
-	prettier --write $(OUT_STATIC_TS_ENUM_STRUCT)
+copy-protos:
+	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-protos/ ./src/protos
+	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-resources.js ./src/protos/compiled-resources.js
+	rm -rf ./src/protos/compiled-protos
+
+copy-all:
+	docker cp $(DOCKER_CONTAINER):/usr/local/gads .
 
 fields:
 	yarn build
 	node ./scripts/generate-fields.js
 	prettier --write ./src/lib/fields.ts
 
-# TODO: These proto compilation steps could be cleaned up and moved to a bash script
-compile-protos:
-	# Compile depedency protos
-	# Temporary workaround for https://github.com/protocolbuffers/protobuf/issues/5318
-	for file in $(PROTO_ROOT_DIR)$(PROTO_SRC_DEPENDENCIES); do \
-		echo "converting dependency proto $$(basename $$file)"; \
-		protoc \
-			-I=$(PROTO_ROOT_DIR) \
-			--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
-			--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
-			--grpc_out=${OUT_DIR} \
-			--js_out="import_style=commonjs,binary:${OUT_DIR}" \
-			--ts_out="${OUT_DIR}" \
-			$$file; \
-	done; \
-
-	# Compile Google Ads protos
-	for file in $(PROTO_ROOT_DIR)$(PROTO_SRC_DIR); do \
-		echo "converting proto $$(basename $$file)"; \
-		protoc \
- 			-I=$(PROTO_ROOT_DIR) \
- 			--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
- 			--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
- 			--grpc_out=${OUT_DIR} \
- 			--js_out="import_style=commonjs,binary:${OUT_DIR}" \
- 			--ts_out="${OUT_DIR}" \
- 			$$file; \
-	done; \
-
-	# Compile missing depdencies
-	# protoc -I=$(PROTO_ROOT_DIR) \
-	# 	--plugin=protoc-gen-ts=${PROTOC_GEN_TS_PATH} \
-	# 	--plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) \
-	# 	--grpc_out=${OUT_DIR} \
-	# 	--js_out="import_style=commonjs,binary:${OUT_DIR}" \
-	# 	--ts_out="${OUT_DIR}" \
-	# 	$(PROTO_ROOT_DIR)google/api/experimental/*.proto \
-
-	echo "## Autogenerated Files! Do Not Edit" > $(OUT_DIR)/README.md
-
-clean:
-	rm -rf $(OUT_DIR)/*
-	mkdir -p $(OUT_DIR)
-
-minify:
-	echo "compressing protobufjs definitions";
-	uglifyjs src/protos/compiled-resources.js -o src/protos/compiled-resources.js --compress
-
-	for file in $(OUT_DIR)/google/ads/googleads/$(ADS_VERSION)/**/*.js; do \
-		echo "compressing $$(basename $$file)"; \
-		uglifyjs $$file -o $$file --compress; \
-	done; \
-
-	for file in $(OUT_DIR)/google/**/*.js; do \
-		echo "compressing $$(basename $$file)"; \
-		uglifyjs $$file -o $$file --compress; \
-	done; \
-
-	echo "removing empty files";
-	find src/protos/ -size 0 -delete
-
-	echo "finished compressing protos";
-
+# TODO: Handle this inside scripts/compile.sh (low priority)
 api-diff:
 	# Make sure to specify the previous version here
 	rm -rf diff/ && mkdir diff/
@@ -134,4 +54,4 @@ api-diff:
 	cd $(PROTO_ROOT_DIR)google/ads/googleads/$(ADS_VERSION)/ && ls **/*.proto > ../../../../../diff/current-protos.txt
 	echo "Generated API version diffs"
 
-.PHONY: protos enums minify
+.PHONY: protos debug-protos
