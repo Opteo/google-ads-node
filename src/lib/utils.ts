@@ -121,8 +121,8 @@ function toProtoValueFormat(value: any, struct: any, nested_path: string): any {
 }
 
 /* This is different to lodash.camelCase as it leaves any periods (".") */
-function convertPathToCamelCase(str: string) {
-  return str.replace(/([-_][a-z])/gi, $1 => {
+export function convertPathToCamelCase(str: string) {
+  return str.replace(/([-_][a-z\d])/gi, $1 => {
     return $1
       .toUpperCase()
       .replace("-", "")

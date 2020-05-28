@@ -13,6 +13,7 @@ import {
   getErrorLocationPath,
   isMutationRequest,
   safeguardMutationProtobufRequest,
+  convertPathToCamelCase,
 } from "./utils";
 
 test("proto object result is parsed from field mask", () => {
@@ -504,6 +505,34 @@ test("mutation requests can be safeguarded i.e. set to validate only or operatio
     expect(message.getValidateOnly).toEqual(undefined);
     expect(message.getOperationsList()).toEqual([]);
   });
+});
+
+test("field mask paths are correctly converted to camel case format", () => {
+  const tests = [
+    ["metrics.video_quartile_100_rate", "metrics.videoQuartile100Rate"],
+    ["metrics.video_quartile_25_rate", "metrics.videoQuartile25Rate"],
+    ["metrics.video_quartile_50_rate", "metrics.videoQuartile50Rate"],
+    ["metrics.video_quartile_75_rate", "metrics.videoQuartile75Rate"],
+    ["metrics.video_views", "metrics.videoViews"],
+    ["video.title", "video.title"],
+    [
+      "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+      "adGroupCriterion.listingGroup.caseValue.productBiddingCategory.id",
+    ],
+    [
+      "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+      "adGroupCriterion.listingGroup.caseValue.productBiddingCategory.level",
+    ],
+    [
+      "metrics.all_conversions_from_interactions_rate",
+      "metrics.allConversionsFromInteractionsRate",
+    ],
+    ["invalid.some-strange-field-that-doesn't-exist", "invalid.someStrangeFieldThatDoesn'tExist"],
+  ];
+
+  for (const [input, expected] of tests) {
+    expect(convertPathToCamelCase(input)).toEqual(expected);
+  }
 });
 
 const fakeCampaignResponse = `
