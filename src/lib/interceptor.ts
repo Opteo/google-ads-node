@@ -223,14 +223,13 @@ export class ResponseParsingInterceptor {
             results.partialFailureError.errors = formatCallResults(errors, undefined);
           }
 
-          const parsedResults = formatCallResults(
-            /* 
+          /* 
               When retrieving a single entity via a service (e.g. CampaignService), the API
               returns a single object, instead of an array
-            */
-            results.resultsList ? results.resultsList : [results],
-            results.fieldMask
-          );
+          */
+          const results_to_parse = results.resultsList ? results.resultsList : [results];
+
+          const parsedResults = formatCallResults(results_to_parse, results.fieldMask);
           if (parsedResults && results.resultsList) {
             results.resultsList = parsedResults;
           }
@@ -238,6 +237,15 @@ export class ResponseParsingInterceptor {
           if (parsedResults && !results.resultsList) {
             results = parsedResults[0];
           }
+
+          // Parse the summary row if it exists
+          if (typeof results.summaryRow !== "undefined") {
+            const parsedSummaryRow = formatCallResults([results.summaryRow], results.fieldMask);
+            if (parsedSummaryRow && parsedSummaryRow.length >= 0) {
+              results.summaryRow = parsedSummaryRow[0];
+            }
+          }
+
           next(results);
         } else {
           next(message);
