@@ -41,6 +41,7 @@
     "grpc": "^1.21.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.get": "^4.4.2",
+    "lodash.isobject": "^3.0.2",
     "lodash.set": "^4.3.2",
     "lodash.snakecase": "^4.1.1",
     "protobufjs": "^6.8.8"
@@ -56,7 +57,7 @@
     "lodash.startcase": "^4.4.0",
     "npm-run-all": "^4.1.5",
     "nyc": "^13.1.0",
-    "prettier": "^1.15.2",
+    "prettier": "^2.0.5",
     "standard-version": "^4.4.0",
     "trash-cli": "^1.4.0",
     "ts-jest": "^24.1.0",
