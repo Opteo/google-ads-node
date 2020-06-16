@@ -95,7 +95,7 @@ async function main() {
 
   /* Resource names */
   buildUnionArray(Object.keys(resources), "ResourceName");
-  let all_resources_interface = `interface AllArgs {\n`;
+  let all_resources_interface = `export interface AllArgs {\n`;
   for (const resource in resources) {
     stream.write(`\n\n/*\n --- Start of ${toTypeCase(resource)} ---\n*/`);
 
@@ -137,12 +137,12 @@ async function main() {
     }
     `);
 
-    all_resources_interface += `${resource}: ${toTypeCase(resource)}Args,\n`
+    all_resources_interface += `${resource}: ${toTypeCase(resource)}Args,\n`;
 
     stream.write(`\n/*\n --- End of ${toTypeCase(resource)} ---\n*/`);
   }
 
-  all_resources_interface += `}\n`
+  all_resources_interface += `}\n`;
   stream.write(`\n/*\n  -- ALL RESOURCE REPORT ARGS --\n*/\n\n`);
   stream.write(all_resources_interface);
 
