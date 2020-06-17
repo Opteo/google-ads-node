@@ -2417,8 +2417,8 @@ export type AccountBudgetFields = Array<AccountBudgetField>;
 
 export interface AccountBudgetArgs {
   attributes: AccountBudgetFieldFull;
-  segments: AccountBudgetSegmentFull;
-  metrics: AccountBudgetMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -2601,8 +2601,8 @@ export type AccountBudgetProposalFields = Array<AccountBudgetProposalField>;
 
 export interface AccountBudgetProposalArgs {
   attributes: AccountBudgetProposalFieldFull;
-  segments: AccountBudgetProposalSegmentFull;
-  metrics: AccountBudgetProposalMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -3147,8 +3147,8 @@ export type AdGroupSegments = Array<AdGroupSegment>;
 
 export interface AdGroupArgs {
   attributes: AdGroupFieldFull;
-  segments: AdGroupSegmentFull;
   metrics: AdGroupMetricFull;
+  segments: AdGroupSegmentFull;
 }
 
 /*
@@ -4279,8 +4279,8 @@ export type AdGroupAdSegments = Array<AdGroupAdSegment>;
 
 export interface AdGroupAdArgs {
   attributes: AdGroupAdFieldFull;
-  segments: AdGroupAdSegmentFull;
   metrics: AdGroupAdMetricFull;
+  segments: AdGroupAdSegmentFull;
 }
 
 /*
@@ -5418,8 +5418,8 @@ export type AdGroupAdAssetViewSegments = Array<AdGroupAdAssetViewSegment>;
 
 export interface AdGroupAdAssetViewArgs {
   attributes: AdGroupAdAssetViewFieldFull;
-  segments: AdGroupAdAssetViewSegmentFull;
   metrics: AdGroupAdAssetViewMetricFull;
+  segments: AdGroupAdAssetViewSegmentFull;
 }
 
 /*
@@ -6451,8 +6451,8 @@ export type AdGroupAdLabelFields = Array<AdGroupAdLabelField>;
 
 export interface AdGroupAdLabelArgs {
   attributes: AdGroupAdLabelFieldFull;
-  segments: AdGroupAdLabelSegmentFull;
-  metrics: AdGroupAdLabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -7683,8 +7683,8 @@ export type AdGroupAudienceViewSegments = Array<AdGroupAudienceViewSegment>;
 
 export interface AdGroupAudienceViewArgs {
   attributes: AdGroupAudienceViewFieldFull;
-  segments: AdGroupAudienceViewSegmentFull;
   metrics: AdGroupAudienceViewMetricFull;
+  segments: AdGroupAudienceViewSegmentFull;
 }
 
 /*
@@ -8131,8 +8131,8 @@ export type AdGroupBidModifierFields = Array<AdGroupBidModifierField>;
 
 export interface AdGroupBidModifierArgs {
   attributes: AdGroupBidModifierFieldFull;
-  segments: AdGroupBidModifierSegmentFull;
-  metrics: AdGroupBidModifierMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -9118,8 +9118,8 @@ export type AdGroupCriterionFields = Array<AdGroupCriterionField>;
 
 export interface AdGroupCriterionArgs {
   attributes: AdGroupCriterionFieldFull;
-  segments: AdGroupCriterionSegmentFull;
-  metrics: AdGroupCriterionMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -9852,8 +9852,8 @@ export type AdGroupCriterionLabelFields = Array<AdGroupCriterionLabelField>;
 
 export interface AdGroupCriterionLabelArgs {
   attributes: AdGroupCriterionLabelFieldFull;
-  segments: AdGroupCriterionLabelSegmentFull;
-  metrics: AdGroupCriterionLabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -10608,8 +10608,8 @@ export type AdGroupCriterionSimulationFields = Array<AdGroupCriterionSimulationF
 
 export interface AdGroupCriterionSimulationArgs {
   attributes: AdGroupCriterionSimulationFieldFull;
-  segments: AdGroupCriterionSimulationSegmentFull;
-  metrics: AdGroupCriterionSimulationMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -11028,8 +11028,8 @@ export type AdGroupExtensionSettingFields = Array<AdGroupExtensionSettingField>;
 
 export interface AdGroupExtensionSettingArgs {
   attributes: AdGroupExtensionSettingFieldFull;
-  segments: AdGroupExtensionSettingSegmentFull;
-  metrics: AdGroupExtensionSettingMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -11535,8 +11535,8 @@ export type AdGroupFeedFields = Array<AdGroupFeedField>;
 
 export interface AdGroupFeedArgs {
   attributes: AdGroupFeedFieldFull;
-  segments: AdGroupFeedSegmentFull;
-  metrics: AdGroupFeedMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -11955,8 +11955,8 @@ export type AdGroupLabelFields = Array<AdGroupLabelField>;
 
 export interface AdGroupLabelArgs {
   attributes: AdGroupLabelFieldFull;
-  segments: AdGroupLabelSegmentFull;
-  metrics: AdGroupLabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -12416,8 +12416,8 @@ export type AdGroupSimulationFields = Array<AdGroupSimulationField>;
 
 export interface AdGroupSimulationArgs {
   attributes: AdGroupSimulationFieldFull;
-  segments: AdGroupSimulationSegmentFull;
-  metrics: AdGroupSimulationMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -13138,8 +13138,8 @@ export type AdParameterFields = Array<AdParameterField>;
 
 export interface AdParameterArgs {
   attributes: AdParameterFieldFull;
-  segments: AdParameterSegmentFull;
-  metrics: AdParameterMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -13757,8 +13757,8 @@ export type AdScheduleViewSegments = Array<AdScheduleViewSegment>;
 
 export interface AdScheduleViewArgs {
   attributes: AdScheduleViewFieldFull;
-  segments: AdScheduleViewSegmentFull;
   metrics: AdScheduleViewMetricFull;
+  segments: AdScheduleViewSegmentFull;
 }
 
 /*
@@ -14561,8 +14561,8 @@ export type AgeRangeViewSegments = Array<AgeRangeViewSegment>;
 
 export interface AgeRangeViewArgs {
   attributes: AgeRangeViewFieldFull;
-  segments: AgeRangeViewSegmentFull;
   metrics: AgeRangeViewMetricFull;
+  segments: AgeRangeViewSegmentFull;
 }
 
 /*
@@ -14699,8 +14699,8 @@ export type AssetSegments = Array<AssetSegment>;
 
 export interface AssetArgs {
   attributes: AssetFieldFull;
-  segments: AssetSegmentFull;
   metrics: AssetMetricFull;
+  segments: AssetSegmentFull;
 }
 
 /*
@@ -14894,8 +14894,8 @@ export type BiddingStrategySegments = Array<BiddingStrategySegment>;
 
 export interface BiddingStrategyArgs {
   attributes: BiddingStrategyFieldFull;
-  segments: BiddingStrategySegmentFull;
   metrics: BiddingStrategyMetricFull;
+  segments: BiddingStrategySegmentFull;
 }
 
 /*
@@ -15006,8 +15006,8 @@ export type BillingSetupFields = Array<BillingSetupField>;
 
 export interface BillingSetupArgs {
   attributes: BillingSetupFieldFull;
-  segments: BillingSetupSegmentFull;
-  metrics: BillingSetupMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -15616,8 +15616,8 @@ export type CampaignSegments = Array<CampaignSegment>;
 
 export interface CampaignArgs {
   attributes: CampaignFieldFull;
-  segments: CampaignSegmentFull;
   metrics: CampaignMetricFull;
+  segments: CampaignSegmentFull;
 }
 
 /*
@@ -16683,8 +16683,8 @@ export type CampaignAudienceViewSegments = Array<CampaignAudienceViewSegment>;
 
 export interface CampaignAudienceViewArgs {
   attributes: CampaignAudienceViewFieldFull;
-  segments: CampaignAudienceViewSegmentFull;
   metrics: CampaignAudienceViewMetricFull;
+  segments: CampaignAudienceViewSegmentFull;
 }
 
 /*
@@ -17036,8 +17036,8 @@ export type CampaignBidModifierMetrics = Array<CampaignBidModifierMetric>;
 
 export interface CampaignBidModifierArgs {
   attributes: CampaignBidModifierFieldFull;
-  segments: CampaignBidModifierSegmentFull;
   metrics: CampaignBidModifierMetricFull;
+  segments: {};
 }
 
 /*
@@ -17572,8 +17572,8 @@ export type CampaignBudgetSegments = Array<CampaignBudgetSegment>;
 
 export interface CampaignBudgetArgs {
   attributes: CampaignBudgetFieldFull;
-  segments: CampaignBudgetSegmentFull;
   metrics: CampaignBudgetMetricFull;
+  segments: CampaignBudgetSegmentFull;
 }
 
 /*
@@ -18499,8 +18499,8 @@ export type CampaignCriterionFields = Array<CampaignCriterionField>;
 
 export interface CampaignCriterionArgs {
   attributes: CampaignCriterionFieldFull;
-  segments: CampaignCriterionSegmentFull;
-  metrics: CampaignCriterionMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -19099,8 +19099,8 @@ export type CampaignCriterionSimulationFields = Array<CampaignCriterionSimulatio
 
 export interface CampaignCriterionSimulationArgs {
   attributes: CampaignCriterionSimulationFieldFull;
-  segments: CampaignCriterionSimulationSegmentFull;
-  metrics: CampaignCriterionSimulationMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -19446,8 +19446,8 @@ export type CampaignDraftFields = Array<CampaignDraftField>;
 
 export interface CampaignDraftArgs {
   attributes: CampaignDraftFieldFull;
-  segments: CampaignDraftSegmentFull;
-  metrics: CampaignDraftMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -19825,8 +19825,8 @@ export type CampaignExperimentFields = Array<CampaignExperimentField>;
 
 export interface CampaignExperimentArgs {
   attributes: CampaignExperimentFieldFull;
-  segments: CampaignExperimentSegmentFull;
-  metrics: CampaignExperimentMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -20174,8 +20174,8 @@ export type CampaignExtensionSettingFields = Array<CampaignExtensionSettingField
 
 export interface CampaignExtensionSettingArgs {
   attributes: CampaignExtensionSettingFieldFull;
-  segments: CampaignExtensionSettingSegmentFull;
-  metrics: CampaignExtensionSettingMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -20610,8 +20610,8 @@ export type CampaignFeedFields = Array<CampaignFeedField>;
 
 export interface CampaignFeedArgs {
   attributes: CampaignFeedFieldFull;
-  segments: CampaignFeedSegmentFull;
-  metrics: CampaignFeedMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -20959,8 +20959,8 @@ export type CampaignLabelFields = Array<CampaignLabelField>;
 
 export interface CampaignLabelArgs {
   attributes: CampaignLabelFieldFull;
-  segments: CampaignLabelSegmentFull;
-  metrics: CampaignLabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -21312,8 +21312,8 @@ export type CampaignSharedSetFields = Array<CampaignSharedSetField>;
 
 export interface CampaignSharedSetArgs {
   attributes: CampaignSharedSetFieldFull;
-  segments: CampaignSharedSetSegmentFull;
-  metrics: CampaignSharedSetMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -21344,8 +21344,8 @@ export type CarrierConstantFields = Array<CarrierConstantField>;
 
 export interface CarrierConstantArgs {
   attributes: CarrierConstantFieldFull;
-  segments: CarrierConstantSegmentFull;
-  metrics: CarrierConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -21914,8 +21914,8 @@ export type ChangeStatusFields = Array<ChangeStatusField>;
 
 export interface ChangeStatusArgs {
   attributes: ChangeStatusFieldFull;
-  segments: ChangeStatusSegmentFull;
-  metrics: ChangeStatusMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -22513,8 +22513,8 @@ export type ClickViewSegments = Array<ClickViewSegment>;
 
 export interface ClickViewArgs {
   attributes: ClickViewFieldFull;
-  segments: ClickViewSegmentFull;
   metrics: ClickViewMetricFull;
+  segments: ClickViewSegmentFull;
 }
 
 /*
@@ -22675,8 +22675,8 @@ export type ConversionActionMetrics = Array<ConversionActionMetric>;
 
 export interface ConversionActionArgs {
   attributes: ConversionActionFieldFull;
-  segments: ConversionActionSegmentFull;
   metrics: ConversionActionMetricFull;
+  segments: {};
 }
 
 /*
@@ -22709,8 +22709,8 @@ export type CurrencyConstantFields = Array<CurrencyConstantField>;
 
 export interface CurrencyConstantArgs {
   attributes: CurrencyConstantFieldFull;
-  segments: CurrencyConstantSegmentFull;
-  metrics: CurrencyConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -22805,8 +22805,8 @@ export type CustomInterestFields = Array<CustomInterestField>;
 
 export interface CustomInterestArgs {
   attributes: CustomInterestFieldFull;
-  segments: CustomInterestSegmentFull;
-  metrics: CustomInterestMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -22988,8 +22988,8 @@ export type CustomerSegments = Array<CustomerSegment>;
 
 export interface CustomerArgs {
   attributes: CustomerFieldFull;
-  segments: CustomerSegmentFull;
   metrics: CustomerMetricFull;
+  segments: CustomerSegmentFull;
 }
 
 /*
@@ -23086,8 +23086,8 @@ export type CustomerClientFields = Array<CustomerClientField>;
 
 export interface CustomerClientArgs {
   attributes: CustomerClientFieldFull;
-  segments: CustomerClientSegmentFull;
-  metrics: CustomerClientMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23174,8 +23174,8 @@ export type CustomerClientLinkFields = Array<CustomerClientLinkField>;
 
 export interface CustomerClientLinkArgs {
   attributes: CustomerClientLinkFieldFull;
-  segments: CustomerClientLinkSegmentFull;
-  metrics: CustomerClientLinkMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23268,8 +23268,8 @@ export type CustomerExtensionSettingFields = Array<CustomerExtensionSettingField
 
 export interface CustomerExtensionSettingArgs {
   attributes: CustomerExtensionSettingFieldFull;
-  segments: CustomerExtensionSettingSegmentFull;
-  metrics: CustomerExtensionSettingMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23449,8 +23449,8 @@ export type CustomerFeedFields = Array<CustomerFeedField>;
 
 export interface CustomerFeedArgs {
   attributes: CustomerFeedFieldFull;
-  segments: CustomerFeedSegmentFull;
-  metrics: CustomerFeedMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23533,8 +23533,8 @@ export type CustomerLabelFields = Array<CustomerLabelField>;
 
 export interface CustomerLabelArgs {
   attributes: CustomerLabelFieldFull;
-  segments: CustomerLabelSegmentFull;
-  metrics: CustomerLabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23619,8 +23619,8 @@ export type CustomerManagerLinkFields = Array<CustomerManagerLinkField>;
 
 export interface CustomerManagerLinkArgs {
   attributes: CustomerManagerLinkFieldFull;
-  segments: CustomerManagerLinkSegmentFull;
-  metrics: CustomerManagerLinkMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -23743,8 +23743,8 @@ export type CustomerNegativeCriterionFields = Array<CustomerNegativeCriterionFie
 
 export interface CustomerNegativeCriterionArgs {
   attributes: CustomerNegativeCriterionFieldFull;
-  segments: CustomerNegativeCriterionSegmentFull;
-  metrics: CustomerNegativeCriterionMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -24238,8 +24238,8 @@ export type DetailPlacementViewSegments = Array<DetailPlacementViewSegment>;
 
 export interface DetailPlacementViewArgs {
   attributes: DetailPlacementViewFieldFull;
-  segments: DetailPlacementViewSegmentFull;
   metrics: DetailPlacementViewMetricFull;
+  segments: DetailPlacementViewSegmentFull;
 }
 
 /*
@@ -25134,8 +25134,8 @@ export type DisplayKeywordViewSegments = Array<DisplayKeywordViewSegment>;
 
 export interface DisplayKeywordViewArgs {
   attributes: DisplayKeywordViewFieldFull;
-  segments: DisplayKeywordViewSegmentFull;
   metrics: DisplayKeywordViewMetricFull;
+  segments: DisplayKeywordViewSegmentFull;
 }
 
 /*
@@ -25624,8 +25624,8 @@ export type DistanceViewSegments = Array<DistanceViewSegment>;
 
 export interface DistanceViewArgs {
   attributes: DistanceViewFieldFull;
-  segments: DistanceViewSegmentFull;
   metrics: DistanceViewMetricFull;
+  segments: DistanceViewSegmentFull;
 }
 
 /*
@@ -25975,8 +25975,8 @@ export type DomainCategoryFields = Array<DomainCategoryField>;
 
 export interface DomainCategoryArgs {
   attributes: DomainCategoryFieldFull;
-  segments: DomainCategorySegmentFull;
-  metrics: DomainCategoryMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -26460,8 +26460,8 @@ export type DynamicSearchAdsSearchTermViewSegments = Array<DynamicSearchAdsSearc
 
 export interface DynamicSearchAdsSearchTermViewArgs {
   attributes: DynamicSearchAdsSearchTermViewFieldFull;
-  segments: DynamicSearchAdsSearchTermViewSegmentFull;
   metrics: DynamicSearchAdsSearchTermViewMetricFull;
+  segments: DynamicSearchAdsSearchTermViewSegmentFull;
 }
 
 /*
@@ -27103,8 +27103,8 @@ export type ExpandedLandingPageViewSegments = Array<ExpandedLandingPageViewSegme
 
 export interface ExpandedLandingPageViewArgs {
   attributes: ExpandedLandingPageViewFieldFull;
-  segments: ExpandedLandingPageViewSegmentFull;
   metrics: ExpandedLandingPageViewMetricFull;
+  segments: ExpandedLandingPageViewSegmentFull;
 }
 
 /*
@@ -28069,8 +28069,8 @@ export type ExtensionFeedItemSegments = Array<ExtensionFeedItemSegment>;
 
 export interface ExtensionFeedItemArgs {
   attributes: ExtensionFeedItemFieldFull;
-  segments: ExtensionFeedItemSegmentFull;
   metrics: ExtensionFeedItemMetricFull;
+  segments: ExtensionFeedItemSegmentFull;
 }
 
 /*
@@ -28196,8 +28196,8 @@ export type FeedFields = Array<FeedField>;
 
 export interface FeedArgs {
   attributes: FeedFieldFull;
-  segments: FeedSegmentFull;
-  metrics: FeedMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -29769,8 +29769,8 @@ export type FeedItemSegments = Array<FeedItemSegment>;
 
 export interface FeedItemArgs {
   attributes: FeedItemFieldFull;
-  segments: FeedItemSegmentFull;
   metrics: FeedItemMetricFull;
+  segments: FeedItemSegmentFull;
 }
 
 /*
@@ -30349,8 +30349,8 @@ export type FeedItemTargetFields = Array<FeedItemTargetField>;
 
 export interface FeedItemTargetArgs {
   attributes: FeedItemTargetFieldFull;
-  segments: FeedItemTargetSegmentFull;
-  metrics: FeedItemTargetMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -30518,8 +30518,8 @@ export type FeedMappingFields = Array<FeedMappingField>;
 
 export interface FeedMappingArgs {
   attributes: FeedMappingFieldFull;
-  segments: FeedMappingSegmentFull;
-  metrics: FeedMappingMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -31954,8 +31954,8 @@ export type FeedPlaceholderViewSegments = Array<FeedPlaceholderViewSegment>;
 
 export interface FeedPlaceholderViewArgs {
   attributes: FeedPlaceholderViewFieldFull;
-  segments: FeedPlaceholderViewSegmentFull;
   metrics: FeedPlaceholderViewMetricFull;
+  segments: FeedPlaceholderViewSegmentFull;
 }
 
 /*
@@ -32850,8 +32850,8 @@ export type GenderViewSegments = Array<GenderViewSegment>;
 
 export interface GenderViewArgs {
   attributes: GenderViewFieldFull;
-  segments: GenderViewSegmentFull;
   metrics: GenderViewMetricFull;
+  segments: GenderViewSegmentFull;
 }
 
 /*
@@ -32888,8 +32888,8 @@ export type GeoTargetConstantFields = Array<GeoTargetConstantField>;
 
 export interface GeoTargetConstantArgs {
   attributes: GeoTargetConstantFieldFull;
-  segments: GeoTargetConstantSegmentFull;
-  metrics: GeoTargetConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -33507,8 +33507,8 @@ export type GeographicViewSegments = Array<GeographicViewSegment>;
 
 export interface GeographicViewArgs {
   attributes: GeographicViewFieldFull;
-  segments: GeographicViewSegmentFull;
   metrics: GeographicViewMetricFull;
+  segments: GeographicViewSegmentFull;
 }
 
 /*
@@ -33999,8 +33999,8 @@ export type GroupPlacementViewSegments = Array<GroupPlacementViewSegment>;
 
 export interface GroupPlacementViewArgs {
   attributes: GroupPlacementViewFieldFull;
-  segments: GroupPlacementViewSegmentFull;
   metrics: GroupPlacementViewMetricFull;
+  segments: GroupPlacementViewSegmentFull;
 }
 
 /*
@@ -34792,8 +34792,8 @@ export type HotelGroupViewSegments = Array<HotelGroupViewSegment>;
 
 export interface HotelGroupViewArgs {
   attributes: HotelGroupViewFieldFull;
-  segments: HotelGroupViewSegmentFull;
   metrics: HotelGroupViewMetricFull;
+  segments: HotelGroupViewSegmentFull;
 }
 
 /*
@@ -35380,8 +35380,8 @@ export type HotelPerformanceViewSegments = Array<HotelPerformanceViewSegment>;
 
 export interface HotelPerformanceViewArgs {
   attributes: HotelPerformanceViewFieldFull;
-  segments: HotelPerformanceViewSegmentFull;
   metrics: HotelPerformanceViewMetricFull;
+  segments: HotelPerformanceViewSegmentFull;
 }
 
 /*
@@ -35473,8 +35473,8 @@ export type KeywordPlanFields = Array<KeywordPlanField>;
 
 export interface KeywordPlanArgs {
   attributes: KeywordPlanFieldFull;
-  segments: KeywordPlanSegmentFull;
-  metrics: KeywordPlanMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -35600,8 +35600,8 @@ export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
 
 export interface KeywordPlanAdGroupArgs {
   attributes: KeywordPlanAdGroupFieldFull;
-  segments: KeywordPlanAdGroupSegmentFull;
-  metrics: KeywordPlanAdGroupMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -35715,8 +35715,8 @@ export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
 
 export interface KeywordPlanCampaignArgs {
   attributes: KeywordPlanCampaignFieldFull;
-  segments: KeywordPlanCampaignSegmentFull;
-  metrics: KeywordPlanCampaignMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -35858,8 +35858,8 @@ export type KeywordPlanKeywordFields = Array<KeywordPlanKeywordField>;
 
 export interface KeywordPlanKeywordArgs {
   attributes: KeywordPlanKeywordFieldFull;
-  segments: KeywordPlanKeywordSegmentFull;
-  metrics: KeywordPlanKeywordMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -35989,8 +35989,8 @@ export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordF
 
 export interface KeywordPlanNegativeKeywordArgs {
   attributes: KeywordPlanNegativeKeywordFieldFull;
-  segments: KeywordPlanNegativeKeywordSegmentFull;
-  metrics: KeywordPlanNegativeKeywordMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -36855,8 +36855,8 @@ export type KeywordViewSegments = Array<KeywordViewSegment>;
 
 export interface KeywordViewArgs {
   attributes: KeywordViewFieldFull;
-  segments: KeywordViewSegmentFull;
   metrics: KeywordViewMetricFull;
+  segments: KeywordViewSegmentFull;
 }
 
 /*
@@ -36945,8 +36945,8 @@ export type LabelFields = Array<LabelField>;
 
 export interface LabelArgs {
   attributes: LabelFieldFull;
-  segments: LabelSegmentFull;
-  metrics: LabelMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -37590,8 +37590,8 @@ export type LandingPageViewSegments = Array<LandingPageViewSegment>;
 
 export interface LandingPageViewArgs {
   attributes: LandingPageViewFieldFull;
-  segments: LandingPageViewSegmentFull;
   metrics: LandingPageViewMetricFull;
+  segments: LandingPageViewSegmentFull;
 }
 
 /*
@@ -37624,8 +37624,8 @@ export type LanguageConstantFields = Array<LanguageConstantField>;
 
 export interface LanguageConstantArgs {
   attributes: LanguageConstantFieldFull;
-  segments: LanguageConstantSegmentFull;
-  metrics: LanguageConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -38239,8 +38239,8 @@ export type LocationViewSegments = Array<LocationViewSegment>;
 
 export interface LocationViewArgs {
   attributes: LocationViewFieldFull;
-  segments: LocationViewSegmentFull;
   metrics: LocationViewMetricFull;
+  segments: LocationViewSegmentFull;
 }
 
 /*
@@ -39135,8 +39135,8 @@ export type ManagedPlacementViewSegments = Array<ManagedPlacementViewSegment>;
 
 export interface ManagedPlacementViewArgs {
   attributes: ManagedPlacementViewFieldFull;
-  segments: ManagedPlacementViewSegmentFull;
   metrics: ManagedPlacementViewMetricFull;
+  segments: ManagedPlacementViewSegmentFull;
 }
 
 /*
@@ -39239,8 +39239,8 @@ export type MediaFileFields = Array<MediaFileField>;
 
 export interface MediaFileArgs {
   attributes: MediaFileFieldFull;
-  segments: MediaFileSegmentFull;
-  metrics: MediaFileMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -39271,8 +39271,8 @@ export type MobileAppCategoryConstantFields = Array<MobileAppCategoryConstantFie
 
 export interface MobileAppCategoryConstantArgs {
   attributes: MobileAppCategoryConstantFieldFull;
-  segments: MobileAppCategoryConstantSegmentFull;
-  metrics: MobileAppCategoryConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -39311,8 +39311,8 @@ export type MobileDeviceConstantFields = Array<MobileDeviceConstantField>;
 
 export interface MobileDeviceConstantArgs {
   attributes: MobileDeviceConstantFieldFull;
-  segments: MobileDeviceConstantSegmentFull;
-  metrics: MobileDeviceConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -39417,8 +39417,8 @@ export type MutateJobFields = Array<MutateJobField>;
 
 export interface MutateJobArgs {
   attributes: MutateJobFieldFull;
-  segments: MutateJobSegmentFull;
-  metrics: MutateJobMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -39780,8 +39780,8 @@ export type OfflineUserDataJobFields = Array<OfflineUserDataJobField>;
 
 export interface OfflineUserDataJobArgs {
   attributes: OfflineUserDataJobFieldFull;
-  segments: OfflineUserDataJobSegmentFull;
-  metrics: OfflineUserDataJobMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -39824,8 +39824,8 @@ export type OperatingSystemVersionConstantFields = Array<OperatingSystemVersionC
 
 export interface OperatingSystemVersionConstantArgs {
   attributes: OperatingSystemVersionConstantFieldFull;
-  segments: OperatingSystemVersionConstantSegmentFull;
-  metrics: OperatingSystemVersionConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -40276,8 +40276,8 @@ export type PaidOrganicSearchTermViewSegments = Array<PaidOrganicSearchTermViewS
 
 export interface PaidOrganicSearchTermViewArgs {
   attributes: PaidOrganicSearchTermViewFieldFull;
-  segments: PaidOrganicSearchTermViewSegmentFull;
   metrics: PaidOrganicSearchTermViewMetricFull;
+  segments: PaidOrganicSearchTermViewSegmentFull;
 }
 
 /*
@@ -41080,8 +41080,8 @@ export type ParentalStatusViewSegments = Array<ParentalStatusViewSegment>;
 
 export interface ParentalStatusViewArgs {
   attributes: ParentalStatusViewFieldFull;
-  segments: ParentalStatusViewSegmentFull;
   metrics: ParentalStatusViewMetricFull;
+  segments: ParentalStatusViewSegmentFull;
 }
 
 /*
@@ -41134,8 +41134,8 @@ export type ProductBiddingCategoryConstantFields = Array<ProductBiddingCategoryC
 
 export interface ProductBiddingCategoryConstantArgs {
   attributes: ProductBiddingCategoryConstantFieldFull;
-  segments: ProductBiddingCategoryConstantSegmentFull;
-  metrics: ProductBiddingCategoryConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -41911,8 +41911,8 @@ export type ProductGroupViewSegments = Array<ProductGroupViewSegment>;
 
 export interface ProductGroupViewArgs {
   attributes: ProductGroupViewFieldFull;
-  segments: ProductGroupViewSegmentFull;
   metrics: ProductGroupViewMetricFull;
+  segments: ProductGroupViewSegmentFull;
 }
 
 /*
@@ -42740,8 +42740,8 @@ export type RecommendationFields = Array<RecommendationField>;
 
 export interface RecommendationArgs {
   attributes: RecommendationFieldFull;
-  segments: RecommendationSegmentFull;
-  metrics: RecommendationMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -42835,8 +42835,8 @@ export type RemarketingActionFields = Array<RemarketingActionField>;
 
 export interface RemarketingActionArgs {
   attributes: RemarketingActionFieldFull;
-  segments: RemarketingActionSegmentFull;
-  metrics: RemarketingActionMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -44159,8 +44159,8 @@ export type SearchTermViewSegments = Array<SearchTermViewSegment>;
 
 export interface SearchTermViewArgs {
   attributes: SearchTermViewFieldFull;
-  segments: SearchTermViewSegmentFull;
   metrics: SearchTermViewMetricFull;
+  segments: SearchTermViewSegmentFull;
 }
 
 /*
@@ -44295,8 +44295,8 @@ export type SharedCriterionFields = Array<SharedCriterionField>;
 
 export interface SharedCriterionArgs {
   attributes: SharedCriterionFieldFull;
-  segments: SharedCriterionSegmentFull;
-  metrics: SharedCriterionMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -44763,8 +44763,8 @@ export type SharedSetSegments = Array<SharedSetSegment>;
 
 export interface SharedSetArgs {
   attributes: SharedSetFieldFull;
+  metrics: {};
   segments: SharedSetSegmentFull;
-  metrics: SharedSetMetricFull;
 }
 
 /*
@@ -45399,8 +45399,8 @@ export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegme
 
 export interface ShoppingPerformanceViewArgs {
   attributes: ShoppingPerformanceViewFieldFull;
-  segments: ShoppingPerformanceViewSegmentFull;
   metrics: ShoppingPerformanceViewMetricFull;
+  segments: ShoppingPerformanceViewSegmentFull;
 }
 
 /*
@@ -45431,8 +45431,8 @@ export type TopicConstantFields = Array<TopicConstantField>;
 
 export interface TopicConstantArgs {
   attributes: TopicConstantFieldFull;
-  segments: TopicConstantSegmentFull;
-  metrics: TopicConstantMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -46327,8 +46327,8 @@ export type TopicViewSegments = Array<TopicViewSegment>;
 
 export interface TopicViewArgs {
   attributes: TopicViewFieldFull;
-  segments: TopicViewSegmentFull;
   metrics: TopicViewMetricFull;
+  segments: TopicViewSegmentFull;
 }
 
 /*
@@ -46383,8 +46383,8 @@ export type UserInterestFields = Array<UserInterestField>;
 
 export interface UserInterestArgs {
   attributes: UserInterestFieldFull;
-  segments: UserInterestSegmentFull;
-  metrics: UserInterestMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -46686,8 +46686,8 @@ export type UserListFields = Array<UserListField>;
 
 export interface UserListArgs {
   attributes: UserListFieldFull;
-  segments: UserListSegmentFull;
-  metrics: UserListMetricFull;
+  metrics: {};
+  segments: {};
 }
 
 /*
@@ -47307,8 +47307,8 @@ export type UserLocationViewSegments = Array<UserLocationViewSegment>;
 
 export interface UserLocationViewArgs {
   attributes: UserLocationViewFieldFull;
-  segments: UserLocationViewSegmentFull;
   metrics: UserLocationViewMetricFull;
+  segments: UserLocationViewSegmentFull;
 }
 
 /*
@@ -48748,8 +48748,8 @@ export type VideoSegments = Array<VideoSegment>;
 
 export interface VideoArgs {
   attributes: VideoFieldFull;
-  segments: VideoSegmentFull;
   metrics: VideoMetricFull;
+  segments: VideoSegmentFull;
 }
 
 /*

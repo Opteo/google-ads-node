@@ -97,6 +97,10 @@ async function main() {
   buildUnionArray(Object.keys(resources), "ResourceName");
   let all_resources_interface = `export interface AllArgs {\n`;
   for (const resource in resources) {
+    let this_resources_interface = `export interface ${toTypeCase(
+      resource
+    )}Args {\n attributes: ${toTypeCase(resource)}FieldFull\n`;
+
     stream.write(`\n\n/*\n --- Start of ${toTypeCase(resource)} ---\n*/`);
 
     const fields = resources[resource];
@@ -122,20 +126,21 @@ async function main() {
     const metrics = resourceMetrics[resource];
     if (metrics && metrics.length > 0) {
       buildUnionArray(metrics, `${toTypeCase(resource)}Metric`);
+      this_resources_interface += `metrics: ${toTypeCase(resource)}MetricFull\n`;
+    } else {
+      this_resources_interface += `metrics: {}\n`;
     }
 
     /* Per resource segments */
     const segments = resourceSegments[resource];
     if (segments && segments.length > 0) {
       buildUnionArray(segments, `${toTypeCase(resource)}Segment`);
+      this_resources_interface += `segments: ${toTypeCase(resource)}SegmentFull\n`;
+    } else {
+      this_resources_interface += `segments: {}\n`;
     }
-    stream.write(`\n
-    export interface ${toTypeCase(resource)}Args {
-      attributes: ${toTypeCase(resource)}FieldFull
-      segments: ${toTypeCase(resource)}SegmentFull
-      metrics: ${toTypeCase(resource)}MetricFull
-    }
-    `);
+    this_resources_interface += `}\n`;
+    stream.write(`\n${this_resources_interface}`);
 
     all_resources_interface += `${resource}: ${toTypeCase(resource)}Args,\n`;
 
