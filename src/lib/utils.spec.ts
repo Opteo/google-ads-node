@@ -38,6 +38,7 @@ test("proto object result is parsed from field mask", () => {
   const fieldMask = {
     pathsList: ["campaign.id", "campaign.name", "campaign.url_custom_parameters", "metrics.cost"],
   };
+  // @ts-ignore Partial type is fine for testing
   const parsedResults = formatCallResults(fakeResponse, fieldMask);
 
   expect(parsedResults).toStrictEqual([
@@ -53,7 +54,7 @@ test("proto object result is parsed from field mask", () => {
       },
     },
   ]);
-  expect(Object.keys(parsedResults[0].campaign)[0]).toEqual("resourceName");
+  expect(parsedResults[0].campaign.hasOwnProperty("resourceName")).toEqual(true);
 });
 
 test("proto object result can be parsed for deeply nested entities", () => {
@@ -137,8 +138,8 @@ test("proto object result can be parsed for nested entities with arrays", async 
     ],
   };
 
+  // @ts-ignore Partial type is fine for testing
   const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupResponse, fieldMask);
-  const parsedResultsWithoutFieldMask = formatCallResults(fakeAdGroupResponse, undefined);
 
   const expected_with_field_mask = [
     {
@@ -172,39 +173,7 @@ test("proto object result can be parsed for nested entities with arrays", async 
     },
   ];
 
-  const expected_without_field_mask = [
-    {
-      adGroupAd: {
-        resourceName: "customers/3827277046/adGroupAds/37706041185~170102539400",
-        ad: {
-          finalUrls: ["http://opteo.co/lp/ad-words-tool"],
-          someDirectArray: [3, 4, 5],
-          // Note that have been returned even through it is empty.
-          finalAppUrls: [],
-        },
-      },
-      adGroup: {
-        resourceName: "customers/3827277046/adGroups/37706041185",
-        urlCustomParameters: [{ key: "yy", value: "1" }],
-        targetingSetting: {
-          targetRestrictions: [
-            { targetingDimension: 3, bidOnly: false },
-            { targetingDimension: 4, bidOnly: false },
-            { targetingDimension: 5, bidOnly: true },
-            { targetingDimension: 6, bidOnly: true },
-            { targetingDimension: 7, bidOnly: false },
-            { targetingDimension: 8, bidOnly: false },
-          ],
-        },
-        name: "ad words tool [MB]",
-        // Note that `status` will be returned by the parsing function even through it is of the "UNSPECIFIED" enum type.
-        status: 0,
-      },
-    },
-  ];
-
   expect(parsedResultsWithFieldMask).toEqual(expected_with_field_mask);
-  expect(parsedResultsWithoutFieldMask).toEqual(expected_without_field_mask);
 });
 
 test("proto object result can be parsed when fieldmask ends in unspecified object", () => {
@@ -215,8 +184,8 @@ test("proto object result can be parsed when fieldmask ends in unspecified objec
     pathsList: ["ad_group_ad.policy_summary"],
   };
 
+  // @ts-ignore Partial type is fine for testing
   const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupAdResponse, fieldMask);
-  const parsedResultsWithoutFieldMask = formatCallResults(fakeAdGroupAdResponse, undefined);
 
   const expected = [
     {
@@ -232,47 +201,6 @@ test("proto object result can be parsed when fieldmask ends in unspecified objec
   ];
 
   expect(parsedResultsWithFieldMask).toEqual(expected);
-  expect(parsedResultsWithoutFieldMask).toEqual(expected);
-});
-
-test("proto object result can be parsed when field mask is not present", () => {
-  const parsedResults = formatCallResults([JSON.parse(fakeCampaignResponse)], undefined);
-
-  expect(parsedResults).toEqual([
-    {
-      resourceName: "customers/9262111890/campaigns/1485014801",
-      id: 1485014801,
-      name: "Test Campaign - DO NOT REMOVE",
-      status: 2,
-      servingStatus: 2,
-      adServingOptimizationStatus: 2,
-      advertisingChannelType: 2,
-      advertisingChannelSubType: 0,
-      urlCustomParameters: [],
-      networkSettings: {
-        targetGoogleSearch: true,
-        targetSearchNetwork: true,
-        targetContentNetwork: true,
-        targetPartnerSearchNetwork: false,
-      },
-      geoTargetTypeSetting: {
-        positiveGeoTargetType: 2,
-        negativeGeoTargetType: 2,
-      },
-      campaignBudget: "customers/9262111890/campaignBudgets/1548344372",
-      biddingStrategyType: 9,
-      startDate: "2018-07-24",
-      endDate: "2037-12-30",
-      frequencyCaps: [],
-      videoBrandSafetySuitability: 0,
-      selectiveOptimization: {
-        conversionActions: [],
-      },
-      targetSpend: {
-        cpcBidCeilingMicros: 1000000,
-      },
-    },
-  ]);
 });
 
 test("parsing results with field mask correctly removes undefined properties", () => {
@@ -284,6 +212,7 @@ test("parsing results with field mask correctly removes undefined properties", (
     pathsList: ["ad_group_ad.name", "ad_group_ad.policy_summary"],
   };
 
+  // @ts-ignore Partial type is fine for testing
   const parsedResultsWithFieldMask = formatCallResults(fakeAdGroupAdResponse, fieldMask);
 
   // We should not have 'name' in the parsed result
@@ -299,6 +228,7 @@ test("parsing results fields ending in 'List' works correctly", () => {
     ],
   };
 
+  // @ts-ignore Partial type is fine for testing
   const parsedResultsWithFieldMask = formatCallResults(fakeSimulationResponse, fieldMask);
 
   expect(parsedResultsWithFieldMask).toEqual([
@@ -331,46 +261,28 @@ test("parsing results fields ending in 'List' works correctly", () => {
   ]);
 });
 
-test("parsing results with no field mask correctly removes undefined properties", () => {
-  const result = [
-    {
-      resourceName: "customers/9262111890/campaigns/1485014801",
-      id: {
-        value: 1485014801,
-      },
-      name: {
-        value: "Test Campaign - DO NOT REMOVE",
-      },
-      trackingUrlTemplate: undefined,
-      status: 2,
-    },
-  ];
-
-  const parsedResult = formatCallResults(result, undefined);
-
-  expect(parsedResult[0]).toEqual({
-    resourceName: "customers/9262111890/campaigns/1485014801",
-    id: 1485014801,
-    name: "Test Campaign - DO NOT REMOVE",
-    status: 2,
-  });
-});
-
 test("parsing removes the append list postfix to array types", () => {
   const result = [
     {
-      resourceName: "customers/9262111890/campaigns/1485014801",
-      urlCustomParametersList: [],
-      frequencyCapsList: [],
+      campaign: {
+        resourceName: "customers/9262111890/campaigns/1485014801",
+        urlCustomParametersList: [],
+        frequencyCapsList: [],
+      },
     },
   ];
 
-  const parsedResult = formatCallResults(result, undefined);
+  // @ts-ignore Partial type is fine for testing
+  const parsedResult = formatCallResults(result, {
+    pathsList: ["campaign.url_custom_parameters", "campaign.frequency_caps"],
+  });
 
   expect(parsedResult[0]).toEqual({
-    resourceName: "customers/9262111890/campaigns/1485014801",
-    urlCustomParameters: [],
-    frequencyCaps: [],
+    campaign: {
+      resourceName: "customers/9262111890/campaigns/1485014801",
+      urlCustomParameters: [],
+      frequencyCaps: [],
+    },
   });
 });
 
@@ -534,62 +446,6 @@ test("field mask paths are correctly converted to camel case format", () => {
     expect(convertPathToCamelCase(input)).toEqual(expected);
   }
 });
-
-const fakeCampaignResponse = `
-  {
-   "resourceName": "customers/9262111890/campaigns/1485014801",
-   "id": {
-     "value": 1485014801
-   },
-   "name": {
-     "value": "Test Campaign - DO NOT REMOVE"
-   },
-   "status": 2,
-   "servingStatus": 2,
-   "adServingOptimizationStatus": 2,
-   "advertisingChannelType": 2,
-   "advertisingChannelSubType": 0,
-   "urlCustomParametersList": [],
-   "networkSettings": {
-     "targetGoogleSearch": {
-       "value": true
-     },
-     "targetSearchNetwork": {
-       "value": true
-     },
-     "targetContentNetwork": {
-       "value": true
-     },
-     "targetPartnerSearchNetwork": {
-       "value": false
-     }
-   },
-   "geoTargetTypeSetting": {
-     "positiveGeoTargetType": 2,
-     "negativeGeoTargetType": 2
-   },
-   "campaignBudget": {
-     "value": "customers/9262111890/campaignBudgets/1548344372"
-   },
-   "biddingStrategyType": 9,
-   "startDate": {
-     "value": "2018-07-24"
-   },
-   "endDate": {
-     "value": "2037-12-30"
-   },
-   "frequencyCapsList": [],
-   "videoBrandSafetySuitability": 0,
-   "selectiveOptimization": {
-     "conversionActionsList": []
-   },
-   "targetSpend": {
-     "cpcBidCeilingMicros": {
-       "value": 1000000
-     }
-   }
-  }
-`;
 
 const fakeKeywordResponse = `
   [

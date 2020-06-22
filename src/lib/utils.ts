@@ -3,11 +3,13 @@ import { Client, CallOptions } from "grpc";
 import camelCase from "lodash.camelcase";
 import get from "lodash.get";
 import set from "lodash.set";
-import snakeCase from "lodash.snakecase";
+import { GoogleAdsRow } from "./resources";
 
 import * as structs from "./struct";
 
 const NON_MUTABLE_METHOD_PREFIXES = ["Get", "List", "Generate", "Search"];
+const UNSPECIFIED_ENUM_VALUE = 0; // All enums include UNSPECIFIED = 0
+const UNKNOWN_ENUM_VALUE = 1; // All enums incude UNKNOWN = 1
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -37,27 +39,122 @@ export function promisifyServiceClient(client: Client) {
   });
 }
 
-interface FieldMask {
-  pathsList: string[];
+function isValueField(isObject: boolean, value: any): boolean {
+  if (typeof value === "undefined") {
+    return false;
+  }
+  return isObject ? value.hasOwnProperty("value") && Object.keys(value).length === 1 : false;
 }
 
-export function formatCallResults(resultsList: any[], fieldMask: FieldMask | undefined) {
-  const parsedResults: any[] = [];
+function getNestedValue(path: string, data: GoogleAdsRow): any {
+  const value = get(data, path) ?? get(data, `${path}List`);
+  if (typeof value === "undefined") {
+    return value;
+  }
 
-  if (fieldMask) {
-    const { pathsList } = fieldMask;
-    for (const result of resultsList) {
-      const parsedRow = parseNestedEntities(result, pathsList);
-      parsedResults.push(parsedRow);
+  // Convert UNKNOWN enum values to UNSPECIFIED
+  const isEnum = typeof value === "number";
+  if (isEnum && value === UNKNOWN_ENUM_VALUE) {
+    return UNSPECIFIED_ENUM_VALUE;
+  }
+
+  // Return raw values
+  if (typeof value === "number" || typeof value === "string" || typeof value === "boolean") {
+    return value;
+  }
+
+  // Get value from google.protobuf { value } objects
+  const isObject = typeof value === "object";
+  const isValue = isValueField(isObject, value);
+  if (isValue) {
+    return value.value;
+  }
+
+  // Recursively get values from arrays
+  if (Array.isArray(value)) {
+    const childRows = [];
+    for (const childRow of value) {
+      const newRow: { [key: string]: any } = {};
+      const childKeys = Object.keys(childRow);
+
+      for (const childKey of childKeys) {
+        const newChildVal: any = getNestedValue(childKey, childRow);
+
+        if (childKey === "value" && childKeys.length === 1) {
+          childRows.push(newChildVal);
+        } else {
+          newRow[childKey] = newChildVal;
+        }
+      }
+      if (Object.keys(newRow).length !== 0) {
+        childRows.push(newRow);
+      }
     }
-  } else {
-    for (const result of resultsList) {
-      const parsedRow = parseNestedEntitiesNoPath(result);
-      parsedResults.push(parsedRow);
+    return childRows;
+  }
+
+  // Recursively get values from objects
+  const childObj: { [key: string]: any } = {};
+  for (const childKey in value) {
+    if (value.hasOwnProperty(childKey)) {
+      const childValue = getNestedValue(childKey, value);
+      if (Array.isArray(childValue) && childKey.endsWith("List")) {
+        childObj[childKey.replace("List", "")] = childValue;
+      } else {
+        childObj[childKey] = childValue;
+      }
     }
+  }
+  return childObj;
+}
+
+export function formatCallResults(
+  resultsList: GoogleAdsRow[],
+  fieldMask: protobufHelpers.FieldMask.AsObject
+) {
+  const len = resultsList.length;
+  const camelCaseFieldMask = fieldMask ? fieldMask.pathsList.map(convertPathToCamelCase) : [];
+  const fieldMaskLen = camelCaseFieldMask.length;
+  const parsedResults = [];
+
+  for (let i = 0; i < len; i++) {
+    const row = resultsList[i];
+    const parsedRow: { [key: string]: any } = {};
+
+    for (let j = 0; j < fieldMaskLen; j++) {
+      const path = camelCaseFieldMask[j];
+      const value = getNestedValue(path, row);
+
+      // Get the resource name of the entity
+      const entity = path.split(".")[0] as keyof GoogleAdsRow;
+      const resourceNameField = `${entity}.resourceName`;
+      const resourceNameExistsOriginal = get(row, resourceNameField);
+      const resourceNameExists = get(parsedRow, resourceNameField);
+
+      // Set the resource name if required
+      if (!resourceNameExists && resourceNameExistsOriginal) {
+        const resourceName = get(row, resourceNameField);
+        set(parsedRow, resourceNameField, resourceName);
+      }
+
+      if (typeof value !== "undefined") {
+        set(parsedRow, formatPath(path, value), value);
+      }
+    }
+    parsedResults.push(parsedRow);
   }
 
   return parsedResults;
+}
+
+function formatPath(path: string, value: any): string {
+  if (path.endsWith(".value")) {
+    return path.split(".value")[0];
+  }
+  if (path.endsWith("List") && Array.isArray(value)) {
+    return path.split("List")[0];
+  }
+  return path;
 }
 
 export function convertToProtoFormat(
@@ -128,108 +225,6 @@ export function convertPathToCamelCase(str: string) {
       .replace("-", "")
       .replace("_", "");
   });
-}
-
-function parseNestedEntitiesNoPath(data: any, _structs = structs) {
-  if (typeof data === "string" || typeof data === "number" || typeof data === "boolean") {
-    return data;
-  }
-
-  const findMatchingStruct = (key: string) => {
-    const capitalcase_key = key.charAt(0).toUpperCase() + key.slice(1);
-    const snakecase_key = snakeCase(key);
-
-    // We need both cases because the structs.ts file exports resources in CapitalCase,
-    // but the keys inside each resource are in snake_case. parseNestedEntitiesNoPath() is
-    // recursive, so we're not sure which one we'll need.
-
-    // @ts-ignore
-    return _structs[capitalcase_key] || _structs[snakecase_key];
-  };
-
-  const finalObject: any = {};
-
-  Object.keys(data).map(key => {
-    let displayKey = key;
-
-    /*  
-      This section regarding "matching structs" is designed to correctly
-      trim keys that end in "List". Some of those keys are legit (such as userList)
-      while others are bogus (such as pointsList). The bogus ones need trimming so
-      that the final result returned to the user matches the format specified in the docs.
-
-      This adds other layer of recusive complexity to this function, and I'm open to improvements.
-    */
-    let matching_struct = findMatchingStruct(displayKey);
-
-    if (!matching_struct && key.endsWith("List")) {
-      // Trim "List" only if bogus key
-      displayKey = key.split("List")[0];
-      matching_struct = findMatchingStruct(displayKey);
-    }
-
-    const entity = data[key];
-
-    const isObject = typeof entity === "object";
-    const isUndefined = typeof entity === "undefined";
-    const isArray = Array.isArray(entity);
-    // It needs its "value" unwrapped if it is an object and has "value" as its only key.
-    const isValue = isObject
-      ? entity.hasOwnProperty("value") && Object.keys(entity).length === 1
-      : false;
-
-    if (isUndefined) {
-      return;
-    }
-
-    if (isArray) {
-      finalObject[displayKey] = entity.map((item: any) => {
-        // @ts-ignore
-        const parsed = parseNestedEntitiesNoPath({ item }, { item: matching_struct });
-        return parsed.item;
-      });
-    } else if (isValue) {
-      finalObject[displayKey] = entity.value;
-    } else if (isObject) {
-      finalObject[displayKey] = parseNestedEntitiesNoPath(entity, matching_struct);
-    } else {
-      finalObject[displayKey] = entity;
-    }
-  });
-
-  return finalObject;
-}
-
-// This function first parses the data without regard for the passed props,
-// then plucks out the props that it actually cares about.
-function parseNestedEntities(data: any, props: string[]) {
-  const parsed_data = parseNestedEntitiesNoPath(data);
-
-  const final_object = {};
-
-  for (let path of props) {
-    path = convertPathToCamelCase(path);
-
-    // Pluck resource name if available
-    const path_elements_trimmed = path.split(".");
-    while (path_elements_trimmed.pop()) {
-      path_elements_trimmed.push("resourceName");
-      const rn_path = path_elements_trimmed.join(".");
-      path_elements_trimmed.pop();
-      if (get(parsed_data, rn_path)) {
-        set(final_object, rn_path, get(parsed_data, rn_path));
-      }
-    }
-
-    // And pluck the field specified in path
-    const plucked_value = get(parsed_data, path);
-
-    if (typeof plucked_value !== "undefined") {
-      set(final_object, path, plucked_value);
-    }
-  }
-
-  return final_object;
 }
 
 function recursiveFieldMaskSearch(data: any) {
