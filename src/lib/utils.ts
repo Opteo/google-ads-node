@@ -8,8 +8,6 @@ import { GoogleAdsRow } from "./resources";
 import * as structs from "./struct";
 
 const NON_MUTABLE_METHOD_PREFIXES = ["Get", "List", "Generate", "Search"];
-const UNSPECIFIED_ENUM_VALUE = 0; // All enums include UNSPECIFIED = 0
-const UNKNOWN_ENUM_VALUE = 1; // All enums incude UNKNOWN = 1
 
 // Based on https://github.com/leaves4j/grpc-promisify/blob/master/src/index.js
 export function promisifyServiceClient(client: Client) {
@@ -39,33 +37,24 @@ export function promisifyServiceClient(client: Client) {
   });
 }
 
-function isValueField(isObject: boolean, value: any): boolean {
-  if (typeof value === "undefined") {
-    return false;
-  }
-  return isObject ? value.hasOwnProperty("value") && Object.keys(value).length === 1 : false;
-}
-
 function getNestedValue(path: string, data: GoogleAdsRow): any {
   const value = get(data, path) ?? get(data, `${path}List`);
-  if (typeof value === "undefined") {
+  const typeOfValue = typeof value;
+
+  if (typeOfValue === "undefined") {
     return value;
   }
 
-  // Convert UNKNOWN enum values to UNSPECIFIED
-  const isEnum = typeof value === "number";
-  if (isEnum && value === UNKNOWN_ENUM_VALUE) {
-    return UNSPECIFIED_ENUM_VALUE;
-  }
-
   // Return raw values
-  if (typeof value === "number" || typeof value === "string" || typeof value === "boolean") {
+  if (typeOfValue === "number" || typeOfValue === "string" || typeOfValue === "boolean") {
     return value;
   }
 
   // Get value from google.protobuf { value } objects
-  const isObject = typeof value === "object";
-  const isValue = isValueField(isObject, value);
+  const isValue =
+    typeOfValue === "object"
+      ? value.hasOwnProperty("value") && Object.keys(value).length === 1
+      : false;
   if (isValue) {
     return value.value;
   }
