@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.5"></a>
+## [1.15.5](https://github.com/opteo/google-ads-node/compare/v1.15.4...v1.15.5) (2020-06-22)
+
+
+### Bug Fixes
+
+* **utils:** improved parsing performance when using parseResults option ([#45](https://github.com/opteo/google-ads-node/issues/45)) ([3e290d0](https://github.com/opteo/google-ads-node/commit/3e290d0))
+
+
+
 <a name="1.15.4"></a>
 ## [1.15.4](https://github.com/opteo/google-ads-node/compare/v1.15.3...v1.15.4) (2020-06-05)
 
