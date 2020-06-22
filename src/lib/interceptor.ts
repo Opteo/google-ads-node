@@ -8,6 +8,7 @@ import {
   getErrorLocationPath,
   isMutationRequest,
   safeguardMutationProtobufRequest,
+  getFieldMask,
 } from "./utils";
 
 const FAILURE_KEY = "google.ads.googleads.v3.errors.googleadsfailure-bin";
@@ -220,7 +221,22 @@ export class ResponseParsingInterceptor {
               errors.push(error.toObject());
             }
 
-            results.partialFailureError.errors = formatCallResults(errors, undefined);
+            // detailsList -> details
+            if (results.partialFailureError.detailsList) {
+              results.partialFailureError.details = results.partialFailureError.detailsList;
+              delete results.partialFailureError.detailsList;
+            }
+
+            // @ts-ignore Errors is similar to GoogleAdsRow type
+            results.partialFailureError.errors = formatCallResults(errors, {
+              pathsList: ["error_code", "message", "trigger", "location", "details"],
+            });
+
+            // mutateOperationResponsesList -> mutateOperationResponses
+            if (results.mutateOperationResponsesList) {
+              results.mutateOperationResponses = results.mutateOperationResponsesList;
+              delete results.mutateOperationResponsesList;
+            }
           }
 
           /* 
@@ -229,20 +245,24 @@ export class ResponseParsingInterceptor {
           */
           const results_to_parse = results.resultsList ? results.resultsList : [results];
 
-          const parsedResults = formatCallResults(results_to_parse, results.fieldMask);
-          if (parsedResults && results.resultsList) {
-            results.resultsList = parsedResults;
-          }
-          /* Return an object if it's a single entity via a service */
-          if (parsedResults && !results.resultsList) {
-            results = parsedResults[0];
-          }
+          if (results_to_parse?.length > 0) {
+            const fieldMask = results.fieldMask ?? getFieldMask(results_to_parse[0]).toObject();
+            const parsedResults = formatCallResults(results_to_parse, fieldMask);
 
-          // Parse the summary row if it exists
-          if (typeof results.summaryRow !== "undefined") {
-            const parsedSummaryRow = formatCallResults([results.summaryRow], results.fieldMask);
-            if (parsedSummaryRow && parsedSummaryRow.length >= 0) {
-              results.summaryRow = parsedSummaryRow[0];
+            if (parsedResults && results.resultsList) {
+              results.resultsList = parsedResults;
+            }
+            /* Return an object if it's a single entity via a service */
+            if (!results.partialFailureError && parsedResults && !results.resultsList) {
+              results = parsedResults[0];
+            }
+
+            // Parse the summary row if it exists
+            if (results.summaryRow && typeof results.summaryRow !== "undefined") {
+              const parsedSummaryRow = formatCallResults([results.summaryRow], results.fieldMask);
+              if (parsedSummaryRow && parsedSummaryRow.length >= 0) {
+                results.summaryRow = parsedSummaryRow[0];
+              }
             }
           }
 
