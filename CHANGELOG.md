@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.6"></a>
+## [1.15.6](https://github.com/opteo/google-ads-node/compare/v1.15.5...v1.15.6) (2020-06-25)
+
+
+### Bug Fixes
+
+* **interceptor:** parse summary row when no results exist ([#46](https://github.com/opteo/google-ads-node/issues/46)) ([8c415b2](https://github.com/opteo/google-ads-node/commit/8c415b2))
+
+
+
 <a name="1.15.5"></a>
 ## [1.15.5](https://github.com/opteo/google-ads-node/compare/v1.15.4...v1.15.5) (2020-06-22)
 
