@@ -256,13 +256,13 @@ export class ResponseParsingInterceptor {
             if (!results.partialFailureError && parsedResults && !results.resultsList) {
               results = parsedResults[0];
             }
+          }
 
-            // Parse the summary row if it exists
-            if (results.summaryRow && typeof results.summaryRow !== "undefined") {
-              const parsedSummaryRow = formatCallResults([results.summaryRow], results.fieldMask);
-              if (parsedSummaryRow && parsedSummaryRow.length >= 0) {
-                results.summaryRow = parsedSummaryRow[0];
-              }
+          // Parse the summary row if it exists
+          if (results.summaryRow && typeof results.summaryRow !== "undefined") {
+            const parsedSummaryRow = formatCallResults([results.summaryRow], results.fieldMask);
+            if (parsedSummaryRow && parsedSummaryRow.length >= 0) {
+              results.summaryRow = parsedSummaryRow[0];
             }
           }
 
