@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.7"></a>
+## [1.15.7](https://github.com/opteo/google-ads-node/compare/v1.15.6...v1.15.7) (2020-06-26)
+
+
+### Bug Fixes
+
+* **utils:** prevent valid 'value' fields from being removed ([#47](https://github.com/opteo/google-ads-node/issues/47)) ([751b08e](https://github.com/opteo/google-ads-node/commit/751b08e))
+
+
+
 <a name="1.15.6"></a>
 ## [1.15.6](https://github.com/opteo/google-ads-node/compare/v1.15.5...v1.15.6) (2020-06-25)
 
