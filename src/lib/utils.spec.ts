@@ -324,6 +324,80 @@ test("parsing removes undefined properties even if they're defined in the field 
   });
 });
 
+test("parsing works correctly for get requests", () => {
+  const result = [
+    {
+      resourceName: "geoTargetConstants/1021278",
+      id: { value: 1021278 },
+      name: { value: "Raleigh" },
+      countryCode: { value: "US" },
+      targetType: { value: "City" },
+      status: 2,
+      canonicalName: { value: "Raleigh,North Carolina,United States" },
+    },
+  ];
+
+  // @ts-ignore Partial type is fine for testing
+  const parsedResult = formatCallResults(result, {
+    pathsList: [
+      // For get requests, a .value is added to each field mask path (except resourceName & enums)
+      "resourceName",
+      "id.value",
+      "name.value",
+      "countryCode.value",
+      "targetType.value",
+      "status",
+      "canonicalName.value",
+    ],
+  });
+
+  expect(parsedResult[0]).toEqual({
+    resourceName: "geoTargetConstants/1021278",
+    id: 1021278,
+    name: "Raleigh",
+    countryCode: "US",
+    targetType: "City",
+    status: 2,
+    canonicalName: "Raleigh,North Carolina,United States",
+  });
+});
+
+// Some fields are actually called 'value', which we don't want to remove
+test("parsing doesn't remove fields called 'value'", () => {
+  const result = [
+    {
+      adGroupCriterion: {
+        productGroup: {
+          caseValue: {
+            productType: {
+              value: {
+                value: 123,
+              },
+            },
+          },
+        },
+      },
+    },
+  ];
+
+  // @ts-ignore Partial type is fine for testing
+  const parsedResult = formatCallResults(result, {
+    pathsList: ["ad_group_criterion.product_group.case_value.product_type.value"],
+  });
+
+  expect(parsedResult[0]).toEqual({
+    adGroupCriterion: {
+      productGroup: {
+        caseValue: {
+          productType: {
+            value: 123
+          }
+        }
+      }
+    }
+  });
+});
+
 test("update mask can be generated from a resource object", () => {
   const resource = {
     resource_name: "customers/123/campaignBudgets/321",

@@ -101,6 +101,11 @@ export function formatCallResults(
   resultsList: GoogleAdsRow[],
   fieldMask: protobufHelpers.FieldMask.AsObject
 ) {
+  // Hack to check if request is a get call (no entity prefix in fieldmask paths)
+  // Required because of weird fieldmask inconsistencies where .value is added to each path
+  // and to avoid removing fields actually called "value"
+  const isGetRequest = fieldMask?.pathsList?.find(p => p === "resourceName");
+
   const len = resultsList.length;
   const camelCaseFieldMask = fieldMask ? fieldMask.pathsList.map(convertPathToCamelCase) : [];
   const fieldMaskLen = camelCaseFieldMask.length;
@@ -127,7 +132,7 @@ export function formatCallResults(
       }
 
       if (typeof value !== "undefined") {
-        set(parsedRow, formatPath(path, value), value);
+        set(parsedRow, formatPath(path, value, isGetRequest), value);
       }
     }
     parsedResults.push(parsedRow);
@@ -136,8 +141,8 @@ export function formatCallResults(
   return parsedResults;
 }
 
-function formatPath(path: string, value: any): string {
-  if (path.endsWith(".value")) {
+function formatPath(path: string, value: any, isGetRequest?: string): string {
+  if (isGetRequest && path.endsWith(".value")) {
     return path.split(".value")[0];
   }
   if (path.endsWith("List") && Array.isArray(value)) {
