@@ -7,8 +7,8 @@ export class LabelDescriptor extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
-  getValueType(): LabelDescriptor.ValueType;
-  setValueType(value: LabelDescriptor.ValueType): void;
+  getValueType(): LabelDescriptor.ValueTypeMap[keyof LabelDescriptor.ValueTypeMap];
+  setValueType(value: LabelDescriptor.ValueTypeMap[keyof LabelDescriptor.ValueTypeMap]): void;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -26,14 +26,16 @@ export class LabelDescriptor extends jspb.Message {
 export namespace LabelDescriptor {
   export type AsObject = {
     key: string,
-    valueType: LabelDescriptor.ValueType,
+    valueType: LabelDescriptor.ValueTypeMap[keyof LabelDescriptor.ValueTypeMap],
     description: string,
   }
 
-  export enum ValueType {
-    STRING = 0,
-    BOOL = 1,
-    INT64 = 2,
+  export interface ValueTypeMap {
+    STRING: 0;
+    BOOL: 1;
+    INT64: 2;
   }
+
+  export const ValueType: ValueTypeMap;
 }
 

@@ -18,11 +18,11 @@ export class MetricDescriptor extends jspb.Message {
   setLabelsList(value: Array<google_api_label_pb.LabelDescriptor>): void;
   addLabels(value?: google_api_label_pb.LabelDescriptor, index?: number): google_api_label_pb.LabelDescriptor;
 
-  getMetricKind(): MetricDescriptor.MetricKind;
-  setMetricKind(value: MetricDescriptor.MetricKind): void;
+  getMetricKind(): MetricDescriptor.MetricKindMap[keyof MetricDescriptor.MetricKindMap];
+  setMetricKind(value: MetricDescriptor.MetricKindMap[keyof MetricDescriptor.MetricKindMap]): void;
 
-  getValueType(): MetricDescriptor.ValueType;
-  setValueType(value: MetricDescriptor.ValueType): void;
+  getValueType(): MetricDescriptor.ValueTypeMap[keyof MetricDescriptor.ValueTypeMap];
+  setValueType(value: MetricDescriptor.ValueTypeMap[keyof MetricDescriptor.ValueTypeMap]): void;
 
   getUnit(): string;
   setUnit(value: string): void;
@@ -38,8 +38,13 @@ export class MetricDescriptor extends jspb.Message {
   getMetadata(): MetricDescriptor.MetricDescriptorMetadata | undefined;
   setMetadata(value?: MetricDescriptor.MetricDescriptorMetadata): void;
 
-  getLaunchStage(): google_api_launch_stage_pb.LaunchStage;
-  setLaunchStage(value: google_api_launch_stage_pb.LaunchStage): void;
+  getLaunchStage(): google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap];
+  setLaunchStage(value: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap]): void;
+
+  clearMonitoredResourceTypesList(): void;
+  getMonitoredResourceTypesList(): Array<string>;
+  setMonitoredResourceTypesList(value: Array<string>): void;
+  addMonitoredResourceTypes(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MetricDescriptor.AsObject;
@@ -56,18 +61,19 @@ export namespace MetricDescriptor {
     name: string,
     type: string,
     labelsList: Array<google_api_label_pb.LabelDescriptor.AsObject>,
-    metricKind: MetricDescriptor.MetricKind,
-    valueType: MetricDescriptor.ValueType,
+    metricKind: MetricDescriptor.MetricKindMap[keyof MetricDescriptor.MetricKindMap],
+    valueType: MetricDescriptor.ValueTypeMap[keyof MetricDescriptor.ValueTypeMap],
     unit: string,
     description: string,
     displayName: string,
     metadata?: MetricDescriptor.MetricDescriptorMetadata.AsObject,
-    launchStage: google_api_launch_stage_pb.LaunchStage,
+    launchStage: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap],
+    monitoredResourceTypesList: Array<string>,
   }
 
   export class MetricDescriptorMetadata extends jspb.Message {
-    getLaunchStage(): google_api_launch_stage_pb.LaunchStage;
-    setLaunchStage(value: google_api_launch_stage_pb.LaunchStage): void;
+    getLaunchStage(): google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap];
+    setLaunchStage(value: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap]): void;
 
     hasSamplePeriod(): boolean;
     clearSamplePeriod(): void;
@@ -91,28 +97,32 @@ export namespace MetricDescriptor {
 
   export namespace MetricDescriptorMetadata {
     export type AsObject = {
-      launchStage: google_api_launch_stage_pb.LaunchStage,
+      launchStage: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap],
       samplePeriod?: google_protobuf_duration_pb.Duration.AsObject,
       ingestDelay?: google_protobuf_duration_pb.Duration.AsObject,
     }
   }
 
-  export enum MetricKind {
-    METRIC_KIND_UNSPECIFIED = 0,
-    GAUGE = 1,
-    DELTA = 2,
-    CUMULATIVE = 3,
+  export interface MetricKindMap {
+    METRIC_KIND_UNSPECIFIED: 0;
+    GAUGE: 1;
+    DELTA: 2;
+    CUMULATIVE: 3;
   }
 
-  export enum ValueType {
-    VALUE_TYPE_UNSPECIFIED = 0,
-    BOOL = 1,
-    INT64 = 2,
-    DOUBLE = 3,
-    STRING = 4,
-    DISTRIBUTION = 5,
-    MONEY = 6,
+  export const MetricKind: MetricKindMap;
+
+  export interface ValueTypeMap {
+    VALUE_TYPE_UNSPECIFIED: 0;
+    BOOL: 1;
+    INT64: 2;
+    DOUBLE: 3;
+    STRING: 4;
+    DISTRIBUTION: 5;
+    MONEY: 6;
   }
+
+  export const ValueType: ValueTypeMap;
 }
 
 export class Metric extends jspb.Message {

@@ -24,8 +24,8 @@ export class MonitoredResourceDescriptor extends jspb.Message {
   setLabelsList(value: Array<google_api_label_pb.LabelDescriptor>): void;
   addLabels(value?: google_api_label_pb.LabelDescriptor, index?: number): google_api_label_pb.LabelDescriptor;
 
-  getLaunchStage(): google_api_launch_stage_pb.LaunchStage;
-  setLaunchStage(value: google_api_launch_stage_pb.LaunchStage): void;
+  getLaunchStage(): google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap];
+  setLaunchStage(value: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitoredResourceDescriptor.AsObject;
@@ -44,7 +44,7 @@ export namespace MonitoredResourceDescriptor {
     displayName: string,
     description: string,
     labelsList: Array<google_api_label_pb.LabelDescriptor.AsObject>,
-    launchStage: google_api_launch_stage_pb.LaunchStage,
+    launchStage: google_api_launch_stage_pb.LaunchStageMap[keyof google_api_launch_stage_pb.LaunchStageMap],
   }
 }
 

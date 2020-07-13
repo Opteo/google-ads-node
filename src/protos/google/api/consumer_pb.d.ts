@@ -29,8 +29,8 @@ export class Property extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getType(): Property.PropertyType;
-  setType(value: Property.PropertyType): void;
+  getType(): Property.PropertyTypeMap[keyof Property.PropertyTypeMap];
+  setType(value: Property.PropertyTypeMap[keyof Property.PropertyTypeMap]): void;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -48,16 +48,18 @@ export class Property extends jspb.Message {
 export namespace Property {
   export type AsObject = {
     name: string,
-    type: Property.PropertyType,
+    type: Property.PropertyTypeMap[keyof Property.PropertyTypeMap],
     description: string,
   }
 
-  export enum PropertyType {
-    UNSPECIFIED = 0,
-    INT64 = 1,
-    BOOL = 2,
-    STRING = 3,
-    DOUBLE = 4,
+  export interface PropertyTypeMap {
+    UNSPECIFIED: 0;
+    INT64: 1;
+    BOOL: 2;
+    STRING: 3;
+    DOUBLE: 4;
   }
+
+  export const PropertyType: PropertyTypeMap;
 }
 

@@ -12,11 +12,6 @@ export class Endpoint extends jspb.Message {
   setAliasesList(value: Array<string>): void;
   addAliases(value: string, index?: number): string;
 
-  clearFeaturesList(): void;
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): void;
-  addFeatures(value: string, index?: number): string;
-
   getTarget(): string;
   setTarget(value: string): void;
 
@@ -37,7 +32,6 @@ export namespace Endpoint {
   export type AsObject = {
     name: string,
     aliasesList: Array<string>,
-    featuresList: Array<string>,
     target: string,
     allowCors: boolean,
   }

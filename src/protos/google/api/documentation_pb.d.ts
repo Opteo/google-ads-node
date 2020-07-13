@@ -20,6 +20,9 @@ export class Documentation extends jspb.Message {
   getDocumentationRootUrl(): string;
   setDocumentationRootUrl(value: string): void;
 
+  getServiceRootUrl(): string;
+  setServiceRootUrl(value: string): void;
+
   getOverview(): string;
   setOverview(value: string): void;
 
@@ -39,6 +42,7 @@ export namespace Documentation {
     pagesList: Array<Page.AsObject>,
     rulesList: Array<DocumentationRule.AsObject>,
     documentationRootUrl: string,
+    serviceRootUrl: string,
     overview: string,
   }
 }

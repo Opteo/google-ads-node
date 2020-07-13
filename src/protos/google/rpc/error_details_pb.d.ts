@@ -99,8 +99,8 @@ export namespace QuotaFailure {
 }
 
 export class ErrorInfo extends jspb.Message {
-  getType(): string;
-  setType(value: string): void;
+  getReason(): string;
+  setReason(value: string): void;
 
   getDomain(): string;
   setDomain(value: string): void;
@@ -119,7 +119,7 @@ export class ErrorInfo extends jspb.Message {
 
 export namespace ErrorInfo {
   export type AsObject = {
-    type: string,
+    reason: string,
     domain: string,
     metadataMap: Array<[string, string]>,
   }

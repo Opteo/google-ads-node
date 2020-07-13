@@ -61,6 +61,16 @@ export enum AccountBudgetStatus {
 }
 
 /**
+ * @name AccountLinkStatusEnum.AccountLinkStatus
+ */
+export enum AccountLinkStatus {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "ENABLED" = 2,
+  "REMOVED" = 3,
+}
+
+/**
  * @name AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField
  */
 export enum AdCustomizerPlaceholderField {
@@ -146,6 +156,7 @@ export enum AdGroupType {
   "SEARCH_DYNAMIC_ADS" = 13,
   "SHOPPING_COMPARISON_LISTING_ADS" = 14,
   "PROMOTED_HOTEL_ADS" = 15,
+  "VIDEO_RESPONSIVE" = 16,
 }
 
 /**
@@ -210,10 +221,17 @@ export enum AdType {
   "APP_AD" = 17,
   "LEGACY_APP_INSTALL_AD" = 18,
   "RESPONSIVE_DISPLAY_AD" = 19,
+  "LOCAL_AD" = 20,
   "HTML5_UPLOAD_AD" = 21,
   "DYNAMIC_HTML5_AD" = 22,
   "APP_ENGAGEMENT_AD" = 23,
   "SHOPPING_COMPARISON_LISTING_AD" = 24,
+  "VIDEO_BUMPER_AD" = 25,
+  "VIDEO_NON_SKIPPABLE_IN_STREAM_AD" = 26,
+  "VIDEO_OUTSTREAM_AD" = 27,
+  "VIDEO_TRUEVIEW_DISCOVERY_AD" = 28,
+  "VIDEO_TRUEVIEW_IN_STREAM_AD" = 29,
+  "VIDEO_RESPONSIVE_AD" = 30,
 }
 
 /**
@@ -234,6 +252,7 @@ export enum AdvertisingChannelSubType {
   "VIDEO_NON_SKIPPABLE" = 11,
   "APP_CAMPAIGN" = 12,
   "APP_CAMPAIGN_FOR_ENGAGEMENT" = 13,
+  "LOCAL_CAMPAIGN" = 14,
   "SHOPPING_COMPARISON_LISTING_ADS" = 15,
 }
 
@@ -249,6 +268,8 @@ export enum AdvertisingChannelType {
   "HOTEL" = 5,
   "VIDEO" = 6,
   "MULTI_CHANNEL" = 7,
+  "LOCAL" = 8,
+  "SMART" = 9,
 }
 
 /**
@@ -398,6 +419,7 @@ export enum AssetType {
   "MEDIA_BUNDLE" = 3,
   "IMAGE" = 4,
   "TEXT" = 5,
+  "BOOK_ON_GOOGLE" = 7,
 }
 
 /**
@@ -413,6 +435,17 @@ export enum AttributionModel {
   "GOOGLE_SEARCH_ATTRIBUTION_TIME_DECAY" = 104,
   "GOOGLE_SEARCH_ATTRIBUTION_POSITION_BASED" = 105,
   "GOOGLE_SEARCH_ATTRIBUTION_DATA_DRIVEN" = 106,
+}
+
+/**
+ * @name BatchJobStatusEnum.BatchJobStatus
+ */
+export enum BatchJobStatus {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "PENDING" = 2,
+  "RUNNING" = 3,
+  "DONE" = 4,
 }
 
 /**
@@ -786,6 +819,20 @@ export enum ConversionActionCategory {
   "SIGNUP" = 5,
   "LEAD" = 6,
   "DOWNLOAD" = 7,
+  "ADD_TO_CART" = 8,
+  "BEGIN_CHECKOUT" = 9,
+  "SUBSCRIBE_PAID" = 10,
+  "PHONE_CALL_LEAD" = 11,
+  "IMPORTED_LEAD" = 12,
+  "SUBMIT_LEAD_FORM" = 13,
+  "BOOK_APPOINTMENT" = 14,
+  "REQUEST_QUOTE" = 15,
+  "GET_DIRECTIONS" = 16,
+  "OUTBOUND_CLICK" = 17,
+  "CONTACT" = 18,
+  "ENGAGEMENT" = 19,
+  "STORE_VISIT" = 20,
+  "STORE_SALE" = 21,
 }
 
 /**
@@ -823,6 +870,20 @@ export enum ConversionActionType {
   "UPLOAD_CLICKS" = 7,
   "WEBPAGE" = 8,
   "WEBSITE_CALL" = 9,
+  "STORE_SALES_DIRECT_UPLOAD" = 10,
+  "STORE_SALES" = 11,
+  "FIREBASE_ANDROID_FIRST_OPEN" = 12,
+  "FIREBASE_ANDROID_IN_APP_PURCHASE" = 13,
+  "FIREBASE_ANDROID_CUSTOM" = 14,
+  "FIREBASE_IOS_FIRST_OPEN" = 15,
+  "FIREBASE_IOS_IN_APP_PURCHASE" = 16,
+  "FIREBASE_IOS_CUSTOM" = 17,
+  "THIRD_PARTY_APP_ANALYTICS_ANDROID_FIRST_OPEN" = 18,
+  "THIRD_PARTY_APP_ANALYTICS_ANDROID_IN_APP_PURCHASE" = 19,
+  "THIRD_PARTY_APP_ANALYTICS_ANDROID_CUSTOM" = 20,
+  "THIRD_PARTY_APP_ANALYTICS_IOS_FIRST_OPEN" = 21,
+  "THIRD_PARTY_APP_ANALYTICS_IOS_IN_APP_PURCHASE" = 22,
+  "THIRD_PARTY_APP_ANALYTICS_IOS_CUSTOM" = 23,
 }
 
 /**
@@ -1271,7 +1332,8 @@ export enum ExternalConversionSource {
   "GOOGLE_PLAY" = 19,
   "THIRD_PARTY_APP_ANALYTICS" = 20,
   "GOOGLE_ATTRIBUTION" = 21,
-  "STORE_SALES_DIRECT" = 22,
+  "STORE_SALES_DIRECT_UPLOAD" = 23,
+  "STORE_SALES" = 24,
 }
 
 /**
@@ -1758,16 +1820,12 @@ export enum LegacyAppInstallAdAppStore {
 }
 
 /**
- * @name ListingCustomAttributeIndexEnum.ListingCustomAttributeIndex
+ * @name LinkedAccountTypeEnum.LinkedAccountType
  */
-export enum ListingCustomAttributeIndex {
+export enum LinkedAccountType {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
-  "INDEX0" = 7,
-  "INDEX1" = 8,
-  "INDEX2" = 9,
-  "INDEX3" = 10,
-  "INDEX4" = 11,
+  "THIRD_PARTY_APP_ANALYTICS" = 2,
 }
 
 /**
@@ -1845,6 +1903,16 @@ export enum LocationPlaceholderField {
   "POSTAL_CODE" = 7,
   "COUNTRY_CODE" = 8,
   "PHONE_NUMBER" = 9,
+}
+
+/**
+ * @name LocationSourceTypeEnum.LocationSourceType
+ */
+export enum LocationSourceType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "GOOGLE_MY_BUSINESS" = 2,
+  "AFFILIATE" = 3,
 }
 
 /**
@@ -1953,6 +2021,16 @@ export enum MinuteOfHour {
 }
 
 /**
+ * @name MobileAppVendorEnum.MobileAppVendor
+ */
+export enum MobileAppVendor {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "APPLE_APP_STORE" = 2,
+  "GOOGLE_APP_STORE" = 3,
+}
+
+/**
  * @name MobileDeviceTypeEnum.MobileDeviceType
  */
 export enum MobileDeviceType {
@@ -1983,17 +2061,6 @@ export enum MonthOfYear {
 }
 
 /**
- * @name MutateJobStatusEnum.MutateJobStatus
- */
-export enum MutateJobStatus {
-  "UNSPECIFIED" = 0,
-  "UNKNOWN" = 1,
-  "PENDING" = 2,
-  "RUNNING" = 3,
-  "DONE" = 4,
-}
-
-/**
  * @name NegativeGeoTargetTypeEnum.NegativeGeoTargetType
  */
 export enum NegativeGeoTargetType {
@@ -2004,6 +2071,39 @@ export enum NegativeGeoTargetType {
 }
 
 /**
+ * @name OfflineUserDataJobFailureReasonEnum.OfflineUserDataJobFailureReason
+ */
+export enum OfflineUserDataJobFailureReason {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "INSUFFICIENT_MATCHED_TRANSACTIONS" = 2,
+  "INSUFFICIENT_TRANSACTIONS" = 3,
+}
+
+/**
+ * @name OfflineUserDataJobStatusEnum.OfflineUserDataJobStatus
+ */
+export enum OfflineUserDataJobStatus {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "PENDING" = 2,
+  "RUNNING" = 3,
+  "SUCCESS" = 4,
+  "FAILED" = 5,
+}
+
+/**
+ * @name OfflineUserDataJobTypeEnum.OfflineUserDataJobType
+ */
+export enum OfflineUserDataJobType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "STORE_SALES_UPLOAD_FIRST_PARTY" = 2,
+  "STORE_SALES_UPLOAD_THIRD_PARTY" = 3,
+  "CUSTOMER_MATCH_USER_LIST" = 4,
+}
+
+/**
  * @name OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType
  */
 export enum OperatingSystemVersionOperatorType {
@@ -2011,6 +2111,16 @@ export enum OperatingSystemVersionOperatorType {
   "UNKNOWN" = 1,
   "EQUALS_TO" = 2,
   "GREATER_THAN_EQUALS_TO" = 4,
+}
+
+/**
+ * @name OptimizationGoalTypeEnum.OptimizationGoalType
+ */
+export enum OptimizationGoalType {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CALL_CLICKS" = 2,
+  "DRIVING_DIRECTIONS" = 3,
 }
 
 /**
@@ -2641,6 +2751,7 @@ export enum SimulationType {
   "CPV_BID" = 3,
   "TARGET_CPA" = 4,
   "BID_MODIFIER" = 5,
+  "TARGET_ROAS" = 6,
 }
 
 /**
@@ -3077,6 +3188,8 @@ export enum AccountBudgetProposalError {
   "BUDGET_DATE_RANGE_INCOMPATIBLE_WITH_BILLING_SETUP" = 21,
   "NOT_AUTHORIZED" = 22,
   "INVALID_BILLING_SETUP" = 23,
+  "OVERLAPS_EXISTING_BUDGET" = 24,
+  "CANNOT_CREATE_BUDGET_THROUGH_API" = 25,
 }
 
 /**
@@ -3233,6 +3346,15 @@ export enum AdError {
   "UNEXPECTED_PLACEHOLDER_DEFAULT_VALUE" = 137,
   "AD_CUSTOMIZERS_MAY_NOT_BE_ADJACENT" = 138,
   "UPDATING_AD_WITH_NO_ENABLED_ASSOCIATION" = 139,
+  "TOO_MANY_AD_CUSTOMIZERS" = 141,
+  "INVALID_AD_CUSTOMIZER_FORMAT" = 142,
+  "NESTED_AD_CUSTOMIZER_SYNTAX" = 143,
+  "UNSUPPORTED_AD_CUSTOMIZER_SYNTAX" = 144,
+  "UNPAIRED_BRACE_IN_AD_CUSTOMIZER_TAG" = 145,
+  "MORE_THAN_ONE_COUNTDOWN_TAG_TYPE_EXISTS" = 146,
+  "DATE_TIME_IN_COUNTDOWN_TAG_IS_INVALID" = 147,
+  "DATE_TIME_IN_COUNTDOWN_TAG_IS_PAST" = 148,
+  "UNRECOGNIZED_AD_CUSTOMIZER_TAG_FOUND" = 149,
 }
 
 /**
@@ -3249,6 +3371,8 @@ export enum AdGroupAdError {
   "CANNOT_CREATE_TEXT_ADS" = 7,
   "EMPTY_FIELD" = 8,
   "RESOURCE_REFERENCED_IN_MULTIPLE_OPS" = 9,
+  "AD_TYPE_CANNOT_BE_PAUSED" = 10,
+  "AD_TYPE_CANNOT_BE_REMOVED" = 11,
 }
 
 /**
@@ -3295,15 +3419,6 @@ export enum AdGroupCriterionError {
   "CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE" = 36,
   "FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE" = 37,
   "FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE" = 38,
-  "INVALID_LISTING_GROUP_HIERARCHY" = 39,
-  "LISTING_GROUP_UNIT_CANNOT_HAVE_CHILDREN" = 40,
-  "LISTING_GROUP_SUBDIVISION_REQUIRES_OTHERS_CASE" = 41,
-  "LISTING_GROUP_REQUIRES_SAME_DIMENSION_TYPE_AS_SIBLINGS" = 42,
-  "LISTING_GROUP_ALREADY_EXISTS" = 43,
-  "LISTING_GROUP_DOES_NOT_EXIST" = 44,
-  "LISTING_GROUP_CANNOT_BE_REMOVED" = 45,
-  "INVALID_LISTING_GROUP_TYPE" = 46,
-  "LISTING_GROUP_ADD_MAY_ONLY_USE_TEMP_ID" = 47,
 }
 
 /**
@@ -3324,6 +3439,7 @@ export enum AdGroupError {
   "AD_GROUP_TYPE_NOT_VALID_FOR_ADVERTISING_CHANNEL_TYPE" = 12,
   "ADGROUP_TYPE_NOT_SUPPORTED_FOR_CAMPAIGN_SALES_COUNTRY" = 13,
   "CANNOT_ADD_ADGROUP_OF_TYPE_DSA_TO_CAMPAIGN_WITHOUT_DSA_SETTING" = 14,
+  "PROMOTED_HOTEL_AD_GROUPS_NOT_AVAILABLE_FOR_CUSTOMER" = 15,
 }
 
 /**
@@ -3385,6 +3501,15 @@ export enum AssetError {
 }
 
 /**
+ * @name AssetLinkErrorEnum.AssetLinkError
+ */
+export enum AssetLinkError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "PINNING_UNSUPPORTED" = 2,
+}
+
+/**
  * @name AuthenticationErrorEnum.AuthenticationError
  */
 export enum AuthenticationError {
@@ -3428,6 +3553,20 @@ export enum AuthorizationError {
   "DEVELOPER_TOKEN_NOT_APPROVED" = 10,
   "INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION" = 11,
   "SERVICE_ACCESS_DENIED" = 12,
+}
+
+/**
+ * @name BatchJobErrorEnum.BatchJobError
+ */
+export enum BatchJobError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CANNOT_MODIFY_JOB_AFTER_JOB_STARTS_RUNNING" = 2,
+  "EMPTY_OPERATIONS" = 3,
+  "INVALID_SEQUENCE_TOKEN" = 4,
+  "RESULTS_NOT_READY" = 5,
+  "INVALID_PAGE_SIZE" = 6,
+  "CAN_ONLY_REMOVE_PENDING_JOB" = 7,
 }
 
 /**
@@ -3521,6 +3660,7 @@ export enum CampaignBudgetError {
   "MONEY_AMOUNT_TOO_LARGE" = 14,
   "NEGATIVE_MONEY_AMOUNT" = 15,
   "NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT" = 16,
+  "TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY" = 18,
 }
 
 /**
@@ -3693,6 +3833,7 @@ export enum ConversionActionError {
   "DATA_DRIVEN_MODEL_EXPIRED" = 7,
   "DATA_DRIVEN_MODEL_STALE" = 8,
   "DATA_DRIVEN_MODEL_UNKNOWN" = 9,
+  "CREATION_NOT_SUPPORTED" = 10,
 }
 
 /**
@@ -3780,8 +3921,6 @@ export enum CriterionError {
   "YOUTUBE_URL_UNSUPPORTED" = 21,
   "CANNOT_EXCLUDE_CRITERIA_TYPE" = 22,
   "CANNOT_ADD_CRITERIA_TYPE" = 23,
-  "INVALID_PRODUCT_FILTER" = 24,
-  "PRODUCT_FILTER_TOO_LONG" = 25,
   "CANNOT_EXCLUDE_SIMILAR_USER_LIST" = 26,
   "CANNOT_ADD_CLOSED_USER_LIST" = 27,
   "CANNOT_ADD_DISPLAY_ONLY_LISTS_TO_SEARCH_ONLY_CAMPAIGNS" = 28,
@@ -3828,12 +3967,6 @@ export enum CriterionError {
   "CRITERIA_TYPE_INVALID_FOR_BIDDING_STRATEGY" = 67,
   "CANNOT_EXCLUDE_CRITERION" = 68,
   "CANNOT_REMOVE_CRITERION" = 69,
-  "PRODUCT_SCOPE_TOO_LONG" = 70,
-  "PRODUCT_SCOPE_TOO_MANY_DIMENSIONS" = 71,
-  "PRODUCT_PARTITION_TOO_LONG" = 72,
-  "PRODUCT_PARTITION_TOO_MANY_DIMENSIONS" = 73,
-  "INVALID_PRODUCT_DIMENSION" = 74,
-  "INVALID_PRODUCT_DIMENSION_TYPE" = 75,
   "INVALID_PRODUCT_BIDDING_CATEGORY" = 76,
   "MISSING_SHOPPING_SETTING" = 77,
   "INVALID_MATCHING_FUNCTION" = 78,
@@ -3856,6 +3989,27 @@ export enum CriterionError {
   "WEBPAGE_CRITERION_URL_EQUALS_CAN_HAVE_ONLY_ONE_CONDITION" = 94,
   "WEBPAGE_CRITERION_NOT_SUPPORTED_ON_NON_DSA_AD_GROUP" = 95,
   "CANNOT_TARGET_USER_LIST_FOR_SMART_DISPLAY_CAMPAIGNS" = 99,
+  "LISTING_SCOPE_TOO_MANY_DIMENSION_TYPES" = 100,
+  "LISTING_SCOPE_TOO_MANY_IN_OPERATORS" = 101,
+  "LISTING_SCOPE_IN_OPERATOR_NOT_SUPPORTED" = 102,
+  "DUPLICATE_LISTING_DIMENSION_TYPE" = 103,
+  "DUPLICATE_LISTING_DIMENSION_VALUE" = 104,
+  "CANNOT_SET_BIDS_ON_LISTING_GROUP_SUBDIVISION" = 105,
+  "INVALID_LISTING_GROUP_HIERARCHY" = 106,
+  "LISTING_GROUP_UNIT_CANNOT_HAVE_CHILDREN" = 107,
+  "LISTING_GROUP_SUBDIVISION_REQUIRES_OTHERS_CASE" = 108,
+  "LISTING_GROUP_REQUIRES_SAME_DIMENSION_TYPE_AS_SIBLINGS" = 109,
+  "LISTING_GROUP_ALREADY_EXISTS" = 110,
+  "LISTING_GROUP_DOES_NOT_EXIST" = 111,
+  "LISTING_GROUP_CANNOT_BE_REMOVED" = 112,
+  "INVALID_LISTING_GROUP_TYPE" = 113,
+  "LISTING_GROUP_ADD_MAY_ONLY_USE_TEMP_ID" = 114,
+  "LISTING_SCOPE_TOO_LONG" = 115,
+  "LISTING_SCOPE_TOO_MANY_DIMENSIONS" = 116,
+  "LISTING_GROUP_TOO_LONG" = 117,
+  "LISTING_GROUP_TREE_TOO_DEEP" = 118,
+  "INVALID_LISTING_DIMENSION" = 119,
+  "INVALID_LISTING_DIMENSION_TYPE" = 120,
 }
 
 /**
@@ -3895,6 +4049,7 @@ export enum CustomerClientLinkError {
   "CLIENT_HAS_TOO_MANY_INVITATIONS" = 6,
   "CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS" = 7,
   "CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER" = 8,
+  "CLIENT_HAS_TOO_MANY_MANAGERS" = 9,
 }
 
 /**
@@ -4418,6 +4573,7 @@ export enum HeaderError {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "INVALID_LOGIN_CUSTOMER_ID" = 3,
+  "INVALID_LINKED_CUSTOMER_ID" = 7,
 }
 
 /**
@@ -4508,6 +4664,21 @@ export enum KeywordPlanAdGroupError {
 }
 
 /**
+ * @name KeywordPlanAdGroupKeywordErrorEnum.KeywordPlanAdGroupKeywordError
+ */
+export enum KeywordPlanAdGroupKeywordError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "INVALID_KEYWORD_MATCH_TYPE" = 2,
+  "DUPLICATE_KEYWORD" = 3,
+  "KEYWORD_TEXT_TOO_LONG" = 4,
+  "KEYWORD_HAS_INVALID_CHARS" = 5,
+  "KEYWORD_HAS_TOO_MANY_WORDS" = 6,
+  "INVALID_KEYWORD_TEXT" = 7,
+  "NEGATIVE_KEYWORD_HAS_CPC_BID" = 8,
+}
+
+/**
  * @name KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError
  */
 export enum KeywordPlanCampaignError {
@@ -4518,6 +4689,16 @@ export enum KeywordPlanCampaignError {
   "INVALID_GEOS" = 4,
   "DUPLICATE_NAME" = 5,
   "MAX_GEOS_EXCEEDED" = 6,
+  "MAX_LANGUAGES_EXCEEDED" = 7,
+}
+
+/**
+ * @name KeywordPlanCampaignKeywordErrorEnum.KeywordPlanCampaignKeywordError
+ */
+export enum KeywordPlanCampaignKeywordError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "CAMPAIGN_KEYWORD_IS_POSITIVE" = 8,
 }
 
 /**
@@ -4550,28 +4731,6 @@ export enum KeywordPlanIdeaError {
   "UNKNOWN" = 1,
   "URL_CRAWL_ERROR" = 2,
   "INVALID_VALUE" = 3,
-}
-
-/**
- * @name KeywordPlanKeywordErrorEnum.KeywordPlanKeywordError
- */
-export enum KeywordPlanKeywordError {
-  "UNSPECIFIED" = 0,
-  "UNKNOWN" = 1,
-  "INVALID_KEYWORD_MATCH_TYPE" = 2,
-  "DUPLICATE_KEYWORD" = 3,
-  "KEYWORD_TEXT_TOO_LONG" = 4,
-  "KEYWORD_HAS_INVALID_CHARS" = 5,
-  "KEYWORD_HAS_TOO_MANY_WORDS" = 6,
-  "INVALID_KEYWORD_TEXT" = 7,
-}
-
-/**
- * @name KeywordPlanNegativeKeywordErrorEnum.KeywordPlanNegativeKeywordError
- */
-export enum KeywordPlanNegativeKeywordError {
-  "UNSPECIFIED" = 0,
-  "UNKNOWN" = 1,
 }
 
 /**
@@ -4632,6 +4791,8 @@ export enum ManagerLinkError {
   "NON_OWNER_USER_CANNOT_MODIFY_LINK" = 14,
   "SUSPENDED_ACCOUNT_CANNOT_ADD_CLIENTS" = 15,
   "CLIENT_OUTSIDE_TREE" = 16,
+  "INVALID_STATUS_CHANGE" = 17,
+  "INVALID_CHANGE" = 18,
 }
 
 /**
@@ -4742,19 +4903,8 @@ export enum MutateError {
   "MUTATE_NOT_ALLOWED" = 9,
   "RESOURCE_NOT_IN_GOOGLE_ADS" = 10,
   "RESOURCE_ALREADY_EXISTS" = 11,
-}
-
-/**
- * @name MutateJobErrorEnum.MutateJobError
- */
-export enum MutateJobError {
-  "UNSPECIFIED" = 0,
-  "UNKNOWN" = 1,
-  "CANNOT_MODIFY_JOB_AFTER_JOB_STARTS_RUNNING" = 2,
-  "EMPTY_OPERATIONS" = 3,
-  "INVALID_SEQUENCE_TOKEN" = 4,
-  "RESULTS_NOT_READY" = 5,
-  "INVALID_PAGE_SIZE" = 6,
+  "RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY" = 12,
+  "RESOURCE_READ_ONLY" = 13,
 }
 
 /**
@@ -4793,6 +4943,41 @@ export enum NullError {
   "UNSPECIFIED" = 0,
   "UNKNOWN" = 1,
   "NULL_CONTENT" = 2,
+}
+
+/**
+ * @name OfflineUserDataJobErrorEnum.OfflineUserDataJobError
+ */
+export enum OfflineUserDataJobError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "INVALID_USER_LIST_ID" = 3,
+  "INVALID_USER_LIST_TYPE" = 4,
+  "NOT_WHITELISTED_FOR_USER_ID" = 5,
+  "INCOMPATIBLE_UPLOAD_KEY_TYPE" = 6,
+  "MISSING_USER_IDENTIFIER" = 7,
+  "INVALID_MOBILE_ID_FORMAT" = 8,
+  "TOO_MANY_USER_IDENTIFIERS" = 9,
+  "NOT_WHITELISTED_FOR_STORE_SALES_DIRECT" = 10,
+  "NOT_WHITELISTED_FOR_UNIFIED_STORE_SALES" = 28,
+  "INVALID_PARTNER_ID" = 11,
+  "INVALID_ENCODING" = 12,
+  "INVALID_COUNTRY_CODE" = 13,
+  "INCOMPATIBLE_USER_IDENTIFIER" = 14,
+  "FUTURE_TRANSACTION_TIME" = 15,
+  "INVALID_CONVERSION_ACTION" = 16,
+  "MOBILE_ID_NOT_SUPPORTED" = 17,
+  "INVALID_OPERATION_ORDER" = 18,
+  "CONFLICTING_OPERATION" = 19,
+  "EXTERNAL_UPDATE_ID_ALREADY_EXISTS" = 21,
+  "JOB_ALREADY_STARTED" = 22,
+  "REMOVE_NOT_SUPPORTED" = 23,
+  "REMOVE_ALL_NOT_SUPPORTED" = 24,
+  "INVALID_SHA256_FORMAT" = 25,
+  "CUSTOM_KEY_DISABLED" = 26,
+  "CUSTOM_KEY_NOT_PREDEFINED" = 27,
+  "CUSTOM_KEY_NOT_SET" = 29,
+  "CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS" = 30,
 }
 
 /**
@@ -5063,6 +5248,7 @@ export enum SettingError {
   "DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_SUBDOMAIN_NAME" = 10,
   "DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_LANGUAGE_CODE" = 11,
   "TARGET_ALL_IS_NOT_ALLOWED_FOR_PLACEMENT_IN_SEARCH_CAMPAIGN" = 12,
+  "SETTING_VALUE_NOT_COMPATIBLE_WITH_CAMPAIGN" = 20,
 }
 
 /**
@@ -5184,6 +5370,17 @@ export enum UrlFieldError {
   "MALFORMED_URL" = 55,
   "MISSING_HOST" = 56,
   "NULL_CUSTOM_PARAMETER_VALUE" = 57,
+}
+
+/**
+ * @name UserDataErrorEnum.UserDataError
+ */
+export enum UserDataError {
+  "UNSPECIFIED" = 0,
+  "UNKNOWN" = 1,
+  "OPERATIONS_FOR_CUSTOMER_MATCH_NOT_ALLOWED" = 2,
+  "TOO_MANY_USER_IDENTIFIERS" = 3,
+  "USER_LIST_NOT_APPLICABLE" = 4,
 }
 
 /**

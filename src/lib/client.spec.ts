@@ -402,7 +402,7 @@ test("correctly uses logging options", async () => {
             "developer-token": "DEVELOPER_TOKEN",
             "login-customer-id": "LOGIN_CUSTOMER_ID",
           },
-          method: "/google.ads.googleads.v3.services.GoogleAdsService/Search",
+          method: "/google.ads.googleads.v4.services.GoogleAdsService/Search",
         });
       },
     },

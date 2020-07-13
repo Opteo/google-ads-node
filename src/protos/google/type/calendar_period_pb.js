@@ -1,1 +1,0 @@
-var jspb=require("google-protobuf"),goog=jspb,global=Function("return this")();goog.exportSymbol("proto.google.type.CalendarPeriod",null,global),proto.google.type.CalendarPeriod={CALENDAR_PERIOD_UNSPECIFIED:0,DAY:1,WEEK:2,FORTNIGHT:3,MONTH:4,QUARTER:5,HALF:6,YEAR:7},goog.object.extend(exports,proto.google.type);

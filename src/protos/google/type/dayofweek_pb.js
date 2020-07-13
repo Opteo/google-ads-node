@@ -1,1 +1,0 @@
-var jspb=require("google-protobuf"),goog=jspb,global=Function("return this")();goog.exportSymbol("proto.google.type.DayOfWeek",null,global),proto.google.type.DayOfWeek={DAY_OF_WEEK_UNSPECIFIED:0,MONDAY:1,TUESDAY:2,WEDNESDAY:3,THURSDAY:4,FRIDAY:5,SATURDAY:6,SUNDAY:7},goog.object.extend(exports,proto.google.type);
