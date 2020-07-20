@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.16.0"></a>
+# [1.16.0](https://github.com/opteo/google-ads-node/compare/v1.15.7...v1.16.0) (2020-07-20)
+
+
+### Features
+
+* added linked_customer_id to client header ([f6936db](https://github.com/opteo/google-ads-node/commit/f6936db))
+* **api:** upgraded google ads api to v4.0.0 ([6497bc6](https://github.com/opteo/google-ads-node/commit/6497bc6))
+
+
+
 <a name="1.15.7"></a>
 ## [1.15.7](https://github.com/opteo/google-ads-node/compare/v1.15.6...v1.15.7) (2020-06-26)
 
