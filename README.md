@@ -521,7 +521,7 @@ To update the Google Ads API version, the latest proto files (from the [googleap
 1. Run `make protos` within the `google-ads-node/` directory
 1. Update any README instances of the Google Ads API version number, e.g. the NPM badge URL
 
-Note: there may be some errors in the newly generated `src/lib/struct.ts` which require manual fixes.
+Note: there may be some errors in the newly generated `src/lib/struct.ts` which require a manual fix.
 
 There should now be a bunch of changes in the `src/protos` folder. Package these changes up into a single commit, using the following template commit message:
 
