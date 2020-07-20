@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/opteo/google-ads-node/compare/v1.16.0...v2.0.0) (2020-07-20)
+
+
+### Features
+
+* Releasing Google Ads Api v4.0.0 ([5e21328](https://github.com/opteo/google-ads-node/commit/5e21328))
+
+
+### BREAKING CHANGES
+
+* Some services have been removed/replaced
+
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/opteo/google-ads-node/compare/v1.15.7...v1.16.0) (2020-07-20)
 
