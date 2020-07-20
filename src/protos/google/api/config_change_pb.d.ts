@@ -13,8 +13,8 @@ export class ConfigChange extends jspb.Message {
   getNewValue(): string;
   setNewValue(value: string): void;
 
-  getChangeType(): ChangeType;
-  setChangeType(value: ChangeType): void;
+  getChangeType(): ChangeTypeMap[keyof ChangeTypeMap];
+  setChangeType(value: ChangeTypeMap[keyof ChangeTypeMap]): void;
 
   clearAdvicesList(): void;
   getAdvicesList(): Array<Advice>;
@@ -36,7 +36,7 @@ export namespace ConfigChange {
     element: string,
     oldValue: string,
     newValue: string,
-    changeType: ChangeType,
+    changeType: ChangeTypeMap[keyof ChangeTypeMap],
     advicesList: Array<Advice.AsObject>,
   }
 }
@@ -61,10 +61,12 @@ export namespace Advice {
   }
 }
 
-export enum ChangeType {
-  CHANGE_TYPE_UNSPECIFIED = 0,
-  ADDED = 1,
-  REMOVED = 2,
-  MODIFIED = 3,
+export interface ChangeTypeMap {
+  CHANGE_TYPE_UNSPECIFIED: 0;
+  ADDED: 1;
+  REMOVED: 2;
+  MODIFIED: 3;
 }
+
+export const ChangeType: ChangeTypeMap;
 

@@ -19,12 +19,14 @@ const CLIENT_ID = "CLIENT_ID";
 const CLIENT_SECRET = "CLIENT_ID";
 const DEVELOPER_TOKEN = "DEVELOPER_TOKEN";
 const LOGIN_CUSTOMER_ID = "LOGIN_CUSTOMER_ID";
+const LINKED_CUSTOMER_ID = "LINKED_CUSTOMER_ID";
 
 test("new client with access token", () => {
   const client = new GoogleAdsClient({
     access_token: ACCESS_TOKEN,
     developer_token: DEVELOPER_TOKEN,
     login_customer_id: LOGIN_CUSTOMER_ID,
+    linked_customer_id: LINKED_CUSTOMER_ID,
   });
   expect(client).toBeInstanceOf(GoogleAdsClient);
 });
@@ -402,7 +404,7 @@ test("correctly uses logging options", async () => {
             "developer-token": "DEVELOPER_TOKEN",
             "login-customer-id": "LOGIN_CUSTOMER_ID",
           },
-          method: "/google.ads.googleads.v3.services.GoogleAdsService/Search",
+          method: "/google.ads.googleads.v4.services.GoogleAdsService/Search",
         });
       },
     },

@@ -1,1 +1,0 @@
-var jspb=require("google-protobuf"),goog=jspb,global=Function("return this")(),google_api_resource_pb=require("../../google/api/resource_pb.js");goog.object.extend(exports,proto.google.cloud);

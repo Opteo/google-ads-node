@@ -7,6 +7,7 @@
 export type ResourceName =
   | "account_budget"
   | "account_budget_proposal"
+  | "account_link"
   | "ad_group"
   | "ad_group_ad"
   | "ad_group_ad_asset_view"
@@ -24,6 +25,7 @@ export type ResourceName =
   | "ad_schedule_view"
   | "age_range_view"
   | "asset"
+  | "batch_job"
   | "bidding_strategy"
   | "billing_setup"
   | "campaign"
@@ -70,11 +72,12 @@ export type ResourceName =
   | "group_placement_view"
   | "hotel_group_view"
   | "hotel_performance_view"
+  | "income_range_view"
   | "keyword_plan"
   | "keyword_plan_ad_group"
+  | "keyword_plan_ad_group_keyword"
   | "keyword_plan_campaign"
-  | "keyword_plan_keyword"
-  | "keyword_plan_negative_keyword"
+  | "keyword_plan_campaign_keyword"
   | "keyword_view"
   | "label"
   | "landing_page_view"
@@ -84,7 +87,7 @@ export type ResourceName =
   | "media_file"
   | "mobile_app_category_constant"
   | "mobile_device_constant"
-  | "mutate_job"
+  | "offline_user_data_job"
   | "operating_system_version_constant"
   | "paid_organic_search_term_view"
   | "parental_status_view"
@@ -96,6 +99,7 @@ export type ResourceName =
   | "shared_criterion"
   | "shared_set"
   | "shopping_performance_view"
+  | "third_party_app_analytics_link"
   | "topic_constant"
   | "topic_view"
   | "user_interest"
@@ -134,6 +138,7 @@ export const account_budget = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -199,6 +204,7 @@ export type AccountBudgetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -273,6 +279,7 @@ export const account_budget_proposal = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -327,6 +334,7 @@ export type AccountBudgetProposalField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -362,10 +370,96 @@ export type AccountBudgetProposalFields = Array<AccountBudgetProposalField>;
 */
 
 /*
+ --- Start of AccountLink ---
+*/
+// @ts-ignore
+export const account_link = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "account_link.account_link_id",
+  "account_link.resource_name",
+  "account_link.status",
+  "account_link.third_party_app_analytics.app_analytics_provider_id",
+  "account_link.third_party_app_analytics.app_id",
+  "account_link.third_party_app_analytics.app_vendor",
+  "account_link.type",
+];
+
+export type AccountLinkField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "account_link.account_link_id"
+  | "account_link.resource_name"
+  | "account_link.status"
+  | "account_link.third_party_app_analytics.app_analytics_provider_id"
+  | "account_link.third_party_app_analytics.app_id"
+  | "account_link.third_party_app_analytics.app_vendor"
+  | "account_link.type";
+
+export type AccountLinkFields = Array<AccountLinkField>;
+
+/*
+ --- End of AccountLink ---
+*/
+
+/*
  --- Start of AdGroup ---
 */
 // @ts-ignore
 export const ad_group = [
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -390,6 +484,7 @@ export const ad_group = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -400,6 +495,8 @@ export const ad_group = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -444,6 +541,7 @@ export const ad_group = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -479,6 +577,25 @@ export const ad_group = [
 ];
 
 export type AdGroupField =
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -503,6 +620,7 @@ export type AdGroupField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -513,6 +631,8 @@ export type AdGroupField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -557,6 +677,7 @@ export type AdGroupField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -745,6 +866,7 @@ export const ad_group_ad = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -755,6 +877,8 @@ export const ad_group_ad = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -799,6 +923,7 @@ export const ad_group_ad = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -884,6 +1009,14 @@ export const ad_group_ad = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -986,6 +1119,7 @@ export type AdGroupAdField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -996,6 +1130,8 @@ export type AdGroupAdField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -1040,6 +1176,7 @@ export type AdGroupAdField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -1125,6 +1262,14 @@ export type AdGroupAdField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -1372,6 +1517,14 @@ export const ad_group_ad_asset_view = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -1421,6 +1574,7 @@ export const ad_group_ad_asset_view = [
   "ad_group_ad.policy_summary",
   "ad_group_ad.resource_name",
   "ad_group_ad.status",
+  "asset.book_on_google_asset",
   "asset.id",
   "asset.image_asset.file_size",
   "asset.image_asset.full_size.height_pixels",
@@ -1456,6 +1610,7 @@ export const ad_group_ad_asset_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -1466,6 +1621,8 @@ export const ad_group_ad_asset_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -1510,6 +1667,7 @@ export const ad_group_ad_asset_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -1630,6 +1788,14 @@ export type AdGroupAdAssetViewField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -1679,6 +1845,7 @@ export type AdGroupAdAssetViewField =
   | "ad_group_ad.policy_summary"
   | "ad_group_ad.resource_name"
   | "ad_group_ad.status"
+  | "asset.book_on_google_asset"
   | "asset.id"
   | "asset.image_asset.file_size"
   | "asset.image_asset.full_size.height_pixels"
@@ -1714,6 +1881,7 @@ export type AdGroupAdAssetViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -1724,6 +1892,8 @@ export type AdGroupAdAssetViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -1768,6 +1938,7 @@ export type AdGroupAdAssetViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -1929,6 +2100,14 @@ export const ad_group_ad_label = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -2002,6 +2181,7 @@ export const ad_group_ad_label = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -2012,6 +2192,8 @@ export const ad_group_ad_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -2056,6 +2238,7 @@ export const ad_group_ad_label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -2179,6 +2362,14 @@ export type AdGroupAdLabelField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -2252,6 +2443,7 @@ export type AdGroupAdLabelField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -2262,6 +2454,8 @@ export type AdGroupAdLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -2306,6 +2500,7 @@ export type AdGroupAdLabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -2370,6 +2565,7 @@ export const ad_group_audience_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -2477,6 +2673,7 @@ export const ad_group_audience_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -2487,6 +2684,8 @@ export const ad_group_audience_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -2531,6 +2730,7 @@ export const ad_group_audience_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -2614,6 +2814,7 @@ export type AdGroupAudienceViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -2721,6 +2922,7 @@ export type AdGroupAudienceViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -2731,6 +2933,8 @@ export type AdGroupAudienceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -2775,6 +2979,7 @@ export type AdGroupAudienceViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -2950,6 +3155,7 @@ export const ad_group_bid_modifier = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -2960,6 +3166,8 @@ export const ad_group_bid_modifier = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -3004,6 +3212,7 @@ export const ad_group_bid_modifier = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -3077,6 +3286,7 @@ export type AdGroupBidModifierField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -3087,6 +3297,8 @@ export type AdGroupBidModifierField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -3131,6 +3343,7 @@ export type AdGroupBidModifierField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -3213,6 +3426,7 @@ export const ad_group_criterion = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -3223,6 +3437,8 @@ export const ad_group_criterion = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -3267,6 +3483,7 @@ export const ad_group_criterion = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -3334,6 +3551,7 @@ export const ad_group_criterion = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -3451,6 +3669,7 @@ export type AdGroupCriterionField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -3461,6 +3680,8 @@ export type AdGroupCriterionField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -3505,6 +3726,7 @@ export type AdGroupCriterionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -3572,6 +3794,7 @@ export type AdGroupCriterionField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -3685,6 +3908,7 @@ export const ad_group_criterion_label = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -3773,6 +3997,7 @@ export const ad_group_criterion_label = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -3783,6 +4008,8 @@ export const ad_group_criterion_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -3827,6 +4054,7 @@ export const ad_group_criterion_label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -3882,6 +4110,7 @@ export type AdGroupCriterionLabelField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -3970,6 +4199,7 @@ export type AdGroupCriterionLabelField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -3980,6 +4210,8 @@ export type AdGroupCriterionLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -4024,6 +4256,7 @@ export type AdGroupCriterionLabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -4088,6 +4321,7 @@ export const ad_group_criterion_simulation = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -4176,6 +4410,7 @@ export const ad_group_criterion_simulation = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4186,6 +4421,8 @@ export const ad_group_criterion_simulation = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -4230,6 +4467,7 @@ export const ad_group_criterion_simulation = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -4284,6 +4522,7 @@ export type AdGroupCriterionSimulationField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -4372,6 +4611,7 @@ export type AdGroupCriterionSimulationField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4382,6 +4622,8 @@ export type AdGroupCriterionSimulationField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -4426,6 +4668,7 @@ export type AdGroupCriterionSimulationField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -4502,6 +4745,7 @@ export const ad_group_extension_setting = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4512,6 +4756,8 @@ export const ad_group_extension_setting = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -4556,6 +4802,7 @@ export const ad_group_extension_setting = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -4620,6 +4867,7 @@ export type AdGroupExtensionSettingField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4630,6 +4878,8 @@ export type AdGroupExtensionSettingField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -4674,6 +4924,7 @@ export type AdGroupExtensionSettingField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -4747,6 +4998,7 @@ export const ad_group_feed = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -4757,6 +5009,8 @@ export const ad_group_feed = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -4801,6 +5055,7 @@ export const ad_group_feed = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -4881,6 +5136,7 @@ export type AdGroupFeedField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -4891,6 +5147,8 @@ export type AdGroupFeedField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -4935,6 +5193,7 @@ export type AdGroupFeedField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -5024,6 +5283,7 @@ export const ad_group_label = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5034,6 +5294,8 @@ export const ad_group_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -5078,6 +5340,7 @@ export const ad_group_label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -5146,6 +5409,7 @@ export type AdGroupLabelField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5156,6 +5420,8 @@ export type AdGroupLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -5200,6 +5466,7 @@ export type AdGroupLabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -5277,6 +5544,7 @@ export const ad_group_simulation = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5287,6 +5555,8 @@ export const ad_group_simulation = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -5331,6 +5601,7 @@ export const ad_group_simulation = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -5345,6 +5616,7 @@ export const ad_group_simulation = [
   "ad_group_simulation.resource_name",
   "ad_group_simulation.start_date",
   "ad_group_simulation.target_cpa_point_list.points",
+  "ad_group_simulation.target_roas_point_list.points",
   "ad_group_simulation.type",
 ];
 
@@ -5399,6 +5671,7 @@ export type AdGroupSimulationField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5409,6 +5682,8 @@ export type AdGroupSimulationField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -5453,6 +5728,7 @@ export type AdGroupSimulationField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -5467,6 +5743,7 @@ export type AdGroupSimulationField =
   | "ad_group_simulation.resource_name"
   | "ad_group_simulation.start_date"
   | "ad_group_simulation.target_cpa_point_list.points"
+  | "ad_group_simulation.target_roas_point_list.points"
   | "ad_group_simulation.type";
 
 export type AdGroupSimulationFields = Array<AdGroupSimulationField>;
@@ -5517,6 +5794,7 @@ export const ad_parameter = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -5605,6 +5883,7 @@ export const ad_parameter = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5615,6 +5894,8 @@ export const ad_parameter = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -5659,6 +5940,7 @@ export const ad_parameter = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -5709,6 +5991,7 @@ export type AdParameterField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -5797,6 +6080,7 @@ export type AdParameterField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -5807,6 +6091,8 @@ export type AdParameterField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -5851,6 +6137,7 @@ export type AdParameterField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -5897,6 +6184,7 @@ export const ad_schedule_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -5907,6 +6195,8 @@ export const ad_schedule_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -6003,6 +6293,7 @@ export const ad_schedule_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -6037,6 +6328,7 @@ export type AdScheduleViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -6047,6 +6339,8 @@ export type AdScheduleViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -6143,6 +6437,7 @@ export type AdScheduleViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -6249,6 +6544,7 @@ export const age_range_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -6313,6 +6609,25 @@ export const age_range_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -6337,6 +6652,7 @@ export const age_range_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -6347,6 +6663,8 @@ export const age_range_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -6391,6 +6709,7 @@ export const age_range_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -6438,6 +6757,7 @@ export type AgeRangeViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -6502,6 +6822,25 @@ export type AgeRangeViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -6526,6 +6865,7 @@ export type AgeRangeViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -6536,6 +6876,8 @@ export type AgeRangeViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -6580,6 +6922,7 @@ export type AgeRangeViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -6677,12 +7020,14 @@ export const asset = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
+  "asset.book_on_google_asset",
   "asset.id",
   "asset.image_asset.file_size",
   "asset.image_asset.full_size.height_pixels",
@@ -6709,12 +7054,14 @@ export type AssetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
+  | "asset.book_on_google_asset"
   | "asset.id"
   | "asset.image_asset.file_size"
   | "asset.image_asset.full_size.height_pixels"
@@ -6749,6 +7096,79 @@ export type AssetSegments = Array<AssetSegment>;
 */
 
 /*
+ --- Start of BatchJob ---
+*/
+// @ts-ignore
+export const batch_job = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "batch_job.id",
+  "batch_job.long_running_operation",
+  "batch_job.metadata.completion_date_time",
+  "batch_job.metadata.creation_date_time",
+  "batch_job.metadata.estimated_completion_ratio",
+  "batch_job.metadata.executed_operation_count",
+  "batch_job.metadata.operation_count",
+  "batch_job.next_add_sequence_token",
+  "batch_job.resource_name",
+  "batch_job.status",
+];
+
+export type BatchJobField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "batch_job.id"
+  | "batch_job.long_running_operation"
+  | "batch_job.metadata.completion_date_time"
+  | "batch_job.metadata.creation_date_time"
+  | "batch_job.metadata.estimated_completion_ratio"
+  | "batch_job.metadata.executed_operation_count"
+  | "batch_job.metadata.operation_count"
+  | "batch_job.next_add_sequence_token"
+  | "batch_job.resource_name"
+  | "batch_job.status";
+
+export type BatchJobFields = Array<BatchJobField>;
+
+/*
+ --- End of BatchJob ---
+*/
+
+/*
  --- Start of BiddingStrategy ---
 */
 // @ts-ignore
@@ -6765,6 +7185,7 @@ export const bidding_strategy = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -6805,6 +7226,7 @@ export type BiddingStrategyField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -6893,6 +7315,7 @@ export const billing_setup = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -6926,6 +7349,7 @@ export type BillingSetupField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -7004,6 +7428,7 @@ export const campaign = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -7034,6 +7459,7 @@ export const campaign = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7044,6 +7470,8 @@ export const campaign = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -7127,6 +7555,7 @@ export type CampaignField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -7157,6 +7586,7 @@ export type CampaignField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7167,6 +7597,8 @@ export type CampaignField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -7357,6 +7789,7 @@ export const campaign_audience_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7367,6 +7800,8 @@ export const campaign_audience_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -7463,6 +7898,7 @@ export const campaign_audience_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -7552,6 +7988,7 @@ export type CampaignAudienceViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7562,6 +7999,8 @@ export type CampaignAudienceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -7658,6 +8097,7 @@ export type CampaignAudienceViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -7805,6 +8245,7 @@ export const campaign_bid_modifier = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -7815,6 +8256,8 @@ export const campaign_bid_modifier = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -7859,6 +8302,7 @@ export const campaign_bid_modifier = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -7897,6 +8341,7 @@ export type CampaignBidModifierField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -7907,6 +8352,8 @@ export type CampaignBidModifierField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -7951,6 +8398,7 @@ export type CampaignBidModifierField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -8002,6 +8450,7 @@ export const campaign_budget = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8012,6 +8461,8 @@ export const campaign_budget = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -8056,6 +8507,7 @@ export const campaign_budget = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -8106,6 +8558,7 @@ export type CampaignBudgetField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8116,6 +8569,8 @@ export type CampaignBudgetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -8160,6 +8615,7 @@ export type CampaignBudgetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -8261,6 +8717,7 @@ export const campaign_criterion = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8271,6 +8728,8 @@ export const campaign_criterion = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -8319,6 +8778,7 @@ export const campaign_criterion = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -8483,6 +8943,7 @@ export type CampaignCriterionField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8493,6 +8954,8 @@ export type CampaignCriterionField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -8541,6 +9004,7 @@ export type CampaignCriterionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -8714,6 +9178,7 @@ export const campaign_criterion_simulation = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -8724,6 +9189,8 @@ export const campaign_criterion_simulation = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -8820,6 +9287,7 @@ export const campaign_criterion_simulation = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -8861,6 +9329,7 @@ export type CampaignCriterionSimulationField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -8871,6 +9340,8 @@ export type CampaignCriterionSimulationField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -8967,6 +9438,7 @@ export type CampaignCriterionSimulationField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -9017,6 +9489,7 @@ export const campaign_draft = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9027,6 +9500,8 @@ export const campaign_draft = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -9071,6 +9546,7 @@ export const campaign_draft = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -9112,6 +9588,7 @@ export type CampaignDraftField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9122,6 +9599,8 @@ export type CampaignDraftField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -9166,6 +9645,7 @@ export type CampaignDraftField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -9216,6 +9696,7 @@ export const campaign_experiment = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9226,6 +9707,8 @@ export const campaign_experiment = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -9278,6 +9761,7 @@ export const campaign_experiment = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -9323,6 +9807,7 @@ export type CampaignExperimentField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9333,6 +9818,8 @@ export type CampaignExperimentField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -9385,6 +9872,7 @@ export type CampaignExperimentField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -9439,6 +9927,7 @@ export const campaign_extension_setting = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9449,6 +9938,8 @@ export const campaign_extension_setting = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -9493,6 +9984,7 @@ export const campaign_extension_setting = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -9531,6 +10023,7 @@ export type CampaignExtensionSettingField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9541,6 +10034,8 @@ export type CampaignExtensionSettingField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -9585,6 +10080,7 @@ export type CampaignExtensionSettingField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -9632,6 +10128,7 @@ export const campaign_feed = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9642,6 +10139,8 @@ export const campaign_feed = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -9686,6 +10185,7 @@ export const campaign_feed = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -9740,6 +10240,7 @@ export type CampaignFeedField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9750,6 +10251,8 @@ export type CampaignFeedField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -9794,6 +10297,7 @@ export type CampaignFeedField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -9857,6 +10361,7 @@ export const campaign_label = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -9867,6 +10372,8 @@ export const campaign_label = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -9911,6 +10418,7 @@ export const campaign_label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -9953,6 +10461,7 @@ export type CampaignLabelField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -9963,6 +10472,8 @@ export type CampaignLabelField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -10007,6 +10518,7 @@ export type CampaignLabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -10058,6 +10570,7 @@ export const campaign_shared_set = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -10068,6 +10581,8 @@ export const campaign_shared_set = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -10112,6 +10627,7 @@ export const campaign_shared_set = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -10156,6 +10672,7 @@ export type CampaignSharedSetField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -10166,6 +10683,8 @@ export type CampaignSharedSetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -10210,6 +10729,7 @@ export type CampaignSharedSetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -10312,6 +10832,7 @@ export const change_status = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -10322,6 +10843,8 @@ export const change_status = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -10366,6 +10889,7 @@ export const change_status = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -10461,6 +10985,7 @@ export type ChangeStatusField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -10471,6 +10996,8 @@ export type ChangeStatusField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -10515,6 +11042,7 @@ export type ChangeStatusField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -10619,6 +11147,7 @@ export const click_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -10629,6 +11158,8 @@ export const click_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -10673,6 +11204,7 @@ export const click_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -10746,6 +11278,7 @@ export type ClickViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -10756,6 +11289,8 @@ export type ClickViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -10800,6 +11335,7 @@ export type ClickViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -10860,6 +11396,7 @@ export const conversion_action = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -10872,14 +11409,18 @@ export const conversion_action = [
   "conversion_action.category",
   "conversion_action.click_through_lookback_window_days",
   "conversion_action.counting_type",
+  "conversion_action.firebase_settings.event_name",
+  "conversion_action.firebase_settings.project_id",
   "conversion_action.id",
   "conversion_action.include_in_conversions_metric",
+  "conversion_action.mobile_app_vendor",
   "conversion_action.name",
   "conversion_action.owner_customer",
   "conversion_action.phone_call_duration_seconds",
   "conversion_action.resource_name",
   "conversion_action.status",
   "conversion_action.tag_snippets",
+  "conversion_action.third_party_app_analytics_settings.event_name",
   "conversion_action.type",
   "conversion_action.value_settings.always_use_default_value",
   "conversion_action.value_settings.default_currency_code",
@@ -10900,6 +11441,7 @@ export type ConversionActionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -10912,14 +11454,18 @@ export type ConversionActionField =
   | "conversion_action.category"
   | "conversion_action.click_through_lookback_window_days"
   | "conversion_action.counting_type"
+  | "conversion_action.firebase_settings.event_name"
+  | "conversion_action.firebase_settings.project_id"
   | "conversion_action.id"
   | "conversion_action.include_in_conversions_metric"
+  | "conversion_action.mobile_app_vendor"
   | "conversion_action.name"
   | "conversion_action.owner_customer"
   | "conversion_action.phone_call_duration_seconds"
   | "conversion_action.resource_name"
   | "conversion_action.status"
   | "conversion_action.tag_snippets"
+  | "conversion_action.third_party_app_analytics_settings.event_name"
   | "conversion_action.type"
   | "conversion_action.value_settings.always_use_default_value"
   | "conversion_action.value_settings.default_currency_code"
@@ -10980,6 +11526,7 @@ export const custom_interest = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11008,6 +11555,7 @@ export type CustomInterestField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11045,6 +11593,7 @@ export const customer = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11066,6 +11615,7 @@ export type CustomerField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11167,6 +11717,7 @@ export const customer_client = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11198,6 +11749,7 @@ export type CustomerClientField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11238,6 +11790,7 @@ export const customer_client_link = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11264,6 +11817,7 @@ export type CustomerClientLinkField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11299,6 +11853,7 @@ export const customer_extension_setting = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11324,6 +11879,7 @@ export type CustomerExtensionSettingField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11358,6 +11914,7 @@ export const customer_feed = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11399,6 +11956,7 @@ export type CustomerFeedField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11449,6 +12007,7 @@ export const customer_label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11473,6 +12032,7 @@ export type CustomerLabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11506,6 +12066,7 @@ export const customer_manager_link = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11531,6 +12092,7 @@ export type CustomerManagerLinkField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11565,6 +12127,7 @@ export const customer_negative_criterion = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11599,6 +12162,7 @@ export type CustomerNegativeCriterionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11680,6 +12244,7 @@ export const detail_placement_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -11690,6 +12255,8 @@ export const detail_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -11734,6 +12301,7 @@ export const detail_placement_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -11799,6 +12367,7 @@ export type DetailPlacementViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -11809,6 +12378,8 @@ export type DetailPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -11853,6 +12424,7 @@ export type DetailPlacementViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -11973,6 +12545,7 @@ export const display_keyword_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -12080,6 +12653,7 @@ export const display_keyword_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12090,6 +12664,8 @@ export const display_keyword_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -12134,6 +12710,7 @@ export const display_keyword_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -12181,6 +12758,7 @@ export type DisplayKeywordViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -12288,6 +12866,7 @@ export type DisplayKeywordViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -12298,6 +12877,8 @@ export type DisplayKeywordViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -12342,6 +12923,7 @@ export type DisplayKeywordViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -12452,6 +13034,7 @@ export const distance_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12462,6 +13045,8 @@ export const distance_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -12506,6 +13091,7 @@ export const distance_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -12542,6 +13128,7 @@ export type DistanceViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -12552,6 +13139,8 @@ export type DistanceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -12596,6 +13185,7 @@ export type DistanceViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -12681,6 +13271,7 @@ export const domain_category = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12691,6 +13282,8 @@ export const domain_category = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -12735,6 +13328,7 @@ export const domain_category = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -12777,6 +13371,7 @@ export type DomainCategoryField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -12787,6 +13382,8 @@ export type DomainCategoryField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -12831,6 +13428,7 @@ export type DomainCategoryField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -12908,6 +13506,7 @@ export const dynamic_search_ads_search_term_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -12918,6 +13517,8 @@ export const dynamic_search_ads_search_term_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -12962,6 +13563,7 @@ export const dynamic_search_ads_search_term_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -13029,6 +13631,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -13039,6 +13642,8 @@ export type DynamicSearchAdsSearchTermViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -13083,6 +13688,7 @@ export type DynamicSearchAdsSearchTermViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -13196,6 +13802,7 @@ export const expanded_landing_page_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -13206,6 +13813,8 @@ export const expanded_landing_page_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -13250,6 +13859,7 @@ export const expanded_landing_page_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -13313,6 +13923,7 @@ export type ExpandedLandingPageViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -13323,6 +13934,8 @@ export type ExpandedLandingPageViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -13367,6 +13980,7 @@ export type ExpandedLandingPageViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -13506,6 +14120,7 @@ export const extension_feed_item = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -13516,6 +14131,8 @@ export const extension_feed_item = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -13560,6 +14177,7 @@ export const extension_feed_item = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -13702,6 +14320,7 @@ export type ExtensionFeedItemField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -13712,6 +14331,8 @@ export type ExtensionFeedItemField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -13756,6 +14377,7 @@ export type ExtensionFeedItemField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -13930,6 +14552,7 @@ export const feed = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -13963,6 +14586,7 @@ export type FeedField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -14098,6 +14722,14 @@ export const feed_item = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -14171,6 +14803,7 @@ export const feed_item = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -14181,6 +14814,8 @@ export const feed_item = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -14225,6 +14860,7 @@ export const feed_item = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -14361,6 +14997,14 @@ export type FeedItemField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -14434,6 +15078,7 @@ export type FeedItemField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -14444,6 +15089,8 @@ export type FeedItemField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -14488,6 +15135,7 @@ export type FeedItemField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -14635,6 +15283,7 @@ export const feed_item_target = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -14645,6 +15294,8 @@ export const feed_item_target = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -14689,6 +15340,7 @@ export const feed_item_target = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -14783,6 +15435,7 @@ export type FeedItemTargetField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -14793,6 +15446,8 @@ export type FeedItemTargetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -14837,6 +15492,7 @@ export type FeedItemTargetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -14902,6 +15558,7 @@ export const feed_mapping = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -14941,6 +15598,7 @@ export type FeedMappingField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -15082,6 +15740,14 @@ export const feed_placeholder_view = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -15155,6 +15821,7 @@ export const feed_placeholder_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -15165,6 +15832,8 @@ export const feed_placeholder_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -15209,6 +15878,7 @@ export const feed_placeholder_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -15325,6 +15995,14 @@ export type FeedPlaceholderViewField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -15398,6 +16076,7 @@ export type FeedPlaceholderViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -15408,6 +16087,8 @@ export type FeedPlaceholderViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -15452,6 +16133,7 @@ export type FeedPlaceholderViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -15563,6 +16245,7 @@ export const gender_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -15670,6 +16353,7 @@ export const gender_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -15680,6 +16364,8 @@ export const gender_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -15724,6 +16410,7 @@ export const gender_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -15771,6 +16458,7 @@ export type GenderViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -15878,6 +16566,7 @@ export type GenderViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -15888,6 +16577,8 @@ export type GenderViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -15932,6 +16623,7 @@ export type GenderViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -16097,6 +16789,7 @@ export const geographic_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -16107,6 +16800,8 @@ export const geographic_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -16151,6 +16846,7 @@ export const geographic_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -16213,6 +16909,7 @@ export type GeographicViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -16223,6 +16920,8 @@ export type GeographicViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -16267,6 +16966,7 @@ export type GeographicViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -16397,6 +17097,7 @@ export const group_placement_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -16407,6 +17108,8 @@ export const group_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -16451,6 +17154,7 @@ export const group_placement_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -16515,6 +17219,7 @@ export type GroupPlacementViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -16525,6 +17230,8 @@ export type GroupPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -16569,6 +17276,7 @@ export type GroupPlacementViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -16687,6 +17395,7 @@ export const hotel_group_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -16775,6 +17484,7 @@ export const hotel_group_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -16785,6 +17495,8 @@ export const hotel_group_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -16829,6 +17541,7 @@ export const hotel_group_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -16876,6 +17589,7 @@ export type HotelGroupViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -16964,6 +17678,7 @@ export type HotelGroupViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -16974,6 +17689,8 @@ export type HotelGroupViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -17018,6 +17735,7 @@ export type HotelGroupViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -17048,6 +17766,7 @@ export type HotelGroupViewMetric =
   | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.hotel_average_lead_value_micros"
+  | "metrics.hotel_eligible_impressions"
   | "metrics.impressions"
   | "metrics.search_absolute_top_impression_share"
   | "metrics.search_budget_lost_absolute_top_impression_share"
@@ -17134,6 +17853,7 @@ export const hotel_performance_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -17144,6 +17864,8 @@ export const hotel_performance_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -17230,6 +17952,7 @@ export type HotelPerformanceViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -17240,6 +17963,8 @@ export type HotelPerformanceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -17296,6 +18021,7 @@ export type HotelPerformanceViewMetric =
   | "metrics.cross_device_conversions"
   | "metrics.ctr"
   | "metrics.hotel_average_lead_value_micros"
+  | "metrics.hotel_eligible_impressions"
   | "metrics.hotel_price_difference_percentage"
   | "metrics.impressions"
   | "metrics.search_absolute_top_impression_share"
@@ -17349,411 +18075,10 @@ export type HotelPerformanceViewSegments = Array<HotelPerformanceViewSegment>;
 */
 
 /*
- --- Start of KeywordPlan ---
+ --- Start of IncomeRangeView ---
 */
 // @ts-ignore
-export const keyword_plan = [
-  "customer.auto_tagging_enabled",
-  "customer.call_reporting_setting.call_conversion_action",
-  "customer.call_reporting_setting.call_conversion_reporting_enabled",
-  "customer.call_reporting_setting.call_reporting_enabled",
-  "customer.conversion_tracking_setting.conversion_tracking_id",
-  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
-  "customer.currency_code",
-  "customer.descriptive_name",
-  "customer.final_url_suffix",
-  "customer.has_partners_badge",
-  "customer.id",
-  "customer.manager",
-  "customer.pay_per_conversion_eligibility_failure_reasons",
-  "customer.remarketing_setting.google_global_site_tag",
-  "customer.resource_name",
-  "customer.test_account",
-  "customer.time_zone",
-  "customer.tracking_url_template",
-  "keyword_plan.forecast_period",
-  "keyword_plan.id",
-  "keyword_plan.name",
-  "keyword_plan.resource_name",
-];
-
-export type KeywordPlanField =
-  | "customer.auto_tagging_enabled"
-  | "customer.call_reporting_setting.call_conversion_action"
-  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
-  | "customer.call_reporting_setting.call_reporting_enabled"
-  | "customer.conversion_tracking_setting.conversion_tracking_id"
-  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "customer.currency_code"
-  | "customer.descriptive_name"
-  | "customer.final_url_suffix"
-  | "customer.has_partners_badge"
-  | "customer.id"
-  | "customer.manager"
-  | "customer.pay_per_conversion_eligibility_failure_reasons"
-  | "customer.remarketing_setting.google_global_site_tag"
-  | "customer.resource_name"
-  | "customer.test_account"
-  | "customer.time_zone"
-  | "customer.tracking_url_template"
-  | "keyword_plan.forecast_period"
-  | "keyword_plan.id"
-  | "keyword_plan.name"
-  | "keyword_plan.resource_name";
-
-export type KeywordPlanFields = Array<KeywordPlanField>;
-
-/*
- --- End of KeywordPlan ---
-*/
-
-/*
- --- Start of KeywordPlanAdGroup ---
-*/
-// @ts-ignore
-export const keyword_plan_ad_group = [
-  "customer.auto_tagging_enabled",
-  "customer.call_reporting_setting.call_conversion_action",
-  "customer.call_reporting_setting.call_conversion_reporting_enabled",
-  "customer.call_reporting_setting.call_reporting_enabled",
-  "customer.conversion_tracking_setting.conversion_tracking_id",
-  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
-  "customer.currency_code",
-  "customer.descriptive_name",
-  "customer.final_url_suffix",
-  "customer.has_partners_badge",
-  "customer.id",
-  "customer.manager",
-  "customer.pay_per_conversion_eligibility_failure_reasons",
-  "customer.remarketing_setting.google_global_site_tag",
-  "customer.resource_name",
-  "customer.test_account",
-  "customer.time_zone",
-  "customer.tracking_url_template",
-  "keyword_plan.forecast_period",
-  "keyword_plan.id",
-  "keyword_plan.name",
-  "keyword_plan.resource_name",
-  "keyword_plan_campaign.cpc_bid_micros",
-  "keyword_plan_campaign.geo_targets",
-  "keyword_plan_campaign.id",
-  "keyword_plan_campaign.keyword_plan",
-  "keyword_plan_campaign.keyword_plan_network",
-  "keyword_plan_campaign.language_constants",
-  "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name",
-  "keyword_plan_ad_group.cpc_bid_micros",
-  "keyword_plan_ad_group.id",
-  "keyword_plan_ad_group.keyword_plan_campaign",
-  "keyword_plan_ad_group.name",
-  "keyword_plan_ad_group.resource_name",
-];
-
-export type KeywordPlanAdGroupField =
-  | "customer.auto_tagging_enabled"
-  | "customer.call_reporting_setting.call_conversion_action"
-  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
-  | "customer.call_reporting_setting.call_reporting_enabled"
-  | "customer.conversion_tracking_setting.conversion_tracking_id"
-  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "customer.currency_code"
-  | "customer.descriptive_name"
-  | "customer.final_url_suffix"
-  | "customer.has_partners_badge"
-  | "customer.id"
-  | "customer.manager"
-  | "customer.pay_per_conversion_eligibility_failure_reasons"
-  | "customer.remarketing_setting.google_global_site_tag"
-  | "customer.resource_name"
-  | "customer.test_account"
-  | "customer.time_zone"
-  | "customer.tracking_url_template"
-  | "keyword_plan.forecast_period"
-  | "keyword_plan.id"
-  | "keyword_plan.name"
-  | "keyword_plan.resource_name"
-  | "keyword_plan_campaign.cpc_bid_micros"
-  | "keyword_plan_campaign.geo_targets"
-  | "keyword_plan_campaign.id"
-  | "keyword_plan_campaign.keyword_plan"
-  | "keyword_plan_campaign.keyword_plan_network"
-  | "keyword_plan_campaign.language_constants"
-  | "keyword_plan_campaign.name"
-  | "keyword_plan_campaign.resource_name"
-  | "keyword_plan_ad_group.cpc_bid_micros"
-  | "keyword_plan_ad_group.id"
-  | "keyword_plan_ad_group.keyword_plan_campaign"
-  | "keyword_plan_ad_group.name"
-  | "keyword_plan_ad_group.resource_name";
-
-export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
-
-/*
- --- End of KeywordPlanAdGroup ---
-*/
-
-/*
- --- Start of KeywordPlanCampaign ---
-*/
-// @ts-ignore
-export const keyword_plan_campaign = [
-  "customer.auto_tagging_enabled",
-  "customer.call_reporting_setting.call_conversion_action",
-  "customer.call_reporting_setting.call_conversion_reporting_enabled",
-  "customer.call_reporting_setting.call_reporting_enabled",
-  "customer.conversion_tracking_setting.conversion_tracking_id",
-  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
-  "customer.currency_code",
-  "customer.descriptive_name",
-  "customer.final_url_suffix",
-  "customer.has_partners_badge",
-  "customer.id",
-  "customer.manager",
-  "customer.pay_per_conversion_eligibility_failure_reasons",
-  "customer.remarketing_setting.google_global_site_tag",
-  "customer.resource_name",
-  "customer.test_account",
-  "customer.time_zone",
-  "customer.tracking_url_template",
-  "keyword_plan.forecast_period",
-  "keyword_plan.id",
-  "keyword_plan.name",
-  "keyword_plan.resource_name",
-  "keyword_plan_campaign.cpc_bid_micros",
-  "keyword_plan_campaign.geo_targets",
-  "keyword_plan_campaign.id",
-  "keyword_plan_campaign.keyword_plan",
-  "keyword_plan_campaign.keyword_plan_network",
-  "keyword_plan_campaign.language_constants",
-  "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name",
-];
-
-export type KeywordPlanCampaignField =
-  | "customer.auto_tagging_enabled"
-  | "customer.call_reporting_setting.call_conversion_action"
-  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
-  | "customer.call_reporting_setting.call_reporting_enabled"
-  | "customer.conversion_tracking_setting.conversion_tracking_id"
-  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "customer.currency_code"
-  | "customer.descriptive_name"
-  | "customer.final_url_suffix"
-  | "customer.has_partners_badge"
-  | "customer.id"
-  | "customer.manager"
-  | "customer.pay_per_conversion_eligibility_failure_reasons"
-  | "customer.remarketing_setting.google_global_site_tag"
-  | "customer.resource_name"
-  | "customer.test_account"
-  | "customer.time_zone"
-  | "customer.tracking_url_template"
-  | "keyword_plan.forecast_period"
-  | "keyword_plan.id"
-  | "keyword_plan.name"
-  | "keyword_plan.resource_name"
-  | "keyword_plan_campaign.cpc_bid_micros"
-  | "keyword_plan_campaign.geo_targets"
-  | "keyword_plan_campaign.id"
-  | "keyword_plan_campaign.keyword_plan"
-  | "keyword_plan_campaign.keyword_plan_network"
-  | "keyword_plan_campaign.language_constants"
-  | "keyword_plan_campaign.name"
-  | "keyword_plan_campaign.resource_name";
-
-export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
-
-/*
- --- End of KeywordPlanCampaign ---
-*/
-
-/*
- --- Start of KeywordPlanKeyword ---
-*/
-// @ts-ignore
-export const keyword_plan_keyword = [
-  "customer.auto_tagging_enabled",
-  "customer.call_reporting_setting.call_conversion_action",
-  "customer.call_reporting_setting.call_conversion_reporting_enabled",
-  "customer.call_reporting_setting.call_reporting_enabled",
-  "customer.conversion_tracking_setting.conversion_tracking_id",
-  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
-  "customer.currency_code",
-  "customer.descriptive_name",
-  "customer.final_url_suffix",
-  "customer.has_partners_badge",
-  "customer.id",
-  "customer.manager",
-  "customer.pay_per_conversion_eligibility_failure_reasons",
-  "customer.remarketing_setting.google_global_site_tag",
-  "customer.resource_name",
-  "customer.test_account",
-  "customer.time_zone",
-  "customer.tracking_url_template",
-  "keyword_plan.forecast_period",
-  "keyword_plan.id",
-  "keyword_plan.name",
-  "keyword_plan.resource_name",
-  "keyword_plan_ad_group.cpc_bid_micros",
-  "keyword_plan_ad_group.id",
-  "keyword_plan_ad_group.keyword_plan_campaign",
-  "keyword_plan_ad_group.name",
-  "keyword_plan_ad_group.resource_name",
-  "keyword_plan_campaign.cpc_bid_micros",
-  "keyword_plan_campaign.geo_targets",
-  "keyword_plan_campaign.id",
-  "keyword_plan_campaign.keyword_plan",
-  "keyword_plan_campaign.keyword_plan_network",
-  "keyword_plan_campaign.language_constants",
-  "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name",
-  "keyword_plan_keyword.cpc_bid_micros",
-  "keyword_plan_keyword.id",
-  "keyword_plan_keyword.keyword_plan_ad_group",
-  "keyword_plan_keyword.match_type",
-  "keyword_plan_keyword.resource_name",
-  "keyword_plan_keyword.text",
-];
-
-export type KeywordPlanKeywordField =
-  | "customer.auto_tagging_enabled"
-  | "customer.call_reporting_setting.call_conversion_action"
-  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
-  | "customer.call_reporting_setting.call_reporting_enabled"
-  | "customer.conversion_tracking_setting.conversion_tracking_id"
-  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "customer.currency_code"
-  | "customer.descriptive_name"
-  | "customer.final_url_suffix"
-  | "customer.has_partners_badge"
-  | "customer.id"
-  | "customer.manager"
-  | "customer.pay_per_conversion_eligibility_failure_reasons"
-  | "customer.remarketing_setting.google_global_site_tag"
-  | "customer.resource_name"
-  | "customer.test_account"
-  | "customer.time_zone"
-  | "customer.tracking_url_template"
-  | "keyword_plan.forecast_period"
-  | "keyword_plan.id"
-  | "keyword_plan.name"
-  | "keyword_plan.resource_name"
-  | "keyword_plan_ad_group.cpc_bid_micros"
-  | "keyword_plan_ad_group.id"
-  | "keyword_plan_ad_group.keyword_plan_campaign"
-  | "keyword_plan_ad_group.name"
-  | "keyword_plan_ad_group.resource_name"
-  | "keyword_plan_campaign.cpc_bid_micros"
-  | "keyword_plan_campaign.geo_targets"
-  | "keyword_plan_campaign.id"
-  | "keyword_plan_campaign.keyword_plan"
-  | "keyword_plan_campaign.keyword_plan_network"
-  | "keyword_plan_campaign.language_constants"
-  | "keyword_plan_campaign.name"
-  | "keyword_plan_campaign.resource_name"
-  | "keyword_plan_keyword.cpc_bid_micros"
-  | "keyword_plan_keyword.id"
-  | "keyword_plan_keyword.keyword_plan_ad_group"
-  | "keyword_plan_keyword.match_type"
-  | "keyword_plan_keyword.resource_name"
-  | "keyword_plan_keyword.text";
-
-export type KeywordPlanKeywordFields = Array<KeywordPlanKeywordField>;
-
-/*
- --- End of KeywordPlanKeyword ---
-*/
-
-/*
- --- Start of KeywordPlanNegativeKeyword ---
-*/
-// @ts-ignore
-export const keyword_plan_negative_keyword = [
-  "customer.auto_tagging_enabled",
-  "customer.call_reporting_setting.call_conversion_action",
-  "customer.call_reporting_setting.call_conversion_reporting_enabled",
-  "customer.call_reporting_setting.call_reporting_enabled",
-  "customer.conversion_tracking_setting.conversion_tracking_id",
-  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
-  "customer.currency_code",
-  "customer.descriptive_name",
-  "customer.final_url_suffix",
-  "customer.has_partners_badge",
-  "customer.id",
-  "customer.manager",
-  "customer.pay_per_conversion_eligibility_failure_reasons",
-  "customer.remarketing_setting.google_global_site_tag",
-  "customer.resource_name",
-  "customer.test_account",
-  "customer.time_zone",
-  "customer.tracking_url_template",
-  "keyword_plan.forecast_period",
-  "keyword_plan.id",
-  "keyword_plan.name",
-  "keyword_plan.resource_name",
-  "keyword_plan_campaign.cpc_bid_micros",
-  "keyword_plan_campaign.geo_targets",
-  "keyword_plan_campaign.id",
-  "keyword_plan_campaign.keyword_plan",
-  "keyword_plan_campaign.keyword_plan_network",
-  "keyword_plan_campaign.language_constants",
-  "keyword_plan_campaign.name",
-  "keyword_plan_campaign.resource_name",
-  "keyword_plan_negative_keyword.id",
-  "keyword_plan_negative_keyword.keyword_plan_campaign",
-  "keyword_plan_negative_keyword.match_type",
-  "keyword_plan_negative_keyword.resource_name",
-  "keyword_plan_negative_keyword.text",
-];
-
-export type KeywordPlanNegativeKeywordField =
-  | "customer.auto_tagging_enabled"
-  | "customer.call_reporting_setting.call_conversion_action"
-  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
-  | "customer.call_reporting_setting.call_reporting_enabled"
-  | "customer.conversion_tracking_setting.conversion_tracking_id"
-  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
-  | "customer.currency_code"
-  | "customer.descriptive_name"
-  | "customer.final_url_suffix"
-  | "customer.has_partners_badge"
-  | "customer.id"
-  | "customer.manager"
-  | "customer.pay_per_conversion_eligibility_failure_reasons"
-  | "customer.remarketing_setting.google_global_site_tag"
-  | "customer.resource_name"
-  | "customer.test_account"
-  | "customer.time_zone"
-  | "customer.tracking_url_template"
-  | "keyword_plan.forecast_period"
-  | "keyword_plan.id"
-  | "keyword_plan.name"
-  | "keyword_plan.resource_name"
-  | "keyword_plan_campaign.cpc_bid_micros"
-  | "keyword_plan_campaign.geo_targets"
-  | "keyword_plan_campaign.id"
-  | "keyword_plan_campaign.keyword_plan"
-  | "keyword_plan_campaign.keyword_plan_network"
-  | "keyword_plan_campaign.language_constants"
-  | "keyword_plan_campaign.name"
-  | "keyword_plan_campaign.resource_name"
-  | "keyword_plan_negative_keyword.id"
-  | "keyword_plan_negative_keyword.keyword_plan_campaign"
-  | "keyword_plan_negative_keyword.match_type"
-  | "keyword_plan_negative_keyword.resource_name"
-  | "keyword_plan_negative_keyword.text";
-
-export type KeywordPlanNegativeKeywordFields = Array<KeywordPlanNegativeKeywordField>;
-
-/*
- --- End of KeywordPlanNegativeKeyword ---
-*/
-
-/*
- --- Start of KeywordView ---
-*/
-// @ts-ignore
-export const keyword_view = [
+export const income_range_view = [
   "ad_group.ad_rotation_mode",
   "ad_group.base_ad_group",
   "ad_group.campaign",
@@ -17791,6 +18116,7 @@ export const keyword_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -17879,6 +18205,7 @@ export const keyword_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -17889,6 +18216,8 @@ export const keyword_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -17933,16 +18262,17 @@ export const keyword_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "keyword_view.resource_name",
+  "income_range_view.resource_name",
 ];
 
-export type KeywordViewField =
+export type IncomeRangeViewField =
   | "ad_group.ad_rotation_mode"
   | "ad_group.base_ad_group"
   | "ad_group.campaign"
@@ -17980,6 +18310,7 @@ export type KeywordViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -18068,6 +18399,7 @@ export type KeywordViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -18078,6 +18410,8 @@ export type KeywordViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -18122,6 +18456,923 @@ export type KeywordViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "income_range_view.resource_name";
+
+export type IncomeRangeViewFields = Array<IncomeRangeViewField>;
+
+export type IncomeRangeViewMetric =
+  | "metrics.active_view_cpm"
+  | "metrics.active_view_ctr"
+  | "metrics.active_view_impressions"
+  | "metrics.active_view_measurability"
+  | "metrics.active_view_measurable_cost_micros"
+  | "metrics.active_view_measurable_impressions"
+  | "metrics.active_view_viewability"
+  | "metrics.all_conversions"
+  | "metrics.all_conversions_from_interactions_rate"
+  | "metrics.all_conversions_from_interactions_value_per_interaction"
+  | "metrics.all_conversions_value"
+  | "metrics.all_conversions_value_per_cost"
+  | "metrics.average_cost"
+  | "metrics.average_cpc"
+  | "metrics.average_cpe"
+  | "metrics.average_cpm"
+  | "metrics.average_cpv"
+  | "metrics.clicks"
+  | "metrics.conversions"
+  | "metrics.conversions_from_interactions_rate"
+  | "metrics.conversions_value"
+  | "metrics.cost_micros"
+  | "metrics.cost_per_all_conversions"
+  | "metrics.cost_per_conversion"
+  | "metrics.cross_device_conversions"
+  | "metrics.ctr"
+  | "metrics.engagement_rate"
+  | "metrics.engagements"
+  | "metrics.gmail_forwards"
+  | "metrics.gmail_saves"
+  | "metrics.gmail_secondary_clicks"
+  | "metrics.impressions"
+  | "metrics.interaction_event_types"
+  | "metrics.interaction_rate"
+  | "metrics.interactions"
+  | "metrics.value_per_all_conversions"
+  | "metrics.value_per_conversion"
+  | "metrics.video_quartile_100_rate"
+  | "metrics.video_quartile_25_rate"
+  | "metrics.video_quartile_50_rate"
+  | "metrics.video_quartile_75_rate"
+  | "metrics.video_view_rate"
+  | "metrics.video_views"
+  | "metrics.view_through_conversions";
+
+export type IncomeRangeViewMetrics = Array<IncomeRangeViewMetric>;
+
+export type IncomeRangeViewSegment =
+  | "segments.ad_network_type"
+  | "segments.click_type"
+  | "segments.conversion_action"
+  | "segments.conversion_action_category"
+  | "segments.conversion_action_name"
+  | "segments.date"
+  | "segments.day_of_week"
+  | "segments.device"
+  | "segments.external_conversion_source"
+  | "segments.month"
+  | "segments.month_of_year"
+  | "segments.quarter"
+  | "segments.week"
+  | "segments.year";
+
+export type IncomeRangeViewSegments = Array<IncomeRangeViewSegment>;
+
+/*
+ --- End of IncomeRangeView ---
+*/
+
+/*
+ --- Start of KeywordPlan ---
+*/
+// @ts-ignore
+export const keyword_plan = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+];
+
+export type KeywordPlanField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name";
+
+export type KeywordPlanFields = Array<KeywordPlanField>;
+
+/*
+ --- End of KeywordPlan ---
+*/
+
+/*
+ --- Start of KeywordPlanAdGroup ---
+*/
+// @ts-ignore
+export const keyword_plan_ad_group = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
+  "keyword_plan_ad_group.cpc_bid_micros",
+  "keyword_plan_ad_group.id",
+  "keyword_plan_ad_group.keyword_plan_campaign",
+  "keyword_plan_ad_group.name",
+  "keyword_plan_ad_group.resource_name",
+];
+
+export type KeywordPlanAdGroupField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
+  | "keyword_plan_ad_group.cpc_bid_micros"
+  | "keyword_plan_ad_group.id"
+  | "keyword_plan_ad_group.keyword_plan_campaign"
+  | "keyword_plan_ad_group.name"
+  | "keyword_plan_ad_group.resource_name";
+
+export type KeywordPlanAdGroupFields = Array<KeywordPlanAdGroupField>;
+
+/*
+ --- End of KeywordPlanAdGroup ---
+*/
+
+/*
+ --- Start of KeywordPlanAdGroupKeyword ---
+*/
+// @ts-ignore
+export const keyword_plan_ad_group_keyword = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_ad_group.cpc_bid_micros",
+  "keyword_plan_ad_group.id",
+  "keyword_plan_ad_group.keyword_plan_campaign",
+  "keyword_plan_ad_group.name",
+  "keyword_plan_ad_group.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
+  "keyword_plan_ad_group_keyword.cpc_bid_micros",
+  "keyword_plan_ad_group_keyword.id",
+  "keyword_plan_ad_group_keyword.keyword_plan_ad_group",
+  "keyword_plan_ad_group_keyword.match_type",
+  "keyword_plan_ad_group_keyword.negative",
+  "keyword_plan_ad_group_keyword.resource_name",
+  "keyword_plan_ad_group_keyword.text",
+];
+
+export type KeywordPlanAdGroupKeywordField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_ad_group.cpc_bid_micros"
+  | "keyword_plan_ad_group.id"
+  | "keyword_plan_ad_group.keyword_plan_campaign"
+  | "keyword_plan_ad_group.name"
+  | "keyword_plan_ad_group.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
+  | "keyword_plan_ad_group_keyword.cpc_bid_micros"
+  | "keyword_plan_ad_group_keyword.id"
+  | "keyword_plan_ad_group_keyword.keyword_plan_ad_group"
+  | "keyword_plan_ad_group_keyword.match_type"
+  | "keyword_plan_ad_group_keyword.negative"
+  | "keyword_plan_ad_group_keyword.resource_name"
+  | "keyword_plan_ad_group_keyword.text";
+
+export type KeywordPlanAdGroupKeywordFields = Array<KeywordPlanAdGroupKeywordField>;
+
+/*
+ --- End of KeywordPlanAdGroupKeyword ---
+*/
+
+/*
+ --- Start of KeywordPlanCampaign ---
+*/
+// @ts-ignore
+export const keyword_plan_campaign = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
+];
+
+export type KeywordPlanCampaignField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name";
+
+export type KeywordPlanCampaignFields = Array<KeywordPlanCampaignField>;
+
+/*
+ --- End of KeywordPlanCampaign ---
+*/
+
+/*
+ --- Start of KeywordPlanCampaignKeyword ---
+*/
+// @ts-ignore
+export const keyword_plan_campaign_keyword = [
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_plan.forecast_period",
+  "keyword_plan.id",
+  "keyword_plan.name",
+  "keyword_plan.resource_name",
+  "keyword_plan_campaign.cpc_bid_micros",
+  "keyword_plan_campaign.geo_targets",
+  "keyword_plan_campaign.id",
+  "keyword_plan_campaign.keyword_plan",
+  "keyword_plan_campaign.keyword_plan_network",
+  "keyword_plan_campaign.language_constants",
+  "keyword_plan_campaign.name",
+  "keyword_plan_campaign.resource_name",
+  "keyword_plan_campaign_keyword.id",
+  "keyword_plan_campaign_keyword.keyword_plan_campaign",
+  "keyword_plan_campaign_keyword.match_type",
+  "keyword_plan_campaign_keyword.negative",
+  "keyword_plan_campaign_keyword.resource_name",
+  "keyword_plan_campaign_keyword.text",
+];
+
+export type KeywordPlanCampaignKeywordField =
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "keyword_plan.forecast_period"
+  | "keyword_plan.id"
+  | "keyword_plan.name"
+  | "keyword_plan.resource_name"
+  | "keyword_plan_campaign.cpc_bid_micros"
+  | "keyword_plan_campaign.geo_targets"
+  | "keyword_plan_campaign.id"
+  | "keyword_plan_campaign.keyword_plan"
+  | "keyword_plan_campaign.keyword_plan_network"
+  | "keyword_plan_campaign.language_constants"
+  | "keyword_plan_campaign.name"
+  | "keyword_plan_campaign.resource_name"
+  | "keyword_plan_campaign_keyword.id"
+  | "keyword_plan_campaign_keyword.keyword_plan_campaign"
+  | "keyword_plan_campaign_keyword.match_type"
+  | "keyword_plan_campaign_keyword.negative"
+  | "keyword_plan_campaign_keyword.resource_name"
+  | "keyword_plan_campaign_keyword.text";
+
+export type KeywordPlanCampaignKeywordFields = Array<KeywordPlanCampaignKeywordField>;
+
+/*
+ --- End of KeywordPlanCampaignKeyword ---
+*/
+
+/*
+ --- Start of KeywordView ---
+*/
+// @ts-ignore
+export const keyword_view = [
+  "ad_group.ad_rotation_mode",
+  "ad_group.base_ad_group",
+  "ad_group.campaign",
+  "ad_group.cpc_bid_micros",
+  "ad_group.cpm_bid_micros",
+  "ad_group.cpv_bid_micros",
+  "ad_group.display_custom_bid_dimension",
+  "ad_group.effective_target_cpa_micros",
+  "ad_group.effective_target_cpa_source",
+  "ad_group.effective_target_roas",
+  "ad_group.effective_target_roas_source",
+  "ad_group.explorer_auto_optimizer_setting.opt_in",
+  "ad_group.final_url_suffix",
+  "ad_group.id",
+  "ad_group.labels",
+  "ad_group.name",
+  "ad_group.percent_cpc_bid_micros",
+  "ad_group.resource_name",
+  "ad_group.status",
+  "ad_group.target_cpa_micros",
+  "ad_group.target_cpm_micros",
+  "ad_group.target_roas",
+  "ad_group.targeting_setting.target_restrictions",
+  "ad_group.tracking_url_template",
+  "ad_group.type",
+  "ad_group.url_custom_parameters",
+  "ad_group_criterion.ad_group",
+  "ad_group_criterion.age_range.type",
+  "ad_group_criterion.app_payment_model.type",
+  "ad_group_criterion.approval_status",
+  "ad_group_criterion.bid_modifier",
+  "ad_group_criterion.cpc_bid_micros",
+  "ad_group_criterion.cpm_bid_micros",
+  "ad_group_criterion.cpv_bid_micros",
+  "ad_group_criterion.criterion_id",
+  "ad_group_criterion.custom_affinity.custom_affinity",
+  "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
+  "ad_group_criterion.effective_cpc_bid_micros",
+  "ad_group_criterion.effective_cpc_bid_source",
+  "ad_group_criterion.effective_cpm_bid_micros",
+  "ad_group_criterion.effective_cpm_bid_source",
+  "ad_group_criterion.effective_cpv_bid_micros",
+  "ad_group_criterion.effective_cpv_bid_source",
+  "ad_group_criterion.effective_percent_cpc_bid_micros",
+  "ad_group_criterion.effective_percent_cpc_bid_source",
+  "ad_group_criterion.final_mobile_urls",
+  "ad_group_criterion.final_url_suffix",
+  "ad_group_criterion.final_urls",
+  "ad_group_criterion.gender.type",
+  "ad_group_criterion.income_range.type",
+  "ad_group_criterion.keyword.match_type",
+  "ad_group_criterion.keyword.text",
+  "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_class.value",
+  "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion",
+  "ad_group_criterion.listing_group.case_value.hotel_id.value",
+  "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.id",
+  "ad_group_criterion.listing_group.case_value.product_bidding_category.level",
+  "ad_group_criterion.listing_group.case_value.product_brand.value",
+  "ad_group_criterion.listing_group.case_value.product_channel.channel",
+  "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity",
+  "ad_group_criterion.listing_group.case_value.product_condition.condition",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.index",
+  "ad_group_criterion.listing_group.case_value.product_custom_attribute.value",
+  "ad_group_criterion.listing_group.case_value.product_item_id.value",
+  "ad_group_criterion.listing_group.case_value.product_type.level",
+  "ad_group_criterion.listing_group.case_value.product_type.value",
+  "ad_group_criterion.listing_group.parent_ad_group_criterion",
+  "ad_group_criterion.listing_group.type",
+  "ad_group_criterion.mobile_app_category.mobile_app_category_constant",
+  "ad_group_criterion.mobile_application.app_id",
+  "ad_group_criterion.mobile_application.name",
+  "ad_group_criterion.negative",
+  "ad_group_criterion.parental_status.type",
+  "ad_group_criterion.percent_cpc_bid_micros",
+  "ad_group_criterion.placement.url",
+  "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc",
+  "ad_group_criterion.position_estimates.first_page_cpc_micros",
+  "ad_group_criterion.position_estimates.first_position_cpc_micros",
+  "ad_group_criterion.position_estimates.top_of_page_cpc_micros",
+  "ad_group_criterion.quality_info.creative_quality_score",
+  "ad_group_criterion.quality_info.post_click_quality_score",
+  "ad_group_criterion.quality_info.quality_score",
+  "ad_group_criterion.quality_info.search_predicted_ctr",
+  "ad_group_criterion.resource_name",
+  "ad_group_criterion.status",
+  "ad_group_criterion.system_serving_status",
+  "ad_group_criterion.topic.path",
+  "ad_group_criterion.topic.topic_constant",
+  "ad_group_criterion.tracking_url_template",
+  "ad_group_criterion.type",
+  "ad_group_criterion.url_custom_parameters",
+  "ad_group_criterion.user_interest.user_interest_category",
+  "ad_group_criterion.user_list.user_list",
+  "ad_group_criterion.webpage.conditions",
+  "ad_group_criterion.webpage.criterion_name",
+  "ad_group_criterion.youtube_channel.channel_id",
+  "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
+  "campaign.ad_serving_optimization_status",
+  "campaign.advertising_channel_sub_type",
+  "campaign.advertising_channel_type",
+  "campaign.app_campaign_setting.app_id",
+  "campaign.app_campaign_setting.app_store",
+  "campaign.app_campaign_setting.bidding_strategy_goal_type",
+  "campaign.base_campaign",
+  "campaign.bidding_strategy",
+  "campaign.bidding_strategy_type",
+  "campaign.campaign_budget",
+  "campaign.commission.commission_rate_micros",
+  "campaign.dynamic_search_ads_setting.domain_name",
+  "campaign.dynamic_search_ads_setting.feeds",
+  "campaign.dynamic_search_ads_setting.language_code",
+  "campaign.dynamic_search_ads_setting.use_supplied_urls_only",
+  "campaign.end_date",
+  "campaign.experiment_type",
+  "campaign.final_url_suffix",
+  "campaign.frequency_caps",
+  "campaign.geo_target_type_setting.negative_geo_target_type",
+  "campaign.geo_target_type_setting.positive_geo_target_type",
+  "campaign.hotel_setting.hotel_center_id",
+  "campaign.id",
+  "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
+  "campaign.manual_cpc.enhanced_cpc_enabled",
+  "campaign.manual_cpm",
+  "campaign.manual_cpv",
+  "campaign.maximize_conversion_value.target_roas",
+  "campaign.maximize_conversions",
+  "campaign.name",
+  "campaign.network_settings.target_content_network",
+  "campaign.network_settings.target_google_search",
+  "campaign.network_settings.target_partner_search_network",
+  "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
+  "campaign.payment_mode",
+  "campaign.percent_cpc.cpc_bid_ceiling_micros",
+  "campaign.percent_cpc.enhanced_cpc_enabled",
+  "campaign.real_time_bidding_setting.opt_in",
+  "campaign.resource_name",
+  "campaign.selective_optimization.conversion_actions",
+  "campaign.serving_status",
+  "campaign.shopping_setting.campaign_priority",
+  "campaign.shopping_setting.enable_local",
+  "campaign.shopping_setting.merchant_id",
+  "campaign.shopping_setting.sales_country",
+  "campaign.start_date",
+  "campaign.status",
+  "campaign.target_cpa.cpc_bid_ceiling_micros",
+  "campaign.target_cpa.cpc_bid_floor_micros",
+  "campaign.target_cpa.target_cpa_micros",
+  "campaign.target_cpm",
+  "campaign.target_impression_share.cpc_bid_ceiling_micros",
+  "campaign.target_impression_share.location",
+  "campaign.target_impression_share.location_fraction_micros",
+  "campaign.target_roas.cpc_bid_ceiling_micros",
+  "campaign.target_roas.cpc_bid_floor_micros",
+  "campaign.target_roas.target_roas",
+  "campaign.target_spend.cpc_bid_ceiling_micros",
+  "campaign.target_spend.target_spend_micros",
+  "campaign.targeting_setting.target_restrictions",
+  "campaign.tracking_setting.tracking_url",
+  "campaign.tracking_url_template",
+  "campaign.url_custom_parameters",
+  "campaign.vanity_pharma.vanity_pharma_display_url_mode",
+  "campaign.vanity_pharma.vanity_pharma_text",
+  "campaign.video_brand_safety_suitability",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "keyword_view.resource_name",
+];
+
+export type KeywordViewField =
+  | "ad_group.ad_rotation_mode"
+  | "ad_group.base_ad_group"
+  | "ad_group.campaign"
+  | "ad_group.cpc_bid_micros"
+  | "ad_group.cpm_bid_micros"
+  | "ad_group.cpv_bid_micros"
+  | "ad_group.display_custom_bid_dimension"
+  | "ad_group.effective_target_cpa_micros"
+  | "ad_group.effective_target_cpa_source"
+  | "ad_group.effective_target_roas"
+  | "ad_group.effective_target_roas_source"
+  | "ad_group.explorer_auto_optimizer_setting.opt_in"
+  | "ad_group.final_url_suffix"
+  | "ad_group.id"
+  | "ad_group.labels"
+  | "ad_group.name"
+  | "ad_group.percent_cpc_bid_micros"
+  | "ad_group.resource_name"
+  | "ad_group.status"
+  | "ad_group.target_cpa_micros"
+  | "ad_group.target_cpm_micros"
+  | "ad_group.target_roas"
+  | "ad_group.targeting_setting.target_restrictions"
+  | "ad_group.tracking_url_template"
+  | "ad_group.type"
+  | "ad_group.url_custom_parameters"
+  | "ad_group_criterion.ad_group"
+  | "ad_group_criterion.age_range.type"
+  | "ad_group_criterion.app_payment_model.type"
+  | "ad_group_criterion.approval_status"
+  | "ad_group_criterion.bid_modifier"
+  | "ad_group_criterion.cpc_bid_micros"
+  | "ad_group_criterion.cpm_bid_micros"
+  | "ad_group_criterion.cpv_bid_micros"
+  | "ad_group_criterion.criterion_id"
+  | "ad_group_criterion.custom_affinity.custom_affinity"
+  | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
+  | "ad_group_criterion.effective_cpc_bid_micros"
+  | "ad_group_criterion.effective_cpc_bid_source"
+  | "ad_group_criterion.effective_cpm_bid_micros"
+  | "ad_group_criterion.effective_cpm_bid_source"
+  | "ad_group_criterion.effective_cpv_bid_micros"
+  | "ad_group_criterion.effective_cpv_bid_source"
+  | "ad_group_criterion.effective_percent_cpc_bid_micros"
+  | "ad_group_criterion.effective_percent_cpc_bid_source"
+  | "ad_group_criterion.final_mobile_urls"
+  | "ad_group_criterion.final_url_suffix"
+  | "ad_group_criterion.final_urls"
+  | "ad_group_criterion.gender.type"
+  | "ad_group_criterion.income_range.type"
+  | "ad_group_criterion.keyword.match_type"
+  | "ad_group_criterion.keyword.text"
+  | "ad_group_criterion.listing_group.case_value.hotel_city.city_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_class.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_country_region.country_region_criterion"
+  | "ad_group_criterion.listing_group.case_value.hotel_id.value"
+  | "ad_group_criterion.listing_group.case_value.hotel_state.state_criterion"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.country_code"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.id"
+  | "ad_group_criterion.listing_group.case_value.product_bidding_category.level"
+  | "ad_group_criterion.listing_group.case_value.product_brand.value"
+  | "ad_group_criterion.listing_group.case_value.product_channel.channel"
+  | "ad_group_criterion.listing_group.case_value.product_channel_exclusivity.channel_exclusivity"
+  | "ad_group_criterion.listing_group.case_value.product_condition.condition"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.index"
+  | "ad_group_criterion.listing_group.case_value.product_custom_attribute.value"
+  | "ad_group_criterion.listing_group.case_value.product_item_id.value"
+  | "ad_group_criterion.listing_group.case_value.product_type.level"
+  | "ad_group_criterion.listing_group.case_value.product_type.value"
+  | "ad_group_criterion.listing_group.parent_ad_group_criterion"
+  | "ad_group_criterion.listing_group.type"
+  | "ad_group_criterion.mobile_app_category.mobile_app_category_constant"
+  | "ad_group_criterion.mobile_application.app_id"
+  | "ad_group_criterion.mobile_application.name"
+  | "ad_group_criterion.negative"
+  | "ad_group_criterion.parental_status.type"
+  | "ad_group_criterion.percent_cpc_bid_micros"
+  | "ad_group_criterion.placement.url"
+  | "ad_group_criterion.position_estimates.estimated_add_clicks_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.estimated_add_cost_at_first_position_cpc"
+  | "ad_group_criterion.position_estimates.first_page_cpc_micros"
+  | "ad_group_criterion.position_estimates.first_position_cpc_micros"
+  | "ad_group_criterion.position_estimates.top_of_page_cpc_micros"
+  | "ad_group_criterion.quality_info.creative_quality_score"
+  | "ad_group_criterion.quality_info.post_click_quality_score"
+  | "ad_group_criterion.quality_info.quality_score"
+  | "ad_group_criterion.quality_info.search_predicted_ctr"
+  | "ad_group_criterion.resource_name"
+  | "ad_group_criterion.status"
+  | "ad_group_criterion.system_serving_status"
+  | "ad_group_criterion.topic.path"
+  | "ad_group_criterion.topic.topic_constant"
+  | "ad_group_criterion.tracking_url_template"
+  | "ad_group_criterion.type"
+  | "ad_group_criterion.url_custom_parameters"
+  | "ad_group_criterion.user_interest.user_interest_category"
+  | "ad_group_criterion.user_list.user_list"
+  | "ad_group_criterion.webpage.conditions"
+  | "ad_group_criterion.webpage.criterion_name"
+  | "ad_group_criterion.youtube_channel.channel_id"
+  | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
+  | "campaign.ad_serving_optimization_status"
+  | "campaign.advertising_channel_sub_type"
+  | "campaign.advertising_channel_type"
+  | "campaign.app_campaign_setting.app_id"
+  | "campaign.app_campaign_setting.app_store"
+  | "campaign.app_campaign_setting.bidding_strategy_goal_type"
+  | "campaign.base_campaign"
+  | "campaign.bidding_strategy"
+  | "campaign.bidding_strategy_type"
+  | "campaign.campaign_budget"
+  | "campaign.commission.commission_rate_micros"
+  | "campaign.dynamic_search_ads_setting.domain_name"
+  | "campaign.dynamic_search_ads_setting.feeds"
+  | "campaign.dynamic_search_ads_setting.language_code"
+  | "campaign.dynamic_search_ads_setting.use_supplied_urls_only"
+  | "campaign.end_date"
+  | "campaign.experiment_type"
+  | "campaign.final_url_suffix"
+  | "campaign.frequency_caps"
+  | "campaign.geo_target_type_setting.negative_geo_target_type"
+  | "campaign.geo_target_type_setting.positive_geo_target_type"
+  | "campaign.hotel_setting.hotel_center_id"
+  | "campaign.id"
+  | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
+  | "campaign.manual_cpc.enhanced_cpc_enabled"
+  | "campaign.manual_cpm"
+  | "campaign.manual_cpv"
+  | "campaign.maximize_conversion_value.target_roas"
+  | "campaign.maximize_conversions"
+  | "campaign.name"
+  | "campaign.network_settings.target_content_network"
+  | "campaign.network_settings.target_google_search"
+  | "campaign.network_settings.target_partner_search_network"
+  | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
+  | "campaign.payment_mode"
+  | "campaign.percent_cpc.cpc_bid_ceiling_micros"
+  | "campaign.percent_cpc.enhanced_cpc_enabled"
+  | "campaign.real_time_bidding_setting.opt_in"
+  | "campaign.resource_name"
+  | "campaign.selective_optimization.conversion_actions"
+  | "campaign.serving_status"
+  | "campaign.shopping_setting.campaign_priority"
+  | "campaign.shopping_setting.enable_local"
+  | "campaign.shopping_setting.merchant_id"
+  | "campaign.shopping_setting.sales_country"
+  | "campaign.start_date"
+  | "campaign.status"
+  | "campaign.target_cpa.cpc_bid_ceiling_micros"
+  | "campaign.target_cpa.cpc_bid_floor_micros"
+  | "campaign.target_cpa.target_cpa_micros"
+  | "campaign.target_cpm"
+  | "campaign.target_impression_share.cpc_bid_ceiling_micros"
+  | "campaign.target_impression_share.location"
+  | "campaign.target_impression_share.location_fraction_micros"
+  | "campaign.target_roas.cpc_bid_ceiling_micros"
+  | "campaign.target_roas.cpc_bid_floor_micros"
+  | "campaign.target_roas.target_roas"
+  | "campaign.target_spend.cpc_bid_ceiling_micros"
+  | "campaign.target_spend.target_spend_micros"
+  | "campaign.targeting_setting.target_restrictions"
+  | "campaign.tracking_setting.tracking_url"
+  | "campaign.tracking_url_template"
+  | "campaign.url_custom_parameters"
+  | "campaign.vanity_pharma.vanity_pharma_display_url_mode"
+  | "campaign.vanity_pharma.vanity_pharma_text"
+  | "campaign.video_brand_safety_suitability"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -18247,6 +19498,7 @@ export const label = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -18274,6 +19526,7 @@ export type LabelField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -18348,6 +19601,7 @@ export const landing_page_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -18358,6 +19612,8 @@ export const landing_page_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -18402,6 +19658,7 @@ export const landing_page_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -18465,6 +19722,7 @@ export type LandingPageViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -18475,6 +19733,8 @@ export type LandingPageViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -18519,6 +19779,7 @@ export type LandingPageViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -18657,6 +19918,7 @@ export const location_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -18667,6 +19929,8 @@ export const location_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -18763,6 +20027,7 @@ export const location_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -18797,6 +20062,7 @@ export type LocationViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -18807,6 +20073,8 @@ export type LocationViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -18903,6 +20171,7 @@ export type LocationViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -19005,6 +20274,7 @@ export const managed_placement_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -19112,6 +20382,7 @@ export const managed_placement_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -19122,6 +20393,8 @@ export const managed_placement_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -19166,6 +20439,7 @@ export const managed_placement_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -19213,6 +20487,7 @@ export type ManagedPlacementViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -19320,6 +20595,7 @@ export type ManagedPlacementViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -19330,6 +20606,8 @@ export type ManagedPlacementViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -19374,6 +20652,7 @@ export type ManagedPlacementViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -19472,6 +20751,7 @@ export const media_file = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -19505,6 +20785,7 @@ export type MediaFileField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -19579,10 +20860,10 @@ export type MobileDeviceConstantFields = Array<MobileDeviceConstantField>;
 */
 
 /*
- --- Start of MutateJob ---
+ --- Start of OfflineUserDataJob ---
 */
 // @ts-ignore
-export const mutate_job = [
+export const offline_user_data_job = [
   "customer.auto_tagging_enabled",
   "customer.call_reporting_setting.call_conversion_action",
   "customer.call_reporting_setting.call_conversion_reporting_enabled",
@@ -19595,25 +20876,67 @@ export const mutate_job = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
   "customer.test_account",
   "customer.time_zone",
   "customer.tracking_url_template",
-  "mutate_job.id",
-  "mutate_job.long_running_operation",
-  "mutate_job.metadata.completion_date_time",
-  "mutate_job.metadata.creation_date_time",
-  "mutate_job.metadata.estimated_completion_ratio",
-  "mutate_job.metadata.executed_operation_count",
-  "mutate_job.metadata.operation_count",
-  "mutate_job.next_add_sequence_token",
-  "mutate_job.resource_name",
-  "mutate_job.status",
+  "user_list.access_reason",
+  "user_list.account_user_list_status",
+  "user_list.basic_user_list.actions",
+  "user_list.closing_reason",
+  "user_list.crm_based_user_list.app_id",
+  "user_list.crm_based_user_list.data_source_type",
+  "user_list.crm_based_user_list.upload_key_type",
+  "user_list.description",
+  "user_list.eligible_for_display",
+  "user_list.eligible_for_search",
+  "user_list.id",
+  "user_list.integration_code",
+  "user_list.logical_user_list.rules",
+  "user_list.membership_life_span",
+  "user_list.membership_status",
+  "user_list.name",
+  "user_list.read_only",
+  "user_list.resource_name",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups",
+  "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type",
+  "user_list.rule_based_user_list.combined_rule_user_list.rule_operator",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.end_date",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.date_specific_rule_user_list.start_date",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups",
+  "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type",
+  "user_list.rule_based_user_list.prepopulation_status",
+  "user_list.similar_user_list.seed_user_list",
+  "user_list.size_for_display",
+  "user_list.size_for_search",
+  "user_list.size_range_for_display",
+  "user_list.size_range_for_search",
+  "user_list.type",
+  "offline_user_data_job.customer_match_user_list_metadata.user_list",
+  "offline_user_data_job.external_id",
+  "offline_user_data_job.failure_reason",
+  "offline_user_data_job.id",
+  "offline_user_data_job.resource_name",
+  "offline_user_data_job.status",
+  "offline_user_data_job.store_sales_metadata.loyalty_fraction",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.advertiser_upload_date_time",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.bridge_map_version_id",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_id",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_match_fraction",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_upload_fraction",
+  "offline_user_data_job.store_sales_metadata.third_party_metadata.valid_transaction_fraction",
+  "offline_user_data_job.store_sales_metadata.transaction_upload_fraction",
+  "offline_user_data_job.type",
 ];
 
-export type MutateJobField =
+export type OfflineUserDataJobField =
   | "customer.auto_tagging_enabled"
   | "customer.call_reporting_setting.call_conversion_action"
   | "customer.call_reporting_setting.call_conversion_reporting_enabled"
@@ -19626,27 +20949,69 @@ export type MutateJobField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
   | "customer.test_account"
   | "customer.time_zone"
   | "customer.tracking_url_template"
-  | "mutate_job.id"
-  | "mutate_job.long_running_operation"
-  | "mutate_job.metadata.completion_date_time"
-  | "mutate_job.metadata.creation_date_time"
-  | "mutate_job.metadata.estimated_completion_ratio"
-  | "mutate_job.metadata.executed_operation_count"
-  | "mutate_job.metadata.operation_count"
-  | "mutate_job.next_add_sequence_token"
-  | "mutate_job.resource_name"
-  | "mutate_job.status";
+  | "user_list.access_reason"
+  | "user_list.account_user_list_status"
+  | "user_list.basic_user_list.actions"
+  | "user_list.closing_reason"
+  | "user_list.crm_based_user_list.app_id"
+  | "user_list.crm_based_user_list.data_source_type"
+  | "user_list.crm_based_user_list.upload_key_type"
+  | "user_list.description"
+  | "user_list.eligible_for_display"
+  | "user_list.eligible_for_search"
+  | "user_list.id"
+  | "user_list.integration_code"
+  | "user_list.logical_user_list.rules"
+  | "user_list.membership_life_span"
+  | "user_list.membership_status"
+  | "user_list.name"
+  | "user_list.read_only"
+  | "user_list.resource_name"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.left_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_item_groups"
+  | "user_list.rule_based_user_list.combined_rule_user_list.right_operand.rule_type"
+  | "user_list.rule_based_user_list.combined_rule_user_list.rule_operator"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.end_date"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.date_specific_rule_user_list.start_date"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_item_groups"
+  | "user_list.rule_based_user_list.expression_rule_user_list.rule.rule_type"
+  | "user_list.rule_based_user_list.prepopulation_status"
+  | "user_list.similar_user_list.seed_user_list"
+  | "user_list.size_for_display"
+  | "user_list.size_for_search"
+  | "user_list.size_range_for_display"
+  | "user_list.size_range_for_search"
+  | "user_list.type"
+  | "offline_user_data_job.customer_match_user_list_metadata.user_list"
+  | "offline_user_data_job.external_id"
+  | "offline_user_data_job.failure_reason"
+  | "offline_user_data_job.id"
+  | "offline_user_data_job.resource_name"
+  | "offline_user_data_job.status"
+  | "offline_user_data_job.store_sales_metadata.loyalty_fraction"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.advertiser_upload_date_time"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.bridge_map_version_id"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_id"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_match_fraction"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.partner_upload_fraction"
+  | "offline_user_data_job.store_sales_metadata.third_party_metadata.valid_transaction_fraction"
+  | "offline_user_data_job.store_sales_metadata.transaction_upload_fraction"
+  | "offline_user_data_job.type";
 
-export type MutateJobFields = Array<MutateJobField>;
+export type OfflineUserDataJobFields = Array<OfflineUserDataJobField>;
 
 /*
- --- End of MutateJob ---
+ --- End of OfflineUserDataJob ---
 */
 
 /*
@@ -19731,6 +21096,7 @@ export const paid_organic_search_term_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -19741,6 +21107,8 @@ export const paid_organic_search_term_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -19785,6 +21153,7 @@ export const paid_organic_search_term_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -19846,6 +21215,7 @@ export type PaidOrganicSearchTermViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -19856,6 +21226,8 @@ export type PaidOrganicSearchTermViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -19900,6 +21272,7 @@ export type PaidOrganicSearchTermViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -19989,6 +21362,7 @@ export const parental_status_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -20053,6 +21427,25 @@ export const parental_status_view = [
   "ad_group_criterion.webpage.criterion_name",
   "ad_group_criterion.youtube_channel.channel_id",
   "ad_group_criterion.youtube_video.video_id",
+  "bidding_strategy.campaign_count",
+  "bidding_strategy.enhanced_cpc",
+  "bidding_strategy.id",
+  "bidding_strategy.name",
+  "bidding_strategy.non_removed_campaign_count",
+  "bidding_strategy.resource_name",
+  "bidding_strategy.status",
+  "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_cpa.cpc_bid_floor_micros",
+  "bidding_strategy.target_cpa.target_cpa_micros",
+  "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_impression_share.location",
+  "bidding_strategy.target_impression_share.location_fraction_micros",
+  "bidding_strategy.target_roas.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_roas.cpc_bid_floor_micros",
+  "bidding_strategy.target_roas.target_roas",
+  "bidding_strategy.target_spend.cpc_bid_ceiling_micros",
+  "bidding_strategy.target_spend.target_spend_micros",
+  "bidding_strategy.type",
   "campaign.ad_serving_optimization_status",
   "campaign.advertising_channel_sub_type",
   "campaign.advertising_channel_type",
@@ -20077,6 +21470,7 @@ export const parental_status_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -20087,6 +21481,8 @@ export const parental_status_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -20131,6 +21527,7 @@ export const parental_status_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -20178,6 +21575,7 @@ export type ParentalStatusViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -20242,6 +21640,25 @@ export type ParentalStatusViewField =
   | "ad_group_criterion.webpage.criterion_name"
   | "ad_group_criterion.youtube_channel.channel_id"
   | "ad_group_criterion.youtube_video.video_id"
+  | "bidding_strategy.campaign_count"
+  | "bidding_strategy.enhanced_cpc"
+  | "bidding_strategy.id"
+  | "bidding_strategy.name"
+  | "bidding_strategy.non_removed_campaign_count"
+  | "bidding_strategy.resource_name"
+  | "bidding_strategy.status"
+  | "bidding_strategy.target_cpa.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_cpa.cpc_bid_floor_micros"
+  | "bidding_strategy.target_cpa.target_cpa_micros"
+  | "bidding_strategy.target_impression_share.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_impression_share.location"
+  | "bidding_strategy.target_impression_share.location_fraction_micros"
+  | "bidding_strategy.target_roas.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_roas.cpc_bid_floor_micros"
+  | "bidding_strategy.target_roas.target_roas"
+  | "bidding_strategy.target_spend.cpc_bid_ceiling_micros"
+  | "bidding_strategy.target_spend.target_spend_micros"
+  | "bidding_strategy.type"
   | "campaign.ad_serving_optimization_status"
   | "campaign.advertising_channel_sub_type"
   | "campaign.advertising_channel_type"
@@ -20266,6 +21683,7 @@ export type ParentalStatusViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -20276,6 +21694,8 @@ export type ParentalStatusViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -20320,6 +21740,7 @@ export type ParentalStatusViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -20473,6 +21894,7 @@ export const product_group_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -20561,6 +21983,7 @@ export const product_group_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -20571,6 +21994,8 @@ export const product_group_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -20615,6 +22040,7 @@ export const product_group_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -20662,6 +22088,7 @@ export type ProductGroupViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -20750,6 +22177,7 @@ export type ProductGroupViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -20760,6 +22188,8 @@ export type ProductGroupViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -20804,6 +22234,7 @@ export type ProductGroupViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -20918,6 +22349,7 @@ export const recommendation = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -20928,6 +22360,8 @@ export const recommendation = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -20989,6 +22423,7 @@ export const recommendation = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -21069,6 +22504,7 @@ export type RecommendationField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -21079,6 +22515,8 @@ export type RecommendationField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -21140,6 +22578,7 @@ export type RecommendationField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -21191,6 +22630,7 @@ export const remarketing_action = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -21216,6 +22656,7 @@ export type RemarketingActionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -21343,6 +22784,14 @@ export const search_term_view = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -21416,6 +22865,7 @@ export const search_term_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -21426,6 +22876,8 @@ export const search_term_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -21470,6 +22922,7 @@ export const search_term_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -21588,6 +23041,14 @@ export type SearchTermViewField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -21661,6 +23122,7 @@ export type SearchTermViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -21671,6 +23133,8 @@ export type SearchTermViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -21715,6 +23179,7 @@ export type SearchTermViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -21813,6 +23278,7 @@ export const shared_criterion = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -21856,6 +23322,7 @@ export type SharedCriterionField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -21920,6 +23387,7 @@ export const shared_set = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -21930,6 +23398,8 @@ export const shared_set = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -21978,6 +23448,7 @@ export const shared_set = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -22018,6 +23489,7 @@ export type SharedSetField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -22028,6 +23500,8 @@ export type SharedSetField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -22076,6 +23550,7 @@ export type SharedSetField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -22155,6 +23630,7 @@ export const shopping_performance_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -22165,6 +23641,8 @@ export const shopping_performance_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -22209,6 +23687,7 @@ export const shopping_performance_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -22269,6 +23748,7 @@ export type ShoppingPerformanceViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -22279,6 +23759,8 @@ export type ShoppingPerformanceViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -22323,6 +23805,7 @@ export type ShoppingPerformanceViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -22406,6 +23889,77 @@ export type ShoppingPerformanceViewSegments = Array<ShoppingPerformanceViewSegme
 */
 
 /*
+ --- Start of ThirdPartyAppAnalyticsLink ---
+*/
+// @ts-ignore
+export const third_party_app_analytics_link = [
+  "account_link.account_link_id",
+  "account_link.resource_name",
+  "account_link.status",
+  "account_link.third_party_app_analytics.app_analytics_provider_id",
+  "account_link.third_party_app_analytics.app_id",
+  "account_link.third_party_app_analytics.app_vendor",
+  "account_link.type",
+  "customer.auto_tagging_enabled",
+  "customer.call_reporting_setting.call_conversion_action",
+  "customer.call_reporting_setting.call_conversion_reporting_enabled",
+  "customer.call_reporting_setting.call_reporting_enabled",
+  "customer.conversion_tracking_setting.conversion_tracking_id",
+  "customer.conversion_tracking_setting.cross_account_conversion_tracking_id",
+  "customer.currency_code",
+  "customer.descriptive_name",
+  "customer.final_url_suffix",
+  "customer.has_partners_badge",
+  "customer.id",
+  "customer.manager",
+  "customer.optimization_score",
+  "customer.pay_per_conversion_eligibility_failure_reasons",
+  "customer.remarketing_setting.google_global_site_tag",
+  "customer.resource_name",
+  "customer.test_account",
+  "customer.time_zone",
+  "customer.tracking_url_template",
+  "third_party_app_analytics_link.resource_name",
+  "third_party_app_analytics_link.shareable_link_id",
+];
+
+export type ThirdPartyAppAnalyticsLinkField =
+  | "account_link.account_link_id"
+  | "account_link.resource_name"
+  | "account_link.status"
+  | "account_link.third_party_app_analytics.app_analytics_provider_id"
+  | "account_link.third_party_app_analytics.app_id"
+  | "account_link.third_party_app_analytics.app_vendor"
+  | "account_link.type"
+  | "customer.auto_tagging_enabled"
+  | "customer.call_reporting_setting.call_conversion_action"
+  | "customer.call_reporting_setting.call_conversion_reporting_enabled"
+  | "customer.call_reporting_setting.call_reporting_enabled"
+  | "customer.conversion_tracking_setting.conversion_tracking_id"
+  | "customer.conversion_tracking_setting.cross_account_conversion_tracking_id"
+  | "customer.currency_code"
+  | "customer.descriptive_name"
+  | "customer.final_url_suffix"
+  | "customer.has_partners_badge"
+  | "customer.id"
+  | "customer.manager"
+  | "customer.optimization_score"
+  | "customer.pay_per_conversion_eligibility_failure_reasons"
+  | "customer.remarketing_setting.google_global_site_tag"
+  | "customer.resource_name"
+  | "customer.test_account"
+  | "customer.time_zone"
+  | "customer.tracking_url_template"
+  | "third_party_app_analytics_link.resource_name"
+  | "third_party_app_analytics_link.shareable_link_id";
+
+export type ThirdPartyAppAnalyticsLinkFields = Array<ThirdPartyAppAnalyticsLinkField>;
+
+/*
+ --- End of ThirdPartyAppAnalyticsLink ---
+*/
+
+/*
  --- Start of TopicConstant ---
 */
 // @ts-ignore
@@ -22470,6 +24024,7 @@ export const topic_view = [
   "ad_group_criterion.criterion_id",
   "ad_group_criterion.custom_affinity.custom_affinity",
   "ad_group_criterion.custom_intent.custom_intent",
+  "ad_group_criterion.disapproval_reasons",
   "ad_group_criterion.effective_cpc_bid_micros",
   "ad_group_criterion.effective_cpc_bid_source",
   "ad_group_criterion.effective_cpm_bid_micros",
@@ -22577,6 +24132,7 @@ export const topic_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -22587,6 +24143,8 @@ export const topic_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -22631,6 +24189,7 @@ export const topic_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -22678,6 +24237,7 @@ export type TopicViewField =
   | "ad_group_criterion.criterion_id"
   | "ad_group_criterion.custom_affinity.custom_affinity"
   | "ad_group_criterion.custom_intent.custom_intent"
+  | "ad_group_criterion.disapproval_reasons"
   | "ad_group_criterion.effective_cpc_bid_micros"
   | "ad_group_criterion.effective_cpc_bid_source"
   | "ad_group_criterion.effective_cpm_bid_micros"
@@ -22785,6 +24345,7 @@ export type TopicViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -22795,6 +24356,8 @@ export type TopicViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -22839,6 +24402,7 @@ export type TopicViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -22966,6 +24530,7 @@ export const user_list = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -23023,6 +24588,7 @@ export type UserListField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -23127,6 +24693,7 @@ export const user_location_view = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -23137,6 +24704,8 @@ export const user_location_view = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -23181,6 +24750,7 @@ export const user_location_view = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -23243,6 +24813,7 @@ export type UserLocationViewField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -23253,6 +24824,8 @@ export type UserLocationViewField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -23297,6 +24870,7 @@ export type UserLocationViewField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -23482,6 +25056,14 @@ export const video = [
   "ad_group_ad.ad.legacy_responsive_display_ad.short_headline",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image",
   "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image",
+  "ad_group_ad.ad.local_ad.call_to_actions",
+  "ad_group_ad.ad.local_ad.descriptions",
+  "ad_group_ad.ad.local_ad.headlines",
+  "ad_group_ad.ad.local_ad.logo_images",
+  "ad_group_ad.ad.local_ad.marketing_images",
+  "ad_group_ad.ad.local_ad.path1",
+  "ad_group_ad.ad.local_ad.path2",
+  "ad_group_ad.ad.local_ad.videos",
   "ad_group_ad.ad.name",
   "ad_group_ad.ad.resource_name",
   "ad_group_ad.ad.responsive_display_ad.accent_color",
@@ -23555,6 +25137,7 @@ export const video = [
   "campaign.hotel_setting.hotel_center_id",
   "campaign.id",
   "campaign.labels",
+  "campaign.local_campaign_setting.location_source_type",
   "campaign.manual_cpc.enhanced_cpc_enabled",
   "campaign.manual_cpm",
   "campaign.manual_cpv",
@@ -23565,6 +25148,8 @@ export const video = [
   "campaign.network_settings.target_google_search",
   "campaign.network_settings.target_partner_search_network",
   "campaign.network_settings.target_search_network",
+  "campaign.optimization_goal_setting.optimization_goal_types",
+  "campaign.optimization_score",
   "campaign.payment_mode",
   "campaign.percent_cpc.cpc_bid_ceiling_micros",
   "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -23609,6 +25194,7 @@ export const video = [
   "customer.has_partners_badge",
   "customer.id",
   "customer.manager",
+  "customer.optimization_score",
   "customer.pay_per_conversion_eligibility_failure_reasons",
   "customer.remarketing_setting.google_global_site_tag",
   "customer.resource_name",
@@ -23728,6 +25314,14 @@ export type VideoField =
   | "ad_group_ad.ad.legacy_responsive_display_ad.short_headline"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_logo_image"
   | "ad_group_ad.ad.legacy_responsive_display_ad.square_marketing_image"
+  | "ad_group_ad.ad.local_ad.call_to_actions"
+  | "ad_group_ad.ad.local_ad.descriptions"
+  | "ad_group_ad.ad.local_ad.headlines"
+  | "ad_group_ad.ad.local_ad.logo_images"
+  | "ad_group_ad.ad.local_ad.marketing_images"
+  | "ad_group_ad.ad.local_ad.path1"
+  | "ad_group_ad.ad.local_ad.path2"
+  | "ad_group_ad.ad.local_ad.videos"
   | "ad_group_ad.ad.name"
   | "ad_group_ad.ad.resource_name"
   | "ad_group_ad.ad.responsive_display_ad.accent_color"
@@ -23801,6 +25395,7 @@ export type VideoField =
   | "campaign.hotel_setting.hotel_center_id"
   | "campaign.id"
   | "campaign.labels"
+  | "campaign.local_campaign_setting.location_source_type"
   | "campaign.manual_cpc.enhanced_cpc_enabled"
   | "campaign.manual_cpm"
   | "campaign.manual_cpv"
@@ -23811,6 +25406,8 @@ export type VideoField =
   | "campaign.network_settings.target_google_search"
   | "campaign.network_settings.target_partner_search_network"
   | "campaign.network_settings.target_search_network"
+  | "campaign.optimization_goal_setting.optimization_goal_types"
+  | "campaign.optimization_score"
   | "campaign.payment_mode"
   | "campaign.percent_cpc.cpc_bid_ceiling_micros"
   | "campaign.percent_cpc.enhanced_cpc_enabled"
@@ -23855,6 +25452,7 @@ export type VideoField =
   | "customer.has_partners_badge"
   | "customer.id"
   | "customer.manager"
+  | "customer.optimization_score"
   | "customer.pay_per_conversion_eligibility_failure_reasons"
   | "customer.remarketing_setting.google_global_site_tag"
   | "customer.resource_name"
@@ -24083,6 +25681,7 @@ export type Metric =
   | "metrics.historical_quality_score"
   | "metrics.historical_search_predicted_ctr"
   | "metrics.hotel_average_lead_value_micros"
+  | "metrics.hotel_eligible_impressions"
   | "metrics.hotel_price_difference_percentage"
   | "metrics.impressions"
   | "metrics.impressions_from_store_reach"

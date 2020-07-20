@@ -19,7 +19,7 @@ import { promisifyServiceClient, convertToProtoFormat } from "./utils";
 // @ts-ignore
 import compiledResources from "../protos/compiled-resources.js";
 
-const DEFAULT_VERSION = "v3";
+const DEFAULT_VERSION = "v4";
 const GOOGLE_ADS_ENDPOINT = "googleads.googleapis.com:443";
 const STREAMING_SUPPORTED_SERVICES = ["GoogleAdsService"];
 
@@ -29,6 +29,7 @@ const allProtos = get(compiledResources, PROTO_ROOT);
 interface CommonClientOptions {
   developer_token: string;
   login_customer_id?: string;
+  linked_customer_id?: string;
   parseResults?: boolean;
   preventMutations?: boolean;
   logging?: LogOptions;
@@ -165,6 +166,7 @@ export class GoogleAdsClient {
     const metadataInterceptor = new MetadataInterceptor(
       this.options.developer_token,
       this.options.login_customer_id,
+      this.options.linked_customer_id,
       (this.options as ClientOptionsWithToken).access_token,
       this.auth
     );

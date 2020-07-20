@@ -41,8 +41,8 @@ export class BackendRule extends jspb.Message {
   getOperationDeadline(): number;
   setOperationDeadline(value: number): void;
 
-  getPathTranslation(): BackendRule.PathTranslation;
-  setPathTranslation(value: BackendRule.PathTranslation): void;
+  getPathTranslation(): BackendRule.PathTranslationMap[keyof BackendRule.PathTranslationMap];
+  setPathTranslation(value: BackendRule.PathTranslationMap[keyof BackendRule.PathTranslationMap]): void;
 
   hasJwtAudience(): boolean;
   clearJwtAudience(): void;
@@ -75,17 +75,19 @@ export namespace BackendRule {
     deadline: number,
     minDeadline: number,
     operationDeadline: number,
-    pathTranslation: BackendRule.PathTranslation,
+    pathTranslation: BackendRule.PathTranslationMap[keyof BackendRule.PathTranslationMap],
     jwtAudience: string,
     disableAuth: boolean,
     protocol: string,
   }
 
-  export enum PathTranslation {
-    PATH_TRANSLATION_UNSPECIFIED = 0,
-    CONSTANT_ADDRESS = 1,
-    APPEND_PATH_TO_ADDRESS = 2,
+  export interface PathTranslationMap {
+    PATH_TRANSLATION_UNSPECIFIED: 0;
+    CONSTANT_ADDRESS: 1;
+    APPEND_PATH_TO_ADDRESS: 2;
   }
+
+  export const PathTranslation: PathTranslationMap;
 
   export enum AuthenticationCase {
     AUTHENTICATION_NOT_SET = 0,

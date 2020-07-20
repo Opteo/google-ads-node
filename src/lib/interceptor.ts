@@ -21,6 +21,7 @@ export type InterceptorMethod = (options: grpc.CallOptions, nextCall: NextCall) 
 export class MetadataInterceptor {
   private developer_token: string;
   private login_customer_id: string | undefined;
+  private linked_customer_id: string | undefined;
   private access_token: string | undefined;
   private auth: Auth | undefined;
   private requestInterceptor: grpc.Requester;
@@ -28,11 +29,13 @@ export class MetadataInterceptor {
   constructor(
     developer_token: string,
     login_customer_id: string | undefined,
+    linked_customer_id: string | undefined,
     access_token: string | undefined,
     auth: Auth | undefined
   ) {
     this.developer_token = developer_token;
     this.login_customer_id = login_customer_id;
+    this.linked_customer_id = linked_customer_id;
     this.access_token = access_token;
     this.auth = auth;
     this.requestInterceptor = this.buildRequester();
@@ -52,6 +55,9 @@ export class MetadataInterceptor {
 
         if (this.login_customer_id) {
           metadata.add(`login-customer-id`, this.login_customer_id);
+        }
+        if (this.linked_customer_id) {
+          metadata.add(`linked-customer-id`, this.linked_customer_id);
         }
         next(metadata, listener);
       })

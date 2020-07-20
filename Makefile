@@ -1,5 +1,5 @@
 # Google Ads API version
-ADS_VERSION=v3
+ADS_VERSION=v4
 PROTO_ROOT_DIR=googleapis/
 
 DOCKER_IMAGE=opteo/google-ads-node
@@ -24,17 +24,19 @@ docker-kill-container:
 	docker rm -f $(DOCKER_CONTAINER)
 
 clean:
-	rm -rf src/lib/protos
-	mkdir -p src/lib/protos
+	rm -rf ./src/protos
+	mkdir -p ./src/protos
 
 copy-ts-files:
 	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-ts-files ./src/lib/
 	mv ./src/lib/compiled-ts-files/* ./src/lib/
+	rm -rf ./src/lib/compiled-ts-files/
 
 copy-protos:
 	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-protos/ ./src/protos
 	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-resources.js ./src/protos/compiled-resources.js
-	rm -rf ./src/protos/compiled-protos
+	mv ./src/protos/compiled-protos/* ./src/protos/
+	rm -rf ./src/protos/compiled-protos/
 
 copy-all:
 	docker cp $(DOCKER_CONTAINER):/usr/local/gads .
@@ -49,7 +51,7 @@ api-diff:
 	# Make sure to specify the previous version here
 	rm -rf diff/ && mkdir diff/
 	# Previous version
-	cd $(PROTO_ROOT_DIR)google/ads/googleads/v2/ && ls **/*.proto > ../../../../../diff/prev-protos.txt
+	cd $(PROTO_ROOT_DIR)google/ads/googleads/v3/ && ls **/*.proto > ../../../../../diff/prev-protos.txt
 	# Current version
 	cd $(PROTO_ROOT_DIR)google/ads/googleads/$(ADS_VERSION)/ && ls **/*.proto > ../../../../../diff/current-protos.txt
 	echo "Generated API version diffs"
