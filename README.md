@@ -129,6 +129,8 @@ example();
 | `parseResults`        | `boolean`         | ❌       | Formats Protobuf responses as objects. See [Results](https://github.com/Opteo/google-ads-node#results).                                                                                                                                              |
 | `preventMutations`    | `boolean`         | ❌       | Safe mode to prevent accidental mutations. See [Safe Mode](https://github.com/Opteo/google-ads-node#safe-mode).                                                                                                                                      |
 | `logging`             | `object`          | ❌       | See [Logging](https://github.com/Opteo/google-ads-node#logging).                                                                                                                                                                                     |
+| `login_customer_id`   | `string`          | ❌       | See [login_customer_id](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid).                                                                                                                                              |
+| `linked_customer_id`  | `string`          | ❌       | See [linked_customer_id](https://developers.google.com/google-ads/api/docs/release-notes#account_management).                                                                                                                                        |
 
 ### Authentication
 
