@@ -517,7 +517,7 @@ To update the Google Ads API version, the latest proto files (from the [googleap
 #### Steps:
 
 1. Make sure that the [opteo/protoc-all](https://github.com/Opteo/docker-protoc#upgrading-google-ads-node) image has been built and pushed after [googleapis/googleapis](https://github.com/googleapis/googleapis) has been updated. Remember to upgrade the image tag in the Dockerfile
-1. If it's major version update, change `ADS_VERSION` in `Makefile`, e.g. `ADS_VERSION=v4`
+1. If it's major version update, change `ADS_VERSION` in `Makefile` and the `FAILURE_KEY` within `interceptor.ts` e.g. `ADS_VERSION=v4`
 1. Run `make protos` within the `google-ads-node/` directory
 1. Update any README instances of the Google Ads API version number, e.g. the NPM badge URL
 
