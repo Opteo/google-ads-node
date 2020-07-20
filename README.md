@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://developers.google.com/google-ads/api/docs/release-notes">
-    <img src="https://img.shields.io/badge/google%20ads-v3.0.0-009688.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/google%20ads-v4.0.0-009688.svg?style=flat-square">
   </a>
   <a href="https://www.npmjs.com/package/google-ads-node">
     <img src="https://img.shields.io/npm/v/google-ads-node.svg?style=flat-square">
@@ -288,7 +288,7 @@ console.log(resultsList[0].campaign.id); // 123
 
 ### Streaming Results
 
-The Google Ads API v3 supports streaming results via the `GoogleAdsService.searchStream` method. Importantly, you must enable the `useStreaming` option when calling `getService`, as this configures gRPC correctly.
+The Google Ads API supports streaming results via the `GoogleAdsService.searchStream` method. Importantly, you must enable the `useStreaming` option when calling `getService`, as this configures gRPC correctly.
 
 ```typescript
 const service = client.getService("GoogleAdsService", { useStreaming: true });
@@ -418,7 +418,7 @@ An example of a successful log message as JSON (with authentication tokens remov
 ```json
 {
   "request": {
-    "method": "/google.ads.googleads.v3.services.GoogleAdsService/Search",
+    "method": "/google.ads.googleads.v4.services.GoogleAdsService/Search",
     "headers": {
       "authorization": "[REMOVED]",
       "developer-token": "[REMOVED]",
@@ -514,9 +514,10 @@ To update the Google Ads API version, the latest proto files (from the [googleap
 
 #### Steps:
 
+1. Make sure that the [opteo/protoc-all](https://github.com/Opteo/docker-protoc#upgrading-google-ads-node) image has been built and pushed after [googleapis/googleapis](https://github.com/googleapis/googleapis) has been updated. Remember to upgrade the image tag in the Dockerfile
 1. If it's major version update, change `ADS_VERSION` in `Makefile`, e.g. `ADS_VERSION=v4`
-2. Run `make protos` within the `google-ads-node/` directory
-3. Update any README instances of the Google Ads API version number, e.g. the NPM badge URL
+1. Run `make protos` within the `google-ads-node/` directory
+1. Update any README instances of the Google Ads API version number, e.g. the NPM badge URL
 
 Note: there may be some errors in the newly generated `src/lib/struct.ts` which require manual fixes.
 

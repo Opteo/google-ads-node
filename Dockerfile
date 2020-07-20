@@ -1,4 +1,5 @@
-FROM namely/protoc-all
+# Remember to upgrade the tag after pushing a new image
+FROM opteo/protoc-all:1.29_2
 
 RUN apk update && apk add bash git nodejs nodejs-npm
 
