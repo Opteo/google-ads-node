@@ -98,7 +98,7 @@ import { SearchTermViewServiceClient } from "../protos/google/ads/googleads/v4/s
 import { SharedCriterionServiceClient } from "../protos/google/ads/googleads/v4/services/shared_criterion_service_grpc_pb";
 import { SharedSetServiceClient } from "../protos/google/ads/googleads/v4/services/shared_set_service_grpc_pb";
 import { ShoppingPerformanceViewServiceClient } from "../protos/google/ads/googleads/v4/services/shopping_performance_view_service_grpc_pb";
-import { ThirdPartyAppAnalyticsServiceClient } from "../protos/google/ads/googleads/v4/services/third_party_app_analytics_link_service_grpc_pb";
+import { ThirdPartyAppAnalyticsLinkServiceClient } from "../protos/google/ads/googleads/v4/services/third_party_app_analytics_link_service_grpc_pb";
 import { TopicConstantServiceClient } from "../protos/google/ads/googleads/v4/services/topic_constant_service_grpc_pb";
 import { TopicViewServiceClient } from "../protos/google/ads/googleads/v4/services/topic_view_service_grpc_pb";
 import { UserInterestServiceClient } from "../protos/google/ads/googleads/v4/services/user_interest_service_grpc_pb";
@@ -201,7 +201,7 @@ export {
   SearchTermViewServiceClient,
   SharedCriterionServiceClient,
   ShoppingPerformanceViewServiceClient,
-  ThirdPartyAppAnalyticsServiceClient,
+  ThirdPartyAppAnalyticsLinkServiceClient,
   SharedSetServiceClient,
   TopicConstantServiceClient,
   TopicViewServiceClient,
