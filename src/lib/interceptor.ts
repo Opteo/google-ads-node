@@ -2,7 +2,13 @@ import grpc from "grpc";
 
 import Auth from "./auth";
 import { Logger, LogOptions } from "./logger";
-import { GoogleAdsFailure, GoogleAdsError, ErrorCode, PolicyTopicEntry } from "./types";
+import {
+  GoogleAdsFailure,
+  GoogleAdsError,
+  ErrorCode,
+  PolicyTopicEntry,
+  PolicyViolationDetails,
+} from "./types";
 import {
   formatCallResults,
   getErrorLocationPath,
@@ -76,7 +82,7 @@ export class ExceptionInterceptor {
     return new grpc.InterceptingCall(nextCall(options), this.requestInterceptor);
   }
 
-  public handleGrpcFailure(status: grpc.StatusObject): Error {
+  public handleGrpcFailure(status: grpc.StatusObject): Error | ClientError {
     const { code, metadata } = status;
 
     if (RETRY_STATUS_CODES.includes(code)) {
@@ -108,7 +114,8 @@ export class ExceptionInterceptor {
         requestId,
         gaFailure,
         path,
-        firstErrorObj.details?.policyFindingDetails?.policyTopicEntriesList
+        firstErrorObj.details?.policyFindingDetails?.policyTopicEntriesList ??
+          firstErrorObj.details?.policyViolationDetails
       );
     }
 
@@ -149,7 +156,10 @@ export class ExceptionInterceptor {
             // @ts-ignore Custom error field "location"
             status.metadata.add("location", error.location);
           }
-          if (error.hasOwnProperty("policy_violation_details")) {
+          if (
+            error.hasOwnProperty("policy_violation_details") &&
+            typeof (error as ClientError)?.policy_violation_details !== "undefined"
+          ) {
             status.metadata.add(
               "policy-violation-details-bin",
               // @ts-ignore Custom error field "policy_violation_details"
@@ -392,14 +402,20 @@ class ClientError extends Error {
   public readonly failure: GoogleAdsFailure;
   public readonly error_code: object;
   public readonly location: string;
-  public readonly policy_violation_details: PolicyTopicEntry.AsObject[] | undefined;
+  public readonly policy_violation_details:
+    | PolicyTopicEntry.AsObject[]
+    | PolicyViolationDetails.AsObject
+    | undefined;
 
   constructor(
     public message: string,
     requestId: string | undefined,
     failure: GoogleAdsFailure,
     path?: string,
-    policyViolationDetails?: PolicyTopicEntry.AsObject[] | undefined
+    policyViolationDetails?:
+      | PolicyTopicEntry.AsObject[]
+      | PolicyViolationDetails.AsObject
+      | undefined
   ) {
     super(message);
 
