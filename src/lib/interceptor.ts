@@ -2,7 +2,7 @@ import grpc from "grpc";
 
 import Auth from "./auth";
 import { Logger, LogOptions } from "./logger";
-import { GoogleAdsFailure, GoogleAdsError, ErrorCode } from "./types";
+import { GoogleAdsFailure, GoogleAdsError, ErrorCode, PolicyTopicEntry } from "./types";
 import {
   formatCallResults,
   getErrorLocationPath,
@@ -103,7 +103,13 @@ export class ExceptionInterceptor {
       if (firstErrorObj.hasOwnProperty("location")) {
         path = getErrorLocationPath(firstErrorObj.location as object);
       }
-      return new ClientError(firstErrorObj.message, requestId, gaFailure, path);
+      return new ClientError(
+        firstErrorObj.message,
+        requestId,
+        gaFailure,
+        path,
+        firstErrorObj.details?.policyFindingDetails?.policyTopicEntriesList
+      );
     }
 
     try {
@@ -142,6 +148,13 @@ export class ExceptionInterceptor {
           if (error.hasOwnProperty("location")) {
             // @ts-ignore Custom error field "location"
             status.metadata.add("location", error.location);
+          }
+          if (error.hasOwnProperty("policy_violation_details")) {
+            status.metadata.add(
+              "policy-violation-details-bin",
+              // @ts-ignore Custom error field "policy_violation_details"
+              Buffer.from(JSON.stringify(error.policy_violation_details))
+            );
           }
 
           const errorStatus = new grpc.StatusBuilder()
@@ -379,18 +392,21 @@ class ClientError extends Error {
   public readonly failure: GoogleAdsFailure;
   public readonly error_code: object;
   public readonly location: string;
+  public readonly policy_violation_details: PolicyTopicEntry.AsObject[] | undefined;
 
   constructor(
     public message: string,
     requestId: string | undefined,
     failure: GoogleAdsFailure,
-    path?: string
+    path?: string,
+    policyViolationDetails?: PolicyTopicEntry.AsObject[] | undefined
   ) {
     super(message);
 
     this.location = path || "";
     this.request_id = requestId;
     this.failure = failure;
+    this.policy_violation_details = policyViolationDetails;
 
     if (failure.getErrorsList() && failure.getErrorsList().length > 0) {
       const errorCode = failure.getErrorsList()[0].getErrorCode() as ErrorCode;
