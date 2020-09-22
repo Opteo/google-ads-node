@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/opteo/google-ads-node/compare/v2.0.2...v2.0.3) (2020-09-22)
+
+
+### Bug Fixes
+
+* **interceptor:** include policy violation details in client errors ([#60](https://github.com/opteo/google-ads-node/issues/60)) ([0e3b7ae](https://github.com/opteo/google-ads-node/commit/0e3b7ae))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/opteo/google-ads-node/compare/v2.0.1...v2.0.2) (2020-07-21)
 
