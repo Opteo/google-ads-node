@@ -2872,7 +2872,13 @@ export interface KeywordView {
 }
 
 /* .google.protobuf.FieldDescriptorProto.Label */
-export interface Label {}
+export interface Label {
+  resource_name?: string;
+  id?: number;
+  name?: string;
+  status?: LabelStatus;
+  text_label?: TextLabel;
+}
 
 /* .google.ads.googleads.v4.resources.LandingPageView */
 export interface LandingPageView {
@@ -8243,4 +8249,5 @@ import {
   ReachPlanAgeRange,
   ReachPlanNetwork,
   ReachPlanAdLength,
+  LabelStatus,
 } from "./enums";
