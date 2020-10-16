@@ -2835,7 +2835,13 @@ export const KeywordView = {
 };
 
 /* .google.protobuf.FieldDescriptorProto.Label */
-export const Label = {};
+export const Label = {
+  resource_name: string,
+  id: number,
+  name: string,
+  status: "enum_LabelStatus",
+  text_label: TextLabel,
+};
 
 /* .google.ads.googleads.v4.resources.LandingPageView */
 export const LandingPageView = {

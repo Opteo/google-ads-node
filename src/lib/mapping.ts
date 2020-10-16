@@ -1549,7 +1549,10 @@ export const keyword_plan_campaign_keyword = {
 export const keyword_view = {};
 
 /* .google.protobuf.FieldDescriptorProto.Label */
-export const label = {};
+export const label = {
+  status: "LabelStatus",
+  text_label,
+};
 
 /* .google.ads.googleads.v4.resources.LandingPageView */
 export const landing_page_view = {};
