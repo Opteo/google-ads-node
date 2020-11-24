@@ -15,6 +15,7 @@ export * from "../protos/google/ads/googleads/v4/common/keyword_plan_common_pb";
 export * from "../protos/google/ads/googleads/v4/common/matching_function_pb";
 export * from "../protos/google/ads/googleads/v4/common/metrics_pb";
 export * from "../protos/google/ads/googleads/v4/common/policy_pb";
+export * from "../protos/google/ads/googleads/v4/common/offline_user_data_pb";
 export * from "../protos/google/ads/googleads/v4/common/real_time_bidding_setting_pb";
 export * from "../protos/google/ads/googleads/v4/common/segments_pb";
 export * from "../protos/google/ads/googleads/v4/common/simulation_pb";
@@ -544,6 +545,7 @@ export * from "../protos/google/ads/googleads/v4/services/shopping_performance_v
 export * from "../protos/google/ads/googleads/v4/services/third_party_app_analytics_link_service_pb";
 export * from "../protos/google/ads/googleads/v4/services/topic_constant_service_pb";
 export * from "../protos/google/ads/googleads/v4/services/topic_view_service_pb";
+export * from "../protos/google/ads/googleads/v4/services/user_data_service_pb";
 export * from "../protos/google/ads/googleads/v4/services/user_interest_service_pb";
 export * from "../protos/google/ads/googleads/v4/services/user_list_service_pb";
 export * from "../protos/google/ads/googleads/v4/services/user_location_view_service_pb";

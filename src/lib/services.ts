@@ -101,6 +101,7 @@ import { ShoppingPerformanceViewServiceClient } from "../protos/google/ads/googl
 import { ThirdPartyAppAnalyticsLinkServiceClient } from "../protos/google/ads/googleads/v4/services/third_party_app_analytics_link_service_grpc_pb";
 import { TopicConstantServiceClient } from "../protos/google/ads/googleads/v4/services/topic_constant_service_grpc_pb";
 import { TopicViewServiceClient } from "../protos/google/ads/googleads/v4/services/topic_view_service_grpc_pb";
+import { UserDataServiceClient } from "../protos/google/ads/googleads/v4/services/user_data_service_grpc_pb";
 import { UserInterestServiceClient } from "../protos/google/ads/googleads/v4/services/user_interest_service_grpc_pb";
 import { UserListServiceClient } from "../protos/google/ads/googleads/v4/services/user_list_service_grpc_pb";
 import { UserLocationViewServiceClient } from "../protos/google/ads/googleads/v4/services/user_location_view_service_grpc_pb";
@@ -205,6 +206,7 @@ export {
   SharedSetServiceClient,
   TopicConstantServiceClient,
   TopicViewServiceClient,
+  UserDataServiceClient,
   UserInterestServiceClient,
   UserListServiceClient,
   UserLocationViewServiceClient,
