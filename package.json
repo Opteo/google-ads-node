@@ -21,6 +21,7 @@
     "clean": "trash build test",
     "all": "run-s reset test",
     "prepare-release": "run-s all version",
+    "prepack": "run-s build",
     "protos": "make protos",
     "copy-protos": "cp -rf src/protos build/"
   },
