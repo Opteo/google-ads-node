@@ -1,32 +1,25 @@
-# Remember to upgrade the tag after pushing a new image
-FROM opteo/protoc-all:1.29_2
+FROM golang:latest
 
-RUN apk update && apk add bash git nodejs nodejs-npm
+ENV BAZEL_VERSION=4.0.0
+ARG GOOGLE_ADS_VERSION
 
-WORKDIR /usr/local/gads/
+# Install dependencies
+RUN apt-get update -y
+RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python -y
+RUN apt-get install \
+    python3 \
+    python3-distutils \
+    python3-apt -y
 
-# Override entry CMD so we can run a custom script
-ENTRYPOINT [""]
+# Download Bazel
+RUN go get github.com/bazelbuild/bazelisk
 
-RUN apk update && apk add --no-cache libc6-compat
-RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2
+# Clone the googleapis repo
+RUN git clone https://github.com/googleapis/googleapis.git
 
-# Install Node dependencies
-RUN npm install -g ts-protoc-gen \
-    grpc-ts-protoc-gen \ 
-    grpc-tools \
-    protobufjs \
-    uglify-js \
-    prettier
+WORKDIR /go/googleapis
 
-# Install local Node dependencies
-COPY ./package.json ./package.json
-RUN npm install
+# Compile protocol buffers
+RUN bazelisk build //google/ads/googleads/${GOOGLE_ADS_VERSION}:googleads-nodejs
 
-# Copy compile scripts
-COPY ./scripts ./scripts
-COPY ./.prettierrc.js ./.prettierrc.js
-
-RUN chmod a+x ./scripts/compile.sh
-
-CMD sh ./scripts/compile.sh
+RUN echo "compiled ${GOOGLE_ADS_VERSION} protos"
