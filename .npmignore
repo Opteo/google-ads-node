@@ -1,0 +1,7 @@
+coverage
+node_modules
+bazel
+docs
+build/test
+build/system-test
+package
