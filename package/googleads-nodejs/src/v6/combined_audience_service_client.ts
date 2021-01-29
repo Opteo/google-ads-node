@@ -641,7 +641,7 @@ export class CombinedAudienceServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the combined audience to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -682,7 +682,7 @@ export class CombinedAudienceServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getCombinedAudience(request, options, callback);

@@ -707,7 +707,7 @@ export class GoogleAdsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose resources are being modified.
  * @param {number[]} request.mutateOperations
  *   Required. The list of operations to perform on individual resources.
@@ -763,7 +763,7 @@ export class GoogleAdsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutate(request, options, callback);
@@ -774,7 +774,7 @@ export class GoogleAdsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being queried.
  * @param {string} request.query
  *   Required. The query string.
@@ -805,7 +805,7 @@ export class GoogleAdsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.searchStream(request, options);
@@ -837,7 +837,7 @@ export class GoogleAdsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being queried.
  * @param {string} request.query
  *   Required. The query string.
@@ -903,7 +903,7 @@ export class GoogleAdsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.search(request, options, callback);
@@ -913,7 +913,7 @@ export class GoogleAdsServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being queried.
  * @param {string} request.query
  *   Required. The query string.
@@ -959,7 +959,7 @@ export class GoogleAdsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
@@ -976,7 +976,7 @@ export class GoogleAdsServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being queried.
  * @param {string} request.query
  *   Required. The query string.
@@ -1026,7 +1026,7 @@ export class GoogleAdsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     options = options || {};
     const callSettings = new gax.CallSettings(options);

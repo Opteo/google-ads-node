@@ -639,7 +639,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the plan to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -680,7 +680,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getKeywordPlan(request, options, callback);
@@ -711,7 +711,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose keyword plans are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual keyword plans.
@@ -762,7 +762,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateKeywordPlans(request, options, callback);
@@ -797,7 +797,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.keywordPlan
+ * @param {string} request.keyword_plan
  *   Required. The resource name of the keyword plan to be forecasted.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -838,7 +838,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'keyword_plan': request.keywordPlan || '',
+      'keyword_plan': request.keyword_plan || '',
     });
     this.initialize();
     return this.innerApiCalls.generateForecastCurve(request, options, callback);
@@ -874,7 +874,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.keywordPlan
+ * @param {string} request.keyword_plan
  *   Required. The resource name of the keyword plan to be forecasted.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -915,7 +915,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'keyword_plan': request.keywordPlan || '',
+      'keyword_plan': request.keyword_plan || '',
     });
     this.initialize();
     return this.innerApiCalls.generateForecastTimeSeries(request, options, callback);
@@ -945,7 +945,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.keywordPlan
+ * @param {string} request.keyword_plan
  *   Required. The resource name of the keyword plan to be forecasted.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -986,7 +986,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'keyword_plan': request.keywordPlan || '',
+      'keyword_plan': request.keyword_plan || '',
     });
     this.initialize();
     return this.innerApiCalls.generateForecastMetrics(request, options, callback);
@@ -1016,7 +1016,7 @@ export class KeywordPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.keywordPlan
+ * @param {string} request.keyword_plan
  *   Required. The resource name of the keyword plan of which historical metrics are
  *   requested.
  * @param {object} [options]
@@ -1058,7 +1058,7 @@ export class KeywordPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'keyword_plan': request.keywordPlan || '',
+      'keyword_plan': request.keyword_plan || '',
     });
     this.initialize();
     return this.innerApiCalls.generateHistoricalMetrics(request, options, callback);

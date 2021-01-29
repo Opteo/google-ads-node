@@ -639,7 +639,7 @@ export class CampaignLabelServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the campaign-label relationship to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -680,7 +680,7 @@ export class CampaignLabelServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getCampaignLabel(request, options, callback);
@@ -711,7 +711,7 @@ export class CampaignLabelServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. ID of the customer whose campaign-label relationships are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on campaign-label relationships.
@@ -762,7 +762,7 @@ export class CampaignLabelServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCampaignLabels(request, options, callback);

@@ -639,7 +639,7 @@ export class ConversionUploadServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer performing the upload.
  * @param {number[]} request.conversions
  *   Required. The conversions that are being uploaded.
@@ -693,7 +693,7 @@ export class ConversionUploadServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.uploadClickConversions(request, options, callback);
@@ -723,7 +723,7 @@ export class ConversionUploadServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer performing the upload.
  * @param {number[]} request.conversions
  *   Required. The conversions that are being uploaded.
@@ -777,7 +777,7 @@ export class ConversionUploadServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.uploadCallConversions(request, options, callback);

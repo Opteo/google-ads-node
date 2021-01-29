@@ -639,7 +639,7 @@ export class CampaignAssetServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the campaign asset to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -680,7 +680,7 @@ export class CampaignAssetServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getCampaignAsset(request, options, callback);
@@ -710,7 +710,7 @@ export class CampaignAssetServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose campaign assets are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual campaign assets.
@@ -761,7 +761,7 @@ export class CampaignAssetServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCampaignAssets(request, options, callback);

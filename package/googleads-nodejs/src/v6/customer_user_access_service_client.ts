@@ -639,7 +639,7 @@ export class CustomerUserAccessServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. Resource name of the customer user access.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -680,7 +680,7 @@ export class CustomerUserAccessServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getCustomerUserAccess(request, options, callback);
@@ -711,7 +711,7 @@ export class CustomerUserAccessServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
  * @param {google.ads.googleads.v6.services.CustomerUserAccessOperation} request.operation
  *   Required. The operation to perform on the customer
@@ -754,7 +754,7 @@ export class CustomerUserAccessServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerUserAccess(request, options, callback);

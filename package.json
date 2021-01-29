@@ -10,6 +10,7 @@
   "repository": "https://github.com/opteo/google-ads-node",
   "license": "MIT",
   "scripts": {
+    "preinstall": "cd package/googleads-nodejs && npm run prepare",
     "prepack": "cp -r package/googleads-nodejs/build . && rm -rf build/test build/system-test"
   },
   "dependencies": {

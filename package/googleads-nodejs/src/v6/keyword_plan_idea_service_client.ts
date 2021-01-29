@@ -652,7 +652,7 @@ export class KeywordPlanIdeaServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   The ID of the customer with the recommendation.
  * @param {string} request.language
  *   The resource name of the language to target.
@@ -676,7 +676,7 @@ export class KeywordPlanIdeaServiceClient {
  *   The server may decide to further limit the number of returned resources.
  *   If the response contains fewer than 10,000 results it may not be assumed
  *   as last page of results.
- * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keywordPlanNetwork
+ * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keyword_planNetwork
  *   Targeting network.
  * @param {google.ads.googleads.v6.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
@@ -730,7 +730,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.generateKeywordIdeas(request, options, callback);
@@ -740,7 +740,7 @@ export class KeywordPlanIdeaServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   The ID of the customer with the recommendation.
  * @param {string} request.language
  *   The resource name of the language to target.
@@ -764,7 +764,7 @@ export class KeywordPlanIdeaServiceClient {
  *   The server may decide to further limit the number of returned resources.
  *   If the response contains fewer than 10,000 results it may not be assumed
  *   as last page of results.
- * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keywordPlanNetwork
+ * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keyword_planNetwork
  *   Targeting network.
  * @param {google.ads.googleads.v6.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
@@ -798,7 +798,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
@@ -815,7 +815,7 @@ export class KeywordPlanIdeaServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   The ID of the customer with the recommendation.
  * @param {string} request.language
  *   The resource name of the language to target.
@@ -839,7 +839,7 @@ export class KeywordPlanIdeaServiceClient {
  *   The server may decide to further limit the number of returned resources.
  *   If the response contains fewer than 10,000 results it may not be assumed
  *   as last page of results.
- * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keywordPlanNetwork
+ * @param {google.ads.googleads.v6.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork} request.keyword_planNetwork
  *   Targeting network.
  * @param {google.ads.googleads.v6.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
@@ -877,7 +877,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     options = options || {};
     const callSettings = new gax.CallSettings(options);

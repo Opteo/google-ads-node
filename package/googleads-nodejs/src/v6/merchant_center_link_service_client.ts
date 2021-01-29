@@ -640,7 +640,7 @@ export class MerchantCenterLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer onto which to apply the Merchant Center link list
  *   operation.
  * @param {object} [options]
@@ -682,7 +682,7 @@ export class MerchantCenterLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.listMerchantCenterLinks(request, options, callback);
@@ -712,7 +712,7 @@ export class MerchantCenterLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. Resource name of the Merchant Center link.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -753,7 +753,7 @@ export class MerchantCenterLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getMerchantCenterLink(request, options, callback);
@@ -783,7 +783,7 @@ export class MerchantCenterLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
  * @param {google.ads.googleads.v6.services.MerchantCenterLinkOperation} request.operation
  *   Required. The operation to perform on the link
@@ -826,7 +826,7 @@ export class MerchantCenterLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateMerchantCenterLink(request, options, callback);

@@ -773,7 +773,7 @@ export class ReachPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {string} request.plannableLocationId
  *   Required. The ID of the location, this is one of the ids returned by
@@ -827,7 +827,7 @@ export class ReachPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.generateProductMixIdeas(request, options, callback);
@@ -857,7 +857,7 @@ export class ReachPlanServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {string} request.currencyCode
  *   The currency code.
@@ -938,7 +938,7 @@ export class ReachPlanServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.generateReachForecast(request, options, callback);

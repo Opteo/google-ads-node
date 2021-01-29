@@ -694,7 +694,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the campaign experiment to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -735,7 +735,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getCampaignExperiment(request, options, callback);
@@ -765,7 +765,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose campaign experiments are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual campaign experiments.
@@ -819,7 +819,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCampaignExperiments(request, options, callback);
@@ -850,7 +850,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.campaignExperiment
+ * @param {string} request.campaign_experiment
  *   Required. The resource name of the campaign experiment to graduate.
  * @param {string} request.campaignBudget
  *   Required. Resource name of the budget to attach to the campaign graduated from the
@@ -894,7 +894,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'campaign_experiment': request.campaignExperiment || '',
+      'campaign_experiment': request.campaign_experiment || '',
     });
     this.initialize();
     return this.innerApiCalls.graduateCampaignExperiment(request, options, callback);
@@ -926,7 +926,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.campaignExperiment
+ * @param {string} request.campaign_experiment
  *   Required. The resource name of the campaign experiment to end.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -967,7 +967,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'campaign_experiment': request.campaignExperiment || '',
+      'campaign_experiment': request.campaign_experiment || '',
     });
     this.initialize();
     return this.innerApiCalls.endCampaignExperiment(request, options, callback);
@@ -1007,9 +1007,9 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose campaign experiment is being created.
- * @param {google.ads.googleads.v6.resources.CampaignExperiment} request.campaignExperiment
+ * @param {google.ads.googleads.v6.resources.CampaignExperiment} request.campaign_experiment
  *   Required. The campaign experiment to be created.
  * @param {boolean} request.validateOnly
  *   If true, the request is validated but not executed. Only errors are
@@ -1056,7 +1056,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.createCampaignExperiment(request, options, callback);
@@ -1112,7 +1112,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.campaignExperiment
+ * @param {string} request.campaign_experiment
  *   Required. The resource name of the campaign experiment to promote.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1156,7 +1156,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'campaign_experiment': request.campaignExperiment || '',
+      'campaign_experiment': request.campaign_experiment || '',
     });
     this.initialize();
     return this.innerApiCalls.promoteCampaignExperiment(request, options, callback);
@@ -1210,7 +1210,7 @@ export class CampaignExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the campaign experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1265,7 +1265,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.listCampaignExperimentAsyncErrors(request, options, callback);
@@ -1275,7 +1275,7 @@ export class CampaignExperimentServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the campaign experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1310,7 +1310,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
@@ -1327,7 +1327,7 @@ export class CampaignExperimentServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the campaign experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1366,7 +1366,7 @@ export class CampaignExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     options = options || {};
     const callSettings = new gax.CallSettings(options);

@@ -652,7 +652,7 @@ export class AccountBudgetProposalServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the account-level budget proposal to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -693,7 +693,7 @@ export class AccountBudgetProposalServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getAccountBudgetProposal(request, options, callback);
@@ -724,7 +724,7 @@ export class AccountBudgetProposalServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v6.services.AccountBudgetProposalOperation} request.operation
  *   Required. The operation to perform on an individual account-level budget proposal.
@@ -770,7 +770,7 @@ export class AccountBudgetProposalServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAccountBudgetProposal(request, options, callback);

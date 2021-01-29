@@ -642,7 +642,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the plan to fetch.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -683,7 +683,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'resource_name': request.resourceName || '',
+      'resource_name': request.resource_name || '',
     });
     this.initialize();
     return this.innerApiCalls.getKeywordPlanCampaignKeyword(request, options, callback);
@@ -714,7 +714,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose campaign keywords are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual Keyword Plan campaign
@@ -766,7 +766,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.mutateKeywordPlanCampaignKeywords(request, options, callback);

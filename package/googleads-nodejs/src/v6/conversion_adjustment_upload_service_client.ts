@@ -639,7 +639,7 @@ export class ConversionAdjustmentUploadServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer performing the upload.
  * @param {number[]} request.conversionAdjustments
  *   Required. The conversion adjustments that are being uploaded.
@@ -693,7 +693,7 @@ export class ConversionAdjustmentUploadServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'customer_id': request.customerId || '',
+      'customer_id': request.customer_id || '',
     });
     this.initialize();
     return this.innerApiCalls.uploadConversionAdjustments(request, options, callback);
