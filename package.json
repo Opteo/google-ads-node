@@ -12,6 +12,9 @@
   "scripts": {
     "prepack": "cp -r package/googleads-nodejs/build . && rm -rf build/test build/system-test"
   },
+  "dependencies": {
+    "google-gax": "opteo/gax-nodejs"
+  },
   "devDependencies": {
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
