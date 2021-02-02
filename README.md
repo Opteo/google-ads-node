@@ -35,21 +35,13 @@ This library (google-ads-node) is the compiled output of the experimental [Googl
 
 ## Install
 
-NPM:
-
 ```
 npm install google-ads-node
 ```
 
-Or with yarn:
-
-```
-yarn add google-ads-node
-```
-
 ## Standalone
 
-_Documentation for this will be release soon_
+_Documentation for this will be released soon_
 
 ## Upgrading API Versions
 
