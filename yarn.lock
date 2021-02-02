@@ -201,9 +201,9 @@ google-auth-library@^6.1.1, google-auth-library@^6.1.3:
     jws "^4.0.0"
     lru-cache "^6.0.0"
 
-google-gax@opteo/gax-nodejs:
+"google-gax@github:opteo/gax-nodejs":
   version "2.10.0"
-  resolved "https://codeload.github.com/opteo/gax-nodejs/tar.gz/dc67b4c223e73e59fc7cb175cad23582eaf12cda"
+  resolved "https://codeload.github.com/opteo/gax-nodejs/tar.gz/75101dd1bc953550010b1af835db72ff949742f2"
   dependencies:
     "@grpc/grpc-js" "~1.2.0"
     "@grpc/proto-loader" "^0.5.1"
