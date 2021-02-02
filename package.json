@@ -10,11 +10,12 @@
   "repository": "https://github.com/opteo/google-ads-node",
   "license": "MIT",
   "scripts": {
-    "init": "cd package/googleads-nodejs && npm install",
-    "prepack": "cp -r package/googleads-nodejs/build . && rm -rf build/test build/system-test"
+    "test": "node tests/protos.js",
+    "prepublishOnly": "npm run test",
+    "prepare": "cd package/googleads-nodejs && npm install && rm -rf build/test build/system-test && cp -r build ../../"
   },
   "dependencies": {
-    "google-gax": "github:opteo/gax-nodejs"
+    "google-gax": "^2.10.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
