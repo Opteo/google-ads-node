@@ -153,9 +153,6 @@
     "system-test": "c8 mocha build/system-test",
     "test": "c8 mocha build/test"
   },
-  "dependencies": {
-    "google-gax": "github:opteo/gax-nodejs"
-  },
   "devDependencies": {
     "@types/mocha": "^8.0.4",
     "@types/node": "^14.14.10",
@@ -177,5 +174,8 @@
   },
   "engines": {
     "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "google-gax": "github:opteo/gax-nodejs"
   }
 }
