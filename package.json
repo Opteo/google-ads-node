@@ -12,7 +12,7 @@
   "scripts": {
     "test": "node tests/protos.js",
     "prepublishOnly": "npm run test",
-    "prepare": "cd package/googleads-nodejs && npm install && rm -rf build/test build/system-test && cp -r build ../../"
+    "prepare": "sh ./init.sh"
   },
   "dependencies": {
     "google-gax": "^2.10.2"
