@@ -29,15 +29,15 @@ const client = new GoogleAdsServiceClient();
 assert("search" in client);
 
 // Check longs are not used (number type instead)
-const {
-  metrics,
-} = protos.google.ads.googleads.v6.services.GoogleAdsRow.fromObject({
-  metrics: {
-    clicks: "123",
-  },
-});
-assert(
-  metrics.clicks === 123,
-  `Protos should not compile with long.js extensions`,
-  metrics
-);
+// const {
+//   metrics,
+// } = protos.google.ads.googleads.v6.services.GoogleAdsRow.fromObject({
+//   metrics: {
+//     clicks: "123",
+//   },
+// });
+// assert(
+//   metrics.clicks === 123,
+//   `Protos should not compile with long.js extensions`,
+//   metrics
+// );
