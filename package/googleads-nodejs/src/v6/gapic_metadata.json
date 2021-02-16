@@ -1833,6 +1833,40 @@
         }
       }
     },
+    "CustomerUserAccessInvitationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerUserAccessInvitationServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccessInvitation": {
+              "methods": [
+                "getCustomerUserAccessInvitation"
+              ]
+            },
+            "MutateCustomerUserAccessInvitation": {
+              "methods": [
+                "mutateCustomerUserAccessInvitation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerUserAccessInvitationServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccessInvitation": {
+              "methods": [
+                "getCustomerUserAccessInvitation"
+              ]
+            },
+            "MutateCustomerUserAccessInvitation": {
+              "methods": [
+                "mutateCustomerUserAccessInvitation"
+              ]
+            }
+          }
+        }
+      }
+    },
     "CustomerUserAccessService": {
       "clients": {
         "grpc": {

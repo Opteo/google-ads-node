@@ -1036,6 +1036,10 @@
                             "youtube_video_id": {
                               "type": "string",
                               "id": 2
+                            },
+                            "youtube_video_title": {
+                              "type": "string",
+                              "id": 3
                             }
                           }
                         },
@@ -2790,9 +2794,17 @@
                               "type": "double",
                               "id": 192
                             },
+                            "all_conversions_value_by_conversion_date": {
+                              "type": "double",
+                              "id": 240
+                            },
                             "all_conversions": {
                               "type": "double",
                               "id": 193
+                            },
+                            "all_conversions_by_conversion_date": {
+                              "type": "double",
+                              "id": 241
                             },
                             "all_conversions_value_per_cost": {
                               "type": "double",
@@ -2914,6 +2926,10 @@
                               "type": "double",
                               "id": 165
                             },
+                            "conversions_value_by_conversion_date": {
+                              "type": "double",
+                              "id": 242
+                            },
                             "conversions_value_per_cost": {
                               "type": "double",
                               "id": 166
@@ -2925,6 +2941,10 @@
                             "conversions": {
                               "type": "double",
                               "id": 168
+                            },
+                            "conversions_by_conversion_date": {
+                              "type": "double",
+                              "id": 243
                             },
                             "cost_micros": {
                               "type": "int64",
@@ -3163,9 +3183,17 @@
                               "type": "double",
                               "id": 150
                             },
+                            "value_per_all_conversions_by_conversion_date": {
+                              "type": "double",
+                              "id": 244
+                            },
                             "value_per_conversion": {
                               "type": "double",
                               "id": 151
+                            },
+                            "value_per_conversions_by_conversion_date": {
+                              "type": "double",
+                              "id": 245
                             },
                             "value_per_current_model_attributed_conversion": {
                               "type": "double",
@@ -3741,10 +3769,7 @@
                           "fields": {
                             "campaign": {
                               "type": "string",
-                              "id": 1,
-                              "options": {
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/Campaign"
-                              }
+                              "id": 1
                             },
                             "status": {
                               "type": "google.ads.googleads.v6.enums.BudgetCampaignAssociationStatusEnum.BudgetCampaignAssociationStatus",
@@ -5425,7 +5450,8 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "FEED_ITEM_ID": 2,
-                                "DEVICE_NAME": 3
+                                "DEVICE_NAME": 3,
+                                "FEED_ITEM_SET_ID": 4
                               }
                             }
                           }
@@ -5774,8 +5800,10 @@
                               "values": {
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
+                                "LOWEST_UNIQUE": 2,
                                 "LOWEST_TIED": 3,
-                                "NOT_LOWEST": 4
+                                "NOT_LOWEST": 4,
+                                "ONLY_PARTNER_SHOWN": 5
                               }
                             }
                           }
@@ -6050,6 +6078,20 @@
                                 "NOT_CONTAINS": 7,
                                 "NOT_STARTS_WITH": 8,
                                 "NOT_ENDS_WITH": 9
+                              }
+                            }
+                          }
+                        },
+                        "AccessInvitationStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "AccessInvitationStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "PENDING": 2,
+                                "DECLINED": 3,
+                                "EXPIRED": 4
                               }
                             }
                           }
@@ -6653,6 +6695,32 @@
                             }
                           }
                         },
+                        "CallTrackingDisplayLocationEnum": {
+                          "fields": {},
+                          "nested": {
+                            "CallTrackingDisplayLocation": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "AD": 2,
+                                "LANDING_PAGE": 3
+                              }
+                            }
+                          }
+                        },
+                        "CallTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "CallType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "MANUALLY_DIALED": 2,
+                                "HIGH_END_MOBILE_SEARCH": 3
+                              }
+                            }
+                          }
+                        },
                         "CalloutPlaceholderFieldEnum": {
                           "fields": {},
                           "nested": {
@@ -6821,7 +6889,12 @@
                                 "CAMPAIGN": 5,
                                 "CAMPAIGN_BUDGET": 6,
                                 "AD_GROUP_BID_MODIFIER": 7,
-                                "CAMPAIGN_CRITERION": 8
+                                "CAMPAIGN_CRITERION": 8,
+                                "FEED": 9,
+                                "FEED_ITEM": 10,
+                                "CAMPAIGN_FEED": 11,
+                                "AD_GROUP_FEED": 12,
+                                "AD_GROUP_AD": 13
                               }
                             }
                           }
@@ -7010,7 +7083,8 @@
                                 "CUSTOM_AFFINITY": 29,
                                 "CUSTOM_INTENT": 30,
                                 "LOCATION_GROUP": 31,
-                                "CUSTOM_AUDIENCE": 32
+                                "CUSTOM_AUDIENCE": 32,
+                                "COMBINED_AUDIENCE": 33
                               }
                             }
                           }
@@ -7590,6 +7664,19 @@
                             }
                           }
                         },
+                        "GoogleVoiceCallStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "GoogleVoiceCallStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "MISSED": 2,
+                                "RECEIVED": 3
+                              }
+                            }
+                          }
+                        },
                         "HotelPlaceholderFieldEnum": {
                           "fields": {},
                           "nested": {
@@ -7617,6 +7704,18 @@
                                 "SIMILAR_PROPERTY_IDS": 19,
                                 "IOS_APP_LINK": 20,
                                 "IOS_APP_STORE_ID": 21
+                              }
+                            }
+                          }
+                        },
+                        "ImagePlaceholderFieldEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ImagePlaceholderField": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ASSET_ID": 2
                               }
                             }
                           }
@@ -8228,7 +8327,8 @@
                                 "KEYWORD_MATCH_TYPE": 14,
                                 "MOVE_UNUSED_BUDGET": 15,
                                 "FORECASTING_CAMPAIGN_BUDGET": 16,
-                                "TARGET_ROAS_OPT_IN": 17
+                                "TARGET_ROAS_OPT_IN": 17,
+                                "RESPONSIVE_SEARCH_AD": 18
                               }
                             }
                           }
@@ -8614,7 +8714,12 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "INVALID_EMAIL_ADDRESS": 2,
-                                "EMAIL_ADDRESS_ALREADY_HAS_ACCESS": 3
+                                "EMAIL_ADDRESS_ALREADY_HAS_ACCESS": 3,
+                                "INVALID_INVITATION_STATUS": 4,
+                                "GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED": 5,
+                                "INVALID_INVITATION_ID": 6,
+                                "EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION": 7,
+                                "PENDING_INVITATIONS_LIMIT_EXCEEDED": 8
                               }
                             }
                           }
@@ -9024,7 +9129,16 @@
                                 "UNSUPPORTED_FIELD_TYPE": 3,
                                 "FIELD_TYPE_INCOMPATIBLE_WITH_ASSET_TYPE": 4,
                                 "FIELD_TYPE_INCOMPATIBLE_WITH_CAMPAIGN_TYPE": 5,
-                                "INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE": 6
+                                "INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE": 6,
+                                "IMAGE_NOT_WITHIN_SPECIFIED_DIMENSION_RANGE": 7,
+                                "INVALID_PINNED_FIELD": 8,
+                                "MEDIA_BUNDLE_ASSET_FILE_SIZE_TOO_LARGE": 9,
+                                "NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION": 10,
+                                "NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK": 11,
+                                "NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK_FOR_VALID_COMBINATION": 12,
+                                "YOUTUBE_VIDEO_REMOVED": 13,
+                                "YOUTUBE_VIDEO_TOO_LONG": 14,
+                                "YOUTUBE_VIDEO_TOO_SHORT": 15
                               }
                             }
                           }
@@ -9076,7 +9190,8 @@
                                 "MISSING_TOS": 9,
                                 "DEVELOPER_TOKEN_NOT_APPROVED": 10,
                                 "INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION": 11,
-                                "SERVICE_ACCESS_DENIED": 12
+                                "SERVICE_ACCESS_DENIED": 12,
+                                "ACCESS_DENIED_FOR_ACCOUNT_TYPE": 25
                               }
                             }
                           }
@@ -9293,7 +9408,8 @@
                                 "SHOPPING_ENABLE_LOCAL_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE": 42,
                                 "MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS": 43,
                                 "INSUFFICIENT_APP_INSTALLS_COUNT": 44,
-                                "SENSITIVE_CATEGORY_APP": 45
+                                "SENSITIVE_CATEGORY_APP": 45,
+                                "HEC_AGREEMENT_REQUIRED": 46
                               }
                             }
                           }
@@ -10919,7 +11035,15 @@
                                 "MISSING_LATITUDE_VALUE": 95,
                                 "MISSING_LONGITUDE_VALUE": 96,
                                 "ADDRESS_NOT_FOUND": 97,
-                                "ADDRESS_NOT_TARGETABLE": 98
+                                "ADDRESS_NOT_TARGETABLE": 98,
+                                "INVALID_ASSET_ID": 100,
+                                "INCOMPATIBLE_ASSET_TYPE": 101,
+                                "IMAGE_ERROR_UNEXPECTED_SIZE": 102,
+                                "IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED": 103,
+                                "IMAGE_ERROR_FILE_TOO_LARGE": 104,
+                                "IMAGE_ERROR_FORMAT_NOT_ALLOWED": 105,
+                                "IMAGE_ERROR_CONSTRAINTS_VIOLATED": 106,
+                                "IMAGE_ERROR_SERVER_ERROR": 107
                               }
                             }
                           }
@@ -11723,7 +11847,8 @@
                                 "UNEXPECTED_FROM_CLAUSE": 47,
                                 "UNRECOGNIZED_FIELD": 32,
                                 "UNEXPECTED_INPUT": 11,
-                                "REQUESTED_METRICS_FOR_MANAGER": 59
+                                "REQUESTED_METRICS_FOR_MANAGER": 59,
+                                "FILTER_HAS_TOO_MANY_VALUES": 63
                               }
                             }
                           }
@@ -14672,6 +14797,78 @@
                             }
                           }
                         },
+                        "CallView": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/CallView",
+                            "(google.api.resource).pattern": "customers/{customer_id}/callViews/{call_detail_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CallView"
+                              }
+                            },
+                            "caller_region_code": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "caller_area_code": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "call_duration_seconds": {
+                              "type": "int64",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "start_call_date_time": {
+                              "type": "string",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "end_call_date_time": {
+                              "type": "string",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "call_tracking_display_location": {
+                              "type": "google.ads.googleads.v6.enums.CallTrackingDisplayLocationEnum.CallTrackingDisplayLocation",
+                              "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "type": {
+                              "type": "google.ads.googleads.v6.enums.CallTypeEnum.CallType",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "call_status": {
+                              "type": "google.ads.googleads.v6.enums.GoogleVoiceCallStatusEnum.GoogleVoiceCallStatus",
+                              "id": 9,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
                         "Campaign": {
                           "options": {
                             "(google.api.resource).type": "googleads.googleapis.com/Campaign",
@@ -14976,14 +15173,6 @@
                                 }
                               }
                             },
-                            "LocalCampaignSetting": {
-                              "fields": {
-                                "location_source_type": {
-                                  "type": "google.ads.googleads.v6.enums.LocationSourceTypeEnum.LocationSourceType",
-                                  "id": 1
-                                }
-                              }
-                            },
                             "DynamicSearchAdsSetting": {
                               "fields": {
                                 "domain_name": {
@@ -15014,12 +15203,23 @@
                                 }
                               }
                             },
-                            "OptimizationGoalSetting": {
+                            "LocalCampaignSetting": {
                               "fields": {
-                                "optimization_goal_types": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v6.enums.OptimizationGoalTypeEnum.OptimizationGoalType",
+                                "location_source_type": {
+                                  "type": "google.ads.googleads.v6.enums.LocationSourceTypeEnum.LocationSourceType",
                                   "id": 1
+                                }
+                              }
+                            },
+                            "SelectiveOptimization": {
+                              "fields": {
+                                "conversion_actions": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionAction"
+                                  }
                                 }
                               }
                             },
@@ -15049,41 +15249,6 @@
                                 }
                               }
                             },
-                            "TrackingSetting": {
-                              "fields": {
-                                "tracking_url": {
-                                  "type": "string",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "SelectiveOptimization": {
-                              "fields": {
-                                "conversion_actions": {
-                                  "rule": "repeated",
-                                  "type": "string",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionAction"
-                                  }
-                                }
-                              }
-                            },
-                            "GeoTargetTypeSetting": {
-                              "fields": {
-                                "positive_geo_target_type": {
-                                  "type": "google.ads.googleads.v6.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType",
-                                  "id": 1
-                                },
-                                "negative_geo_target_type": {
-                                  "type": "google.ads.googleads.v6.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType",
-                                  "id": 2
-                                }
-                              }
-                            },
                             "AppCampaignSetting": {
                               "fields": {
                                 "bidding_strategy_goal_type": {
@@ -15103,6 +15268,38 @@
                                   "options": {
                                     "(google.api.field_behavior)": "IMMUTABLE"
                                   }
+                                }
+                              }
+                            },
+                            "TrackingSetting": {
+                              "fields": {
+                                "tracking_url": {
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "OptimizationGoalSetting": {
+                              "fields": {
+                                "optimization_goal_types": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v6.enums.OptimizationGoalTypeEnum.OptimizationGoalType",
+                                  "id": 1
+                                }
+                              }
+                            },
+                            "GeoTargetTypeSetting": {
+                              "fields": {
+                                "positive_geo_target_type": {
+                                  "type": "google.ads.googleads.v6.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType",
+                                  "id": 1
+                                },
+                                "negative_geo_target_type": {
+                                  "type": "google.ads.googleads.v6.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType",
+                                  "id": 2
                                 }
                               }
                             },
@@ -16145,6 +16342,22 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/AdGroup"
                               }
+                            },
+                            "feed": {
+                              "type": "string",
+                              "id": 13,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
+                              }
+                            },
+                            "feed_item": {
+                              "type": "string",
+                              "id": 14,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/FeedItem"
+                              }
                             }
                           },
                           "nested": {
@@ -16198,7 +16411,444 @@
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
+                                },
+                                "feed": {
+                                  "type": "Feed",
+                                  "id": 8,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "feed_item": {
+                                  "type": "FeedItem",
+                                  "id": 9,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "campaign_feed": {
+                                  "type": "CampaignFeed",
+                                  "id": 10,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "ad_group_feed": {
+                                  "type": "AdGroupFeed",
+                                  "id": 11,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "ad_group_ad": {
+                                  "type": "AdGroupAd",
+                                  "id": 12,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
                                 }
+                              }
+                            }
+                          }
+                        },
+                        "Feed": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/Feed",
+                            "(google.api.resource).pattern": "customers/{customer_id}/feeds/{feed_id}"
+                          },
+                          "oneofs": {
+                            "system_feed_generation_data": {
+                              "oneof": [
+                                "places_location_feed_data",
+                                "affiliate_location_feed_data"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
+                              }
+                            },
+                            "id": {
+                              "type": "int64",
+                              "id": 11,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "id": 12,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "attributes": {
+                              "rule": "repeated",
+                              "type": "FeedAttribute",
+                              "id": 4
+                            },
+                            "attribute_operations": {
+                              "rule": "repeated",
+                              "type": "FeedAttributeOperation",
+                              "id": 9
+                            },
+                            "origin": {
+                              "type": "google.ads.googleads.v6.enums.FeedOriginEnum.FeedOrigin",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v6.enums.FeedStatusEnum.FeedStatus",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "places_location_feed_data": {
+                              "type": "PlacesLocationFeedData",
+                              "id": 6
+                            },
+                            "affiliate_location_feed_data": {
+                              "type": "AffiliateLocationFeedData",
+                              "id": 7
+                            }
+                          },
+                          "nested": {
+                            "PlacesLocationFeedData": {
+                              "fields": {
+                                "oauth_info": {
+                                  "type": "OAuthInfo",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "IMMUTABLE"
+                                  }
+                                },
+                                "email_address": {
+                                  "type": "string",
+                                  "id": 7
+                                },
+                                "business_account_id": {
+                                  "type": "string",
+                                  "id": 8
+                                },
+                                "business_name_filter": {
+                                  "type": "string",
+                                  "id": 9
+                                },
+                                "category_filters": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 11
+                                },
+                                "label_filters": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 12
+                                }
+                              },
+                              "nested": {
+                                "OAuthInfo": {
+                                  "fields": {
+                                    "http_method": {
+                                      "type": "string",
+                                      "id": 4
+                                    },
+                                    "http_request_url": {
+                                      "type": "string",
+                                      "id": 5
+                                    },
+                                    "http_authorization_header": {
+                                      "type": "string",
+                                      "id": 6
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "AffiliateLocationFeedData": {
+                              "fields": {
+                                "chain_ids": {
+                                  "rule": "repeated",
+                                  "type": "int64",
+                                  "id": 3
+                                },
+                                "relationship_type": {
+                                  "type": "google.ads.googleads.v6.enums.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType",
+                                  "id": 2
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "FeedAttribute": {
+                          "fields": {
+                            "id": {
+                              "type": "int64",
+                              "id": 5
+                            },
+                            "name": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "type": {
+                              "type": "google.ads.googleads.v6.enums.FeedAttributeTypeEnum.FeedAttributeType",
+                              "id": 3
+                            },
+                            "is_part_of_key": {
+                              "type": "bool",
+                              "id": 7
+                            }
+                          }
+                        },
+                        "FeedAttributeOperation": {
+                          "fields": {
+                            "operator": {
+                              "type": "Operator",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "value": {
+                              "type": "FeedAttribute",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          },
+                          "nested": {
+                            "Operator": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ADD": 2
+                              }
+                            }
+                          }
+                        },
+                        "FeedItem": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/FeedItem",
+                            "(google.api.resource).pattern": "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/FeedItem"
+                              }
+                            },
+                            "feed": {
+                              "type": "string",
+                              "id": 11,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
+                              }
+                            },
+                            "id": {
+                              "type": "int64",
+                              "id": 12,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "start_date_time": {
+                              "type": "string",
+                              "id": 13
+                            },
+                            "end_date_time": {
+                              "type": "string",
+                              "id": 14
+                            },
+                            "attribute_values": {
+                              "rule": "repeated",
+                              "type": "FeedItemAttributeValue",
+                              "id": 6
+                            },
+                            "geo_targeting_restriction": {
+                              "type": "google.ads.googleads.v6.enums.GeoTargetingRestrictionEnum.GeoTargetingRestriction",
+                              "id": 7
+                            },
+                            "url_custom_parameters": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v6.common.CustomParameter",
+                              "id": 8
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v6.enums.FeedItemStatusEnum.FeedItemStatus",
+                              "id": 9,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "policy_infos": {
+                              "rule": "repeated",
+                              "type": "FeedItemPlaceholderPolicyInfo",
+                              "id": 10,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "FeedItemAttributeValue": {
+                          "fields": {
+                            "feed_attribute_id": {
+                              "type": "int64",
+                              "id": 11
+                            },
+                            "integer_value": {
+                              "type": "int64",
+                              "id": 12
+                            },
+                            "boolean_value": {
+                              "type": "bool",
+                              "id": 13
+                            },
+                            "string_value": {
+                              "type": "string",
+                              "id": 14
+                            },
+                            "double_value": {
+                              "type": "double",
+                              "id": 15
+                            },
+                            "price_value": {
+                              "type": "google.ads.googleads.v6.common.Money",
+                              "id": 6
+                            },
+                            "integer_values": {
+                              "rule": "repeated",
+                              "type": "int64",
+                              "id": 16
+                            },
+                            "boolean_values": {
+                              "rule": "repeated",
+                              "type": "bool",
+                              "id": 17
+                            },
+                            "string_values": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 18
+                            },
+                            "double_values": {
+                              "rule": "repeated",
+                              "type": "double",
+                              "id": 19
+                            }
+                          }
+                        },
+                        "FeedItemPlaceholderPolicyInfo": {
+                          "fields": {
+                            "placeholder_type_enum": {
+                              "type": "google.ads.googleads.v6.enums.PlaceholderTypeEnum.PlaceholderType",
+                              "id": 10,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "feed_mapping_resource_name": {
+                              "type": "string",
+                              "id": 11,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "review_status": {
+                              "type": "google.ads.googleads.v6.enums.PolicyReviewStatusEnum.PolicyReviewStatus",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "approval_status": {
+                              "type": "google.ads.googleads.v6.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "policy_topic_entries": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v6.common.PolicyTopicEntry",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "validation_status": {
+                              "type": "google.ads.googleads.v6.enums.FeedItemValidationStatusEnum.FeedItemValidationStatus",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "validation_errors": {
+                              "rule": "repeated",
+                              "type": "FeedItemValidationError",
+                              "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "quality_approval_status": {
+                              "type": "google.ads.googleads.v6.enums.FeedItemQualityApprovalStatusEnum.FeedItemQualityApprovalStatus",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "quality_disapproval_reasons": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v6.enums.FeedItemQualityDisapprovalReasonEnum.FeedItemQualityDisapprovalReason",
+                              "id": 9,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "FeedItemValidationError": {
+                          "fields": {
+                            "validation_error": {
+                              "type": "google.ads.googleads.v6.errors.FeedItemValidationErrorEnum.FeedItemValidationError",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "feed_attribute_ids": {
+                              "rule": "repeated",
+                              "type": "int64",
+                              "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "extra_info": {
+                              "type": "string",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
                             }
                           }
@@ -16476,7 +17126,8 @@
                               "type": "string",
                               "id": 23,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             },
                             "include_in_conversions_metric": {
@@ -16578,6 +17229,13 @@
                                 "event_name": {
                                   "type": "string",
                                   "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "provider_name": {
+                                  "type": "string",
+                                  "id": 3,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -16965,7 +17623,8 @@
                               "type": "string",
                               "id": 12,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             },
                             "hidden": {
@@ -17044,7 +17703,8 @@
                               "type": "string",
                               "id": 7,
                               "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE"
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             },
                             "manager_link_id": {
@@ -17157,14 +17817,16 @@
                               "type": "string",
                               "id": 4,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             },
                             "label": {
                               "type": "string",
                               "id": 5,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Label"
                               }
                             }
                           }
@@ -17187,7 +17849,8 @@
                               "type": "string",
                               "id": 6,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             },
                             "manager_link_id": {
@@ -17329,6 +17992,57 @@
                             "inviter_user_email_address": {
                               "type": "string",
                               "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "CustomerUserAccessInvitation": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/CustomerUserAccessInvitation",
+                            "(google.api.resource).pattern": "customers/{customer_id}/customerUserAccessInvitations/{invitation_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CustomerUserAccessInvitation"
+                              }
+                            },
+                            "invitation_id": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "access_role": {
+                              "type": "google.ads.googleads.v6.enums.AccessRoleEnum.AccessRole",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "email_address": {
+                              "type": "string",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "creation_date_time": {
+                              "type": "string",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "invitation_status": {
+                              "type": "google.ads.googleads.v6.enums.AccessInvitationStatusEnum.AccessInvitationStatus",
+                              "id": 6,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -17753,408 +18467,6 @@
                             }
                           }
                         },
-                        "Feed": {
-                          "options": {
-                            "(google.api.resource).type": "googleads.googleapis.com/Feed",
-                            "(google.api.resource).pattern": "customers/{customer_id}/feeds/{feed_id}"
-                          },
-                          "oneofs": {
-                            "system_feed_generation_data": {
-                              "oneof": [
-                                "places_location_feed_data",
-                                "affiliate_location_feed_data"
-                              ]
-                            }
-                          },
-                          "fields": {
-                            "resource_name": {
-                              "type": "string",
-                              "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE",
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
-                              }
-                            },
-                            "id": {
-                              "type": "int64",
-                              "id": 11,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "name": {
-                              "type": "string",
-                              "id": 12,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE"
-                              }
-                            },
-                            "attributes": {
-                              "rule": "repeated",
-                              "type": "FeedAttribute",
-                              "id": 4
-                            },
-                            "attribute_operations": {
-                              "rule": "repeated",
-                              "type": "FeedAttributeOperation",
-                              "id": 9
-                            },
-                            "origin": {
-                              "type": "google.ads.googleads.v6.enums.FeedOriginEnum.FeedOrigin",
-                              "id": 5,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE"
-                              }
-                            },
-                            "status": {
-                              "type": "google.ads.googleads.v6.enums.FeedStatusEnum.FeedStatus",
-                              "id": 8,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "places_location_feed_data": {
-                              "type": "PlacesLocationFeedData",
-                              "id": 6
-                            },
-                            "affiliate_location_feed_data": {
-                              "type": "AffiliateLocationFeedData",
-                              "id": 7
-                            }
-                          },
-                          "nested": {
-                            "PlacesLocationFeedData": {
-                              "fields": {
-                                "oauth_info": {
-                                  "type": "OAuthInfo",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "IMMUTABLE"
-                                  }
-                                },
-                                "email_address": {
-                                  "type": "string",
-                                  "id": 7
-                                },
-                                "business_account_id": {
-                                  "type": "string",
-                                  "id": 8
-                                },
-                                "business_name_filter": {
-                                  "type": "string",
-                                  "id": 9
-                                },
-                                "category_filters": {
-                                  "rule": "repeated",
-                                  "type": "string",
-                                  "id": 11
-                                },
-                                "label_filters": {
-                                  "rule": "repeated",
-                                  "type": "string",
-                                  "id": 12
-                                }
-                              },
-                              "nested": {
-                                "OAuthInfo": {
-                                  "fields": {
-                                    "http_method": {
-                                      "type": "string",
-                                      "id": 4
-                                    },
-                                    "http_request_url": {
-                                      "type": "string",
-                                      "id": 5
-                                    },
-                                    "http_authorization_header": {
-                                      "type": "string",
-                                      "id": 6
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "AffiliateLocationFeedData": {
-                              "fields": {
-                                "chain_ids": {
-                                  "rule": "repeated",
-                                  "type": "int64",
-                                  "id": 3
-                                },
-                                "relationship_type": {
-                                  "type": "google.ads.googleads.v6.enums.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType",
-                                  "id": 2
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "FeedAttribute": {
-                          "fields": {
-                            "id": {
-                              "type": "int64",
-                              "id": 5
-                            },
-                            "name": {
-                              "type": "string",
-                              "id": 6
-                            },
-                            "type": {
-                              "type": "google.ads.googleads.v6.enums.FeedAttributeTypeEnum.FeedAttributeType",
-                              "id": 3
-                            },
-                            "is_part_of_key": {
-                              "type": "bool",
-                              "id": 7
-                            }
-                          }
-                        },
-                        "FeedAttributeOperation": {
-                          "fields": {
-                            "operator": {
-                              "type": "Operator",
-                              "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "value": {
-                              "type": "FeedAttribute",
-                              "id": 2,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            }
-                          },
-                          "nested": {
-                            "Operator": {
-                              "values": {
-                                "UNSPECIFIED": 0,
-                                "UNKNOWN": 1,
-                                "ADD": 2
-                              }
-                            }
-                          }
-                        },
-                        "FeedItem": {
-                          "options": {
-                            "(google.api.resource).type": "googleads.googleapis.com/FeedItem",
-                            "(google.api.resource).pattern": "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}"
-                          },
-                          "fields": {
-                            "resource_name": {
-                              "type": "string",
-                              "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE",
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/FeedItem"
-                              }
-                            },
-                            "feed": {
-                              "type": "string",
-                              "id": 11,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE",
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
-                              }
-                            },
-                            "id": {
-                              "type": "int64",
-                              "id": 12,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "start_date_time": {
-                              "type": "string",
-                              "id": 13
-                            },
-                            "end_date_time": {
-                              "type": "string",
-                              "id": 14
-                            },
-                            "attribute_values": {
-                              "rule": "repeated",
-                              "type": "FeedItemAttributeValue",
-                              "id": 6
-                            },
-                            "geo_targeting_restriction": {
-                              "type": "google.ads.googleads.v6.enums.GeoTargetingRestrictionEnum.GeoTargetingRestriction",
-                              "id": 7
-                            },
-                            "url_custom_parameters": {
-                              "rule": "repeated",
-                              "type": "google.ads.googleads.v6.common.CustomParameter",
-                              "id": 8
-                            },
-                            "status": {
-                              "type": "google.ads.googleads.v6.enums.FeedItemStatusEnum.FeedItemStatus",
-                              "id": 9,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "policy_infos": {
-                              "rule": "repeated",
-                              "type": "FeedItemPlaceholderPolicyInfo",
-                              "id": 10,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            }
-                          }
-                        },
-                        "FeedItemAttributeValue": {
-                          "fields": {
-                            "feed_attribute_id": {
-                              "type": "int64",
-                              "id": 11
-                            },
-                            "integer_value": {
-                              "type": "int64",
-                              "id": 12
-                            },
-                            "boolean_value": {
-                              "type": "bool",
-                              "id": 13
-                            },
-                            "string_value": {
-                              "type": "string",
-                              "id": 14
-                            },
-                            "double_value": {
-                              "type": "double",
-                              "id": 15
-                            },
-                            "price_value": {
-                              "type": "google.ads.googleads.v6.common.Money",
-                              "id": 6
-                            },
-                            "integer_values": {
-                              "rule": "repeated",
-                              "type": "int64",
-                              "id": 16
-                            },
-                            "boolean_values": {
-                              "rule": "repeated",
-                              "type": "bool",
-                              "id": 17
-                            },
-                            "string_values": {
-                              "rule": "repeated",
-                              "type": "string",
-                              "id": 18
-                            },
-                            "double_values": {
-                              "rule": "repeated",
-                              "type": "double",
-                              "id": 19
-                            }
-                          }
-                        },
-                        "FeedItemPlaceholderPolicyInfo": {
-                          "fields": {
-                            "placeholder_type_enum": {
-                              "type": "google.ads.googleads.v6.enums.PlaceholderTypeEnum.PlaceholderType",
-                              "id": 10,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "feed_mapping_resource_name": {
-                              "type": "string",
-                              "id": 11,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "review_status": {
-                              "type": "google.ads.googleads.v6.enums.PolicyReviewStatusEnum.PolicyReviewStatus",
-                              "id": 3,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "approval_status": {
-                              "type": "google.ads.googleads.v6.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus",
-                              "id": 4,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "policy_topic_entries": {
-                              "rule": "repeated",
-                              "type": "google.ads.googleads.v6.common.PolicyTopicEntry",
-                              "id": 5,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "validation_status": {
-                              "type": "google.ads.googleads.v6.enums.FeedItemValidationStatusEnum.FeedItemValidationStatus",
-                              "id": 6,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "validation_errors": {
-                              "rule": "repeated",
-                              "type": "FeedItemValidationError",
-                              "id": 7,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "quality_approval_status": {
-                              "type": "google.ads.googleads.v6.enums.FeedItemQualityApprovalStatusEnum.FeedItemQualityApprovalStatus",
-                              "id": 8,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "quality_disapproval_reasons": {
-                              "rule": "repeated",
-                              "type": "google.ads.googleads.v6.enums.FeedItemQualityDisapprovalReasonEnum.FeedItemQualityDisapprovalReason",
-                              "id": 9,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            }
-                          }
-                        },
-                        "FeedItemValidationError": {
-                          "fields": {
-                            "validation_error": {
-                              "type": "google.ads.googleads.v6.errors.FeedItemValidationErrorEnum.FeedItemValidationError",
-                              "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "description": {
-                              "type": "string",
-                              "id": 6,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "feed_attribute_ids": {
-                              "rule": "repeated",
-                              "type": "int64",
-                              "id": 7,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            },
-                            "extra_info": {
-                              "type": "string",
-                              "id": 8,
-                              "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
-                              }
-                            }
-                          }
-                        },
                         "FeedItemSet": {
                           "options": {
                             "(google.api.resource).type": "googleads.googleapis.com/FeedItemSet",
@@ -18432,7 +18744,8 @@
                                 "real_estate_field",
                                 "travel_field",
                                 "local_field",
-                                "job_field"
+                                "job_field",
+                                "image_field"
                               ]
                             }
                           },
@@ -18594,6 +18907,13 @@
                             "job_field": {
                               "type": "google.ads.googleads.v6.enums.JobPlaceholderFieldEnum.JobPlaceholderField",
                               "id": 23,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "image_field": {
+                              "type": "google.ads.googleads.v6.enums.ImagePlaceholderFieldEnum.ImagePlaceholderField",
+                              "id": 26,
                               "options": {
                                 "(google.api.field_behavior)": "IMMUTABLE"
                               }
@@ -20095,7 +20415,8 @@
                               "type": "string",
                               "id": 13,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
                               }
                             }
                           }
@@ -20205,7 +20526,8 @@
                                 "call_extension_recommendation",
                                 "keyword_match_type_recommendation",
                                 "move_unused_budget_recommendation",
-                                "target_roas_opt_in_recommendation"
+                                "target_roas_opt_in_recommendation",
+                                "responsive_search_ad_recommendation"
                               ]
                             }
                           },
@@ -20374,6 +20696,13 @@
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
+                            },
+                            "responsive_search_ad_recommendation": {
+                              "type": "ResponsiveSearchAdRecommendation",
+                              "id": 28,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
                             }
                           },
                           "nested": {
@@ -20498,21 +20827,6 @@
                                 }
                               }
                             },
-                            "EnhancedCpcOptInRecommendation": {
-                              "fields": {}
-                            },
-                            "CallExtensionRecommendation": {
-                              "fields": {
-                                "recommended_extensions": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v6.common.CallFeedItem",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
                             "TextAdRecommendation": {
                               "fields": {
                                 "ad": {
@@ -20538,18 +20852,11 @@
                                 }
                               }
                             },
-                            "KeywordMatchTypeRecommendation": {
+                            "ResponsiveSearchAdRecommendation": {
                               "fields": {
-                                "keyword": {
-                                  "type": "google.ads.googleads.v6.common.KeywordInfo",
+                                "ad": {
+                                  "type": "Ad",
                                   "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                },
-                                "recommended_match_type": {
-                                  "type": "google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType",
-                                  "id": 2,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -20620,41 +20927,6 @@
                                 }
                               }
                             },
-                            "SearchPartnersOptInRecommendation": {
-                              "fields": {}
-                            },
-                            "TargetRoasOptInRecommendation": {
-                              "fields": {
-                                "recommended_target_roas": {
-                                  "type": "double",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                },
-                                "required_campaign_budget_amount_micros": {
-                                  "type": "int64",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "MaximizeClicksOptInRecommendation": {
-                              "fields": {
-                                "recommended_budget_amount_micros": {
-                                  "type": "int64",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "OptimizeAdRotationRecommendation": {
-                              "fields": {}
-                            },
                             "CalloutExtensionRecommendation": {
                               "fields": {
                                 "recommended_extensions": {
@@ -20667,12 +20939,17 @@
                                 }
                               }
                             },
-                            "SitelinkExtensionRecommendation": {
+                            "EnhancedCpcOptInRecommendation": {
+                              "fields": {}
+                            },
+                            "SearchPartnersOptInRecommendation": {
+                              "fields": {}
+                            },
+                            "MaximizeClicksOptInRecommendation": {
                               "fields": {
-                                "recommended_extensions": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v6.common.SitelinkFeedItem",
-                                  "id": 1,
+                                "recommended_budget_amount_micros": {
+                                  "type": "int64",
+                                  "id": 2,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -20690,6 +20967,69 @@
                                 },
                                 "budget_recommendation": {
                                   "type": "CampaignBudgetRecommendation",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "OptimizeAdRotationRecommendation": {
+                              "fields": {}
+                            },
+                            "SitelinkExtensionRecommendation": {
+                              "fields": {
+                                "recommended_extensions": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v6.common.SitelinkFeedItem",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "KeywordMatchTypeRecommendation": {
+                              "fields": {
+                                "keyword": {
+                                  "type": "google.ads.googleads.v6.common.KeywordInfo",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "recommended_match_type": {
+                                  "type": "google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "CallExtensionRecommendation": {
+                              "fields": {
+                                "recommended_extensions": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v6.common.CallFeedItem",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "TargetRoasOptInRecommendation": {
+                              "fields": {
+                                "recommended_target_roas": {
+                                  "type": "double",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "required_campaign_budget_amount_micros": {
+                                  "type": "int64",
                                   "id": 2,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
@@ -22545,6 +22885,10 @@
                               "type": "google.protobuf.FieldMask",
                               "id": 4
                             },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
+                            },
                             "create": {
                               "type": "google.ads.googleads.v6.resources.AdGroupExtensionSetting",
                               "id": 1
@@ -22577,6 +22921,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "ad_group_extension_setting": {
+                              "type": "google.ads.googleads.v6.resources.AdGroupExtensionSetting",
+                              "id": 2
                             }
                           }
                         },
@@ -23112,6 +23460,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -23162,6 +23514,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "ad_parameter": {
+                              "type": "google.ads.googleads.v6.resources.AdParameter",
+                              "id": 2
                             }
                           }
                         },
@@ -23296,6 +23652,10 @@
                             "update_mask": {
                               "type": "google.protobuf.FieldMask",
                               "id": 2
+                            },
+                            "policy_validation_parameter": {
+                              "type": "google.ads.googleads.v6.common.PolicyValidationParameter",
+                              "id": 3
                             },
                             "update": {
                               "type": "google.ads.googleads.v6.resources.Ad",
@@ -24030,6 +24390,10 @@
                               "type": "google.ads.googleads.v6.resources.BillingSetup",
                               "id": 41
                             },
+                            "call_view": {
+                              "type": "google.ads.googleads.v6.resources.CallView",
+                              "id": 152
+                            },
                             "campaign_budget": {
                               "type": "google.ads.googleads.v6.resources.CampaignBudget",
                               "id": 19
@@ -24153,6 +24517,10 @@
                             "customer_user_access": {
                               "type": "google.ads.googleads.v6.resources.CustomerUserAccess",
                               "id": 146
+                            },
+                            "customer_user_access_invitation": {
+                              "type": "google.ads.googleads.v6.resources.CustomerUserAccessInvitation",
+                              "id": 150
                             },
                             "detail_placement_view": {
                               "type": "google.ads.googleads.v6.resources.DetailPlacementView",
@@ -25263,6 +25631,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -25313,6 +25685,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "campaign_bid_modifier": {
+                              "type": "google.ads.googleads.v6.resources.CampaignBidModifier",
+                              "id": 2
                             }
                           }
                         },
@@ -26827,6 +27203,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -26868,6 +27248,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "campaign_shared_set": {
+                              "type": "google.ads.googleads.v6.resources.CampaignSharedSet",
+                              "id": 2
                             }
                           }
                         },
@@ -27492,6 +27876,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -27533,6 +27921,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "customer_negative_criterion": {
+                              "type": "google.ads.googleads.v6.resources.CustomerNegativeCriterion",
+                              "id": 2
                             }
                           }
                         },
@@ -28479,6 +28871,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -28520,6 +28916,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "feed_mapping": {
+                              "type": "google.ads.googleads.v6.resources.FeedMapping",
+                              "id": 2
                             }
                           }
                         },
@@ -30149,6 +30549,10 @@
                             "validate_only": {
                               "type": "bool",
                               "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
                             }
                           }
                         },
@@ -30190,6 +30594,10 @@
                             "resource_name": {
                               "type": "string",
                               "id": 1
+                            },
+                            "shared_criterion": {
+                              "type": "google.ads.googleads.v6.resources.SharedCriterion",
+                              "id": 2
                             }
                           }
                         },
@@ -31816,6 +32224,118 @@
                           }
                         },
                         "MutateCustomerManagerLinkResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "CustomerUserAccessInvitationService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "GetCustomerUserAccessInvitation": {
+                              "requestType": "GetCustomerUserAccessInvitationRequest",
+                              "responseType": "google.ads.googleads.v6.resources.CustomerUserAccessInvitation",
+                              "options": {
+                                "(google.api.http).get": "/v6/{resource_name=customers/*/customerUserAccessInvitations/*}",
+                                "(google.api.method_signature)": "resource_name"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "get": "/v6/{resource_name=customers/*/customerUserAccessInvitations/*}"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "resource_name"
+                                }
+                              ]
+                            },
+                            "MutateCustomerUserAccessInvitation": {
+                              "requestType": "MutateCustomerUserAccessInvitationRequest",
+                              "responseType": "MutateCustomerUserAccessInvitationResponse",
+                              "options": {
+                                "(google.api.http).post": "/v6/customers/{customer_id=*}/customerUserAccessInvitations:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operation"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v6/customers/{customer_id=*}/customerUserAccessInvitations:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operation"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "GetCustomerUserAccessInvitationRequest": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CustomerUserAccessInvitation"
+                              }
+                            }
+                          }
+                        },
+                        "MutateCustomerUserAccessInvitationRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operation": {
+                              "type": "CustomerUserAccessInvitationOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
+                        "CustomerUserAccessInvitationOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "create": {
+                              "type": "google.ads.googleads.v6.resources.CustomerUserAccessInvitation",
+                              "id": 1
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "MutateCustomerUserAccessInvitationResponse": {
+                          "fields": {
+                            "result": {
+                              "type": "MutateCustomerUserAccessInvitationResult",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "MutateCustomerUserAccessInvitationResult": {
                           "fields": {
                             "resource_name": {
                               "type": "string",
@@ -34319,7 +34839,8 @@
                                 "callout_extension",
                                 "call_extension",
                                 "sitelink_extension",
-                                "move_unused_budget"
+                                "move_unused_budget",
+                                "responsive_search_ad"
                               ]
                             }
                           },
@@ -34363,6 +34884,10 @@
                             "move_unused_budget": {
                               "type": "MoveUnusedBudgetParameters",
                               "id": 9
+                            },
+                            "responsive_search_ad": {
+                              "type": "ResponsiveSearchAdParameters",
+                              "id": 11
                             }
                           },
                           "nested": {
@@ -34454,6 +34979,17 @@
                                 "budget_micros_to_move": {
                                   "type": "int64",
                                   "id": 2
+                                }
+                              }
+                            },
+                            "ResponsiveSearchAdParameters": {
+                              "fields": {
+                                "ad": {
+                                  "type": "google.ads.googleads.v6.resources.Ad",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "REQUIRED"
+                                  }
                                 }
                               }
                             }

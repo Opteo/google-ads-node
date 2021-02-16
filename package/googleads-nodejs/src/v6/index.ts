@@ -70,6 +70,7 @@ export {CustomerLabelServiceClient} from './customer_label_service_client';
 export {CustomerManagerLinkServiceClient} from './customer_manager_link_service_client';
 export {CustomerNegativeCriterionServiceClient} from './customer_negative_criterion_service_client';
 export {CustomerServiceClient} from './customer_service_client';
+export {CustomerUserAccessInvitationServiceClient} from './customer_user_access_invitation_service_client';
 export {CustomerUserAccessServiceClient} from './customer_user_access_service_client';
 export {CustomInterestServiceClient} from './custom_interest_service_client';
 export {DetailPlacementViewServiceClient} from './detail_placement_view_service_client';

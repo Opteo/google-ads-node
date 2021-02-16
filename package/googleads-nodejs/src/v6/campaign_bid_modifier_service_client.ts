@@ -223,6 +223,9 @@ export class CampaignBidModifierServiceClient {
       billingSetupPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/billingSetups/{billing_setup_id}'
       ),
+      callViewPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/callViews/{call_detail_id}'
+      ),
       campaignPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaigns/{campaign_id}'
       ),
@@ -315,6 +318,9 @@ export class CampaignBidModifierServiceClient {
       ),
       customerUserAccessPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/customerUserAccesses/{user_id}'
+      ),
+      customerUserAccessInvitationPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/customerUserAccessInvitations/{invitation_id}'
       ),
       detailPlacementViewPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/detailPlacementViews/{ad_group_id}~{base64_placement}'
@@ -723,6 +729,9 @@ export class CampaignBidModifierServiceClient {
  * @param {boolean} request.validateOnly
  *   If true, the request is validated but not executed. Only errors are
  *   returned, not results.
+ * @param {google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType} request.responseContentType
+ *   The response content type setting. Determines whether the mutable resource
+ *   or just the resource name should be returned post mutation.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1985,6 +1994,42 @@ export class CampaignBidModifierServiceClient {
    */
   matchBillingSetupIdFromBillingSetupName(billingSetupName: string) {
     return this.pathTemplates.billingSetupPathTemplate.match(billingSetupName).billing_setup_id;
+  }
+
+  /**
+   * Return a fully-qualified callView resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} call_detail_id
+   * @returns {string} Resource name string.
+   */
+  callViewPath(customerId:string,callDetailId:string) {
+    return this.pathTemplates.callViewPathTemplate.render({
+      customer_id: customerId,
+      call_detail_id: callDetailId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from CallView resource.
+   *
+   * @param {string} callViewName
+   *   A fully-qualified path representing CallView resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromCallViewName(callViewName: string) {
+    return this.pathTemplates.callViewPathTemplate.match(callViewName).customer_id;
+  }
+
+  /**
+   * Parse the call_detail_id from CallView resource.
+   *
+   * @param {string} callViewName
+   *   A fully-qualified path representing CallView resource.
+   * @returns {string} A string representing the call_detail_id.
+   */
+  matchCallDetailIdFromCallViewName(callViewName: string) {
+    return this.pathTemplates.callViewPathTemplate.match(callViewName).call_detail_id;
   }
 
   /**
@@ -3322,6 +3367,42 @@ export class CampaignBidModifierServiceClient {
    */
   matchUserIdFromCustomerUserAccessName(customerUserAccessName: string) {
     return this.pathTemplates.customerUserAccessPathTemplate.match(customerUserAccessName).user_id;
+  }
+
+  /**
+   * Return a fully-qualified customerUserAccessInvitation resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} invitation_id
+   * @returns {string} Resource name string.
+   */
+  customerUserAccessInvitationPath(customerId:string,invitationId:string) {
+    return this.pathTemplates.customerUserAccessInvitationPathTemplate.render({
+      customer_id: customerId,
+      invitation_id: invitationId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from CustomerUserAccessInvitation resource.
+   *
+   * @param {string} customerUserAccessInvitationName
+   *   A fully-qualified path representing CustomerUserAccessInvitation resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromCustomerUserAccessInvitationName(customerUserAccessInvitationName: string) {
+    return this.pathTemplates.customerUserAccessInvitationPathTemplate.match(customerUserAccessInvitationName).customer_id;
+  }
+
+  /**
+   * Parse the invitation_id from CustomerUserAccessInvitation resource.
+   *
+   * @param {string} customerUserAccessInvitationName
+   *   A fully-qualified path representing CustomerUserAccessInvitation resource.
+   * @returns {string} A string representing the invitation_id.
+   */
+  matchInvitationIdFromCustomerUserAccessInvitationName(customerUserAccessInvitationName: string) {
+    return this.pathTemplates.customerUserAccessInvitationPathTemplate.match(customerUserAccessInvitationName).invitation_id;
   }
 
   /**
