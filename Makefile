@@ -17,6 +17,7 @@ copy:
 
 build:
 	docker build \
+		--no-cache \
 		--build-arg GOOGLE_ADS_VERSION=${GOOGLE_ADS_VERSION} \
 		-t opteo/google-ads-temp .
 

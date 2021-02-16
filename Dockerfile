@@ -7,6 +7,7 @@ ENV BAZEL_VERSION=4.0.0
 ARG GOOGLE_ADS_VERSION
 
 # Install dependencies
+RUN apt update --allow-releaseinfo-change
 RUN apt-get update -y
 RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python -y
 RUN apt-get install \
