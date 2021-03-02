@@ -1,32 +1,55 @@
-# Remember to upgrade the tag after pushing a new image
-FROM opteo/protoc-all:1.29_2
+ARG GOOGLE_ADS_VERSION
 
-RUN apk update && apk add bash git nodejs nodejs-npm
+# Build stage for compiling the protocol buffers using bazel
+FROM golang:latest AS protos
 
-WORKDIR /usr/local/gads/
+ENV BAZEL_VERSION=4.0.0
+ARG GOOGLE_ADS_VERSION
 
-# Override entry CMD so we can run a custom script
-ENTRYPOINT [""]
+# Install dependencies
+RUN apt update --allow-releaseinfo-change
+RUN apt-get update -y
+RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python -y
+RUN apt-get install \
+    python3 \
+    python3-distutils \
+    python3-apt -y
 
-RUN apk update && apk add --no-cache libc6-compat
-RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2
+# Download Bazel
+RUN go get github.com/bazelbuild/bazelisk
 
-# Install Node dependencies
-RUN npm install -g ts-protoc-gen \
-    grpc-ts-protoc-gen \ 
-    grpc-tools \
-    protobufjs \
-    uglify-js \
-    prettier
+# Clone the googleapis repo
+RUN git clone https://github.com/googleapis/googleapis.git
 
-# Install local Node dependencies
-COPY ./package.json ./package.json
-RUN npm install
+WORKDIR /go/googleapis
 
-# Copy compile scripts
-COPY ./scripts ./scripts
-COPY ./.prettierrc.js ./.prettierrc.js
+# Compile protocol buffers
+RUN bazelisk build //google/ads/googleads/${GOOGLE_ADS_VERSION}:googleads-nodejs
 
-RUN chmod a+x ./scripts/compile.sh
+# Build stage for extracting the compiled nodejs gapic client and performing any custom changes
+FROM node:latest
 
-CMD sh ./scripts/compile.sh
+ARG GOOGLE_ADS_VERSION
+
+RUN mkdir /package
+
+WORKDIR /package
+
+COPY --from=protos /go/googleapis/bazel-bin/google/ads/googleads/${GOOGLE_ADS_VERSION}/googleads-nodejs.tar.gz /package
+
+RUN tar -xvzf googleads-nodejs.tar.gz -C .
+
+RUN cd googleads-nodejs && \
+    npm uninstall google-gax && \
+    npm install opteo/gax-nodejs && \
+    rm -rf test/ system-test/
+
+# horrible hack but no easy way to resolve this
+# requires preventing request parameters being compiled to snakeCase
+# in this dependency: https://github.com/googleapis/gapic-generator-typescript/blob/master/templates/typescript_gapic/src/%24version/%24service_client.ts.njk
+# i will personally buy a beer to whoever can solve this, good luck.
+RUN sed -i 's/request.resourceName/request.resource_name/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/request.keywordPlan/request.keyword_plan/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/request.campaignExperiment/request.campaign_experiment/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/request.campaignDraft/request.campaign_draft/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts

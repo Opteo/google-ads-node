@@ -1,59 +1,27 @@
 # Google Ads API version
-ADS_VERSION=v4
-PROTO_ROOT_DIR=googleapis/
+# This only needs changing for major versions e.g. v6 -> v7
+GOOGLE_ADS_VERSION=v6
 
-DOCKER_IMAGE=opteo/google-ads-node
-DOCKER_CONTAINER=gads-node-temp
+BUNDLE=googleads-nodejs.tar.gz
+PACKAGE_BUILD=/package/googleads-nodejs
+PACKAGE_OUT=${PWD}/package/
 
-protos: docker-build docker-run clean copy-ts-files copy-protos docker-kill-container fields
+protos: clean build copy
 
-# If you want to inspect all content from the container, use this command
-debug-protos: docker-build docker-run copy-all
+copy:
+	docker create --name gads opteo/google-ads-temp
+	docker cp gads:${PACKAGE_BUILD} ${PACKAGE_OUT}
+	docker rm gads
+	chmod 700 ${PACKAGE_OUT}
+	@echo "Bazel compiled protos output at ${PACKAGE_OUT}"
 
-docker-build:
-	docker build . -t $(DOCKER_IMAGE)
-
-docker-run:
-	docker rm -f $(DOCKER_CONTAINER) || true
-	docker run \
-		--name $(DOCKER_CONTAINER) \
-		-e GOOGLE_ADS_VERSION=$(ADS_VERSION) \
-		$(DOCKER_IMAGE)
-
-docker-kill-container:
-	docker rm -f $(DOCKER_CONTAINER)
+build:
+	docker build \
+		--no-cache \
+		--build-arg GOOGLE_ADS_VERSION=${GOOGLE_ADS_VERSION} \
+		-t opteo/google-ads-temp .
 
 clean:
-	rm -rf ./src/protos
-	mkdir -p ./src/protos
+	rm -rf bazel && mkdir bazel
 
-copy-ts-files:
-	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-ts-files ./src/lib/
-	mv ./src/lib/compiled-ts-files/* ./src/lib/
-	rm -rf ./src/lib/compiled-ts-files/
-
-copy-protos:
-	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-protos/ ./src/protos
-	docker cp $(DOCKER_CONTAINER):/usr/local/gads/compiled-resources.js ./src/protos/compiled-resources.js
-	mv ./src/protos/compiled-protos/* ./src/protos/
-	rm -rf ./src/protos/compiled-protos/
-
-copy-all:
-	docker cp $(DOCKER_CONTAINER):/usr/local/gads .
-
-fields:
-	yarn build
-	node ./scripts/generate-fields.js
-	prettier --write ./src/lib/fields.ts
-
-# TODO: Handle this inside scripts/compile.sh (low priority)
-api-diff:
-	# Make sure to specify the previous version here
-	rm -rf diff/ && mkdir diff/
-	# Previous version
-	cd $(PROTO_ROOT_DIR)google/ads/googleads/v3/ && ls **/*.proto > ../../../../../diff/prev-protos.txt
-	# Current version
-	cd $(PROTO_ROOT_DIR)google/ads/googleads/$(ADS_VERSION)/ && ls **/*.proto > ../../../../../diff/current-protos.txt
-	echo "Generated API version diffs"
-
-.PHONY: protos debug-protos
+.PHONY: protos clean build copy
