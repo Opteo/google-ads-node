@@ -9,10 +9,10 @@ assert(typeof GoogleAdsServiceClient !== "undefined");
 
 const name = "Planet Express";
 const searchChannel =
-  protos.google.ads.googleads.v6.enums.AdvertisingChannelTypeEnum
+  protos.google.ads.googleads.v7.enums.AdvertisingChannelTypeEnum
     .AdvertisingChannelType.SEARCH;
 
-const campaign = protos.google.ads.googleads.v6.resources.Campaign.fromObject({
+const campaign = protos.google.ads.googleads.v7.resources.Campaign.fromObject({
   name,
   advertising_channel_type: searchChannel,
 });
@@ -31,7 +31,7 @@ assert("search" in client);
 // Check longs are not used (number type instead)
 // const {
 //   metrics,
-// } = protos.google.ads.googleads.v6.services.GoogleAdsRow.fromObject({
+// } = protos.google.ads.googleads.v7.services.GoogleAdsRow.fromObject({
 //   metrics: {
 //     clicks: "123",
 //   },
