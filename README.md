@@ -45,4 +45,13 @@ _Documentation for this will be released soon_
 
 ## Upgrading API Versions
 
-_Documentation for this will be released soon._
+1. Fetch the latest changes in https://github.com/Opteo/gax-nodejs.
+2. Update the google-gax dependency to the latest version in `package.json`.
+3. Update `GOOGLE_ADS_VERSION` in the Makefile to the latest version.
+4. Run `yarn install` to get the latest google gax protos.
+5. Run `make protos` to compile the protos.
+6. Run `yarn prepare`.
+7. Run `yarn test` to make sure everything worked.
+8. Double check that any files that should have been updated have been.
+9. Make a pull request, get it approved and merged into `master`.
+10. Publish to npm.
