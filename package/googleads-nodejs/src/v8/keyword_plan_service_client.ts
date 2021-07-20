@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class KeywordPlanServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class KeywordPlanServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   keywordPlanServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class KeywordPlanServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof KeywordPlanServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class KeywordPlanServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class KeywordPlanServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.KeywordPlanService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.KeywordPlanService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class KeywordPlanServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlan(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IKeywordPlan,
@@ -698,7 +704,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.getKeywordPlan(request);
  */
   getKeywordPlan(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IKeywordPlan,
           protos.google.ads.googleads.v8.services.IGetKeywordPlanRequest|null|undefined,
@@ -732,7 +738,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.getKeywordPlan(request, options, callback);
   }
   mutateKeywordPlans(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlansRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlansRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateKeywordPlansResponse,
@@ -795,7 +801,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.mutateKeywordPlans(request);
  */
   mutateKeywordPlans(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlansRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlansRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateKeywordPlansResponse,
           protos.google.ads.googleads.v8.services.IMutateKeywordPlansRequest|null|undefined,
@@ -829,7 +835,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.mutateKeywordPlans(request, options, callback);
   }
   generateForecastCurve(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastCurveRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastCurveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateForecastCurveResponse,
@@ -880,7 +886,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastCurve(request);
  */
   generateForecastCurve(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastCurveRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastCurveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateForecastCurveResponse,
           protos.google.ads.googleads.v8.services.IGenerateForecastCurveRequest|null|undefined,
@@ -914,7 +920,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastCurve(request, options, callback);
   }
   generateForecastTimeSeries(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesResponse,
@@ -966,7 +972,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastTimeSeries(request);
  */
   generateForecastTimeSeries(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesResponse,
           protos.google.ads.googleads.v8.services.IGenerateForecastTimeSeriesRequest|null|undefined,
@@ -1000,7 +1006,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastTimeSeries(request, options, callback);
   }
   generateForecastMetrics(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastMetricsRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastMetricsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateForecastMetricsResponse,
@@ -1046,7 +1052,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastMetrics(request);
  */
   generateForecastMetrics(
-      request: protos.google.ads.googleads.v8.services.IGenerateForecastMetricsRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateForecastMetricsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateForecastMetricsResponse,
           protos.google.ads.googleads.v8.services.IGenerateForecastMetricsRequest|null|undefined,
@@ -1080,7 +1086,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastMetrics(request, options, callback);
   }
   generateHistoricalMetrics(
-      request: protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsResponse,
@@ -1131,7 +1137,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateHistoricalMetrics(request);
  */
   generateHistoricalMetrics(
-      request: protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsResponse,
           protos.google.ads.googleads.v8.services.IGenerateHistoricalMetricsRequest|null|undefined,

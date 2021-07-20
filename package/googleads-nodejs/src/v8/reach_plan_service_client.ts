@@ -43,6 +43,7 @@ const version = require('../../../package.json').version;
 export class ReachPlanServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -54,6 +55,7 @@ export class ReachPlanServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   reachPlanServiceStub?: Promise<{[name: string]: Function}>;
@@ -96,6 +98,7 @@ export class ReachPlanServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof ReachPlanServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -543,6 +546,9 @@ export class ReachPlanServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -569,7 +575,7 @@ export class ReachPlanServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.ReachPlanService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.ReachPlanService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -657,7 +663,7 @@ export class ReachPlanServiceClient {
   // -- Service calls --
   // -------------------
   listPlannableLocations(
-      request: protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IListPlannableLocationsResponse,
@@ -700,7 +706,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.listPlannableLocations(request);
  */
   listPlannableLocations(
-      request: protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IListPlannableLocationsResponse,
           protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest|null|undefined,
@@ -727,7 +733,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.listPlannableLocations(request, options, callback);
   }
   listPlannableProducts(
-      request: protos.google.ads.googleads.v8.services.IListPlannableProductsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListPlannableProductsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IListPlannableProductsResponse,
@@ -774,7 +780,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.listPlannableProducts(request);
  */
   listPlannableProducts(
-      request: protos.google.ads.googleads.v8.services.IListPlannableProductsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListPlannableProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IListPlannableProductsResponse,
           protos.google.ads.googleads.v8.services.IListPlannableProductsRequest|null|undefined,
@@ -801,7 +807,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.listPlannableProducts(request, options, callback);
   }
   generateProductMixIdeas(
-      request: protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasResponse,
@@ -862,7 +868,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.generateProductMixIdeas(request);
  */
   generateProductMixIdeas(
-      request: protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasResponse,
           protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest|null|undefined,
@@ -896,7 +902,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.generateProductMixIdeas(request, options, callback);
   }
   generateReachForecast(
-      request: protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IGenerateReachForecastResponse,
@@ -981,7 +987,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.generateReachForecast(request);
  */
   generateReachForecast(
-      request: protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest,
+      request?: protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IGenerateReachForecastResponse,
           protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest|null|undefined,

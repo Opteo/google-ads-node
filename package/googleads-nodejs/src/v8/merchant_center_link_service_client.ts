@@ -40,6 +40,7 @@ const version = require('../../../package.json').version;
 export class MerchantCenterLinkServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -51,6 +52,7 @@ export class MerchantCenterLinkServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   merchantCenterLinkServiceStub?: Promise<{[name: string]: Function}>;
@@ -93,6 +95,7 @@ export class MerchantCenterLinkServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof MerchantCenterLinkServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -540,6 +543,9 @@ export class MerchantCenterLinkServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -566,7 +572,7 @@ export class MerchantCenterLinkServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.MerchantCenterLinkService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.MerchantCenterLinkService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -654,7 +660,7 @@ export class MerchantCenterLinkServiceClient {
   // -- Service calls --
   // -------------------
   listMerchantCenterLinks(
-      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
+      request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
@@ -700,7 +706,7 @@ export class MerchantCenterLinkServiceClient {
  * const [response] = await client.listMerchantCenterLinks(request);
  */
   listMerchantCenterLinks(
-      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
+      request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
           protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|null|undefined,
@@ -734,7 +740,7 @@ export class MerchantCenterLinkServiceClient {
     return this.innerApiCalls.listMerchantCenterLinks(request, options, callback);
   }
   getMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
@@ -779,7 +785,7 @@ export class MerchantCenterLinkServiceClient {
  * const [response] = await client.getMerchantCenterLink(request);
  */
   getMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
           protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|null|undefined,
@@ -813,7 +819,7 @@ export class MerchantCenterLinkServiceClient {
     return this.innerApiCalls.getMerchantCenterLink(request, options, callback);
   }
   mutateMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
@@ -864,7 +870,7 @@ export class MerchantCenterLinkServiceClient {
  * const [response] = await client.mutateMerchantCenterLink(request);
  */
   mutateMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
           protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|null|undefined,

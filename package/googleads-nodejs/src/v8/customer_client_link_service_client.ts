@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class CustomerClientLinkServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class CustomerClientLinkServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   customerClientLinkServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class CustomerClientLinkServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CustomerClientLinkServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class CustomerClientLinkServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class CustomerClientLinkServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CustomerClientLinkService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CustomerClientLinkService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class CustomerClientLinkServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerClientLink(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerClientLink,
@@ -698,7 +704,7 @@ export class CustomerClientLinkServiceClient {
  * const [response] = await client.getCustomerClientLink(request);
  */
   getCustomerClientLink(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerClientLink,
           protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest|null|undefined,
@@ -732,7 +738,7 @@ export class CustomerClientLinkServiceClient {
     return this.innerApiCalls.getCustomerClientLink(request, options, callback);
   }
   mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkResponse,
@@ -788,7 +794,7 @@ export class CustomerClientLinkServiceClient {
  * const [response] = await client.mutateCustomerClientLink(request);
  */
   mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest|null|undefined,

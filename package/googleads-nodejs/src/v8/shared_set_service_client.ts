@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class SharedSetServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class SharedSetServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   sharedSetServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class SharedSetServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof SharedSetServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class SharedSetServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class SharedSetServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.SharedSetService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.SharedSetService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class SharedSetServiceClient {
   // -- Service calls --
   // -------------------
   getSharedSet(
-      request: protos.google.ads.googleads.v8.services.IGetSharedSetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSharedSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ISharedSet,
@@ -698,7 +704,7 @@ export class SharedSetServiceClient {
  * const [response] = await client.getSharedSet(request);
  */
   getSharedSet(
-      request: protos.google.ads.googleads.v8.services.IGetSharedSetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSharedSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ISharedSet,
           protos.google.ads.googleads.v8.services.IGetSharedSetRequest|null|undefined,
@@ -732,7 +738,7 @@ export class SharedSetServiceClient {
     return this.innerApiCalls.getSharedSet(request, options, callback);
   }
   mutateSharedSets(
-      request: protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateSharedSetsResponse,
@@ -807,7 +813,7 @@ export class SharedSetServiceClient {
  * const [response] = await client.mutateSharedSets(request);
  */
   mutateSharedSets(
-      request: protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateSharedSetsResponse,
           protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest|null|undefined,

@@ -40,6 +40,7 @@ const version = require('../../../package.json').version;
 export class AccountLinkServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -51,6 +52,7 @@ export class AccountLinkServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   accountLinkServiceStub?: Promise<{[name: string]: Function}>;
@@ -93,6 +95,7 @@ export class AccountLinkServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof AccountLinkServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -540,6 +543,9 @@ export class AccountLinkServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -566,7 +572,7 @@ export class AccountLinkServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.AccountLinkService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.AccountLinkService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -654,7 +660,7 @@ export class AccountLinkServiceClient {
   // -- Service calls --
   // -------------------
   getAccountLink(
-      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAccountLink,
@@ -699,7 +705,7 @@ export class AccountLinkServiceClient {
  * const [response] = await client.getAccountLink(request);
  */
   getAccountLink(
-      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAccountLink,
           protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|null|undefined,
@@ -733,7 +739,7 @@ export class AccountLinkServiceClient {
     return this.innerApiCalls.getAccountLink(request, options, callback);
   }
   createAccountLink(
-      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
@@ -784,7 +790,7 @@ export class AccountLinkServiceClient {
  * const [response] = await client.createAccountLink(request);
  */
   createAccountLink(
-      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
           protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|null|undefined,
@@ -818,7 +824,7 @@ export class AccountLinkServiceClient {
     return this.innerApiCalls.createAccountLink(request, options, callback);
   }
   mutateAccountLink(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
@@ -879,7 +885,7 @@ export class AccountLinkServiceClient {
  * const [response] = await client.mutateAccountLink(request);
  */
   mutateAccountLink(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
           protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|null|undefined,

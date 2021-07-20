@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class OfflineUserDataJobServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class OfflineUserDataJobServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   operationsClient: gax.OperationsClient;
@@ -93,6 +95,7 @@ export class OfflineUserDataJobServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof OfflineUserDataJobServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -562,6 +565,9 @@ export class OfflineUserDataJobServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -588,7 +594,7 @@ export class OfflineUserDataJobServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.OfflineUserDataJobService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.OfflineUserDataJobService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -677,7 +683,7 @@ export class OfflineUserDataJobServiceClient {
   // -- Service calls --
   // -------------------
   createOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobResponse,
@@ -731,7 +737,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.createOfflineUserDataJob(request);
  */
   createOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobResponse,
           protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest|null|undefined,
@@ -765,7 +771,7 @@ export class OfflineUserDataJobServiceClient {
     return this.innerApiCalls.createOfflineUserDataJob(request, options, callback);
   }
   getOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IOfflineUserDataJob,
@@ -810,7 +816,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.getOfflineUserDataJob(request);
  */
   getOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IOfflineUserDataJob,
           protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest|null|undefined,
@@ -844,7 +850,7 @@ export class OfflineUserDataJobServiceClient {
     return this.innerApiCalls.getOfflineUserDataJob(request, options, callback);
   }
   addOfflineUserDataJobOperations(
-      request: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsResponse,
@@ -900,7 +906,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.addOfflineUserDataJobOperations(request);
  */
   addOfflineUserDataJobOperations(
-      request: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsResponse,
           protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest|null|undefined,
@@ -935,7 +941,7 @@ export class OfflineUserDataJobServiceClient {
   }
 
   runOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
@@ -991,7 +997,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await operation.promise();
  */
   runOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
