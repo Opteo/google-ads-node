@@ -42,6 +42,7 @@ const version = require('../../../package.json').version;
 export class KeywordPlanCampaignKeywordServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -53,6 +54,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   keywordPlanCampaignKeywordServiceStub?: Promise<{[name: string]: Function}>;
@@ -95,6 +97,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof KeywordPlanCampaignKeywordServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -542,6 +545,9 @@ export class KeywordPlanCampaignKeywordServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -568,7 +574,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.KeywordPlanCampaignKeywordService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.KeywordPlanCampaignKeywordService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -656,7 +662,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlanCampaignKeyword(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignKeywordRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignKeywordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IKeywordPlanCampaignKeyword,
@@ -701,7 +707,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
  * const [response] = await client.getKeywordPlanCampaignKeyword(request);
  */
   getKeywordPlanCampaignKeyword(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignKeywordRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignKeywordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IKeywordPlanCampaignKeyword,
           protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignKeywordRequest|null|undefined,
@@ -735,7 +741,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
     return this.innerApiCalls.getKeywordPlanCampaignKeyword(request, options, callback);
   }
   mutateKeywordPlanCampaignKeywords(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsResponse,
@@ -797,7 +803,7 @@ export class KeywordPlanCampaignKeywordServiceClient {
  * const [response] = await client.mutateKeywordPlanCampaignKeywords(request);
  */
   mutateKeywordPlanCampaignKeywords(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsResponse,
           protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignKeywordsRequest|null|undefined,

@@ -40,6 +40,7 @@ const version = require('../../../package.json').version;
 export class ThirdPartyAppAnalyticsLinkServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -51,6 +52,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   thirdPartyAppAnalyticsLinkServiceStub?: Promise<{[name: string]: Function}>;
@@ -93,6 +95,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof ThirdPartyAppAnalyticsLinkServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -540,6 +543,9 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -566,7 +572,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.ThirdPartyAppAnalyticsLinkService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.ThirdPartyAppAnalyticsLinkService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -654,7 +660,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
   // -- Service calls --
   // -------------------
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
@@ -699,7 +705,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  * const [response] = await client.getThirdPartyAppAnalyticsLink(request);
  */
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
           protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
@@ -733,7 +739,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     return this.innerApiCalls.getThirdPartyAppAnalyticsLink(request, options, callback);
   }
   regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
+      request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
@@ -779,7 +785,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  * const [response] = await client.regenerateShareableLinkId(request);
  */
   regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
+      request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
           protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|null|undefined,

@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class CustomerManagerLinkServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class CustomerManagerLinkServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   customerManagerLinkServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class CustomerManagerLinkServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CustomerManagerLinkServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class CustomerManagerLinkServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class CustomerManagerLinkServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CustomerManagerLinkService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CustomerManagerLinkService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class CustomerManagerLinkServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerManagerLink(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerManagerLink,
@@ -698,7 +704,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.getCustomerManagerLink(request);
  */
   getCustomerManagerLink(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerManagerLink,
           protos.google.ads.googleads.v8.services.IGetCustomerManagerLinkRequest|null|undefined,
@@ -732,7 +738,7 @@ export class CustomerManagerLinkServiceClient {
     return this.innerApiCalls.getCustomerManagerLink(request, options, callback);
   }
   mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkResponse,
@@ -787,7 +793,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.mutateCustomerManagerLink(request);
  */
   mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerManagerLinkRequest|null|undefined,
@@ -821,7 +827,7 @@ export class CustomerManagerLinkServiceClient {
     return this.innerApiCalls.mutateCustomerManagerLink(request, options, callback);
   }
   moveManagerLink(
-      request: protos.google.ads.googleads.v8.services.IMoveManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMoveManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMoveManagerLinkResponse,
@@ -883,7 +889,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.moveManagerLink(request);
  */
   moveManagerLink(
-      request: protos.google.ads.googleads.v8.services.IMoveManagerLinkRequest,
+      request?: protos.google.ads.googleads.v8.services.IMoveManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMoveManagerLinkResponse,
           protos.google.ads.googleads.v8.services.IMoveManagerLinkRequest|null|undefined,

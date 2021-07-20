@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class TopicViewServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class TopicViewServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   topicViewServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class TopicViewServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof TopicViewServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class TopicViewServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class TopicViewServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.TopicViewService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.TopicViewService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class TopicViewServiceClient {
   // -- Service calls --
   // -------------------
   getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ITopicView,
@@ -698,7 +704,7 @@ export class TopicViewServiceClient {
  * const [response] = await client.getTopicView(request);
  */
   getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ITopicView,
           protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,

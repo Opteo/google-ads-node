@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class SharedCriterionServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class SharedCriterionServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   sharedCriterionServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class SharedCriterionServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof SharedCriterionServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class SharedCriterionServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class SharedCriterionServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.SharedCriterionService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.SharedCriterionService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class SharedCriterionServiceClient {
   // -- Service calls --
   // -------------------
   getSharedCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ISharedCriterion,
@@ -698,7 +704,7 @@ export class SharedCriterionServiceClient {
  * const [response] = await client.getSharedCriterion(request);
  */
   getSharedCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ISharedCriterion,
           protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest|null|undefined,
@@ -732,7 +738,7 @@ export class SharedCriterionServiceClient {
     return this.innerApiCalls.getSharedCriterion(request, options, callback);
   }
   mutateSharedCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateSharedCriteriaResponse,
@@ -804,7 +810,7 @@ export class SharedCriterionServiceClient {
  * const [response] = await client.mutateSharedCriteria(request);
  */
   mutateSharedCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateSharedCriteriaResponse,
           protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest|null|undefined,

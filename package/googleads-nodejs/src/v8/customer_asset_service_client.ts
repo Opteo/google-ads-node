@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class CustomerAssetServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class CustomerAssetServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   customerAssetServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class CustomerAssetServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CustomerAssetServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class CustomerAssetServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class CustomerAssetServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CustomerAssetService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CustomerAssetService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class CustomerAssetServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerAsset,
@@ -698,7 +704,7 @@ export class CustomerAssetServiceClient {
  * const [response] = await client.getCustomerAsset(request);
  */
   getCustomerAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerAsset,
           protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest|null|undefined,
@@ -732,7 +738,7 @@ export class CustomerAssetServiceClient {
     return this.innerApiCalls.getCustomerAsset(request, options, callback);
   }
   mutateCustomerAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerAssetsResponse,
@@ -794,7 +800,7 @@ export class CustomerAssetServiceClient {
  * const [response] = await client.mutateCustomerAssets(request);
  */
   mutateCustomerAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerAssetsResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest|null|undefined,

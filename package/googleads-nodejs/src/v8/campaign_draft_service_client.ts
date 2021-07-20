@@ -41,6 +41,7 @@ const version = require('../../../package.json').version;
 export class CampaignDraftServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -52,6 +53,7 @@ export class CampaignDraftServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   operationsClient: gax.OperationsClient;
@@ -95,6 +97,7 @@ export class CampaignDraftServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CampaignDraftServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -572,6 +575,9 @@ export class CampaignDraftServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -598,7 +604,7 @@ export class CampaignDraftServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CampaignDraftService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CampaignDraftService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -688,7 +694,7 @@ export class CampaignDraftServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignDraft(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignDraftRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICampaignDraft,
@@ -733,7 +739,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await client.getCampaignDraft(request);
  */
   getCampaignDraft(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICampaignDraft,
           protos.google.ads.googleads.v8.services.IGetCampaignDraftRequest|null|undefined,
@@ -767,7 +773,7 @@ export class CampaignDraftServiceClient {
     return this.innerApiCalls.getCampaignDraft(request, options, callback);
   }
   mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignDraftsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignDraftsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCampaignDraftsResponse,
@@ -830,7 +836,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await client.mutateCampaignDrafts(request);
  */
   mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignDraftsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignDraftsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCampaignDraftsResponse,
           protos.google.ads.googleads.v8.services.IMutateCampaignDraftsRequest|null|undefined,
@@ -865,7 +871,7 @@ export class CampaignDraftServiceClient {
   }
 
   promoteCampaignDraft(
-      request: protos.google.ads.googleads.v8.services.IPromoteCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v8.services.IPromoteCampaignDraftRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
@@ -925,7 +931,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await operation.promise();
  */
   promoteCampaignDraft(
-      request: protos.google.ads.googleads.v8.services.IPromoteCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v8.services.IPromoteCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -980,7 +986,7 @@ export class CampaignDraftServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>;
   }
   listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.rpc.IStatus[],
@@ -1040,7 +1046,7 @@ export class CampaignDraftServiceClient {
  *   for more details and examples.
  */
   listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsRequest,
           protos.google.ads.googleads.v8.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,

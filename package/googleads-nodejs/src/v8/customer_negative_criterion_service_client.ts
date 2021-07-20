@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class CustomerNegativeCriterionServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class CustomerNegativeCriterionServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   customerNegativeCriterionServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class CustomerNegativeCriterionServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CustomerNegativeCriterionServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class CustomerNegativeCriterionServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class CustomerNegativeCriterionServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CustomerNegativeCriterionService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CustomerNegativeCriterionService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class CustomerNegativeCriterionServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerNegativeCriterionRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerNegativeCriterionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerNegativeCriterion,
@@ -698,7 +704,7 @@ export class CustomerNegativeCriterionServiceClient {
  * const [response] = await client.getCustomerNegativeCriterion(request);
  */
   getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerNegativeCriterionRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerNegativeCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerNegativeCriterion,
           protos.google.ads.googleads.v8.services.IGetCustomerNegativeCriterionRequest|null|undefined,
@@ -732,7 +738,7 @@ export class CustomerNegativeCriterionServiceClient {
     return this.innerApiCalls.getCustomerNegativeCriterion(request, options, callback);
   }
   mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaResponse,
@@ -794,7 +800,7 @@ export class CustomerNegativeCriterionServiceClient {
  * const [response] = await client.mutateCustomerNegativeCriteria(request);
  */
   mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,

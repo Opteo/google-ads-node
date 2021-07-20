@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class CustomerServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class CustomerServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   customerServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class CustomerServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof CustomerServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class CustomerServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class CustomerServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.CustomerService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.CustomerService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class CustomerServiceClient {
   // -- Service calls --
   // -------------------
   getCustomer(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomer,
@@ -698,7 +704,7 @@ export class CustomerServiceClient {
  * const [response] = await client.getCustomer(request);
  */
   getCustomer(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomer,
           protos.google.ads.googleads.v8.services.IGetCustomerRequest|null|undefined,
@@ -732,7 +738,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.getCustomer(request, options, callback);
   }
   mutateCustomer(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerResponse,
@@ -788,7 +794,7 @@ export class CustomerServiceClient {
  * const [response] = await client.mutateCustomer(request);
  */
   mutateCustomer(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerRequest|null|undefined,
@@ -822,7 +828,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.mutateCustomer(request, options, callback);
   }
   listAccessibleCustomers(
-      request: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
+      request?: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IListAccessibleCustomersResponse,
@@ -866,7 +872,7 @@ export class CustomerServiceClient {
  * const [response] = await client.listAccessibleCustomers(request);
  */
   listAccessibleCustomers(
-      request: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
+      request?: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IListAccessibleCustomersResponse,
           protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest|null|undefined,
@@ -893,7 +899,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.listAccessibleCustomers(request, options, callback);
   }
   createCustomerClient(
-      request: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ICreateCustomerClientResponse,
@@ -955,7 +961,7 @@ export class CustomerServiceClient {
  * const [response] = await client.createCustomerClient(request);
  */
   createCustomerClient(
-      request: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ICreateCustomerClientResponse,
           protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest|null|undefined,

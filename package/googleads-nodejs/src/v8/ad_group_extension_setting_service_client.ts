@@ -39,6 +39,7 @@ const version = require('../../../package.json').version;
 export class AdGroupExtensionSettingServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -50,6 +51,7 @@ export class AdGroupExtensionSettingServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   adGroupExtensionSettingServiceStub?: Promise<{[name: string]: Function}>;
@@ -92,6 +94,7 @@ export class AdGroupExtensionSettingServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof AdGroupExtensionSettingServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -539,6 +542,9 @@ export class AdGroupExtensionSettingServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -565,7 +571,7 @@ export class AdGroupExtensionSettingServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.AdGroupExtensionSettingService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.AdGroupExtensionSettingService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -653,7 +659,7 @@ export class AdGroupExtensionSettingServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupExtensionSettingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupExtensionSetting,
@@ -698,7 +704,7 @@ export class AdGroupExtensionSettingServiceClient {
  * const [response] = await client.getAdGroupExtensionSetting(request);
  */
   getAdGroupExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupExtensionSetting,
           protos.google.ads.googleads.v8.services.IGetAdGroupExtensionSettingRequest|null|undefined,
@@ -732,7 +738,7 @@ export class AdGroupExtensionSettingServiceClient {
     return this.innerApiCalls.getAdGroupExtensionSetting(request, options, callback);
   }
   mutateAdGroupExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsResponse,
@@ -812,7 +818,7 @@ export class AdGroupExtensionSettingServiceClient {
  * const [response] = await client.mutateAdGroupExtensionSettings(request);
  */
   mutateAdGroupExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsResponse,
           protos.google.ads.googleads.v8.services.IMutateAdGroupExtensionSettingsRequest|null|undefined,

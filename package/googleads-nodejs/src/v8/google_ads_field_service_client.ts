@@ -41,6 +41,7 @@ const version = require('../../../package.json').version;
 export class GoogleAdsFieldServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -52,6 +53,7 @@ export class GoogleAdsFieldServiceClient {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
   googleAdsFieldServiceStub?: Promise<{[name: string]: Function}>;
@@ -94,6 +96,7 @@ export class GoogleAdsFieldServiceClient {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof GoogleAdsFieldServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -549,6 +552,9 @@ export class GoogleAdsFieldServiceClient {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -575,7 +581,7 @@ export class GoogleAdsFieldServiceClient {
           (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.GoogleAdsFieldService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.GoogleAdsFieldService,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
@@ -664,7 +670,7 @@ export class GoogleAdsFieldServiceClient {
   // -- Service calls --
   // -------------------
   getGoogleAdsField(
-      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IGoogleAdsField,
@@ -709,7 +715,7 @@ export class GoogleAdsFieldServiceClient {
  * const [response] = await client.getGoogleAdsField(request);
  */
   getGoogleAdsField(
-      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IGoogleAdsField,
           protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|null|undefined,
@@ -744,7 +750,7 @@ export class GoogleAdsFieldServiceClient {
   }
 
   searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IGoogleAdsField[],
@@ -802,7 +808,7 @@ export class GoogleAdsFieldServiceClient {
  *   for more details and examples.
  */
   searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
           protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
