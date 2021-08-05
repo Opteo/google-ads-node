@@ -16,14 +16,13 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-/* global window */
 import * as gax from 'google-gax';
 import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall} from 'google-gax';
 
 import { Transform } from 'stream';
 import { RequestType } from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
-import jsonProtos = require('../../protos/protos.json');
+import * as path from 'path';
 /**
  * Client JSON configuration object, loaded from
  * `src/v8/google_ads_field_service_client_config.json`.
@@ -42,8 +41,8 @@ export class GoogleAdsFieldServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
   private _providedCustomServicePath: boolean;
-  private _gaxModule: typeof gax | typeof gax.fallback;
-  private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
+  private _gaxModule: typeof gax;
+  private _gaxGrpc: gax.GrpcClient;
   private _protos: {};
   private _defaults: {[method: string]: gax.CallSettings};
   auth: gax.GoogleAuth;
@@ -86,11 +85,6 @@ export class GoogleAdsFieldServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -99,8 +93,7 @@ export class GoogleAdsFieldServiceClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
-    const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
-    opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
+    opts = Object.assign({servicePath, port, clientConfig}, opts);
 
     // If scopes are unset in options and we're connecting to a non-default endpoint, set scopes just in case.
     if (servicePath !== staticMembers.servicePath && !('scopes' in opts)) {
@@ -108,7 +101,7 @@ export class GoogleAdsFieldServiceClient {
     }
 
     // Choose either gRPC or proto-over-HTTP implementation of google-gax.
-    this._gaxModule = opts.fallback ? gax.fallback : gax;
+    this._gaxModule = gax;
 
     // Create a `gaxGrpc` object, with any grpc-specific options sent to the client.
     this._gaxGrpc = new this._gaxModule.GrpcClient(opts);
@@ -134,16 +127,15 @@ export class GoogleAdsFieldServiceClient {
     } else {
       clientHeader.push(`gl-web/${this._gaxModule.version}`);
     }
-    if (!opts.fallback) {
-      clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
-    } else if (opts.fallback === 'rest' ) {
-      clientHeader.push(`rest/${this._gaxGrpc.grpcVersion}`);
-    }
+    clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
     if (opts.libName && opts.libVersion) {
       clientHeader.push(`${opts.libName}/${opts.libVersion}`);
     }
     // Load the applicable protos.
-    this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
+    this._protos = this._gaxGrpc.loadProto(
+      path.join(__dirname, '..', '..', 'protos'),
+      'google/ads/googleads/v8/services/google_ads_field_service.proto'
+    );
 
     // This API contains "path templates"; forward-slash-separated
     // identifiers to uniquely identify resources within the API.
@@ -577,8 +569,6 @@ export class GoogleAdsFieldServiceClient {
     // Put together the "service stub" for
     // google.ads.googleads.v8.services.GoogleAdsFieldService.
     this.googleAdsFieldServiceStub = this._gaxGrpc.createStub(
-        this._opts.fallback ?
-          (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.GoogleAdsFieldService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.GoogleAdsFieldService,
         this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
