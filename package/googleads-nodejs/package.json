@@ -158,7 +158,7 @@
   "scripts": {
     "clean": "gts clean",
     "compile": "tsc -p . && cp -r protos build/",
-    "compile-protos": "compileProtos src",
+    "compile-protos": "compileProtos --skip-json src",
     "docs": "jsdoc -c .jsdoc.js",
     "predocs-test": "npm run docs",
     "docs-test": "linkinator docs",
@@ -169,7 +169,7 @@
     "test": "c8 mocha build/test"
   },
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^14.17.3",
     "@types/sinon": "^10.0.2",
     "c8": "^7.7.3",
@@ -178,7 +178,7 @@
     "jsdoc-fresh": "^1.1.0",
     "jsdoc-region-tag": "^1.1.0",
     "linkinator": "^2.13.6",
-    "mocha": "^8.4.0",
+    "mocha": "^9.0.2",
     "null-loader": "^4.0.1",
     "pack-n-play": "^1.0.0-2",
     "sinon": "^11.1.1",
