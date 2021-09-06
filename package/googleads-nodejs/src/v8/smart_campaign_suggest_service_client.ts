@@ -16,11 +16,12 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
+/* global window */
 import * as gax from 'google-gax';
 import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
 
 import * as protos from '../../protos/protos';
-import * as path from 'path';
+import jsonProtos = require('../../protos/protos.json');
 /**
  * Client JSON configuration object, loaded from
  * `src/v8/smart_campaign_suggest_service_client_config.json`.
@@ -39,8 +40,8 @@ export class SmartCampaignSuggestServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
   private _providedCustomServicePath: boolean;
-  private _gaxModule: typeof gax;
-  private _gaxGrpc: gax.GrpcClient;
+  private _gaxModule: typeof gax | typeof gax.fallback;
+  private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
   private _defaults: {[method: string]: gax.CallSettings};
   auth: gax.GoogleAuth;
@@ -83,6 +84,11 @@ export class SmartCampaignSuggestServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
+   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
+   *     In fallback mode, a special browser-compatible transport implementation is used
+   *     instead of gRPC transport. In browser context (if the `window` object is defined)
+   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
+   *     if you need to override this behavior.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -91,7 +97,8 @@ export class SmartCampaignSuggestServiceClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
-    opts = Object.assign({servicePath, port, clientConfig}, opts);
+    const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
+    opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
     // If scopes are unset in options and we're connecting to a non-default endpoint, set scopes just in case.
     if (servicePath !== staticMembers.servicePath && !('scopes' in opts)) {
@@ -99,7 +106,7 @@ export class SmartCampaignSuggestServiceClient {
     }
 
     // Choose either gRPC or proto-over-HTTP implementation of google-gax.
-    this._gaxModule = gax;
+    this._gaxModule = opts.fallback ? gax.fallback : gax;
 
     // Create a `gaxGrpc` object, with any grpc-specific options sent to the client.
     this._gaxGrpc = new this._gaxModule.GrpcClient(opts);
@@ -109,6 +116,12 @@ export class SmartCampaignSuggestServiceClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
+
+    // Set useJWTAccessWithScope on the auth object.
+    this.auth.useJWTAccessWithScope = true;
+
+    // Set defaultServicePath on the auth object.
+    this.auth.defaultServicePath = staticMembers.servicePath;
 
     // Set the default scopes in auth client if needed.
     if (servicePath === staticMembers.servicePath) {
@@ -125,15 +138,16 @@ export class SmartCampaignSuggestServiceClient {
     } else {
       clientHeader.push(`gl-web/${this._gaxModule.version}`);
     }
-    clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
+    if (!opts.fallback) {
+      clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
+    } else if (opts.fallback === 'rest' ) {
+      clientHeader.push(`rest/${this._gaxGrpc.grpcVersion}`);
+    }
     if (opts.libName && opts.libVersion) {
       clientHeader.push(`${opts.libName}/${opts.libVersion}`);
     }
     // Load the applicable protos.
-    this._protos = this._gaxGrpc.loadProto(
-      path.join(__dirname, '..', '..', 'protos'),
-      'google/ads/googleads/v8/services/smart_campaign_suggest_service.proto'
-    );
+    this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
 
     // This API contains "path templates"; forward-slash-separated
     // identifiers to uniquely identify resources within the API.
@@ -214,6 +228,12 @@ export class SmartCampaignSuggestServiceClient {
       batchJobPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/batchJobs/{batch_job_id}'
       ),
+      biddingDataExclusionPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}'
+      ),
+      biddingSeasonalityAdjustmentPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}'
+      ),
       biddingStrategyPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/biddingStrategies/{bidding_strategy_id}'
       ),
@@ -288,6 +308,12 @@ export class SmartCampaignSuggestServiceClient {
       ),
       conversionCustomVariablePathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}'
+      ),
+      conversionValueRulePathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}'
+      ),
+      conversionValueRuleSetPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}'
       ),
       currencyConstantPathTemplate: new this._gaxModule.PathTemplate(
         'currencyConstants/{code}'
@@ -559,6 +585,8 @@ export class SmartCampaignSuggestServiceClient {
     // Put together the "service stub" for
     // google.ads.googleads.v8.services.SmartCampaignSuggestService.
     this.smartCampaignSuggestServiceStub = this._gaxGrpc.createStub(
+        this._opts.fallback ?
+          (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.SmartCampaignSuggestService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.SmartCampaignSuggestService,
         this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
@@ -566,7 +594,7 @@ export class SmartCampaignSuggestServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const smartCampaignSuggestServiceStubMethods =
-        ['suggestSmartCampaignBudgetOptions'];
+        ['suggestSmartCampaignBudgetOptions', 'suggestSmartCampaignAd'];
     for (const methodName of smartCampaignSuggestServiceStubMethods) {
       const callPromise = this.smartCampaignSuggestServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -722,6 +750,83 @@ export class SmartCampaignSuggestServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.suggestSmartCampaignBudgetOptions(request, options, callback);
+  }
+  suggestSmartCampaignAd(
+      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|undefined, {}|undefined
+      ]>;
+  suggestSmartCampaignAd(
+      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestSmartCampaignAd(
+      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Suggests a Smart campaign ad compatible with the Ad family of resources,
+ * based on data points such as targeting and the business to advertise.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customer_id
+ *   Required. The ID of the customer.
+ * @param {google.ads.googleads.v8.services.SmartCampaignSuggestionInfo} request.suggestionInfo
+ *   Required. Inputs used to suggest a Smart campaign ad.
+ *   Required fields: final_url, language_code, keyword_themes.
+ *   Optional but recommended fields to improve the quality of the suggestion:
+ *   business_setting and geo_target.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SuggestSmartCampaignAdResponse]{@link google.ads.googleads.v8.services.SuggestSmartCampaignAdResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.suggestSmartCampaignAd(request);
+ */
+  suggestSmartCampaignAd(
+      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'customer_id': request.customer_id || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.suggestSmartCampaignAd(request, options, callback);
   }
 
   // --------------------
@@ -2006,6 +2111,78 @@ export class SmartCampaignSuggestServiceClient {
   }
 
   /**
+   * Return a fully-qualified biddingDataExclusion resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingDataExclusionPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).seasonality_event_id;
+  }
+
+  /**
+   * Return a fully-qualified biddingSeasonalityAdjustment resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingSeasonalityAdjustmentPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).seasonality_event_id;
+  }
+
+  /**
    * Return a fully-qualified biddingStrategy resource name string.
    *
    * @param {string} customer_id
@@ -3228,6 +3405,78 @@ export class SmartCampaignSuggestServiceClient {
    */
   matchConversionCustomVariableIdFromConversionCustomVariableName(conversionCustomVariableName: string) {
     return this.pathTemplates.conversionCustomVariablePathTemplate.match(conversionCustomVariableName).conversion_custom_variable_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRule resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRulePath(customerId:string,conversionValueRuleId:string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_id: conversionValueRuleId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the conversion_value_rule_id.
+   */
+  matchConversionValueRuleIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).conversion_value_rule_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRuleSet resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_set_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRuleSetPath(customerId:string,conversionValueRuleSetId:string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_set_id: conversionValueRuleSetId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_set_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the conversion_value_rule_set_id.
+   */
+  matchConversionValueRuleSetIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).conversion_value_rule_set_id;
   }
 
   /**

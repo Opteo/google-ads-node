@@ -809,6 +809,74 @@
         }
       }
     },
+    "BiddingDataExclusionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingDataExclusionServiceClient",
+          "rpcs": {
+            "GetBiddingDataExclusion": {
+              "methods": [
+                "getBiddingDataExclusion"
+              ]
+            },
+            "MutateBiddingDataExclusions": {
+              "methods": [
+                "mutateBiddingDataExclusions"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingDataExclusionServiceClient",
+          "rpcs": {
+            "GetBiddingDataExclusion": {
+              "methods": [
+                "getBiddingDataExclusion"
+              ]
+            },
+            "MutateBiddingDataExclusions": {
+              "methods": [
+                "mutateBiddingDataExclusions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BiddingSeasonalityAdjustmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingSeasonalityAdjustmentServiceClient",
+          "rpcs": {
+            "GetBiddingSeasonalityAdjustment": {
+              "methods": [
+                "getBiddingSeasonalityAdjustment"
+              ]
+            },
+            "MutateBiddingSeasonalityAdjustments": {
+              "methods": [
+                "mutateBiddingSeasonalityAdjustments"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingSeasonalityAdjustmentServiceClient",
+          "rpcs": {
+            "GetBiddingSeasonalityAdjustment": {
+              "methods": [
+                "getBiddingSeasonalityAdjustment"
+              ]
+            },
+            "MutateBiddingSeasonalityAdjustments": {
+              "methods": [
+                "mutateBiddingSeasonalityAdjustments"
+              ]
+            }
+          }
+        }
+      }
+    },
     "BiddingStrategyService": {
       "clients": {
         "grpc": {
@@ -1641,6 +1709,74 @@
             "UploadCallConversions": {
               "methods": [
                 "uploadCallConversions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionValueRuleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionValueRuleServiceClient",
+          "rpcs": {
+            "GetConversionValueRule": {
+              "methods": [
+                "getConversionValueRule"
+              ]
+            },
+            "MutateConversionValueRules": {
+              "methods": [
+                "mutateConversionValueRules"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionValueRuleServiceClient",
+          "rpcs": {
+            "GetConversionValueRule": {
+              "methods": [
+                "getConversionValueRule"
+              ]
+            },
+            "MutateConversionValueRules": {
+              "methods": [
+                "mutateConversionValueRules"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionValueRuleSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionValueRuleSetServiceClient",
+          "rpcs": {
+            "GetConversionValueRuleSet": {
+              "methods": [
+                "getConversionValueRuleSet"
+              ]
+            },
+            "MutateConversionValueRuleSets": {
+              "methods": [
+                "mutateConversionValueRuleSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionValueRuleSetServiceClient",
+          "rpcs": {
+            "GetConversionValueRuleSet": {
+              "methods": [
+                "getConversionValueRuleSet"
+              ]
+            },
+            "MutateConversionValueRuleSets": {
+              "methods": [
+                "mutateConversionValueRuleSets"
               ]
             }
           }
@@ -3935,6 +4071,11 @@
               "methods": [
                 "suggestSmartCampaignBudgetOptions"
               ]
+            },
+            "SuggestSmartCampaignAd": {
+              "methods": [
+                "suggestSmartCampaignAd"
+              ]
             }
           }
         },
@@ -3944,6 +4085,11 @@
             "SuggestSmartCampaignBudgetOptions": {
               "methods": [
                 "suggestSmartCampaignBudgetOptions"
+              ]
+            },
+            "SuggestSmartCampaignAd": {
+              "methods": [
+                "suggestSmartCampaignAd"
               ]
             }
           }

@@ -30,10 +30,10 @@ option ruby_package = "Google::Ads::GoogleAds::V8::Enums";
 // Proto file describing user identifier source
 
 // Container for enum describing the source of the user identifier for offline
-// Store Sales third party uploads.
+// Store Sales, click conversion, and conversion adjustment uploads.
 message UserIdentifierSourceEnum {
-  // The type of user identifier source for offline Store Sales third party
-  // uploads.
+  // The type of user identifier source for offline Store Sales, click
+  // conversion, and conversion adjustment uploads.
   enum UserIdentifierSource {
     // Not specified.
     UNSPECIFIED = 0;

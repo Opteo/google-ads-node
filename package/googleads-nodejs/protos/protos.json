@@ -6653,6 +6653,11 @@
                               "oneof": [
                                 "postal_code"
                               ]
+                            },
+                            "_hashed_street_address": {
+                              "oneof": [
+                                "hashed_street_address"
+                              ]
                             }
                           },
                           "fields": {
@@ -6694,6 +6699,13 @@
                             "postal_code": {
                               "type": "string",
                               "id": 12,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "hashed_street_address": {
+                              "type": "string",
+                              "id": 13,
                               "options": {
                                 "proto3_optional": true
                               }
@@ -7864,6 +7876,10 @@
                             "slot": {
                               "type": "google.ads.googleads.v8.enums.SlotEnum.Slot",
                               "id": 23
+                            },
+                            "conversion_value_rule_primary_dimension": {
+                              "type": "google.ads.googleads.v8.enums.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension",
+                              "id": 138
                             },
                             "webpage": {
                               "type": "string",
@@ -10623,6 +10639,24 @@
                             }
                           }
                         },
+                        "ConversionValueRulePrimaryDimensionEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionValueRulePrimaryDimension": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "NO_RULE_APPLIED": 2,
+                                "ORIGINAL": 3,
+                                "NEW_VS_RETURNING_USER": 4,
+                                "GEO_LOCATION": 5,
+                                "DEVICE": 6,
+                                "AUDIENCE": 7,
+                                "MULTIPLE": 8
+                              }
+                            }
+                          }
+                        },
                         "ExternalConversionSourceEnum": {
                           "fields": {},
                           "nested": {
@@ -11489,6 +11523,7 @@
                                 "UNKNOWN": 1,
                                 "COMMISSION": 16,
                                 "ENHANCED_CPC": 2,
+                                "INVALID": 17,
                                 "MANUAL_CPC": 3,
                                 "MANUAL_CPM": 4,
                                 "MANUAL_CPV": 13,
@@ -11804,7 +11839,11 @@
                                 "FEED_ITEM": 10,
                                 "CAMPAIGN_FEED": 11,
                                 "AD_GROUP_FEED": 12,
-                                "AD_GROUP_AD": 13
+                                "AD_GROUP_AD": 13,
+                                "ASSET": 14,
+                                "CUSTOMER_ASSET": 15,
+                                "CAMPAIGN_ASSET": 16,
+                                "AD_GROUP_ASSET": 17
                               }
                             }
                           }
@@ -11839,7 +11878,13 @@
                                 "FEED_ITEM": 10,
                                 "AD_GROUP_FEED": 11,
                                 "CAMPAIGN_FEED": 12,
-                                "AD_GROUP_BID_MODIFIER": 13
+                                "AD_GROUP_BID_MODIFIER": 13,
+                                "SHARED_SET": 14,
+                                "CAMPAIGN_SHARED_SET": 15,
+                                "ASSET": 16,
+                                "CUSTOMER_ASSET": 17,
+                                "CAMPAIGN_ASSET": 18,
+                                "AD_GROUP_ASSET": 19
                               }
                             }
                           }
@@ -11938,7 +11983,8 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "RETRACTION": 2,
-                                "RESTATEMENT": 3
+                                "RESTATEMENT": 3,
+                                "ENHANCEMENT": 4
                               }
                             }
                           }
@@ -11952,6 +11998,34 @@
                                 "UNKNOWN": 1,
                                 "ACTIVATION_NEEDED": 2,
                                 "ENABLED": 3,
+                                "PAUSED": 4
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRuleSetStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionValueRuleSetStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ENABLED": 2,
+                                "REMOVED": 3,
+                                "PAUSED": 4
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRuleStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionValueRuleStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ENABLED": 2,
+                                "REMOVED": 3,
                                 "PAUSED": 4
                               }
                             }
@@ -13381,6 +13455,33 @@
                             }
                           }
                         },
+                        "SeasonalityEventScopeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SeasonalityEventScope": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CUSTOMER": 2,
+                                "CAMPAIGN": 4,
+                                "CHANNEL": 5
+                              }
+                            }
+                          }
+                        },
+                        "SeasonalityEventStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SeasonalityEventStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ENABLED": 2,
+                                "REMOVED": 4
+                              }
+                            }
+                          }
+                        },
                         "SharedSetStatusEnum": {
                           "fields": {},
                           "nested": {
@@ -13662,6 +13763,74 @@
                                 "RULE_BASED": 5,
                                 "SIMILAR": 6,
                                 "CRM_BASED": 7
+                              }
+                            }
+                          }
+                        },
+                        "ValueRuleDeviceTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ValueRuleDeviceType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "MOBILE": 2,
+                                "DESKTOP": 3,
+                                "TABLET": 4
+                              }
+                            }
+                          }
+                        },
+                        "ValueRuleGeoLocationMatchTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ValueRuleGeoLocationMatchType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ANY": 2,
+                                "LOCATION_OF_PRESENCE": 3
+                              }
+                            }
+                          }
+                        },
+                        "ValueRuleOperationEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ValueRuleOperation": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ADD": 2,
+                                "MULTIPLY": 3,
+                                "SET": 4
+                              }
+                            }
+                          }
+                        },
+                        "ValueRuleSetAttachmentTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ValueRuleSetAttachmentType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CUSTOMER": 2,
+                                "CAMPAIGN": 3
+                              }
+                            }
+                          }
+                        },
+                        "ValueRuleSetDimensionEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ValueRuleSetDimension": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "GEO_LOCATION": 2,
+                                "DEVICE": 3,
+                                "AUDIENCE": 4
                               }
                             }
                           }
@@ -14589,7 +14758,12 @@
                                 "TOO_RECENT_CONVERSION": 9,
                                 "CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE": 10,
                                 "TOO_MANY_ADJUSTMENTS_IN_REQUEST": 11,
-                                "TOO_MANY_ADJUSTMENTS": 12
+                                "TOO_MANY_ADJUSTMENTS": 12,
+                                "CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS": 15,
+                                "CONVERSION_ACTION_NOT_ELIGIBLE_FOR_ENHANCEMENT": 16,
+                                "INVALID_USER_IDENTIFIER": 17,
+                                "UNSUPPORTED_USER_IDENTIFIER": 18,
+                                "INVALID_USER_IDENTIFIER_SOURCE": 19
                               }
                             }
                           }
@@ -14639,7 +14813,55 @@
                                 "CUSTOM_VARIABLE_VALUE_CONTAINS_PII": 29,
                                 "INVALID_CUSTOMER_FOR_CLICK": 30,
                                 "INVALID_CUSTOMER_FOR_CALL": 31,
-                                "CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY": 32
+                                "CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY": 32,
+                                "CLICK_NOT_FOUND": 33,
+                                "INVALID_USER_IDENTIFIER": 34,
+                                "EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION_NOT_PERMITTED_WITH_USER_IDENTIFIER": 35,
+                                "UNSUPPORTED_USER_IDENTIFIER": 36,
+                                "INVALID_USER_IDENTIFIER_SOURCE": 37
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRuleErrorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionValueRuleError": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "INVALID_GEO_TARGET_CONSTANT": 2,
+                                "CONFLICTING_INCLUDED_AND_EXCLUDED_GEO_TARGET": 3,
+                                "CONFLICTING_CONDITIONS": 4,
+                                "CANNOT_REMOVE_IF_INCLUDED_IN_VALUE_RULE_SET": 5,
+                                "CONDITION_NOT_ALLOWED": 6,
+                                "FIELD_MUST_BE_UNSET": 7,
+                                "CANNOT_PAUSE_UNLESS_VALUE_RULE_SET_IS_PAUSED": 8,
+                                "UNTARGETABLE_GEO_TARGET": 9,
+                                "INVALID_AUDIENCE_USER_LIST": 10,
+                                "INACCESSIBLE_USER_LIST": 11,
+                                "INVALID_AUDIENCE_USER_INTEREST": 12,
+                                "CANNOT_ADD_RULE_WITH_STATUS_REMOVED": 13
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRuleSetErrorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionValueRuleSetError": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CONFLICTING_VALUE_RULE_CONDITIONS": 2,
+                                "INVALID_VALUE_RULE": 3,
+                                "DIMENSIONS_UPDATE_ONLY_ALLOW_APPEND": 4,
+                                "CONDITION_TYPE_NOT_ALLOWED": 5,
+                                "DUPLICATE_DIMENSIONS": 6,
+                                "INVALID_CAMPAIGN_ID": 7,
+                                "CANNOT_PAUSE_UNLESS_ALL_VALUE_RULES_ARE_PAUSED": 8,
+                                "SHOULD_PAUSE_WHEN_ALL_VALUE_RULES_ARE_PAUSED": 9,
+                                "VALUE_RULES_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE": 10
                               }
                             }
                           }
@@ -14787,7 +15009,8 @@
                                 "HOTEL_CHECK_IN_DATE_RANGE_OVERLAPS_WITH_EXISTING_CRITERION": 131,
                                 "HOTEL_CHECK_IN_DATE_RANGE_START_DATE_TOO_EARLY": 132,
                                 "HOTEL_CHECK_IN_DATE_RANGE_END_DATE_TOO_LATE": 133,
-                                "HOTEL_CHECK_IN_DATE_RANGE_REVERSED": 134
+                                "HOTEL_CHECK_IN_DATE_RANGE_REVERSED": 134,
+                                "BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED": 135
                               }
                             }
                           }
@@ -15108,6 +15331,8 @@
                                 "conversion_adjustment_upload_error",
                                 "conversion_custom_variable_error",
                                 "conversion_upload_error",
+                                "conversion_value_rule_error",
+                                "conversion_value_rule_set_error",
                                 "header_error",
                                 "database_error",
                                 "policy_finding_error",
@@ -15422,6 +15647,14 @@
                             "conversion_upload_error": {
                               "type": "ConversionUploadErrorEnum.ConversionUploadError",
                               "id": 111
+                            },
+                            "conversion_value_rule_error": {
+                              "type": "ConversionValueRuleErrorEnum.ConversionValueRuleError",
+                              "id": 145
+                            },
+                            "conversion_value_rule_set_error": {
+                              "type": "ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError",
+                              "id": 146
                             },
                             "header_error": {
                               "type": "HeaderErrorEnum.HeaderError",
@@ -17482,25 +17715,6 @@
                                 }
                               }
                             },
-                            "TargetCpa": {
-                              "oneofs": {
-                                "_target_cpa_micros": {
-                                  "oneof": [
-                                    "target_cpa_micros"
-                                  ]
-                                }
-                              },
-                              "fields": {
-                                "target_cpa_micros": {
-                                  "type": "int64",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
-                                    "proto3_optional": true
-                                  }
-                                }
-                              }
-                            },
                             "TargetSpend": {
                               "oneofs": {
                                 "_target_spend_micros": {
@@ -17527,6 +17741,25 @@
                                 "cpc_bid_ceiling_micros": {
                                   "type": "int64",
                                   "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "TargetCpa": {
+                              "oneofs": {
+                                "_target_cpa_micros": {
+                                  "oneof": [
+                                    "target_cpa_micros"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "target_cpa_micros": {
+                                  "type": "int64",
+                                  "id": 1,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY",
                                     "proto3_optional": true
@@ -18941,6 +19174,14 @@
                             "ad_strength": {
                               "type": "google.ads.googleads.v8.enums.AdStrengthEnum.AdStrength",
                               "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "action_items": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 13,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -20781,6 +21022,158 @@
                             }
                           }
                         },
+                        "BiddingDataExclusion": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/BiddingDataExclusion",
+                            "(google.api.resource).pattern": "customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/BiddingDataExclusion"
+                              }
+                            },
+                            "data_exclusion_id": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "scope": {
+                              "type": "google.ads.googleads.v8.enums.SeasonalityEventScopeEnum.SeasonalityEventScope",
+                              "id": 3
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v8.enums.SeasonalityEventStatusEnum.SeasonalityEventStatus",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "start_date_time": {
+                              "type": "string",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "end_date_time": {
+                              "type": "string",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "devices": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.enums.DeviceEnum.Device",
+                              "id": 9
+                            },
+                            "campaigns": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 10,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Campaign"
+                              }
+                            },
+                            "advertising_channel_types": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType",
+                              "id": 11
+                            }
+                          }
+                        },
+                        "BiddingSeasonalityAdjustment": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/BiddingSeasonalityAdjustment",
+                            "(google.api.resource).pattern": "customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/BiddingSeasonalityAdjustment"
+                              }
+                            },
+                            "seasonality_adjustment_id": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "scope": {
+                              "type": "google.ads.googleads.v8.enums.SeasonalityEventScopeEnum.SeasonalityEventScope",
+                              "id": 3
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v8.enums.SeasonalityEventStatusEnum.SeasonalityEventStatus",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "start_date_time": {
+                              "type": "string",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "end_date_time": {
+                              "type": "string",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "devices": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.enums.DeviceEnum.Device",
+                              "id": 9
+                            },
+                            "conversion_rate_modifier": {
+                              "type": "double",
+                              "id": 10
+                            },
+                            "campaigns": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 11,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Campaign"
+                              }
+                            },
+                            "advertising_channel_types": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType",
+                              "id": 12
+                            }
+                          }
+                        },
                         "BiddingStrategy": {
                           "options": {
                             "(google.api.resource).type": "googleads.googleapis.com/BiddingStrategy",
@@ -21663,6 +22056,37 @@
                                 }
                               }
                             },
+                            "TrackingSetting": {
+                              "oneofs": {
+                                "_tracking_url": {
+                                  "oneof": [
+                                    "tracking_url"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "tracking_url": {
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "SelectiveOptimization": {
+                              "fields": {
+                                "conversion_actions": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionAction"
+                                  }
+                                }
+                              }
+                            },
                             "DynamicSearchAdsSetting": {
                               "oneofs": {
                                 "_use_supplied_urls_only": {
@@ -21700,15 +22124,6 @@
                                   "options": {
                                     "(google.api.resource_reference).type": "googleads.googleapis.com/Feed"
                                   }
-                                }
-                              }
-                            },
-                            "OptimizationGoalSetting": {
-                              "fields": {
-                                "optimization_goal_types": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v8.enums.OptimizationGoalTypeEnum.OptimizationGoalType",
-                                  "id": 1
                                 }
                               }
                             },
@@ -21768,22 +22183,15 @@
                                 }
                               }
                             },
-                            "TrackingSetting": {
-                              "oneofs": {
-                                "_tracking_url": {
-                                  "oneof": [
-                                    "tracking_url"
-                                  ]
-                                }
-                              },
+                            "VanityPharma": {
                               "fields": {
-                                "tracking_url": {
-                                  "type": "string",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
-                                    "proto3_optional": true
-                                  }
+                                "vanity_pharma_display_url_mode": {
+                                  "type": "google.ads.googleads.v8.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode",
+                                  "id": 1
+                                },
+                                "vanity_pharma_text": {
+                                  "type": "google.ads.googleads.v8.enums.VanityPharmaTextEnum.VanityPharmaText",
+                                  "id": 2
                                 }
                               }
                             },
@@ -21804,18 +22212,6 @@
                                 "location_source_type": {
                                   "type": "google.ads.googleads.v8.enums.LocationSourceTypeEnum.LocationSourceType",
                                   "id": 1
-                                }
-                              }
-                            },
-                            "VanityPharma": {
-                              "fields": {
-                                "vanity_pharma_display_url_mode": {
-                                  "type": "google.ads.googleads.v8.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode",
-                                  "id": 1
-                                },
-                                "vanity_pharma_text": {
-                                  "type": "google.ads.googleads.v8.enums.VanityPharmaTextEnum.VanityPharmaText",
-                                  "id": 2
                                 }
                               }
                             },
@@ -21849,15 +22245,12 @@
                                 }
                               }
                             },
-                            "SelectiveOptimization": {
+                            "OptimizationGoalSetting": {
                               "fields": {
-                                "conversion_actions": {
+                                "optimization_goal_types": {
                                   "rule": "repeated",
-                                  "type": "string",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionAction"
-                                  }
+                                  "type": "google.ads.googleads.v8.enums.OptimizationGoalTypeEnum.OptimizationGoalType",
+                                  "id": 1
                                 }
                               }
                             }
@@ -23353,6 +23746,14 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/FeedItem"
                               }
+                            },
+                            "asset": {
+                              "type": "string",
+                              "id": 20,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Asset"
+                              }
                             }
                           },
                           "nested": {
@@ -23441,8 +23842,71 @@
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
+                                },
+                                "asset": {
+                                  "type": "Asset",
+                                  "id": 13,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "customer_asset": {
+                                  "type": "CustomerAsset",
+                                  "id": 14,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "campaign_asset": {
+                                  "type": "CampaignAsset",
+                                  "id": 15,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "ad_group_asset": {
+                                  "type": "AdGroupAsset",
+                                  "id": 16,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
                                 }
                               }
+                            }
+                          }
+                        },
+                        "CustomerAsset": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/CustomerAsset",
+                            "(google.api.resource).pattern": "customers/{customer_id}/customerAssets/{asset_id}~{field_type}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CustomerAsset"
+                              }
+                            },
+                            "asset": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Asset"
+                              }
+                            },
+                            "field_type": {
+                              "type": "google.ads.googleads.v8.enums.AssetFieldTypeEnum.AssetFieldType",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v8.enums.AssetLinkStatusEnum.AssetLinkStatus",
+                              "id": 4
                             }
                           }
                         },
@@ -24206,6 +24670,54 @@
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/AdGroupBidModifier",
                                 "proto3_optional": true
                               }
+                            },
+                            "shared_set": {
+                              "type": "string",
+                              "id": 33,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/SharedSet"
+                              }
+                            },
+                            "campaign_shared_set": {
+                              "type": "string",
+                              "id": 34,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignSharedSet"
+                              }
+                            },
+                            "asset": {
+                              "type": "string",
+                              "id": 35,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Asset"
+                              }
+                            },
+                            "customer_asset": {
+                              "type": "string",
+                              "id": 36,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CustomerAsset"
+                              }
+                            },
+                            "campaign_asset": {
+                              "type": "string",
+                              "id": 37,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignAsset"
+                              }
+                            },
+                            "ad_group_asset": {
+                              "type": "string",
+                              "id": 38,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/AdGroupAsset"
+                              }
                             }
                           }
                         },
@@ -24598,32 +25110,6 @@
                                 }
                               }
                             },
-                            "ThirdPartyAppAnalyticsSettings": {
-                              "oneofs": {
-                                "_event_name": {
-                                  "oneof": [
-                                    "event_name"
-                                  ]
-                                }
-                              },
-                              "fields": {
-                                "event_name": {
-                                  "type": "string",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
-                                    "proto3_optional": true
-                                  }
-                                },
-                                "provider_name": {
-                                  "type": "string",
-                                  "id": 3,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
                             "FirebaseSettings": {
                               "oneofs": {
                                 "_event_name": {
@@ -24652,6 +25138,32 @@
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY",
                                     "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "ThirdPartyAppAnalyticsSettings": {
+                              "oneofs": {
+                                "_event_name": {
+                                  "oneof": [
+                                    "event_name"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "event_name": {
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                },
+                                "provider_name": {
+                                  "type": "string",
+                                  "id": 3,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
                                 }
                               }
@@ -24703,6 +25215,190 @@
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRule": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/ConversionValueRule",
+                            "(google.api.resource).pattern": "customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionValueRule"
+                              }
+                            },
+                            "id": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "action": {
+                              "type": "ValueRuleAction",
+                              "id": 3
+                            },
+                            "geo_location_condition": {
+                              "type": "ValueRuleGeoLocationCondition",
+                              "id": 4
+                            },
+                            "device_condition": {
+                              "type": "ValueRuleDeviceCondition",
+                              "id": 5
+                            },
+                            "audience_condition": {
+                              "type": "ValueRuleAudienceCondition",
+                              "id": 6
+                            },
+                            "owner_customer": {
+                              "type": "string",
+                              "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
+                              }
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v8.enums.ConversionValueRuleStatusEnum.ConversionValueRuleStatus",
+                              "id": 8
+                            }
+                          },
+                          "nested": {
+                            "ValueRuleAction": {
+                              "fields": {
+                                "operation": {
+                                  "type": "google.ads.googleads.v8.enums.ValueRuleOperationEnum.ValueRuleOperation",
+                                  "id": 1
+                                },
+                                "value": {
+                                  "type": "double",
+                                  "id": 2
+                                }
+                              }
+                            },
+                            "ValueRuleGeoLocationCondition": {
+                              "fields": {
+                                "excluded_geo_target_constants": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/GeoTargetConstant"
+                                  }
+                                },
+                                "excluded_geo_match_type": {
+                                  "type": "google.ads.googleads.v8.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType",
+                                  "id": 2
+                                },
+                                "geo_target_constants": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 3,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/GeoTargetConstant"
+                                  }
+                                },
+                                "geo_match_type": {
+                                  "type": "google.ads.googleads.v8.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType",
+                                  "id": 4
+                                }
+                              }
+                            },
+                            "ValueRuleDeviceCondition": {
+                              "fields": {
+                                "device_types": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v8.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType",
+                                  "id": 1
+                                }
+                              }
+                            },
+                            "ValueRuleAudienceCondition": {
+                              "fields": {
+                                "user_lists": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/UserList"
+                                  }
+                                },
+                                "user_interests": {
+                                  "rule": "repeated",
+                                  "type": "string",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.resource_reference).type": "googleads.googleapis.com/UserInterest"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "ConversionValueRuleSet": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/ConversionValueRuleSet",
+                            "(google.api.resource).pattern": "customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionValueRuleSet"
+                              }
+                            },
+                            "id": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "conversion_value_rules": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionValueRule"
+                              }
+                            },
+                            "dimensions": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.enums.ValueRuleSetDimensionEnum.ValueRuleSetDimension",
+                              "id": 4
+                            },
+                            "owner_customer": {
+                              "type": "string",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Customer"
+                              }
+                            },
+                            "attachment_type": {
+                              "type": "google.ads.googleads.v8.enums.ValueRuleSetAttachmentTypeEnum.ValueRuleSetAttachmentType",
+                              "id": 6
+                            },
+                            "campaign": {
+                              "type": "string",
+                              "id": 7,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Campaign"
+                              }
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v8.enums.ConversionValueRuleSetStatusEnum.ConversionValueRuleSetStatus",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
                             }
                           }
@@ -25229,41 +25925,6 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "proto3_optional": true
                               }
-                            }
-                          }
-                        },
-                        "CustomerAsset": {
-                          "options": {
-                            "(google.api.resource).type": "googleads.googleapis.com/CustomerAsset",
-                            "(google.api.resource).pattern": "customers/{customer_id}/customerAssets/{asset_id}~{field_type}"
-                          },
-                          "fields": {
-                            "resource_name": {
-                              "type": "string",
-                              "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE",
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/CustomerAsset"
-                              }
-                            },
-                            "asset": {
-                              "type": "string",
-                              "id": 2,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE",
-                                "(google.api.resource_reference).type": "googleads.googleapis.com/Asset"
-                              }
-                            },
-                            "field_type": {
-                              "type": "google.ads.googleads.v8.enums.AssetFieldTypeEnum.AssetFieldType",
-                              "id": 3,
-                              "options": {
-                                "(google.api.field_behavior)": "IMMUTABLE"
-                              }
-                            },
-                            "status": {
-                              "type": "google.ads.googleads.v8.enums.AssetLinkStatusEnum.AssetLinkStatus",
-                              "id": 4
                             }
                           }
                         },
@@ -29777,8 +30438,23 @@
                                 }
                               }
                             },
-                            "EnhancedCpcOptInRecommendation": {
-                              "fields": {}
+                            "KeywordMatchTypeRecommendation": {
+                              "fields": {
+                                "keyword": {
+                                  "type": "google.ads.googleads.v8.common.KeywordInfo",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "recommended_match_type": {
+                                  "type": "google.ads.googleads.v8.enums.KeywordMatchTypeEnum.KeywordMatchType",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
                             },
                             "TextAdRecommendation": {
                               "oneofs": {
@@ -29815,6 +30491,32 @@
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY",
                                     "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "MoveUnusedBudgetRecommendation": {
+                              "oneofs": {
+                                "_excess_campaign_budget": {
+                                  "oneof": [
+                                    "excess_campaign_budget"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "excess_campaign_budget": {
+                                  "type": "string",
+                                  "id": 3,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                },
+                                "budget_recommendation": {
+                                  "type": "CampaignBudgetRecommendation",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
                                 }
                               }
@@ -29894,6 +30596,17 @@
                                 }
                               }
                             },
+                            "ResponsiveSearchAdRecommendation": {
+                              "fields": {
+                                "ad": {
+                                  "type": "Ad",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
                             "MaximizeConversionsOptInRecommendation": {
                               "oneofs": {
                                 "_recommended_budget_amount_micros": {
@@ -29909,6 +30622,58 @@
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY",
                                     "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "CalloutExtensionRecommendation": {
+                              "fields": {
+                                "recommended_extensions": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v8.common.CalloutFeedItem",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                }
+                              }
+                            },
+                            "EnhancedCpcOptInRecommendation": {
+                              "fields": {}
+                            },
+                            "SearchPartnersOptInRecommendation": {
+                              "fields": {}
+                            },
+                            "OptimizeAdRotationRecommendation": {
+                              "fields": {}
+                            },
+                            "MaximizeClicksOptInRecommendation": {
+                              "oneofs": {
+                                "_recommended_budget_amount_micros": {
+                                  "oneof": [
+                                    "recommended_budget_amount_micros"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "recommended_budget_amount_micros": {
+                                  "type": "int64",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                }
+                              }
+                            },
+                            "SitelinkExtensionRecommendation": {
+                              "fields": {
+                                "recommended_extensions": {
+                                  "rule": "repeated",
+                                  "type": "google.ads.googleads.v8.common.SitelinkFeedItem",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
                                 }
                               }
@@ -29945,116 +30710,12 @@
                                 }
                               }
                             },
-                            "SearchPartnersOptInRecommendation": {
-                              "fields": {}
-                            },
-                            "MaximizeClicksOptInRecommendation": {
-                              "oneofs": {
-                                "_recommended_budget_amount_micros": {
-                                  "oneof": [
-                                    "recommended_budget_amount_micros"
-                                  ]
-                                }
-                              },
-                              "fields": {
-                                "recommended_budget_amount_micros": {
-                                  "type": "int64",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
-                                    "proto3_optional": true
-                                  }
-                                }
-                              }
-                            },
-                            "SitelinkExtensionRecommendation": {
-                              "fields": {
-                                "recommended_extensions": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v8.common.SitelinkFeedItem",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "ResponsiveSearchAdRecommendation": {
-                              "fields": {
-                                "ad": {
-                                  "type": "Ad",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "OptimizeAdRotationRecommendation": {
-                              "fields": {}
-                            },
-                            "CalloutExtensionRecommendation": {
-                              "fields": {
-                                "recommended_extensions": {
-                                  "rule": "repeated",
-                                  "type": "google.ads.googleads.v8.common.CalloutFeedItem",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
                             "CallExtensionRecommendation": {
                               "fields": {
                                 "recommended_extensions": {
                                   "rule": "repeated",
                                   "type": "google.ads.googleads.v8.common.CallFeedItem",
                                   "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "KeywordMatchTypeRecommendation": {
-                              "fields": {
-                                "keyword": {
-                                  "type": "google.ads.googleads.v8.common.KeywordInfo",
-                                  "id": 1,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                },
-                                "recommended_match_type": {
-                                  "type": "google.ads.googleads.v8.enums.KeywordMatchTypeEnum.KeywordMatchType",
-                                  "id": 2,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
-                                  }
-                                }
-                              }
-                            },
-                            "MoveUnusedBudgetRecommendation": {
-                              "oneofs": {
-                                "_excess_campaign_budget": {
-                                  "oneof": [
-                                    "excess_campaign_budget"
-                                  ]
-                                }
-                              },
-                              "fields": {
-                                "excess_campaign_budget": {
-                                  "type": "string",
-                                  "id": 3,
-                                  "options": {
-                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
-                                    "proto3_optional": true
-                                  }
-                                },
-                                "budget_recommendation": {
-                                  "type": "CampaignBudgetRecommendation",
-                                  "id": 2,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -34030,6 +34691,14 @@
                               "type": "google.ads.googleads.v8.resources.BatchJob",
                               "id": 139
                             },
+                            "bidding_data_exclusion": {
+                              "type": "google.ads.googleads.v8.resources.BiddingDataExclusion",
+                              "id": 159
+                            },
+                            "bidding_seasonality_adjustment": {
+                              "type": "google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment",
+                              "id": 160
+                            },
                             "bidding_strategy": {
                               "type": "google.ads.googleads.v8.resources.BiddingStrategy",
                               "id": 18
@@ -34125,6 +34794,14 @@
                             "conversion_custom_variable": {
                               "type": "google.ads.googleads.v8.resources.ConversionCustomVariable",
                               "id": 153
+                            },
+                            "conversion_value_rule": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRule",
+                              "id": 164
+                            },
+                            "conversion_value_rule_set": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRuleSet",
+                              "id": 165
                             },
                             "click_view": {
                               "type": "google.ads.googleads.v8.resources.ClickView",
@@ -34497,6 +35174,8 @@
                                 "ad_operation",
                                 "ad_parameter_operation",
                                 "asset_operation",
+                                "bidding_data_exclusion_operation",
+                                "bidding_seasonality_adjustment_operation",
                                 "bidding_strategy_operation",
                                 "campaign_asset_operation",
                                 "campaign_bid_modifier_operation",
@@ -34511,6 +35190,8 @@
                                 "campaign_shared_set_operation",
                                 "conversion_action_operation",
                                 "conversion_custom_variable_operation",
+                                "conversion_value_rule_operation",
+                                "conversion_value_rule_set_operation",
                                 "customer_asset_operation",
                                 "customer_extension_setting_operation",
                                 "customer_feed_operation",
@@ -34592,6 +35273,14 @@
                               "type": "AssetOperation",
                               "id": 23
                             },
+                            "bidding_data_exclusion_operation": {
+                              "type": "BiddingDataExclusionOperation",
+                              "id": 58
+                            },
+                            "bidding_seasonality_adjustment_operation": {
+                              "type": "BiddingSeasonalityAdjustmentOperation",
+                              "id": 59
+                            },
                             "bidding_strategy_operation": {
                               "type": "BiddingStrategyOperation",
                               "id": 6
@@ -34647,6 +35336,14 @@
                             "conversion_custom_variable_operation": {
                               "type": "ConversionCustomVariableOperation",
                               "id": 55
+                            },
+                            "conversion_value_rule_operation": {
+                              "type": "ConversionValueRuleOperation",
+                              "id": 63
+                            },
+                            "conversion_value_rule_set_operation": {
+                              "type": "ConversionValueRuleSetOperation",
+                              "id": 64
                             },
                             "customer_asset_operation": {
                               "type": "CustomerAssetOperation",
@@ -34767,6 +35464,8 @@
                                 "ad_parameter_result",
                                 "ad_result",
                                 "asset_result",
+                                "bidding_data_exclusion_result",
+                                "bidding_seasonality_adjustment_result",
                                 "bidding_strategy_result",
                                 "campaign_asset_result",
                                 "campaign_bid_modifier_result",
@@ -34781,6 +35480,8 @@
                                 "campaign_shared_set_result",
                                 "conversion_action_result",
                                 "conversion_custom_variable_result",
+                                "conversion_value_rule_result",
+                                "conversion_value_rule_set_result",
                                 "customer_asset_result",
                                 "customer_extension_setting_result",
                                 "customer_feed_result",
@@ -34862,6 +35563,14 @@
                               "type": "MutateAssetResult",
                               "id": 23
                             },
+                            "bidding_data_exclusion_result": {
+                              "type": "MutateBiddingDataExclusionsResult",
+                              "id": 58
+                            },
+                            "bidding_seasonality_adjustment_result": {
+                              "type": "MutateBiddingSeasonalityAdjustmentsResult",
+                              "id": 59
+                            },
                             "bidding_strategy_result": {
                               "type": "MutateBiddingStrategyResult",
                               "id": 6
@@ -34917,6 +35626,14 @@
                             "conversion_custom_variable_result": {
                               "type": "MutateConversionCustomVariableResult",
                               "id": 55
+                            },
+                            "conversion_value_rule_result": {
+                              "type": "MutateConversionValueRuleResult",
+                              "id": 63
+                            },
+                            "conversion_value_rule_set_result": {
+                              "type": "MutateConversionValueRuleSetResult",
+                              "id": 64
                             },
                             "customer_asset_result": {
                               "type": "MutateCustomerAssetResult",
@@ -35017,6 +35734,292 @@
                             "user_list_result": {
                               "type": "MutateUserListResult",
                               "id": 16
+                            }
+                          }
+                        },
+                        "BiddingDataExclusionService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "GetBiddingDataExclusion": {
+                              "requestType": "GetBiddingDataExclusionRequest",
+                              "responseType": "google.ads.googleads.v8.resources.BiddingDataExclusion",
+                              "options": {
+                                "(google.api.http).get": "/v8/{resource_name=customers/*/biddingDataExclusions/*}",
+                                "(google.api.method_signature)": "resource_name"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "get": "/v8/{resource_name=customers/*/biddingDataExclusions/*}"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "resource_name"
+                                }
+                              ]
+                            },
+                            "MutateBiddingDataExclusions": {
+                              "requestType": "MutateBiddingDataExclusionsRequest",
+                              "responseType": "MutateBiddingDataExclusionsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v8/customers/{customer_id=*}/biddingDataExclusions:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operations"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v8/customers/{customer_id=*}/biddingDataExclusions:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operations"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "GetBiddingDataExclusionRequest": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/BiddingDataExclusion"
+                              }
+                            }
+                          }
+                        },
+                        "MutateBiddingDataExclusionsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operations": {
+                              "rule": "repeated",
+                              "type": "BiddingDataExclusionOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "partial_failure": {
+                              "type": "bool",
+                              "id": 3
+                            },
+                            "validate_only": {
+                              "type": "bool",
+                              "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v8.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
+                            }
+                          }
+                        },
+                        "BiddingDataExclusionOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "update",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "update_mask": {
+                              "type": "google.protobuf.FieldMask",
+                              "id": 4
+                            },
+                            "create": {
+                              "type": "google.ads.googleads.v8.resources.BiddingDataExclusion",
+                              "id": 1
+                            },
+                            "update": {
+                              "type": "google.ads.googleads.v8.resources.BiddingDataExclusion",
+                              "id": 2
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateBiddingDataExclusionsResponse": {
+                          "fields": {
+                            "partial_failure_error": {
+                              "type": "google.rpc.Status",
+                              "id": 3
+                            },
+                            "results": {
+                              "rule": "repeated",
+                              "type": "MutateBiddingDataExclusionsResult",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "MutateBiddingDataExclusionsResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "bidding_data_exclusion": {
+                              "type": "google.ads.googleads.v8.resources.BiddingDataExclusion",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "BiddingSeasonalityAdjustmentService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "GetBiddingSeasonalityAdjustment": {
+                              "requestType": "GetBiddingSeasonalityAdjustmentRequest",
+                              "responseType": "google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment",
+                              "options": {
+                                "(google.api.http).get": "/v8/{resource_name=customers/*/biddingSeasonalityAdjustments/*}",
+                                "(google.api.method_signature)": "resource_name"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "get": "/v8/{resource_name=customers/*/biddingSeasonalityAdjustments/*}"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "resource_name"
+                                }
+                              ]
+                            },
+                            "MutateBiddingSeasonalityAdjustments": {
+                              "requestType": "MutateBiddingSeasonalityAdjustmentsRequest",
+                              "responseType": "MutateBiddingSeasonalityAdjustmentsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v8/customers/{customer_id=*}/biddingSeasonalityAdjustments:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operations"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v8/customers/{customer_id=*}/biddingSeasonalityAdjustments:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operations"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "GetBiddingSeasonalityAdjustmentRequest": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/BiddingSeasonalityAdjustment"
+                              }
+                            }
+                          }
+                        },
+                        "MutateBiddingSeasonalityAdjustmentsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operations": {
+                              "rule": "repeated",
+                              "type": "BiddingSeasonalityAdjustmentOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "partial_failure": {
+                              "type": "bool",
+                              "id": 3
+                            },
+                            "validate_only": {
+                              "type": "bool",
+                              "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v8.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
+                            }
+                          }
+                        },
+                        "BiddingSeasonalityAdjustmentOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "update",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "update_mask": {
+                              "type": "google.protobuf.FieldMask",
+                              "id": 4
+                            },
+                            "create": {
+                              "type": "google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment",
+                              "id": 1
+                            },
+                            "update": {
+                              "type": "google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment",
+                              "id": 2
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateBiddingSeasonalityAdjustmentsResponse": {
+                          "fields": {
+                            "partial_failure_error": {
+                              "type": "google.rpc.Status",
+                              "id": 3
+                            },
+                            "results": {
+                              "rule": "repeated",
+                              "type": "MutateBiddingSeasonalityAdjustmentsResult",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "MutateBiddingSeasonalityAdjustmentsResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "bidding_seasonality_adjustment": {
+                              "type": "google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment",
+                              "id": 2
                             }
                           }
                         },
@@ -37313,6 +38316,292 @@
                             },
                             "conversion_custom_variable": {
                               "type": "google.ads.googleads.v8.resources.ConversionCustomVariable",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "ConversionValueRuleService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "GetConversionValueRule": {
+                              "requestType": "GetConversionValueRuleRequest",
+                              "responseType": "google.ads.googleads.v8.resources.ConversionValueRule",
+                              "options": {
+                                "(google.api.http).get": "/v8/{resource_name=customers/*/conversionValueRules/*}",
+                                "(google.api.method_signature)": "resource_name"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "get": "/v8/{resource_name=customers/*/conversionValueRules/*}"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "resource_name"
+                                }
+                              ]
+                            },
+                            "MutateConversionValueRules": {
+                              "requestType": "MutateConversionValueRulesRequest",
+                              "responseType": "MutateConversionValueRulesResponse",
+                              "options": {
+                                "(google.api.http).post": "/v8/customers/{customer_id=*}/conversionValueRules:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operations"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v8/customers/{customer_id=*}/conversionValueRules:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operations"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "GetConversionValueRuleRequest": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionValueRule"
+                              }
+                            }
+                          }
+                        },
+                        "MutateConversionValueRulesRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operations": {
+                              "rule": "repeated",
+                              "type": "ConversionValueRuleOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "partial_failure": {
+                              "type": "bool",
+                              "id": 5
+                            },
+                            "validate_only": {
+                              "type": "bool",
+                              "id": 3
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v8.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "ConversionValueRuleOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "update",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "update_mask": {
+                              "type": "google.protobuf.FieldMask",
+                              "id": 4
+                            },
+                            "create": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRule",
+                              "id": 1
+                            },
+                            "update": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRule",
+                              "id": 2
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateConversionValueRulesResponse": {
+                          "fields": {
+                            "results": {
+                              "rule": "repeated",
+                              "type": "MutateConversionValueRuleResult",
+                              "id": 2
+                            },
+                            "partial_failure_error": {
+                              "type": "google.rpc.Status",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateConversionValueRuleResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "conversion_value_rule": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRule",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "ConversionValueRuleSetService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "GetConversionValueRuleSet": {
+                              "requestType": "GetConversionValueRuleSetRequest",
+                              "responseType": "google.ads.googleads.v8.resources.ConversionValueRuleSet",
+                              "options": {
+                                "(google.api.http).get": "/v8/{resource_name=customers/*/conversionValueRuleSets/*}",
+                                "(google.api.method_signature)": "resource_name"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "get": "/v8/{resource_name=customers/*/conversionValueRuleSets/*}"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "resource_name"
+                                }
+                              ]
+                            },
+                            "MutateConversionValueRuleSets": {
+                              "requestType": "MutateConversionValueRuleSetsRequest",
+                              "responseType": "MutateConversionValueRuleSetsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v8/customers/{customer_id=*}/conversionValueRuleSets:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operations"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v8/customers/{customer_id=*}/conversionValueRuleSets:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operations"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "GetConversionValueRuleSetRequest": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionValueRuleSet"
+                              }
+                            }
+                          }
+                        },
+                        "MutateConversionValueRuleSetsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operations": {
+                              "rule": "repeated",
+                              "type": "ConversionValueRuleSetOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "partial_failure": {
+                              "type": "bool",
+                              "id": 5
+                            },
+                            "validate_only": {
+                              "type": "bool",
+                              "id": 3
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v8.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "ConversionValueRuleSetOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "update",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "update_mask": {
+                              "type": "google.protobuf.FieldMask",
+                              "id": 4
+                            },
+                            "create": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRuleSet",
+                              "id": 1
+                            },
+                            "update": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRuleSet",
+                              "id": 2
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateConversionValueRuleSetsResponse": {
+                          "fields": {
+                            "results": {
+                              "rule": "repeated",
+                              "type": "MutateConversionValueRuleSetResult",
+                              "id": 1
+                            },
+                            "partial_failure_error": {
+                              "type": "google.rpc.Status",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "MutateConversionValueRuleSetResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "conversion_value_rule_set": {
+                              "type": "google.ads.googleads.v8.resources.ConversionValueRuleSet",
                               "id": 2
                             }
                           }
@@ -41742,6 +43031,11 @@
                                 "adjustment_date_time"
                               ]
                             },
+                            "_user_agent": {
+                              "oneof": [
+                                "user_agent"
+                              ]
+                            },
                             "conversion_identifier": {
                               "oneof": [
                                 "gclid_date_time_pair",
@@ -41771,6 +43065,18 @@
                             "restatement_value": {
                               "type": "RestatementValue",
                               "id": 6
+                            },
+                            "user_identifiers": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.common.UserIdentifier",
+                              "id": 10
+                            },
+                            "user_agent": {
+                              "type": "string",
+                              "id": 11,
+                              "options": {
+                                "proto3_optional": true
+                              }
                             },
                             "gclid_date_time_pair": {
                               "type": "GclidDateTimePair",
@@ -42112,6 +43418,11 @@
                             "cart_data": {
                               "type": "CartData",
                               "id": 16
+                            },
+                            "user_identifiers": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.common.UserIdentifier",
+                              "id": 17
                             }
                           }
                         },
@@ -42267,6 +43578,11 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "user_identifiers": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v8.common.UserIdentifier",
+                              "id": 7
                             }
                           }
                         },
@@ -45676,6 +46992,11 @@
                               "oneof": [
                                 "min_effective_frequency"
                               ]
+                            },
+                            "_effective_frequency_limit": {
+                              "oneof": [
+                                "effective_frequency_limit"
+                              ]
                             }
                           },
                           "fields": {
@@ -45718,6 +47039,13 @@
                                 "proto3_optional": true
                               }
                             },
+                            "effective_frequency_limit": {
+                              "type": "EffectiveFrequencyLimit",
+                              "id": 12,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
                             "targeting": {
                               "type": "Targeting",
                               "id": 6
@@ -45729,6 +47057,14 @@
                               "options": {
                                 "(google.api.field_behavior)": "REQUIRED"
                               }
+                            }
+                          }
+                        },
+                        "EffectiveFrequencyLimit": {
+                          "fields": {
+                            "effective_frequency_breakdown_limit": {
+                              "type": "int32",
+                              "id": 1
                             }
                           }
                         },
@@ -45935,6 +47271,11 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "effective_frequency_breakdowns": {
+                              "rule": "repeated",
+                              "type": "EffectiveFrequencyBreakdown",
+                              "id": 10
                             }
                           }
                         },
@@ -46015,6 +47356,22 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            }
+                          }
+                        },
+                        "EffectiveFrequencyBreakdown": {
+                          "fields": {
+                            "effective_frequency": {
+                              "type": "int32",
+                              "id": 1
+                            },
+                            "on_target_reach": {
+                              "type": "int64",
+                              "id": 2
+                            },
+                            "total_reach": {
+                              "type": "int64",
+                              "id": 3
                             }
                           }
                         },
@@ -46573,6 +47930,22 @@
                                   }
                                 }
                               ]
+                            },
+                            "SuggestSmartCampaignAd": {
+                              "requestType": "SuggestSmartCampaignAdRequest",
+                              "responseType": "SuggestSmartCampaignAdResponse",
+                              "options": {
+                                "(google.api.http).post": "/v8/customers/{customer_id=*}:suggestSmartCampaignAd",
+                                "(google.api.http).body": "*"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v8/customers/{customer_id=*}:suggestSmartCampaignAd",
+                                    "body": "*"
+                                  }
+                                }
+                              ]
                             }
                           }
                         },
@@ -46612,6 +47985,12 @@
                         },
                         "SmartCampaignSuggestionInfo": {
                           "oneofs": {
+                            "business_setting": {
+                              "oneof": [
+                                "business_context",
+                                "business_location_id"
+                              ]
+                            },
                             "geo_target": {
                               "oneof": [
                                 "location_list",
@@ -46623,13 +48002,6 @@
                             "final_url": {
                               "type": "string",
                               "id": 1,
-                              "options": {
-                                "(google.api.field_behavior)": "OPTIONAL"
-                              }
-                            },
-                            "business_location_id": {
-                              "type": "int64",
-                              "id": 2,
                               "options": {
                                 "(google.api.field_behavior)": "OPTIONAL"
                               }
@@ -46653,6 +48025,20 @@
                               "rule": "repeated",
                               "type": "google.ads.googleads.v8.common.KeywordThemeInfo",
                               "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            },
+                            "business_context": {
+                              "type": "BusinessContext",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            },
+                            "business_location_id": {
+                              "type": "int64",
+                              "id": 2,
                               "options": {
                                 "(google.api.field_behavior)": "OPTIONAL"
                               }
@@ -46681,6 +48067,17 @@
                                   "id": 1,
                                   "options": {
                                     "(google.api.field_behavior)": "REQUIRED"
+                                  }
+                                }
+                              }
+                            },
+                            "BusinessContext": {
+                              "fields": {
+                                "business_name": {
+                                  "type": "string",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OPTIONAL"
                                   }
                                 }
                               }
@@ -46754,6 +48151,35 @@
                                   "type": "Metrics",
                                   "id": 2
                                 }
+                              }
+                            }
+                          }
+                        },
+                        "SuggestSmartCampaignAdRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "suggestion_info": {
+                              "type": "SmartCampaignSuggestionInfo",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
+                        "SuggestSmartCampaignAdResponse": {
+                          "fields": {
+                            "ad_info": {
+                              "type": "google.ads.googleads.v8.common.SmartCampaignAdInfo",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
                               }
                             }
                           }

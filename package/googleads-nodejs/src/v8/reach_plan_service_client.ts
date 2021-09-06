@@ -16,11 +16,12 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
+/* global window */
 import * as gax from 'google-gax';
 import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
 
 import * as protos from '../../protos/protos';
-import * as path from 'path';
+import jsonProtos = require('../../protos/protos.json');
 /**
  * Client JSON configuration object, loaded from
  * `src/v8/reach_plan_service_client_config.json`.
@@ -43,8 +44,8 @@ export class ReachPlanServiceClient {
   private _terminated = false;
   private _opts: ClientOptions;
   private _providedCustomServicePath: boolean;
-  private _gaxModule: typeof gax;
-  private _gaxGrpc: gax.GrpcClient;
+  private _gaxModule: typeof gax | typeof gax.fallback;
+  private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
   private _defaults: {[method: string]: gax.CallSettings};
   auth: gax.GoogleAuth;
@@ -87,6 +88,11 @@ export class ReachPlanServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
+   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
+   *     In fallback mode, a special browser-compatible transport implementation is used
+   *     instead of gRPC transport. In browser context (if the `window` object is defined)
+   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
+   *     if you need to override this behavior.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -95,7 +101,8 @@ export class ReachPlanServiceClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
-    opts = Object.assign({servicePath, port, clientConfig}, opts);
+    const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
+    opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
     // If scopes are unset in options and we're connecting to a non-default endpoint, set scopes just in case.
     if (servicePath !== staticMembers.servicePath && !('scopes' in opts)) {
@@ -103,7 +110,7 @@ export class ReachPlanServiceClient {
     }
 
     // Choose either gRPC or proto-over-HTTP implementation of google-gax.
-    this._gaxModule = gax;
+    this._gaxModule = opts.fallback ? gax.fallback : gax;
 
     // Create a `gaxGrpc` object, with any grpc-specific options sent to the client.
     this._gaxGrpc = new this._gaxModule.GrpcClient(opts);
@@ -113,6 +120,12 @@ export class ReachPlanServiceClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
+
+    // Set useJWTAccessWithScope on the auth object.
+    this.auth.useJWTAccessWithScope = true;
+
+    // Set defaultServicePath on the auth object.
+    this.auth.defaultServicePath = staticMembers.servicePath;
 
     // Set the default scopes in auth client if needed.
     if (servicePath === staticMembers.servicePath) {
@@ -129,15 +142,16 @@ export class ReachPlanServiceClient {
     } else {
       clientHeader.push(`gl-web/${this._gaxModule.version}`);
     }
-    clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
+    if (!opts.fallback) {
+      clientHeader.push(`grpc/${this._gaxGrpc.grpcVersion}`);
+    } else if (opts.fallback === 'rest' ) {
+      clientHeader.push(`rest/${this._gaxGrpc.grpcVersion}`);
+    }
     if (opts.libName && opts.libVersion) {
       clientHeader.push(`${opts.libName}/${opts.libVersion}`);
     }
     // Load the applicable protos.
-    this._protos = this._gaxGrpc.loadProto(
-      path.join(__dirname, '..', '..', 'protos'),
-      'google/ads/googleads/v8/services/reach_plan_service.proto'
-    );
+    this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
 
     // This API contains "path templates"; forward-slash-separated
     // identifiers to uniquely identify resources within the API.
@@ -218,6 +232,12 @@ export class ReachPlanServiceClient {
       batchJobPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/batchJobs/{batch_job_id}'
       ),
+      biddingDataExclusionPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}'
+      ),
+      biddingSeasonalityAdjustmentPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}'
+      ),
       biddingStrategyPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/biddingStrategies/{bidding_strategy_id}'
       ),
@@ -292,6 +312,12 @@ export class ReachPlanServiceClient {
       ),
       conversionCustomVariablePathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}'
+      ),
+      conversionValueRulePathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}'
+      ),
+      conversionValueRuleSetPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}'
       ),
       currencyConstantPathTemplate: new this._gaxModule.PathTemplate(
         'currencyConstants/{code}'
@@ -563,6 +589,8 @@ export class ReachPlanServiceClient {
     // Put together the "service stub" for
     // google.ads.googleads.v8.services.ReachPlanService.
     this.reachPlanServiceStub = this._gaxGrpc.createStub(
+        this._opts.fallback ?
+          (this._protos as protobuf.Root).lookupService('google.ads.googleads.v8.services.ReachPlanService') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.ads.googleads.v8.services.ReachPlanService,
         this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
@@ -956,6 +984,19 @@ export class ReachPlanServiceClient {
  *   exposed to the ad) for the reported reach metrics [1-10].
  *   This won't affect the targeting, but just the reporting.
  *   If not specified, a default of 1 is applied.
+ *
+ *   This field cannot be combined with the effective_frequency_limit field.
+ * @param {google.ads.googleads.v8.services.EffectiveFrequencyLimit} request.effectiveFrequencyLimit
+ *   The highest minimum effective frequency (the number of times a person was
+ *   exposed to the ad) value [1-10] to include in
+ *   Forecast.effective_frequency_breakdowns.
+ *   If not specified, Forecast.effective_frequency_breakdowns will not be
+ *   provided.
+ *
+ *   The effective frequency value provided here will also be used as the
+ *   minimum effective frequency for the reported reach metrics.
+ *
+ *   This field cannot be combined with the min_effective_frequency field.
  * @param {google.ads.googleads.v8.services.Targeting} request.targeting
  *   The targeting to be applied to all products selected in the product mix.
  *
@@ -2293,6 +2334,78 @@ export class ReachPlanServiceClient {
   }
 
   /**
+   * Return a fully-qualified biddingDataExclusion resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingDataExclusionPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).seasonality_event_id;
+  }
+
+  /**
+   * Return a fully-qualified biddingSeasonalityAdjustment resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingSeasonalityAdjustmentPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).seasonality_event_id;
+  }
+
+  /**
    * Return a fully-qualified biddingStrategy resource name string.
    *
    * @param {string} customer_id
@@ -3515,6 +3628,78 @@ export class ReachPlanServiceClient {
    */
   matchConversionCustomVariableIdFromConversionCustomVariableName(conversionCustomVariableName: string) {
     return this.pathTemplates.conversionCustomVariablePathTemplate.match(conversionCustomVariableName).conversion_custom_variable_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRule resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRulePath(customerId:string,conversionValueRuleId:string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_id: conversionValueRuleId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the conversion_value_rule_id.
+   */
+  matchConversionValueRuleIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).conversion_value_rule_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRuleSet resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_set_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRuleSetPath(customerId:string,conversionValueRuleSetId:string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_set_id: conversionValueRuleSetId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_set_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the conversion_value_rule_set_id.
+   */
+  matchConversionValueRuleSetIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).conversion_value_rule_set_id;
   }
 
   /**
