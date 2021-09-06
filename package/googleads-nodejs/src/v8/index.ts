@@ -41,6 +41,8 @@ export {AgeRangeViewServiceClient} from './age_range_view_service_client';
 export {AssetFieldTypeViewServiceClient} from './asset_field_type_view_service_client';
 export {AssetServiceClient} from './asset_service_client';
 export {BatchJobServiceClient} from './batch_job_service_client';
+export {BiddingDataExclusionServiceClient} from './bidding_data_exclusion_service_client';
+export {BiddingSeasonalityAdjustmentServiceClient} from './bidding_seasonality_adjustment_service_client';
 export {BiddingStrategyServiceClient} from './bidding_strategy_service_client';
 export {BiddingStrategySimulationServiceClient} from './bidding_strategy_simulation_service_client';
 export {BillingSetupServiceClient} from './billing_setup_service_client';
@@ -66,6 +68,8 @@ export {ConversionActionServiceClient} from './conversion_action_service_client'
 export {ConversionAdjustmentUploadServiceClient} from './conversion_adjustment_upload_service_client';
 export {ConversionCustomVariableServiceClient} from './conversion_custom_variable_service_client';
 export {ConversionUploadServiceClient} from './conversion_upload_service_client';
+export {ConversionValueRuleServiceClient} from './conversion_value_rule_service_client';
+export {ConversionValueRuleSetServiceClient} from './conversion_value_rule_set_service_client';
 export {CurrencyConstantServiceClient} from './currency_constant_service_client';
 export {CustomAudienceServiceClient} from './custom_audience_service_client';
 export {CustomerAssetServiceClient} from './customer_asset_service_client';

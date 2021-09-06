@@ -23,5 +23,6 @@ build:
 
 clean:
 	rm -rf bazel && mkdir bazel
+	rm -rf build
 
 .PHONY: protos clean build copy

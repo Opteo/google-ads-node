@@ -15,7 +15,7 @@
     "prepare": "sh ./init.sh"
   },
   "dependencies": {
-    "google-gax": "^2.22.0"
+    "google-gax": "^2.25.0"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
