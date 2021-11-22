@@ -1,0 +1,4726 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.ads.googleads.v9.services",
+  "libraryPackage": "google-ads",
+  "services": {
+    "AccessibleBiddingStrategyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccessibleBiddingStrategyServiceClient",
+          "rpcs": {
+            "GetAccessibleBiddingStrategy": {
+              "methods": [
+                "getAccessibleBiddingStrategy"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AccessibleBiddingStrategyServiceClient",
+          "rpcs": {
+            "GetAccessibleBiddingStrategy": {
+              "methods": [
+                "getAccessibleBiddingStrategy"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AccountBudgetProposalService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountBudgetProposalServiceClient",
+          "rpcs": {
+            "GetAccountBudgetProposal": {
+              "methods": [
+                "getAccountBudgetProposal"
+              ]
+            },
+            "MutateAccountBudgetProposal": {
+              "methods": [
+                "mutateAccountBudgetProposal"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AccountBudgetProposalServiceClient",
+          "rpcs": {
+            "GetAccountBudgetProposal": {
+              "methods": [
+                "getAccountBudgetProposal"
+              ]
+            },
+            "MutateAccountBudgetProposal": {
+              "methods": [
+                "mutateAccountBudgetProposal"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AccountBudgetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountBudgetServiceClient",
+          "rpcs": {
+            "GetAccountBudget": {
+              "methods": [
+                "getAccountBudget"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AccountBudgetServiceClient",
+          "rpcs": {
+            "GetAccountBudget": {
+              "methods": [
+                "getAccountBudget"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AccountLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountLinkServiceClient",
+          "rpcs": {
+            "GetAccountLink": {
+              "methods": [
+                "getAccountLink"
+              ]
+            },
+            "CreateAccountLink": {
+              "methods": [
+                "createAccountLink"
+              ]
+            },
+            "MutateAccountLink": {
+              "methods": [
+                "mutateAccountLink"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AccountLinkServiceClient",
+          "rpcs": {
+            "GetAccountLink": {
+              "methods": [
+                "getAccountLink"
+              ]
+            },
+            "CreateAccountLink": {
+              "methods": [
+                "createAccountLink"
+              ]
+            },
+            "MutateAccountLink": {
+              "methods": [
+                "mutateAccountLink"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupAdAssetViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupAdAssetViewServiceClient",
+          "rpcs": {
+            "GetAdGroupAdAssetView": {
+              "methods": [
+                "getAdGroupAdAssetView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupAdAssetViewServiceClient",
+          "rpcs": {
+            "GetAdGroupAdAssetView": {
+              "methods": [
+                "getAdGroupAdAssetView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupAdLabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupAdLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupAdLabel": {
+              "methods": [
+                "getAdGroupAdLabel"
+              ]
+            },
+            "MutateAdGroupAdLabels": {
+              "methods": [
+                "mutateAdGroupAdLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupAdLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupAdLabel": {
+              "methods": [
+                "getAdGroupAdLabel"
+              ]
+            },
+            "MutateAdGroupAdLabels": {
+              "methods": [
+                "mutateAdGroupAdLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupAdService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupAdServiceClient",
+          "rpcs": {
+            "GetAdGroupAd": {
+              "methods": [
+                "getAdGroupAd"
+              ]
+            },
+            "MutateAdGroupAds": {
+              "methods": [
+                "mutateAdGroupAds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupAdServiceClient",
+          "rpcs": {
+            "GetAdGroupAd": {
+              "methods": [
+                "getAdGroupAd"
+              ]
+            },
+            "MutateAdGroupAds": {
+              "methods": [
+                "mutateAdGroupAds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupAssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupAssetServiceClient",
+          "rpcs": {
+            "GetAdGroupAsset": {
+              "methods": [
+                "getAdGroupAsset"
+              ]
+            },
+            "MutateAdGroupAssets": {
+              "methods": [
+                "mutateAdGroupAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupAssetServiceClient",
+          "rpcs": {
+            "GetAdGroupAsset": {
+              "methods": [
+                "getAdGroupAsset"
+              ]
+            },
+            "MutateAdGroupAssets": {
+              "methods": [
+                "mutateAdGroupAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupAudienceViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupAudienceViewServiceClient",
+          "rpcs": {
+            "GetAdGroupAudienceView": {
+              "methods": [
+                "getAdGroupAudienceView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupAudienceViewServiceClient",
+          "rpcs": {
+            "GetAdGroupAudienceView": {
+              "methods": [
+                "getAdGroupAudienceView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupBidModifierService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupBidModifierServiceClient",
+          "rpcs": {
+            "GetAdGroupBidModifier": {
+              "methods": [
+                "getAdGroupBidModifier"
+              ]
+            },
+            "MutateAdGroupBidModifiers": {
+              "methods": [
+                "mutateAdGroupBidModifiers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupBidModifierServiceClient",
+          "rpcs": {
+            "GetAdGroupBidModifier": {
+              "methods": [
+                "getAdGroupBidModifier"
+              ]
+            },
+            "MutateAdGroupBidModifiers": {
+              "methods": [
+                "mutateAdGroupBidModifiers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupCriterionCustomizerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupCriterionCustomizerServiceClient",
+          "rpcs": {
+            "MutateAdGroupCriterionCustomizers": {
+              "methods": [
+                "mutateAdGroupCriterionCustomizers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupCriterionCustomizerServiceClient",
+          "rpcs": {
+            "MutateAdGroupCriterionCustomizers": {
+              "methods": [
+                "mutateAdGroupCriterionCustomizers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupCriterionLabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupCriterionLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterionLabel": {
+              "methods": [
+                "getAdGroupCriterionLabel"
+              ]
+            },
+            "MutateAdGroupCriterionLabels": {
+              "methods": [
+                "mutateAdGroupCriterionLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupCriterionLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterionLabel": {
+              "methods": [
+                "getAdGroupCriterionLabel"
+              ]
+            },
+            "MutateAdGroupCriterionLabels": {
+              "methods": [
+                "mutateAdGroupCriterionLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupCriterionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupCriterionServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterion": {
+              "methods": [
+                "getAdGroupCriterion"
+              ]
+            },
+            "MutateAdGroupCriteria": {
+              "methods": [
+                "mutateAdGroupCriteria"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupCriterionServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterion": {
+              "methods": [
+                "getAdGroupCriterion"
+              ]
+            },
+            "MutateAdGroupCriteria": {
+              "methods": [
+                "mutateAdGroupCriteria"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupCriterionSimulationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupCriterionSimulationServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterionSimulation": {
+              "methods": [
+                "getAdGroupCriterionSimulation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupCriterionSimulationServiceClient",
+          "rpcs": {
+            "GetAdGroupCriterionSimulation": {
+              "methods": [
+                "getAdGroupCriterionSimulation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupCustomizerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupCustomizerServiceClient",
+          "rpcs": {
+            "MutateAdGroupCustomizers": {
+              "methods": [
+                "mutateAdGroupCustomizers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupCustomizerServiceClient",
+          "rpcs": {
+            "MutateAdGroupCustomizers": {
+              "methods": [
+                "mutateAdGroupCustomizers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupExtensionSettingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupExtensionSettingServiceClient",
+          "rpcs": {
+            "GetAdGroupExtensionSetting": {
+              "methods": [
+                "getAdGroupExtensionSetting"
+              ]
+            },
+            "MutateAdGroupExtensionSettings": {
+              "methods": [
+                "mutateAdGroupExtensionSettings"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupExtensionSettingServiceClient",
+          "rpcs": {
+            "GetAdGroupExtensionSetting": {
+              "methods": [
+                "getAdGroupExtensionSetting"
+              ]
+            },
+            "MutateAdGroupExtensionSettings": {
+              "methods": [
+                "mutateAdGroupExtensionSettings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupFeedService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupFeedServiceClient",
+          "rpcs": {
+            "GetAdGroupFeed": {
+              "methods": [
+                "getAdGroupFeed"
+              ]
+            },
+            "MutateAdGroupFeeds": {
+              "methods": [
+                "mutateAdGroupFeeds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupFeedServiceClient",
+          "rpcs": {
+            "GetAdGroupFeed": {
+              "methods": [
+                "getAdGroupFeed"
+              ]
+            },
+            "MutateAdGroupFeeds": {
+              "methods": [
+                "mutateAdGroupFeeds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupLabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupLabel": {
+              "methods": [
+                "getAdGroupLabel"
+              ]
+            },
+            "MutateAdGroupLabels": {
+              "methods": [
+                "mutateAdGroupLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupLabelServiceClient",
+          "rpcs": {
+            "GetAdGroupLabel": {
+              "methods": [
+                "getAdGroupLabel"
+              ]
+            },
+            "MutateAdGroupLabels": {
+              "methods": [
+                "mutateAdGroupLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupServiceClient",
+          "rpcs": {
+            "GetAdGroup": {
+              "methods": [
+                "getAdGroup"
+              ]
+            },
+            "MutateAdGroups": {
+              "methods": [
+                "mutateAdGroups"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupServiceClient",
+          "rpcs": {
+            "GetAdGroup": {
+              "methods": [
+                "getAdGroup"
+              ]
+            },
+            "MutateAdGroups": {
+              "methods": [
+                "mutateAdGroups"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdGroupSimulationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdGroupSimulationServiceClient",
+          "rpcs": {
+            "GetAdGroupSimulation": {
+              "methods": [
+                "getAdGroupSimulation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdGroupSimulationServiceClient",
+          "rpcs": {
+            "GetAdGroupSimulation": {
+              "methods": [
+                "getAdGroupSimulation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdParameterService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdParameterServiceClient",
+          "rpcs": {
+            "GetAdParameter": {
+              "methods": [
+                "getAdParameter"
+              ]
+            },
+            "MutateAdParameters": {
+              "methods": [
+                "mutateAdParameters"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdParameterServiceClient",
+          "rpcs": {
+            "GetAdParameter": {
+              "methods": [
+                "getAdParameter"
+              ]
+            },
+            "MutateAdParameters": {
+              "methods": [
+                "mutateAdParameters"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdScheduleViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdScheduleViewServiceClient",
+          "rpcs": {
+            "GetAdScheduleView": {
+              "methods": [
+                "getAdScheduleView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdScheduleViewServiceClient",
+          "rpcs": {
+            "GetAdScheduleView": {
+              "methods": [
+                "getAdScheduleView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AdService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdServiceClient",
+          "rpcs": {
+            "GetAd": {
+              "methods": [
+                "getAd"
+              ]
+            },
+            "MutateAds": {
+              "methods": [
+                "mutateAds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AdServiceClient",
+          "rpcs": {
+            "GetAd": {
+              "methods": [
+                "getAd"
+              ]
+            },
+            "MutateAds": {
+              "methods": [
+                "mutateAds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AgeRangeViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgeRangeViewServiceClient",
+          "rpcs": {
+            "GetAgeRangeView": {
+              "methods": [
+                "getAgeRangeView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AgeRangeViewServiceClient",
+          "rpcs": {
+            "GetAgeRangeView": {
+              "methods": [
+                "getAgeRangeView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetFieldTypeViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetFieldTypeViewServiceClient",
+          "rpcs": {
+            "GetAssetFieldTypeView": {
+              "methods": [
+                "getAssetFieldTypeView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetFieldTypeViewServiceClient",
+          "rpcs": {
+            "GetAssetFieldTypeView": {
+              "methods": [
+                "getAssetFieldTypeView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetGroupAssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetGroupAssetServiceClient",
+          "rpcs": {
+            "GetAssetGroupAsset": {
+              "methods": [
+                "getAssetGroupAsset"
+              ]
+            },
+            "MutateAssetGroupAssets": {
+              "methods": [
+                "mutateAssetGroupAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetGroupAssetServiceClient",
+          "rpcs": {
+            "GetAssetGroupAsset": {
+              "methods": [
+                "getAssetGroupAsset"
+              ]
+            },
+            "MutateAssetGroupAssets": {
+              "methods": [
+                "mutateAssetGroupAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetGroupListingGroupFilterService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetGroupListingGroupFilterServiceClient",
+          "rpcs": {
+            "MutateAssetGroupListingGroupFilters": {
+              "methods": [
+                "mutateAssetGroupListingGroupFilters"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetGroupListingGroupFilterServiceClient",
+          "rpcs": {
+            "MutateAssetGroupListingGroupFilters": {
+              "methods": [
+                "mutateAssetGroupListingGroupFilters"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetGroupServiceClient",
+          "rpcs": {
+            "GetAssetGroup": {
+              "methods": [
+                "getAssetGroup"
+              ]
+            },
+            "MutateAssetGroups": {
+              "methods": [
+                "mutateAssetGroups"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetGroupServiceClient",
+          "rpcs": {
+            "GetAssetGroup": {
+              "methods": [
+                "getAssetGroup"
+              ]
+            },
+            "MutateAssetGroups": {
+              "methods": [
+                "mutateAssetGroups"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetServiceClient",
+          "rpcs": {
+            "GetAsset": {
+              "methods": [
+                "getAsset"
+              ]
+            },
+            "MutateAssets": {
+              "methods": [
+                "mutateAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetServiceClient",
+          "rpcs": {
+            "GetAsset": {
+              "methods": [
+                "getAsset"
+              ]
+            },
+            "MutateAssets": {
+              "methods": [
+                "mutateAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetSetAssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetSetAssetServiceClient",
+          "rpcs": {
+            "MutateAssetSetAssets": {
+              "methods": [
+                "mutateAssetSetAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetSetAssetServiceClient",
+          "rpcs": {
+            "MutateAssetSetAssets": {
+              "methods": [
+                "mutateAssetSetAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AssetSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssetSetServiceClient",
+          "rpcs": {
+            "MutateAssetSets": {
+              "methods": [
+                "mutateAssetSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AssetSetServiceClient",
+          "rpcs": {
+            "MutateAssetSets": {
+              "methods": [
+                "mutateAssetSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BatchJobService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BatchJobServiceClient",
+          "rpcs": {
+            "MutateBatchJob": {
+              "methods": [
+                "mutateBatchJob"
+              ]
+            },
+            "GetBatchJob": {
+              "methods": [
+                "getBatchJob"
+              ]
+            },
+            "AddBatchJobOperations": {
+              "methods": [
+                "addBatchJobOperations"
+              ]
+            },
+            "RunBatchJob": {
+              "methods": [
+                "runBatchJob"
+              ]
+            },
+            "ListBatchJobResults": {
+              "methods": [
+                "listBatchJobResults",
+                "listBatchJobResultsStream",
+                "listBatchJobResultsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BatchJobServiceClient",
+          "rpcs": {
+            "MutateBatchJob": {
+              "methods": [
+                "mutateBatchJob"
+              ]
+            },
+            "GetBatchJob": {
+              "methods": [
+                "getBatchJob"
+              ]
+            },
+            "AddBatchJobOperations": {
+              "methods": [
+                "addBatchJobOperations"
+              ]
+            },
+            "RunBatchJob": {
+              "methods": [
+                "runBatchJob"
+              ]
+            },
+            "ListBatchJobResults": {
+              "methods": [
+                "listBatchJobResults",
+                "listBatchJobResultsStream",
+                "listBatchJobResultsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BiddingDataExclusionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingDataExclusionServiceClient",
+          "rpcs": {
+            "GetBiddingDataExclusion": {
+              "methods": [
+                "getBiddingDataExclusion"
+              ]
+            },
+            "MutateBiddingDataExclusions": {
+              "methods": [
+                "mutateBiddingDataExclusions"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingDataExclusionServiceClient",
+          "rpcs": {
+            "GetBiddingDataExclusion": {
+              "methods": [
+                "getBiddingDataExclusion"
+              ]
+            },
+            "MutateBiddingDataExclusions": {
+              "methods": [
+                "mutateBiddingDataExclusions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BiddingSeasonalityAdjustmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingSeasonalityAdjustmentServiceClient",
+          "rpcs": {
+            "GetBiddingSeasonalityAdjustment": {
+              "methods": [
+                "getBiddingSeasonalityAdjustment"
+              ]
+            },
+            "MutateBiddingSeasonalityAdjustments": {
+              "methods": [
+                "mutateBiddingSeasonalityAdjustments"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingSeasonalityAdjustmentServiceClient",
+          "rpcs": {
+            "GetBiddingSeasonalityAdjustment": {
+              "methods": [
+                "getBiddingSeasonalityAdjustment"
+              ]
+            },
+            "MutateBiddingSeasonalityAdjustments": {
+              "methods": [
+                "mutateBiddingSeasonalityAdjustments"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BiddingStrategyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingStrategyServiceClient",
+          "rpcs": {
+            "GetBiddingStrategy": {
+              "methods": [
+                "getBiddingStrategy"
+              ]
+            },
+            "MutateBiddingStrategies": {
+              "methods": [
+                "mutateBiddingStrategies"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingStrategyServiceClient",
+          "rpcs": {
+            "GetBiddingStrategy": {
+              "methods": [
+                "getBiddingStrategy"
+              ]
+            },
+            "MutateBiddingStrategies": {
+              "methods": [
+                "mutateBiddingStrategies"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BiddingStrategySimulationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BiddingStrategySimulationServiceClient",
+          "rpcs": {
+            "GetBiddingStrategySimulation": {
+              "methods": [
+                "getBiddingStrategySimulation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BiddingStrategySimulationServiceClient",
+          "rpcs": {
+            "GetBiddingStrategySimulation": {
+              "methods": [
+                "getBiddingStrategySimulation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BillingSetupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BillingSetupServiceClient",
+          "rpcs": {
+            "GetBillingSetup": {
+              "methods": [
+                "getBillingSetup"
+              ]
+            },
+            "MutateBillingSetup": {
+              "methods": [
+                "mutateBillingSetup"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BillingSetupServiceClient",
+          "rpcs": {
+            "GetBillingSetup": {
+              "methods": [
+                "getBillingSetup"
+              ]
+            },
+            "MutateBillingSetup": {
+              "methods": [
+                "mutateBillingSetup"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignAssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignAssetServiceClient",
+          "rpcs": {
+            "GetCampaignAsset": {
+              "methods": [
+                "getCampaignAsset"
+              ]
+            },
+            "MutateCampaignAssets": {
+              "methods": [
+                "mutateCampaignAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignAssetServiceClient",
+          "rpcs": {
+            "GetCampaignAsset": {
+              "methods": [
+                "getCampaignAsset"
+              ]
+            },
+            "MutateCampaignAssets": {
+              "methods": [
+                "mutateCampaignAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignAssetSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignAssetSetServiceClient",
+          "rpcs": {
+            "MutateCampaignAssetSets": {
+              "methods": [
+                "mutateCampaignAssetSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignAssetSetServiceClient",
+          "rpcs": {
+            "MutateCampaignAssetSets": {
+              "methods": [
+                "mutateCampaignAssetSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignAudienceViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignAudienceViewServiceClient",
+          "rpcs": {
+            "GetCampaignAudienceView": {
+              "methods": [
+                "getCampaignAudienceView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignAudienceViewServiceClient",
+          "rpcs": {
+            "GetCampaignAudienceView": {
+              "methods": [
+                "getCampaignAudienceView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignBidModifierService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignBidModifierServiceClient",
+          "rpcs": {
+            "GetCampaignBidModifier": {
+              "methods": [
+                "getCampaignBidModifier"
+              ]
+            },
+            "MutateCampaignBidModifiers": {
+              "methods": [
+                "mutateCampaignBidModifiers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignBidModifierServiceClient",
+          "rpcs": {
+            "GetCampaignBidModifier": {
+              "methods": [
+                "getCampaignBidModifier"
+              ]
+            },
+            "MutateCampaignBidModifiers": {
+              "methods": [
+                "mutateCampaignBidModifiers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignBudgetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignBudgetServiceClient",
+          "rpcs": {
+            "GetCampaignBudget": {
+              "methods": [
+                "getCampaignBudget"
+              ]
+            },
+            "MutateCampaignBudgets": {
+              "methods": [
+                "mutateCampaignBudgets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignBudgetServiceClient",
+          "rpcs": {
+            "GetCampaignBudget": {
+              "methods": [
+                "getCampaignBudget"
+              ]
+            },
+            "MutateCampaignBudgets": {
+              "methods": [
+                "mutateCampaignBudgets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignConversionGoalService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCampaignConversionGoals": {
+              "methods": [
+                "mutateCampaignConversionGoals"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCampaignConversionGoals": {
+              "methods": [
+                "mutateCampaignConversionGoals"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignCriterionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignCriterionServiceClient",
+          "rpcs": {
+            "GetCampaignCriterion": {
+              "methods": [
+                "getCampaignCriterion"
+              ]
+            },
+            "MutateCampaignCriteria": {
+              "methods": [
+                "mutateCampaignCriteria"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignCriterionServiceClient",
+          "rpcs": {
+            "GetCampaignCriterion": {
+              "methods": [
+                "getCampaignCriterion"
+              ]
+            },
+            "MutateCampaignCriteria": {
+              "methods": [
+                "mutateCampaignCriteria"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignCriterionSimulationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignCriterionSimulationServiceClient",
+          "rpcs": {
+            "GetCampaignCriterionSimulation": {
+              "methods": [
+                "getCampaignCriterionSimulation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignCriterionSimulationServiceClient",
+          "rpcs": {
+            "GetCampaignCriterionSimulation": {
+              "methods": [
+                "getCampaignCriterionSimulation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignCustomizerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignCustomizerServiceClient",
+          "rpcs": {
+            "MutateCampaignCustomizers": {
+              "methods": [
+                "mutateCampaignCustomizers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignCustomizerServiceClient",
+          "rpcs": {
+            "MutateCampaignCustomizers": {
+              "methods": [
+                "mutateCampaignCustomizers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignDraftService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignDraftServiceClient",
+          "rpcs": {
+            "GetCampaignDraft": {
+              "methods": [
+                "getCampaignDraft"
+              ]
+            },
+            "MutateCampaignDrafts": {
+              "methods": [
+                "mutateCampaignDrafts"
+              ]
+            },
+            "PromoteCampaignDraft": {
+              "methods": [
+                "promoteCampaignDraft"
+              ]
+            },
+            "ListCampaignDraftAsyncErrors": {
+              "methods": [
+                "listCampaignDraftAsyncErrors",
+                "listCampaignDraftAsyncErrorsStream",
+                "listCampaignDraftAsyncErrorsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignDraftServiceClient",
+          "rpcs": {
+            "GetCampaignDraft": {
+              "methods": [
+                "getCampaignDraft"
+              ]
+            },
+            "MutateCampaignDrafts": {
+              "methods": [
+                "mutateCampaignDrafts"
+              ]
+            },
+            "PromoteCampaignDraft": {
+              "methods": [
+                "promoteCampaignDraft"
+              ]
+            },
+            "ListCampaignDraftAsyncErrors": {
+              "methods": [
+                "listCampaignDraftAsyncErrors",
+                "listCampaignDraftAsyncErrorsStream",
+                "listCampaignDraftAsyncErrorsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignExperimentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignExperimentServiceClient",
+          "rpcs": {
+            "GetCampaignExperiment": {
+              "methods": [
+                "getCampaignExperiment"
+              ]
+            },
+            "MutateCampaignExperiments": {
+              "methods": [
+                "mutateCampaignExperiments"
+              ]
+            },
+            "GraduateCampaignExperiment": {
+              "methods": [
+                "graduateCampaignExperiment"
+              ]
+            },
+            "EndCampaignExperiment": {
+              "methods": [
+                "endCampaignExperiment"
+              ]
+            },
+            "CreateCampaignExperiment": {
+              "methods": [
+                "createCampaignExperiment"
+              ]
+            },
+            "PromoteCampaignExperiment": {
+              "methods": [
+                "promoteCampaignExperiment"
+              ]
+            },
+            "ListCampaignExperimentAsyncErrors": {
+              "methods": [
+                "listCampaignExperimentAsyncErrors",
+                "listCampaignExperimentAsyncErrorsStream",
+                "listCampaignExperimentAsyncErrorsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignExperimentServiceClient",
+          "rpcs": {
+            "GetCampaignExperiment": {
+              "methods": [
+                "getCampaignExperiment"
+              ]
+            },
+            "MutateCampaignExperiments": {
+              "methods": [
+                "mutateCampaignExperiments"
+              ]
+            },
+            "GraduateCampaignExperiment": {
+              "methods": [
+                "graduateCampaignExperiment"
+              ]
+            },
+            "EndCampaignExperiment": {
+              "methods": [
+                "endCampaignExperiment"
+              ]
+            },
+            "CreateCampaignExperiment": {
+              "methods": [
+                "createCampaignExperiment"
+              ]
+            },
+            "PromoteCampaignExperiment": {
+              "methods": [
+                "promoteCampaignExperiment"
+              ]
+            },
+            "ListCampaignExperimentAsyncErrors": {
+              "methods": [
+                "listCampaignExperimentAsyncErrors",
+                "listCampaignExperimentAsyncErrorsStream",
+                "listCampaignExperimentAsyncErrorsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignExtensionSettingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignExtensionSettingServiceClient",
+          "rpcs": {
+            "GetCampaignExtensionSetting": {
+              "methods": [
+                "getCampaignExtensionSetting"
+              ]
+            },
+            "MutateCampaignExtensionSettings": {
+              "methods": [
+                "mutateCampaignExtensionSettings"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignExtensionSettingServiceClient",
+          "rpcs": {
+            "GetCampaignExtensionSetting": {
+              "methods": [
+                "getCampaignExtensionSetting"
+              ]
+            },
+            "MutateCampaignExtensionSettings": {
+              "methods": [
+                "mutateCampaignExtensionSettings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignFeedService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignFeedServiceClient",
+          "rpcs": {
+            "GetCampaignFeed": {
+              "methods": [
+                "getCampaignFeed"
+              ]
+            },
+            "MutateCampaignFeeds": {
+              "methods": [
+                "mutateCampaignFeeds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignFeedServiceClient",
+          "rpcs": {
+            "GetCampaignFeed": {
+              "methods": [
+                "getCampaignFeed"
+              ]
+            },
+            "MutateCampaignFeeds": {
+              "methods": [
+                "mutateCampaignFeeds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignLabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignLabelServiceClient",
+          "rpcs": {
+            "GetCampaignLabel": {
+              "methods": [
+                "getCampaignLabel"
+              ]
+            },
+            "MutateCampaignLabels": {
+              "methods": [
+                "mutateCampaignLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignLabelServiceClient",
+          "rpcs": {
+            "GetCampaignLabel": {
+              "methods": [
+                "getCampaignLabel"
+              ]
+            },
+            "MutateCampaignLabels": {
+              "methods": [
+                "mutateCampaignLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignServiceClient",
+          "rpcs": {
+            "GetCampaign": {
+              "methods": [
+                "getCampaign"
+              ]
+            },
+            "MutateCampaigns": {
+              "methods": [
+                "mutateCampaigns"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignServiceClient",
+          "rpcs": {
+            "GetCampaign": {
+              "methods": [
+                "getCampaign"
+              ]
+            },
+            "MutateCampaigns": {
+              "methods": [
+                "mutateCampaigns"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignSharedSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignSharedSetServiceClient",
+          "rpcs": {
+            "GetCampaignSharedSet": {
+              "methods": [
+                "getCampaignSharedSet"
+              ]
+            },
+            "MutateCampaignSharedSets": {
+              "methods": [
+                "mutateCampaignSharedSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignSharedSetServiceClient",
+          "rpcs": {
+            "GetCampaignSharedSet": {
+              "methods": [
+                "getCampaignSharedSet"
+              ]
+            },
+            "MutateCampaignSharedSets": {
+              "methods": [
+                "mutateCampaignSharedSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CampaignSimulationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignSimulationServiceClient",
+          "rpcs": {
+            "GetCampaignSimulation": {
+              "methods": [
+                "getCampaignSimulation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignSimulationServiceClient",
+          "rpcs": {
+            "GetCampaignSimulation": {
+              "methods": [
+                "getCampaignSimulation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CarrierConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CarrierConstantServiceClient",
+          "rpcs": {
+            "GetCarrierConstant": {
+              "methods": [
+                "getCarrierConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CarrierConstantServiceClient",
+          "rpcs": {
+            "GetCarrierConstant": {
+              "methods": [
+                "getCarrierConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ChangeStatusService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ChangeStatusServiceClient",
+          "rpcs": {
+            "GetChangeStatus": {
+              "methods": [
+                "getChangeStatus"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ChangeStatusServiceClient",
+          "rpcs": {
+            "GetChangeStatus": {
+              "methods": [
+                "getChangeStatus"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ClickViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ClickViewServiceClient",
+          "rpcs": {
+            "GetClickView": {
+              "methods": [
+                "getClickView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ClickViewServiceClient",
+          "rpcs": {
+            "GetClickView": {
+              "methods": [
+                "getClickView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CombinedAudienceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CombinedAudienceServiceClient",
+          "rpcs": {
+            "GetCombinedAudience": {
+              "methods": [
+                "getCombinedAudience"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CombinedAudienceServiceClient",
+          "rpcs": {
+            "GetCombinedAudience": {
+              "methods": [
+                "getCombinedAudience"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionActionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionActionServiceClient",
+          "rpcs": {
+            "GetConversionAction": {
+              "methods": [
+                "getConversionAction"
+              ]
+            },
+            "MutateConversionActions": {
+              "methods": [
+                "mutateConversionActions"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionActionServiceClient",
+          "rpcs": {
+            "GetConversionAction": {
+              "methods": [
+                "getConversionAction"
+              ]
+            },
+            "MutateConversionActions": {
+              "methods": [
+                "mutateConversionActions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionAdjustmentUploadService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionAdjustmentUploadServiceClient",
+          "rpcs": {
+            "UploadConversionAdjustments": {
+              "methods": [
+                "uploadConversionAdjustments"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionAdjustmentUploadServiceClient",
+          "rpcs": {
+            "UploadConversionAdjustments": {
+              "methods": [
+                "uploadConversionAdjustments"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionCustomVariableService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionCustomVariableServiceClient",
+          "rpcs": {
+            "GetConversionCustomVariable": {
+              "methods": [
+                "getConversionCustomVariable"
+              ]
+            },
+            "MutateConversionCustomVariables": {
+              "methods": [
+                "mutateConversionCustomVariables"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionCustomVariableServiceClient",
+          "rpcs": {
+            "GetConversionCustomVariable": {
+              "methods": [
+                "getConversionCustomVariable"
+              ]
+            },
+            "MutateConversionCustomVariables": {
+              "methods": [
+                "mutateConversionCustomVariables"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionGoalCampaignConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionGoalCampaignConfigServiceClient",
+          "rpcs": {
+            "MutateConversionGoalCampaignConfigs": {
+              "methods": [
+                "mutateConversionGoalCampaignConfigs"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionGoalCampaignConfigServiceClient",
+          "rpcs": {
+            "MutateConversionGoalCampaignConfigs": {
+              "methods": [
+                "mutateConversionGoalCampaignConfigs"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionUploadService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionUploadServiceClient",
+          "rpcs": {
+            "UploadClickConversions": {
+              "methods": [
+                "uploadClickConversions"
+              ]
+            },
+            "UploadCallConversions": {
+              "methods": [
+                "uploadCallConversions"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionUploadServiceClient",
+          "rpcs": {
+            "UploadClickConversions": {
+              "methods": [
+                "uploadClickConversions"
+              ]
+            },
+            "UploadCallConversions": {
+              "methods": [
+                "uploadCallConversions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionValueRuleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionValueRuleServiceClient",
+          "rpcs": {
+            "GetConversionValueRule": {
+              "methods": [
+                "getConversionValueRule"
+              ]
+            },
+            "MutateConversionValueRules": {
+              "methods": [
+                "mutateConversionValueRules"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionValueRuleServiceClient",
+          "rpcs": {
+            "GetConversionValueRule": {
+              "methods": [
+                "getConversionValueRule"
+              ]
+            },
+            "MutateConversionValueRules": {
+              "methods": [
+                "mutateConversionValueRules"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ConversionValueRuleSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionValueRuleSetServiceClient",
+          "rpcs": {
+            "GetConversionValueRuleSet": {
+              "methods": [
+                "getConversionValueRuleSet"
+              ]
+            },
+            "MutateConversionValueRuleSets": {
+              "methods": [
+                "mutateConversionValueRuleSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ConversionValueRuleSetServiceClient",
+          "rpcs": {
+            "GetConversionValueRuleSet": {
+              "methods": [
+                "getConversionValueRuleSet"
+              ]
+            },
+            "MutateConversionValueRuleSets": {
+              "methods": [
+                "mutateConversionValueRuleSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CurrencyConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CurrencyConstantServiceClient",
+          "rpcs": {
+            "GetCurrencyConstant": {
+              "methods": [
+                "getCurrencyConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CurrencyConstantServiceClient",
+          "rpcs": {
+            "GetCurrencyConstant": {
+              "methods": [
+                "getCurrencyConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomAudienceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomAudienceServiceClient",
+          "rpcs": {
+            "GetCustomAudience": {
+              "methods": [
+                "getCustomAudience"
+              ]
+            },
+            "MutateCustomAudiences": {
+              "methods": [
+                "mutateCustomAudiences"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomAudienceServiceClient",
+          "rpcs": {
+            "GetCustomAudience": {
+              "methods": [
+                "getCustomAudience"
+              ]
+            },
+            "MutateCustomAudiences": {
+              "methods": [
+                "mutateCustomAudiences"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomConversionGoalService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCustomConversionGoals": {
+              "methods": [
+                "mutateCustomConversionGoals"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCustomConversionGoals": {
+              "methods": [
+                "mutateCustomConversionGoals"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerAssetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerAssetServiceClient",
+          "rpcs": {
+            "GetCustomerAsset": {
+              "methods": [
+                "getCustomerAsset"
+              ]
+            },
+            "MutateCustomerAssets": {
+              "methods": [
+                "mutateCustomerAssets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerAssetServiceClient",
+          "rpcs": {
+            "GetCustomerAsset": {
+              "methods": [
+                "getCustomerAsset"
+              ]
+            },
+            "MutateCustomerAssets": {
+              "methods": [
+                "mutateCustomerAssets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerClientLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerClientLinkServiceClient",
+          "rpcs": {
+            "GetCustomerClientLink": {
+              "methods": [
+                "getCustomerClientLink"
+              ]
+            },
+            "MutateCustomerClientLink": {
+              "methods": [
+                "mutateCustomerClientLink"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerClientLinkServiceClient",
+          "rpcs": {
+            "GetCustomerClientLink": {
+              "methods": [
+                "getCustomerClientLink"
+              ]
+            },
+            "MutateCustomerClientLink": {
+              "methods": [
+                "mutateCustomerClientLink"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerClientService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerClientServiceClient",
+          "rpcs": {
+            "GetCustomerClient": {
+              "methods": [
+                "getCustomerClient"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerClientServiceClient",
+          "rpcs": {
+            "GetCustomerClient": {
+              "methods": [
+                "getCustomerClient"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerConversionGoalService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCustomerConversionGoals": {
+              "methods": [
+                "mutateCustomerConversionGoals"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerConversionGoalServiceClient",
+          "rpcs": {
+            "MutateCustomerConversionGoals": {
+              "methods": [
+                "mutateCustomerConversionGoals"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerCustomizerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerCustomizerServiceClient",
+          "rpcs": {
+            "MutateCustomerCustomizers": {
+              "methods": [
+                "mutateCustomerCustomizers"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerCustomizerServiceClient",
+          "rpcs": {
+            "MutateCustomerCustomizers": {
+              "methods": [
+                "mutateCustomerCustomizers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerExtensionSettingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerExtensionSettingServiceClient",
+          "rpcs": {
+            "GetCustomerExtensionSetting": {
+              "methods": [
+                "getCustomerExtensionSetting"
+              ]
+            },
+            "MutateCustomerExtensionSettings": {
+              "methods": [
+                "mutateCustomerExtensionSettings"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerExtensionSettingServiceClient",
+          "rpcs": {
+            "GetCustomerExtensionSetting": {
+              "methods": [
+                "getCustomerExtensionSetting"
+              ]
+            },
+            "MutateCustomerExtensionSettings": {
+              "methods": [
+                "mutateCustomerExtensionSettings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerFeedService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerFeedServiceClient",
+          "rpcs": {
+            "GetCustomerFeed": {
+              "methods": [
+                "getCustomerFeed"
+              ]
+            },
+            "MutateCustomerFeeds": {
+              "methods": [
+                "mutateCustomerFeeds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerFeedServiceClient",
+          "rpcs": {
+            "GetCustomerFeed": {
+              "methods": [
+                "getCustomerFeed"
+              ]
+            },
+            "MutateCustomerFeeds": {
+              "methods": [
+                "mutateCustomerFeeds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerLabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerLabelServiceClient",
+          "rpcs": {
+            "GetCustomerLabel": {
+              "methods": [
+                "getCustomerLabel"
+              ]
+            },
+            "MutateCustomerLabels": {
+              "methods": [
+                "mutateCustomerLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerLabelServiceClient",
+          "rpcs": {
+            "GetCustomerLabel": {
+              "methods": [
+                "getCustomerLabel"
+              ]
+            },
+            "MutateCustomerLabels": {
+              "methods": [
+                "mutateCustomerLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerManagerLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerManagerLinkServiceClient",
+          "rpcs": {
+            "GetCustomerManagerLink": {
+              "methods": [
+                "getCustomerManagerLink"
+              ]
+            },
+            "MutateCustomerManagerLink": {
+              "methods": [
+                "mutateCustomerManagerLink"
+              ]
+            },
+            "MoveManagerLink": {
+              "methods": [
+                "moveManagerLink"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerManagerLinkServiceClient",
+          "rpcs": {
+            "GetCustomerManagerLink": {
+              "methods": [
+                "getCustomerManagerLink"
+              ]
+            },
+            "MutateCustomerManagerLink": {
+              "methods": [
+                "mutateCustomerManagerLink"
+              ]
+            },
+            "MoveManagerLink": {
+              "methods": [
+                "moveManagerLink"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerNegativeCriterionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerNegativeCriterionServiceClient",
+          "rpcs": {
+            "GetCustomerNegativeCriterion": {
+              "methods": [
+                "getCustomerNegativeCriterion"
+              ]
+            },
+            "MutateCustomerNegativeCriteria": {
+              "methods": [
+                "mutateCustomerNegativeCriteria"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerNegativeCriterionServiceClient",
+          "rpcs": {
+            "GetCustomerNegativeCriterion": {
+              "methods": [
+                "getCustomerNegativeCriterion"
+              ]
+            },
+            "MutateCustomerNegativeCriteria": {
+              "methods": [
+                "mutateCustomerNegativeCriteria"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerServiceClient",
+          "rpcs": {
+            "GetCustomer": {
+              "methods": [
+                "getCustomer"
+              ]
+            },
+            "MutateCustomer": {
+              "methods": [
+                "mutateCustomer"
+              ]
+            },
+            "ListAccessibleCustomers": {
+              "methods": [
+                "listAccessibleCustomers"
+              ]
+            },
+            "CreateCustomerClient": {
+              "methods": [
+                "createCustomerClient"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerServiceClient",
+          "rpcs": {
+            "GetCustomer": {
+              "methods": [
+                "getCustomer"
+              ]
+            },
+            "MutateCustomer": {
+              "methods": [
+                "mutateCustomer"
+              ]
+            },
+            "ListAccessibleCustomers": {
+              "methods": [
+                "listAccessibleCustomers"
+              ]
+            },
+            "CreateCustomerClient": {
+              "methods": [
+                "createCustomerClient"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerUserAccessInvitationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerUserAccessInvitationServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccessInvitation": {
+              "methods": [
+                "getCustomerUserAccessInvitation"
+              ]
+            },
+            "MutateCustomerUserAccessInvitation": {
+              "methods": [
+                "mutateCustomerUserAccessInvitation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerUserAccessInvitationServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccessInvitation": {
+              "methods": [
+                "getCustomerUserAccessInvitation"
+              ]
+            },
+            "MutateCustomerUserAccessInvitation": {
+              "methods": [
+                "mutateCustomerUserAccessInvitation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomerUserAccessService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerUserAccessServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccess": {
+              "methods": [
+                "getCustomerUserAccess"
+              ]
+            },
+            "MutateCustomerUserAccess": {
+              "methods": [
+                "mutateCustomerUserAccess"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomerUserAccessServiceClient",
+          "rpcs": {
+            "GetCustomerUserAccess": {
+              "methods": [
+                "getCustomerUserAccess"
+              ]
+            },
+            "MutateCustomerUserAccess": {
+              "methods": [
+                "mutateCustomerUserAccess"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomInterestService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomInterestServiceClient",
+          "rpcs": {
+            "GetCustomInterest": {
+              "methods": [
+                "getCustomInterest"
+              ]
+            },
+            "MutateCustomInterests": {
+              "methods": [
+                "mutateCustomInterests"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomInterestServiceClient",
+          "rpcs": {
+            "GetCustomInterest": {
+              "methods": [
+                "getCustomInterest"
+              ]
+            },
+            "MutateCustomInterests": {
+              "methods": [
+                "mutateCustomInterests"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CustomizerAttributeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomizerAttributeServiceClient",
+          "rpcs": {
+            "MutateCustomizerAttributes": {
+              "methods": [
+                "mutateCustomizerAttributes"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CustomizerAttributeServiceClient",
+          "rpcs": {
+            "MutateCustomizerAttributes": {
+              "methods": [
+                "mutateCustomizerAttributes"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DetailedDemographicService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DetailedDemographicServiceClient",
+          "rpcs": {
+            "GetDetailedDemographic": {
+              "methods": [
+                "getDetailedDemographic"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DetailedDemographicServiceClient",
+          "rpcs": {
+            "GetDetailedDemographic": {
+              "methods": [
+                "getDetailedDemographic"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DetailPlacementViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DetailPlacementViewServiceClient",
+          "rpcs": {
+            "GetDetailPlacementView": {
+              "methods": [
+                "getDetailPlacementView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DetailPlacementViewServiceClient",
+          "rpcs": {
+            "GetDetailPlacementView": {
+              "methods": [
+                "getDetailPlacementView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DisplayKeywordViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DisplayKeywordViewServiceClient",
+          "rpcs": {
+            "GetDisplayKeywordView": {
+              "methods": [
+                "getDisplayKeywordView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DisplayKeywordViewServiceClient",
+          "rpcs": {
+            "GetDisplayKeywordView": {
+              "methods": [
+                "getDisplayKeywordView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DistanceViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DistanceViewServiceClient",
+          "rpcs": {
+            "GetDistanceView": {
+              "methods": [
+                "getDistanceView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DistanceViewServiceClient",
+          "rpcs": {
+            "GetDistanceView": {
+              "methods": [
+                "getDistanceView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DomainCategoryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DomainCategoryServiceClient",
+          "rpcs": {
+            "GetDomainCategory": {
+              "methods": [
+                "getDomainCategory"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DomainCategoryServiceClient",
+          "rpcs": {
+            "GetDomainCategory": {
+              "methods": [
+                "getDomainCategory"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "DynamicSearchAdsSearchTermViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DynamicSearchAdsSearchTermViewServiceClient",
+          "rpcs": {
+            "GetDynamicSearchAdsSearchTermView": {
+              "methods": [
+                "getDynamicSearchAdsSearchTermView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DynamicSearchAdsSearchTermViewServiceClient",
+          "rpcs": {
+            "GetDynamicSearchAdsSearchTermView": {
+              "methods": [
+                "getDynamicSearchAdsSearchTermView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ExpandedLandingPageViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExpandedLandingPageViewServiceClient",
+          "rpcs": {
+            "GetExpandedLandingPageView": {
+              "methods": [
+                "getExpandedLandingPageView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ExpandedLandingPageViewServiceClient",
+          "rpcs": {
+            "GetExpandedLandingPageView": {
+              "methods": [
+                "getExpandedLandingPageView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ExtensionFeedItemService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExtensionFeedItemServiceClient",
+          "rpcs": {
+            "GetExtensionFeedItem": {
+              "methods": [
+                "getExtensionFeedItem"
+              ]
+            },
+            "MutateExtensionFeedItems": {
+              "methods": [
+                "mutateExtensionFeedItems"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ExtensionFeedItemServiceClient",
+          "rpcs": {
+            "GetExtensionFeedItem": {
+              "methods": [
+                "getExtensionFeedItem"
+              ]
+            },
+            "MutateExtensionFeedItems": {
+              "methods": [
+                "mutateExtensionFeedItems"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedItemService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedItemServiceClient",
+          "rpcs": {
+            "GetFeedItem": {
+              "methods": [
+                "getFeedItem"
+              ]
+            },
+            "MutateFeedItems": {
+              "methods": [
+                "mutateFeedItems"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedItemServiceClient",
+          "rpcs": {
+            "GetFeedItem": {
+              "methods": [
+                "getFeedItem"
+              ]
+            },
+            "MutateFeedItems": {
+              "methods": [
+                "mutateFeedItems"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedItemSetLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedItemSetLinkServiceClient",
+          "rpcs": {
+            "GetFeedItemSetLink": {
+              "methods": [
+                "getFeedItemSetLink"
+              ]
+            },
+            "MutateFeedItemSetLinks": {
+              "methods": [
+                "mutateFeedItemSetLinks"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedItemSetLinkServiceClient",
+          "rpcs": {
+            "GetFeedItemSetLink": {
+              "methods": [
+                "getFeedItemSetLink"
+              ]
+            },
+            "MutateFeedItemSetLinks": {
+              "methods": [
+                "mutateFeedItemSetLinks"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedItemSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedItemSetServiceClient",
+          "rpcs": {
+            "GetFeedItemSet": {
+              "methods": [
+                "getFeedItemSet"
+              ]
+            },
+            "MutateFeedItemSets": {
+              "methods": [
+                "mutateFeedItemSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedItemSetServiceClient",
+          "rpcs": {
+            "GetFeedItemSet": {
+              "methods": [
+                "getFeedItemSet"
+              ]
+            },
+            "MutateFeedItemSets": {
+              "methods": [
+                "mutateFeedItemSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedItemTargetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedItemTargetServiceClient",
+          "rpcs": {
+            "GetFeedItemTarget": {
+              "methods": [
+                "getFeedItemTarget"
+              ]
+            },
+            "MutateFeedItemTargets": {
+              "methods": [
+                "mutateFeedItemTargets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedItemTargetServiceClient",
+          "rpcs": {
+            "GetFeedItemTarget": {
+              "methods": [
+                "getFeedItemTarget"
+              ]
+            },
+            "MutateFeedItemTargets": {
+              "methods": [
+                "mutateFeedItemTargets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedMappingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedMappingServiceClient",
+          "rpcs": {
+            "GetFeedMapping": {
+              "methods": [
+                "getFeedMapping"
+              ]
+            },
+            "MutateFeedMappings": {
+              "methods": [
+                "mutateFeedMappings"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedMappingServiceClient",
+          "rpcs": {
+            "GetFeedMapping": {
+              "methods": [
+                "getFeedMapping"
+              ]
+            },
+            "MutateFeedMappings": {
+              "methods": [
+                "mutateFeedMappings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedPlaceholderViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedPlaceholderViewServiceClient",
+          "rpcs": {
+            "GetFeedPlaceholderView": {
+              "methods": [
+                "getFeedPlaceholderView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedPlaceholderViewServiceClient",
+          "rpcs": {
+            "GetFeedPlaceholderView": {
+              "methods": [
+                "getFeedPlaceholderView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeedService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedServiceClient",
+          "rpcs": {
+            "GetFeed": {
+              "methods": [
+                "getFeed"
+              ]
+            },
+            "MutateFeeds": {
+              "methods": [
+                "mutateFeeds"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "FeedServiceClient",
+          "rpcs": {
+            "GetFeed": {
+              "methods": [
+                "getFeed"
+              ]
+            },
+            "MutateFeeds": {
+              "methods": [
+                "mutateFeeds"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GenderViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenderViewServiceClient",
+          "rpcs": {
+            "GetGenderView": {
+              "methods": [
+                "getGenderView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GenderViewServiceClient",
+          "rpcs": {
+            "GetGenderView": {
+              "methods": [
+                "getGenderView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GeographicViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeographicViewServiceClient",
+          "rpcs": {
+            "GetGeographicView": {
+              "methods": [
+                "getGeographicView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GeographicViewServiceClient",
+          "rpcs": {
+            "GetGeographicView": {
+              "methods": [
+                "getGeographicView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GeoTargetConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeoTargetConstantServiceClient",
+          "rpcs": {
+            "GetGeoTargetConstant": {
+              "methods": [
+                "getGeoTargetConstant"
+              ]
+            },
+            "SuggestGeoTargetConstants": {
+              "methods": [
+                "suggestGeoTargetConstants"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GeoTargetConstantServiceClient",
+          "rpcs": {
+            "GetGeoTargetConstant": {
+              "methods": [
+                "getGeoTargetConstant"
+              ]
+            },
+            "SuggestGeoTargetConstants": {
+              "methods": [
+                "suggestGeoTargetConstants"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GoogleAdsFieldService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GoogleAdsFieldServiceClient",
+          "rpcs": {
+            "GetGoogleAdsField": {
+              "methods": [
+                "getGoogleAdsField"
+              ]
+            },
+            "SearchGoogleAdsFields": {
+              "methods": [
+                "searchGoogleAdsFields",
+                "searchGoogleAdsFieldsStream",
+                "searchGoogleAdsFieldsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GoogleAdsFieldServiceClient",
+          "rpcs": {
+            "GetGoogleAdsField": {
+              "methods": [
+                "getGoogleAdsField"
+              ]
+            },
+            "SearchGoogleAdsFields": {
+              "methods": [
+                "searchGoogleAdsFields",
+                "searchGoogleAdsFieldsStream",
+                "searchGoogleAdsFieldsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GoogleAdsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GoogleAdsServiceClient",
+          "rpcs": {
+            "Mutate": {
+              "methods": [
+                "mutate"
+              ]
+            },
+            "SearchStream": {
+              "methods": [
+                "searchStream"
+              ]
+            },
+            "Search": {
+              "methods": [
+                "search",
+                "searchStream1",
+                "searchAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GoogleAdsServiceClient",
+          "rpcs": {
+            "Mutate": {
+              "methods": [
+                "mutate"
+              ]
+            },
+            "Search": {
+              "methods": [
+                "search",
+                "searchStream1",
+                "searchAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "GroupPlacementViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GroupPlacementViewServiceClient",
+          "rpcs": {
+            "GetGroupPlacementView": {
+              "methods": [
+                "getGroupPlacementView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "GroupPlacementViewServiceClient",
+          "rpcs": {
+            "GetGroupPlacementView": {
+              "methods": [
+                "getGroupPlacementView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "HotelGroupViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HotelGroupViewServiceClient",
+          "rpcs": {
+            "GetHotelGroupView": {
+              "methods": [
+                "getHotelGroupView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "HotelGroupViewServiceClient",
+          "rpcs": {
+            "GetHotelGroupView": {
+              "methods": [
+                "getHotelGroupView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "HotelPerformanceViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HotelPerformanceViewServiceClient",
+          "rpcs": {
+            "GetHotelPerformanceView": {
+              "methods": [
+                "getHotelPerformanceView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "HotelPerformanceViewServiceClient",
+          "rpcs": {
+            "GetHotelPerformanceView": {
+              "methods": [
+                "getHotelPerformanceView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "IncomeRangeViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IncomeRangeViewServiceClient",
+          "rpcs": {
+            "GetIncomeRangeView": {
+              "methods": [
+                "getIncomeRangeView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "IncomeRangeViewServiceClient",
+          "rpcs": {
+            "GetIncomeRangeView": {
+              "methods": [
+                "getIncomeRangeView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "InvoiceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InvoiceServiceClient",
+          "rpcs": {
+            "ListInvoices": {
+              "methods": [
+                "listInvoices"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "InvoiceServiceClient",
+          "rpcs": {
+            "ListInvoices": {
+              "methods": [
+                "listInvoices"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanAdGroupKeywordService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanAdGroupKeywordServiceClient",
+          "rpcs": {
+            "GetKeywordPlanAdGroupKeyword": {
+              "methods": [
+                "getKeywordPlanAdGroupKeyword"
+              ]
+            },
+            "MutateKeywordPlanAdGroupKeywords": {
+              "methods": [
+                "mutateKeywordPlanAdGroupKeywords"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanAdGroupKeywordServiceClient",
+          "rpcs": {
+            "GetKeywordPlanAdGroupKeyword": {
+              "methods": [
+                "getKeywordPlanAdGroupKeyword"
+              ]
+            },
+            "MutateKeywordPlanAdGroupKeywords": {
+              "methods": [
+                "mutateKeywordPlanAdGroupKeywords"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanAdGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanAdGroupServiceClient",
+          "rpcs": {
+            "GetKeywordPlanAdGroup": {
+              "methods": [
+                "getKeywordPlanAdGroup"
+              ]
+            },
+            "MutateKeywordPlanAdGroups": {
+              "methods": [
+                "mutateKeywordPlanAdGroups"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanAdGroupServiceClient",
+          "rpcs": {
+            "GetKeywordPlanAdGroup": {
+              "methods": [
+                "getKeywordPlanAdGroup"
+              ]
+            },
+            "MutateKeywordPlanAdGroups": {
+              "methods": [
+                "mutateKeywordPlanAdGroups"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanCampaignKeywordService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanCampaignKeywordServiceClient",
+          "rpcs": {
+            "GetKeywordPlanCampaignKeyword": {
+              "methods": [
+                "getKeywordPlanCampaignKeyword"
+              ]
+            },
+            "MutateKeywordPlanCampaignKeywords": {
+              "methods": [
+                "mutateKeywordPlanCampaignKeywords"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanCampaignKeywordServiceClient",
+          "rpcs": {
+            "GetKeywordPlanCampaignKeyword": {
+              "methods": [
+                "getKeywordPlanCampaignKeyword"
+              ]
+            },
+            "MutateKeywordPlanCampaignKeywords": {
+              "methods": [
+                "mutateKeywordPlanCampaignKeywords"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanCampaignService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanCampaignServiceClient",
+          "rpcs": {
+            "GetKeywordPlanCampaign": {
+              "methods": [
+                "getKeywordPlanCampaign"
+              ]
+            },
+            "MutateKeywordPlanCampaigns": {
+              "methods": [
+                "mutateKeywordPlanCampaigns"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanCampaignServiceClient",
+          "rpcs": {
+            "GetKeywordPlanCampaign": {
+              "methods": [
+                "getKeywordPlanCampaign"
+              ]
+            },
+            "MutateKeywordPlanCampaigns": {
+              "methods": [
+                "mutateKeywordPlanCampaigns"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanIdeaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanIdeaServiceClient",
+          "rpcs": {
+            "GenerateKeywordIdeas": {
+              "methods": [
+                "generateKeywordIdeas",
+                "generateKeywordIdeasStream",
+                "generateKeywordIdeasAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanIdeaServiceClient",
+          "rpcs": {
+            "GenerateKeywordIdeas": {
+              "methods": [
+                "generateKeywordIdeas",
+                "generateKeywordIdeasStream",
+                "generateKeywordIdeasAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordPlanService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordPlanServiceClient",
+          "rpcs": {
+            "GetKeywordPlan": {
+              "methods": [
+                "getKeywordPlan"
+              ]
+            },
+            "MutateKeywordPlans": {
+              "methods": [
+                "mutateKeywordPlans"
+              ]
+            },
+            "GenerateForecastCurve": {
+              "methods": [
+                "generateForecastCurve"
+              ]
+            },
+            "GenerateForecastTimeSeries": {
+              "methods": [
+                "generateForecastTimeSeries"
+              ]
+            },
+            "GenerateForecastMetrics": {
+              "methods": [
+                "generateForecastMetrics"
+              ]
+            },
+            "GenerateHistoricalMetrics": {
+              "methods": [
+                "generateHistoricalMetrics"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordPlanServiceClient",
+          "rpcs": {
+            "GetKeywordPlan": {
+              "methods": [
+                "getKeywordPlan"
+              ]
+            },
+            "MutateKeywordPlans": {
+              "methods": [
+                "mutateKeywordPlans"
+              ]
+            },
+            "GenerateForecastCurve": {
+              "methods": [
+                "generateForecastCurve"
+              ]
+            },
+            "GenerateForecastTimeSeries": {
+              "methods": [
+                "generateForecastTimeSeries"
+              ]
+            },
+            "GenerateForecastMetrics": {
+              "methods": [
+                "generateForecastMetrics"
+              ]
+            },
+            "GenerateHistoricalMetrics": {
+              "methods": [
+                "generateHistoricalMetrics"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordThemeConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordThemeConstantServiceClient",
+          "rpcs": {
+            "GetKeywordThemeConstant": {
+              "methods": [
+                "getKeywordThemeConstant"
+              ]
+            },
+            "SuggestKeywordThemeConstants": {
+              "methods": [
+                "suggestKeywordThemeConstants"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordThemeConstantServiceClient",
+          "rpcs": {
+            "GetKeywordThemeConstant": {
+              "methods": [
+                "getKeywordThemeConstant"
+              ]
+            },
+            "SuggestKeywordThemeConstants": {
+              "methods": [
+                "suggestKeywordThemeConstants"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "KeywordViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeywordViewServiceClient",
+          "rpcs": {
+            "GetKeywordView": {
+              "methods": [
+                "getKeywordView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "KeywordViewServiceClient",
+          "rpcs": {
+            "GetKeywordView": {
+              "methods": [
+                "getKeywordView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LabelServiceClient",
+          "rpcs": {
+            "GetLabel": {
+              "methods": [
+                "getLabel"
+              ]
+            },
+            "MutateLabels": {
+              "methods": [
+                "mutateLabels"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "LabelServiceClient",
+          "rpcs": {
+            "GetLabel": {
+              "methods": [
+                "getLabel"
+              ]
+            },
+            "MutateLabels": {
+              "methods": [
+                "mutateLabels"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LandingPageViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LandingPageViewServiceClient",
+          "rpcs": {
+            "GetLandingPageView": {
+              "methods": [
+                "getLandingPageView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "LandingPageViewServiceClient",
+          "rpcs": {
+            "GetLandingPageView": {
+              "methods": [
+                "getLandingPageView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LanguageConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LanguageConstantServiceClient",
+          "rpcs": {
+            "GetLanguageConstant": {
+              "methods": [
+                "getLanguageConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "LanguageConstantServiceClient",
+          "rpcs": {
+            "GetLanguageConstant": {
+              "methods": [
+                "getLanguageConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LifeEventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LifeEventServiceClient",
+          "rpcs": {
+            "GetLifeEvent": {
+              "methods": [
+                "getLifeEvent"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "LifeEventServiceClient",
+          "rpcs": {
+            "GetLifeEvent": {
+              "methods": [
+                "getLifeEvent"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LocationViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LocationViewServiceClient",
+          "rpcs": {
+            "GetLocationView": {
+              "methods": [
+                "getLocationView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "LocationViewServiceClient",
+          "rpcs": {
+            "GetLocationView": {
+              "methods": [
+                "getLocationView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ManagedPlacementViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ManagedPlacementViewServiceClient",
+          "rpcs": {
+            "GetManagedPlacementView": {
+              "methods": [
+                "getManagedPlacementView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ManagedPlacementViewServiceClient",
+          "rpcs": {
+            "GetManagedPlacementView": {
+              "methods": [
+                "getManagedPlacementView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MediaFileService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MediaFileServiceClient",
+          "rpcs": {
+            "GetMediaFile": {
+              "methods": [
+                "getMediaFile"
+              ]
+            },
+            "MutateMediaFiles": {
+              "methods": [
+                "mutateMediaFiles"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "MediaFileServiceClient",
+          "rpcs": {
+            "GetMediaFile": {
+              "methods": [
+                "getMediaFile"
+              ]
+            },
+            "MutateMediaFiles": {
+              "methods": [
+                "mutateMediaFiles"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MerchantCenterLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MerchantCenterLinkServiceClient",
+          "rpcs": {
+            "ListMerchantCenterLinks": {
+              "methods": [
+                "listMerchantCenterLinks"
+              ]
+            },
+            "GetMerchantCenterLink": {
+              "methods": [
+                "getMerchantCenterLink"
+              ]
+            },
+            "MutateMerchantCenterLink": {
+              "methods": [
+                "mutateMerchantCenterLink"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "MerchantCenterLinkServiceClient",
+          "rpcs": {
+            "ListMerchantCenterLinks": {
+              "methods": [
+                "listMerchantCenterLinks"
+              ]
+            },
+            "GetMerchantCenterLink": {
+              "methods": [
+                "getMerchantCenterLink"
+              ]
+            },
+            "MutateMerchantCenterLink": {
+              "methods": [
+                "mutateMerchantCenterLink"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MobileAppCategoryConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MobileAppCategoryConstantServiceClient",
+          "rpcs": {
+            "GetMobileAppCategoryConstant": {
+              "methods": [
+                "getMobileAppCategoryConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "MobileAppCategoryConstantServiceClient",
+          "rpcs": {
+            "GetMobileAppCategoryConstant": {
+              "methods": [
+                "getMobileAppCategoryConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MobileDeviceConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MobileDeviceConstantServiceClient",
+          "rpcs": {
+            "GetMobileDeviceConstant": {
+              "methods": [
+                "getMobileDeviceConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "MobileDeviceConstantServiceClient",
+          "rpcs": {
+            "GetMobileDeviceConstant": {
+              "methods": [
+                "getMobileDeviceConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "OfflineUserDataJobService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OfflineUserDataJobServiceClient",
+          "rpcs": {
+            "CreateOfflineUserDataJob": {
+              "methods": [
+                "createOfflineUserDataJob"
+              ]
+            },
+            "GetOfflineUserDataJob": {
+              "methods": [
+                "getOfflineUserDataJob"
+              ]
+            },
+            "AddOfflineUserDataJobOperations": {
+              "methods": [
+                "addOfflineUserDataJobOperations"
+              ]
+            },
+            "RunOfflineUserDataJob": {
+              "methods": [
+                "runOfflineUserDataJob"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "OfflineUserDataJobServiceClient",
+          "rpcs": {
+            "CreateOfflineUserDataJob": {
+              "methods": [
+                "createOfflineUserDataJob"
+              ]
+            },
+            "GetOfflineUserDataJob": {
+              "methods": [
+                "getOfflineUserDataJob"
+              ]
+            },
+            "AddOfflineUserDataJobOperations": {
+              "methods": [
+                "addOfflineUserDataJobOperations"
+              ]
+            },
+            "RunOfflineUserDataJob": {
+              "methods": [
+                "runOfflineUserDataJob"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "OperatingSystemVersionConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OperatingSystemVersionConstantServiceClient",
+          "rpcs": {
+            "GetOperatingSystemVersionConstant": {
+              "methods": [
+                "getOperatingSystemVersionConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "OperatingSystemVersionConstantServiceClient",
+          "rpcs": {
+            "GetOperatingSystemVersionConstant": {
+              "methods": [
+                "getOperatingSystemVersionConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PaidOrganicSearchTermViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PaidOrganicSearchTermViewServiceClient",
+          "rpcs": {
+            "GetPaidOrganicSearchTermView": {
+              "methods": [
+                "getPaidOrganicSearchTermView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "PaidOrganicSearchTermViewServiceClient",
+          "rpcs": {
+            "GetPaidOrganicSearchTermView": {
+              "methods": [
+                "getPaidOrganicSearchTermView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ParentalStatusViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ParentalStatusViewServiceClient",
+          "rpcs": {
+            "GetParentalStatusView": {
+              "methods": [
+                "getParentalStatusView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ParentalStatusViewServiceClient",
+          "rpcs": {
+            "GetParentalStatusView": {
+              "methods": [
+                "getParentalStatusView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PaymentsAccountService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PaymentsAccountServiceClient",
+          "rpcs": {
+            "ListPaymentsAccounts": {
+              "methods": [
+                "listPaymentsAccounts"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "PaymentsAccountServiceClient",
+          "rpcs": {
+            "ListPaymentsAccounts": {
+              "methods": [
+                "listPaymentsAccounts"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ProductBiddingCategoryConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductBiddingCategoryConstantServiceClient",
+          "rpcs": {
+            "GetProductBiddingCategoryConstant": {
+              "methods": [
+                "getProductBiddingCategoryConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ProductBiddingCategoryConstantServiceClient",
+          "rpcs": {
+            "GetProductBiddingCategoryConstant": {
+              "methods": [
+                "getProductBiddingCategoryConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ProductGroupViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductGroupViewServiceClient",
+          "rpcs": {
+            "GetProductGroupView": {
+              "methods": [
+                "getProductGroupView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ProductGroupViewServiceClient",
+          "rpcs": {
+            "GetProductGroupView": {
+              "methods": [
+                "getProductGroupView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ReachPlanService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReachPlanServiceClient",
+          "rpcs": {
+            "ListPlannableLocations": {
+              "methods": [
+                "listPlannableLocations"
+              ]
+            },
+            "ListPlannableProducts": {
+              "methods": [
+                "listPlannableProducts"
+              ]
+            },
+            "GenerateProductMixIdeas": {
+              "methods": [
+                "generateProductMixIdeas"
+              ]
+            },
+            "GenerateReachForecast": {
+              "methods": [
+                "generateReachForecast"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ReachPlanServiceClient",
+          "rpcs": {
+            "ListPlannableLocations": {
+              "methods": [
+                "listPlannableLocations"
+              ]
+            },
+            "ListPlannableProducts": {
+              "methods": [
+                "listPlannableProducts"
+              ]
+            },
+            "GenerateProductMixIdeas": {
+              "methods": [
+                "generateProductMixIdeas"
+              ]
+            },
+            "GenerateReachForecast": {
+              "methods": [
+                "generateReachForecast"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "RecommendationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecommendationServiceClient",
+          "rpcs": {
+            "GetRecommendation": {
+              "methods": [
+                "getRecommendation"
+              ]
+            },
+            "ApplyRecommendation": {
+              "methods": [
+                "applyRecommendation"
+              ]
+            },
+            "DismissRecommendation": {
+              "methods": [
+                "dismissRecommendation"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "RecommendationServiceClient",
+          "rpcs": {
+            "GetRecommendation": {
+              "methods": [
+                "getRecommendation"
+              ]
+            },
+            "ApplyRecommendation": {
+              "methods": [
+                "applyRecommendation"
+              ]
+            },
+            "DismissRecommendation": {
+              "methods": [
+                "dismissRecommendation"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "RemarketingActionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RemarketingActionServiceClient",
+          "rpcs": {
+            "GetRemarketingAction": {
+              "methods": [
+                "getRemarketingAction"
+              ]
+            },
+            "MutateRemarketingActions": {
+              "methods": [
+                "mutateRemarketingActions"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "RemarketingActionServiceClient",
+          "rpcs": {
+            "GetRemarketingAction": {
+              "methods": [
+                "getRemarketingAction"
+              ]
+            },
+            "MutateRemarketingActions": {
+              "methods": [
+                "mutateRemarketingActions"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SearchTermViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchTermViewServiceClient",
+          "rpcs": {
+            "GetSearchTermView": {
+              "methods": [
+                "getSearchTermView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SearchTermViewServiceClient",
+          "rpcs": {
+            "GetSearchTermView": {
+              "methods": [
+                "getSearchTermView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SharedCriterionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SharedCriterionServiceClient",
+          "rpcs": {
+            "GetSharedCriterion": {
+              "methods": [
+                "getSharedCriterion"
+              ]
+            },
+            "MutateSharedCriteria": {
+              "methods": [
+                "mutateSharedCriteria"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SharedCriterionServiceClient",
+          "rpcs": {
+            "GetSharedCriterion": {
+              "methods": [
+                "getSharedCriterion"
+              ]
+            },
+            "MutateSharedCriteria": {
+              "methods": [
+                "mutateSharedCriteria"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SharedSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SharedSetServiceClient",
+          "rpcs": {
+            "GetSharedSet": {
+              "methods": [
+                "getSharedSet"
+              ]
+            },
+            "MutateSharedSets": {
+              "methods": [
+                "mutateSharedSets"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SharedSetServiceClient",
+          "rpcs": {
+            "GetSharedSet": {
+              "methods": [
+                "getSharedSet"
+              ]
+            },
+            "MutateSharedSets": {
+              "methods": [
+                "mutateSharedSets"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ShoppingPerformanceViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ShoppingPerformanceViewServiceClient",
+          "rpcs": {
+            "GetShoppingPerformanceView": {
+              "methods": [
+                "getShoppingPerformanceView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ShoppingPerformanceViewServiceClient",
+          "rpcs": {
+            "GetShoppingPerformanceView": {
+              "methods": [
+                "getShoppingPerformanceView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SmartCampaignSearchTermViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartCampaignSearchTermViewServiceClient",
+          "rpcs": {
+            "GetSmartCampaignSearchTermView": {
+              "methods": [
+                "getSmartCampaignSearchTermView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SmartCampaignSearchTermViewServiceClient",
+          "rpcs": {
+            "GetSmartCampaignSearchTermView": {
+              "methods": [
+                "getSmartCampaignSearchTermView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SmartCampaignSettingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartCampaignSettingServiceClient",
+          "rpcs": {
+            "GetSmartCampaignSetting": {
+              "methods": [
+                "getSmartCampaignSetting"
+              ]
+            },
+            "MutateSmartCampaignSettings": {
+              "methods": [
+                "mutateSmartCampaignSettings"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SmartCampaignSettingServiceClient",
+          "rpcs": {
+            "GetSmartCampaignSetting": {
+              "methods": [
+                "getSmartCampaignSetting"
+              ]
+            },
+            "MutateSmartCampaignSettings": {
+              "methods": [
+                "mutateSmartCampaignSettings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SmartCampaignSuggestService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartCampaignSuggestServiceClient",
+          "rpcs": {
+            "SuggestSmartCampaignBudgetOptions": {
+              "methods": [
+                "suggestSmartCampaignBudgetOptions"
+              ]
+            },
+            "SuggestSmartCampaignAd": {
+              "methods": [
+                "suggestSmartCampaignAd"
+              ]
+            },
+            "SuggestKeywordThemes": {
+              "methods": [
+                "suggestKeywordThemes"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SmartCampaignSuggestServiceClient",
+          "rpcs": {
+            "SuggestSmartCampaignBudgetOptions": {
+              "methods": [
+                "suggestSmartCampaignBudgetOptions"
+              ]
+            },
+            "SuggestSmartCampaignAd": {
+              "methods": [
+                "suggestSmartCampaignAd"
+              ]
+            },
+            "SuggestKeywordThemes": {
+              "methods": [
+                "suggestKeywordThemes"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ThirdPartyAppAnalyticsLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ThirdPartyAppAnalyticsLinkServiceClient",
+          "rpcs": {
+            "GetThirdPartyAppAnalyticsLink": {
+              "methods": [
+                "getThirdPartyAppAnalyticsLink"
+              ]
+            },
+            "RegenerateShareableLinkId": {
+              "methods": [
+                "regenerateShareableLinkId"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ThirdPartyAppAnalyticsLinkServiceClient",
+          "rpcs": {
+            "GetThirdPartyAppAnalyticsLink": {
+              "methods": [
+                "getThirdPartyAppAnalyticsLink"
+              ]
+            },
+            "RegenerateShareableLinkId": {
+              "methods": [
+                "regenerateShareableLinkId"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TopicConstantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TopicConstantServiceClient",
+          "rpcs": {
+            "GetTopicConstant": {
+              "methods": [
+                "getTopicConstant"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TopicConstantServiceClient",
+          "rpcs": {
+            "GetTopicConstant": {
+              "methods": [
+                "getTopicConstant"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TopicViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TopicViewServiceClient",
+          "rpcs": {
+            "GetTopicView": {
+              "methods": [
+                "getTopicView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TopicViewServiceClient",
+          "rpcs": {
+            "GetTopicView": {
+              "methods": [
+                "getTopicView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserDataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserDataServiceClient",
+          "rpcs": {
+            "UploadUserData": {
+              "methods": [
+                "uploadUserData"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "UserDataServiceClient",
+          "rpcs": {
+            "UploadUserData": {
+              "methods": [
+                "uploadUserData"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserInterestService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserInterestServiceClient",
+          "rpcs": {
+            "GetUserInterest": {
+              "methods": [
+                "getUserInterest"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "UserInterestServiceClient",
+          "rpcs": {
+            "GetUserInterest": {
+              "methods": [
+                "getUserInterest"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserListService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserListServiceClient",
+          "rpcs": {
+            "GetUserList": {
+              "methods": [
+                "getUserList"
+              ]
+            },
+            "MutateUserLists": {
+              "methods": [
+                "mutateUserLists"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "UserListServiceClient",
+          "rpcs": {
+            "GetUserList": {
+              "methods": [
+                "getUserList"
+              ]
+            },
+            "MutateUserLists": {
+              "methods": [
+                "mutateUserLists"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserLocationViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserLocationViewServiceClient",
+          "rpcs": {
+            "GetUserLocationView": {
+              "methods": [
+                "getUserLocationView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "UserLocationViewServiceClient",
+          "rpcs": {
+            "GetUserLocationView": {
+              "methods": [
+                "getUserLocationView"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "VideoService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VideoServiceClient",
+          "rpcs": {
+            "GetVideo": {
+              "methods": [
+                "getVideo"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "VideoServiceClient",
+          "rpcs": {
+            "GetVideo": {
+              "methods": [
+                "getVideo"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "WebpageViewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WebpageViewServiceClient",
+          "rpcs": {
+            "GetWebpageView": {
+              "methods": [
+                "getWebpageView"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "WebpageViewServiceClient",
+          "rpcs": {
+            "GetWebpageView": {
+              "methods": [
+                "getWebpageView"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
