@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://developers.google.com/google-ads/api/docs/release-notes">
-    <img src="https://img.shields.io/badge/google%20ads-v9-009688.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/google%20ads-v10-009688.svg?style=flat-square">
   </a>
   <a href="https://www.npmjs.com/package/google-ads-node">
     <img src="https://img.shields.io/npm/v/google-ads-node.svg?style=flat-square">
@@ -49,7 +49,7 @@ _Documentation for this will be released soon_
 1. Update the official google-gax dependency to the latest version in `package.json`.
 1. Update `GOOGLE_ADS_VERSION` in the Makefile to the latest version (if required).
 1. Run `make protos` to pull in the new protos and compile them.
-1. If upgrading to a new major version delete the old version folders from `package/googleads-nodejs/protos/google/ads/googleads/{OLD_VERSION}` and `package/googleads-nodejs/src/{OLD_VERSION}`.
+1. If upgrading to a new major version delete the old version folders from `package/googleads-nodejs/protos/google/ads/googleads/{OLD_VERSION}`, `package/googleads-nodejs/src/{OLD_VERSION}` and `package/googleads-nodejs/samples/generated/{OLD_VERSION}`.
 1. Run `yarn` to prepare the package and install the latest dependencies.
 1. Run `yarn test` to make sure everything worked (you may need to update the version numbers here).
 1. Double check that any files that should have been updated have been.
