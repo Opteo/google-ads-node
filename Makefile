@@ -4,7 +4,7 @@ GOOGLE_ADS_VERSION=v10
 
 BUNDLE=googleads-nodejs.tar.gz
 PACKAGE_BUILD=/package/googleads-nodejs
-PACKAGE_OUT=${PWD}/package/
+PACKAGE_OUT=${CURDIR}/package/
 
 protos: clean build copy
 
