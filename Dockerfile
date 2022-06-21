@@ -16,7 +16,7 @@ RUN apt-get install \
     python3-apt -y
 
 # Download Bazel
-RUN go get github.com/bazelbuild/bazelisk
+RUN go install github.com/bazelbuild/bazelisk@latest
 
 # Clone the googleapis repo
 RUN git clone https://github.com/googleapis/googleapis.git
