@@ -62,7 +62,7 @@ export class AudienceInsightsServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -85,11 +85,10 @@ export class AudienceInsightsServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -667,7 +666,7 @@ export class AudienceInsightsServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const audienceInsightsServiceStubMethods =
-        ['generateInsightsFinderReport', 'listAudienceInsightsAttributes'];
+        ['generateInsightsFinderReport', 'listAudienceInsightsAttributes', 'generateAudienceCompositionInsights'];
     for (const methodName of audienceInsightsServiceStubMethods) {
       const callPromise = this.audienceInsightsServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -686,7 +685,8 @@ export class AudienceInsightsServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;
@@ -925,6 +925,100 @@ export class AudienceInsightsServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.listAudienceInsightsAttributes(request, options, callback);
+  }
+/**
+ * Returns a collection of attributes that are represented in an audience of
+ * interest, with metrics that compare each attribute's share of the audience
+ * with its share of a baseline audience.
+ *
+ * List of thrown errors:
+ *   [AudienceInsightsError]()
+ *   [AuthenticationError]()
+ *   [AuthorizationError]()
+ *   [FieldError]()
+ *   [HeaderError]()
+ *   [InternalError]()
+ *   [QuotaError]()
+ *   [RangeError]()
+ *   [RequestError]()
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customer_id
+ *   Required. The ID of the customer.
+ * @param {google.ads.googleads.v11.services.InsightsAudience} request.audience
+ *   Required. The audience of interest for which insights are being requested.
+ * @param {string} request.dataMonth
+ *   The one-month range of historical data to use for insights, in the format
+ *   "yyyy-mm". If unset, insights will be returned for the last thirty days of
+ *   data.
+ * @param {number[]} request.dimensions
+ *   Required. The audience dimensions for which composition insights should be returned.
+ * @param {string} request.customerInsightsGroup
+ *   The name of the customer being planned for.  This is a user-defined value.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [GenerateAudienceCompositionInsightsResponse]{@link google.ads.googleads.v11.services.GenerateAudienceCompositionInsightsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v11/audience_insights_service.generate_audience_composition_insights.js</caption>
+ * region_tag:googleads_v11_generated_AudienceInsightsService_GenerateAudienceCompositionInsights_async
+ */
+  generateAudienceCompositionInsights(
+      request?: protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+        protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|undefined, {}|undefined
+      ]>;
+  generateAudienceCompositionInsights(
+      request: protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateAudienceCompositionInsights(
+      request: protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateAudienceCompositionInsights(
+      request?: protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+          protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsResponse,
+        protos.google.ads.googleads.v11.services.IGenerateAudienceCompositionInsightsRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'customer_id': request.customer_id || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.generateAudienceCompositionInsights(request, options, callback);
   }
 
   // --------------------

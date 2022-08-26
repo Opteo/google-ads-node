@@ -8475,6 +8475,65 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "lifecycle_stage": {
+                              "type": "string",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            },
+                            "first_purchase_date_time": {
+                              "type": "string",
+                              "id": 9,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            },
+                            "event_attribute": {
+                              "rule": "repeated",
+                              "type": "EventAttribute",
+                              "id": 10,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            }
+                          }
+                        },
+                        "EventAttribute": {
+                          "fields": {
+                            "event": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "event_date_time": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "item_attribute": {
+                              "rule": "repeated",
+                              "type": "EventItemAttribute",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
+                        "EventItemAttribute": {
+                          "fields": {
+                            "item_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
                             }
                           }
                         },
@@ -9004,6 +9063,7 @@
                               "type": "string",
                               "id": 113,
                               "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/ConversionAction",
                                 "proto3_optional": true
                               }
                             },
@@ -10724,6 +10784,46 @@
                             }
                           }
                         },
+                        "FlexibleRuleOperandInfo": {
+                          "oneofs": {
+                            "_lookback_window_days": {
+                              "oneof": [
+                                "lookback_window_days"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "rule": {
+                              "type": "UserListRuleInfo",
+                              "id": 1
+                            },
+                            "lookback_window_days": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "FlexibleRuleUserListInfo": {
+                          "fields": {
+                            "inclusive_rule_operator": {
+                              "type": "google.ads.googleads.v11.enums.UserListFlexibleRuleOperatorEnum.UserListFlexibleRuleOperator",
+                              "id": 1
+                            },
+                            "inclusive_operands": {
+                              "rule": "repeated",
+                              "type": "FlexibleRuleOperandInfo",
+                              "id": 2
+                            },
+                            "exclusive_operands": {
+                              "rule": "repeated",
+                              "type": "FlexibleRuleOperandInfo",
+                              "id": 3
+                            }
+                          }
+                        },
                         "RuleBasedUserListInfo": {
                           "oneofs": {
                             "rule_based_user_list": {
@@ -10737,6 +10837,10 @@
                             "prepopulation_status": {
                               "type": "google.ads.googleads.v11.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus",
                               "id": 1
+                            },
+                            "flexible_rule_user_list": {
+                              "type": "FlexibleRuleUserListInfo",
+                              "id": 5
                             },
                             "combined_rule_user_list": {
                               "type": "CombinedRuleUserListInfo",
@@ -11519,6 +11623,7 @@
                                 "EMAIL": 3,
                                 "PHONE_NUMBER": 4,
                                 "POSTAL_CODE": 5,
+                                "STREET_ADDRESS": 8,
                                 "CITY": 9,
                                 "REGION": 10,
                                 "COUNTRY": 11,
@@ -11547,6 +11652,54 @@
                                 "YEARS_IN_BUSINESS": 1008,
                                 "JOB_DEPARTMENT": 1011,
                                 "JOB_ROLE": 1012,
+                                "OVER_18_AGE": 1078,
+                                "OVER_19_AGE": 1079,
+                                "OVER_20_AGE": 1080,
+                                "OVER_21_AGE": 1081,
+                                "OVER_22_AGE": 1082,
+                                "OVER_23_AGE": 1083,
+                                "OVER_24_AGE": 1084,
+                                "OVER_25_AGE": 1085,
+                                "OVER_26_AGE": 1086,
+                                "OVER_27_AGE": 1087,
+                                "OVER_28_AGE": 1088,
+                                "OVER_29_AGE": 1089,
+                                "OVER_30_AGE": 1090,
+                                "OVER_31_AGE": 1091,
+                                "OVER_32_AGE": 1092,
+                                "OVER_33_AGE": 1093,
+                                "OVER_34_AGE": 1094,
+                                "OVER_35_AGE": 1095,
+                                "OVER_36_AGE": 1096,
+                                "OVER_37_AGE": 1097,
+                                "OVER_38_AGE": 1098,
+                                "OVER_39_AGE": 1099,
+                                "OVER_40_AGE": 1100,
+                                "OVER_41_AGE": 1101,
+                                "OVER_42_AGE": 1102,
+                                "OVER_43_AGE": 1103,
+                                "OVER_44_AGE": 1104,
+                                "OVER_45_AGE": 1105,
+                                "OVER_46_AGE": 1106,
+                                "OVER_47_AGE": 1107,
+                                "OVER_48_AGE": 1108,
+                                "OVER_49_AGE": 1109,
+                                "OVER_50_AGE": 1110,
+                                "OVER_51_AGE": 1111,
+                                "OVER_52_AGE": 1112,
+                                "OVER_53_AGE": 1113,
+                                "OVER_54_AGE": 1114,
+                                "OVER_55_AGE": 1115,
+                                "OVER_56_AGE": 1116,
+                                "OVER_57_AGE": 1117,
+                                "OVER_58_AGE": 1118,
+                                "OVER_59_AGE": 1119,
+                                "OVER_60_AGE": 1120,
+                                "OVER_61_AGE": 1121,
+                                "OVER_62_AGE": 1122,
+                                "OVER_63_AGE": 1123,
+                                "OVER_64_AGE": 1124,
+                                "OVER_65_AGE": 1125,
                                 "EDUCATION_PROGRAM": 1013,
                                 "EDUCATION_COURSE": 1014,
                                 "PRODUCT": 1016,
@@ -12477,7 +12630,9 @@
                                 "USE_BROAD_MATCH_KEYWORD": 20,
                                 "RESPONSIVE_SEARCH_AD_ASSET": 21,
                                 "UPGRADE_SMART_SHOPPING_CAMPAIGN_TO_PERFORMANCE_MAX": 22,
-                                "RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH": 23
+                                "RESPONSIVE_SEARCH_AD_IMPROVE_AD_STRENGTH": 23,
+                                "DISPLAY_EXPANSION_OPT_IN": 24,
+                                "UPGRADE_LOCAL_CAMPAIGN_TO_PERFORMANCE_MAX": 25
                               }
                             }
                           }
@@ -12671,6 +12826,19 @@
                                 "NOT_EQUALS": 3,
                                 "BEFORE": 4,
                                 "AFTER": 5
+                              }
+                            }
+                          }
+                        },
+                        "UserListFlexibleRuleOperatorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "UserListFlexibleRuleOperator": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "AND": 2,
+                                "OR": 3
                               }
                             }
                           }
@@ -13342,7 +13510,17 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "CATEGORY": 2,
-                                "KNOWLEDGE_GRAPH": 3
+                                "KNOWLEDGE_GRAPH": 3,
+                                "GEO_TARGET_COUNTRY": 4,
+                                "SUB_COUNTRY_LOCATION": 5,
+                                "YOUTUBE_CHANNEL": 6,
+                                "YOUTUBE_DYNAMIC_LINEUP": 7,
+                                "AFFINITY_USER_INTEREST": 8,
+                                "IN_MARKET_USER_INTEREST": 9,
+                                "PARENTAL_STATUS": 10,
+                                "INCOME_RANGE": 11,
+                                "AGE_RANGE": 12,
+                                "GENDER": 13
                               }
                             }
                           }
@@ -13410,6 +13588,42 @@
                                 "UNKNOWN": 1,
                                 "ENABLED": 2,
                                 "REMOVED": 4
+                              }
+                            }
+                          }
+                        },
+                        "BiddingStrategySystemStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "BiddingStrategySystemStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ENABLED": 2,
+                                "LEARNING_NEW": 3,
+                                "LEARNING_SETTING_CHANGE": 4,
+                                "LEARNING_BUDGET_CHANGE": 5,
+                                "LEARNING_COMPOSITION_CHANGE": 6,
+                                "LEARNING_CONVERSION_TYPE_CHANGE": 7,
+                                "LEARNING_CONVERSION_SETTING_CHANGE": 8,
+                                "LIMITED_BY_CPC_BID_CEILING": 9,
+                                "LIMITED_BY_CPC_BID_FLOOR": 10,
+                                "LIMITED_BY_DATA": 11,
+                                "LIMITED_BY_BUDGET": 12,
+                                "LIMITED_BY_LOW_PRIORITY_SPEND": 13,
+                                "LIMITED_BY_LOW_QUALITY": 14,
+                                "LIMITED_BY_INVENTORY": 15,
+                                "MISCONFIGURED_ZERO_ELIGIBILITY": 16,
+                                "MISCONFIGURED_CONVERSION_TYPES": 17,
+                                "MISCONFIGURED_CONVERSION_SETTINGS": 18,
+                                "MISCONFIGURED_SHARED_BUDGET": 19,
+                                "MISCONFIGURED_STRATEGY_TYPE": 20,
+                                "PAUSED": 21,
+                                "UNAVAILABLE": 22,
+                                "MULTIPLE_LEARNING": 23,
+                                "MULTIPLE_LIMITED": 24,
+                                "MULTIPLE_MISCONFIGURED": 25,
+                                "MULTIPLE": 26
                               }
                             }
                           }
@@ -16687,6 +16901,7 @@
                                 "YOUTUBE_VIDEO_REMOVED": 13,
                                 "YOUTUBE_VIDEO_TOO_LONG": 14,
                                 "YOUTUBE_VIDEO_TOO_SHORT": 15,
+                                "EXCLUDED_PARENT_FIELD_TYPE": 16,
                                 "INVALID_STATUS": 17,
                                 "YOUTUBE_VIDEO_DURATION_NOT_DEFINED": 18,
                                 "CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS": 19,
@@ -16753,6 +16968,18 @@
                                 "TOO_MANY_SEGMENTS": 7,
                                 "TOO_MANY_DIMENSIONS_OF_SAME_TYPE": 8,
                                 "IN_USE": 9
+                              }
+                            }
+                          }
+                        },
+                        "AudienceInsightsErrorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "AudienceInsightsError": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "DIMENSION_INCOMPATIBLE_WITH_TOPIC_AUDIENCE_COMBINATIONS": 2
                               }
                             }
                           }
@@ -17943,7 +18170,8 @@
                                 "customer_user_access_error",
                                 "custom_audience_error",
                                 "audience_error",
-                                "experiment_arm_error"
+                                "experiment_arm_error",
+                                "audience_insights_error"
                               ]
                             }
                           },
@@ -18503,6 +18731,10 @@
                             "experiment_arm_error": {
                               "type": "ExperimentArmErrorEnum.ExperimentArmError",
                               "id": 156
+                            },
+                            "audience_insights_error": {
+                              "type": "AudienceInsightsErrorEnum.AudienceInsightsError",
+                              "id": 167
                             }
                           }
                         },
@@ -19733,7 +19965,11 @@
                                 "FUTURE_TIME_NOT_ALLOWED": 37,
                                 "LAST_PURCHASE_TIME_LESS_THAN_ACQUISITION_TIME": 38,
                                 "CUSTOMER_IDENTIFIER_NOT_ALLOWED": 39,
-                                "INVALID_ITEM_ID": 40
+                                "INVALID_ITEM_ID": 40,
+                                "FIRST_PURCHASE_TIME_GREATER_THAN_LAST_PURCHASE_TIME": 42,
+                                "INVALID_LIFECYCLE_STAGE": 43,
+                                "INVALID_EVENT_VALUE": 44,
+                                "EVENT_ATTRIBUTE_ALL_FIELDS_ARE_REQUIRED": 45
                               }
                             }
                           }
@@ -23945,6 +24181,13 @@
                             "path2": {
                               "type": "string",
                               "id": 8
+                            },
+                            "ad_strength": {
+                              "type": "google.ads.googleads.v11.enums.AdStrengthEnum.AdStrength",
+                              "id": 10,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
                             }
                           }
                         },
@@ -25336,6 +25579,13 @@
                             "serving_status": {
                               "type": "google.ads.googleads.v11.enums.CampaignServingStatusEnum.CampaignServingStatus",
                               "id": 21,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "bidding_strategy_system_status": {
+                              "type": "google.ads.googleads.v11.enums.BiddingStrategySystemStatusEnum.BiddingStrategySystemStatus",
+                              "id": 78,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -34621,7 +34871,9 @@
                                 "use_broad_match_keyword_recommendation",
                                 "responsive_search_ad_asset_recommendation",
                                 "upgrade_smart_shopping_campaign_to_performance_max_recommendation",
-                                "responsive_search_ad_improve_ad_strength_recommendation"
+                                "responsive_search_ad_improve_ad_strength_recommendation",
+                                "display_expansion_opt_in_recommendation",
+                                "upgrade_local_campaign_to_performance_max_recommendation"
                               ]
                             }
                           },
@@ -34833,6 +35085,20 @@
                             "responsive_search_ad_improve_ad_strength_recommendation": {
                               "type": "ResponsiveSearchAdImproveAdStrengthRecommendation",
                               "id": 33,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "display_expansion_opt_in_recommendation": {
+                              "type": "DisplayExpansionOptInRecommendation",
+                              "id": 34,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "upgrade_local_campaign_to_performance_max_recommendation": {
+                              "type": "UpgradeLocalCampaignToPerformanceMaxRecommendation",
+                              "id": 35,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -35399,6 +35665,12 @@
                                   }
                                 }
                               }
+                            },
+                            "DisplayExpansionOptInRecommendation": {
+                              "fields": {}
+                            },
+                            "UpgradeLocalCampaignToPerformanceMaxRecommendation": {
+                              "fields": {}
                             }
                           }
                         },
@@ -39099,6 +39371,26 @@
                                   "(google.api.method_signature)": "customer_id,dimensions,query_text"
                                 }
                               ]
+                            },
+                            "GenerateAudienceCompositionInsights": {
+                              "requestType": "GenerateAudienceCompositionInsightsRequest",
+                              "responseType": "GenerateAudienceCompositionInsightsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v11/customers/{customer_id=*}:generateAudienceCompositionInsights",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,audience,dimensions"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v11/customers/{customer_id=*}:generateAudienceCompositionInsights",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,audience,dimensions"
+                                }
+                              ]
                             }
                           }
                         },
@@ -39135,6 +39427,49 @@
                           "fields": {
                             "saved_report_url": {
                               "type": "string",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "GenerateAudienceCompositionInsightsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "audience": {
+                              "type": "InsightsAudience",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "data_month": {
+                              "type": "string",
+                              "id": 3
+                            },
+                            "dimensions": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "customer_insights_group": {
+                              "type": "string",
+                              "id": 5
+                            }
+                          }
+                        },
+                        "GenerateAudienceCompositionInsightsResponse": {
+                          "fields": {
+                            "sections": {
+                              "rule": "repeated",
+                              "type": "AudienceCompositionSection",
                               "id": 1
                             }
                           }
@@ -39187,7 +39522,11 @@
                                 "location",
                                 "user_interest",
                                 "entity",
-                                "category"
+                                "category",
+                                "dynamic_lineup",
+                                "parental_status",
+                                "income_range",
+                                "youtube_channel"
                               ]
                             }
                           },
@@ -39215,6 +39554,22 @@
                             "category": {
                               "type": "AudienceInsightsCategory",
                               "id": 6
+                            },
+                            "dynamic_lineup": {
+                              "type": "AudienceInsightsDynamicLineup",
+                              "id": 7
+                            },
+                            "parental_status": {
+                              "type": "google.ads.googleads.v11.common.ParentalStatusInfo",
+                              "id": 8
+                            },
+                            "income_range": {
+                              "type": "google.ads.googleads.v11.common.IncomeRangeInfo",
+                              "id": 9
+                            },
+                            "youtube_channel": {
+                              "type": "google.ads.googleads.v11.common.YouTubeChannelInfo",
+                              "id": 10
                             }
                           }
                         },
@@ -39260,6 +39615,17 @@
                             }
                           }
                         },
+                        "AudienceInsightsDynamicLineup": {
+                          "fields": {
+                            "dynamic_lineup_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
                         "BasicInsightsAudience": {
                           "fields": {
                             "country_location": {
@@ -39297,6 +39663,14 @@
                           }
                         },
                         "AudienceInsightsAttributeMetadata": {
+                          "oneofs": {
+                            "dimension_metadata": {
+                              "oneof": [
+                                "youtube_channel_metadata",
+                                "dynamic_attribute_metadata"
+                              ]
+                            }
+                          },
                           "fields": {
                             "dimension": {
                               "type": "google.ads.googleads.v11.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension",
@@ -39317,6 +39691,192 @@
                             "display_info": {
                               "type": "string",
                               "id": 5
+                            },
+                            "youtube_channel_metadata": {
+                              "type": "YouTubeChannelAttributeMetadata",
+                              "id": 6
+                            },
+                            "dynamic_attribute_metadata": {
+                              "type": "DynamicLineupAttributeMetadata",
+                              "id": 7
+                            }
+                          }
+                        },
+                        "YouTubeChannelAttributeMetadata": {
+                          "fields": {
+                            "subscriber_count": {
+                              "type": "int64",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "DynamicLineupAttributeMetadata": {
+                          "oneofs": {
+                            "_median_monthly_inventory": {
+                              "oneof": [
+                                "median_monthly_inventory"
+                              ]
+                            },
+                            "_channel_count_lower_bound": {
+                              "oneof": [
+                                "channel_count_lower_bound"
+                              ]
+                            },
+                            "_channel_count_upper_bound": {
+                              "oneof": [
+                                "channel_count_upper_bound"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "inventory_country": {
+                              "type": "google.ads.googleads.v11.common.LocationInfo",
+                              "id": 1
+                            },
+                            "median_monthly_inventory": {
+                              "type": "int64",
+                              "id": 2,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "channel_count_lower_bound": {
+                              "type": "int64",
+                              "id": 3,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "channel_count_upper_bound": {
+                              "type": "int64",
+                              "id": 4,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "InsightsAudience": {
+                          "fields": {
+                            "country_locations": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.common.LocationInfo",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "sub_country_locations": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.common.LocationInfo",
+                              "id": 2
+                            },
+                            "gender": {
+                              "type": "google.ads.googleads.v11.common.GenderInfo",
+                              "id": 3
+                            },
+                            "age_ranges": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.common.AgeRangeInfo",
+                              "id": 4
+                            },
+                            "parental_status": {
+                              "type": "google.ads.googleads.v11.common.ParentalStatusInfo",
+                              "id": 5
+                            },
+                            "income_ranges": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.common.IncomeRangeInfo",
+                              "id": 6
+                            },
+                            "dynamic_lineups": {
+                              "rule": "repeated",
+                              "type": "AudienceInsightsDynamicLineup",
+                              "id": 7
+                            },
+                            "topic_audience_combinations": {
+                              "rule": "repeated",
+                              "type": "InsightsAudienceAttributeGroup",
+                              "id": 8
+                            }
+                          }
+                        },
+                        "InsightsAudienceAttributeGroup": {
+                          "fields": {
+                            "attributes": {
+                              "rule": "repeated",
+                              "type": "AudienceInsightsAttribute",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
+                        "AudienceCompositionSection": {
+                          "fields": {
+                            "dimension": {
+                              "type": "google.ads.googleads.v11.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension",
+                              "id": 1
+                            },
+                            "top_attributes": {
+                              "rule": "repeated",
+                              "type": "AudienceCompositionAttribute",
+                              "id": 3
+                            },
+                            "clustered_attributes": {
+                              "rule": "repeated",
+                              "type": "AudienceCompositionAttributeCluster",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "AudienceCompositionAttributeCluster": {
+                          "fields": {
+                            "cluster_display_name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "cluster_metrics": {
+                              "type": "AudienceCompositionMetrics",
+                              "id": 3
+                            },
+                            "attributes": {
+                              "rule": "repeated",
+                              "type": "AudienceCompositionAttribute",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "AudienceCompositionMetrics": {
+                          "fields": {
+                            "baseline_audience_share": {
+                              "type": "double",
+                              "id": 1
+                            },
+                            "audience_share": {
+                              "type": "double",
+                              "id": 2
+                            },
+                            "index": {
+                              "type": "double",
+                              "id": 3
+                            },
+                            "score": {
+                              "type": "double",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "AudienceCompositionAttribute": {
+                          "fields": {
+                            "attribute_metadata": {
+                              "type": "AudienceInsightsAttributeMetadata",
+                              "id": 1
+                            },
+                            "metrics": {
+                              "type": "AudienceCompositionMetrics",
+                              "id": 2
                             }
                           }
                         },
@@ -40973,6 +41533,8 @@
                                 "customer_negative_criterion_result",
                                 "customer_result",
                                 "customizer_attribute_result",
+                                "experiment_result",
+                                "experiment_arm_result",
                                 "extension_feed_item_result",
                                 "feed_item_result",
                                 "feed_item_set_result",
@@ -41215,6 +41777,14 @@
                             "customizer_attribute_result": {
                               "type": "MutateCustomizerAttributeResult",
                               "id": 70
+                            },
+                            "experiment_result": {
+                              "type": "MutateExperimentResult",
+                              "id": 81
+                            },
+                            "experiment_arm_result": {
+                              "type": "MutateExperimentArmResult",
+                              "id": 82
                             },
                             "extension_feed_item_result": {
                               "type": "MutateExtensionFeedItemResult",
@@ -51397,6 +51967,11 @@
                               "rule": "repeated",
                               "type": "google.ads.googleads.v11.enums.ReachPlanNetworkEnum.ReachPlanNetwork",
                               "id": 4
+                            },
+                            "youtube_select_lineups": {
+                              "rule": "repeated",
+                              "type": "YouTubeSelectLineUp",
+                              "id": 5
                             }
                           }
                         },
@@ -51554,6 +52129,11 @@
                               "oneof": [
                                 "effective_frequency_limit"
                               ]
+                            },
+                            "_customer_reach_group": {
+                              "oneof": [
+                                "customer_reach_group"
+                              ]
                             }
                           },
                           "fields": {
@@ -51618,6 +52198,13 @@
                             "forecast_metric_options": {
                               "type": "ForecastMetricOptions",
                               "id": 13
+                            },
+                            "customer_reach_group": {
+                              "type": "string",
+                              "id": 14,
+                              "options": {
+                                "proto3_optional": true
+                              }
                             }
                           }
                         },
@@ -51680,6 +52267,10 @@
                             "network": {
                               "type": "google.ads.googleads.v11.enums.ReachPlanNetworkEnum.ReachPlanNetwork",
                               "id": 5
+                            },
+                            "audience_targeting": {
+                              "type": "AudienceTargeting",
+                              "id": 7
                             }
                           }
                         },
@@ -51732,6 +52323,10 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "advanced_product_targeting": {
+                              "type": "AdvancedProductTargeting",
+                              "id": 5
                             }
                           }
                         },
@@ -52067,6 +52662,50 @@
                             "include_coview": {
                               "type": "bool",
                               "id": 1
+                            }
+                          }
+                        },
+                        "AudienceTargeting": {
+                          "fields": {
+                            "user_interest": {
+                              "rule": "repeated",
+                              "type": "google.ads.googleads.v11.common.UserInterestInfo",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "AdvancedProductTargeting": {
+                          "oneofs": {
+                            "advanced_targeting": {
+                              "oneof": [
+                                "youtube_select_settings"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "youtube_select_settings": {
+                              "type": "YouTubeSelectSettings",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "YouTubeSelectSettings": {
+                          "fields": {
+                            "lineup_id": {
+                              "type": "int64",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "YouTubeSelectLineUp": {
+                          "fields": {
+                            "lineup_id": {
+                              "type": "int64",
+                              "id": 1
+                            },
+                            "lineup_name": {
+                              "type": "string",
+                              "id": 2
                             }
                           }
                         },
@@ -53275,6 +53914,10 @@
                 "syntax": {
                   "type": "string",
                   "id": 12
+                },
+                "edition": {
+                  "type": "string",
+                  "id": 13
                 }
               }
             },
@@ -54102,6 +54745,19 @@
                     "end": {
                       "type": "int32",
                       "id": 4
+                    },
+                    "semantic": {
+                      "type": "Semantic",
+                      "id": 5
+                    }
+                  },
+                  "nested": {
+                    "Semantic": {
+                      "values": {
+                        "NONE": 0,
+                        "SET": 1,
+                        "ALIAS": 2
+                      }
                     }
                   }
                 }

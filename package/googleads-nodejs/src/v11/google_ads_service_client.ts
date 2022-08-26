@@ -20,9 +20,8 @@
 import * as gax from 'google-gax';
 import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall, GoogleError} from 'google-gax';
 
-import { Transform } from 'stream';
-import { RequestType } from 'google-gax/build/src/apitypes';
-import { PassThrough } from 'stream';
+import {Transform} from 'stream';
+import {PassThrough} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -64,7 +63,7 @@ export class GoogleAdsServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -87,11 +86,10 @@ export class GoogleAdsServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -711,7 +709,8 @@ export class GoogleAdsServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;
@@ -794,7 +793,7 @@ export class GoogleAdsServiceClient {
  *
  * Atomicity makes error handling much easier. If you're making a series of
  * changes and one fails, it can leave your account in an inconsistent state.
- * With atomicity, you either reach the desired state directly, or the request
+ * With atomicity, you either reach the chosen state directly, or the request
  * fails and you can retry.
  *
  * ## Temp Resource Names
@@ -906,7 +905,7 @@ export class GoogleAdsServiceClient {
  *   The response content type setting. Determines whether the mutable resource
  *   or just the resource name should be returned post mutation. The mutable
  *   resource will only be returned if the resource has the appropriate response
- *   field. E.g. MutateCampaignResult.campaign.
+ *   field. For example, MutateCampaignResult.campaign.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1190,7 +1189,7 @@ export class GoogleAdsServiceClient {
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.search.createStream(
-      this.innerApiCalls.search as gax.GaxCall,
+      this.innerApiCalls.search as GaxCall,
       request,
       callSettings
     );
@@ -1256,7 +1255,7 @@ export class GoogleAdsServiceClient {
     this.initialize();
     return this.descriptors.page.search.asyncIterate(
       this.innerApiCalls['search'] as GaxCall,
-      request as unknown as RequestType,
+      request as {},
       callSettings
     ) as AsyncIterable<protos.google.ads.googleads.v11.services.IGoogleAdsRow>;
   }

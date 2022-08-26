@@ -65,7 +65,7 @@ export class ReachPlanServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -88,11 +88,10 @@ export class ReachPlanServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -689,7 +688,8 @@ export class ReachPlanServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;
@@ -1019,16 +1019,16 @@ export class ReachPlanServiceClient {
  * @param {google.ads.googleads.v11.services.CampaignDuration} request.campaignDuration
  *   Required. Campaign duration.
  * @param {number} request.cookieFrequencyCap
- *   Desired cookie frequency cap to be applied to each planned product.
+ *   Chosen cookie frequency cap to be applied to each planned product.
  *   This is equivalent to the frequency cap exposed in Google Ads when creating
  *   a campaign, it represents the maximum number of times an ad can be shown to
  *   the same user.
  *   If not specified, no cap is applied.
  *
  *   This field is deprecated in v4 and will eventually be removed.
- *   Please use cookie_frequency_cap_setting instead.
+ *   Use cookie_frequency_cap_setting instead.
  * @param {google.ads.googleads.v11.services.FrequencyCap} request.cookieFrequencyCapSetting
- *   Desired cookie frequency cap to be applied to each planned product.
+ *   Chosen cookie frequency cap to be applied to each planned product.
  *   This is equivalent to the frequency cap exposed in Google Ads when creating
  *   a campaign, it represents the maximum number of times an ad can be shown to
  *   the same user during a specified time interval.
@@ -1036,7 +1036,7 @@ export class ReachPlanServiceClient {
  *
  *   This field replaces the deprecated cookie_frequency_cap field.
  * @param {number} request.minEffectiveFrequency
- *   Desired minimum effective frequency (the number of times a person was
+ *   Chosen minimum effective frequency (the number of times a person was
  *   exposed to the ad) for the reported reach metrics [1-10].
  *   This won't affect the targeting, but just the reporting.
  *   If not specified, a default of 1 is applied.
@@ -1057,7 +1057,7 @@ export class ReachPlanServiceClient {
  *   The targeting to be applied to all products selected in the product mix.
  *
  *   This is planned targeting: execution details might vary based on the
- *   advertising product, please consult an implementation specialist.
+ *   advertising product, consult an implementation specialist.
  *
  *   See specific metrics for details on how targeting affects them.
  * @param {number[]} request.plannedProducts
@@ -1065,6 +1065,9 @@ export class ReachPlanServiceClient {
  *   The max number of allowed planned products is 15.
  * @param {google.ads.googleads.v11.services.ForecastMetricOptions} request.forecastMetricOptions
  *   Controls the forecast metrics returned in the response.
+ * @param {string} request.customerReachGroup
+ *   The name of the customer being planned for. This is a user-defined value.
+ *   Required if targeting.audience_targeting is set.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

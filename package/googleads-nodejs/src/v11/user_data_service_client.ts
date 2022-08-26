@@ -33,11 +33,11 @@ const version = require('../../../package.json').version;
 
 /**
  *  Service to manage user data uploads.
- *  Any uploads made to a Customer Match list via this service will be eligible
- *  for matching as per the customer matching process. Please see
+ *  Any uploads made to a Customer Match list through this service will be
+ *  eligible for matching as per the customer matching process. See
  *  https://support.google.com/google-ads/answer/7474263. However, the uploads
- *  made via this service will not be visible under the 'Segment members' section
- *  for the Customer Match List in the Google Ads UI.
+ *  made through this service will not be visible under the 'Segment members'
+ *  section for the Customer Match List in the Google Ads UI.
  * @class
  * @memberof v11
  */
@@ -66,7 +66,7 @@ export class UserDataServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -89,11 +89,10 @@ export class UserDataServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -690,7 +689,8 @@ export class UserDataServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;

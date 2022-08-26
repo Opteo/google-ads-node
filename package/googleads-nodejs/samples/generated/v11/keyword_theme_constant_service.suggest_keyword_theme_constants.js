@@ -23,11 +23,14 @@
 function main() {
   // [START googleads_v11_generated_KeywordThemeConstantService_SuggestKeywordThemeConstants_async]
   /**
+   * This snippet has been automatically generated and should be regarded as a code template only.
+   * It will require modifications to work.
+   * It may require correct/in-range values for request initialization.
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
    *  The query text of a keyword theme that will be used to map to similar
-   *  keyword themes. E.g. "plumber" or "roofer".
+   *  keyword themes. For example, "plumber" or "roofer".
    */
   // const queryText = 'abc123'
   /**

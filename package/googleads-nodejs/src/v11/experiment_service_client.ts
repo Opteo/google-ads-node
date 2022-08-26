@@ -18,10 +18,9 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, GrpcClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
-import { Transform } from 'stream';
-import { RequestType } from 'google-gax/build/src/apitypes';
+import {Transform} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -30,7 +29,7 @@ import jsonProtos = require('../../protos/protos.json');
  * This file defines retry strategy and timeouts for all API methods in this library.
  */
 import * as gapicConfig from './experiment_service_client_config.json';
-import { operationsProtos } from 'google-gax';
+import {operationsProtos} from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
@@ -64,7 +63,7 @@ export class ExperimentServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -87,11 +86,10 @@ export class ExperimentServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
@@ -635,15 +633,18 @@ export class ExperimentServiceClient {
     };
 
     const protoFilesRoot = this._gaxModule.protobuf.Root.fromJSON(jsonProtos);
-
     // This API contains "long-running operations", which return a
     // an Operation object that allows for tracking of the operation,
     // rather than holding a request open.
-
-    this.operationsClient = this._gaxModule.lro({
+    const lroOptions: GrpcClientOptions = {
       auth: this.auth,
       grpc: 'grpc' in this._gaxGrpc ? this._gaxGrpc.grpc : undefined
-    }).operationsClient(opts);
+    };
+    if (opts.fallback === 'rest') {
+      lroOptions.protoJson = protoFilesRoot;
+      lroOptions.httpRules = [{selector: 'google.longrunning.Operations.CancelOperation',post: '/v11/{name=customers/*/operations/*}:cancel',body: '*',},{selector: 'google.longrunning.Operations.DeleteOperation',delete: '/v11/{name=customers/*/operations/*}',},{selector: 'google.longrunning.Operations.GetOperation',get: '/v11/{name=customers/*/operations/*}',},{selector: 'google.longrunning.Operations.ListOperations',get: '/v11/{name=customers/*/operations}',},{selector: 'google.longrunning.Operations.WaitOperation',post: '/v11/{name=customers/*/operations/*}:wait',body: '*',}];
+    }
+    this.operationsClient = this._gaxModule.lro(lroOptions).operationsClient(opts);
     const scheduleExperimentResponse = protoFilesRoot.lookup(
       '.google.protobuf.Empty') as gax.protobuf.Type;
     const scheduleExperimentMetadata = protoFilesRoot.lookup(
@@ -728,7 +729,8 @@ export class ExperimentServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;
@@ -1169,7 +1171,7 @@ export class ExperimentServiceClient {
   async checkScheduleExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v11.services.ScheduleExperimentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
-    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.scheduleExperiment, gax.createDefaultBackoffSettings());
+    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.scheduleExperiment, this._gaxModule.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v11.services.ScheduleExperimentMetadata>;
   }
 /**
@@ -1278,7 +1280,7 @@ export class ExperimentServiceClient {
   async checkPromoteExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v11.services.PromoteExperimentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
-    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.promoteExperiment, gax.createDefaultBackoffSettings());
+    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.promoteExperiment, this._gaxModule.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v11.services.PromoteExperimentMetadata>;
   }
  /**
@@ -1425,7 +1427,7 @@ export class ExperimentServiceClient {
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listExperimentAsyncErrors.createStream(
-      this.innerApiCalls.listExperimentAsyncErrors as gax.GaxCall,
+      this.innerApiCalls.listExperimentAsyncErrors as GaxCall,
       request,
       callSettings
     );
@@ -1481,7 +1483,7 @@ export class ExperimentServiceClient {
     this.initialize();
     return this.descriptors.page.listExperimentAsyncErrors.asyncIterate(
       this.innerApiCalls['listExperimentAsyncErrors'] as GaxCall,
-      request as unknown as RequestType,
+      request as {},
       callSettings
     ) as AsyncIterable<protos.google.rpc.IStatus>;
   }
