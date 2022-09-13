@@ -23,6 +23,9 @@
 function main(customerId, mutateOperations) {
   // [START googleads_v11_generated_GoogleAdsService_Mutate_async]
   /**
+   * This snippet has been automatically generated and should be regarded as a code template only.
+   * It will require modifications to work.
+   * It may require correct/in-range values for request initialization.
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
@@ -49,7 +52,7 @@ function main(customerId, mutateOperations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation. The mutable
    *  resource will only be returned if the resource has the appropriate response
-   *  field. E.g. MutateCampaignResult.campaign.
+   *  field. For example, MutateCampaignResult.campaign.
    */
   // const responseContentType = {}
 

@@ -17,11 +17,9 @@
 // ** All changes to this file may be overwritten. **
 
 /* global window */
-import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall} from 'google-gax';
-
-import { Transform } from 'stream';
-import { RequestType } from 'google-gax/build/src/apitypes';
+import type * as gax from 'google-gax';
+import type {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall} from 'google-gax';
+import {Transform} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -30,7 +28,6 @@ import jsonProtos = require('../../protos/protos.json');
  * This file defines retry strategy and timeouts for all API methods in this library.
  */
 import * as gapicConfig from './keyword_plan_idea_service_client_config.json';
-
 const version = require('../../../package.json').version;
 
 /**
@@ -63,7 +60,7 @@ export class KeywordPlanIdeaServiceClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in [this document](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#creating-the-client-instance).
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -86,13 +83,19 @@ export class KeywordPlanIdeaServiceClient {
    *     API remote host.
    * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
    *     Follows the structure of {@link gapicConfig}.
-   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
-   *     In fallback mode, a special browser-compatible transport implementation is used
-   *     instead of gRPC transport. In browser context (if the `window` object is defined)
-   *     the fallback mode is enabled automatically; set `options.fallback` to `false`
-   *     if you need to override this behavior.
+   * @param {boolean | "rest"} [options.fallback] - Use HTTP fallback mode.
+   *     Pass "rest" to use HTTP/1.1 REST API instead of gRPC.
+   *     For more information, please check the
+   *     {@link https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md#http11-rest-api-mode documentation}.
+   * @param {gax} [gaxInstance]: loaded instance of `google-gax`. Useful if you
+   *     need to avoid loading the default gRPC version and want to use the fallback
+   *     HTTP implementation. Load only fallback version and pass it to the constructor:
+   *     ```
+   *     const gax = require('google-gax/build/src/fallback'); // avoids loading google-gax with gRPC
+   *     const client = new KeywordPlanIdeaServiceClient({fallback: 'rest'}, gax);
+   *     ```
    */
-  constructor(opts?: ClientOptions) {
+  constructor(opts?: ClientOptions, gaxInstance?: typeof gax | typeof gax.fallback) {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof KeywordPlanIdeaServiceClient;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
@@ -107,8 +110,13 @@ export class KeywordPlanIdeaServiceClient {
       opts['scopes'] = staticMembers.scopes;
     }
 
+    // Load google-gax module synchronously if needed
+    if (!gaxInstance) {
+      gaxInstance = require('google-gax') as typeof gax;
+    }
+
     // Choose either gRPC or proto-over-HTTP implementation of google-gax.
-    this._gaxModule = opts.fallback ? gax.fallback : gax;
+    this._gaxModule = opts.fallback ? gaxInstance.fallback : gaxInstance;
 
     // Create a `gaxGrpc` object, with any grpc-specific options sent to the client.
     this._gaxGrpc = new this._gaxModule.GrpcClient(opts);
@@ -644,7 +652,7 @@ export class KeywordPlanIdeaServiceClient {
     this.innerApiCalls = {};
 
     // Add a warn function to the client constructor so it can be easily tested.
-    this.warn = gax.warn;
+    this.warn = this._gaxModule.warn;
   }
 
   /**
@@ -696,7 +704,8 @@ export class KeywordPlanIdeaServiceClient {
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
-        descriptor
+        descriptor,
+        this._opts.fallback
       );
 
       this.innerApiCalls[methodName] = apiCall;
@@ -857,7 +866,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers[
       'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
+    ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id || '',
     });
     this.initialize();
@@ -943,7 +952,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers[
       'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
+    ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id || '',
     });
     this.initialize();
@@ -1002,13 +1011,13 @@ export class KeywordPlanIdeaServiceClient {
  *   The options for historical metrics data.
  * @param {google.ads.googleads.v11.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
- *   e.g. cars, www.example.com/cars.
+ *   for example, cars, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.KeywordSeed} request.keywordSeed
- *   A Keyword or phrase to generate ideas from, e.g. cars.
+ *   A Keyword or phrase to generate ideas from, for example, cars.
  * @param {google.ads.googleads.v11.services.UrlSeed} request.urlSeed
- *   A specific url to generate ideas from, e.g. www.example.com/cars.
+ *   A specific url to generate ideas from, for example, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.SiteSeed} request.siteSeed
- *   The site to generate ideas from, e.g. www.example.com.
+ *   The site to generate ideas from, for example, www.example.com.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1072,7 +1081,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers[
       'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
+    ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id || '',
     });
     this.initialize();
@@ -1120,13 +1129,13 @@ export class KeywordPlanIdeaServiceClient {
  *   The options for historical metrics data.
  * @param {google.ads.googleads.v11.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
- *   e.g. cars, www.example.com/cars.
+ *   for example, cars, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.KeywordSeed} request.keywordSeed
- *   A Keyword or phrase to generate ideas from, e.g. cars.
+ *   A Keyword or phrase to generate ideas from, for example, cars.
  * @param {google.ads.googleads.v11.services.UrlSeed} request.urlSeed
- *   A specific url to generate ideas from, e.g. www.example.com/cars.
+ *   A specific url to generate ideas from, for example, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.SiteSeed} request.siteSeed
- *   The site to generate ideas from, e.g. www.example.com.
+ *   The site to generate ideas from, for example, www.example.com.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -1149,14 +1158,14 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers[
       'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
+    ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id || '',
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.generateKeywordIdeas.createStream(
-      this.innerApiCalls.generateKeywordIdeas as gax.GaxCall,
+      this.innerApiCalls.generateKeywordIdeas as GaxCall,
       request,
       callSettings
     );
@@ -1205,13 +1214,13 @@ export class KeywordPlanIdeaServiceClient {
  *   The options for historical metrics data.
  * @param {google.ads.googleads.v11.services.KeywordAndUrlSeed} request.keywordAndUrlSeed
  *   A Keyword and a specific Url to generate ideas from
- *   e.g. cars, www.example.com/cars.
+ *   for example, cars, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.KeywordSeed} request.keywordSeed
- *   A Keyword or phrase to generate ideas from, e.g. cars.
+ *   A Keyword or phrase to generate ideas from, for example, cars.
  * @param {google.ads.googleads.v11.services.UrlSeed} request.urlSeed
- *   A specific url to generate ideas from, e.g. www.example.com/cars.
+ *   A specific url to generate ideas from, for example, www.example.com/cars.
  * @param {google.ads.googleads.v11.services.SiteSeed} request.siteSeed
- *   The site to generate ideas from, e.g. www.example.com.
+ *   The site to generate ideas from, for example, www.example.com.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}
@@ -1235,7 +1244,7 @@ export class KeywordPlanIdeaServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers[
       'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
+    ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id || '',
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
@@ -1243,7 +1252,7 @@ export class KeywordPlanIdeaServiceClient {
     this.initialize();
     return this.descriptors.page.generateKeywordIdeas.asyncIterate(
       this.innerApiCalls['generateKeywordIdeas'] as GaxCall,
-      request as unknown as RequestType,
+      request as {},
       callSettings
     ) as AsyncIterable<protos.google.ads.googleads.v11.services.IGenerateKeywordIdeaResult>;
   }

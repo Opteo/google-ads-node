@@ -23,6 +23,9 @@
 function main() {
   // [START googleads_v11_generated_KeywordPlanIdeaService_GenerateKeywordIdeas_async]
   /**
+   * This snippet has been automatically generated and should be regarded as a code template only.
+   * It will require modifications to work.
+   * It may require correct/in-range values for request initialization.
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
@@ -82,19 +85,19 @@ function main() {
   // const historicalMetricsOptions = {}
   /**
    *  A Keyword and a specific Url to generate ideas from
-   *  e.g. cars, www.example.com/cars.
+   *  for example, cars, www.example.com/cars.
    */
   // const keywordAndUrlSeed = {}
   /**
-   *  A Keyword or phrase to generate ideas from, e.g. cars.
+   *  A Keyword or phrase to generate ideas from, for example, cars.
    */
   // const keywordSeed = {}
   /**
-   *  A specific url to generate ideas from, e.g. www.example.com/cars.
+   *  A specific url to generate ideas from, for example, www.example.com/cars.
    */
   // const urlSeed = {}
   /**
-   *  The site to generate ideas from, e.g. www.example.com.
+   *  The site to generate ideas from, for example, www.example.com.
    */
   // const siteSeed = {}
 

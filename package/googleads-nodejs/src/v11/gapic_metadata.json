@@ -591,6 +591,11 @@
               "methods": [
                 "listAudienceInsightsAttributes"
               ]
+            },
+            "GenerateAudienceCompositionInsights": {
+              "methods": [
+                "generateAudienceCompositionInsights"
+              ]
             }
           }
         },
@@ -605,6 +610,11 @@
             "ListAudienceInsightsAttributes": {
               "methods": [
                 "listAudienceInsightsAttributes"
+              ]
+            },
+            "GenerateAudienceCompositionInsights": {
+              "methods": [
+                "generateAudienceCompositionInsights"
               ]
             }
           }
