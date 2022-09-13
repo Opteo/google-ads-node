@@ -7,11 +7,10 @@
 <p align="center">
   Google Ads API client library for Node.js
 </p>
-<!-- &circle-token=ab3cda2c83e0a13712c96c088871e16ead2b78c7 -->
 
 <p align="center">
   <a href="https://developers.google.com/google-ads/api/docs/release-notes">
-    <img src="https://img.shields.io/badge/google%20ads-v11-009688.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/google%20ads-v11.1-009688.svg?style=flat-square">
   </a>
   <a href="https://www.npmjs.com/package/google-ads-node">
     <img src="https://img.shields.io/npm/v/google-ads-node.svg?style=flat-square">
@@ -23,7 +22,7 @@
 
 <p align="center">
   <a href="https://opteo.com">
-    <img src="https://app.opteo.com/icons/logo.svg">
+    <img src="https://app.opteo.com/favicon.png" width="90" height="90">
   </a>
 </p>
 
