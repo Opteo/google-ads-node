@@ -1,6 +1,6 @@
 # Google Ads API version
 # This only needs changing for major versions e.g. v8 -> v9
-GOOGLE_ADS_VERSION=v13
+GOOGLE_ADS_VERSION=v14
 
 BUNDLE=googleads-nodejs.tar.gz
 PACKAGE_BUILD=/package/googleads-nodejs

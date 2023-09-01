@@ -9,7 +9,7 @@ ARG GOOGLE_ADS_VERSION
 # Install dependencies
 RUN apt update --allow-releaseinfo-change
 RUN apt-get update -y
-RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python -y
+RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python-is-python3 -y
 RUN apt-get install \
     python3 \
     python3-distutils \
@@ -48,8 +48,9 @@ RUN cd googleads-nodejs && \
 # requires preventing request parameters being compiled to snakeCase
 # in this dependency: https://github.com/googleapis/gapic-generator-typescript/blob/master/templates/typescript_gapic/src/%24version/%24service_client.ts.njk
 # i will personally buy a beer to whoever can solve this, good luck.
-RUN sed -i 's/request.resourceName/request.resource_name/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.keywordPlan/request.keyword_plan/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.campaignExperiment/request.campaign_experiment/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.campaignDraft/request.campaign_draft/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts
+# RUN sed -i 's/request.keywordPlan/request.keyword_plan/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+#     sed -i 's/request.campaignExperiment/request.campaign_experiment/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+#     sed -i 's/request.campaignDraft/request.campaign_draft/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts
+
+# sed -i 's/request.resourceName/request.resource_name/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    # sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
