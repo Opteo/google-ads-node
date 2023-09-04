@@ -86,6 +86,7 @@
     "customer manager link service",
     "customer negative criterion service",
     "customer service",
+    "customer sk ad network conversion value schema service",
     "customer user access invitation service",
     "customer user access service",
     "custom interest service",
@@ -133,8 +134,6 @@
     "compile": "tsc -p . && cp -r protos build/ && minifyProtoJson",
     "compile-protos": "compileProtos src",
     "docs": "jsdoc -c .jsdoc.js",
-    "predocs-test": "npm run docs",
-    "docs-test": "linkinator docs",
     "fix": "gts fix",
     "lint": "gts check",
     "prepare": "npm run compile-protos && npm run compile",
@@ -144,24 +143,20 @@
   "devDependencies": {
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
-    "@types/sinon": "^10.0.13",
-    "c8": "^7.12.0",
-    "gts": "^3.1.1",
-    "jsdoc": "^4.0.0",
-    "jsdoc-fresh": "^2.0.1",
-    "jsdoc-region-tag": "^2.0.1",
-    "linkinator": "^4.1.2",
+    "@types/sinon": "^10.0.16",
+    "c8": "^8.0.1",
+    "gapic-tools": "^0.1.8",
+    "gts": "5.0.1",
+    "jsdoc": "^4.0.2",
+    "jsdoc-fresh": "^3.0.0",
+    "jsdoc-region-tag": "^3.0.0",
     "mocha": "^10.2.0",
-    "null-loader": "^4.0.1",
     "pack-n-play": "^1.0.0-2",
-    "sinon": "^15.0.1",
-    "ts-loader": "^8.4.0",
-    "typescript": "^4.8.4",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.10.0"
+    "sinon": "^15.2.0",
+    "typescript": "5.1.6"
   },
   "engines": {
-    "node": ">=v12"
+    "node": ">=v14"
   },
   "dependencies": {
     "google-gax": "github:opteo/gax-nodejs"
