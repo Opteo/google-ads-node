@@ -807,7 +807,7 @@ export class GoogleAdsFieldServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the field to get.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -867,7 +867,7 @@ export class GoogleAdsFieldServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.getGoogleAdsField(request, options, callback);

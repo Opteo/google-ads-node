@@ -802,7 +802,7 @@ export class PaymentsAccountServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer to apply the PaymentsAccount list
  *   operation to.
  * @param {object} [options]
@@ -863,7 +863,7 @@ export class PaymentsAccountServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.listPaymentsAccounts(request, options, callback);

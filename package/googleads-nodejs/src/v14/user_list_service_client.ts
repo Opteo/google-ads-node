@@ -812,7 +812,7 @@ export class UserListServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose user lists are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual user lists.
@@ -882,7 +882,7 @@ export class UserListServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateUserLists(request, options, callback);

@@ -791,7 +791,7 @@ export class BiddingSeasonalityAdjustmentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. ID of the customer whose seasonality adjustments are being
  *   modified.
  * @param {number[]} request.operations
@@ -866,7 +866,7 @@ export class BiddingSeasonalityAdjustmentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateBiddingSeasonalityAdjustments(request, options, callback);

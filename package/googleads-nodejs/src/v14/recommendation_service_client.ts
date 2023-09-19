@@ -803,7 +803,7 @@ export class RecommendationServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer with the recommendation.
  * @param {number[]} request.operations
  *   Required. The list of operations to apply recommendations.
@@ -872,7 +872,7 @@ export class RecommendationServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.applyRecommendation(request, options, callback);
@@ -891,7 +891,7 @@ export class RecommendationServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer with the recommendation.
  * @param {number[]} request.operations
  *   Required. The list of operations to dismiss recommendations.
@@ -960,7 +960,7 @@ export class RecommendationServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.dismissRecommendation(request, options, callback);

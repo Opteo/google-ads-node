@@ -802,7 +802,7 @@ export class ProductLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer for which the product link is created.
  * @param {google.ads.googleads.v14.resources.ProductLink} request.productLink
  *   Required. The product link to be created.
@@ -864,7 +864,7 @@ export class ProductLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.createProductLink(request, options, callback);
@@ -884,9 +884,9 @@ export class ProductLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. Remove operation: A resource name for the product link to remove
  *   is expected, in this format:
  *
@@ -952,7 +952,7 @@ export class ProductLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.removeProductLink(request, options, callback);

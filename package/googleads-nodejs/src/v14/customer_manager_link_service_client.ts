@@ -803,7 +803,7 @@ export class CustomerManagerLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose customer manager links are being
  *   modified.
  * @param {number[]} request.operations
@@ -870,7 +870,7 @@ export class CustomerManagerLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerManagerLink(request, options, callback);
@@ -895,7 +895,7 @@ export class CustomerManagerLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the client customer that is being moved.
  * @param {string} request.previousCustomerManagerLink
  *   Required. The resource name of the previous CustomerManagerLink.
@@ -966,7 +966,7 @@ export class CustomerManagerLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.moveManagerLink(request, options, callback);

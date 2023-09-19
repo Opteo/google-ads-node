@@ -797,7 +797,7 @@ export class CustomerSkAdNetworkConversionValueSchemaServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   The ID of the customer whose shared sets are being modified.
  * @param {google.ads.googleads.v14.services.CustomerSkAdNetworkConversionValueSchemaOperation} request.operation
  *   The operation to perform.
@@ -862,7 +862,7 @@ export class CustomerSkAdNetworkConversionValueSchemaServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerSkAdNetworkConversionValueSchema(request, options, callback);

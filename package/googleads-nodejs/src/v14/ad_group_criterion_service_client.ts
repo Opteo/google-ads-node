@@ -825,7 +825,7 @@ export class AdGroupCriterionServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. ID of the customer whose criteria are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual criteria.
@@ -898,7 +898,7 @@ export class AdGroupCriterionServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAdGroupCriteria(request, options, callback);

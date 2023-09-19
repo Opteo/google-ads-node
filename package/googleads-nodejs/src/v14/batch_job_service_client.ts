@@ -835,7 +835,7 @@ export class BatchJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer for which to create a batch job.
  * @param {google.ads.googleads.v14.services.BatchJobOperation} request.operation
  *   Required. The operation to perform on an individual batch job.
@@ -897,7 +897,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateBatchJob(request, options, callback);
@@ -917,7 +917,7 @@ export class BatchJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the batch job.
  * @param {string} request.sequenceToken
  *   A token used to enforce sequencing.
@@ -994,7 +994,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.addBatchJobOperations(request, options, callback);
@@ -1018,7 +1018,7 @@ export class BatchJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the BatchJob to run.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1080,7 +1080,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.runBatchJob(request, options, callback);
@@ -1117,7 +1117,7 @@ export class BatchJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the batch job whose results are being
  *   listed.
  * @param {string} request.pageToken
@@ -1195,7 +1195,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.listBatchJobResults(request, options, callback);
@@ -1205,7 +1205,7 @@ export class BatchJobServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the batch job whose results are being
  *   listed.
  * @param {string} request.pageToken
@@ -1242,7 +1242,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     const defaultCallSettings = this._defaults['listBatchJobResults'];
     const callSettings = defaultCallSettings.merge(options);
@@ -1260,7 +1260,7 @@ export class BatchJobServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the batch job whose results are being
  *   listed.
  * @param {string} request.pageToken
@@ -1298,7 +1298,7 @@ export class BatchJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     const defaultCallSettings = this._defaults['listBatchJobResults'];
     const callSettings = defaultCallSettings.merge(options);

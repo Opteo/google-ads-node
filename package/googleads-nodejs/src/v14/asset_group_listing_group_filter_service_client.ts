@@ -791,7 +791,7 @@ export class AssetGroupListingGroupFilterServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose asset group listing group filters
  *   are being modified.
  * @param {number[]} request.operations
@@ -861,7 +861,7 @@ export class AssetGroupListingGroupFilterServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAssetGroupListingGroupFilters(request, options, callback);

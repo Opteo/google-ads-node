@@ -829,7 +829,7 @@ export class OfflineUserDataJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer for which to create an offline user data
  *   job.
  * @param {google.ads.googleads.v14.resources.OfflineUserDataJob} request.job
@@ -898,7 +898,7 @@ export class OfflineUserDataJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.createOfflineUserDataJob(request, options, callback);
@@ -920,7 +920,7 @@ export class OfflineUserDataJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the OfflineUserDataJob.
  * @param {boolean} request.enablePartialFailure
  *   True to enable partial failure for the offline user data job.
@@ -991,7 +991,7 @@ export class OfflineUserDataJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.addOfflineUserDataJobOperations(request, options, callback);
@@ -1015,7 +1015,7 @@ export class OfflineUserDataJobServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the OfflineUserDataJob to run.
  * @param {boolean} request.validateOnly
  *   If true, the request is validated but not executed. Only errors are
@@ -1080,7 +1080,7 @@ export class OfflineUserDataJobServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.runOfflineUserDataJob(request, options, callback);

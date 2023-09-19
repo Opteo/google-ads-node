@@ -805,7 +805,7 @@ export class AdParameterServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose ad parameters are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual ad parameters.
@@ -878,7 +878,7 @@ export class AdParameterServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAdParameters(request, options, callback);

@@ -815,7 +815,7 @@ export class CampaignBidModifierServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. ID of the customer whose campaign bid modifiers are being
  *   modified.
  * @param {number[]} request.operations
@@ -890,7 +890,7 @@ export class CampaignBidModifierServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCampaignBidModifiers(request, options, callback);

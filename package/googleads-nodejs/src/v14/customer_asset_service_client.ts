@@ -802,7 +802,7 @@ export class CustomerAssetServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose customer assets are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual customer assets.
@@ -875,7 +875,7 @@ export class CustomerAssetServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerAssets(request, options, callback);

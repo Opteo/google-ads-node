@@ -790,7 +790,7 @@ export class SmartCampaignSettingServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the Smart campaign setting belonging to the
  *   Smart campaign to fetch the status of.
  * @param {object} [options]
@@ -851,7 +851,7 @@ export class SmartCampaignSettingServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.getSmartCampaignStatus(request, options, callback);
@@ -861,7 +861,7 @@ export class SmartCampaignSettingServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose Smart campaign settings are being
  *   modified.
  * @param {number[]} request.operations
@@ -936,7 +936,7 @@ export class SmartCampaignSettingServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateSmartCampaignSettings(request, options, callback);

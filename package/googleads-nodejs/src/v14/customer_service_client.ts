@@ -801,7 +801,7 @@ export class CustomerServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
  * @param {google.ads.googleads.v14.services.CustomerOperation} request.operation
  *   Required. The operation to perform on the customer
@@ -869,7 +869,7 @@ export class CustomerServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomer(request, options, callback);
@@ -964,7 +964,7 @@ export class CustomerServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the Manager under whom client customer is being
  *   created.
  * @param {google.ads.googleads.v14.resources.Customer} request.customerClient
@@ -1037,7 +1037,7 @@ export class CustomerServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.createCustomerClient(request, options, callback);
