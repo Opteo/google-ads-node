@@ -14,7 +14,7 @@ const searchChannel =
 
 const campaign = protos.google.ads.googleads.v14.resources.Campaign.fromObject({
   name,
-  advertisingChannelType: searchChannel,
+  advertising_channel_type: searchChannel,
 });
 
 // Check that proto building works as expected
@@ -22,7 +22,8 @@ assert(
   campaign.name === "Planet Express",
   `Campaign.name should be set to "${name}"`
 );
-assert(campaign.advertisingChannelType === searchChannel);
+
+assert(campaign.advertising_channel_type === searchChannel);
 
 // Check service clients can be created
 const client = new GoogleAdsServiceClient();
