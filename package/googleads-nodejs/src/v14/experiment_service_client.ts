@@ -843,7 +843,7 @@ export class ExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose experiments are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual experiments.
@@ -913,7 +913,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateExperiments(request, options, callback);
@@ -1118,7 +1118,7 @@ export class ExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The scheduled experiment.
  * @param {boolean} request.validateOnly
  *   If true, the request is validated but not executed. Only errors are
@@ -1183,7 +1183,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.scheduleExperiment(request, options, callback);
@@ -1225,7 +1225,7 @@ export class ExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The resource name of the experiment to promote.
  * @param {boolean} request.validateOnly
  *   If true, the request is validated but not executed. Only errors are
@@ -1290,7 +1290,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.promoteExperiment(request, options, callback);
@@ -1327,7 +1327,7 @@ export class ExperimentServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1403,7 +1403,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     this.initialize();
     return this.innerApiCalls.listExperimentAsyncErrors(request, options, callback);
@@ -1413,7 +1413,7 @@ export class ExperimentServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1448,7 +1448,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     const defaultCallSettings = this._defaults['listExperimentAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
@@ -1466,7 +1466,7 @@ export class ExperimentServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.resourceName
+ * @param {string} request.resource_name
  *   Required. The name of the experiment from which to retrieve the async
  *   errors.
  * @param {string} request.pageToken
@@ -1502,7 +1502,7 @@ export class ExperimentServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'resource_name': request.resourceName ?? '',
+      'resource_name': request.resource_name ?? '',
     });
     const defaultCallSettings = this._defaults['listExperimentAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);

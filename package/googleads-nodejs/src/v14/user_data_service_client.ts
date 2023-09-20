@@ -808,7 +808,7 @@ export class UserDataServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer for which to update the user data.
  * @param {number[]} request.operations
  *   Required. The list of operations to be done.
@@ -872,7 +872,7 @@ export class UserDataServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.uploadUserData(request, options, callback);

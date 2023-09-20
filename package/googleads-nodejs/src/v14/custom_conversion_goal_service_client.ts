@@ -791,7 +791,7 @@ export class CustomConversionGoalServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose custom conversion goals are being
  *   modified.
  * @param {number[]} request.operations
@@ -861,7 +861,7 @@ export class CustomConversionGoalServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomConversionGoals(request, options, callback);

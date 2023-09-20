@@ -145,7 +145,7 @@
     "@types/node": "^18.11.18",
     "@types/sinon": "^10.0.16",
     "c8": "^8.0.1",
-    "gapic-tools": "^0.1.8",
+    "google-gax": "^4.0.4",
     "gts": "5.0.1",
     "jsdoc": "^4.0.2",
     "jsdoc-fresh": "^3.0.0",
@@ -159,6 +159,6 @@
     "node": ">=v14"
   },
   "dependencies": {
-    "google-gax": "github:opteo/gax-nodejs"
+    "gapic-tools": "https://gitpkg.now.sh/Opteo/gax-nodejs/tools?keep-case"
   }
 }

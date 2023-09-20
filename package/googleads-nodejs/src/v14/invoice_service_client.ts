@@ -800,7 +800,7 @@ export class InvoiceServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer to fetch invoices for.
  * @param {string} request.billingSetup
  *   Required. The billing setup resource name of the requested invoices.
@@ -869,7 +869,7 @@ export class InvoiceServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.listInvoices(request, options, callback);

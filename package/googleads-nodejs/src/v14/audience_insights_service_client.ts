@@ -802,7 +802,7 @@ export class AudienceInsightsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v14.services.BasicInsightsAudience} request.baselineAudience
  *   Required. A baseline audience for this report, typically all people in a
@@ -871,7 +871,7 @@ export class AudienceInsightsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.generateInsightsFinderReport(request, options, callback);
@@ -891,7 +891,7 @@ export class AudienceInsightsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {number[]} request.dimensions
  *   Required. The types of attributes to be returned.
@@ -967,7 +967,7 @@ export class AudienceInsightsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.listAudienceInsightsAttributes(request, options, callback);
@@ -1063,7 +1063,7 @@ export class AudienceInsightsServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v14.services.InsightsAudience} request.audience
  *   Required. The audience of interest for which insights are being requested.
@@ -1137,7 +1137,7 @@ export class AudienceInsightsServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.generateAudienceCompositionInsights(request, options, callback);

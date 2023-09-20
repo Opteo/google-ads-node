@@ -790,7 +790,7 @@ export class SmartCampaignSuggestServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose budget options are to be suggested.
  * @param {string} request.campaign
  *   Required. The resource name of the campaign to get suggestion for.
@@ -854,7 +854,7 @@ export class SmartCampaignSuggestServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.suggestSmartCampaignBudgetOptions(request, options, callback);
@@ -865,7 +865,7 @@ export class SmartCampaignSuggestServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v14.services.SmartCampaignSuggestionInfo} request.suggestionInfo
  *   Required. Inputs used to suggest a Smart campaign ad.
@@ -930,7 +930,7 @@ export class SmartCampaignSuggestServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.suggestSmartCampaignAd(request, options, callback);
@@ -940,7 +940,7 @@ export class SmartCampaignSuggestServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v14.services.SmartCampaignSuggestionInfo} request.suggestionInfo
  *   Required. Information to get keyword theme suggestions.
@@ -1011,7 +1011,7 @@ export class SmartCampaignSuggestServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.suggestKeywordThemes(request, options, callback);

@@ -803,7 +803,7 @@ export class AccountLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer for which the account link is created.
  * @param {google.ads.googleads.v14.resources.AccountLink} request.accountLink
  *   Required. The account link to be created.
@@ -865,7 +865,7 @@ export class AccountLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.createAccountLink(request, options, callback);
@@ -889,7 +889,7 @@ export class AccountLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
  * @param {google.ads.googleads.v14.services.AccountLinkOperation} request.operation
  *   Required. The operation to perform on the link.
@@ -959,7 +959,7 @@ export class AccountLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAccountLink(request, options, callback);

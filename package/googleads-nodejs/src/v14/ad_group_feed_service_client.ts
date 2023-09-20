@@ -815,7 +815,7 @@ export class AdGroupFeedServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose ad group feeds are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual ad group feeds.
@@ -888,7 +888,7 @@ export class AdGroupFeedServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAdGroupFeeds(request, options, callback);

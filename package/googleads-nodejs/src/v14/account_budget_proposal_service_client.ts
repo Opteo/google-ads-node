@@ -814,7 +814,7 @@ export class AccountBudgetProposalServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {google.ads.googleads.v14.services.AccountBudgetProposalOperation} request.operation
  *   Required. The operation to perform on an individual account-level budget
@@ -880,7 +880,7 @@ export class AccountBudgetProposalServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateAccountBudgetProposal(request, options, callback);

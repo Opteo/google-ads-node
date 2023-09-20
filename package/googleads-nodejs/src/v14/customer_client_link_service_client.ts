@@ -804,7 +804,7 @@ export class CustomerClientLinkServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose customer link are being modified.
  * @param {google.ads.googleads.v14.services.CustomerClientLinkOperation} request.operation
  *   Required. The operation to perform on the individual CustomerClientLink.
@@ -869,7 +869,7 @@ export class CustomerClientLinkServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerClientLink(request, options, callback);

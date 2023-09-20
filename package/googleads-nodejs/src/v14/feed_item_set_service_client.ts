@@ -800,7 +800,7 @@ export class FeedItemSetServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer whose feed item sets are being modified.
  * @param {number[]} request.operations
  *   Required. The list of operations to perform on individual feed item sets.
@@ -870,7 +870,7 @@ export class FeedItemSetServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateFeedItemSets(request, options, callback);

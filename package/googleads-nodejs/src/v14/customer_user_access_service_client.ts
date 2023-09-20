@@ -802,7 +802,7 @@ export class CustomerUserAccessServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer being modified.
  * @param {google.ads.googleads.v14.services.CustomerUserAccessOperation} request.operation
  *   Required. The operation to perform on the customer
@@ -864,7 +864,7 @@ export class CustomerUserAccessServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.mutateCustomerUserAccess(request, options, callback);

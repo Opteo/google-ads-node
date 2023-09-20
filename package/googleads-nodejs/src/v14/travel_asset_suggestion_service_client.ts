@@ -793,7 +793,7 @@ export class TravelAssetSuggestionServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.customerId
+ * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {string} request.languageOption
  *   Required. The language specifications in BCP 47 format (for example, en-US,
@@ -861,7 +861,7 @@ export class TravelAssetSuggestionServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = this._gaxModule.routingHeader.fromParams({
-      'customer_id': request.customerId ?? '',
+      'customer_id': request.customer_id ?? '',
     });
     this.initialize();
     return this.innerApiCalls.suggestTravelAssets(request, options, callback);
