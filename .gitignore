@@ -120,3 +120,6 @@ bazel/
 
 # Compiled Gapic library
 build
+
+# Jetbrains files
+.idea
