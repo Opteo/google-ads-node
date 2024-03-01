@@ -23,11 +23,20 @@ RUN git clone https://github.com/googleapis/googleapis.git
 
 WORKDIR /go/googleapis
 
-# Compile protocol buffers
+# Compile protocol buffers (outputs to /root/.cache/bazel/_bazel_root/406d0d5cbc9dcef756f86d53a7b98449/execroot/com_google_googleapis/bazel-out/aarch64-fastbuild/bin/google/ads/googleads/v16/googleads-nodejs.tar.gz)
 RUN bazelisk build //google/ads/googleads/${GOOGLE_ADS_VERSION}:googleads-nodejs
+
+# Get the path to the complied bazel output and set it to a file. Result is /root/.cache/bazel/_bazel_root/406d0d5cbc9dcef756f86d53a7b98449/execroot/com_google_googleapis/bazel-out/aarch64-fastbuild/bin
+RUN bazelisk info bazel-bin > /tmp/bazel-bin-path
+
+# Copy the compiled bazel output to a new location, to be used in next stage
+RUN cp -r $(cat /tmp/bazel-bin-path) /tmp/bazel-bin-copy
 
 # Build stage for extracting the compiled nodejs gapic client and performing any custom changes
 FROM node:latest
+
+# Copy the compiled bazel output from the previous stage
+COPY --from=protos /tmp/bazel-bin-copy /tmp/bazel-bin-copy 
 
 ARG GOOGLE_ADS_VERSION
 
@@ -35,7 +44,7 @@ RUN mkdir /package
 
 WORKDIR /package
 
-COPY --from=protos /go/googleapis/bazel-bin/google/ads/googleads/${GOOGLE_ADS_VERSION}/googleads-nodejs.tar.gz /package
+COPY --from=protos /tmp/bazel-bin-copy/google/ads/googleads/${GOOGLE_ADS_VERSION}/googleads-nodejs.tar.gz /package
 
 RUN tar -xvzf googleads-nodejs.tar.gz -C .
 

@@ -52,6 +52,7 @@
     "bidding seasonality adjustment service",
     "bidding strategy service",
     "billing setup service",
+    "brand suggestion service",
     "campaign asset service",
     "campaign asset set service",
     "campaign bid modifier service",
@@ -64,6 +65,7 @@
     "campaign feed service",
     "campaign group service",
     "campaign label service",
+    "campaign lifecycle goal service",
     "campaign service",
     "campaign shared set service",
     "conversion action service",
@@ -83,6 +85,7 @@
     "customer extension setting service",
     "customer feed service",
     "customer label service",
+    "customer lifecycle goal service",
     "customer manager link service",
     "customer negative criterion service",
     "customer service",
@@ -103,6 +106,7 @@
     "geo target constant service",
     "google ads field service",
     "google ads service",
+    "identity verification service",
     "invoice service",
     "keyword plan ad group keyword service",
     "keyword plan ad group service",
@@ -112,13 +116,13 @@
     "keyword plan service",
     "keyword theme constant service",
     "label service",
-    "media file service",
-    "merchant center link service",
     "offline user data job service",
     "payments account service",
+    "product link invitation service",
     "product link service",
     "reach plan service",
     "recommendation service",
+    "recommendation subscription service",
     "remarketing action service",
     "shared criterion service",
     "shared set service",
@@ -132,7 +136,7 @@
   "scripts": {
     "clean": "gts clean",
     "compile": "tsc -p . && cp -r protos build/ && minifyProtoJson",
-    "compile-protos": "compileProtos src",
+    "compile-protos": "compileProtos src ",
     "docs": "jsdoc -c .jsdoc.js",
     "fix": "gts fix",
     "lint": "gts check",
@@ -141,24 +145,22 @@
     "test": "c8 mocha build/test"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.11.18",
-    "@types/sinon": "^10.0.16",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.20",
+    "@types/sinon": "^10.0.20",
     "c8": "^8.0.1",
-    "google-gax": "^4.0.4",
-    "gts": "5.0.1",
+    "google-gax": "^4.3.1",
+    "gts": "5.2.0",
     "jsdoc": "^4.0.2",
     "jsdoc-fresh": "^3.0.0",
     "jsdoc-region-tag": "^3.0.0",
-    "mocha": "^10.2.0",
-    "pack-n-play": "^1.0.0-2",
+    "mocha": "^10.3.0",
+    "pack-n-play": "^2.0.3",
     "sinon": "^15.2.0",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "gapic-tools": "https://gitpkg.now.sh/Opteo/gax-nodejs/tools?keep-case"
   },
   "engines": {
     "node": ">=v14"
-  },
-  "dependencies": {
-    "gapic-tools": "https://gitpkg.now.sh/Opteo/gax-nodejs/tools?keep-case"
   }
 }
