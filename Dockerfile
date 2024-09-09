@@ -9,7 +9,7 @@ ARG GOOGLE_ADS_VERSION
 # Install dependencies
 RUN apt update --allow-releaseinfo-change
 RUN apt-get update -y
-RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python-is-python3 -y
+RUN apt-get install git wget pkg-config zip g++ zlib1g-dev unzip python-is-python3 software-properties-common default-jre -y
 RUN apt-get install \
     python3 \
     python3-distutils \
@@ -50,7 +50,7 @@ RUN tar -xvzf googleads-nodejs.tar.gz -C .
 
 RUN cd googleads-nodejs && \
     npm uninstall google-gax && \
-    npm install opteo/gax-nodejs && \
+    npm install google-gax && \
     rm -rf test/ system-test/
 
 # horrible hack but no easy way to resolve this
@@ -61,4 +61,5 @@ RUN sed -i 's/request.keywordPlan/request.keyword_plan/' googleads-nodejs/src/${
     sed -i 's/request.campaignExperiment/request.campaign_experiment/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
     sed -i 's/request.campaignDraft/request.campaign_draft/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
     sed -i 's/request.resourceName/request.resource_name/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts
+    sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/request.adGroupAd/request.ad_group_ad/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts

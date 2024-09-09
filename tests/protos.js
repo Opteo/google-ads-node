@@ -9,10 +9,10 @@ assert(typeof GoogleAdsServiceClient !== "undefined");
 
 const name = "Planet Express";
 const searchChannel =
-  protos.google.ads.googleads.v16.enums.AdvertisingChannelTypeEnum
+  protos.google.ads.googleads.v17.enums.AdvertisingChannelTypeEnum
     .AdvertisingChannelType.SEARCH;
 
-const campaign = protos.google.ads.googleads.v16.resources.Campaign.fromObject({
+const campaign = protos.google.ads.googleads.v17.resources.Campaign.fromObject({
   name,
   advertising_channel_type: searchChannel,
 });
@@ -27,7 +27,7 @@ assert(campaign.advertising_channel_type === searchChannel);
 
 // Check service clients can be created
 const client = new GoogleAdsServiceClient();
-const error = new protos.google.ads.googleads.v16.errors.GoogleAdsError();
+const error = new protos.google.ads.googleads.v17.errors.GoogleAdsError();
 assert("search" in client);
 
 // Check longs are not used (number type instead)
