@@ -46,7 +46,9 @@ npm install google-ads-node
 1. Run `make protos` to pull in the new protos and compile them. This command will take around 10 minutes. There are often errors here that need to be fixed due to changes in bazel, the docker image, or the protos themselves. Fix these errors as they come up.
 1. If upgrading to a new major version delete the old version folders from `package/googleads-nodejs/protos/google/ads/googleads/{OLD_VERSION}`, `package/googleads-nodejs/src/{OLD_VERSION}` and `package/googleads-nodejs/samples/generated/{OLD_VERSION}`.
 1. Run `yarn` to prepare the package and install the latest dependencies.
-1. Run `yarn test` to make sure everything worked (you may need to update the version numbers here).
+1. You may find that the tsc build fails because of camelcase issues. If so, make sure that the `compile-protos` command in `/package/googleads-nodejs/package.json` includes all required arguments, like so: `compileProtos --keep-case --force-number src`
+1. Update any references to old version numbers in `tests/protos.js`.
+1. Run `yarn test` to make sure everything worked.
 1. Double check that any files that should have been updated have been.
 1. Update the readme to reflect the new Google Ads API version number
 1. Make a pull request, get it approved and merged into `master`.
