@@ -1,6 +1,6 @@
 {
   "name": "google-ads-node",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "description": "Google Ads API client library",
   "main": "build/src/index.js",
   "files": [
@@ -30,5 +30,6 @@
     "ads node",
     "grpc",
     "proto"
-  ]
+  ],
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
