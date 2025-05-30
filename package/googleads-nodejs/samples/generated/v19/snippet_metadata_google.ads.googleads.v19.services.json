@@ -6146,6 +6146,58 @@
       }
     },
     {
+      "regionTag": "googleads_v19_generated_LocalServicesLeadService_ProvideLeadFeedback_async",
+      "title": "GoogleAdsService provideLeadFeedback Sample",
+      "origin": "API_DEFINITION",
+      "description": " RPC to provide feedback on Local Services Lead resources.",
+      "canonical": true,
+      "file": "local_services_lead_service.provide_lead_feedback.js",
+      "language": "JAVASCRIPT",
+      "segments": [
+        {
+          "start": 25,
+          "end": 67,
+          "type": "FULL"
+        }
+      ],
+      "clientMethod": {
+        "shortName": "ProvideLeadFeedback",
+        "fullName": "google.ads.googleads.v19.services.LocalServicesLeadService.ProvideLeadFeedback",
+        "async": true,
+        "parameters": [
+          {
+            "name": "resource_name",
+            "type": "TYPE_STRING"
+          },
+          {
+            "name": "survey_answer",
+            "type": ".google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer"
+          },
+          {
+            "name": "survey_satisfied",
+            "type": ".google.ads.googleads.v19.services.SurveySatisfied"
+          },
+          {
+            "name": "survey_dissatisfied",
+            "type": ".google.ads.googleads.v19.services.SurveyDissatisfied"
+          }
+        ],
+        "resultType": ".google.ads.googleads.v19.services.ProvideLeadFeedbackResponse",
+        "client": {
+          "shortName": "LocalServicesLeadServiceClient",
+          "fullName": "google.ads.googleads.v19.services.LocalServicesLeadServiceClient"
+        },
+        "method": {
+          "shortName": "ProvideLeadFeedback",
+          "fullName": "google.ads.googleads.v19.services.LocalServicesLeadService.ProvideLeadFeedback",
+          "service": {
+            "shortName": "LocalServicesLeadService",
+            "fullName": "google.ads.googleads.v19.services.LocalServicesLeadService"
+          }
+        }
+      }
+    },
+    {
       "regionTag": "googleads_v19_generated_OfflineUserDataJobService_CreateOfflineUserDataJob_async",
       "title": "GoogleAdsService createOfflineUserDataJob Sample",
       "origin": "API_DEFINITION",
@@ -6561,6 +6613,50 @@
           "service": {
             "shortName": "ProductLinkService",
             "fullName": "google.ads.googleads.v19.services.ProductLinkService"
+          }
+        }
+      }
+    },
+    {
+      "regionTag": "googleads_v19_generated_ReachPlanService_GenerateConversionRates_async",
+      "title": "GoogleAdsService generateConversionRates Sample",
+      "origin": "API_DEFINITION",
+      "description": " Returns a collection of conversion rate suggestions for supported plannable products. List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [HeaderError]()   [InternalError]()   [QuotaError]()   [RequestError]()",
+      "canonical": true,
+      "file": "reach_plan_service.generate_conversion_rates.js",
+      "language": "JAVASCRIPT",
+      "segments": [
+        {
+          "start": 25,
+          "end": 58,
+          "type": "FULL"
+        }
+      ],
+      "clientMethod": {
+        "shortName": "GenerateConversionRates",
+        "fullName": "google.ads.googleads.v19.services.ReachPlanService.GenerateConversionRates",
+        "async": true,
+        "parameters": [
+          {
+            "name": "customer_id",
+            "type": "TYPE_STRING"
+          },
+          {
+            "name": "customer_reach_group",
+            "type": "TYPE_STRING"
+          }
+        ],
+        "resultType": ".google.ads.googleads.v19.services.GenerateConversionRatesResponse",
+        "client": {
+          "shortName": "ReachPlanServiceClient",
+          "fullName": "google.ads.googleads.v19.services.ReachPlanServiceClient"
+        },
+        "method": {
+          "shortName": "GenerateConversionRates",
+          "fullName": "google.ads.googleads.v19.services.ReachPlanService.GenerateConversionRates",
+          "service": {
+            "shortName": "ReachPlanService",
+            "fullName": "google.ads.googleads.v19.services.ReachPlanService"
           }
         }
       }

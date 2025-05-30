@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions, GrpcClientOption
 import {Transform} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class ExperimentServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -81,7 +84,7 @@ export class ExperimentServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -961,8 +964,26 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.mutateExperiments(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('mutateExperiments request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IMutateExperimentsResponse,
+        protos.google.ads.googleads.v19.services.IMutateExperimentsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('mutateExperiments response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.mutateExperiments(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IMutateExperimentsResponse,
+        protos.google.ads.googleads.v19.services.IMutateExperimentsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('mutateExperiments response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Immediately ends an experiment, changing the experiment's scheduled
@@ -1045,8 +1066,26 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'experiment': request.experiment ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.endExperiment(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('endExperiment request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IEndExperimentRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('endExperiment response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.endExperiment(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IEndExperimentRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('endExperiment response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Graduates an experiment to a full campaign.
@@ -1132,8 +1171,26 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'experiment': request.experiment ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.graduateExperiment(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('graduateExperiment request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IGraduateExperimentRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('graduateExperiment response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.graduateExperiment(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IGraduateExperimentRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('graduateExperiment response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
 /**
@@ -1231,8 +1288,25 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.scheduleExperiment(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.services.IScheduleExperimentMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>|undefined = callback
+      ? (error, response, rawResponse, _) => {
+          this._log.info('scheduleExperiment response %j', rawResponse);
+          callback!(error, response, rawResponse, _); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('scheduleExperiment request %j', request);
+    return this.innerApiCalls.scheduleExperiment(request, options, wrappedCallback)
+    ?.then(([response, rawResponse, _]: [
+      LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.services.IScheduleExperimentMetadata>,
+      protos.google.longrunning.IOperation|undefined, {}|undefined
+    ]) => {
+      this._log.info('scheduleExperiment response %j', rawResponse);
+      return [response, rawResponse, _];
+    });
   }
 /**
  * Check the status of the long running operation returned by `scheduleExperiment()`.
@@ -1246,6 +1320,7 @@ export class ExperimentServiceClient {
  * region_tag:googleads_v19_generated_ExperimentService_ScheduleExperiment_async
  */
   async checkScheduleExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v19.services.ScheduleExperimentMetadata>>{
+    this._log.info('scheduleExperiment long-running');
     const request = new this._gaxModule.operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new this._gaxModule.Operation(operation, this.descriptors.longrunning.scheduleExperiment, this._gaxModule.createDefaultBackoffSettings());
@@ -1338,8 +1413,25 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.promoteExperiment(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.services.IPromoteExperimentMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>|undefined = callback
+      ? (error, response, rawResponse, _) => {
+          this._log.info('promoteExperiment response %j', rawResponse);
+          callback!(error, response, rawResponse, _); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('promoteExperiment request %j', request);
+    return this.innerApiCalls.promoteExperiment(request, options, wrappedCallback)
+    ?.then(([response, rawResponse, _]: [
+      LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.services.IPromoteExperimentMetadata>,
+      protos.google.longrunning.IOperation|undefined, {}|undefined
+    ]) => {
+      this._log.info('promoteExperiment response %j', rawResponse);
+      return [response, rawResponse, _];
+    });
   }
 /**
  * Check the status of the long running operation returned by `promoteExperiment()`.
@@ -1353,6 +1445,7 @@ export class ExperimentServiceClient {
  * region_tag:googleads_v19_generated_ExperimentService_PromoteExperiment_async
  */
   async checkPromoteExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v19.services.PromoteExperimentMetadata>>{
+    this._log.info('promoteExperiment long-running');
     const request = new this._gaxModule.operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new this._gaxModule.Operation(operation, this.descriptors.longrunning.promoteExperiment, this._gaxModule.createDefaultBackoffSettings());
@@ -1451,8 +1544,27 @@ export class ExperimentServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.listExperimentAsyncErrors(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: PaginationCallback<
+      protos.google.ads.googleads.v19.services.IListExperimentAsyncErrorsRequest,
+      protos.google.ads.googleads.v19.services.IListExperimentAsyncErrorsResponse|null|undefined,
+      protos.google.rpc.IStatus>|undefined = callback
+      ? (error, values, nextPageRequest, rawResponse) => {
+          this._log.info('listExperimentAsyncErrors values %j', values);
+          callback!(error, values, nextPageRequest, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('listExperimentAsyncErrors request %j', request);
+    return this.innerApiCalls
+      .listExperimentAsyncErrors(request, options, wrappedCallback)
+      ?.then(([response, input, output]: [
+        protos.google.rpc.IStatus[],
+        protos.google.ads.googleads.v19.services.IListExperimentAsyncErrorsRequest|null,
+        protos.google.ads.googleads.v19.services.IListExperimentAsyncErrorsResponse
+      ]) => {
+        this._log.info('listExperimentAsyncErrors values %j', response);
+        return [response, input, output];
+      });
   }
 
 /**
@@ -1498,7 +1610,8 @@ export class ExperimentServiceClient {
     });
     const defaultCallSettings = this._defaults['listExperimentAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('listExperimentAsyncErrors stream %j', request);
     return this.descriptors.page.listExperimentAsyncErrors.createStream(
       this.innerApiCalls.listExperimentAsyncErrors as GaxCall,
       request,
@@ -1552,7 +1665,8 @@ export class ExperimentServiceClient {
     });
     const defaultCallSettings = this._defaults['listExperimentAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('listExperimentAsyncErrors iterate %j', request);
     return this.descriptors.page.listExperimentAsyncErrors.asyncIterate(
       this.innerApiCalls['listExperimentAsyncErrors'] as GaxCall,
       request as {},
@@ -9054,9 +9168,10 @@ export class ExperimentServiceClient {
   close(): Promise<void> {
     if (this.experimentServiceStub && !this._terminated) {
       return this.experimentServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
-        this.operationsClient.close();
+        void this.operationsClient.close();
       });
     }
     return Promise.resolve();

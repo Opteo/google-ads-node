@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallba
 import {Transform} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class KeywordPlanIdeaServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class KeywordPlanIdeaServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -940,8 +943,26 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateKeywordHistoricalMetrics(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateKeywordHistoricalMetrics request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateKeywordHistoricalMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateKeywordHistoricalMetricsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateKeywordHistoricalMetrics response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateKeywordHistoricalMetrics(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateKeywordHistoricalMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateKeywordHistoricalMetricsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateKeywordHistoricalMetrics response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns a list of suggested AdGroups and suggested modifications
@@ -1025,8 +1046,26 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateAdGroupThemes(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateAdGroupThemes request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateAdGroupThemesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAdGroupThemesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateAdGroupThemes response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateAdGroupThemes(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateAdGroupThemesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAdGroupThemesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateAdGroupThemes response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns metrics (such as impressions, clicks, total cost) of a keyword
@@ -1118,8 +1157,26 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateKeywordForecastMetrics(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateKeywordForecastMetrics request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateKeywordForecastMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateKeywordForecastMetricsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateKeywordForecastMetrics response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateKeywordForecastMetrics(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateKeywordForecastMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateKeywordForecastMetricsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateKeywordForecastMetrics response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
  /**
@@ -1246,8 +1303,27 @@ export class KeywordPlanIdeaServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateKeywordIdeas(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: PaginationCallback<
+      protos.google.ads.googleads.v19.services.IGenerateKeywordIdeasRequest,
+      protos.google.ads.googleads.v19.services.IGenerateKeywordIdeaResponse|null|undefined,
+      protos.google.ads.googleads.v19.services.IGenerateKeywordIdeaResult>|undefined = callback
+      ? (error, values, nextPageRequest, rawResponse) => {
+          this._log.info('generateKeywordIdeas values %j', values);
+          callback!(error, values, nextPageRequest, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('generateKeywordIdeas request %j', request);
+    return this.innerApiCalls
+      .generateKeywordIdeas(request, options, wrappedCallback)
+      ?.then(([response, input, output]: [
+        protos.google.ads.googleads.v19.services.IGenerateKeywordIdeaResult[],
+        protos.google.ads.googleads.v19.services.IGenerateKeywordIdeasRequest|null,
+        protos.google.ads.googleads.v19.services.IGenerateKeywordIdeaResponse
+      ]) => {
+        this._log.info('generateKeywordIdeas values %j', response);
+        return [response, input, output];
+      });
   }
 
 /**
@@ -1324,7 +1400,8 @@ export class KeywordPlanIdeaServiceClient {
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateKeywordIdeas stream %j', request);
     return this.descriptors.page.generateKeywordIdeas.createStream(
       this.innerApiCalls.generateKeywordIdeas as GaxCall,
       request,
@@ -1409,7 +1486,8 @@ export class KeywordPlanIdeaServiceClient {
     });
     const defaultCallSettings = this._defaults['generateKeywordIdeas'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateKeywordIdeas iterate %j', request);
     return this.descriptors.page.generateKeywordIdeas.asyncIterate(
       this.innerApiCalls['generateKeywordIdeas'] as GaxCall,
       request as {},
@@ -8911,6 +8989,7 @@ export class KeywordPlanIdeaServiceClient {
   close(): Promise<void> {
     if (this.keywordPlanIdeaServiceStub && !this._terminated) {
       return this.keywordPlanIdeaServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

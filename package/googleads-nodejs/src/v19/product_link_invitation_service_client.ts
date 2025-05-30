@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -47,6 +48,8 @@ export class ProductLinkInvitationServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -81,7 +84,7 @@ export class ProductLinkInvitationServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -901,8 +904,26 @@ export class ProductLinkInvitationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.createProductLinkInvitation(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('createProductLinkInvitation request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.ICreateProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.ICreateProductLinkInvitationRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('createProductLinkInvitation response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.createProductLinkInvitation(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.ICreateProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.ICreateProductLinkInvitationRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('createProductLinkInvitation response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Update a product link invitation.
@@ -975,8 +996,26 @@ export class ProductLinkInvitationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.updateProductLinkInvitation(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('updateProductLinkInvitation request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IUpdateProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.IUpdateProductLinkInvitationRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('updateProductLinkInvitation response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.updateProductLinkInvitation(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IUpdateProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.IUpdateProductLinkInvitationRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('updateProductLinkInvitation response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Remove a product link invitation.
@@ -1050,8 +1089,26 @@ export class ProductLinkInvitationServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.removeProductLinkInvitation(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('removeProductLinkInvitation request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IRemoveProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.IRemoveProductLinkInvitationRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('removeProductLinkInvitation response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.removeProductLinkInvitation(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IRemoveProductLinkInvitationResponse,
+        protos.google.ads.googleads.v19.services.IRemoveProductLinkInvitationRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('removeProductLinkInvitation response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8549,6 +8606,7 @@ export class ProductLinkInvitationServiceClient {
   close(): Promise<void> {
     if (this.productLinkInvitationServiceStub && !this._terminated) {
       return this.productLinkInvitationServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions, GrpcClientOption
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class OfflineUserDataJobServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -81,7 +84,7 @@ export class OfflineUserDataJobServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -946,8 +949,26 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.createOfflineUserDataJob(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('createOfflineUserDataJob request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.ICreateOfflineUserDataJobResponse,
+        protos.google.ads.googleads.v19.services.ICreateOfflineUserDataJobRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('createOfflineUserDataJob response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.createOfflineUserDataJob(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.ICreateOfflineUserDataJobResponse,
+        protos.google.ads.googleads.v19.services.ICreateOfflineUserDataJobRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('createOfflineUserDataJob response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Adds operations to the offline user data job.
@@ -1039,8 +1060,26 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.addOfflineUserDataJobOperations(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('addOfflineUserDataJobOperations request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IAddOfflineUserDataJobOperationsResponse,
+        protos.google.ads.googleads.v19.services.IAddOfflineUserDataJobOperationsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('addOfflineUserDataJobOperations response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.addOfflineUserDataJobOperations(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IAddOfflineUserDataJobOperationsResponse,
+        protos.google.ads.googleads.v19.services.IAddOfflineUserDataJobOperationsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('addOfflineUserDataJobOperations response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
 /**
@@ -1128,8 +1167,25 @@ export class OfflineUserDataJobServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.runOfflineUserDataJob(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.resources.IOfflineUserDataJobMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>|undefined = callback
+      ? (error, response, rawResponse, _) => {
+          this._log.info('runOfflineUserDataJob response %j', rawResponse);
+          callback!(error, response, rawResponse, _); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('runOfflineUserDataJob request %j', request);
+    return this.innerApiCalls.runOfflineUserDataJob(request, options, wrappedCallback)
+    ?.then(([response, rawResponse, _]: [
+      LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v19.resources.IOfflineUserDataJobMetadata>,
+      protos.google.longrunning.IOperation|undefined, {}|undefined
+    ]) => {
+      this._log.info('runOfflineUserDataJob response %j', rawResponse);
+      return [response, rawResponse, _];
+    });
   }
 /**
  * Check the status of the long running operation returned by `runOfflineUserDataJob()`.
@@ -1143,6 +1199,7 @@ export class OfflineUserDataJobServiceClient {
  * region_tag:googleads_v19_generated_OfflineUserDataJobService_RunOfflineUserDataJob_async
  */
   async checkRunOfflineUserDataJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v19.resources.OfflineUserDataJobMetadata>>{
+    this._log.info('runOfflineUserDataJob long-running');
     const request = new this._gaxModule.operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new this._gaxModule.Operation(operation, this.descriptors.longrunning.runOfflineUserDataJob, this._gaxModule.createDefaultBackoffSettings());
@@ -8643,9 +8700,10 @@ export class OfflineUserDataJobServiceClient {
   close(): Promise<void> {
     if (this.offlineUserDataJobServiceStub && !this._terminated) {
       return this.offlineUserDataJobServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
-        this.operationsClient.close();
+        void this.operationsClient.close();
       });
     }
     return Promise.resolve();
