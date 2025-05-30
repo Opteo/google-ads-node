@@ -62,4 +62,5 @@ RUN sed -i 's/request.keywordPlan/request.keyword_plan/' googleads-nodejs/src/${
     sed -i 's/request.campaignDraft/request.campaign_draft/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
     sed -i 's/request.resourceName/request.resource_name/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
     sed -i 's/request.customerId/request.customer_id/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
-    sed -i 's/request.adGroupAd/request.ad_group_ad/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts
+    sed -i 's/request.adGroupAd/request.ad_group_ad/' googleads-nodejs/src/${GOOGLE_ADS_VERSION}/*.ts && \
+    sed -i 's/"compile-protos": "compileProtos src"/"compile-protos": "compileProtos --keep-case --force-number src"/' googleads-nodejs/package.json
