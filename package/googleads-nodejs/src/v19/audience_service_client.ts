@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class AudienceServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class AudienceServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -913,8 +916,26 @@ export class AudienceServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.mutateAudiences(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('mutateAudiences request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IMutateAudiencesResponse,
+        protos.google.ads.googleads.v19.services.IMutateAudiencesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('mutateAudiences response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.mutateAudiences(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IMutateAudiencesResponse,
+        protos.google.ads.googleads.v19.services.IMutateAudiencesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('mutateAudiences response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8412,6 +8433,7 @@ export class AudienceServiceClient {
   close(): Promise<void> {
     if (this.audienceServiceStub && !this._terminated) {
       return this.audienceServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

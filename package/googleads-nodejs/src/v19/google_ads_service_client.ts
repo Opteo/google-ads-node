@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallba
 import {Transform, PassThrough} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class GoogleAdsServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class GoogleAdsServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -1047,8 +1050,26 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.mutate(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('mutate request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IMutateGoogleAdsResponse,
+        protos.google.ads.googleads.v19.services.IMutateGoogleAdsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('mutate response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.mutate(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IMutateGoogleAdsResponse,
+        protos.google.ads.googleads.v19.services.IMutateGoogleAdsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('mutate response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
 /**
@@ -1098,7 +1119,8 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('searchStream stream %j', options);
     return this.innerApiCalls.searchStream(request, options);
   }
 
@@ -1205,8 +1227,27 @@ export class GoogleAdsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.search(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: PaginationCallback<
+      protos.google.ads.googleads.v19.services.ISearchGoogleAdsRequest,
+      protos.google.ads.googleads.v19.services.ISearchGoogleAdsResponse|null|undefined,
+      protos.google.ads.googleads.v19.services.IGoogleAdsRow>|undefined = callback
+      ? (error, values, nextPageRequest, rawResponse) => {
+          this._log.info('search values %j', values);
+          callback!(error, values, nextPageRequest, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('search request %j', request);
+    return this.innerApiCalls
+      .search(request, options, wrappedCallback)
+      ?.then(([response, input, output]: [
+        protos.google.ads.googleads.v19.services.IGoogleAdsRow[],
+        protos.google.ads.googleads.v19.services.ISearchGoogleAdsRequest|null,
+        protos.google.ads.googleads.v19.services.ISearchGoogleAdsResponse
+      ]) => {
+        this._log.info('search values %j', response);
+        return [response, input, output];
+      });
   }
 
 /**
@@ -1260,7 +1301,8 @@ export class GoogleAdsServiceClient {
     });
     const defaultCallSettings = this._defaults['search'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('search stream %j', request);
     return this.descriptors.page.search.createStream(
       this.innerApiCalls.search as GaxCall,
       request,
@@ -1322,7 +1364,8 @@ export class GoogleAdsServiceClient {
     });
     const defaultCallSettings = this._defaults['search'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('search iterate %j', request);
     return this.descriptors.page.search.asyncIterate(
       this.innerApiCalls['search'] as GaxCall,
       request as {},
@@ -8824,6 +8867,7 @@ export class GoogleAdsServiceClient {
   close(): Promise<void> {
     if (this.googleAdsServiceStub && !this._terminated) {
       return this.googleAdsServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

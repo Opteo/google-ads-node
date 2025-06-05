@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class SmartCampaignSuggestServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class SmartCampaignSuggestServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -902,8 +905,26 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.suggestSmartCampaignBudgetOptions(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('suggestSmartCampaignBudgetOptions request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignBudgetOptionsResponse,
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignBudgetOptionsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('suggestSmartCampaignBudgetOptions response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.suggestSmartCampaignBudgetOptions(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignBudgetOptionsResponse,
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignBudgetOptionsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('suggestSmartCampaignBudgetOptions response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Suggests a Smart campaign ad compatible with the Ad family of resources,
@@ -978,8 +999,26 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.suggestSmartCampaignAd(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('suggestSmartCampaignAd request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignAdResponse,
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignAdRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('suggestSmartCampaignAd response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.suggestSmartCampaignAd(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignAdResponse,
+        protos.google.ads.googleads.v19.services.ISuggestSmartCampaignAdRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('suggestSmartCampaignAd response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Suggests keyword themes to advertise on.
@@ -1059,8 +1098,26 @@ export class SmartCampaignSuggestServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.suggestKeywordThemes(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('suggestKeywordThemes request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.ISuggestKeywordThemesResponse,
+        protos.google.ads.googleads.v19.services.ISuggestKeywordThemesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('suggestKeywordThemes response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.suggestKeywordThemes(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.ISuggestKeywordThemesResponse,
+        protos.google.ads.googleads.v19.services.ISuggestKeywordThemesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('suggestKeywordThemes response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8558,6 +8615,7 @@ export class SmartCampaignSuggestServiceClient {
   close(): Promise<void> {
     if (this.smartCampaignSuggestServiceStub && !this._terminated) {
       return this.smartCampaignSuggestServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

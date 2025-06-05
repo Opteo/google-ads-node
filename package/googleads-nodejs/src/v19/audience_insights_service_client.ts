@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -48,6 +49,8 @@ export class AudienceInsightsServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -82,7 +85,7 @@ export class AudienceInsightsServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -919,8 +922,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateInsightsFinderReport(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateInsightsFinderReport request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateInsightsFinderReportResponse,
+        protos.google.ads.googleads.v19.services.IGenerateInsightsFinderReportRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateInsightsFinderReport response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateInsightsFinderReport(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateInsightsFinderReportResponse,
+        protos.google.ads.googleads.v19.services.IGenerateInsightsFinderReportRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateInsightsFinderReport response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Searches for audience attributes that can be used to generate insights.
@@ -1025,8 +1046,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.listAudienceInsightsAttributes(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('listAudienceInsightsAttributes request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IListAudienceInsightsAttributesResponse,
+        protos.google.ads.googleads.v19.services.IListAudienceInsightsAttributesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('listAudienceInsightsAttributes response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.listAudienceInsightsAttributes(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IListAudienceInsightsAttributesResponse,
+        protos.google.ads.googleads.v19.services.IListAudienceInsightsAttributesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('listAudienceInsightsAttributes response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Lists date ranges for which audience insights data can be requested.
@@ -1098,8 +1137,26 @@ export class AudienceInsightsServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
-    return this.innerApiCalls.listInsightsEligibleDates(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('listInsightsEligibleDates request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IListInsightsEligibleDatesResponse,
+        protos.google.ads.googleads.v19.services.IListInsightsEligibleDatesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('listInsightsEligibleDates response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.listInsightsEligibleDates(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IListInsightsEligibleDatesResponse,
+        protos.google.ads.googleads.v19.services.IListInsightsEligibleDatesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('listInsightsEligibleDates response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns a collection of attributes that are represented in an audience of
@@ -1198,8 +1255,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateAudienceCompositionInsights(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateAudienceCompositionInsights request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateAudienceCompositionInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAudienceCompositionInsightsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateAudienceCompositionInsights response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateAudienceCompositionInsights(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateAudienceCompositionInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAudienceCompositionInsightsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateAudienceCompositionInsights response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns a collection of targeting insights (e.g. targetable audiences) that
@@ -1288,8 +1363,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateSuggestedTargetingInsights(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateSuggestedTargetingInsights request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateSuggestedTargetingInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateSuggestedTargetingInsightsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateSuggestedTargetingInsights response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateSuggestedTargetingInsights(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateSuggestedTargetingInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateSuggestedTargetingInsightsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateSuggestedTargetingInsights response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns a collection of audience attributes along with estimates of the
@@ -1384,8 +1477,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateAudienceOverlapInsights(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateAudienceOverlapInsights request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateAudienceOverlapInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAudienceOverlapInsightsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateAudienceOverlapInsights response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateAudienceOverlapInsights(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateAudienceOverlapInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateAudienceOverlapInsightsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateAudienceOverlapInsights response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns potential reach metrics for targetable audiences.
@@ -1473,8 +1584,26 @@ export class AudienceInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateTargetingSuggestionMetrics(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateTargetingSuggestionMetrics request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateTargetingSuggestionMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateTargetingSuggestionMetricsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateTargetingSuggestionMetrics response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateTargetingSuggestionMetrics(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateTargetingSuggestionMetricsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateTargetingSuggestionMetricsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateTargetingSuggestionMetrics response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8972,6 +9101,7 @@ export class AudienceInsightsServiceClient {
   close(): Promise<void> {
     if (this.audienceInsightsServiceStub && !this._terminated) {
       return this.audienceInsightsServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

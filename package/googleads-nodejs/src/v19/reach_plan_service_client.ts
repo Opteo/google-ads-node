@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -50,6 +51,8 @@ export class ReachPlanServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -84,7 +87,7 @@ export class ReachPlanServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -733,7 +736,7 @@ export class ReachPlanServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const reachPlanServiceStubMethods =
-        ['listPlannableLocations', 'listPlannableProducts', 'generateReachForecast'];
+        ['generateConversionRates', 'listPlannableLocations', 'listPlannableProducts', 'generateReachForecast'];
     for (const methodName of reachPlanServiceStubMethods) {
       const callPromise = this.reachPlanServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -836,6 +839,101 @@ export class ReachPlanServiceClient {
   // -- Service calls --
   // -------------------
 /**
+ * Returns a collection of conversion rate suggestions for supported plannable
+ * products.
+ *
+ * List of thrown errors:
+ *   [AuthenticationError]()
+ *   [AuthorizationError]()
+ *   [HeaderError]()
+ *   [InternalError]()
+ *   [QuotaError]()
+ *   [RequestError]()
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customer_id
+ *   Required. The ID of the customer. A conversion rate based on the historical
+ *   data of this customer may be suggested.
+ * @param {string} request.customerReachGroup
+ *   The name of the customer being planned for. This is a user-defined value.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing {@link protos.google.ads.googleads.v19.services.GenerateConversionRatesResponse|GenerateConversionRatesResponse}.
+ *   Please see the {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods | documentation }
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v19/reach_plan_service.generate_conversion_rates.js</caption>
+ * region_tag:googleads_v19_generated_ReachPlanService_GenerateConversionRates_async
+ */
+  generateConversionRates(
+      request?: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined, {}|undefined
+      ]>;
+  generateConversionRates(
+      request: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConversionRates(
+      request: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConversionRates(
+      request?: protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+          protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateConversionRates request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateConversionRates response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateConversionRates(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesResponse,
+        protos.google.ads.googleads.v19.services.IGenerateConversionRatesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateConversionRates response %j', response);
+        return [response, options, rawResponse];
+      });
+  }
+/**
  * Returns the list of plannable locations (for example, countries).
  *
  * List of thrown errors:
@@ -903,8 +1001,26 @@ export class ReachPlanServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
-    return this.innerApiCalls.listPlannableLocations(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('listPlannableLocations request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IListPlannableLocationsResponse,
+        protos.google.ads.googleads.v19.services.IListPlannableLocationsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('listPlannableLocations response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.listPlannableLocations(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IListPlannableLocationsResponse,
+        protos.google.ads.googleads.v19.services.IListPlannableLocationsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('listPlannableLocations response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns the list of per-location plannable YouTube ad formats with allowed
@@ -979,8 +1095,26 @@ export class ReachPlanServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
-    return this.innerApiCalls.listPlannableProducts(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('listPlannableProducts request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IListPlannableProductsResponse,
+        protos.google.ads.googleads.v19.services.IListPlannableProductsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('listPlannableProducts response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.listPlannableProducts(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IListPlannableProductsResponse,
+        protos.google.ads.googleads.v19.services.IListPlannableProductsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('listPlannableProducts response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Generates a reach forecast for a given targeting / product mix.
@@ -1114,8 +1248,26 @@ export class ReachPlanServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateReachForecast(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateReachForecast request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateReachForecastResponse,
+        protos.google.ads.googleads.v19.services.IGenerateReachForecastRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateReachForecast response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateReachForecast(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateReachForecastResponse,
+        protos.google.ads.googleads.v19.services.IGenerateReachForecastRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateReachForecast response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8613,6 +8765,7 @@ export class ReachPlanServiceClient {
   close(): Promise<void> {
     if (this.reachPlanServiceStub && !this._terminated) {
       return this.reachPlanServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class CampaignServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class CampaignServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -948,8 +951,26 @@ export class CampaignServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.mutateCampaigns(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('mutateCampaigns request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IMutateCampaignsResponse,
+        protos.google.ads.googleads.v19.services.IMutateCampaignsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('mutateCampaigns response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.mutateCampaigns(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IMutateCampaignsResponse,
+        protos.google.ads.googleads.v19.services.IMutateCampaignsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('mutateCampaigns response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Enables Brand Guidelines for Performance Max campaigns.
@@ -1035,8 +1056,26 @@ export class CampaignServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.enablePMaxBrandGuidelines(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('enablePMaxBrandGuidelines request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IEnablePMaxBrandGuidelinesResponse,
+        protos.google.ads.googleads.v19.services.IEnablePMaxBrandGuidelinesRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('enablePMaxBrandGuidelines response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.enablePMaxBrandGuidelines(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IEnablePMaxBrandGuidelinesResponse,
+        protos.google.ads.googleads.v19.services.IEnablePMaxBrandGuidelinesRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('enablePMaxBrandGuidelines response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8534,6 +8573,7 @@ export class CampaignServiceClient {
   close(): Promise<void> {
     if (this.campaignServiceStub && !this._terminated) {
       return this.campaignServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

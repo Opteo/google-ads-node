@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallba
 import {Transform} from 'stream';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class GoogleAdsFieldServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class GoogleAdsFieldServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -915,8 +918,26 @@ export class GoogleAdsFieldServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'resource_name': request.resource_name ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.getGoogleAdsField(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('getGoogleAdsField request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.resources.IGoogleAdsField,
+        protos.google.ads.googleads.v19.services.IGetGoogleAdsFieldRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('getGoogleAdsField response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.getGoogleAdsField(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.resources.IGoogleAdsField,
+        protos.google.ads.googleads.v19.services.IGetGoogleAdsFieldRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('getGoogleAdsField response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
  /**
@@ -1003,8 +1024,27 @@ export class GoogleAdsFieldServiceClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
-    return this.innerApiCalls.searchGoogleAdsFields(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    const wrappedCallback: PaginationCallback<
+      protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsRequest,
+      protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsResponse|null|undefined,
+      protos.google.ads.googleads.v19.resources.IGoogleAdsField>|undefined = callback
+      ? (error, values, nextPageRequest, rawResponse) => {
+          this._log.info('searchGoogleAdsFields values %j', values);
+          callback!(error, values, nextPageRequest, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    this._log.info('searchGoogleAdsFields request %j', request);
+    return this.innerApiCalls
+      .searchGoogleAdsFields(request, options, wrappedCallback)
+      ?.then(([response, input, output]: [
+        protos.google.ads.googleads.v19.resources.IGoogleAdsField[],
+        protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsRequest|null,
+        protos.google.ads.googleads.v19.services.ISearchGoogleAdsFieldsResponse
+      ]) => {
+        this._log.info('searchGoogleAdsFields values %j', response);
+        return [response, input, output];
+      });
   }
 
 /**
@@ -1042,7 +1082,8 @@ export class GoogleAdsFieldServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('searchGoogleAdsFields stream %j', request);
     return this.descriptors.page.searchGoogleAdsFields.createStream(
       this.innerApiCalls.searchGoogleAdsFields as GaxCall,
       request,
@@ -1088,7 +1129,8 @@ export class GoogleAdsFieldServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
-    this.initialize();
+    this.initialize().catch(err => {throw err});
+    this._log.info('searchGoogleAdsFields iterate %j', request);
     return this.descriptors.page.searchGoogleAdsFields.asyncIterate(
       this.innerApiCalls['searchGoogleAdsFields'] as GaxCall,
       request as {},
@@ -8590,6 +8632,7 @@ export class GoogleAdsFieldServiceClient {
   close(): Promise<void> {
     if (this.googleAdsFieldServiceStub && !this._terminated) {
       return this.googleAdsFieldServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

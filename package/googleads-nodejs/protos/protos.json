@@ -1,7 +1,4 @@
 {
-  "options": {
-    "syntax": "proto3"
-  },
   "nested": {
     "google": {
       "nested": {
@@ -961,6 +958,9 @@
                             }
                           }
                         },
+                        "YouTubeAudioAdInfo": {
+                          "fields": {}
+                        },
                         "VideoAdInfo": {
                           "oneofs": {
                             "format": {
@@ -969,7 +969,8 @@
                                 "bumper",
                                 "out_stream",
                                 "non_skippable",
-                                "in_feed"
+                                "in_feed",
+                                "audio"
                               ]
                             }
                           },
@@ -997,6 +998,10 @@
                             "in_feed": {
                               "type": "InFeedVideoAdInfo",
                               "id": 9
+                            },
+                            "audio": {
+                              "type": "YouTubeAudioAdInfo",
+                              "id": 10
                             }
                           }
                         },
@@ -7052,6 +7057,11 @@
                                 "biddable_app_post_install_conversions"
                               ]
                             },
+                            "_biddable_cohort_app_post_install_conversions": {
+                              "oneof": [
+                                "biddable_cohort_app_post_install_conversions"
+                              ]
+                            },
                             "_benchmark_ctr": {
                               "oneof": [
                                 "benchmark_ctr"
@@ -7801,6 +7811,16 @@
                               "oneof": [
                                 "video_view_rate_shorts"
                               ]
+                            },
+                            "_coviewed_impressions": {
+                              "oneof": [
+                                "coviewed_impressions"
+                              ]
+                            },
+                            "_primary_impressions": {
+                              "oneof": [
+                                "primary_impressions"
+                              ]
                             }
                           },
                           "fields": {
@@ -8073,6 +8093,13 @@
                             "biddable_app_post_install_conversions": {
                               "type": "double",
                               "id": 255,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "biddable_cohort_app_post_install_conversions": {
+                              "type": "double",
+                              "id": 378,
                               "options": {
                                 "proto3_optional": true
                               }
@@ -9190,6 +9217,20 @@
                             "video_view_rate_shorts": {
                               "type": "double",
                               "id": 369,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "coviewed_impressions": {
+                              "type": "int64",
+                              "id": 380,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "primary_impressions": {
+                              "type": "int64",
+                              "id": 381,
                               "options": {
                                 "proto3_optional": true
                               }
@@ -10928,6 +10969,14 @@
                             "new_versus_returning_customers": {
                               "type": "google.ads.googleads.v19.enums.ConvertingUserPriorEngagementTypeAndLtvBucketEnum.ConvertingUserPriorEngagementTypeAndLtvBucket",
                               "id": 160
+                            },
+                            "adjusted_age_range": {
+                              "type": "google.ads.googleads.v19.enums.AgeRangeTypeEnum.AgeRangeType",
+                              "id": 196
+                            },
+                            "adjusted_gender": {
+                              "type": "google.ads.googleads.v19.enums.GenderTypeEnum.GenderType",
+                              "id": 197
                             }
                           }
                         },
@@ -13297,7 +13346,8 @@
                               "values": {
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
-                                "WEEKLY": 2
+                                "WEEKLY": 2,
+                                "MONTHLY": 3
                               }
                             }
                           }
@@ -13353,7 +13403,8 @@
                                 "VIDEO_SEQUENCE": 17,
                                 "APP_CAMPAIGN_FOR_PRE_REGISTRATION": 18,
                                 "VIDEO_REACH_TARGET_FREQUENCY": 19,
-                                "TRAVEL_ACTIVITIES": 20
+                                "TRAVEL_ACTIVITIES": 20,
+                                "YOUTUBE_AUDIO": 22
                               }
                             }
                           }
@@ -14704,7 +14755,8 @@
                                 "VIDEO_RESPONSIVE": 16,
                                 "VIDEO_EFFICIENT_REACH": 17,
                                 "SMART_CAMPAIGN_ADS": 18,
-                                "TRAVEL_ADS": 19
+                                "TRAVEL_ADS": 19,
+                                "YOUTUBE_AUDIO": 20
                               }
                             }
                           }
@@ -14738,6 +14790,18 @@
                                 "AVERAGE": 5,
                                 "GOOD": 6,
                                 "EXCELLENT": 7
+                              }
+                            }
+                          }
+                        },
+                        "AdStrengthActionItemTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "AdStrengthActionItemType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ADD_ASSET": 2
                               }
                             }
                           }
@@ -14779,7 +14843,8 @@
                                 "DEMAND_GEN_CAROUSEL_AD": 41,
                                 "TRAVEL_AD": 37,
                                 "DEMAND_GEN_VIDEO_RESPONSIVE_AD": 42,
-                                "DEMAND_GEN_PRODUCT_AD": 39
+                                "DEMAND_GEN_PRODUCT_AD": 39,
+                                "YOUTUBE_AUDIO_AD": 44
                               }
                             }
                           }
@@ -14889,6 +14954,20 @@
                             }
                           }
                         },
+                        "AssetCoverageVideoAspectRatioRequirementEnum": {
+                          "fields": {},
+                          "nested": {
+                            "AssetCoverageVideoAspectRatioRequirement": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "HORIZONTAL": 2,
+                                "SQUARE": 3,
+                                "VERTICAL": 4
+                              }
+                            }
+                          }
+                        },
                         "AssetFieldTypeEnum": {
                           "fields": {},
                           "nested": {
@@ -14924,7 +15003,8 @@
                                 "BUSINESS_LOGO": 27,
                                 "HOTEL_PROPERTY": 28,
                                 "DEMAND_GEN_CAROUSEL_CARD": 30,
-                                "BUSINESS_MESSAGE": 31
+                                "BUSINESS_MESSAGE": 31,
+                                "TALL_PORTRAIT_MARKETING_IMAGE": 32
                               }
                             }
                           }
@@ -15690,6 +15770,7 @@
                                 "AD_GROUP_CRITERION": 5,
                                 "CAMPAIGN": 6,
                                 "CAMPAIGN_CRITERION": 7,
+                                "CAMPAIGN_BUDGET": 8,
                                 "FEED": 9,
                                 "FEED_ITEM": 10,
                                 "AD_GROUP_FEED": 11,
@@ -15702,7 +15783,9 @@
                                 "CAMPAIGN_ASSET": 18,
                                 "AD_GROUP_ASSET": 19,
                                 "COMBINED_AUDIENCE": 20,
-                                "ASSET_GROUP": 21
+                                "ASSET_GROUP": 21,
+                                "ASSET_SET": 22,
+                                "CAMPAIGN_ASSET_SET": 23
                               }
                             }
                           }
@@ -15827,6 +15910,19 @@
                                 "ACTIVATION_NEEDED": 2,
                                 "ENABLED": 3,
                                 "PAUSED": 4
+                              }
+                            }
+                          }
+                        },
+                        "ConversionCustomerTypeEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionCustomerType": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "NEW": 2,
+                                "RETURNING": 3
                               }
                             }
                           }
@@ -16176,6 +16272,32 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "VIDEO": 2
+                              }
+                            }
+                          }
+                        },
+                        "DemandGenChannelConfigEnum": {
+                          "fields": {},
+                          "nested": {
+                            "DemandGenChannelConfig": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CHANNEL_STRATEGY": 2,
+                                "SELECTED_CHANNELS": 3
+                              }
+                            }
+                          }
+                        },
+                        "DemandGenChannelStrategyEnum": {
+                          "fields": {},
+                          "nested": {
+                            "DemandGenChannelStrategy": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ALL_CHANNELS": 2,
+                                "ALL_OWNED_AND_OPERATED_CHANNELS": 3
                               }
                             }
                           }
@@ -16726,6 +16848,21 @@
                             }
                           }
                         },
+                        "LocalServicesLeadCreditIssuanceDecisionEnum": {
+                          "fields": {},
+                          "nested": {
+                            "CreditIssuanceDecision": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "SUCCESS_NOT_REACHED_THRESHOLD": 2,
+                                "SUCCESS_REACHED_THRESHOLD": 3,
+                                "FAIL_OVER_THRESHOLD": 4,
+                                "FAIL_NOT_ELIGIBLE": 5
+                              }
+                            }
+                          }
+                        },
                         "LocalServicesCreditStateEnum": {
                           "fields": {},
                           "nested": {
@@ -16754,6 +16891,56 @@
                                 "DISABLED": 7,
                                 "CONSUMER_DECLINED": 8,
                                 "WIPED_OUT": 9
+                              }
+                            }
+                          }
+                        },
+                        "LocalServicesLeadSurveyAnswerEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SurveyAnswer": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "VERY_SATISFIED": 2,
+                                "SATISFIED": 3,
+                                "NEUTRAL": 4,
+                                "DISSATISFIED": 5,
+                                "VERY_DISSATISFIED": 6
+                              }
+                            }
+                          }
+                        },
+                        "LocalServicesLeadSurveyDissatisfiedReasonEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SurveyDissatisfiedReason": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "OTHER_DISSATISFIED_REASON": 2,
+                                "GEO_MISMATCH": 3,
+                                "JOB_TYPE_MISMATCH": 4,
+                                "NOT_READY_TO_BOOK": 5,
+                                "SPAM": 6,
+                                "DUPLICATE": 7,
+                                "SOLICITATION": 8
+                              }
+                            }
+                          }
+                        },
+                        "LocalServicesLeadSurveySatisfiedReasonEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SurveySatisfiedReason": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "OTHER_SATISFIED_REASON": 2,
+                                "BOOKED_CUSTOMER": 3,
+                                "LIKELY_BOOKED_CUSTOMER": 4,
+                                "SERVICE_RELATED": 5,
+                                "HIGH_VALUE_SERVICE": 6
                               }
                             }
                           }
@@ -17215,6 +17402,21 @@
                             }
                           }
                         },
+                        "ReachPlanConversionRateModelEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ReachPlanConversionRateModel": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CUSTOMER_HISTORY": 2,
+                                "INVENTORY_AGGRESSIVE": 3,
+                                "INVENTORY_CONSERVATIVE": 4,
+                                "INVENTORY_MEDIAN": 5
+                              }
+                            }
+                          }
+                        },
                         "ReachPlanNetworkEnum": {
                           "fields": {},
                           "nested": {
@@ -17236,6 +17438,8 @@
                               "values": {
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
+                                "DISCOVER_FEED": 7,
+                                "GMAIL": 8,
                                 "IN_FEED": 2,
                                 "IN_STREAM_BUMPER": 3,
                                 "IN_STREAM_NON_SKIPPABLE": 4,
@@ -18621,7 +18825,8 @@
                                 "ADVANCED_PROTECTION_NOT_ENROLLED": 24,
                                 "ORGANIZATION_NOT_RECOGNIZED": 26,
                                 "ORGANIZATION_NOT_APPROVED": 27,
-                                "ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN": 28
+                                "ORGANIZATION_NOT_ASSOCIATED_WITH_DEVELOPER_TOKEN": 28,
+                                "DEVELOPER_TOKEN_INVALID": 29
                               }
                             }
                           }
@@ -18993,6 +19198,7 @@
                                 "CANNOT_ENABLE_BROAD_MATCH_FOR_PROMOTING_TRIAL_CAMPAIGN": 94,
                                 "REQUIRED_BUSINESS_NAME_ASSET_NOT_LINKED": 95,
                                 "REQUIRED_LOGO_ASSET_NOT_LINKED": 96,
+                                "BRAND_TARGETING_OVERRIDES_NOT_SUPPORTED": 97,
                                 "BRAND_GUIDELINES_NOT_ENABLED_FOR_CAMPAIGN": 98,
                                 "BRAND_GUIDELINES_MAIN_AND_ACCENT_COLORS_REQUIRED": 99,
                                 "BRAND_GUIDELINES_COLOR_INVALID_FORMAT": 100,
@@ -19495,7 +19701,8 @@
                                 "CANNOT_RECOGNIZE_BRAND": 155,
                                 "BRAND_SHARED_SET_DOES_NOT_EXIST": 156,
                                 "CANNOT_ADD_REMOVED_BRAND_SHARED_SET": 157,
-                                "ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE": 158
+                                "ONLY_EXCLUSION_BRAND_LIST_ALLOWED_FOR_CAMPAIGN_TYPE": 158,
+                                "LOCATION_TARGETING_NOT_ELIGIBLE_FOR_RESTRICTED_CAMPAIGN": 166
                               }
                             }
                           }
@@ -24208,6 +24415,10 @@
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
+                            },
+                            "demand_gen_ad_group_settings": {
+                              "type": "DemandGenAdGroupSettings",
+                              "id": 91
                             }
                           },
                           "nested": {
@@ -24218,6 +24429,73 @@
                                   "id": 1,
                                   "options": {
                                     "(google.api.field_behavior)": "IMMUTABLE"
+                                  }
+                                }
+                              }
+                            },
+                            "DemandGenAdGroupSettings": {
+                              "fields": {
+                                "channel_controls": {
+                                  "type": "DemandGenChannelControls",
+                                  "id": 1
+                                }
+                              },
+                              "nested": {
+                                "DemandGenChannelControls": {
+                                  "oneofs": {
+                                    "channel_configuration": {
+                                      "oneof": [
+                                        "channel_strategy",
+                                        "selected_channels"
+                                      ]
+                                    }
+                                  },
+                                  "fields": {
+                                    "channel_config": {
+                                      "type": "google.ads.googleads.v19.enums.DemandGenChannelConfigEnum.DemandGenChannelConfig",
+                                      "id": 1,
+                                      "options": {
+                                        "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                      }
+                                    },
+                                    "channel_strategy": {
+                                      "type": "google.ads.googleads.v19.enums.DemandGenChannelStrategyEnum.DemandGenChannelStrategy",
+                                      "id": 2
+                                    },
+                                    "selected_channels": {
+                                      "type": "DemandGenSelectedChannels",
+                                      "id": 3
+                                    }
+                                  },
+                                  "nested": {
+                                    "DemandGenSelectedChannels": {
+                                      "fields": {
+                                        "youtube_in_stream": {
+                                          "type": "bool",
+                                          "id": 1
+                                        },
+                                        "youtube_in_feed": {
+                                          "type": "bool",
+                                          "id": 2
+                                        },
+                                        "youtube_shorts": {
+                                          "type": "bool",
+                                          "id": 3
+                                        },
+                                        "discover": {
+                                          "type": "bool",
+                                          "id": 4
+                                        },
+                                        "gmail": {
+                                          "type": "bool",
+                                          "id": 5
+                                        },
+                                        "display": {
+                                          "type": "bool",
+                                          "id": 6
+                                        }
+                                      }
+                                    }
                                   }
                                 }
                               }
@@ -26488,7 +26766,9 @@
                         "AssetGroup": {
                           "options": {
                             "(google.api.resource).type": "googleads.googleapis.com/AssetGroup",
-                            "(google.api.resource).pattern": "customers/{customer_id}/assetGroups/{asset_group_id}"
+                            "(google.api.resource).pattern": "customers/{customer_id}/assetGroups/{asset_group_id}",
+                            "(google.api.resource).plural": "assetGroups",
+                            "(google.api.resource).singular": "assetGroup"
                           },
                           "fields": {
                             "resource_name": {
@@ -26563,6 +26843,91 @@
                               "id": 10,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "asset_coverage": {
+                              "type": "AssetCoverage",
+                              "id": 13,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "AssetCoverage": {
+                          "fields": {
+                            "ad_strength_action_items": {
+                              "rule": "repeated",
+                              "type": "AdStrengthActionItem",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "AdStrengthActionItem": {
+                          "oneofs": {
+                            "action_details": {
+                              "oneof": [
+                                "add_asset_details"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "action_item_type": {
+                              "type": "google.ads.googleads.v19.enums.AdStrengthActionItemTypeEnum.AdStrengthActionItemType",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "add_asset_details": {
+                              "type": "AddAssetDetails",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          },
+                          "nested": {
+                            "AddAssetDetails": {
+                              "oneofs": {
+                                "_asset_count": {
+                                  "oneof": [
+                                    "asset_count"
+                                  ]
+                                },
+                                "_video_aspect_ratio_requirement": {
+                                  "oneof": [
+                                    "video_aspect_ratio_requirement"
+                                  ]
+                                }
+                              },
+                              "fields": {
+                                "asset_field_type": {
+                                  "type": "google.ads.googleads.v19.enums.AssetFieldTypeEnum.AssetFieldType",
+                                  "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "asset_count": {
+                                  "type": "int32",
+                                  "id": 2,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                },
+                                "video_aspect_ratio_requirement": {
+                                  "type": "google.ads.googleads.v19.enums.AssetCoverageVideoAspectRatioRequirementEnum.AssetCoverageVideoAspectRatioRequirement",
+                                  "id": 3,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                    "proto3_optional": true
+                                  }
+                                }
                               }
                             }
                           }
@@ -28319,6 +28684,10 @@
                               "type": "VideoCampaignSettings",
                               "id": 94
                             },
+                            "pmax_campaign_settings": {
+                              "type": "PmaxCampaignSettings",
+                              "id": 97
+                            },
                             "real_time_bidding_setting": {
                               "type": "google.ads.googleads.v19.common.RealTimeBiddingSetting",
                               "id": 39
@@ -29097,6 +29466,34 @@
                                     "allow_shorts": {
                                       "type": "bool",
                                       "id": 3,
+                                      "options": {
+                                        "proto3_optional": true
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "PmaxCampaignSettings": {
+                              "fields": {
+                                "brand_targeting_overrides": {
+                                  "type": "BrandTargetingOverrides",
+                                  "id": 1
+                                }
+                              },
+                              "nested": {
+                                "BrandTargetingOverrides": {
+                                  "oneofs": {
+                                    "_ignore_exclusions_for_shopping_ads": {
+                                      "oneof": [
+                                        "ignore_exclusions_for_shopping_ads"
+                                      ]
+                                    }
+                                  },
+                                  "fields": {
+                                    "ignore_exclusions_for_shopping_ads": {
+                                      "type": "bool",
+                                      "id": 1,
                                       "options": {
                                         "proto3_optional": true
                                       }
@@ -31028,6 +31425,14 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/AssetGroup"
                               }
+                            },
+                            "campaign_budget": {
+                              "type": "string",
+                              "id": 42,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignBudget"
+                              }
                             }
                           }
                         },
@@ -32460,7 +32865,7 @@
                               "type": "ConversionTrackingSetting",
                               "id": 14,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "IMMUTABLE"
                               }
                             },
                             "remarketing_setting": {
@@ -32653,7 +33058,7 @@
                               "type": "string",
                               "id": 8,
                               "options": {
-                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                "(google.api.field_behavior)": "IMMUTABLE"
                               }
                             }
                           }
@@ -37066,6 +37471,13 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "proto3_optional": true
                               }
+                            },
+                            "lead_feedback_submitted": {
+                              "type": "bool",
+                              "id": 13,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
                             }
                           }
                         },
@@ -40694,6 +41106,13 @@
                                 "asset_group": {
                                   "type": "string",
                                   "id": 1,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "ad_strength": {
+                                  "type": "google.ads.googleads.v19.enums.AdStrengthEnum.AdStrength",
+                                  "id": 2,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -54177,6 +54596,12 @@
                               "oneof": [
                                 "order_id"
                               ]
+                            },
+                            "session_attributes": {
+                              "oneof": [
+                                "session_attributes_encoded",
+                                "session_attributes_key_value_pairs"
+                              ]
                             }
                           },
                           "fields": {
@@ -54255,6 +54680,18 @@
                             "consent": {
                               "type": "google.ads.googleads.v19.common.Consent",
                               "id": 23
+                            },
+                            "customer_type": {
+                              "type": "google.ads.googleads.v19.enums.ConversionCustomerTypeEnum.ConversionCustomerType",
+                              "id": 26
+                            },
+                            "session_attributes_encoded": {
+                              "type": "bytes",
+                              "id": 24
+                            },
+                            "session_attributes_key_value_pairs": {
+                              "type": "SessionAttributesKeyValuePairs",
+                              "id": 25
                             }
                           }
                         },
@@ -54538,6 +54975,36 @@
                                   "type": "double",
                                   "id": 3
                                 }
+                              }
+                            }
+                          }
+                        },
+                        "SessionAttributeKeyValuePair": {
+                          "fields": {
+                            "session_attribute_key": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "session_attribute_value": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
+                        "SessionAttributesKeyValuePairs": {
+                          "fields": {
+                            "key_value_pairs": {
+                              "rule": "repeated",
+                              "type": "SessionAttributeKeyValuePair",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
                               }
                             }
                           }
@@ -56963,6 +57430,22 @@
                                   "(google.api.method_signature)": "customer_id,conversations"
                                 }
                               ]
+                            },
+                            "ProvideLeadFeedback": {
+                              "requestType": "ProvideLeadFeedbackRequest",
+                              "responseType": "ProvideLeadFeedbackResponse",
+                              "options": {
+                                "(google.api.http).post": "/v19/{resource_name=customers/*/localServicesLeads/*}:provideLeadFeedback",
+                                "(google.api.http).body": "*"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v19/{resource_name=customers/*/localServicesLeads/*}:provideLeadFeedback",
+                                    "body": "*"
+                                  }
+                                }
+                              ]
                             }
                           }
                         },
@@ -57033,6 +57516,88 @@
                             "partial_failure_error": {
                               "type": "google.rpc.Status",
                               "id": 2
+                            }
+                          }
+                        },
+                        "SurveySatisfied": {
+                          "fields": {
+                            "survey_satisfied_reason": {
+                              "type": "google.ads.googleads.v19.enums.LocalServicesLeadSurveySatisfiedReasonEnum.SurveySatisfiedReason",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "other_reason_comment": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            }
+                          }
+                        },
+                        "SurveyDissatisfied": {
+                          "fields": {
+                            "survey_dissatisfied_reason": {
+                              "type": "google.ads.googleads.v19.enums.LocalServicesLeadSurveyDissatisfiedReasonEnum.SurveyDissatisfiedReason",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "other_reason_comment": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OPTIONAL"
+                              }
+                            }
+                          }
+                        },
+                        "ProvideLeadFeedbackRequest": {
+                          "oneofs": {
+                            "survey_details": {
+                              "oneof": [
+                                "survey_satisfied",
+                                "survey_dissatisfied"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/LocalServicesLead"
+                              }
+                            },
+                            "survey_answer": {
+                              "type": "google.ads.googleads.v19.enums.LocalServicesLeadSurveyAnswerEnum.SurveyAnswer",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "survey_satisfied": {
+                              "type": "SurveySatisfied",
+                              "id": 3
+                            },
+                            "survey_dissatisfied": {
+                              "type": "SurveyDissatisfied",
+                              "id": 4
+                            }
+                          }
+                        },
+                        "ProvideLeadFeedbackResponse": {
+                          "fields": {
+                            "credit_issuance_decision": {
+                              "type": "google.ads.googleads.v19.enums.LocalServicesLeadCreditIssuanceDecisionEnum.CreditIssuanceDecision",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
                             }
                           }
                         },
@@ -57579,6 +58144,26 @@
                             "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
                           },
                           "methods": {
+                            "GenerateConversionRates": {
+                              "requestType": "GenerateConversionRatesRequest",
+                              "responseType": "GenerateConversionRatesResponse",
+                              "options": {
+                                "(google.api.http).post": "/v19:generateConversionRates",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v19:generateConversionRates",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id"
+                                }
+                              ]
+                            },
                             "ListPlannableLocations": {
                               "requestType": "ListPlannableLocationsRequest",
                               "responseType": "ListPlannableLocationsResponse",
@@ -57634,6 +58219,56 @@
                                   "(google.api.method_signature)": "customer_id,campaign_duration,planned_products"
                                 }
                               ]
+                            }
+                          }
+                        },
+                        "GenerateConversionRatesRequest": {
+                          "oneofs": {
+                            "_customer_reach_group": {
+                              "oneof": [
+                                "customer_reach_group"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "customer_reach_group": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "GenerateConversionRatesResponse": {
+                          "fields": {
+                            "conversion_rate_suggestions": {
+                              "rule": "repeated",
+                              "type": "ConversionRateSuggestion",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "ConversionRateSuggestion": {
+                          "fields": {
+                            "conversion_rate_model": {
+                              "type": "google.ads.googleads.v19.enums.ReachPlanConversionRateModelEnum.ReachPlanConversionRateModel",
+                              "id": 1
+                            },
+                            "plannable_product_code": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "conversion_rate": {
+                              "type": "double",
+                              "id": 3
                             }
                           }
                         },
@@ -57998,6 +58633,11 @@
                               "oneof": [
                                 "budget_micros"
                               ]
+                            },
+                            "_conversion_rate": {
+                              "oneof": [
+                                "conversion_rate"
+                              ]
                             }
                           },
                           "fields": {
@@ -58014,6 +58654,13 @@
                               "id": 4,
                               "options": {
                                 "(google.api.field_behavior)": "REQUIRED",
+                                "proto3_optional": true
+                              }
+                            },
+                            "conversion_rate": {
+                              "type": "double",
+                              "id": 6,
+                              "options": {
                                 "proto3_optional": true
                               }
                             },
@@ -58112,6 +58759,11 @@
                               "oneof": [
                                 "views"
                               ]
+                            },
+                            "_conversions": {
+                              "oneof": [
+                                "conversions"
+                              ]
                             }
                           },
                           "fields": {
@@ -58189,6 +58841,13 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "conversions": {
+                              "type": "double",
+                              "id": 16,
+                              "options": {
+                                "proto3_optional": true
+                              }
                             }
                           }
                         },
@@ -58243,6 +58902,11 @@
                             "_views": {
                               "oneof": [
                                 "views"
+                              ]
+                            },
+                            "_conversions": {
+                              "oneof": [
+                                "conversions"
                               ]
                             }
                           },
@@ -58308,6 +58972,13 @@
                             "views": {
                               "type": "int64",
                               "id": 11,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "conversions": {
+                              "type": "double",
+                              "id": 12,
                               "options": {
                                 "proto3_optional": true
                               }
@@ -60936,6 +61607,7 @@
           },
           "nested": {
             "FileDescriptorSet": {
+              "edition": "proto2",
               "fields": {
                 "file": {
                   "rule": "repeated",
@@ -60945,6 +61617,7 @@
               }
             },
             "Edition": {
+              "edition": "proto2",
               "values": {
                 "EDITION_UNKNOWN": 0,
                 "EDITION_PROTO2": 998,
@@ -60960,6 +61633,7 @@
               }
             },
             "FileDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -60977,18 +61651,12 @@
                 "public_dependency": {
                   "rule": "repeated",
                   "type": "int32",
-                  "id": 10,
-                  "options": {
-                    "packed": false
-                  }
+                  "id": 10
                 },
                 "weak_dependency": {
                   "rule": "repeated",
                   "type": "int32",
-                  "id": 11,
-                  "options": {
-                    "packed": false
-                  }
+                  "id": 11
                 },
                 "message_type": {
                   "rule": "repeated",
@@ -61029,6 +61697,7 @@
               }
             },
             "DescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61111,6 +61780,7 @@
               }
             },
             "ExtensionRangeOptions": {
+              "edition": "proto2",
               "fields": {
                 "uninterpreted_option": {
                   "rule": "repeated",
@@ -61184,6 +61854,7 @@
               }
             },
             "FieldDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61263,6 +61934,7 @@
               }
             },
             "OneofDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61275,6 +61947,7 @@
               }
             },
             "EnumDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61316,6 +61989,7 @@
               }
             },
             "EnumValueDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61332,6 +62006,7 @@
               }
             },
             "ServiceDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61349,6 +62024,7 @@
               }
             },
             "MethodDescriptorProto": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "type": "string",
@@ -61383,6 +62059,7 @@
               }
             },
             "FileOptions": {
+              "edition": "proto2",
               "fields": {
                 "java_package": {
                   "type": "string",
@@ -61524,6 +62201,7 @@
               }
             },
             "MessageOptions": {
+              "edition": "proto2",
               "fields": {
                 "message_set_wire_format": {
                   "type": "bool",
@@ -61597,6 +62275,7 @@
               ]
             },
             "FieldOptions": {
+              "edition": "proto2",
               "fields": {
                 "ctype": {
                   "type": "CType",
@@ -61658,10 +62337,7 @@
                 "targets": {
                   "rule": "repeated",
                   "type": "OptionTargetType",
-                  "id": 19,
-                  "options": {
-                    "packed": false
-                  }
+                  "id": 19
                 },
                 "edition_defaults": {
                   "rule": "repeated",
@@ -61745,6 +62421,7 @@
               }
             },
             "OneofOptions": {
+              "edition": "proto2",
               "fields": {
                 "features": {
                   "type": "FeatureSet",
@@ -61764,6 +62441,7 @@
               ]
             },
             "EnumOptions": {
+              "edition": "proto2",
               "fields": {
                 "allow_alias": {
                   "type": "bool",
@@ -61807,6 +62485,7 @@
               ]
             },
             "EnumValueOptions": {
+              "edition": "proto2",
               "fields": {
                 "deprecated": {
                   "type": "bool",
@@ -61840,6 +62519,7 @@
               ]
             },
             "ServiceOptions": {
+              "edition": "proto2",
               "fields": {
                 "features": {
                   "type": "FeatureSet",
@@ -61866,6 +62546,7 @@
               ]
             },
             "MethodOptions": {
+              "edition": "proto2",
               "fields": {
                 "deprecated": {
                   "type": "bool",
@@ -61908,6 +62589,7 @@
               }
             },
             "UninterpretedOption": {
+              "edition": "proto2",
               "fields": {
                 "name": {
                   "rule": "repeated",
@@ -61957,6 +62639,7 @@
               }
             },
             "FeatureSet": {
+              "edition": "proto2",
               "fields": {
                 "field_presence": {
                   "type": "FieldPresence",
@@ -62098,6 +62781,7 @@
               }
             },
             "FeatureSetDefaults": {
+              "edition": "proto2",
               "fields": {
                 "defaults": {
                   "rule": "repeated",
@@ -62129,6 +62813,7 @@
               }
             },
             "SourceCodeInfo": {
+              "edition": "proto2",
               "fields": {
                 "location": {
                   "rule": "repeated",
@@ -62142,12 +62827,18 @@
                     "path": {
                       "rule": "repeated",
                       "type": "int32",
-                      "id": 1
+                      "id": 1,
+                      "options": {
+                        "packed": true
+                      }
                     },
                     "span": {
                       "rule": "repeated",
                       "type": "int32",
-                      "id": 2
+                      "id": 2,
+                      "options": {
+                        "packed": true
+                      }
                     },
                     "leading_comments": {
                       "type": "string",
@@ -62167,6 +62858,7 @@
               }
             },
             "GeneratedCodeInfo": {
+              "edition": "proto2",
               "fields": {
                 "annotation": {
                   "rule": "repeated",
@@ -62180,7 +62872,10 @@
                     "path": {
                       "rule": "repeated",
                       "type": "int32",
-                      "id": 1
+                      "id": 1,
+                      "options": {
+                        "packed": true
+                      }
                     },
                     "source_file": {
                       "type": "string",

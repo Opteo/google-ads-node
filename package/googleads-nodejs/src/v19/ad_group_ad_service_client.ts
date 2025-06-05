@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -46,6 +47,8 @@ export class AdGroupAdServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -80,7 +83,7 @@ export class AdGroupAdServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -956,8 +959,26 @@ export class AdGroupAdServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.mutateAdGroupAds(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('mutateAdGroupAds request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IMutateAdGroupAdsResponse,
+        protos.google.ads.googleads.v19.services.IMutateAdGroupAdsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('mutateAdGroupAds response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.mutateAdGroupAds(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IMutateAdGroupAdsResponse,
+        protos.google.ads.googleads.v19.services.IMutateAdGroupAdsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('mutateAdGroupAds response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Remove automatically created assets from an ad.
@@ -1040,8 +1061,26 @@ export class AdGroupAdServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'ad_group_ad': request.ad_group_ad ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.removeAutomaticallyCreatedAssets(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('removeAutomaticallyCreatedAssets request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IRemoveAutomaticallyCreatedAssetsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('removeAutomaticallyCreatedAssets response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.removeAutomaticallyCreatedAssets(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v19.services.IRemoveAutomaticallyCreatedAssetsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('removeAutomaticallyCreatedAssets response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8539,6 +8578,7 @@ export class AdGroupAdServiceClient {
   close(): Promise<void> {
     if (this.adGroupAdServiceStub && !this._terminated) {
       return this.adGroupAdServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

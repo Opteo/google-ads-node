@@ -22,6 +22,7 @@ import type {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax
 
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
+import {loggingUtils as logging} from 'google-gax';
 
 /**
  * Client JSON configuration object, loaded from
@@ -48,6 +49,8 @@ export class ContentCreatorInsightsServiceClient {
   private _defaults: {[method: string]: gax.CallSettings};
   private _universeDomain: string;
   private _servicePath: string;
+  private _log = logging.log('google-ads');
+
   auth: gax.GoogleAuth;
   descriptors: Descriptors = {
     page: {},
@@ -82,7 +85,7 @@ export class ContentCreatorInsightsServiceClient {
    *     Developer's Console, e.g. 'grape-spaceship-123'. We will also check
    *     the environment variable GCLOUD_PROJECT for your project ID. If your
    *     app is running in an environment which supports
-   *     {@link https://developers.google.com/identity/protocols/application-default-credentials Application Default Credentials},
+   *     {@link https://cloud.google.com/docs/authentication/application-default-credentials Application Default Credentials},
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
@@ -924,8 +927,26 @@ export class ContentCreatorInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateCreatorInsights(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateCreatorInsights request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateCreatorInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateCreatorInsightsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateCreatorInsights response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateCreatorInsights(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateCreatorInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateCreatorInsightsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateCreatorInsights response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 /**
  * Returns insights for trending content on YouTube.
@@ -1013,8 +1034,26 @@ export class ContentCreatorInsightsServiceClient {
     ] = this._gaxModule.routingHeader.fromParams({
       'customer_id': request.customer_id ?? '',
     });
-    this.initialize();
-    return this.innerApiCalls.generateTrendingInsights(request, options, callback);
+    this.initialize().catch(err => {throw err});
+    this._log.info('generateTrendingInsights request %j', request);
+    const wrappedCallback: Callback<
+        protos.google.ads.googleads.v19.services.IGenerateTrendingInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateTrendingInsightsRequest|null|undefined,
+        {}|null|undefined>|undefined = callback
+      ? (error, response, options, rawResponse) => {
+          this._log.info('generateTrendingInsights response %j', response);
+          callback!(error, response, options, rawResponse); // We verified callback above.
+        }
+      : undefined;
+    return this.innerApiCalls.generateTrendingInsights(request, options, wrappedCallback)
+      ?.then(([response, options, rawResponse]: [
+        protos.google.ads.googleads.v19.services.IGenerateTrendingInsightsResponse,
+        protos.google.ads.googleads.v19.services.IGenerateTrendingInsightsRequest|undefined,
+        {}|undefined
+      ]) => {
+        this._log.info('generateTrendingInsights response %j', response);
+        return [response, options, rawResponse];
+      });
   }
 
   // --------------------
@@ -8512,6 +8551,7 @@ export class ContentCreatorInsightsServiceClient {
   close(): Promise<void> {
     if (this.contentCreatorInsightsServiceStub && !this._terminated) {
       return this.contentCreatorInsightsServiceStub.then(stub => {
+        this._log.info('ending gRPC channel');
         this._terminated = true;
         stub.close();
       });

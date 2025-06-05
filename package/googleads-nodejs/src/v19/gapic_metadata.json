@@ -2379,6 +2379,11 @@
               "methods": [
                 "appendLeadConversation"
               ]
+            },
+            "ProvideLeadFeedback": {
+              "methods": [
+                "provideLeadFeedback"
+              ]
             }
           }
         },
@@ -2388,6 +2393,11 @@
             "AppendLeadConversation": {
               "methods": [
                 "appendLeadConversation"
+              ]
+            },
+            "ProvideLeadFeedback": {
+              "methods": [
+                "provideLeadFeedback"
               ]
             }
           }
@@ -2545,6 +2555,11 @@
         "grpc": {
           "libraryClient": "ReachPlanServiceClient",
           "rpcs": {
+            "GenerateConversionRates": {
+              "methods": [
+                "generateConversionRates"
+              ]
+            },
             "ListPlannableLocations": {
               "methods": [
                 "listPlannableLocations"
@@ -2565,6 +2580,11 @@
         "grpc-fallback": {
           "libraryClient": "ReachPlanServiceClient",
           "rpcs": {
+            "GenerateConversionRates": {
+              "methods": [
+                "generateConversionRates"
+              ]
+            },
             "ListPlannableLocations": {
               "methods": [
                 "listPlannableLocations"
