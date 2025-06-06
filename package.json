@@ -1,6 +1,6 @@
 {
   "name": "google-ads-node",
-  "version": "17.0.1",
+  "version": "17.0.2",
   "description": "Google Ads API client library",
   "main": "build/src/index.js",
   "files": [
