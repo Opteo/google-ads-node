@@ -10,7 +10,7 @@
   "repository": "https://github.com/opteo/google-ads-node",
   "license": "MIT",
   "scripts": {
-    "test": "node tests/protos.js",
+    "test": "node tests/protos.js && node tests/esm.mjs",
     "prepublishOnly": "npm run test",
     "prepare": "sh ./init.sh"
   },
