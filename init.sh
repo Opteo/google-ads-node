@@ -16,16 +16,8 @@ CURRENT_VERSION_NUM=$(echo "$CURRENT_VERSION" | tr -d 'v')
 PREVIOUS_VERSION_NUM=$((CURRENT_VERSION_NUM - 1))
 PREVIOUS_VERSION="v${PREVIOUS_VERSION_NUM}"
 
-echo "Searching for old version directories to remove ($PREVIOUS_VERSION)..."
-DIRECTORIES_TO_DELETE=$(find . -type d -name "${PREVIOUS_VERSION}")
-
-if [ -z "$DIRECTORIES_TO_DELETE" ]; then
-  echo "No old version directories found."
-else
-  echo "Found and deleting the following directories:"
-  echo "$DIRECTORIES_TO_DELETE"
-  echo "$DIRECTORIES_TO_DELETE" | xargs rm -rf
-fi
+echo "Removing $PREVIOUS_VERSION directories..."
+rm -rf "src/$PREVIOUS_VERSION" "protos/google/ads/googleads/$PREVIOUS_VERSION" "samples/generated/$PREVIOUS_VERSION" "build/src/$PREVIOUS_VERSION" "build/protos/google/ads/googleads/$PREVIOUS_VERSION"
 
 # install dependencies + compile proto files in sub package
 npm install
@@ -34,4 +26,5 @@ npm install
 rm -rf build/test build/system-test
 
 # copy the build up to the main package directory
+rm -rf ../../build
 cp -r build ../../
