@@ -2,9 +2,7 @@
 
 set -e
 
-# install dependencies + compile proto files in sub package
 cd package/googleads-nodejs
-npm install
 
 # get current version from Makefile and remove any old version folders
 CURRENT_VERSION=$(awk -F'=' '/^GOOGLE_ADS_VERSION=/ {print $2}' ../../Makefile | tr -d '[:space:]')
@@ -28,6 +26,9 @@ else
   echo "$DIRECTORIES_TO_DELETE"
   echo "$DIRECTORIES_TO_DELETE" | xargs rm -rf
 fi
+
+# install dependencies + compile proto files in sub package
+npm install
 
 # remove large auto-generated tests we don't need
 rm -rf build/test build/system-test
