@@ -65,7 +65,6 @@
     "campaign goal config service",
     "campaign group service",
     "campaign label service",
-    "campaign lifecycle goal service",
     "campaign service",
     "campaign shared set service",
     "content creator insights service",
@@ -84,7 +83,6 @@
     "customer conversion goal service",
     "customer customizer service",
     "customer label service",
-    "customer lifecycle goal service",
     "customer manager link service",
     "customer negative criterion service",
     "customer service",
@@ -112,6 +110,7 @@
     "keyword theme constant service",
     "label service",
     "local services lead service",
+    "multi party auth review service",
     "offline user data job service",
     "payments account service",
     "product link invitation service",
@@ -149,7 +148,7 @@
     "@types/node": "^22.18.12",
     "@types/sinon": "^20.0.0",
     "c8": "^10.1.3",
-    "gapic-tools": "^1.0.6",
+    "gapic-tools": "^1.0.3",
     "gts": "^6.0.2",
     "jsdoc": "^4.0.5",
     "jsdoc-fresh": "^5.0.2",
@@ -163,6 +162,6 @@
     "node": ">=v18"
   },
   "dependencies": {
-    "google-gax": "^5.0.7"
+    "google-gax": "^6.3.0"
   }
 }
