@@ -146,7 +146,6 @@
   "devDependencies": {
     "@types/node": "^22.18.12",
     "gapic-tools": "^2.0.1",
-    "gts": "^6.0.2",
     "typescript": "5.8.3"
   },
   "engines": {
