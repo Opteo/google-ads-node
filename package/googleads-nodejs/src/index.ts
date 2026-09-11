@@ -16,279 +16,273 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import * as v24 from './v24';
+import * as v25 from './v25';
 const AccountBudgetProposalServiceClient =
-  v24.AccountBudgetProposalServiceClient;
+  v25.AccountBudgetProposalServiceClient;
 type AccountBudgetProposalServiceClient =
-  v24.AccountBudgetProposalServiceClient;
-const AccountLinkServiceClient = v24.AccountLinkServiceClient;
-type AccountLinkServiceClient = v24.AccountLinkServiceClient;
-const AdGroupAdLabelServiceClient = v24.AdGroupAdLabelServiceClient;
-type AdGroupAdLabelServiceClient = v24.AdGroupAdLabelServiceClient;
-const AdGroupAdServiceClient = v24.AdGroupAdServiceClient;
-type AdGroupAdServiceClient = v24.AdGroupAdServiceClient;
-const AdGroupAssetServiceClient = v24.AdGroupAssetServiceClient;
-type AdGroupAssetServiceClient = v24.AdGroupAssetServiceClient;
-const AdGroupAssetSetServiceClient = v24.AdGroupAssetSetServiceClient;
-type AdGroupAssetSetServiceClient = v24.AdGroupAssetSetServiceClient;
-const AdGroupBidModifierServiceClient = v24.AdGroupBidModifierServiceClient;
-type AdGroupBidModifierServiceClient = v24.AdGroupBidModifierServiceClient;
+  v25.AccountBudgetProposalServiceClient;
+const AccountLinkServiceClient = v25.AccountLinkServiceClient;
+type AccountLinkServiceClient = v25.AccountLinkServiceClient;
+const AdGroupAdLabelServiceClient = v25.AdGroupAdLabelServiceClient;
+type AdGroupAdLabelServiceClient = v25.AdGroupAdLabelServiceClient;
+const AdGroupAdServiceClient = v25.AdGroupAdServiceClient;
+type AdGroupAdServiceClient = v25.AdGroupAdServiceClient;
+const AdGroupAssetServiceClient = v25.AdGroupAssetServiceClient;
+type AdGroupAssetServiceClient = v25.AdGroupAssetServiceClient;
+const AdGroupAssetSetServiceClient = v25.AdGroupAssetSetServiceClient;
+type AdGroupAssetSetServiceClient = v25.AdGroupAssetSetServiceClient;
+const AdGroupBidModifierServiceClient = v25.AdGroupBidModifierServiceClient;
+type AdGroupBidModifierServiceClient = v25.AdGroupBidModifierServiceClient;
 const AdGroupCriterionCustomizerServiceClient =
-  v24.AdGroupCriterionCustomizerServiceClient;
+  v25.AdGroupCriterionCustomizerServiceClient;
 type AdGroupCriterionCustomizerServiceClient =
-  v24.AdGroupCriterionCustomizerServiceClient;
+  v25.AdGroupCriterionCustomizerServiceClient;
 const AdGroupCriterionLabelServiceClient =
-  v24.AdGroupCriterionLabelServiceClient;
+  v25.AdGroupCriterionLabelServiceClient;
 type AdGroupCriterionLabelServiceClient =
-  v24.AdGroupCriterionLabelServiceClient;
-const AdGroupCriterionServiceClient = v24.AdGroupCriterionServiceClient;
-type AdGroupCriterionServiceClient = v24.AdGroupCriterionServiceClient;
-const AdGroupCustomizerServiceClient = v24.AdGroupCustomizerServiceClient;
-type AdGroupCustomizerServiceClient = v24.AdGroupCustomizerServiceClient;
-const AdGroupLabelServiceClient = v24.AdGroupLabelServiceClient;
-type AdGroupLabelServiceClient = v24.AdGroupLabelServiceClient;
-const AdGroupServiceClient = v24.AdGroupServiceClient;
-type AdGroupServiceClient = v24.AdGroupServiceClient;
-const AdParameterServiceClient = v24.AdParameterServiceClient;
-type AdParameterServiceClient = v24.AdParameterServiceClient;
-const AdServiceClient = v24.AdServiceClient;
-type AdServiceClient = v24.AdServiceClient;
-const AssetGenerationServiceClient = v24.AssetGenerationServiceClient;
-type AssetGenerationServiceClient = v24.AssetGenerationServiceClient;
-const AssetGroupAssetServiceClient = v24.AssetGroupAssetServiceClient;
-type AssetGroupAssetServiceClient = v24.AssetGroupAssetServiceClient;
+  v25.AdGroupCriterionLabelServiceClient;
+const AdGroupCriterionServiceClient = v25.AdGroupCriterionServiceClient;
+type AdGroupCriterionServiceClient = v25.AdGroupCriterionServiceClient;
+const AdGroupCustomizerServiceClient = v25.AdGroupCustomizerServiceClient;
+type AdGroupCustomizerServiceClient = v25.AdGroupCustomizerServiceClient;
+const AdGroupLabelServiceClient = v25.AdGroupLabelServiceClient;
+type AdGroupLabelServiceClient = v25.AdGroupLabelServiceClient;
+const AdGroupServiceClient = v25.AdGroupServiceClient;
+type AdGroupServiceClient = v25.AdGroupServiceClient;
+const AdParameterServiceClient = v25.AdParameterServiceClient;
+type AdParameterServiceClient = v25.AdParameterServiceClient;
+const AdServiceClient = v25.AdServiceClient;
+type AdServiceClient = v25.AdServiceClient;
+const AssetGenerationServiceClient = v25.AssetGenerationServiceClient;
+type AssetGenerationServiceClient = v25.AssetGenerationServiceClient;
+const AssetGroupAssetServiceClient = v25.AssetGroupAssetServiceClient;
+type AssetGroupAssetServiceClient = v25.AssetGroupAssetServiceClient;
 const AssetGroupListingGroupFilterServiceClient =
-  v24.AssetGroupListingGroupFilterServiceClient;
+  v25.AssetGroupListingGroupFilterServiceClient;
 type AssetGroupListingGroupFilterServiceClient =
-  v24.AssetGroupListingGroupFilterServiceClient;
-const AssetGroupServiceClient = v24.AssetGroupServiceClient;
-type AssetGroupServiceClient = v24.AssetGroupServiceClient;
-const AssetGroupSignalServiceClient = v24.AssetGroupSignalServiceClient;
-type AssetGroupSignalServiceClient = v24.AssetGroupSignalServiceClient;
-const AssetServiceClient = v24.AssetServiceClient;
-type AssetServiceClient = v24.AssetServiceClient;
-const AssetSetAssetServiceClient = v24.AssetSetAssetServiceClient;
-type AssetSetAssetServiceClient = v24.AssetSetAssetServiceClient;
-const AssetSetServiceClient = v24.AssetSetServiceClient;
-type AssetSetServiceClient = v24.AssetSetServiceClient;
-const AudienceInsightsServiceClient = v24.AudienceInsightsServiceClient;
-type AudienceInsightsServiceClient = v24.AudienceInsightsServiceClient;
-const AudienceServiceClient = v24.AudienceServiceClient;
-type AudienceServiceClient = v24.AudienceServiceClient;
+  v25.AssetGroupListingGroupFilterServiceClient;
+const AssetGroupServiceClient = v25.AssetGroupServiceClient;
+type AssetGroupServiceClient = v25.AssetGroupServiceClient;
+const AssetGroupSignalServiceClient = v25.AssetGroupSignalServiceClient;
+type AssetGroupSignalServiceClient = v25.AssetGroupSignalServiceClient;
+const AssetServiceClient = v25.AssetServiceClient;
+type AssetServiceClient = v25.AssetServiceClient;
+const AssetSetAssetServiceClient = v25.AssetSetAssetServiceClient;
+type AssetSetAssetServiceClient = v25.AssetSetAssetServiceClient;
+const AssetSetServiceClient = v25.AssetSetServiceClient;
+type AssetSetServiceClient = v25.AssetSetServiceClient;
+const AudienceInsightsServiceClient = v25.AudienceInsightsServiceClient;
+type AudienceInsightsServiceClient = v25.AudienceInsightsServiceClient;
+const AudienceServiceClient = v25.AudienceServiceClient;
+type AudienceServiceClient = v25.AudienceServiceClient;
 const AutomaticallyCreatedAssetRemovalServiceClient =
-  v24.AutomaticallyCreatedAssetRemovalServiceClient;
+  v25.AutomaticallyCreatedAssetRemovalServiceClient;
 type AutomaticallyCreatedAssetRemovalServiceClient =
-  v24.AutomaticallyCreatedAssetRemovalServiceClient;
-const BatchJobServiceClient = v24.BatchJobServiceClient;
-type BatchJobServiceClient = v24.BatchJobServiceClient;
-const BenchmarksServiceClient = v24.BenchmarksServiceClient;
-type BenchmarksServiceClient = v24.BenchmarksServiceClient;
-const BiddingDataExclusionServiceClient = v24.BiddingDataExclusionServiceClient;
-type BiddingDataExclusionServiceClient = v24.BiddingDataExclusionServiceClient;
+  v25.AutomaticallyCreatedAssetRemovalServiceClient;
+const BatchJobServiceClient = v25.BatchJobServiceClient;
+type BatchJobServiceClient = v25.BatchJobServiceClient;
+const BenchmarksServiceClient = v25.BenchmarksServiceClient;
+type BenchmarksServiceClient = v25.BenchmarksServiceClient;
+const BiddingDataExclusionServiceClient = v25.BiddingDataExclusionServiceClient;
+type BiddingDataExclusionServiceClient = v25.BiddingDataExclusionServiceClient;
 const BiddingSeasonalityAdjustmentServiceClient =
-  v24.BiddingSeasonalityAdjustmentServiceClient;
+  v25.BiddingSeasonalityAdjustmentServiceClient;
 type BiddingSeasonalityAdjustmentServiceClient =
-  v24.BiddingSeasonalityAdjustmentServiceClient;
-const BiddingStrategyServiceClient = v24.BiddingStrategyServiceClient;
-type BiddingStrategyServiceClient = v24.BiddingStrategyServiceClient;
-const BillingSetupServiceClient = v24.BillingSetupServiceClient;
-type BillingSetupServiceClient = v24.BillingSetupServiceClient;
-const BrandSuggestionServiceClient = v24.BrandSuggestionServiceClient;
-type BrandSuggestionServiceClient = v24.BrandSuggestionServiceClient;
-const CampaignAssetServiceClient = v24.CampaignAssetServiceClient;
-type CampaignAssetServiceClient = v24.CampaignAssetServiceClient;
-const CampaignAssetSetServiceClient = v24.CampaignAssetSetServiceClient;
-type CampaignAssetSetServiceClient = v24.CampaignAssetSetServiceClient;
-const CampaignBidModifierServiceClient = v24.CampaignBidModifierServiceClient;
-type CampaignBidModifierServiceClient = v24.CampaignBidModifierServiceClient;
-const CampaignBudgetServiceClient = v24.CampaignBudgetServiceClient;
-type CampaignBudgetServiceClient = v24.CampaignBudgetServiceClient;
+  v25.BiddingSeasonalityAdjustmentServiceClient;
+const BiddingStrategyServiceClient = v25.BiddingStrategyServiceClient;
+type BiddingStrategyServiceClient = v25.BiddingStrategyServiceClient;
+const BillingSetupServiceClient = v25.BillingSetupServiceClient;
+type BillingSetupServiceClient = v25.BillingSetupServiceClient;
+const BrandSuggestionServiceClient = v25.BrandSuggestionServiceClient;
+type BrandSuggestionServiceClient = v25.BrandSuggestionServiceClient;
+const CampaignAssetServiceClient = v25.CampaignAssetServiceClient;
+type CampaignAssetServiceClient = v25.CampaignAssetServiceClient;
+const CampaignAssetSetServiceClient = v25.CampaignAssetSetServiceClient;
+type CampaignAssetSetServiceClient = v25.CampaignAssetSetServiceClient;
+const CampaignBidModifierServiceClient = v25.CampaignBidModifierServiceClient;
+type CampaignBidModifierServiceClient = v25.CampaignBidModifierServiceClient;
+const CampaignBudgetServiceClient = v25.CampaignBudgetServiceClient;
+type CampaignBudgetServiceClient = v25.CampaignBudgetServiceClient;
 const CampaignConversionGoalServiceClient =
-  v24.CampaignConversionGoalServiceClient;
+  v25.CampaignConversionGoalServiceClient;
 type CampaignConversionGoalServiceClient =
-  v24.CampaignConversionGoalServiceClient;
-const CampaignCriterionServiceClient = v24.CampaignCriterionServiceClient;
-type CampaignCriterionServiceClient = v24.CampaignCriterionServiceClient;
-const CampaignCustomizerServiceClient = v24.CampaignCustomizerServiceClient;
-type CampaignCustomizerServiceClient = v24.CampaignCustomizerServiceClient;
-const CampaignDraftServiceClient = v24.CampaignDraftServiceClient;
-type CampaignDraftServiceClient = v24.CampaignDraftServiceClient;
-const CampaignGoalConfigServiceClient = v24.CampaignGoalConfigServiceClient;
-type CampaignGoalConfigServiceClient = v24.CampaignGoalConfigServiceClient;
-const CampaignGroupServiceClient = v24.CampaignGroupServiceClient;
-type CampaignGroupServiceClient = v24.CampaignGroupServiceClient;
-const CampaignLabelServiceClient = v24.CampaignLabelServiceClient;
-type CampaignLabelServiceClient = v24.CampaignLabelServiceClient;
-const CampaignLifecycleGoalServiceClient =
-  v24.CampaignLifecycleGoalServiceClient;
-type CampaignLifecycleGoalServiceClient =
-  v24.CampaignLifecycleGoalServiceClient;
-const CampaignServiceClient = v24.CampaignServiceClient;
-type CampaignServiceClient = v24.CampaignServiceClient;
-const CampaignSharedSetServiceClient = v24.CampaignSharedSetServiceClient;
-type CampaignSharedSetServiceClient = v24.CampaignSharedSetServiceClient;
+  v25.CampaignConversionGoalServiceClient;
+const CampaignCriterionServiceClient = v25.CampaignCriterionServiceClient;
+type CampaignCriterionServiceClient = v25.CampaignCriterionServiceClient;
+const CampaignCustomizerServiceClient = v25.CampaignCustomizerServiceClient;
+type CampaignCustomizerServiceClient = v25.CampaignCustomizerServiceClient;
+const CampaignDraftServiceClient = v25.CampaignDraftServiceClient;
+type CampaignDraftServiceClient = v25.CampaignDraftServiceClient;
+const CampaignGoalConfigServiceClient = v25.CampaignGoalConfigServiceClient;
+type CampaignGoalConfigServiceClient = v25.CampaignGoalConfigServiceClient;
+const CampaignGroupServiceClient = v25.CampaignGroupServiceClient;
+type CampaignGroupServiceClient = v25.CampaignGroupServiceClient;
+const CampaignLabelServiceClient = v25.CampaignLabelServiceClient;
+type CampaignLabelServiceClient = v25.CampaignLabelServiceClient;
+const CampaignServiceClient = v25.CampaignServiceClient;
+type CampaignServiceClient = v25.CampaignServiceClient;
+const CampaignSharedSetServiceClient = v25.CampaignSharedSetServiceClient;
+type CampaignSharedSetServiceClient = v25.CampaignSharedSetServiceClient;
 const ContentCreatorInsightsServiceClient =
-  v24.ContentCreatorInsightsServiceClient;
+  v25.ContentCreatorInsightsServiceClient;
 type ContentCreatorInsightsServiceClient =
-  v24.ContentCreatorInsightsServiceClient;
-const ConversionActionServiceClient = v24.ConversionActionServiceClient;
-type ConversionActionServiceClient = v24.ConversionActionServiceClient;
+  v25.ContentCreatorInsightsServiceClient;
+const ConversionActionServiceClient = v25.ConversionActionServiceClient;
+type ConversionActionServiceClient = v25.ConversionActionServiceClient;
 const ConversionAdjustmentUploadServiceClient =
-  v24.ConversionAdjustmentUploadServiceClient;
+  v25.ConversionAdjustmentUploadServiceClient;
 type ConversionAdjustmentUploadServiceClient =
-  v24.ConversionAdjustmentUploadServiceClient;
+  v25.ConversionAdjustmentUploadServiceClient;
 const ConversionCustomVariableServiceClient =
-  v24.ConversionCustomVariableServiceClient;
+  v25.ConversionCustomVariableServiceClient;
 type ConversionCustomVariableServiceClient =
-  v24.ConversionCustomVariableServiceClient;
+  v25.ConversionCustomVariableServiceClient;
 const ConversionGoalCampaignConfigServiceClient =
-  v24.ConversionGoalCampaignConfigServiceClient;
+  v25.ConversionGoalCampaignConfigServiceClient;
 type ConversionGoalCampaignConfigServiceClient =
-  v24.ConversionGoalCampaignConfigServiceClient;
-const ConversionUploadServiceClient = v24.ConversionUploadServiceClient;
-type ConversionUploadServiceClient = v24.ConversionUploadServiceClient;
-const ConversionValueRuleServiceClient = v24.ConversionValueRuleServiceClient;
-type ConversionValueRuleServiceClient = v24.ConversionValueRuleServiceClient;
+  v25.ConversionGoalCampaignConfigServiceClient;
+const ConversionUploadServiceClient = v25.ConversionUploadServiceClient;
+type ConversionUploadServiceClient = v25.ConversionUploadServiceClient;
+const ConversionValueRuleServiceClient = v25.ConversionValueRuleServiceClient;
+type ConversionValueRuleServiceClient = v25.ConversionValueRuleServiceClient;
 const ConversionValueRuleSetServiceClient =
-  v24.ConversionValueRuleSetServiceClient;
+  v25.ConversionValueRuleSetServiceClient;
 type ConversionValueRuleSetServiceClient =
-  v24.ConversionValueRuleSetServiceClient;
-const CustomAudienceServiceClient = v24.CustomAudienceServiceClient;
-type CustomAudienceServiceClient = v24.CustomAudienceServiceClient;
-const CustomConversionGoalServiceClient = v24.CustomConversionGoalServiceClient;
-type CustomConversionGoalServiceClient = v24.CustomConversionGoalServiceClient;
-const CustomerAssetServiceClient = v24.CustomerAssetServiceClient;
-type CustomerAssetServiceClient = v24.CustomerAssetServiceClient;
-const CustomerAssetSetServiceClient = v24.CustomerAssetSetServiceClient;
-type CustomerAssetSetServiceClient = v24.CustomerAssetSetServiceClient;
-const CustomerClientLinkServiceClient = v24.CustomerClientLinkServiceClient;
-type CustomerClientLinkServiceClient = v24.CustomerClientLinkServiceClient;
+  v25.ConversionValueRuleSetServiceClient;
+const CustomAudienceServiceClient = v25.CustomAudienceServiceClient;
+type CustomAudienceServiceClient = v25.CustomAudienceServiceClient;
+const CustomConversionGoalServiceClient = v25.CustomConversionGoalServiceClient;
+type CustomConversionGoalServiceClient = v25.CustomConversionGoalServiceClient;
+const CustomerAssetServiceClient = v25.CustomerAssetServiceClient;
+type CustomerAssetServiceClient = v25.CustomerAssetServiceClient;
+const CustomerAssetSetServiceClient = v25.CustomerAssetSetServiceClient;
+type CustomerAssetSetServiceClient = v25.CustomerAssetSetServiceClient;
+const CustomerClientLinkServiceClient = v25.CustomerClientLinkServiceClient;
+type CustomerClientLinkServiceClient = v25.CustomerClientLinkServiceClient;
 const CustomerConversionGoalServiceClient =
-  v24.CustomerConversionGoalServiceClient;
+  v25.CustomerConversionGoalServiceClient;
 type CustomerConversionGoalServiceClient =
-  v24.CustomerConversionGoalServiceClient;
-const CustomerCustomizerServiceClient = v24.CustomerCustomizerServiceClient;
-type CustomerCustomizerServiceClient = v24.CustomerCustomizerServiceClient;
-const CustomerLabelServiceClient = v24.CustomerLabelServiceClient;
-type CustomerLabelServiceClient = v24.CustomerLabelServiceClient;
-const CustomerLifecycleGoalServiceClient =
-  v24.CustomerLifecycleGoalServiceClient;
-type CustomerLifecycleGoalServiceClient =
-  v24.CustomerLifecycleGoalServiceClient;
-const CustomerManagerLinkServiceClient = v24.CustomerManagerLinkServiceClient;
-type CustomerManagerLinkServiceClient = v24.CustomerManagerLinkServiceClient;
+  v25.CustomerConversionGoalServiceClient;
+const CustomerCustomizerServiceClient = v25.CustomerCustomizerServiceClient;
+type CustomerCustomizerServiceClient = v25.CustomerCustomizerServiceClient;
+const CustomerLabelServiceClient = v25.CustomerLabelServiceClient;
+type CustomerLabelServiceClient = v25.CustomerLabelServiceClient;
+const CustomerManagerLinkServiceClient = v25.CustomerManagerLinkServiceClient;
+type CustomerManagerLinkServiceClient = v25.CustomerManagerLinkServiceClient;
 const CustomerNegativeCriterionServiceClient =
-  v24.CustomerNegativeCriterionServiceClient;
+  v25.CustomerNegativeCriterionServiceClient;
 type CustomerNegativeCriterionServiceClient =
-  v24.CustomerNegativeCriterionServiceClient;
-const CustomerServiceClient = v24.CustomerServiceClient;
-type CustomerServiceClient = v24.CustomerServiceClient;
+  v25.CustomerNegativeCriterionServiceClient;
+const CustomerServiceClient = v25.CustomerServiceClient;
+type CustomerServiceClient = v25.CustomerServiceClient;
 const CustomerSkAdNetworkConversionValueSchemaServiceClient =
-  v24.CustomerSkAdNetworkConversionValueSchemaServiceClient;
+  v25.CustomerSkAdNetworkConversionValueSchemaServiceClient;
 type CustomerSkAdNetworkConversionValueSchemaServiceClient =
-  v24.CustomerSkAdNetworkConversionValueSchemaServiceClient;
+  v25.CustomerSkAdNetworkConversionValueSchemaServiceClient;
 const CustomerUserAccessInvitationServiceClient =
-  v24.CustomerUserAccessInvitationServiceClient;
+  v25.CustomerUserAccessInvitationServiceClient;
 type CustomerUserAccessInvitationServiceClient =
-  v24.CustomerUserAccessInvitationServiceClient;
-const CustomerUserAccessServiceClient = v24.CustomerUserAccessServiceClient;
-type CustomerUserAccessServiceClient = v24.CustomerUserAccessServiceClient;
-const CustomInterestServiceClient = v24.CustomInterestServiceClient;
-type CustomInterestServiceClient = v24.CustomInterestServiceClient;
-const CustomizerAttributeServiceClient = v24.CustomizerAttributeServiceClient;
-type CustomizerAttributeServiceClient = v24.CustomizerAttributeServiceClient;
-const DataLinkServiceClient = v24.DataLinkServiceClient;
-type DataLinkServiceClient = v24.DataLinkServiceClient;
-const ExperimentArmServiceClient = v24.ExperimentArmServiceClient;
-type ExperimentArmServiceClient = v24.ExperimentArmServiceClient;
-const ExperimentServiceClient = v24.ExperimentServiceClient;
-type ExperimentServiceClient = v24.ExperimentServiceClient;
-const GeoTargetConstantServiceClient = v24.GeoTargetConstantServiceClient;
-type GeoTargetConstantServiceClient = v24.GeoTargetConstantServiceClient;
-const GoalServiceClient = v24.GoalServiceClient;
-type GoalServiceClient = v24.GoalServiceClient;
-const GoogleAdsFieldServiceClient = v24.GoogleAdsFieldServiceClient;
-type GoogleAdsFieldServiceClient = v24.GoogleAdsFieldServiceClient;
-const GoogleAdsServiceClient = v24.GoogleAdsServiceClient;
-type GoogleAdsServiceClient = v24.GoogleAdsServiceClient;
-const IdentityVerificationServiceClient = v24.IdentityVerificationServiceClient;
-type IdentityVerificationServiceClient = v24.IdentityVerificationServiceClient;
-const IncentiveServiceClient = v24.IncentiveServiceClient;
-type IncentiveServiceClient = v24.IncentiveServiceClient;
-const InvoiceServiceClient = v24.InvoiceServiceClient;
-type InvoiceServiceClient = v24.InvoiceServiceClient;
+  v25.CustomerUserAccessInvitationServiceClient;
+const CustomerUserAccessServiceClient = v25.CustomerUserAccessServiceClient;
+type CustomerUserAccessServiceClient = v25.CustomerUserAccessServiceClient;
+const CustomInterestServiceClient = v25.CustomInterestServiceClient;
+type CustomInterestServiceClient = v25.CustomInterestServiceClient;
+const CustomizerAttributeServiceClient = v25.CustomizerAttributeServiceClient;
+type CustomizerAttributeServiceClient = v25.CustomizerAttributeServiceClient;
+const DataLinkServiceClient = v25.DataLinkServiceClient;
+type DataLinkServiceClient = v25.DataLinkServiceClient;
+const ExperimentArmServiceClient = v25.ExperimentArmServiceClient;
+type ExperimentArmServiceClient = v25.ExperimentArmServiceClient;
+const ExperimentServiceClient = v25.ExperimentServiceClient;
+type ExperimentServiceClient = v25.ExperimentServiceClient;
+const GeoTargetConstantServiceClient = v25.GeoTargetConstantServiceClient;
+type GeoTargetConstantServiceClient = v25.GeoTargetConstantServiceClient;
+const GoalServiceClient = v25.GoalServiceClient;
+type GoalServiceClient = v25.GoalServiceClient;
+const GoogleAdsFieldServiceClient = v25.GoogleAdsFieldServiceClient;
+type GoogleAdsFieldServiceClient = v25.GoogleAdsFieldServiceClient;
+const GoogleAdsServiceClient = v25.GoogleAdsServiceClient;
+type GoogleAdsServiceClient = v25.GoogleAdsServiceClient;
+const IdentityVerificationServiceClient = v25.IdentityVerificationServiceClient;
+type IdentityVerificationServiceClient = v25.IdentityVerificationServiceClient;
+const IncentiveServiceClient = v25.IncentiveServiceClient;
+type IncentiveServiceClient = v25.IncentiveServiceClient;
+const InvoiceServiceClient = v25.InvoiceServiceClient;
+type InvoiceServiceClient = v25.InvoiceServiceClient;
 const KeywordPlanAdGroupKeywordServiceClient =
-  v24.KeywordPlanAdGroupKeywordServiceClient;
+  v25.KeywordPlanAdGroupKeywordServiceClient;
 type KeywordPlanAdGroupKeywordServiceClient =
-  v24.KeywordPlanAdGroupKeywordServiceClient;
-const KeywordPlanAdGroupServiceClient = v24.KeywordPlanAdGroupServiceClient;
-type KeywordPlanAdGroupServiceClient = v24.KeywordPlanAdGroupServiceClient;
+  v25.KeywordPlanAdGroupKeywordServiceClient;
+const KeywordPlanAdGroupServiceClient = v25.KeywordPlanAdGroupServiceClient;
+type KeywordPlanAdGroupServiceClient = v25.KeywordPlanAdGroupServiceClient;
 const KeywordPlanCampaignKeywordServiceClient =
-  v24.KeywordPlanCampaignKeywordServiceClient;
+  v25.KeywordPlanCampaignKeywordServiceClient;
 type KeywordPlanCampaignKeywordServiceClient =
-  v24.KeywordPlanCampaignKeywordServiceClient;
-const KeywordPlanCampaignServiceClient = v24.KeywordPlanCampaignServiceClient;
-type KeywordPlanCampaignServiceClient = v24.KeywordPlanCampaignServiceClient;
-const KeywordPlanIdeaServiceClient = v24.KeywordPlanIdeaServiceClient;
-type KeywordPlanIdeaServiceClient = v24.KeywordPlanIdeaServiceClient;
-const KeywordPlanServiceClient = v24.KeywordPlanServiceClient;
-type KeywordPlanServiceClient = v24.KeywordPlanServiceClient;
-const KeywordThemeConstantServiceClient = v24.KeywordThemeConstantServiceClient;
-type KeywordThemeConstantServiceClient = v24.KeywordThemeConstantServiceClient;
-const LabelServiceClient = v24.LabelServiceClient;
-type LabelServiceClient = v24.LabelServiceClient;
-const LocalServicesLeadServiceClient = v24.LocalServicesLeadServiceClient;
-type LocalServicesLeadServiceClient = v24.LocalServicesLeadServiceClient;
-const OfflineUserDataJobServiceClient = v24.OfflineUserDataJobServiceClient;
-type OfflineUserDataJobServiceClient = v24.OfflineUserDataJobServiceClient;
-const PaymentsAccountServiceClient = v24.PaymentsAccountServiceClient;
-type PaymentsAccountServiceClient = v24.PaymentsAccountServiceClient;
+  v25.KeywordPlanCampaignKeywordServiceClient;
+const KeywordPlanCampaignServiceClient = v25.KeywordPlanCampaignServiceClient;
+type KeywordPlanCampaignServiceClient = v25.KeywordPlanCampaignServiceClient;
+const KeywordPlanIdeaServiceClient = v25.KeywordPlanIdeaServiceClient;
+type KeywordPlanIdeaServiceClient = v25.KeywordPlanIdeaServiceClient;
+const KeywordPlanServiceClient = v25.KeywordPlanServiceClient;
+type KeywordPlanServiceClient = v25.KeywordPlanServiceClient;
+const KeywordThemeConstantServiceClient = v25.KeywordThemeConstantServiceClient;
+type KeywordThemeConstantServiceClient = v25.KeywordThemeConstantServiceClient;
+const LabelServiceClient = v25.LabelServiceClient;
+type LabelServiceClient = v25.LabelServiceClient;
+const LocalServicesLeadServiceClient = v25.LocalServicesLeadServiceClient;
+type LocalServicesLeadServiceClient = v25.LocalServicesLeadServiceClient;
+const MultiPartyAuthReviewServiceClient = v25.MultiPartyAuthReviewServiceClient;
+type MultiPartyAuthReviewServiceClient = v25.MultiPartyAuthReviewServiceClient;
+const OfflineUserDataJobServiceClient = v25.OfflineUserDataJobServiceClient;
+type OfflineUserDataJobServiceClient = v25.OfflineUserDataJobServiceClient;
+const PaymentsAccountServiceClient = v25.PaymentsAccountServiceClient;
+type PaymentsAccountServiceClient = v25.PaymentsAccountServiceClient;
 const ProductLinkInvitationServiceClient =
-  v24.ProductLinkInvitationServiceClient;
+  v25.ProductLinkInvitationServiceClient;
 type ProductLinkInvitationServiceClient =
-  v24.ProductLinkInvitationServiceClient;
-const ProductLinkServiceClient = v24.ProductLinkServiceClient;
-type ProductLinkServiceClient = v24.ProductLinkServiceClient;
-const ReachPlanServiceClient = v24.ReachPlanServiceClient;
-type ReachPlanServiceClient = v24.ReachPlanServiceClient;
-const RecommendationServiceClient = v24.RecommendationServiceClient;
-type RecommendationServiceClient = v24.RecommendationServiceClient;
+  v25.ProductLinkInvitationServiceClient;
+const ProductLinkServiceClient = v25.ProductLinkServiceClient;
+type ProductLinkServiceClient = v25.ProductLinkServiceClient;
+const ReachPlanServiceClient = v25.ReachPlanServiceClient;
+type ReachPlanServiceClient = v25.ReachPlanServiceClient;
+const RecommendationServiceClient = v25.RecommendationServiceClient;
+type RecommendationServiceClient = v25.RecommendationServiceClient;
 const RecommendationSubscriptionServiceClient =
-  v24.RecommendationSubscriptionServiceClient;
+  v25.RecommendationSubscriptionServiceClient;
 type RecommendationSubscriptionServiceClient =
-  v24.RecommendationSubscriptionServiceClient;
-const RemarketingActionServiceClient = v24.RemarketingActionServiceClient;
-type RemarketingActionServiceClient = v24.RemarketingActionServiceClient;
-const ReservationServiceClient = v24.ReservationServiceClient;
-type ReservationServiceClient = v24.ReservationServiceClient;
-const ShareablePreviewServiceClient = v24.ShareablePreviewServiceClient;
-type ShareablePreviewServiceClient = v24.ShareablePreviewServiceClient;
-const SharedCriterionServiceClient = v24.SharedCriterionServiceClient;
-type SharedCriterionServiceClient = v24.SharedCriterionServiceClient;
-const SharedSetServiceClient = v24.SharedSetServiceClient;
-type SharedSetServiceClient = v24.SharedSetServiceClient;
-const SmartCampaignSettingServiceClient = v24.SmartCampaignSettingServiceClient;
-type SmartCampaignSettingServiceClient = v24.SmartCampaignSettingServiceClient;
-const SmartCampaignSuggestServiceClient = v24.SmartCampaignSuggestServiceClient;
-type SmartCampaignSuggestServiceClient = v24.SmartCampaignSuggestServiceClient;
+  v25.RecommendationSubscriptionServiceClient;
+const RemarketingActionServiceClient = v25.RemarketingActionServiceClient;
+type RemarketingActionServiceClient = v25.RemarketingActionServiceClient;
+const ReservationServiceClient = v25.ReservationServiceClient;
+type ReservationServiceClient = v25.ReservationServiceClient;
+const ShareablePreviewServiceClient = v25.ShareablePreviewServiceClient;
+type ShareablePreviewServiceClient = v25.ShareablePreviewServiceClient;
+const SharedCriterionServiceClient = v25.SharedCriterionServiceClient;
+type SharedCriterionServiceClient = v25.SharedCriterionServiceClient;
+const SharedSetServiceClient = v25.SharedSetServiceClient;
+type SharedSetServiceClient = v25.SharedSetServiceClient;
+const SmartCampaignSettingServiceClient = v25.SmartCampaignSettingServiceClient;
+type SmartCampaignSettingServiceClient = v25.SmartCampaignSettingServiceClient;
+const SmartCampaignSuggestServiceClient = v25.SmartCampaignSuggestServiceClient;
+type SmartCampaignSuggestServiceClient = v25.SmartCampaignSuggestServiceClient;
 const ThirdPartyAppAnalyticsLinkServiceClient =
-  v24.ThirdPartyAppAnalyticsLinkServiceClient;
+  v25.ThirdPartyAppAnalyticsLinkServiceClient;
 type ThirdPartyAppAnalyticsLinkServiceClient =
-  v24.ThirdPartyAppAnalyticsLinkServiceClient;
+  v25.ThirdPartyAppAnalyticsLinkServiceClient;
 const TravelAssetSuggestionServiceClient =
-  v24.TravelAssetSuggestionServiceClient;
+  v25.TravelAssetSuggestionServiceClient;
 type TravelAssetSuggestionServiceClient =
-  v24.TravelAssetSuggestionServiceClient;
-const UserDataServiceClient = v24.UserDataServiceClient;
-type UserDataServiceClient = v24.UserDataServiceClient;
-const UserListCustomerTypeServiceClient = v24.UserListCustomerTypeServiceClient;
-type UserListCustomerTypeServiceClient = v24.UserListCustomerTypeServiceClient;
-const UserListServiceClient = v24.UserListServiceClient;
-type UserListServiceClient = v24.UserListServiceClient;
-const YouTubeVideoUploadServiceClient = v24.YouTubeVideoUploadServiceClient;
-type YouTubeVideoUploadServiceClient = v24.YouTubeVideoUploadServiceClient;
+  v25.TravelAssetSuggestionServiceClient;
+const UserDataServiceClient = v25.UserDataServiceClient;
+type UserDataServiceClient = v25.UserDataServiceClient;
+const UserListCustomerTypeServiceClient = v25.UserListCustomerTypeServiceClient;
+type UserListCustomerTypeServiceClient = v25.UserListCustomerTypeServiceClient;
+const UserListServiceClient = v25.UserListServiceClient;
+type UserListServiceClient = v25.UserListServiceClient;
+const YouTubeVideoUploadServiceClient = v25.YouTubeVideoUploadServiceClient;
+type YouTubeVideoUploadServiceClient = v25.YouTubeVideoUploadServiceClient;
 export {
-  v24,
+  v25,
   AccountBudgetProposalServiceClient,
   AccountLinkServiceClient,
   AdGroupAdLabelServiceClient,
@@ -333,7 +327,6 @@ export {
   CampaignGoalConfigServiceClient,
   CampaignGroupServiceClient,
   CampaignLabelServiceClient,
-  CampaignLifecycleGoalServiceClient,
   CampaignServiceClient,
   CampaignSharedSetServiceClient,
   ContentCreatorInsightsServiceClient,
@@ -352,7 +345,6 @@ export {
   CustomerConversionGoalServiceClient,
   CustomerCustomizerServiceClient,
   CustomerLabelServiceClient,
-  CustomerLifecycleGoalServiceClient,
   CustomerManagerLinkServiceClient,
   CustomerNegativeCriterionServiceClient,
   CustomerServiceClient,
@@ -380,6 +372,7 @@ export {
   KeywordThemeConstantServiceClient,
   LabelServiceClient,
   LocalServicesLeadServiceClient,
+  MultiPartyAuthReviewServiceClient,
   OfflineUserDataJobServiceClient,
   PaymentsAccountServiceClient,
   ProductLinkInvitationServiceClient,
@@ -402,7 +395,7 @@ export {
   YouTubeVideoUploadServiceClient,
 };
 export default {
-  v24,
+  v25,
   AccountBudgetProposalServiceClient,
   AccountLinkServiceClient,
   AdGroupAdLabelServiceClient,
@@ -447,7 +440,6 @@ export default {
   CampaignGoalConfigServiceClient,
   CampaignGroupServiceClient,
   CampaignLabelServiceClient,
-  CampaignLifecycleGoalServiceClient,
   CampaignServiceClient,
   CampaignSharedSetServiceClient,
   ContentCreatorInsightsServiceClient,
@@ -466,7 +458,6 @@ export default {
   CustomerConversionGoalServiceClient,
   CustomerCustomizerServiceClient,
   CustomerLabelServiceClient,
-  CustomerLifecycleGoalServiceClient,
   CustomerManagerLinkServiceClient,
   CustomerNegativeCriterionServiceClient,
   CustomerServiceClient,
@@ -494,6 +485,7 @@ export default {
   KeywordThemeConstantServiceClient,
   LabelServiceClient,
   LocalServicesLeadServiceClient,
+  MultiPartyAuthReviewServiceClient,
   OfflineUserDataJobServiceClient,
   PaymentsAccountServiceClient,
   ProductLinkInvitationServiceClient,

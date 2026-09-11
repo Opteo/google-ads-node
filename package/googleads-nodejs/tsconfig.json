@@ -1,6 +1,18 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "composite": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "sourceMap": true,
+    "stripInternal": true,
+    "strict": true,
+    "target": "ES2022",
     "rootDir": ".",
     "outDir": "build",
     "resolveJsonModule": true,
@@ -18,5 +30,8 @@
     "src/**/*.json",
     "samples/**/*.json",
     "protos/protos.json"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
