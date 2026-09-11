@@ -48,6 +48,7 @@ COPY --from=protos /tmp/bazel-bin-copy/google/ads/googleads/${GOOGLE_ADS_VERSION
 RUN tar -xvzf googleads-nodejs.tar.gz -C .
 
 RUN cd googleads-nodejs && \
+    npm pkg delete devDependencies.@types/mocha devDependencies.@types/sinon devDependencies.c8 devDependencies.jsdoc devDependencies.jsdoc-fresh devDependencies.jsdoc-region-tag devDependencies.mocha devDependencies.pack-n-play devDependencies.sinon && \
     npm uninstall google-gax && \
     npm install google-gax && \
     rm -rf test/ system-test/
