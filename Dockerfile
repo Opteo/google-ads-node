@@ -48,6 +48,8 @@ COPY --from=protos /tmp/bazel-bin-copy/google/ads/googleads/${GOOGLE_ADS_VERSION
 RUN tar -xvzf googleads-nodejs.tar.gz -C .
 
 RUN cd googleads-nodejs && \
+    npm pkg delete devDependencies.@types/mocha devDependencies.@types/sinon devDependencies.c8 devDependencies.gts devDependencies.jsdoc devDependencies.jsdoc-fresh devDependencies.jsdoc-region-tag devDependencies.mocha devDependencies.pack-n-play devDependencies.sinon && \
+    node -e 'const fs=require("fs");const p="tsconfig.json";const t=JSON.parse(fs.readFileSync(p,"utf8"));delete t.extends;t.compilerOptions={allowUnreachableCode:false,allowUnusedLabels:false,composite:true,forceConsistentCasingInFileNames:true,module:"commonjs",noEmitOnError:true,noFallthroughCasesInSwitch:true,noImplicitReturns:true,pretty:true,sourceMap:true,stripInternal:true,strict:true,target:"ES2022",...t.compilerOptions};t.exclude=["node_modules"];fs.writeFileSync(p,JSON.stringify(t,null,2)+"\n")' && \
     npm uninstall google-gax && \
     npm install google-gax && \
     rm -rf test/ system-test/
