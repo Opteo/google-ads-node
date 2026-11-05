@@ -79,6 +79,7 @@
     "custom conversion goal service",
     "customer asset service",
     "customer asset set service",
+    "customer budget network setting service",
     "customer client link service",
     "customer conversion goal service",
     "customer customizer service",
@@ -109,6 +110,7 @@
     "keyword plan service",
     "keyword theme constant service",
     "label service",
+    "local services eligibility service",
     "local services lead service",
     "multi party auth review service",
     "offline user data job service",
@@ -145,13 +147,13 @@
   },
   "devDependencies": {
     "@types/node": "^22.18.12",
-    "gapic-tools": "^2.0.1",
+    "gapic-tools": "^2.2.1",
     "typescript": "5.8.3"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=v18"
   },
   "dependencies": {
-    "google-gax": "^6.3.0"
+    "google-gax": "^6.16.0"
   }
 }
