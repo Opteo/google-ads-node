@@ -151,7 +151,7 @@
     "typescript": "5.8.3"
   },
   "engines": {
-    "node": ">=v18"
+    "node": ">=22"
   },
   "dependencies": {
     "google-gax": "^6.16.0"
